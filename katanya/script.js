@@ -30,7 +30,7 @@ tekspalingakhir = palingakhir.innerHTML; palingakhir.innerHTML="";
   	stikersec2.style="margin-top:-50px;margin-bottom:0;transform:scale(.9);transition:all .7s ease";
   	scrollContainer.style="transform: scale(1)";
   	new TypeIt("#textsec2", {
-      strings: ["" + ID_AnimasiTeks], startDelay: 200, speed: 37, /* deff 55 */ cursor: false,
+      strings: ["" + ID_AnimasiTeks], startDelay: 200, speed: 33, /* deff 55 */ cursor: false,
       afterComplete: function(){
       	textsec2.innerHTML = ID_AnimasiTeks;
         AnimasiTeks2();
