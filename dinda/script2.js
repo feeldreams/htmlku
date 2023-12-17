@@ -29,7 +29,7 @@ tekspalingakhir = palingakhir.innerHTML; palingakhir.innerHTML="";
   function mulaitextseco(){
   	scrollContainer.style="transform: scale(1)";
   	new TypeIt("#textsec2", {
-      strings: ["" + initextsec2], startDelay: 200, speed: 4, /* deff 55 */ cursor: false,
+      strings: ["" + initextsec2], startDelay: 200, speed: 40, /* deff 55 */ cursor: false,
       afterComplete: function(){
       	textsec2.innerHTML = initextsec2;
           setInterval(berjatuhan,200);
