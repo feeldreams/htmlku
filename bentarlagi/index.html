@@ -73,6 +73,7 @@
     .swiper-pagination-bullet-active{background-color: #fff !important;}
     .swiper-pagination-bullet{background-color:rgb(158, 158, 158) !important;}
     
+    .sembunyi{display: none !important;}
     p{color:white;font-size:15px;line-height:1.5em;text-align:center;}
     .scale0{opacity:0;transform: scale(0);transition: all .8s ease;}
     .scale1{opacity:1;transform: scale(1);transition: all .8s ease;}
@@ -88,6 +89,7 @@
 </head>
 
 <body>
+  <audio src="https://feeldreams.github.io/punyasesuatu/karenabersamamu.mp3" id="linkmp3" class="sembunyi"></audio>
 	<div class="overlay">
     <div class="loading-message">Hai kamu!<br>Tunggu dulu ya..</div>
      <div id="loveIn" class="blocklove">
@@ -129,7 +131,7 @@
 
   <!-- Initialize Swiper -->
   <script>
-    var teksSekarang = 1;
+    var teksSekarang = 1;audio = new Audio('' + linkmp3.src); 
     var swiper = new Swiper(".mySwiper", {
       pagination: {
         el: ".swiper-pagination",
@@ -171,7 +173,7 @@ document.getElementById('loveIn').innerHTML = '<style>.lovein svg{animation:none
 
 document.getElementById("loveIn").onclick = function() {
     if (sudahKlik) {
-    //playaud();
+    audio.play();
     document.querySelector(".overlay").style.display = "none";
     
     teks1.classList.add("scale1");
