@@ -80,7 +80,7 @@ p{opacity:0;color:var(--warna-teks);font-size:15px;font-weight:700;line-height:1
 </style>
 <body>
 
-	<audio src="walaupun.mp3" id="linkmp3" class="sembunyi"></audio>
+  <audio src="walaupun.mp3" id="linkmp3" class="sembunyi"></audio>
 
    <div id="bgbelakang">
      <!-- Wallpaper --><img src="" id="wallpaper"/>
@@ -91,7 +91,7 @@ p{opacity:0;color:var(--warna-teks);font-size:15px;font-weight:700;line-height:1
    </div>
 
    <div id='Content'>
-   	
+
    <p id="ket">Kirim ke orang<br>yang kamu kangenin 🫶</p>
    <div><div id="loveIn" class="awalan">
      <svg class='line' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><g transform='translate(2.000000, 2.000000)'><path d='M9.27542857,0.714285714 C14.0030476,0.714285714 17.836381,4.54666667 17.836381,9.2752381 C17.836381,14.0038095 14.0030476,17.8361905 9.27542857,17.8361905 C4.54685714,17.8361905 0.71447619,14.0038095 0.71447619,9.2752381 C0.71447619,4.54666667 4.54685714,0.714285714 9.27542857,0.714285714 Z'></path><path d='M17.8989524,16.487619 C18.678,16.487619 19.3094286,17.12 19.3094286,17.8980952 C19.3094286,18.6780952 18.678,19.3095238 17.8989524,19.3095238 C17.1199048,19.3095238 16.4875238,18.6780952 16.4875238,17.8980952 C16.4875238,17.12 17.1199048,16.487619 17.8989524,16.487619 Z'></path></g></svg>
@@ -115,12 +115,12 @@ p{opacity:0;color:var(--warna-teks);font-size:15px;font-weight:700;line-height:1
 
   function loadfoto(){
     wallpaper.src = "https://feeldreams.github.io/gununggelap.jpeg";
-    gambar1 = "https://feeldreams.github.io/pusn2.gif";
-    gambar2 = "https://feeldreams.github.io/bantal.gif";
+    gambar1 = "https://feeldreams.github.io/bunga.gif";
+    gambar2 = "https://feeldreams.github.io/gigitin.gif";
     gambar3 = "https://feeldreams.github.io/ywdh.gif";
     gambar4 = "https://feeldreams.github.io/ngumpet.gif";
     gambar5 = "https://feeldreams.github.io/mndkat.gif";
-    
+
     //gambar6 = "https://feeldreams.github.io/gigitin.gif";
     //gambar7 = "https://feeldreams.github.io/mmm.gif";
 
@@ -144,7 +144,7 @@ p{opacity:0;color:var(--warna-teks);font-size:15px;font-weight:700;line-height:1
   var aa=0,katangetik;function ngetik() {if(aa<katangetik.length){kalimat.innerHTML += katangetik.charAt(aa);aa++;setTimeout(ngetik,50);}}
   function bawahlagi(){fotoenam.style="display:none";fototujuh.style="display:inline-flex";setInterval(berjatuhan,200);kalimatc.style="margin-top:10px;";kalimatc.innerHTML = emot;}
   const body = document.querySelector("body"); audio = new Audio('' + linkmp3.src); function berjatuhan() {const heart = document.createElement("div"); heart.className = "fas fa-heart"; heart.style.left = (Math.random() * 90)+"vw"; heart.style.animationDuration = (Math.random()*3)+2+"s"; body.appendChild(heart);} setInterval(function name(params) {var heartArr = document.querySelectorAll(".fa-heart"); if (heartArr.length > 100) {heartArr[0].remove()}},100);
-  
+
   function tfkata(){fkata+=1;} function bersihkan(){kalimat.innerHTML = "";}
 
   fkata=1;function gantikata(){
@@ -159,7 +159,7 @@ p{opacity:0;color:var(--warna-teks);font-size:15px;font-weight:700;line-height:1
         if(fkata==9){otomatis();kalimat.innerHTML = kata9;/*fototujuh.style="display:none";fotolapan.style="display:inline-flex";*/}
         if(fkata==10){otomatis();kalimat.innerHTML = kata10;/*fototujuh.style="display:none";fotolapan.style="display:inline-flex";*/}
         if(fkata==11){otomatis();kalimat.innerHTML = kata11;/*fototujuh.style="display:none";fotolapan.style="display:inline-flex";*/}
-        if(fkata==12){otomatis();kalimat.innerHTML = kata12;/*fototujuh.style="display:none";fotolapan.style="display:inline-flex";*/}
+        if(fkata==12){otomatis();kalimat.innerHTML = kata12;fotosatu.style="display:none";fotodua.style="display:inline-flex;"/*fototujuh.style="display:none";fotolapan.style="display:inline-flex";*/}
         if(fkata==12){setInterval(berjatuhan,200);};
         setTimeout(tfkata, 300);
   }
@@ -176,7 +176,7 @@ p{opacity:0;color:var(--warna-teks);font-size:15px;font-weight:700;line-height:1
                input: 'text', allowOutsideClick: false, showCancelButton: false,
            });
            if(jawaban && jawaban.length < 21){
-           	window.jawaban = jawaban;
+            window.jawaban = jawaban;
                pesanwhatsapp = jawaban;
                finalakhir();
            } else {
@@ -198,7 +198,7 @@ p{opacity:0;color:var(--warna-teks);font-size:15px;font-weight:700;line-height:1
     setTimeout(gantikata,24100); //11
     setTimeout(gantikata,27200); //12
 }
-  
+
       async function pertama(){
          kata1 = "Walaupun kita jauh,";
          kata2 = "Aku tidak akan pernah mencari<br>kenyamanan di orang lain,";
@@ -215,7 +215,7 @@ p{opacity:0;color:var(--warna-teks);font-size:15px;font-weight:700;line-height:1
 
          fotosatu.style="display:inline-flex";audio.play();showDiv()
        } 
-  
+
 Content.style="display:none";
 window.addEventListener("load", (event) => {
   var overlay = document.querySelector(".overlay");
@@ -233,7 +233,7 @@ window.addEventListener("load", (event) => {
         fungsiAwal=1;setTimeout(initengahan,300);
       }
     }
-    
+
   function initengahan(){
     loveIn.style="display:none";
     ket.style="display:none";
