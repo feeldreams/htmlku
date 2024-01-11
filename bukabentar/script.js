@@ -1,41 +1,56 @@
-function otomatis() {befanimkata();setTimeout(animkata,400);} 
+  function otomatis() {befanimkata();setTimeout(animkata,400);} 
   function befanimkata(){kalimat.style="transform:scale(.3);";kalimatb.style="transform:scale(.3);";kalimatc.style="transform:scale(.3);";} 
   function animkata() {kalimat.style="transform:scale(1);";kalimatb.style="transform:scale(1);";kalimatc.style="transform:scale(1);";}
   
   function otomatis2() {befanimkata2();setTimeout(animkata2,400);} 
   function befanimkata2(){kalimat.style.opacity="0";kalimatb.style.opacity="0";kalimatc.style.opacity="0";} 
-  function animkata2() {kalimat.innerHTML = kalimat2.innerHTML;kalimatb.innerHTML = kalimatb2.innerHTML;kalimatc.innerHTML="";kalimat.style.opacity="1";kalimatb.style.opacity="1";setTimeout(otomatis2b,2000);}
-  function otomatis2b(){kalimatb.innerHTML = "";kalimatc.innerHTML = kalimatc2.innerHTML;kalimatc.style.opacity="1";fthilang();ftganti=2;setTimeout(ftmuncul,300);setTimeout(mulaict,400);}
+  function animkata2() {kalimat.innerHTML = kalimat2.innerHTML;kalimatb.innerHTML = kalimatb2.innerHTML;kalimatc.innerHTML="";kalimat.style.opacity="1";kalimatb.style.opacity="1";setTimeout(function(){kalimat.style.opacity="0";},1800);setTimeout(otomatis2b,2000);}
+  function otomatis2b(){kalimat.innerHTML = kalimat2b.innerHTML;kalimat.style.opacity="1";kalimatb.innerHTML = "";kalimatc.innerHTML = kalimatc2.innerHTML;kalimatc.style.opacity="1";fthilang();ftganti=2;setTimeout(ftmuncul,300);setTimeout(mulaict,400);}
   
-  function otomatis3() {befanimkata3();setTimeout(animkata3,400);} 
-  function befanimkata3(){kalimat.style.opacity="0";kalimatb.style.opacity="0";kalimatc.style.opacity="0";} 
-  function animkata3() {
-    kalimat.innerHTML = kalimat3.innerHTML;
-    kalimatb.innerHTML = kalimatb3.innerHTML;
-    kalimatc.innerHTML = kalimatc3.innerHTML;
-    
-    kalimat.style.opacity="1";
-    kalimatb.style.opacity="1";
-    kalimatc.style.opacity="1";
-}
+  function otomatis3() {
+    kalimat.style.opacity="0";
+    kalimatb.style.opacity="0";
+    kalimatc.style.opacity="0";
+
+    setTimeout(function(){
+        kalimat.innerHTML = kalimat3.innerHTML;
+        kalimatb.innerHTML = kalimatb3.innerHTML;
+        kalimatc.innerHTML = kalimatc3.innerHTML;
+            
+        kalimat.style.opacity="1";
+        kalimatb.style.opacity="1";
+        kalimatc.style.opacity="1";
+        setTimeout(function(){
+            kalimatc.style.animation = "jj 1.1s infinite alternate";
+        },300);
+    },400);
+  } 
   
   function sbakhir(){Bn.style.display="none";setTimeout(stakhir,500);} function stakhir(){tmbl.innerHTML="💌 Balas";Tombol.style="margin-top:10px;opacity:1;transform: scale(1)";ftom=5;fungsi=0;}
   
   async function diterima(){
-      fthilang();ftganti=1;
-      setTimeout(ftmuncul,300);
-      Bn2.style.display="none";
-      wallpaper.style="transform: scale(1)";
-      bq.style = "position:relative;opacity:1;visibility:visible;transform: scale(1);transition:all .7s ease;border-radius:var(--bingkai);margin-top:0;";
-      Tombol.style="opacity:0;transition:all .5s ease;transform: scale(.1);";
-      otomatis2();
+    pesanTolak.style.display="none";
+    fthilang();ftganti=1;
+    setTimeout(ftmuncul,300);
+    Bn2.style.display="none";
+    wallpaper.style="transform: scale(1)";
+    bq.style = "position:relative;opacity:1;visibility:visible;transform: scale(1);transition:all .7s ease;border-radius:var(--bingkai);margin-top:0;";
+    Tombol.style="opacity:0;transition:all .5s ease;transform: scale(.1);";
+    otomatis2();
    }
 
   flag=1;flagg=1;
   function ditolak(){
   	if(fungsi==1){
-  	if(flagg==1){Bn.style="margin:12px 0 12px 12px;cursor:default;opacity:0;transition:all 0s ease;";flagg=2;
-                 Bn2.style="width:auto;opacity:1;transition:all .3s ease;margin:160px 0 12px 140px;"}
+        pesanTolak.style.opacity="1";
+        pesanTolak.style.transform="scale(1)";
+        pesanTolak.style.position="relative";
+        pesanTolak.style.marginTop="10px";
+  	    if(flagg==1){
+            Bn.style="margin:12px 0 12px 12px;cursor:default;opacity:0;transition:all 0s ease;";
+            flagg=2;
+            Bn2.style="width:auto;opacity:1;transition:all .3s ease;margin:160px 0 12px 140px;"
+        }
   	}
    }
   function ditolak2(){
