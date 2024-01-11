@@ -49,13 +49,13 @@ setInterval(function () {
 
 function tombol(){Tombol.style="margin-top:15px;opacity:1;transform: scale(1);";ftom=1;} ftom=0; function fakhiran(){document.getElementById("akhiran").style = "display:inline-flex";}
 const swals = Swal.mixin({allowOutsideClick: false, cancelButtonColor: '#FF0040', imageWidth: 90, imageHeight: 100,}); 
-const swalst = Swal.mixin({allowOutsideClick: false, showConfirmButton: false, timer: 3200, timerProgressBar: true, imageWidth: 90, imageHeight: 90,}); const style = document.createElement('style'); var today = new Date();var dd = String(today.getDate()).padStart(2, '0');var mm = String(today.getMonth() + 1).padStart(2, '0');var yyyy = today.getFullYear();const monthNames = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];today = dd + ' ' + monthNames[today.getMonth()] + ' ' + yyyy;
+const swalst = Swal.mixin({allowOutsideClick: false, showConfirmButton: false, timer: 2500, timerProgressBar: true, imageWidth: 90, imageHeight: 90,}); const style = document.createElement('style'); var today = new Date();var dd = String(today.getDate()).padStart(2, '0');var mm = String(today.getMonth() + 1).padStart(2, '0');var yyyy = today.getFullYear();const monthNames = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];today = dd + ' ' + monthNames[today.getMonth()] + ' ' + yyyy;
 function setel(){audio.play();} function setel2(){bgm.play();} function sjawab(){if(ftom==1){Tombol.style="display:none";jawab();}}
 
 var aa=0,katangetik;
 function ngetik() {
   new TypeIt("#kalimat", {
-    strings: ["" + katangetik], startDelay: 50, speed: 45, cursor: true,
+    strings: ["" + katangetik], startDelay: 50, speed: 35, cursor: true,
     afterComplete: function(){
         kalimat.innerHTML = katangetik;
       kalimatc.style="margin-top:30px;margin-bottom:10px";
@@ -65,7 +65,7 @@ function ngetik() {
 var ai=0,katangetik2;
 function ngetik2() {
   new TypeIt("#kalimatc", {
-    strings: ["" + katangetik2], startDelay: 50, speed: 45, cursor: true,
+    strings: ["" + katangetik2], startDelay: 50, speed: 35, cursor: true,
     afterComplete: function(){
         kalimatc.innerHTML = katangetik2;
         setInterval(berjatuhan,200);
