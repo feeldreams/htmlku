@@ -35,6 +35,7 @@
                 afterComplete: function(){
                   kalimatb.innerHTML = kal4;
                   setTimeout(function(){
+                    fthilang();ftganti=4;setTimeout(ftmuncul,300);
                     new TypeIt("#kalimatc", {
                       strings: ["" + kal5], startDelay: 50, speed: 30, cursor: true,
                       afterComplete: function(){
