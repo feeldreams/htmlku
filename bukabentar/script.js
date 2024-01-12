@@ -4,7 +4,7 @@
   
   function otomatis2() {befanimkata2();setTimeout(animkata2,400);} 
   function befanimkata2(){kalimat.style.opacity="0";kalimatb.style.opacity="0";kalimatc.style.opacity="0";} 
-  function animkata2() {kalimat.innerHTML = kalimat2.innerHTML;kalimatb.innerHTML = kalimatb2.innerHTML;kalimatc.innerHTML="";kalimat.style.opacity="1";kalimatb.style.opacity="1";setTimeout(function(){kalimat.style.opacity="0";},1800);setTimeout(otomatis2b,2000);}
+  function animkata2() {kalimat.innerHTML = kalimat2.innerHTML;kalimatb.innerHTML = kalimatb2.innerHTML;kalimatc.innerHTML="";kalimat.style.opacity="1";kalimatb.style.opacity="1";setTimeout(function(){kalimat.style.opacity="0";},2100);setTimeout(otomatis2b,2300);}
   function otomatis2b(){kalimat.innerHTML = kalimat2b.innerHTML;kalimat.style.opacity="1";kalimatb.innerHTML = "";kalimatc.innerHTML = kalimatc2.innerHTML;kalimatc.style.opacity="1";fthilang();ftganti=2;setTimeout(ftmuncul,300);setTimeout(mulaict,400);}
   
   function otomatis3() {
