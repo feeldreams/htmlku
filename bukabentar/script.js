@@ -13,20 +13,46 @@
     kalimatc.style.opacity="0";
 
     setTimeout(function(){
-        kalimat.innerHTML = kalimat3.innerHTML;
-        kalimatb.innerHTML = kalimatb3.innerHTML;
-        kalimatc.innerHTML = kalimatc3.innerHTML;
+        kalimat.innerHTML = "";
+        kalimatb.innerHTML = "";
+        kalimatc.innerHTML = "";
+
+        var kal3 = kalimat3.innerHTML;
+        var kal4 = kalimatb3.innerHTML;
+        var kal5 = kalimatc3.innerHTML;
             
         kalimat.style.opacity="1";
         kalimatb.style.opacity="1";
         kalimatc.style.opacity="1";
-        setTimeout(function(){
-            kalimatc.style.animation = "jj 1.1s infinite alternate";
-        },300);
-    },400);
+
+        new TypeIt("#kalimat", {
+          strings: ["" + kal3], startDelay: 1, speed: 30, cursor: true,
+          afterComplete: function(){
+            kalimat.innerHTML = kal3;
+            setTimeout(function(){
+              new TypeIt("#kalimatb", {
+                strings: ["" + kal4], startDelay: 50, speed: 30, cursor: true,
+                afterComplete: function(){
+                  kalimatb.innerHTML = kal4;
+                  setTimeout(function(){
+                    new TypeIt("#kalimatc", {
+                      strings: ["" + kal5], startDelay: 50, speed: 30, cursor: true,
+                      afterComplete: function(){
+                        kalimatc.innerHTML = kal5;
+                        setTimeout(function(){
+                            setInterval(berjatuhan,200);  
+                            kalimatc.style.animation = "jj 1.1s infinite alternate";
+                            setTimeout(sbakhir,300);
+                        },200);
+                    },}).go();
+                  },200);
+              },}).go();
+            },200);
+        },}).go();
+    },200);
   } 
   
-  function sbakhir(){Bn.style.display="none";setTimeout(stakhir,500);} function stakhir(){tmbl.innerHTML="💌 Balas";Tombol.style="margin-top:10px;opacity:1;transform: scale(1)";ftom=5;fungsi=0;}
+  function sbakhir(){Bn.style.display="none";tmbl.innerHTML="💌 Balas";Tombol.style="margin-top:10px;opacity:1;transform: scale(1)";ftom=5;fungsi=0;}
   
   async function diterima(){
     pesanTolak.style.display="none";
@@ -69,10 +95,8 @@
     if(timeleft <= 0)
       clearInterval(downloadTimer);
       if(timeleft==0){
-      setInterval(berjatuhan,200);
       fthilang();ftganti=3;
       setTimeout(ftmuncul,300);otomatis3();
-      setTimeout(sbakhir,2000);
       }
     },1000);
   }
