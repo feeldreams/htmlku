@@ -156,7 +156,7 @@ svg.line{fill: none;stroke: #fff;stroke-width: 2;animation: moving .7s linear in
     transform: translateY(3px);
   }
 }
-#tolakteks{transform: scale(0);transition: all .5s ease;position: absolute;}
+#tolakteks{transform: scale(0);transition: all .5s ease}
 </style>
 <body>
 	
@@ -169,7 +169,7 @@ svg.line{fill: none;stroke: #fff;stroke-width: 2;animation: moving .7s linear in
      </div>
    </div>
 
-   <audio src="https://feeldreams.github.io/angelbaby.mp3" id="linkmp3" class="sembunyi"></audio>
+   <audio src="https://feeldreams.github.io/audio/angelbaby.mp3" id="linkmp3" class="sembunyi"></audio>
    
   <section class="first" id="inisection">
        <div class="wp"><img src="https://feeldreams.github.io/pics/awan/2.jpg"/></div>
@@ -181,14 +181,13 @@ svg.line{fill: none;stroke: #fff;stroke-width: 2;animation: moving .7s linear in
        <h1 id="teks1" class="scaleUp itim">Hai Kamuuuu! 😋</h1>
        <h1 id="teks2" class="sembunyi">Pak Kumis Bawa Paku..</h1>
        <p id="teks3" class="scaleIn transition">Aku ada pantun buat kamu..<br><br><span class="text-xl">👉👈</span></p>
-       <!--<p class="slide-up"><i>Scroll ke bawah yaa! 🫶</i></p>
-       -->
+       
        <div id="sentuh" class="menu">
         <a class='tombol' onclick="tes()">
           <svg id="svgheart" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><g transform='translate(2.550170, 3.550158)'><path d='M0.371729633,8.89614246 C-0.701270367,5.54614246 0.553729633,1.38114246 4.07072963,0.249142462 C5.92072963,-0.347857538 8.20372963,0.150142462 9.50072963,1.93914246 C10.7237296,0.0841424625 13.0727296,-0.343857538 14.9207296,0.249142462 C18.4367296,1.38114246 19.6987296,5.54614246 18.6267296,8.89614246 C16.9567296,14.2061425 11.1297296,16.9721425 9.50072963,16.9721425 C7.87272963,16.9721425 2.09772963,14.2681425 0.371729633,8.89614246 Z'></path><path d='M13.23843,4.013842 C14.44543,4.137842 15.20043,5.094842 15.15543,6.435842'></path></g></svg>
         </a>
         <svg class='line' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><g transform='translate(5.000000, 8.500000)'><path d='M14,0 C14,0 9.856,7 7,7 C4.145,7 0,0 0,0' ></path></g></svg>
-        <!--<span>Klik untuk Lanjut!</span>-->
+        
        </div>
   </section>
   
@@ -216,7 +215,7 @@ svg.line{fill: none;stroke: #fff;stroke-width: 2;animation: moving .7s linear in
     
     <h1 id="textsec3first" class="scaleUp itim med">Yeaayy!! 😆🤍</h1>
     <div id="scroll-container" class="blocktext txt transition scale0">
-      <p id="textsec3" class="anm itim text-lg">jiaakhhh<br>wkwkwk<br><br><b class="garismerah">I Love Uuu</b> <b>🫣😍🤍</b></p>
+      <p id="textsec3" class="anm itim text-lg">mulai sekarang kita pacaran,<br>kamu punya aku yaa 🫶<br><br><b class="garismerah">I Love Uuu</b> <b>🫣😍💗</b></p>
     </div>
   </section>
   
@@ -256,9 +255,9 @@ setInterval(function() {var heartArr = document.querySelectorAll(".heart-icon");
     window.scrollBy({top: tinggi,behavior: 'smooth'});
     skrg++;
     scrollContainer.style="transform: scale(1)";
-    setTimeout(function() {third_stiker.style="margin-top:-80px;margin-bottom:0;transform:scale(.8);transition:all .7s ease"}, 200);
+    setTimeout(function() {third_stiker.style="margin-top:-60px;margin-bottom:15px;transform:scale(.9);transition:all .9s ease"}, 500);
     new TypeIt("#textsec3", {
-      strings: ["" + initextsec3], startDelay: 1000, speed: 30, /* deff 55 */ cursor: false,
+      strings: ["" + initextsec3], startDelay: 1000, speed: 35, cursor: false,
       afterComplete: function(){
           textsec3.innerHTML = initextsec3;
           setInterval(berjatuhan,200);
@@ -334,7 +333,6 @@ console.log(tinggi);
 function keatas(){window.scrollTo(0, 0);}
 
 window.addEventListener("load", (event) => {
-//function mulaiyuk(){
     window.scrollTo(0, 0);
     setTimeout(keatas,500);
     
@@ -344,8 +342,7 @@ window.addEventListener("load", (event) => {
     tomlv.style.display = "flex";
     
 })
-//}
-//setTimeout(mulaiyuk,1400);
+
 first_stiker.style="transform: scale(0)";
 sentuh.style="transform: scale(0)";
 function showSentuh(){sentuh.style="transform: scale(1);";}
@@ -377,7 +374,7 @@ document.getElementById("loveIn").onclick = function() {
     if (sudahKlik) {
       audio.play();
       document.querySelector(".overlay").style.display = "none";
-      //initom.style="";
+      
       first_stiker.style="transform: scale(1)";
       setTimeout(function() {teks3.style.transform = "scale(1)";}, 300);
 
@@ -417,12 +414,12 @@ document.getElementById("loveIn").onclick = function() {
     tombolParent.appendChild(tombol);
 
     jumlahKlik++;
-    tolakteks.style="transform:scale(1);position:relative";
+    tolakteks.style="transform:scale(1)";
     if(sudah==false){
       sudah=true;
       second_stiker.style.transform = "scale(0)";
       setTimeout(function() {
-          second_stiker.style.transform = "scale(.8)";
+          second_stiker.style.transform = "scale(.9)";
           inistiker3.src = inistiker4.src;
       }, 300);
     }
