@@ -98,7 +98,7 @@ svg.line{fill: none;stroke: #fff;stroke-width: 2;animation: moving .7s linear in
 .menu span{z-index:1;font-size:12px;margin-top:12px;color:white;text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);}
 .menu{margin-top:25px;transform: scale(0);opacity: 1;}
 
-#Tombol, #Tombol2, #TombolWA{position:relative;opacity:0;margin-left:auto;margin-right:auto;display:flex;align-items:left;list-style:none;transition:all 1s ease;}
+#Tombol, #Tombol2, #TombolWA{position:relative;opacity:0;margin-left:auto;margin-right:auto;display:flex;justify-content:center;align-items:center;list-style:none;transition:all 1s ease;}
 #Tombol a, #Tombol2 a, #TombolWA a{cursor:pointer;display:inline-flex;align-items:center; margin:0;margin:10px;transition:all .2s ease;padding:10px;outline:0;border:1px solid white;border-radius:8px;line-height:15px;background:rgba(0,0,0,.5);color:white;font-size:13px;font-weight:700;white-space:nowrap;overflow:hidden;box-shadow: rgba(255,255,255, 0.15) 0px 7px 29px 0px;z-index:1}
 
 .kolomrange{margin-left:auto;margin-right:auto;width:250px;padding:0;background:none;position:relative;z-index:1;display:none;transition:all 1s ease;align-items:center;}
@@ -156,6 +156,7 @@ svg.line{fill: none;stroke: #fff;stroke-width: 2;animation: moving .7s linear in
     transform: translateY(3px);
   }
 }
+#tolakteks{transform: scale(0);transition: all .5s ease;position: absolute;}
 </style>
 <body>
 	
@@ -168,7 +169,7 @@ svg.line{fill: none;stroke: #fff;stroke-width: 2;animation: moving .7s linear in
      </div>
    </div>
 
-   <audio src="karenabersamamu.mp3" id="linkmp3" class="sembunyi"></audio>
+   <audio src="https://feeldreams.github.io/angelbaby.mp3" id="linkmp3" class="sembunyi"></audio>
    
   <section class="first" id="inisection">
        <div class="wp"><img src="https://feeldreams.github.io/pics/awan/2.jpg"/></div>
@@ -192,16 +193,31 @@ svg.line{fill: none;stroke: #fff;stroke-width: 2;animation: moving .7s linear in
   </section>
   
   <section>
-      <div class="wp"><img src="https://feeldreams.github.io/pics/awan/8.jpg"/></div>
+      <div class="wp"><img src="https://feeldreams.github.io/pics/awan/3.jpg"/></div>
       <div class="stiker" style="margin-top:0;transform:scale(0)" id="second_stiker">
         <img id="inistiker3" src="https://htmlku.com/0/panda/ketawa2.gif"/>
-        <img id="inistiker4" class="sembunyi" src="https://htmlku.com/0/panda/muah.gif"/>
+        <img id="inistiker4" class="sembunyi" src="https://htmlku.com/0/panda/ledekin.gif"/>
       </div>
       
       <h1 id="textsec2first" class="scaleUp itim med">Kamu Manis Mau Ngga<br>Jadi Pacar Aku? 🤭</h1>
-      <div id="scroll-container" class="blocktext txt transition scale0">
-        <p id="textsec2" class="anm itim text-lg">jiaakhhh<br>wkwkwk<br><br><b class="garismerah">I Love Uuu</b> <b>🫣😍🤍</b></p>
+      <p id="tolakteks" class="itim">Harus mau dong! 😝</p>
+      <div id="Tombol">
+        <a id="By" onClick="fungsimau()">Mau</a>
+        <a id="Bn" onClick="btn='Bn';fungsibaru(btn)">Gamau</a>
       </div>
+  </section>
+
+  <section>
+    <div class="wp"><img src="https://feeldreams.github.io/pics/awan/8.jpg"/></div>
+    <div class="stiker" style="margin-top:0;transform:scale(0)" id="third_stiker">
+      <img id="inistiker5" src="https://htmlku.com/0/panda/muah.gif"/>
+      <img id="inistiker6" class="sembunyi" src="https://htmlku.com/0/panda/muah.gif"/>
+    </div>
+    
+    <h1 id="textsec3first" class="scaleUp itim med">Yeaayy!! 😆🤍</h1>
+    <div id="scroll-container" class="blocktext txt transition scale0">
+      <p id="textsec3" class="anm itim text-lg">jiaakhhh<br>wkwkwk<br><br><b class="garismerah">I Love Uuu</b> <b>🫣😍🤍</b></p>
+    </div>
   </section>
   
   <!-- <b class="putih merah">
@@ -225,31 +241,30 @@ setInterval(function() {var heartArr = document.querySelectorAll(".heart-icon");
 /* END Hati Berjatuhan */
 
   initextsec2first = textsec2first.innerHTML;textsec2first.innerHTML="";
-  initextsec2 = textsec2.innerHTML;textsec2.innerHTML="";
   function mulaitextseco(){
-  	scrollContainer.style="transform: scale(1)";
     new TypeIt("#textsec2first", {
       strings: ["" + initextsec2first], startDelay: 50, speed: 30, /* deff 55 */ cursor: true,
       afterComplete: function(){
         textsec2first.innerHTML = initextsec2first;
-        setTimeout(function() {second_stiker.style="margin-top:-80px;margin-bottom:0;transform:scale(.8);transition:all .7s ease";}, 200);
-        /////////////////////////
-        new TypeIt("#textsec2", {
-          strings: ["" + initextsec2], startDelay: 200, speed: 30, /* deff 55 */ cursor: false,
-          afterComplete: function(){
-              textsec2.innerHTML = initextsec2;
-              setInterval(berjatuhan,200);
-              clearInterval(scrollInterval);
-              second_stiker.style.transform = "scale(0)";
-              setTimeout(function() {
-                  second_stiker.style.transform = "scale(.8)";
-                  inistiker3.src = inistiker4.src;
-              }, 300);
-          },
-        }).go();
+        setTimeout(function() {Tombol.style="opacity:1;transform: scale(1);";}, 200);
       },
     }).go();
-  	
+  }
+
+  initextsec3 = textsec3.innerHTML;textsec3.innerHTML="";
+  function fungsimau(){
+    window.scrollBy({top: tinggi,behavior: 'smooth'});
+    skrg++;
+    scrollContainer.style="transform: scale(1)";
+    setTimeout(function() {third_stiker.style="margin-top:-80px;margin-bottom:0;transform:scale(.8);transition:all .7s ease"}, 200);
+    new TypeIt("#textsec3", {
+      strings: ["" + initextsec3], startDelay: 1000, speed: 30, /* deff 55 */ cursor: false,
+      afterComplete: function(){
+          textsec3.innerHTML = initextsec3;
+          setInterval(berjatuhan,200);
+          clearInterval(scrollInterval);
+      },
+    }).go();
   }
    
   fungsi=0;fungsiklik=0;skrg=1;iniaja=0;
@@ -259,7 +274,7 @@ setInterval(function() {var heartArr = document.querySelectorAll(".heart-icon");
           if(fungsi==0){
             window.scrollBy({top: tinggi,behavior: 'smooth'});
             fungsi = 1;skrg++;
-            if(skrg==2){fungsi=0;setTimeout(mulaitextseco,500);setTimeout(function() {second_stiker.style="margin-top:-20px;transform:scale(.9);transition:all .7s ease";}, 500);}
+            if(skrg==2){fungsi=0;setTimeout(mulaitextseco,500);setTimeout(function() {second_stiker.style="margin-top:-60px;transform:scale(.9);transition:all .7s ease";}, 500);}
           }
     }, 100);
   }
@@ -316,7 +331,6 @@ function tentukantinggi(){tinggi = inisection.offsetHeight;}
 setInterval(tentukantinggi,200);
 console.log(tinggi);
 
-fungsiAud=0;function playaud(){if(fungsiAud==0){fungsiAud=1;audio.play();}}
 function keatas(){window.scrollTo(0, 0);}
 
 window.addEventListener("load", (event) => {
@@ -361,7 +375,7 @@ sudahKlik = true;
 document.getElementById('loveIn').innerHTML = '<style>.lovein svg{animation:none;stroke:#ff0000;stroke-width:1.3;fill:none;width:35px;height:35px}</style><label class="lovein"><svg class="line" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g transform="translate(2.550170, 3.550158)"><path d="M0.371729633,8.89614246 C-0.701270367,5.54614246 0.553729633,1.38114246 4.07072963,0.249142462 C5.92072963,-0.347857538 8.20372963,0.150142462 9.50072963,1.93914246 C10.7237296,0.0841424625 13.0727296,-0.343857538 14.9207296,0.249142462 C18.4367296,1.38114246 19.6987296,5.54614246 18.6267296,8.89614246 C16.9567296,14.2061425 11.1297296,16.9721425 9.50072963,16.9721425 C7.87272963,16.9721425 2.09772963,14.2681425 0.371729633,8.89614246 Z"></path><path d="M13.23843,4.013842 C14.44543,4.137842 15.20043,5.094842 15.15543,6.435842"></path></g></svg></label><p id="ket">Sentuh LOVEnya!</p>';
 document.getElementById("loveIn").onclick = function() {
     if (sudahKlik) {
-      playaud();
+      audio.play();
       document.querySelector(".overlay").style.display = "none";
       //initom.style="";
       first_stiker.style="transform: scale(1)";
@@ -371,10 +385,9 @@ document.getElementById("loveIn").onclick = function() {
 
       ScrollReveal({ reset: true });
       ScrollReveal().reveal(".show-once", { reset: false});
-      ScrollReveal().reveal(".txt", {duration: 500,origin: "top",distance: "50px"});
       ScrollReveal().reveal(".title", {delay: 20, duration: 1500,origin: "top",distance: "50px", easing: "cubic-bezier(0.5, 0, 0, 1)", rotate: { x: 20, z: -10 }});
       ScrollReveal().reveal(".fade-in", {delay: 200, duration: 2400,move: 0});
-      ScrollReveal().reveal(".scaleUp", {delay: 100, duration: 1500, scale: .5, move: 0});
+      ScrollReveal().reveal(".scaleUp", {delay: 100, duration: 1200, scale: .5, move: 0});
       ScrollReveal().reveal(".flip", {delay: 200, duration: 2000, rotate: { x: 20, z: 20}});
       ScrollReveal().reveal(".slide-right", {duration: 1000,origin: "left",distance: "300px",easing: "ease-in-out"});
       ScrollReveal().reveal(".slide-up", {duration: 1000, origin: "bottom", distance: "100px", easing: "cubic-bezier(.37,.01,.74,1)", opacity: 0, scale: 0.5});
@@ -387,7 +400,37 @@ document.getElementById("loveIn").onclick = function() {
   const textContainer = document.getElementById("textsec2");
   function autoScroll() {scrollContainer.scrollTop += 10;}
   const scrollInterval = setInterval(autoScroll, 50); 
+  jumlahKlik = 0;sudah=false;
 
+  function fungsibaru(btn) {
+    var tombol = document.getElementById("" + btn);
+    var tombolParent = tombol.parentNode;
+
+    var tombolPosisiX = Math.floor(Math.random() * 50) + 1;
+    var tombolPosisiY = Math.floor(Math.random() * 75) + 1;
+    var rotasiAcak = Math.floor(Math.random() * 360);
+
+    tombol.style.position = "relative";
+    tombol.style.left = tombolPosisiX + "px";
+    tombol.style.top = tombolPosisiY + "px";
+    tombol.style.transform = "rotate(" + rotasiAcak + "deg)";
+    tombolParent.appendChild(tombol);
+
+    jumlahKlik++;
+    tolakteks.style="transform:scale(1);position:relative";
+    if(sudah==false){
+      sudah=true;
+      second_stiker.style.transform = "scale(0)";
+      setTimeout(function() {
+          second_stiker.style.transform = "scale(.8)";
+          inistiker3.src = inistiker4.src;
+      }, 300);
+    }
+
+    if(jumlahKlik == 3){
+        jumlahKlik=0;
+    }
+  }
 </script>
 </body>
 </html>
