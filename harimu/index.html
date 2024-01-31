@@ -103,10 +103,48 @@ blockquote p:not(#kalimat, #teksnim){display:none;}
 .swal2-modal{background: rgba(0,0,0, .6);backdrop-filter: blur(3px);-webkit-backdrop-filter: blur(3px);box-shadow: 0 4px 30px rgba(255,255,255, 0.3);border: 1px solid rgba(255, 255, 255, 0.3);border-radius: 14px;max-width:280px;top:-60px;}
 .swal2-image{background: rgba(255, 255, 255, 0.5);box-shadow: 0 4px 30px rgba(255,255,255, 0.3);backdrop-filter: blur(5px);-webkit-backdrop-filter: blur(5px);border: 1px solid rgba(255, 255, 255, 0.3);border-radius: 50%;padding:10px;}
 .swal2-styled.swal2-confirm, .swal2-styled.swal2-cancel{position: relative;background-color: #4839eb;color: #fff;font-size:14px;border:1px solid #ffffff59;border-radius:14px;z-index: 1;transition: all 0.2s;}
-
+.swal2-timer-progress-bar-container{margin-left: 8px; margin-right: 8px;}
 .fa-heart {opacity:.3;color:white;font-size: 20px;position: absolute;animation:  heartMove linear 1;top: -10vh;z-index: 0;}
 @keyframes heartMove {0%{transform: translateY(-10vh) ;} 100%{transform: translateY(100vh) ;}}
 .sembunyi, #pesanditolak > *, #kado2, #kado3, .kumpulanwp > *{display:none !important}
+
+svg{vertical-align: middle;width: 22px;height: 22px;fill: #fff}
+svg.line{fill: none;stroke-width: 2;animation: moving .7s linear infinite alternate;}
+.blocklove{display: none;flex-direction: column;justify-content: center;align-items: center;}
+.lovein{background:#fff;color:#FF0900;border-radius:50%;width:40px;height:40px;padding:10px;font-size:30px;display:flex;align-items:center;text-align:center;justify-content:center;transition:all .3s ease;}
+.lovein:hover{transform: scale(.9);color:#FF0900;}
+.heart-icon {stroke: #fff;width: 30px;height: 30px;position: fixed;animation:  heartMove linear 1;top: -10vh;z-index: 999;}
+
+@keyframes heartMove {
+  0% {transform: translateY(-10vh);}
+  100% {transform: translateY(100vh);}
+}
+
+.spin{animation: spin 4s linear infinite alternate;}
+@keyframes spin {
+  from {
+    transform: rotate(20deg);
+  }
+  to {
+    transform: rotate(-20deg);
+  }
+}
+@keyframes spin2 {
+  from {
+    transform: rotate(5deg);
+  }
+  to {
+    transform: rotate(-5deg);
+  }
+}
+@keyframes moving {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(3px);
+  }
+}
 </style>
 <body>
 	
@@ -180,8 +218,24 @@ blockquote p:not(#kalimat, #teksnim){display:none;}
    </div>
 
 <script>
-const body = document.querySelector("body"); const iniwp = [];iden = 1; const swals = Swal.mixin({timer: 99999, allowOutsideClick: false, showConfirmButton: true, timerProgressBar: false, imageHeight: 90,}); audio = new Audio('' + linkmp3.src); ftganti=0;fungsi=0;fungsiAwal=0;deffotostiker=fotostiker.src;
-function berjatuhan() {const heart = document.createElement("div"); heart.className = "fas fa-heart"; heart.style.left = (Math.random() * 90)+"vw"; heart.style.animationDuration = (Math.random()*3)+2+"s"; body.appendChild(heart);} setInterval(function name(params) {var heartArr = document.querySelectorAll(".fa-heart"); if (heartArr.length > 100) {heartArr[0].remove()}},100);Content.style = "opacity:1;margin-top:14vh"; 
+const body = document.querySelector("body"); const iniwp = [];iden = 1; const swals = Swal.mixin({timer: 99999, allowOutsideClick: false, showConfirmButton: true, timerProgressBar: false, imageHeight: 90,}); const swalst = Swal.mixin({timer: 2600, allowOutsideClick: false, showConfirmButton: false, timerProgressBar: true, imageHeight: 90,}); audio = new Audio('' + linkmp3.src); ftganti=0;fungsi=0;fungsiAwal=0;deffotostiker=fotostiker.src;
+/* Hati Berjatuhan */
+function berjatuhan() {
+  const heart = document.createElement("div");
+  heart.innerHTML = "<svg class='line spin' style='opacity:.4;' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><g transform='translate(2.550170, 3.550158)'><path d='M0.371729633,8.89614246 C-0.701270367,5.54614246 0.553729633,1.38114246 4.07072963,0.249142462 C5.92072963,-0.347857538 8.20372963,0.150142462 9.50072963,1.93914246 C10.7237296,0.0841424625 13.0727296,-0.343857538 14.9207296,0.249142462 C18.4367296,1.38114246 19.6987296,5.54614246 18.6267296,8.89614246 C16.9567296,14.2061425 11.1297296,16.9721425 9.50072963,16.9721425 C7.87272963,16.9721425 2.09772963,14.2681425 0.371729633,8.89614246 Z'></path><path d='M13.23843,4.013842 C14.44543,4.137842 15.20043,5.094842 15.15543,6.435842'></path></g></svg>";
+  heart.className = "heart-icon";
+  heart.style.left = (Math.random() * 95) + "vw";
+  heart.style.animationDuration = (Math.random() * 3) + 2 + "s";
+  document.body.appendChild(heart);
+}
+
+setInterval(function() {
+  var heartArr = document.querySelectorAll(".heart-icon");
+  if (heartArr.length > 100) {
+    heartArr[0].remove();
+  }
+}, 100);
+Content.style = "opacity:1;margin-top:14vh"; 
 
 const box = document.getElementById('pergeseran');
 const totalSlide = box.children.length;
@@ -255,7 +309,7 @@ function multifungsi(){
   async function inipesan(){nama = "Kamu";window.nama = nama;mulainama();}  
   
   async function mulainama() {
-    setTimeout(pgmuncul,200);
+    setTimeout(pgmuncul,400);
     //ftmuncul();
   }
 
@@ -278,7 +332,7 @@ function multifungsi(){
   	   pergeseran.style="position:relative;";
          //ketgeser.style="position:relative";
          Tombol.style="";
-         setTimeout(aksibalas,600);
+         setTimeout(aksibalas,400);
   }
   
   function kalimatakhir(){
@@ -298,6 +352,7 @@ function multifungsi(){
     ftganti=1;fthilang();
     setInterval(berjatuhan,250);
   }
+
   function jjteksnim(){teksnim.style.animation="rto .8s infinite alternate";}
   
   function ftmuncul(){
@@ -329,7 +384,7 @@ function multifungsi(){
       title: 'Mau Kado Gak Nih? 🤭❤️',
       imageUrl: '' + fotostikerPopup.src, showCancelButton: true, confirmButtonText: '' + tompositif, cancelButtonText: '' + tomnegatif, cancelButtonColor: '#FF0000',});
     if(prtanya){
-       await swals.fire({
+       await swalst.fire({
          title: 'Tapi Boong! 🤣', 
          html: 'Gajadi ngasih kado ah 😜❤️', 
          imageUrl: '' + fotostikerPopupCon.src,
