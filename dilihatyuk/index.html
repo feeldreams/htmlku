@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<meta charset='UTF-8'/><meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5' name='viewport'/><meta content='IE=edge' http-equiv='X-UA-Compatible'/>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!--
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+  -->
+  <script src="https://kit.fontawesome.com/4f3ce16e3e.js" crossorigin="anonymous"></script>
+  
+  <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script><!--<link href="https://feeldreams.github.io/dibacayuk/style.css" rel="stylesheet" type="text/css" />-->
+  <script src="https://unpkg.com/scrollreveal"></script>
+  
+<head>
+<title>Script HTML buat Kamu</title>
+<meta name="description" content="HTML Feeldream Repl Co">
+<!-- 
+  Made with love by Rayys!
+  
+     Blog: feeldream.id
+     Instagram: @rayyarrr
+     TikTok: @feelthisray
+     Email: rayyar73@gmail.com
+     
+  Thanks to all <3
+-->
+</head>
+<style>
+:root {
+--gaya-font: 'Quicksand', sans-serif;
+--gaya-font2: 'Nunito Sans', sans-serif;
+--gaya-font3: 'Caveat', cursive;
+}
+body {overflow:hidden;background:#000;font-family:var(--gaya-font); margin: 0;}
+body::before{content:"\00A9  Rayys | feelthisray";color:white;opacity:.5;font-size:10px;position:fixed;bottom:25px;right:25px;z-index:150}
+@keyframes jj{0%  {transform: scale(1.2);} 50% {transform: scale(1.5);} 100% {transform: scale(1);}}
+@keyframes rto{from {transform:scale(1);} to {transform:scale(1.1);}}
+
+section {position:relative;z-index:99;padding: 0;height: 100vh;display: flex; flex-direction: column;align-items:center;text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);border-top:2px dashed #fff}
+section {background:#000;background-image: var(--bg);background-attachment: fixed;background-position: center;background-repeat: no-repeat;background-size: cover;}
+section.first{border-top:0 dashed #fff}
+section.first > img{opacity:0}
+section:nth-child(even) {color:white}
+section:nth-child(odd) {color:white}
+section > :first-child {margin-top:150px}
+
+.stiker{box-shadow: 0 4px 30px rgba(255,255,255, 0.3);backdrop-filter: blur(5px);-webkit-backdrop-filter: blur(5px);width:90px;height:90px;background: rgba(255, 255, 255, 0.7);border: 1px solid rgba(255, 255, 255, 0.3);border-radius: 10%;padding:10px;margin-bottom:25px}
+section .wp img{position:absolute;top:0;left:0;width:100%;height:100%;padding:0;background:none;border:none}
+section .wp::after{content:"";position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.7);}
+
+h1 {font-size: 2rem;}
+.lingkar{font-weight:400;border-bottom:1px solid #FF0900;}
+h1, h2, h3,h4,h5{margin: 0;text-align: center;margin: 1rem 0;}
+p{font-size:15px;font-family:var(--gaya-font2);line-height:1.5em;text-align:center}
+a {color:white;text-decoration: none;transition: all 0.3s ease-in-out;&:hover, &:focus, &:active {color: #f1e8d9;}}
+#hsatu{transition: all .3s ease}
+#judulakhir{z-index:100;font-size:17px;font-family:var(--gaya-font2);transition:all .5s ease}
+#kalimatakhir{z-index:100;margin-right:50px;margin-left:50px;font-size:14px;font-family:var(--gaya-font2);}
+.tipeA{font-family:var(--gaya-font);}
+
+svg{vertical-align: middle;width: 22px;height: 22px;fill: #fff}
+.menu{position: fixed;bottom: 15vh;width:100%;z-index: 999;display:flex;justify-content:center;align-items:center;transition: all 1s ease}
+.tombol{background-color: rgba(255,255,255,.25);border-radius: 50px;overflow: hidden;display: flex;align-items: center;justify-content: center;width: 45px;height: 45px;-webkit-transition: all .2s ease-out;transition: all .2s ease-out}
+.tombol svg{margin: auto;fill: #fff}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:#000;
+  z-index:100;
+}
+
+.loading-message {
+  font-size: 13px;
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);
+  color:white;
+  text-align: center;
+}
+
+.fa-heart {opacity:.3;color:white;font-size: 20px;position: fixed;animation:  heartMove linear 1;top: -10vh;z-index: 999;}
+@keyframes heartMove {0%{transform: translateY(-10vh) ;} 100%{transform: translateY(100vh) ;}}
+</style>
+<body>
+	
+   <div class="overlay">
+     <div class="loading-message">Hai kamu!<br>Tunggu dulu ya..</div>
+   </div>
+
+   <!-- Ganti Audio di sini -->
+   <audio src="seandainya.mp3" id="linkmp3" class="sembunyi"></audio>
+   
+   <section class="first" onclick="playaud();">
+       <div class="wp"><img src="https://feeldreams.github.io/pics/awan4.jpg"/></div>
+       <img id="first_stiker" class="stiker fade-in" src="https://feeldreams.github.io/peach6.gif"/>
+       <h1 class="title">Hey Kamuu!</h1>
+       <p class="slide-up">Aku ada pesan untukmu,<br>dibaca sampai akhir ya ☺️</p>
+  </section>
+  
+  <section>
+      <div class="wp"><img src="https://feeldreams.github.io/pics/awan3.jpg"/></div>
+      <h2 class="title">Kamu Tau?</h2>
+      <p class="slide-right">Seberapa beruntungnya aku<br>saat bertemu <b class="lingkar">denganmu</b>?<br></p>
+      <p class="flip"><i>Scroll terus ke bawah ya :)</i></p>
+  </section>
+  
+  <section>
+  	<div class="wp"><img src="https://feeldreams.github.io/pics/awan8.jpg"/></div>
+      <img class="stiker fade-in" src="https://feeldreams.github.io/peachhug.gif"/>
+      <h3 class="title slide-right">Aku Beruntung Bngt<br>Bisa Jadi Milikmu ✨</h3>
+      <p class="slide-up"><b class="lingkar">Kamu</b> udah menjadi yang<br>terbaik buat aku, <i>makasii yaa..</i></p>
+  </section>
+  
+  <section>
+  	<div class="wp"><img src="https://feeldreams.github.io/pics/awan1.jpg"/></div>
+      <h4 class="title">Kalo Kamu Tanya Kenapa<br>Aku Cuma Mau Sama Kamu,</h4>
+      <p class="slide-right">Singkat saja, karena aku telah<br>menemukan <b class="lingkar">hal indah</b> saat<br>dekat denganmu..</p>
+  </section>
+  
+  <section id="iniakhir">
+  	<div class="wp" id="wpakhir"><img src="https://feeldreams.github.io/pics/awan6.jpg"/></div>
+      <h1 id="judulakhir"></h1>
+      <p id="kalimatakhir"></p>
+  </section>
+  
+  <div id="initom" class="menu">
+  <a class='tombol' onclick="tes()">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/> </svg>
+  </a>
+  </div>
+
+<script>
+var date = new Date();
+var days = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+var months = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
+var hours = date.getHours();
+var minutes = date.getMinutes();
+
+// Tambahkan awalan nol jika jam atau menit kurang dari 10
+if (hours < 10) {hours = "0" + hours;}
+if (minutes < 10) {minutes = "0" + minutes;}
+
+var day = days[date.getDay()];
+var dateNum = date.getDate();
+var month = months[date.getMonth()];
+var year = date.getFullYear();
+
+console.log(hours + "." + minutes + " WIB - " + day + ", " + dateNum + " " + month + " " + year);
+// Dapatkan elemen yang ingin ditambahkan watermark
+var element = document.querySelector("body");
+
+// Buat elemen baru untuk menampung watermark
+var watermark = document.createElement("div");
+
+// Setel teks watermark dan propertinya
+watermark.textContent = day + ", " + dateNum + " " + month + " " + year;
+watermark.style = "color:white;opacity:.5;font-size:10px;position:fixed;bottom:25px;left:25px;z-index:150";
+
+// Tambahkan elemen watermark ke dalam elemen utama
+element.appendChild(watermark);
+
+//////////////////////////////////////////////////
+
+teksjudulakhir = "Terakhir,<br>Aku Mau Bilang:";
+tekskalimatakhir = "Makasii udah hadir di hidupku,<br>aku tau kamu punya dunia sendiri,<br>dan di situ bukan hanya aku,<br>tapi kamu mau nerima aku<br>apa adanya, <i>makasii yaa..</i><br><br><b><i>i'm very lucky to have u ✨</i></b><br><br><i>`ku harap sekarang, besok,<br>minggu depan, bulan depan,<br>tahun depan, dan seterusnya<br>kita akan selalu bersama..`</i><br><br><b>Stay with Me</b> Terus yaa! ❤️";
+
+const body = document.querySelector("body"); audio = new Audio('' + linkmp3.src); function berjatuhan() {const heart = document.createElement("div"); heart.className = "fas fa-heart"; heart.style.left = (Math.random() * 90)+"vw"; heart.style.animationDuration = (Math.random()*3)+2+"s"; body.appendChild(heart);} setInterval(function name(params) {var heartArr = document.querySelectorAll(".fa-heart"); if (heartArr.length > 100) {heartArr[0].remove()}},100);
+
+fungsi=0;fungsiklik=0;
+
+function aksiakhir() {
+  if(fungsiklik==0){
+    //hsatu.style="opacity:0";
+    //kalimat.style="opacity:0";
+    wpakhir.style="opacity:.75;transition:all 1s ease;";
+    fungsiklik=1;
+    setTimeout(katajudul,300)
+  }
+}
+
+function katajudul(){
+  	new TypeIt("#judulakhir", {
+      strings: ["" + teksjudulakhir], startDelay: 50, speed: 55, cursor: true,
+      afterComplete: function(){
+      	judulakhir.innerHTML = teksjudulakhir;
+          setTimeout(katakata,200);
+      },}).go();
+}
+function katakata(){
+	  new TypeIt("#kalimatakhir", {
+      strings: ["" + tekskalimatakhir], startDelay: 50, speed: 50, cursor: true,
+      afterComplete: function(){
+      	kalimatakhir.innerHTML = tekskalimatakhir;
+          judulakhir.style="opacity:0;transform:scale(0);";
+          setTimeout(teksmuncul,350);
+          setInterval(berjatuhan,200);
+      },}).go();
+}
+function teksmuncul(){
+	judulakhir.innerHTML="I Love You";
+	judulakhir.style="font-family:var(--gaya-font3);font-size:27px";
+	setTimeout(jjteksnim,400);
+}
+function jjteksnim(){judulakhir.style.animation="rto .8s infinite alternate";}
+
+let tinggi = iniakhir.offsetHeight;
+console.log(tinggi);
+
+fungsiAud=0;function playaud(){if(fungsiAud==0){fungsiAud=1;audio.play();}}
+
+function tes(){
+  if(fungsi==0){
+    initom.style.animation="jj .3s";
+    window.scrollBy({top: tinggi,behavior: 'smooth'});
+    fungsi = 1;
+    setTimeout(smn,1000);
+  }
+}
+  function smn(){fungsi=0}
+  initom.style="opacity:0;bottom:0;transition:none";
+  
+  window.addEventListener("load", (event) => {
+    window.scrollTo(0, 0);
+    var overlay = document.querySelector(".overlay");
+    overlay.style.display = "none";
+    initom.style="";
+    first_stiker.style="opacity:1;transition:all 2s ease";
+    ScrollReveal({ reset: true });
+    ScrollReveal().reveal(".show-once", { reset: false});
+    ScrollReveal().reveal(".title", {duration: 2500,origin: "top",distance: "50px", easing: "cubic-bezier(0.5, 0, 0, 1)", rotate: { x: 20, z: -10 }});
+    ScrollReveal().reveal(".fade-in", {delay: 200, duration: 2500,move: 0});
+    ScrollReveal().reveal(".scaleUp", {duration: 2500, scale: 0.85});
+    ScrollReveal().reveal(".flip", {delay: 200, duration: 2000, rotate: { x: 20, z: 20}});
+    ScrollReveal().reveal(".slide-right", {duration: 1000,origin: "left",distance: "300px",easing: "ease-in-out"});
+    ScrollReveal().reveal(".slide-up", {duration: 1500, origin: "bottom", distance: "100px", easing: "cubic-bezier(.37,.01,.74,1)", opacity: 0, scale: 0.5});
+    
+    document.addEventListener('scroll', function(e) {
+        let documentHeight = document.body.scrollHeight;
+        let currentScroll = window.scrollY + window.innerHeight;
+        // When the user is [modifier]px from the bottom, fire the event.
+        let modifier = 200; 
+        if(currentScroll + modifier > documentHeight) {
+            console.log('Sudah sampai bawah!');
+            initom.style="opacity:0;bottom:0";
+            setTimeout(aksiakhir,10);
+        } else {
+            initom.style="";
+        }
+    })
+})
+</script>
+</body>
+</html>
