@@ -49,10 +49,13 @@ body::before{content:"\00A9  Script HTML Bucin";color:white;opacity:0;font-size:
 @keyframes kont{0%  {left:-1px; top:-3px;} 50% {left:1px; top:3px;} 100% {left:-1px; top:-3px;}}
 blockquote{opacity:0;visibility:hidden;transition:all .3s ease;position:relative;margin-top:120px;margin-left:0;margin-right:0;}
 blockquote{text-align:left;width:400px;background:var(--warna-bg);border: 1px solid var(--warna-bingkai);border-radius:var(--bingkai);color:var(--warna-teks);text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);line-height:1.3em;padding:25px;}
-p{color:var(--warna-teks);font-size:15px;font-weight:700;line-height:1.4em;margin:0px;text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);transition:all .3s ease;}
+p{color:var(--warna-teks);font-size:16px;font-weight:700;line-height:1.4em;margin:0px;text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);transition:all .3s ease;}
 #kalimat{font-weight:400}
-#kalimatc{text-align:center;font-family:var(--gaya-font2);font-size:16px;}
-.font2{font-family:var(--gaya-font2);font-size:16px;}
+#kalimatc{text-align:left;font-family:var(--gaya-font2);}
+.font2{font-family:var(--gaya-font2);}
+.merah{color:red}
+.kuning{color:yellow}
+.putih{text-shadow:none;padding-left:8px;padding-right:8px;padding-top:2px;padding-bottom:2px;background-color:white;border-radius:12px}
 .garismerah{border-bottom:2px solid red}
 
 #katajawab{font-weight:400;margin:0;display:none;}
@@ -134,13 +137,12 @@ svg{vertical-align: middle;width: 22px;height: 22px;fill: #fff}
   
   <div class="kumpulanstiker">
          <!-- Stiker untuk Konten -->
-         <img src="https://feeldreams.github.io/g5.gif" id="stiker1"/>
+         <img src="https://feeldreams.github.io/pusn.gif" id="stiker1"/>
          <img src="https://feeldreams.github.io/gigitin.gif" id="stiker2"/>
          <img src="https://feeldreams.github.io/mndkat.gif" id="stiker3"/>
          <img src="https://feeldreams.github.io/cilukba.gif" id="stiker4"/>
-         <img src="https://feeldreams.github.io/" id="stiker5"/>
-         <img src="https://feeldreams.github.io/" id="stiker6"/>
-         <img src="https://feeldreams.github.io/" id="stiker7"/>
+         <img src="https://feeldreams.github.io/mmua.gif" id="stiker5"/>
+         <img src="https://feeldreams.github.io/g5.gif" id="stiker6"/>
   </div>
 
    <div id='Content'>
@@ -229,7 +231,7 @@ setInterval(function () {
 
 function tombol(){Tombol.style="margin-top:15px;opacity:1;transform: scale(1);";ftom=1;} ftom=0; function fakhiran(){document.getElementById("akhiran").style = "display:inline-flex";}
 const swals = Swal.mixin({allowOutsideClick: false, cancelButtonColor: '#FF0040', imageWidth: 90, imageHeight: 100,}); 
-const swalst = Swal.mixin({allowOutsideClick: false, showConfirmButton: false, timer: 2500, timerProgressBar: true, imageWidth: 90, imageHeight: 90,}); const style = document.createElement('style'); var today = new Date();var dd = String(today.getDate()).padStart(2, '0');var mm = String(today.getMonth() + 1).padStart(2, '0');var yyyy = today.getFullYear();const monthNames = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];today = dd + ' ' + monthNames[today.getMonth()] + ' ' + yyyy;
+const swalst = Swal.mixin({timer: 2700, allowOutsideClick: false, showConfirmButton: false, timerProgressBar: true, imageWidth: 90, imageHeight: 90,}); const style = document.createElement('style'); var today = new Date();var dd = String(today.getDate()).padStart(2, '0');var mm = String(today.getMonth() + 1).padStart(2, '0');var yyyy = today.getFullYear();const monthNames = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];today = dd + ' ' + monthNames[today.getMonth()] + ' ' + yyyy;
 function setel(){audio.play();} function setel2(){bgm.play();} function sjawab(){if(ftom==1){Tombol.style="display:none";jawab();}}
 
 var aa=0,katangetik;
@@ -272,13 +274,14 @@ function ngetik2() {
              	await swalst.fire({
                   title: 'Haii kamuu! 😍', 
                   imageUrl: '' + stiker1.src,
+                  timer: 2500,
                   });   	
                  await swalst.fire({
-                  title: 'Saat pertama kali<br>aku kenal kamu..',
+                  title: 'Saat pertama kali<br>aku kenal kamu.. 😶‍🌫️',
                   imageUrl: '' + stiker2.src,
                   });
                  await swalst.fire({
-                  title: 'Aku kira hanya<br>pertemuan singkat..',
+                  title: 'Aku kira hanya<br>pertemuan singkat.. 🫠',
                   imageUrl: '' + stiker3.src,
                   });
                   await swalst.fire({
@@ -286,20 +289,16 @@ function ngetik2() {
                   imageUrl: '' + stiker4.src,
                   });
                   await swalst.fire({
-                  title: 'Saat ini kamu menjadi<br>peran paling penting',
+                  title: 'Saat ini kamu menjadi<br>peran paling penting 🥰',
                   imageUrl: '' + stiker5.src,
                   });
                   await swalst.fire({
-                  title: 'Dan alasan bahagiaku 🫣',
+                  title: 'Dan alasan bahagiaku 😍',
                   imageUrl: '' + stiker6.src,
                   });
-                  await swalst.fire({
-                  title: 'Mau sesulit apapun<br>cobaannya nanti..',
-                  imageUrl: '' + stiker7.src,
-                  });
                   
-                  katangetik = "<i>I will survive and keep fighting for you!</i> 💐<br><br>Apapun keadaannya aku tidak akan pergi 💗";
-                  katangetik2 = "<b class='putihmerah'>i love uu more >></b>";
+                  katangetik = "<b>Terakhir.. 💐</b><br><br>Bukan aku yang kuat, tetapi ada seseorang hebat yang selalu ada bersamaku, yaitu <b class='garismerah'>kamuu</b> 🫣🥰💗";
+                  katangetik2 = "<b class='putih merah'>i love uu more >>></b>";
                   ktbwh2 = "Happy Valentine's Day! 💗";
                   ktbwh3 = "Tetap Sama Aku Terus yaa 🫣";
                   
