@@ -103,7 +103,6 @@ p{color:var(--warna-teks);font-size:15px;font-weight:700;line-height:1.4em;margi
 
 .swal2-modal > *{font-size:16px;font-family:var(--gaya-font2);color:white}
 .swal2-title{line-height:1.3em;font-size:18px;text-align:center;padding:15px 30px 0 30px;}
-.swal2-container.swal2-backdrop-show{background:none;}
 .swal2-timer-progress-bar-container > *{opacity:.7;background:#00B6FF;margin:0 14px}
 .swal2-modal{background: rgba(0,0,0, .6);backdrop-filter: blur(3px);-webkit-backdrop-filter: blur(3px);box-shadow: 0 4px 30px rgba(255,255,255, 0.3);border: 1px solid rgba(255, 255, 255, 1);border-radius: 12px;max-width:325px;top:-60px;}
 .swal2-image{background: rgba(255, 255, 255, 0.5);box-shadow: 0 4px 30px rgba(255,255,255, 0.3);backdrop-filter: blur(5px);-webkit-backdrop-filter: blur(5px);border: 1px solid rgba(255, 255, 255, 0.3);border-radius: 50%;padding:10px;}
@@ -140,6 +139,8 @@ svg{vertical-align: middle;width: 22px;height: 22px;fill: #fff}
          <img src="https://feeldreams.github.io/mndkat.gif" id="stiker3"/>
          <img src="https://feeldreams.github.io/cilukba.gif" id="stiker4"/>
          <img src="https://feeldreams.github.io/" id="stiker5"/>
+         <img src="https://feeldreams.github.io/" id="stiker6"/>
+         <img src="https://feeldreams.github.io/" id="stiker7"/>
   </div>
 
    <div id='Content'>
@@ -238,7 +239,7 @@ function ngetik() {
     afterComplete: function(){
         kalimat.innerHTML = katangetik;
         kalimatc.style="margin-top:20px;margin-bottom:10px";
-      setTimeout(ngetik2,300);
+        setTimeout(ngetik2,300);
     },}).go();
 }
 var ai=0,katangetik2;
@@ -249,7 +250,7 @@ function ngetik2() {
         kalimatc.innerHTML = katangetik2;
         fotoakhir.style.transform="scale(0)";
         setTimeout(function(){fotoakhir.src = fotoakhir2.src;fotoakhir.style.transform="scale(1)";},300);
-        setTimeout(kemunculan,1300);
+        //setTimeout(kemunculan,1300);
         setInterval(berjatuhan,200);
         //setTimeout(tombol,300);
     },}).go();
@@ -273,20 +274,32 @@ function ngetik2() {
                   imageUrl: '' + stiker1.src,
                   });   	
                  await swalst.fire({
-                  title: 'Boleh pinjem waktunya<br>bentar yaa 😋',
+                  title: 'Saat pertama kali<br>aku kenal kamu..',
                   imageUrl: '' + stiker2.src,
                   });
                  await swalst.fire({
-                  title: 'Aku ada pesan<br>buat kamuuu 😍',
+                  title: 'Aku kira hanya<br>pertemuan singkat..',
                   imageUrl: '' + stiker3.src,
                   });
                   await swalst.fire({
-                  title: 'Jadi gini... 🫣',
+                  title: 'Tapi ternyata... 🫣',
                   imageUrl: '' + stiker4.src,
                   });
+                  await swalst.fire({
+                  title: 'Saat ini kamu menjadi<br>peran paling penting',
+                  imageUrl: '' + stiker5.src,
+                  });
+                  await swalst.fire({
+                  title: 'Dan alasan bahagiaku 🫣',
+                  imageUrl: '' + stiker6.src,
+                  });
+                  await swalst.fire({
+                  title: 'Mau sesulit apapun<br>cobaannya nanti..',
+                  imageUrl: '' + stiker7.src,
+                  });
                   
-                  katangetik = "<b class='garismerah font2'>Selamat Hari Kasih Sayang 💐</b><br><br><b>Kamu Tau? 😍<br>Bagiku kamu adalah seseorang yang paling baik yang pernah aku temui selama ini,<br><br>Sehat-sehat terus ya 💗<br>Tetaplah menjadi semangatku, Jangan menjauh, Jangan pergi, dan Jangan berpindah ke lain hati.. 💐</b>";
-                  katangetik2 = "Aku Sayang Kamu Selalu 🥰🫣😍";
+                  katangetik = "<i>I will survive and keep fighting for you!</i> 💐<br><br>Apapun keadaannya aku tidak akan pergi 💗";
+                  katangetik2 = "<b class='putihmerah'>i love uu more >></b>";
                   ktbwh2 = "Happy Valentine's Day! 💗";
                   ktbwh3 = "Tetap Sama Aku Terus yaa 🫣";
                   
