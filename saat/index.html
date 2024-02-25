@@ -205,7 +205,7 @@ var element = document.querySelector("body");var watermark = document.createElem
 
 // Setel teks watermark dan propertinya
 watermark.textContent = day + ", " + dateNum + " " + month + " " + year;
-watermark.style = "color:white;opacity:.5;font-size:10px;position:fixed;bottom:25px;left:25px;z-index:150";
+watermark.style = "color:white;opacity:0;font-size:10px;position:fixed;bottom:25px;left:25px;z-index:150";
 element.appendChild(watermark);
 
 //////////////////////////////////////////////////
@@ -231,7 +231,7 @@ setInterval(function () {
 
 function tombol(){Tombol.style="margin-top:15px;opacity:1;transform: scale(1);";ftom=1;} ftom=0; function fakhiran(){document.getElementById("akhiran").style = "display:inline-flex";}
 const swals = Swal.mixin({allowOutsideClick: false, cancelButtonColor: '#FF0040', imageWidth: 90, imageHeight: 100,}); 
-const swalst = Swal.mixin({timer: 2700, allowOutsideClick: false, showConfirmButton: false, timerProgressBar: true, imageWidth: 90, imageHeight: 90,}); const style = document.createElement('style'); var today = new Date();var dd = String(today.getDate()).padStart(2, '0');var mm = String(today.getMonth() + 1).padStart(2, '0');var yyyy = today.getFullYear();const monthNames = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];today = dd + ' ' + monthNames[today.getMonth()] + ' ' + yyyy;
+const swalst = Swal.mixin({timer: 2600, allowOutsideClick: false, showConfirmButton: false, timerProgressBar: true, imageWidth: 90, imageHeight: 90,}); const style = document.createElement('style'); var today = new Date();var dd = String(today.getDate()).padStart(2, '0');var mm = String(today.getMonth() + 1).padStart(2, '0');var yyyy = today.getFullYear();const monthNames = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];today = dd + ' ' + monthNames[today.getMonth()] + ' ' + yyyy;
 function setel(){audio.play();} function setel2(){bgm.play();} function sjawab(){if(ftom==1){Tombol.style="display:none";jawab();}}
 
 var aa=0,katangetik;
@@ -287,6 +287,7 @@ function ngetik2() {
                   await swalst.fire({
                   title: 'Tapi ternyata... 🫣',
                   imageUrl: '' + stiker4.src,
+                  timer: 2400,
                   });
                   await swalst.fire({
                   title: 'Saat ini kamu menjadi<br>peran paling penting 🥰',
