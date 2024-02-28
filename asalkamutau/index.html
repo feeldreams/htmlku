@@ -38,7 +38,7 @@
    <audio src="https://feeldreams.github.io/asalkamutau/asalkamutau.mp3" id="linkmp3" class="sembunyi"></audio>
    
    <div id="bodyblur">
-     <img src="" id="wallpaper"/>
+     <img src="https://feeldreams.github.io/perasaanku/pj6.jpg" id="wallpaper"/>
    </div>
    
    <div id='Content'>
@@ -54,14 +54,14 @@
      <p id="ket">Sentuh LOVEnya!</p>
 
      <div class="kumpulan">
-     	<img src="https://feeldreams.github.io/perasaanku/pj6.jpg" id="wallpaper1"/>
-     	<img src="https://feeldreams.github.io/perasaanku/pj2.jpg" id="wallpaper2"/>
+     	 <!--<img src="https://feeldreams.github.io/perasaanku/pj6.jpg" id="wallpaper1"/>
+     	 <img src="https://feeldreams.github.io/perasaanku/pj2.jpg" id="wallpaper2"/>
          <img src="https://feeldreams.github.io/perasaanku/pj4.jpg" id="wallpaper3"/>
          <img src="https://feeldreams.github.io/perasaanku/pj5.jpg" id="wallpaper4"/>
          <img src="https://feeldreams.github.io/perasaanku/pj3.jpg" id="wallpaper5"/>
          <img src="https://feeldreams.github.io/perasaanku/pj7.jpg" id="wallpaper6"/>
          <img src="https://feeldreams.github.io/perasaanku/pj1.jpeg" id="wallpaper7"/>
-         <img src="https://feeldreams.github.io/perasaanku/pj9.jpg" id="wallpaper8"/>
+         <img src="https://feeldreams.github.io/perasaanku/pj9.jpg" id="wallpaper8"/>-->
          
          <img src="https://feeldreams.github.io/asalkamutau/heartbroken.png" id="ftoAkhir"/>
      </div>
@@ -84,7 +84,7 @@
 
 <!-- Jangan Edit Bagian Ini --><script>
   const body = document.querySelector("body");const swalst = Swal.mixin({timer: 2500, allowOutsideClick: false, showConfirmButton: false, timerProgressBar: true, imageHeight: 90,}); audio = new Audio('' + linkmp3.src); ftganti=0;fungsi=0;fungsiAwal=0;function berjatuhan() {const heart = document.createElement("div"); heart.className = "fas fa-heart"; heart.style.left = (Math.random() * 90)+"vw"; heart.style.animationDuration = (Math.random()*3)+2+"s"; body.appendChild(heart);} setInterval(function name(params) {var heartArr = document.querySelectorAll(".fa-heart"); if (heartArr.length > 100) {heartArr[0].remove()}},100);Content.style = "opacity:1;margin-top:14vh"; const swals = Swal.mixin({allowOutsideClick: false, cancelButtonColor: '#FF0040', imageHeight: 80,}); 
-  const inip = []; const iniwp = []; iden = 1; iniwp[1] = wallpaper1.src; wallpaper.src = iniwp[1]; iniwp[2] = wallpaper2.src; iniwp[3] = wallpaper3.src; iniwp[4] = wallpaper4.src; iniwp[5] = wallpaper5.src; iniwp[6] = wallpaper6.src; iniwp[7] = wallpaper7.src; iniwp[8] = wallpaper8.src;
+  const inip = []; iden = 1; //const iniwp = []; iniwp[1] = wallpaper1.src; wallpaper.src = iniwp[1]; iniwp[2] = wallpaper2.src; iniwp[3] = wallpaper3.src; iniwp[4] = wallpaper4.src; iniwp[5] = wallpaper5.src; iniwp[6] = wallpaper6.src; iniwp[7] = wallpaper7.src; iniwp[8] = wallpaper8.src;
 
 inip[1] = "haiii,";
 inip[2] = "aku cuma mau bilang";
@@ -164,7 +164,7 @@ document.getElementById("bq").onclick = function() {
   function kalimatakhir(){
   	if(iden>=1){
           if(iden%2==0){wallpaper.style="transform: scale(1)";} else {wallpaper.style="transform: scale(1.5)";}
-          wallpaper.src = iniwp[iden];
+          //wallpaper.src = iniwp[iden];
       }
       kalimat.innerHTML="";
   	new TypeIt("#kalimat", {
