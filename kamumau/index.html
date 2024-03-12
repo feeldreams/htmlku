@@ -32,7 +32,7 @@ blockquote{width:400px;background:var(--warna-bg);color:var(--warna-teks);text-s
 p{color:var(--warna-teks);text-align: center;font-size:15px;font-weight:700;line-height:1.4em;margin:0px;text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);transition:all .3s ease;}
 #kalimat{font-weight:400}
 #kalimatc{text-align:center;}
-.usefont2{font-family:var(--gaya-font2);font-size:17px;}
+.usefont2{font-family:var(--gaya-font2);font-size:18px;}
 .textcenter{text-align: center;}
 .garismerah{border-bottom:2px solid red}
 
@@ -133,14 +133,14 @@ svg{vertical-align: middle;width: 22px;height: 22px;fill: #fff}
    
      <!-- Tombol -->
      <div id="Tombol">
-      <a id="By" onClick="fungsimau()">Yukk</a>
+      <a id="By" onClick="fungsimau()">Mau</a>
       <a id="Bn" onClick="btn='Bn';fungsibaru(btn)">Gamau!</a>
     </div>
 
     <!-- Pesan Ditolak -->
     <div class="sembunyi">
       <img id="stikerditolak" src="https://feeldreams.github.io/weee.gif"/>
-      <span id="kataditolak">Gaboleh Nolak yaa 😝</span>
+      <span id="kataditolak">Harus Mau yaa 😝</span>
     </div>
      
    </div>
@@ -179,7 +179,7 @@ var element = document.querySelector("body");var watermark = document.createElem
 
 // Setel teks watermark dan propertinya
 watermark.textContent = day + ", " + dateNum + " " + month + " " + year;
-watermark.style = "color:white;opacity:.5;font-size:10px;position:fixed;bottom:25px;left:25px;z-index:150";
+watermark.style = "color:white;opacity:0;font-size:10px;position:fixed;bottom:25px;left:25px;z-index:150";
 element.appendChild(watermark);
 
 //////////////////////////////////////////////////
@@ -273,7 +273,7 @@ function ngetik2() {
        
        async function pesan(){
              	await swalst.fire({
-                  title: 'Heyy kamuuu! 😍', 
+                  title: 'Alooo kamuuu! 😍', 
                   imageUrl: '' + stiker1.src,
                   });   	
                  await swalst.fire({
@@ -285,12 +285,12 @@ function ngetik2() {
                   imageUrl: '' + stiker3.src,
                   });
                   await swalst.fire({
-                  title: 'Oh ya, Aku Mau<br>Bilang Sesuatu Nih 🫣',
+                  title: 'Oh ya, Aku Mau Ngajak<br>Kamu Sesuatu Nih 🫣',
                   imageUrl: '' + stiker4.src,
                   });
                   
-                  katangetik = "<b class='usefont2'>Ngabuburit Bareng Yuk! 😆</b>";
-                  katangetik2 = "<i>I Love uuu more 💞💝❣️</i>";
+                  katangetik = "<b class='usefont2'>Kamu Mau Gak<br>Ngabuburit Sama Aku? 😆</b>";
+                  katangetik2 = "<b class='usefont'>Makasii udah mau <br>ngabuburit sama aku 😆🙏<br><br>Ditunggu yaa wkwk 🫣😋😝</b>";
                   ktbwh2 = "Tetap Sama Aku Terus yaa ❤️";
                   ktbwh3 = "Aku Sayang Kamu 💐🤍🫶";
 
