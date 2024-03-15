@@ -55,6 +55,12 @@ blockquote{width:400px;text-align:center;line-height:1.3em;padding:10px 20px;}
 blockquote::before{content: "";position: absolute;border: 1px solid #fff;border-radius:8px;top: -8px;bottom: -8px;left: -8px;right: -8px;}
 blockquote p{font-size:16px;font-weight:700;line-height:1.4em;transition:all .5s ease;}
 
+b.merah{color:red}
+b.kuning{color:yellow}
+b.putih{text-shadow:none;padding-left:8px;padding-right:8px;padding-top:2px;padding-bottom:2px;background-color:white;border-radius:12px}
+b.garismerah{border-bottom:2px solid red}
+b.gariskuning{border-bottom:2px solid yellow}
+
 #waktu{display:none}
 #kado1, #kado2, #kado3{font-size:16px;font-weight:400;}
 #kalimatAkhir{transform:scale(.1);}
@@ -78,7 +84,7 @@ blockquote p{font-size:16px;font-weight:700;line-height:1.4em;transition:all .5s
 #ket, #halo, #pesan{text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);font-size:17px;font-weight:700;color:white}
 #ket{margin-top:25px !important;font-weight:400;}
 #kadoIn img:hover{transform:scale(.9);}
-#pesan{font-family:var(--nunito);position:absolute;font-size:15px;font-weight:700 !important;}
+#pesan{font-family:var(--nunito);position:absolute;font-size:15px;font-weight:700 !important;display:flex;flex-direction:column}
 
 #kolombaru{position:absolute;opacity:0;display:flex;transform:scale(.1);transition:all 1s ease;align-items:center;text-align:center;justify-content:center;}
 #kolombaru > li{margin: 10px;padding: 10px;list-style-type: none;}
@@ -138,11 +144,11 @@ svg{vertical-align: middle;width: 22px;height: 22px;fill: #fff}
 
      <div class="kumpulanstiker">
          <!-- Stiker untuk Konten -->
-         <img src="https://feeldreams.github.io/bunga.gif" id="fotostiker" onClick="aksistiker()"/>
+         <img src="https://feeldreams.github.io/pandapanah.gif" id="fotostiker" onClick="aksistiker()"/>
          <img src="https://feeldreams.github.io/pandaketawa2.gif" id="fotostiker2"/>
-         <img src="https://feeldreams.github.io/pandacoklat.gif" id="fotostiker3"/>
+         <img src="https://feeldreams.github.io/gumush.gif" id="fotostiker3"/>
          <!--<img src="https://feeldreams.github.io/pandakuning.gif" id="fotostiker4"/>-->
-         <img src="https://feeldreams.github.io/pandacium.gif" id="fotostiker5"/>
+         <img src="https://feeldreams.github.io/cilukba.gif" id="fotostiker5"/>
      </div>
      <p id="pesan"></p>
      <p id="halo">Hai, </p>
@@ -153,8 +159,8 @@ svg{vertical-align: middle;width: 22px;height: 22px;fill: #fff}
        <p id="kalimat" class="kal">Gimana Puasa Hari Ini, Masih Semangat, kan? 😂❤️</p>
        <p id="kalimatb" class="kal">Aku Mau Nanya Nih 😆❤️</p>
        <p id="kalimatc" class="kal">Kamu Pilih Warna Apa? 🤭❤️</p>
-       <p id="kalimatd" class="kal">Kalo kamu pilih warna<br><span id="wrna1"></span> berarti mau dong<br>bukber sama aku?😆❤️</p>
-       <p id="kalimate" class="kal">Yeyyy! Pokoknya kamu harus mau bukber sama aku yyy🤣❤️</p>
+       <p id="kalimatd" class="kal">Emm.. kalo kamu pilih warna<br><span id="wrna1"></span> berarti kamu mau dong<br>bukber sama aku? 😆❤️</p>
+       <p id="kalimate" class="kal">Yeyyy! Pokoknya kamu harus mau bukber sama aku yyy 🤣❤️</p>
        <p id="kalimatf" class="kal">Oh ya,<br>Coba klik Stiker di Atas 😆❤️</p>
        
      </blockquote></div>
@@ -285,17 +291,19 @@ function mulaiketik1(){
     },1000);
   }
   
-  vketikpesan="Semangat Puasanya yaa,<br>Jangan bolong kan mau<br>bukber sama aku 🤣❤️";
+  ///////////////
+  
+  vketikpesan="Semangat Puasanya yaa,<br>Jangan mokel duluan kan<br>mau bukber sama aku 😋<br><br><b class='putih merah itim'>Wkwkwk 🤣❤️</b>";
   function mulaiketikakhir(){
   	bq.style="display:none";
-      setInterval(berjatuhan,300);
       halo.innerHTML="";
       pesan.style="position:relative;margin:30px 0 0 0;";
       new TypeIt("#pesan", {
-      strings: ["" + vketikpesan], startDelay: 1, speed: 48, cursor: false,
+      strings: ["" + vketikpesan], startDelay: 1, speed: 40, cursor: false,
       afterComplete: function(){
          pesan.innerHTML = vketikpesan;
          inikuis=50;setTimeout(tombol,400);
+         setInterval(berjatuhan,300);
       },}).go();
   }
   vketikakhir="Hehehe ><";
