@@ -1,0 +1,104 @@
+<html>
+<meta charset='UTF-8' />
+<meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5' name='viewport' />
+<meta content='IE=edge' http-equiv='X-UA-Compatible' />
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+<script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
+<link href="https://htmlku.com/tebak/play/style.css" rel="stylesheet" type="text/css" />
+
+<head>
+  <title>Script HTML Dari Aku Untukmu - feeldream</title>
+</head>
+
+<body>
+
+  <div id="bodyblur">
+    <!-- Wallpaper --><img src="https://i.ibb.co/tX210Hm/59322651d268eae9ebb4359bea4e8dde.jpg" id="wallpaper" />
+  </div>
+
+  <div class="kumpulanstiker">
+    <!-- Stiker untuk Konten Awal -->
+    <img src="https://feeldreams.github.io/pusn2.gif" id="stiker1" />
+    <img src="https://feeldreams.github.io/pandahiya.gif" id="stiker2" />
+    <img src="https://feeldreams.github.io/mikir.gif" id="stiker3" />
+    <img src="https://i.ibb.co/ypSqM83/images-9.jpg" id="stiker4" />
+    <img src="https://feeldreams.github.io/ngumpet.gif" id="stiker5" />
+  </div>
+
+  <div id='Content'>
+
+    <!-- Tombol Surat -->
+    <div id="suratin" onClick="memulai();audio.play();">
+      <img src="https://rayyscoding.github.io/envelope.png" />
+    </div>
+    <p id="ket">Klik Suratnya!</p>
+
+    <div>
+    <!-- Stiker untuk Konten Akhir -->
+      <img src="https://feeldreams.github.io/weee.gif" id="fotoakhir" />
+      <img src="https://feeldreams.github.io/emawh.gif" id="fotoakhir2" />
+    </div>
+
+    <div>
+      <blockquote id='bq'>
+        <p id="kalimat"></p>
+        <p id="kalimatc"></p>
+      </blockquote>
+    </div>
+
+  </div>
+
+  <script src="https://htmlku.com/script.js"></script>
+  <script src="https://htmlku.com/tebak/play/script.js"></script>
+
+  <!-- Ganti Kata², Foto, Lagu di bawah ya
+      1) Upload foto ke https://postimages.org
+          buat dapetin linknya
+      2) Ganti Lagu Upload ke replit.com
+      atau bisa juga ke mailboxdrive.com -->
+
+  <script type="text/javascript">
+    async function pertama() {
+      audio = new Audio('https://audio.jukehost.co.uk/5VfcVfr1D3fIU8m27X85m5HVkPyRIhQr'); showDiv();
+    } pertama();
+
+
+    async function pesan() {
+      await swalst.fire({
+        title: 'Alooo Kamuu! 😋',
+        imageUrl: '' + stiker1.src,
+      });
+
+      await swalst.fire({
+        title: 'Aku ada tebak-tebakan nih 🫣',
+        imageUrl: '' + stiker2.src,
+      });
+
+      await swalst.fire({
+        title: 'Sapi, sapi apa yang<br>ada di pantai? 🤔',
+        imageUrl: '' + stiker3.src,
+      });
+
+      await swalst.fire({
+        title: 'Sapi beneran lah... 😝',
+        imageUrl: '' + stiker4.src,
+        imageWidth: 130,
+        imageHeight: 130,
+        timer: 3200,
+      });
+
+      await swalst.fire({
+        title: 'Ga lucu yahh? 🥹',
+        imageUrl: '' + stiker5.src,
+      });
+
+      katangetik = "<b>Iyalaaa, kan yang lucu di dunia ini<br>cuma <b class='putih merah fontalt'>kamuu</b> mwhehe >< 😝🤏<br><br>Btw, kok kamu cantik manis<br>lucuuu bangett siii, jadi kangen<br>dehh aaaakkk 🫠🥰💐</b>";
+      katangetik2 = "<b class='putih merah fontalt'><i>iloveuuuuu</i> 💐🫣🩷</b>";
+
+      setTimeout(kpemb, 200);
+    }
+  </script>
+</body>
+
+</html>

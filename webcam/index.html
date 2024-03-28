@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deteksi Manusia dengan TensorFlow.js</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- TensorFlow.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.9.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Deteksi Manusia dalam Webcam</h1>
+        <div class="row justify-content-center mt-3">
+            <div class="col-md-6">
+                <video id="webcam" width="100%" height="auto" autoplay></video>
+                <canvas id="canvas" style="position: absolute; left: 0; top: 0;"></canvas>
+                <p class="text-center mt-2">Jumlah Manusia: <span id="count">0</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript untuk deteksi manusia -->
+    <script>
+        async function run() {
+            const video = document.getElementById('webcam');
+            const canvas = document.getElementById('canvas');
+            const countDisplay = document.getElementById('count');
+            const context = canvas.getContext('2d');
+
+            // Load model deteksi COCO-SSD
+            const model = await cocoSsd.load();
+
+            // Mulai webcam
+            if (navigator.mediaDevices.getUserMedia) {
+                navigator.mediaDevices.getUserMedia({ video: true })
+                    .then(function (stream) {
+                        video.srcObject = stream;
+                    })
+                    .catch(function (error) {
+                        console.error('Error accessing the webcam: ', error);
+                    });
+            }
+
+            // Deteksi manusia secara berulang
+            setInterval(async () => {
+                canvas.width = video.videoWidth;
+                canvas.height = video.videoHeight;
+                context.clearRect(0, 0, canvas.width, canvas.height); // Bersihkan kanvas
+                const predictions = await model.detect(video);
+                let humanCount = 0;
+                predictions.forEach(prediction => {
+                    if (prediction.class === 'person') {
+                        // Gambar bounding box berbentuk sesuai proporsi badan manusia
+                        const [x, y, width, height] = prediction.bbox;
+                        const aspectRatio = 0.75; // Proporsi tinggi badan terhadap lebar badan
+                        const bodyWidth = width * 0.7; // Lebar bounding box badan
+                        const bodyHeight = bodyWidth * aspectRatio; // Tinggi bounding box badan
+                        const bodyX = x + (width - bodyWidth) / 2; // Posisi x bounding box badan
+                        const bodyY = y + (height - bodyHeight) / 2; // Posisi y bounding box badan
+                        context.beginPath();
+                        context.rect(bodyX, bodyY, bodyWidth, bodyHeight);
+                        context.lineWidth = 2;
+                        context.strokeStyle = 'red';
+                        context.stroke();
+                        context.fillStyle = 'red';
+                        context.fillText('Manusia', bodyX, bodyY > 10 ? bodyY - 5 : 10);
+                        humanCount++;
+                    }
+                });
+                countDisplay.textContent = humanCount;
+            }, 100); // Setiap 1 detik, lakukan deteksi
+        }
+
+        // Jalankan fungsi run()
+        run();
+    </script>
+</body>
+
+</html>
