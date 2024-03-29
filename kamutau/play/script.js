@@ -85,3 +85,9 @@ function ngetik2() {
   function kemunculan3(){otomatis();kalimatc.innerHTML = katangetik2;setTimeout(kemunculan,2000);}
   
        async function jawab(){await swals.fire('Kirim pesan ke<br>WhatsApp aku, ya!');window.location = "https://api.whatsapp.com/send?phone=&text=" + pesanwhatsapp;}
+
+       katangetik2 = "<i>I Love uuu</i> 🥰🩷";
+                  ktbwh2 = "Tetap Sama Aku Terus yaa ❤️";
+                  ktbwh3 = "Aku Sayang Kamu 💐🤍🫶";
+                  
+                  pesanwhatsapp = "ilvyou too 💞🤍💝❣️";
