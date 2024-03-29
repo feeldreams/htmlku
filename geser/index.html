@@ -284,7 +284,7 @@ document.getElementById('loveIn').innerHTML = '<style>.lovein svg{animation:none
 document.getElementById("loveIn").onclick = async function() {
     if (sudahKlik) {
     audio.play();
-    await swals.fire("Coba coba");
+    
     document.querySelector(".overlay").style.display = "none";
     
     stiker1.classList.add("scale1");
