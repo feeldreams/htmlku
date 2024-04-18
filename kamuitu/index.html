@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>💐 S.id/kamupilih - Script HTML Animasi Teks feeldream</title>
+  <title>💐 S.id/pasticantik - Script HTML buat Kamu Teks feeldream</title>
 <meta name="description" content="@feelthisray - Script HTML by feeldream.id">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
   <link rel="icon" type="image/svg+xml" href="https://feeldreams.github.io/main-icon.png"> 
@@ -140,7 +140,7 @@ b.putih{text-shadow:none;padding-left:8px;padding-right:8px;padding-top:2px;padd
 </head>
 
 <body>
-  <audio src="https://htmlku.com/geser/angelbaby2.mp3" id="linkmp3" class="sembunyi"></audio>
+  <audio src="https://feeldreams.github.io/audio/kamuitu.mp3" id="linkmp3" class="sembunyi"></audio>
 	<div class="overlay">
     <div class="loading-message">Hai kamu!<br>Tunggu dulu ya..</div>
      <div id="loveIn" class="blocklove">
@@ -173,7 +173,7 @@ b.putih{text-shadow:none;padding-left:8px;padding-right:8px;padding-top:2px;padd
         <img id="stiker2b" class="sembunyi" src="https://feeldreams.github.io/emawh.gif"/>
        </div>
        <div id="scroll-container" class="blocktext" style="margin-top:20px">
-        <p id="teks2" class="itim" style="font-size:17px;text-align:left;margin:0 55px 0 40px"><b>Kamu itu cantikkk banget apalagi <br>kalo sering kasih aku pap pasti<br>tambah cantikkk 😝😋💐</b><br><br><b class="putih merah" style="font-size: 16px;">Boleh minta papnya yaa? 🫣</b></p>
+        <p id="teks2" class="itim" style="font-size:17px;text-align:left;margin:0 55px 0 40px"><b>Kamu itu cantikkk banget apalagi <br>kalo sering kasih aku <b class="garismerah">pap</b> pasti<br>tambah cantikkk 😝😋💐</b><br><br><b class="putih merah" style="font-size: 16px;">Boleh minta papnya yaa? 🫣</b></p>
       <!-- Tombol Kirim Pesan -->
      <div id="Tombol">
       <a id="By" onClick="fungsimau()">💌 Boleh</a>
@@ -182,7 +182,9 @@ b.putih{text-shadow:none;padding-left:8px;padding-right:8px;padding-top:2px;padd
     <!-- Pesan Ditolak -->
     <div class="sembunyi">
       <img id="stikerditolak" src="https://feeldreams.github.io/weee.gif"/>
-      <span id="kataditolak">Gaboleh nolak yaa 😝</span>
+      <span id="kataditolak">Gaboleh nolak wlee 😝</span>
+    <!-- Pesan Diterima -->
+    <p id="teksditerima"><b>Yeaayy!! Kirim papnya jangan<br>sekali liat yaa, ditunggu ini <br>mah wkwk 🤣🤭😝</b><br><br><b class="putih merah" style="font-size: 16px;">I Love You More 🫣💐</b></p>
     </div>
     
       </div>
@@ -234,13 +236,7 @@ b.putih{text-shadow:none;padding-left:8px;padding-right:8px;padding-top:2px;padd
       afterComplete: function(){
       	clearInterval(scrollInterval);
       	teks2.innerHTML = varteks;
-      	//setInterval(berjatuhan, 200);
-          stiker2.style = "transform:scale(0);opacity:0;transition:all .8s ease;margin-top:180px";
-          setTimeout(function(){
-          	stiker2a.src = stiker2b.src;
-          	stiker2.style = "transition:all .8s ease;margin-top:180px";
-              Tombol.style="opacity:1;transform: scale(1);";ftom=1;
-          },300);
+          Tombol.style="opacity:1;transform: scale(1);";ftom=1;
       },}).go();
 }
 
@@ -320,7 +316,23 @@ function fungsibaru(btn) {
 }
 
 async function fungsigamau(){await swalst.fire({title: '' + kataditolak.innerHTML, timer: 2000, imageUrl: '' + stikerditolak.src,})}
-function fungsimau(){Tombol.style="opacity:0";kalimat.style = "opacity:0;transition:all .6s ease";setTimeout(function(){kalimat.innerHTML = kataditerima;kalimat.style = "opacity:1;transform:scale(1.2);transition:all .6s ease;margin-bottom:20px;";Tombol.style="display:none";setTimeout(ngetik2,700);},500);}
+function fungsimau(){Tombol.style="opacity:0";teks2.style = "font-size:17px;text-align:left;margin:0 55px 0 40px;opacity:0;transition:all .5s ease";setTimeout(function(){varteksditerima = teksditerima.innerHTML;teks2.style = "font-size:17px;text-align:left;margin:0 55px 0 40px;opacity:1;transform:scale(1);transition:all .6s ease";Tombol.style="display:none";teks2.innerHTML = "";katanimasi2();},300);}
+
+function katanimasi2(){
+	  stiker2.style = "transform:scale(0);opacity:0;transition:all .8s ease;margin-top:180px";
+          setTimeout(function(){
+          	stiker2a.src = stiker2b.src;
+          	stiker2.style = "transition:all .8s ease;margin-top:180px";
+              //Tombol.style="opacity:1;transform: scale(1);";ftom=1;
+          },300);
+	  new TypeIt("#teks2", {
+      strings: ["" + varteksditerima], startDelay: 50, speed: 40, cursor: true,
+      afterComplete: function(){
+      	clearInterval(scrollInterval);
+      	teks2.innerHTML = varteksditerima;
+      	setInterval(berjatuhan, 200);
+      },}).go();
+}
   </script>
 </body>
 </html>
