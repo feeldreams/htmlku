@@ -60,6 +60,7 @@ b.gariskuning{border-bottom:2px solid yellow}
 p{color:white;font-size:16px;line-height:1.5em;text-align:center}
 p.anm{text-align:center;margin-left:55px;margin-right:60px;}
 .scaleIn{transform: scale(0);}
+.text-md{font-size:18px}
 .text-lg{font-size:19px}
 .text-xl{font-size:20px}
 .text-center{text-align:center}
