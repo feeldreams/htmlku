@@ -192,7 +192,7 @@ const body = document.querySelector("body"); initom.style="opacity:0;bottom:0;tr
 initeksnimasi = teksnimasi.innerHTML;teksnimasi.innerHTML="";
 function katateksnimasi(){
   	new TypeIt("#teksnimasi", {
-      strings: ["" + initeksnimasi], startDelay: 50, speed: 40, cursor: true,
+      strings: ["" + initeksnimasi], startDelay: 50, speed: 37, cursor: true,
       afterComplete: function(){
       	teksnimasi.innerHTML = initeksnimasi;
           setTimeout(smn,200);
@@ -252,7 +252,7 @@ function katajudul(){
 }
 function katakata(){
 	  new TypeIt("#kalimatakhir", {
-      strings: ["" + tekskalimatakhir], startDelay: 50, speed: 40, cursor: true,
+      strings: ["" + tekskalimatakhir], startDelay: 50, speed: 37, cursor: true,
       afterComplete: function(){
       	kalimatakhir.innerHTML = tekskalimatakhir;
       },}).go();
