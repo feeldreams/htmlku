@@ -26,10 +26,10 @@
 body{background-color:#000;font-family:var(--gaya-font);padding: 20px 25px;-webkit-user-select: none; -ms-user-select: none; user-select: none;} a{text-decoration:none;}
 body::before{content:"\00A9  Rayys | feelthisray - feeldream.id";color:white;opacity:.12;font-size:11px;position:fixed;bottom:25px;right:25px;z-index:2}
 #bodyblur{opacity:.3;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.3);transition:all 1s ease;} 
-#wallpaper{width:100%;height:100%;transform: scale(2);transition:all 1.3s ease;}
+#wallpaper{animation: jj 10s infinite;width:100%;height:100%;transform: scale(1);transition:all 1.3s ease;}
 #beneranblur{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.3);-webkit-backdrop-filter:blur(0px); backdrop-filter:blur(0px);transition:all 3s ease;}
 
-@keyframes jj{0%  {transform: scale(1.1);} 50% {transform: scale(1.2);} 100% {transform: scale(1.1);}}
+@keyframes jj{0%  {transform: scale(1);} 50% {transform: scale(1.2);} 100% {transform: scale(1);}}
 @keyframes rts{from {transform:scale(.1);} to {transform:scale(1);}}
 @keyframes rto{from {transform:scale(1);} to {transform:scale(1.1);}}
 @keyframes aniopa{0% {transform: scale(1);} 50% {transform: scale(.75);} 100% {transform: scale(1);}}
@@ -117,7 +117,7 @@ svg{vertical-align: middle;width: 22px;height: 22px;fill: #fff}
    <audio src="https://feeldreams.github.io/audio/angelbaby2.mp3" id="linkmp3" class="sembunyi"></audio>
    
    <div id="bodyblur">
-     <!-- Wallpaper --><img src="https://feeldreams.github.io/pics/awan/7.jpg" id="wallpaper"/><div id="beneranblur"></div>
+     <!-- Wallpaper --><img src="https://feeldreams.github.io/pics/awan3.jpg" id="wallpaper"/><div id="beneranblur"></div>
    </div>
    
    <div id='Content'>
@@ -179,13 +179,13 @@ svg{vertical-align: middle;width: 22px;height: 22px;fill: #fff}
 kecepatan = 30;kecepatan2=33;ftganti=0;fungsi=0;ftfungsi=0;fungsiAwal=0;fungsitimer=0;vketikhalo=halo.innerHTML;halo.innerHTML = "";pesanwhatsapp = pesanWA.innerHTML;deffotostiker=fotostiker.src;Content.style = "opacity:1;margin-top:30vh;";wallpaper.style="opacity:1";
   audio = new Audio('' + linkmp3.src);
 
-  document.getElementById("loveIn").onclick = function() {if(fungsiAwal==0){audio.play();fungsiAwal=1;loveIn.style="transition:all .7s ease;opacity:0";wallpaper.style="transform: scale(1.5);";ket.style="opacity:0";kot.style="opacity:0";setTimeout(mulainama,500)}}
+  document.getElementById("loveIn").onclick = function() {if(fungsiAwal==0){audio.play();fungsiAwal=1;loveIn.style="transition:all .7s ease;opacity:0";ket.style="opacity:0";kot.style="opacity:0";setTimeout(mulainama,500)}}
 
   async function mulainama() {
            loveIn.style="display:none";ket.style="display:none";kot.style="display:none";
            Content.style = "opacity:1;margin-top:7vh";
            bodyblur.style="opacity:.6";
-           wallpaper.style="transform: scale(1);";
+           
            fotostiker.style="display:inline-flex;";
            setTimeout(ftmuncul,200);
            setTimeout(bqmuncul,500);
@@ -248,9 +248,9 @@ kecepatan = 30;kecepatan2=33;ftganti=0;fungsi=0;ftfungsi=0;fungsiAwal=0;fungsiti
   
   function bqmuncul(){bq.style = "position:relative;opacity:1;visibility:visible;transform: scale(1);margin-top:15px";setTimeout(mulaiketik1,200);fungsi=1;}
   
-  function bqhilang(){wallpaper.style="transform: scale(2);";bodyblur.style="opacity:.3";bq.style = "position:relative;margin-top:15px;transition:all .7s ease;";kalimat.style="opacity:0;transform:scale(.3);";}
+  function bqhilang(){bodyblur.style="opacity:.3";bq.style = "position:relative;margin-top:15px;transition:all .7s ease;";kalimat.style="opacity:0;transform:scale(.3);";}
   function bqmuncul2(){bq.style = "position:relative;opacity:1;visibility:visible;transform: scale(1);margin-top:0;border:0;background:none;box-shadow:none;padding:10px 27px;text-align:left";kalimat.style="opacity:1;transform:scale(1);font-size:13px;font-weight:300";setTimeout(ketAkhir,500);}
-  function otokal() {kalimat.style="opacity:0;transform:scale(.3);";setTimeout(anikal,250);} 
+  function otokal() {kalimat.style="opacity:0;transform:scale(.3);";setTimeout(anikal,200);} 
   function anikal() {if (opsLcheck !== jumlahP) {setTimeout(otopsL,700);kalimat.style="opacity:1;transform:scale(1);";} else {setInterval(berjatuhan,400);kalimat.style="opacity:1;transform:scale(1.2);";}}
   
   const progressBar = document.getElementById('progress-bar');
@@ -263,7 +263,7 @@ kecepatan = 30;kecepatan2=33;ftganti=0;fungsi=0;ftfungsi=0;fungsiAwal=0;fungsiti
 
         if (currentTime >= totalTime) {
           clearInterval(setInterval(updateProgressBar, 100));
-          setTimeout(myCheck,300);
+          setTimeout(myCheck,100);
           
         }
       }
@@ -315,7 +315,7 @@ kecepatan = 30;kecepatan2=33;ftganti=0;fungsi=0;ftfungsi=0;fungsiAwal=0;fungsiti
     }
     
     ftganti += 1;fthilang();setTimeout(ftmuncul, 300);
-    opsLcheck+=1;wpcheck();
+    opsLcheck+=1;//wpcheck();
     
     if (opsLcheck !== jumlahP) {
     setTimeout(function(){
