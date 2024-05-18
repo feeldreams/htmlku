@@ -27,7 +27,7 @@ body{background-color:#000;font-family:var(--gaya-font);padding: 20px 25px;-webk
 body::before{content:"\00A9  Rayys | feelthisray - feeldream.id";color:white;opacity:.12;font-size:11px;position:fixed;bottom:25px;right:25px;z-index:2}
 #bodyblur{opacity:.3;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.3);transition:all 1s ease;} 
 #wallpaper{animation: jj 10s infinite;width:100%;height:100%;transform: scale(1);transition:all 1.3s ease;}
-#beneranblur{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.3);-webkit-backdrop-filter:blur(0px); backdrop-filter:blur(0px);transition:all 3s ease;}
+#beneranblur{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.3);-webkit-backdrop-filter:blur(3px); backdrop-filter:blur(3px);transition:all 3s ease;}
 
 @keyframes jj{0%  {transform: scale(1);} 50% {transform: scale(1.2);} 100% {transform: scale(1);}}
 @keyframes rts{from {transform:scale(.1);} to {transform:scale(1);}}
@@ -117,7 +117,7 @@ svg{vertical-align: middle;width: 22px;height: 22px;fill: #fff}
    <audio src="https://feeldreams.github.io/audio/melody2.mp3" id="linkmp3" class="sembunyi"></audio>
    
    <div id="bodyblur">
-     <!-- Wallpaper --><img src="https://feeldreams.github.io/pics/awan3.jpg" id="wallpaper"/><div id="beneranblur"></div>
+     <!-- Wallpaper --><img src="https://feeldreams.github.io/pics/awan1.jpg" id="wallpaper"/><div id="beneranblur"></div>
    </div>
    
    <div id='Content'>
@@ -148,7 +148,7 @@ svg{vertical-align: middle;width: 22px;height: 22px;fill: #fff}
        <p id="kalimat1">1. Kamu nikah sama aku 🫣</p>
        <p id="kalimat2">2. Aku nikah sama kamu 😋</p>
        <p id="kalimat3">3. Kita nikah aja! 😆</p>
-       <p id="kalimat4ngetik">Jadi, kamu mau pilih<br>yang mana nih? 🫣💐<br><br><b class="merah putih">Wkwkwk 😋✨</b></p>
+       <p id="kalimat4ngetik">Jadi, kamu mau pilih<br>yang mana nih? 🫣💐<br><br><b class="kuning">Wkwkwk 😆</b></p>
        
        <!-- Tombol Lanjut -->
        <p id="opsL">Klik untuk Lanjut</p>
@@ -172,7 +172,7 @@ svg{vertical-align: middle;width: 22px;height: 22px;fill: #fff}
    </div>
 
 <script>
-kecepatan = 25;kecepatan2=27;ftganti=0;fungsi=0;ftfungsi=0;fungsiAwal=0;fungsitimer=0;vketikhalo=halo.innerHTML;halo.innerHTML = "";pesanwhatsapp = pesanWA.innerHTML;deffotostiker=fotostiker.src;Content.style = "opacity:1;margin-top:30vh;";wallpaper.style="opacity:1";
+kecepatan = 20;kecepatan2=25;ftganti=0;fungsi=0;ftfungsi=0;fungsiAwal=0;fungsitimer=0;vketikhalo=halo.innerHTML;halo.innerHTML = "";pesanwhatsapp = pesanWA.innerHTML;deffotostiker=fotostiker.src;Content.style = "opacity:1;margin-top:30vh;";wallpaper.style="opacity:1";
   audio = new Audio('' + linkmp3.src);
 
   document.getElementById("loveIn").onclick = function() {if(fungsiAwal==0){audio.play();fungsiAwal=1;loveIn.style="transition:all .7s ease;opacity:0";ket.style="opacity:0";kot.style="opacity:0";setTimeout(mulainama,500)}}
