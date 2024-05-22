@@ -1,5 +1,5 @@
-const body = document.querySelector("body");const swalst = Swal.mixin({timer: 2300, allowOutsideClick: false, showConfirmButton: false, timerProgressBar: true, imageHeight: 90,}); audio = new Audio('' + linkmp3.src); ftganti=0;fungsi=0;fungsiAwal=0;deffotostiker=fotostiker.src;
-  Content.style = "opacity:1;margin-top:35vh"; const swals = Swal.mixin({allowOutsideClick: false, cancelButtonColor: '#FF0040', imageHeight: 80,}); 
+const body = document.querySelector("body");audio = new Audio('' + linkmp3.src); ftganti=0;fungsi=0;fungsiAwal=0;deffotostiker=fotostiker.src;
+  Content.style = "opacity:1;margin-top:35vh";
 
   var sudahKlik = true;
   document.getElementById("loveIn").onclick = function() {
