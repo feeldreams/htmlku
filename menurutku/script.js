@@ -42,7 +42,6 @@ const body = document.querySelector("body");audio = new Audio('' + linkmp3.src);
   function kethalo(){new TypeIt("#halo", {strings: ["" + vketikhalo], startDelay: 50, speed: 30, waitUntilVisible: true, afterComplete: function(){halo.innerHTML = vketikhalo;setTimeout(bqmuncul,200);},}).go();}
 
   function tombol(){wallpaper.style="transform: scale(1);";Tombol.style="opacity:1;transform: scale(1);";fungsi=1}
-  document.getElementById("By").onclick = function() {if(fungsi==1){pertanyaan();} if(fungsi==2){menuju();}}
   async function menuju(){await swals.fire('OK!', 'Kirim jawabannya ke WhatsApp aku, ya!', 'success');window.location = "https://api.whatsapp.com/send?phone=&text=" + pesanwhatsapp;}
   
   vketik1=kalimat.innerHTML;kalimat.innerHTML = "";kalimatb.innerHTML = "";
