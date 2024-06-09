@@ -1,4 +1,4 @@
-tekspalingakhir = "Jangan lupa balas pesan<br>ke WhatsApp aku ya! ";
+tekspalingakhir = "Jangan lupa balas pesan<br>ke WhatsApp aku ya!";
   
 pesanwhatsapp = "Aku mau kok jadi pacar kamu ><";
 
