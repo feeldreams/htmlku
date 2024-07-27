@@ -2,12 +2,12 @@
 <html>
 <meta charset='UTF-8'/><meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5' name='viewport'/><meta content='IE=edge' http-equiv='X-UA-Compatible'/>
 <script>
-  window.onload = function() {
+  //window.onload = function() {
     var randomNumber = Math.floor(Math.random() * 10) + 1;
     if (randomNumber > 5) {
-      window.location.href = "https://www.feeldream.id/2024/07/taubedanya.html";
+      //window.location.href = "https://www.feeldream.id/2024/07/taubedanya.html";
     }
-  };
+  //};
 </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -150,6 +150,35 @@ svg{vertical-align: middle;width: 22px;height: 22px;fill: #fff}
        
 .sembunyi, #pesanditolak > *, #kado2, #kado3{display:none !important}
 </style>
+<script>
+    setTimeout(function() {
+        var randomNumber = Math.floor(Math.random() * 10) + 1;
+        if (randomNumber > 5) {
+            Swal.fire({
+                title: 'Ups! Ada pembaruan link',
+                html: '<span style="color:white">Nanti klik <b style="color:yellow" id="timer">Lihat</b> untuk Melihat Scriptnya yaa 🫶</span>',
+                icon: 'info',
+                timer: 2500,
+                allowOutsideClick: false,  // Disable click outside the alert
+                allowEscapeKey: false,     // Disable escape key
+                allowEnterKey: false,      // Disable enter key
+                didOpen: () => {
+                    const content = Swal.getHtmlContainer();
+                    const $ = content.querySelector.bind(content);
+                    Swal.showLoading();
+                    /*const timerInterval = setInterval(() => {
+                        const timer = $('#timer');
+                        timer.textContent = parseInt(timer.textContent) - 1;
+                    }, 1000);*/
+                    setTimeout(() => {
+                        //clearInterval(timerInterval);
+                        window.location.href = "https://www.feeldream.id/2024/07/taubedanya.html";
+                    }, 2500);
+                }
+            });
+        }
+    }, 300);
+</script>
 <body>
 	
    <!-- Ganti Audio di sini -->
