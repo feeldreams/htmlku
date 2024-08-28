@@ -41,7 +41,7 @@
 @keyframes fanim {0% {background-position: 0% 0%;}25% {background-position: 100% 100%;} 50% {background-position: 0% 100%;} 75% {background-position: 50% 50%;} 100% {background-position: 0% 0%;}}
 body{background-color:#000;font-family:var(--gaya-font);padding: 20px 25px;-webkit-user-select: none; -ms-user-select: none; user-select: none;} a{text-decoration:none;}
 body::before{content:"\00A9  Rayys | feeldream.id";color:white;opacity:.3;font-size:10px;position:fixed;bottom:25px;right:25px;z-index:2}
-#bodyblur{animation: jj 0s infinite;opacity:.7;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.3);transition:all 1s ease;} 
+#bodyblur{animation: jj 0s infinite;opacity:.3;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.3);transition:all 1s ease;} 
 #wallpaper{width:100%;height:100%;transform:scale(1.5);transition:all 1.7s ease;}
 #beneranblur{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.3);transition:all 3s ease;}
 
@@ -186,13 +186,13 @@ svg.line{fill:none;stroke:#fff;stroke-width:2;animation:moving .7s linear infini
 	<span>Bukan</span>
 </b></p>
 
-<p><b><img class="sty2" src="gunung.png"/><br>
+<!--<p><b><img class="sty2" src="gunung.png"/><br>
 	<span>Gunung? ⛰️</span>
 </b></p>
 
 <p><b><img src="https://feeldreams.github.io/smprt.gif"/><br>
 	<span>Bukan</span>
-</b></p>
+</b></p>-->
 
 <p><b><img class="sty2" src="camping.png"/><br>
 	<span>Camping? 🏕️</span>
@@ -217,7 +217,7 @@ svg.line{fill:none;stroke:#fff;stroke-width:2;animation:moving .7s linear infini
      <!-- Edit Pesan Akhir di Sini -->
      <div><blockquote id='bq'>
        <p id="teksnim" class="ctr">I Love You 0% ❤️</p>
-       <p id="kalimat">Kamu adalah tempat ternyaman yang pernah aku temuin 💐<br><br>Makasih ya udah mau jadi orang selalu ada untuk aku dan menjadi orang pertama yang selalu aku jadikan tempat pulang. Terima kasih tempat ternyaman ku. 💫</p>
+       <p id="kalimat">Kamu adalah tempat ternyaman yang pernah aku temui 💐<br><br>Makasih ya udah mau jadi orang selalu ada untuk aku dan menjadi orang pertama yang selalu aku jadikan tempat pulang. Terima kasih tempat ternyaman ku. 💫</p>
        <!--<br><br><span class="ft">Wish You All The Best ✨</span>-->
      </blockquote></div>
      
@@ -315,13 +315,13 @@ function multifungsi(){
     hsementara();
     //ftganti++;
     //fthilang();
-    if (thisgeser % 2 !== 0) {
+    /*if (thisgeser % 2 !== 0) {
         // Jika ganjil
         wallpaper.style.transform = "scale(1)";
     } else {
         // Jika genap
         wallpaper.style.transform = "scale(1.5)";
-    }
+    }*/
     if(thisgeser>totalPesan){document.getElementById('dots-container').style="";} else {moveToNextDot()}
     //if(thisgeser==3){balon1.style="position:absolute;top:20px;left:40px;opacity:.8;font-size:25px";balon2.style="position:absolute;bottom:20px;right:35px;opacity:.8;font-size:25px";} else {balon1.style="opacity:0";balon2.style="opacity:0";}
   }
@@ -357,8 +357,8 @@ function multifungsi(){
          Tombol.style="";
          //setTimeout(aksibalas,600);
          poinjwb=1;
-         bodyblur.style="opacity:.2";
-         wallpaper.style="transform:scale(1)";
+         bodyblur.style="opacity:.1";
+         wallpaper.style="transform:scale(1.5)";
          setTimeout(function(){document.getElementById("gift").classList.add("animate");document.getElementById("teksgift").classList.add("textanimate");setTimeout(bqmuncul,2000);},600);
   }
   
@@ -401,7 +401,7 @@ function animateteksnim() {
                 fthilang();
             }
         }, 30);
-    }, 300);
+    }, 500);
 }
 
   ///////
@@ -417,7 +417,8 @@ function animateteksnim() {
   
   function pgmuncul(){wallpaper.style="transform:scale(1)";pergeseran.style="position:relative;opacity:1;transform:scale(1);";document.getElementById('dots-container').style="opacity:1";setTimeout(munculkembali,500)}
   function bqmuncul(){
-    bodyblur.style="opacity:.5";
+    bodyblur.style="opacity:.3";
+    wallpaper.style.transform = "scale(1)";
     if(poinjwb==1){
       katakata = kalimat.innerHTML;kalimat.innerHTML = "";
     }else{
