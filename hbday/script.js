@@ -62,7 +62,7 @@ function multifungsi(){
   function munculkembali(){
     if(thisgeser<=totalPesan){
       //ketgeser.style="position:relative;transform:scale(1);opacity:.7";
-      Tombol.style="opacity:1;transform: scale(1)";
+      //Tombol.style="opacity:1;transform: scale(1)";
       aktigeser=1;
     }
     if(thisgeser==50){tmbl.innerHTML = "💌 Balas";Tombol.style="opacity:1;transform: scale(1)";thisgeser=100;}
