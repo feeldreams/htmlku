@@ -44,7 +44,7 @@ function multifungsi(){
     if(thisgeser>totalPesan){document.getElementById('dots-container').style="";} else {moveToNextDot()}
     //if(thisgeser==3){balon1.style="position:absolute;top:20px;left:40px;opacity:.8;font-size:25px";balon2.style="position:absolute;bottom:20px;right:35px;opacity:.8;font-size:25px";} else {balon1.style="opacity:0";balon2.style="opacity:0";}
   }
-  if(thisgeser==100){Tombol.style="";setTimeout(aksibalas,150);}
+  if(thisgeser==100){setTimeout(aksibalas,150);}
 }
 
   async function inipesan(){nama = "Kamu";window.nama = nama;mulainama();}  
@@ -56,23 +56,19 @@ function multifungsi(){
 
   function hsementara(){
     //ketgeser.style="position:relative;";
-    Tombol.style="";
     thisgeser+=1;aktigeser=0;setTimeout(munculkembali,500)
   }
   function munculkembali(){
     if(thisgeser<=totalPesan){
       //ketgeser.style="position:relative;transform:scale(1);opacity:.7";
-      //Tombol.style="opacity:1;transform: scale(1)";
       aktigeser=1;
     }
-    if(thisgeser==50){tmbl.innerHTML = "💌 Balas";Tombol.style="opacity:1;transform: scale(1)";thisgeser=100;}
     //if(thisgeser==totalPesan){aksiakhir();thisgeser=50}
   }
   
   function aksiakhir(){
   	   pergeseran.style="position:relative;";
          //ketgeser.style="position:relative";
-         Tombol.style="";
          //setTimeout(aksibalas,600);
          poinjwb=1;
          bodyblur.style="opacity:.2";
@@ -86,7 +82,6 @@ function multifungsi(){
       	kalimat.innerHTML = katakata;
           setTimeout(munculteksnim,300);
           //tmbl.innerHTML = "💌 Balas";thisgeser=100;
-          //Tombol.style="opacity:1;transform: scale(1)";
       },}).go();
   }
   function munculteksnim(){
@@ -116,7 +111,7 @@ function multifungsi(){
     }else{
       klganti.innerHTML="Udah ah segitu aja 🤣<br><br>";katakata = kalimat.innerHTML;kalimat.innerHTML = "";
     }
-    Content.style = "opacity:1;margin-top:7vh";fotostiker.style="display:none";pergeseran.style="display:none";Tombol.style="";bq.style = "position:relative;opacity:1;visibility:visible;margin-top:0px;transform: scale(1);";
+    Content.style = "opacity:1;margin-top:7vh";fotostiker.style="display:none";pergeseran.style="display:none";bq.style = "position:relative;opacity:1;visibility:visible;margin-top:0px;transform: scale(1);";
     setTimeout(kalimatakhir,200);ftganti=0;fthilang();
   }
   function bqhilang(){wallpaper.style="transform: scale(2);";bodyblur.style="opacity:.3";bq.style = "position:relative;transition:all .7s ease;";}
