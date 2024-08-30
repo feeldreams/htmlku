@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <meta charset='UTF-8'/>
@@ -40,7 +41,7 @@
 }
 @keyframes fanim {0% {background-position: 0% 0%;}25% {background-position: 100% 100%;} 50% {background-position: 0% 100%;} 75% {background-position: 50% 50%;} 100% {background-position: 0% 0%;}}
 body{background-color:#000;font-family:var(--gaya-font);padding: 20px 25px;-webkit-user-select: none; -ms-user-select: none; user-select: none;} a{text-decoration:none;}
-body::before{content:"\00A9  Rayys | feeldream.id";color:white;opacity:.3;font-size:10px;position:fixed;bottom:25px;right:25px;z-index:2}
+body::before{content:"\00A9  feeldream.id";color:white;opacity:.5;font-size:10px;position:fixed;bottom:25px;right:25px;z-index:2}
 #bodyblur{animation: jj 7s infinite;opacity:.5;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.3);transition:all 1s ease;} 
 #wallpaper{width:100%;height:100%;transform: scale(1);transition:all 1.7s ease;}
 #beneranblur{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.3);transition:all 3s ease;}
@@ -69,6 +70,7 @@ blockquote p:not(#kalimat, #teksnim){display:none;}
 #pergeseran p b img{background:rgba(255,255,255, .5);box-shadow: 0 4px 30px rgba(255,255,255, 0.2);backdrop-filter: blur(5px);-webkit-backdrop-filter: blur(5px);border: 1px solid rgba(255, 255, 255, 1);border-radius: 50%;padding:10px;width:70px;height:70px;margin-bottom:20px;}
 #fotolove{border-radius:50%;transition:all .3s ease;} #fotolove:hover{transform: scale(.8);}
 #pesanAkhir{margin-top:30px;font-family:var(--gaya-font3);font-size:22px !important;font-weight:400;text-align:center;position: absolute;opacity:0;}
+#keterangan{position:relative;bottom:-60px;color:white;font-size:13px;opacity:0;transition:all .7s ease;}
 
 #Tombol{position:relative;opacity:0;margin-top:20px !important;display:flex;align-items:left;list-style:none;transform: scale(.1);transition:all .7s ease;}
 #Tombol a{display:inline-flex;align-items:center; margin:0;margin:12px 0 12px 0;transition:all .2s ease;padding:10px;outline:0;border:1px dashed #fff;border-radius:14px;line-height:15px;background:rgba(0,0,0,.5);color:white;font-size:12px;font-weight:400;white-space:nowrap;overflow:hidden;z-index:1} 
@@ -150,7 +152,7 @@ blockquote p:not(#kalimat, #teksnim){display:none;}
 <body>
 	
    <!-- Ganti Audio di sini -->
-   <audio src="https://feeldreams.github.io/audio/wheniclose.mp3" id="linkmp3" class="sembunyi"></audio>
+   <audio src="https://feeldreams.github.io/audio/foreveryoung.mp3" id="linkmp3" class="sembunyi"></audio>
    
    <div id="bodyblur">
      <!-- Wallpaper / Background --><img src="https://i.ibb.co.com/tK0737V/e6baac8b6b718fd405dc6a8ae1683d8a.jpg" id="wallpaper"/>
@@ -206,6 +208,8 @@ blockquote p:not(#kalimat, #teksnim){display:none;}
      </div></div>
      
      <div class="dots" id="dots-container"></div>
+     
+     <p id="keterangan">Klik untuk Geser!</p>
      
      <!-- Animasi Kado -->
      <img id="gift" src="https://i.ibb.co.com/3C38s5q/gifts.png" alt="Gift">
@@ -293,6 +297,8 @@ function multifungsi(){
     if(thisgeser==totalPesan){aksiakhir()}
     document.getElementById('pergeseran').scrollLeft += 300;
     hsementara();
+    keterangan.style="";
+    //if(thisgeser<=totalPesan){setTimeout(function(){keterangan.style="opacity:.7";},500);}
     //ftganti++;
     //fthilang();
     if(thisgeser>totalPesan){document.getElementById('dots-container').style="";} else {moveToNextDot()}
@@ -362,7 +368,7 @@ function multifungsi(){
   function fthilang(){fotostiker.style="display:inline-flex;opacity:0;transform:scale(0)";if(ftganti<10){setTimeout(ftmuncul,250)}}
   function jjfoto(){fotostiker.style.animation="rto .8s infinite alternate";}
   
-  function pgmuncul(){pergeseran.style="position:relative;opacity:1;transform:scale(1);";document.getElementById('dots-container').style="opacity:1";setTimeout(munculkembali,500)}
+  function pgmuncul(){pergeseran.style="position:relative;opacity:1;transform:scale(1);";keterangan.style="opacity:.7";document.getElementById('dots-container').style="opacity:1";setTimeout(munculkembali,500)}
   function bqmuncul(){
     bodyblur.style="";
     if(poinjwb==1){
