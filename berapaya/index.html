@@ -14,12 +14,6 @@
 
   <!-- Demo styles -->
   <style>
-	/*  --------------------------------------------*/
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
     @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
 	@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
 	@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap');
@@ -136,8 +130,8 @@
     #Tombol a{cursor:pointer;display:inline-flex;align-items:center; margin:0;margin:10px;transition:all .2s ease;padding:10px;outline:0;border:1px solid white;border-radius:12px;line-height:15px;background:rgba(0,0,0,.3);color:white;font-size:13px;font-weight:700;white-space:nowrap;overflow:hidden;box-shadow: rgba(255,255,255, 0.15) 0px 7px 29px 0px;z-index:1}
 
 /* Kalkulator */
-.calculator{display:none;margin-top:50px;box-shadow: 0 4px 30px rgba(255,255,255, 0.3);backdrop-filter: blur(5px);-webkit-backdrop-filter: blur(5px);background: rgba(255, 255, 255, 0.1);border: 1px solid rgba(255, 255, 255, 0.3);border-radius:20px;padding:18px;width:200px;flex-direction:column;justify-content:center;align-items:center;}
-.calculator-screen{width:100%;height:50px;border:none;background-color:rgba(255,255,255,0.1);margin:auto;padding:10px;font-size:25px;color:#fff;text-shadow: 0px 2px 2px rgba(0, 0, 0, .5);border-radius:15px;text-align:right;}
+.calculator{display:none;position:relative;margin-top:50px;box-shadow: 0 4px 30px rgba(255,255,255, 0.3);backdrop-filter: blur(5px);-webkit-backdrop-filter: blur(5px);background: rgba(255, 255, 255, 0.1);border: 1px solid rgba(255, 255, 255, 0.3);border-radius:20px;padding:18px;width:200px;flex-direction:column;justify-content:center;align-items:center;}
+.calculator-screen{width:200px;height:50px;border:none;background-color:rgba(255,255,255,0.1);margin:auto;padding:10px;font-size:23px;color:#fff;text-shadow: 0px 2px 2px rgba(0, 0, 0, .5);border-radius:15px;text-align:right;}
 .calculator-keys{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
 .calculator-keys button{width:44px;height:44px;border:none;border-radius:50%;background-color:rgba(255,182,193,0.6);font-size:16px;color:#fff;transition:background-color 0.3s,transform 0.2s;}
 .calculator-keys button:hover{background-color:rgba(255,182,193,0.8);}
