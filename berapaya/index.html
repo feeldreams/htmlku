@@ -133,7 +133,7 @@
 
 /* Kalkulator */
 .calculator{display:none;position:relative;margin-top:50px;box-shadow: 0 4px 30px rgba(255,255,255, 0.3);backdrop-filter: blur(5px);-webkit-backdrop-filter: blur(5px);background: rgba(255, 255, 255, 0.1);border: 1px solid rgba(255, 255, 255, 0.3);border-radius:20px;padding:18px;width:200px;flex-direction:column;justify-content:center;align-items:center;}
-.calculator-screen{width:100%;height:50px;border:none;background-color:rgba(255,255,255,0.1);margin:auto;padding:10px;font-size:23px;color:#fff;text-shadow: 0px 2px 2px rgba(0, 0, 0, .5);border-radius:15px;text-align:right;}
+.calculator-screen{font-family: 'Itim', cursive;font-weight:700;width:100%;height:50px;border:none;background-color:rgba(255,255,255,0.1);margin:auto;padding:10px;font-size:23px;color:#fff;text-shadow: 0px 2px 2px rgba(0, 0, 0, .5);border-radius:15px;text-align:right;}
 .calculator-keys{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
 .calculator-keys button{width:44px;height:44px;border:none;border-radius:50%;background-color:rgba(255,182,193,0.6);font-size:16px;color:#fff;transition:background-color 0.3s,transform 0.2s;}
 .calculator-keys button:hover{background-color:rgba(255,182,193,0.8);}
@@ -390,11 +390,11 @@ function autoScroll() {
                 	aktif=false;
                 	setTimeout(katanimasi, 50);
                     screen.value = '';
-                    screen.style="padding:0;font-family: 'Itim', cursive;font-weight:700;text-align:center";
+                    screen.style="padding:0;text-align:center";
                 } else if (value === 'C' || value === '( )') {
                     screen.value = '';
                 } else {
-                    screen.value += value;
+                    screen.value += value + ' ';
                 }
 
                 button.classList.add('clicked');
