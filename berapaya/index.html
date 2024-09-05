@@ -81,45 +81,47 @@
     .swiper-pagination{margin-bottom:25vh}
     .swiper-pagination-bullet-active{background-color: #fff !important;opacity:1 !important}
     .swiper-pagination-bullet{background-color:rgba(158, 158, 158, 1) !important;}
-    .swiper-button-next, .swiper-button-prev{display:flex;top:unset;bottom:-10px}
+    .swiper-button-next, .swiper-button-prev{display:flex;opacity:0;top:unset;bottom:-10px}
+    .swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled{opacity:0;}
     
     .sembunyi{display: none !important;}
     .stiker{display:flex;justify-content:center;align-items:center;margin-left:auto;margin-right:auto;margin-bottom:20px;transition:all .75s ease}
     .stiker img{width:90px;height:90px;box-shadow: 0 4px 30px rgba(255,255,255, 0.3);backdrop-filter: blur(5px);-webkit-backdrop-filter: blur(5px);background: rgba(255, 255, 255, 0.7);border: 1px solid rgba(255, 255, 255, 0.3);border-radius: 50%;padding:10px;}
     .stiker img.sty2{background:none;filter: drop-shadow(0 4px 8px rgba(255, 255, 255, 0.2));box-shadow: none;backdrop-filter: none;-webkit-backdrop-filter: none;border: none;border-radius: 0;padding:0;width: auto;height:90px;}
-	b.merah{color:red}
-	b.kuning{color:yellow}
-	b.putih{text-shadow:none;padding-left:8px;padding-right:8px;padding-top:2px;padding-bottom:2px;background-color:white;border-radius:12px}
-	span.garismerah{border-bottom:2px solid red}
-	span.gariskuning{border-bottom:2px solid yellow}
+  	b.merah{color:red}
+  	b.kuning{color:yellow}
+  	b.putih{text-shadow:none;padding-left:8px;padding-right:8px;padding-top:2px;padding-bottom:2px;background-color:white;border-radius:12px}
+  	span.garismerah{border-bottom:2px solid red}
+  	span.gariskuning{border-bottom:2px solid yellow}
     p{color:white;font-size:15px;line-height:1.5em;}
     .scale0{opacity:0;transform: scale(0);transition: all .9s ease;}
     .scale1{opacity:1;transform: scale(1);transition: all .9s ease;}
     svg{vertical-align: middle;width: 22px;height: 22px;fill: #fff}
     .heart-icon {z-index:100;width: 30px;height: 30px;position: fixed;animation:  heartMove linear 1;top: -10vh;}
 
-	@keyframes heartMove {
-	  0% {transform: translateY(-10vh);}
-	  100% {transform: translateY(100vh);}
-	}
-	    svg.line{fill: none;stroke: #fff;stroke-width: 2;animation: moving .7s linear infinite alternate;}
-	    .spin{animation: spin 3s linear infinite alternate;}
-	@keyframes spin {
-	  from {
-	    transform: rotate(20deg);
-	  }
-	  to {
-	    transform: rotate(-20deg);
-	  }
-	}
-	@keyframes moving {
-	  from {
-	    transform: translateY(0);
-	  }
-	  to {
-	    transform: translateY(3px);
-	  }
-	}
+  	@keyframes heartMove {
+  	  0% {transform: translateY(-10vh);}
+  	  100% {transform: translateY(100vh);}
+  	}
+  	    svg.line{fill: none;stroke: #fff;stroke-width: 2;animation: moving .7s linear infinite alternate;}
+  	    .spin{animation: spin 3s linear infinite alternate;}
+  	@keyframes spin {
+  	  from {
+  	    transform: rotate(20deg);
+  	  }
+  	  to {
+  	    transform: rotate(-20deg);
+  	  }
+  	}
+  	@keyframes moving {
+  	  from {
+  	    transform: translateY(0);
+  	  }
+  	  to {
+  	    transform: translateY(3px);
+  	  }
+  	}
+  	
     .overlay {position: fixed;top: 0;left: 0;width: 100%;height: 100%;display: flex;justify-content: center;align-items: center;background:#000;z-index:100;}
     .loading-message {font-size: 13px;text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);color:white;text-align: center;}
     .blocklove{display: none;flex-direction: column;justify-content: center;align-items: center;}
@@ -131,27 +133,27 @@
     #Tombol{position:relative;margin-top:20px;margin-left:auto;margin-right:auto;display:flex;align-items:center;justify-content:center;list-style:none;transition:all 1s ease;}
     #Tombol a{cursor:pointer;display:inline-flex;align-items:center; margin:0;margin:10px;transition:all .2s ease;padding:10px;outline:0;border:1px solid white;border-radius:12px;line-height:15px;background:rgba(0,0,0,.3);color:white;font-size:13px;font-weight:700;white-space:nowrap;overflow:hidden;box-shadow: rgba(255,255,255, 0.15) 0px 7px 29px 0px;z-index:1}
 
-/* Kalkulator */
-.calculator{display:none;position:relative;margin-top:50px;box-shadow: 0 4px 30px rgba(255,255,255, 0.3);backdrop-filter: blur(5px);-webkit-backdrop-filter: blur(5px);background: rgba(255, 255, 255, 0.1);border: 1px solid rgba(255, 255, 255, 0.3);border-radius:20px;padding:18px;width:200px;flex-direction:column;justify-content:center;align-items:center;}
-.calculator-screen{font-family: 'Itim', cursive;font-weight:700;width:100%;height:50px;border:none;background-color:rgba(255,255,255,0.1);margin:auto;padding:0;font-size:23px;color:#fff;text-shadow: 0px 2px 2px rgba(0, 0, 0, .5);border-radius:15px;text-align:center;}
-.calculator-keys{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
-.calculator-keys button{width:44px;height:44px;border:none;border-radius:50%;background-color:rgba(255,182,193,0.6);font-size:16px;color:#fff;transition:background-color 0.3s,transform 0.2s;}
-.calculator-keys button:hover{background-color:rgba(255,182,193,0.8);}
-.calculator-keys button:active{background-color:rgba(255,182,193,1);transform:scale(0.9);}
-.calculator-keys .operator{background-color:rgba(255,105,135,0.8);color:#fff;}
-.calculator-keys .operator:hover{background-color:rgba(255,105,135,1);}
-.calculator-keys .equals{background-color:rgba(255,92,128,0.8);color:#fff;}
-.calculator-keys .equals:hover{background-color:rgba(255,92,128,1);}
-
-.calculator-keys {
-	margin-top:20px;
-    transition: opacity 0.5s ease;
-}
-
-.calculator-keys.hide {
-    opacity: 0;
-    pointer-events: none; /* Optional, agar elemen tidak bisa diakses */
-}
+    /* Kalkulator */
+    .calculator{display:none;position:relative;margin-top:50px;box-shadow: 0 4px 30px rgba(255,255,255, 0.3);backdrop-filter: blur(5px);-webkit-backdrop-filter: blur(5px);background: rgba(255, 255, 255, 0.1);border: 1px solid rgba(255, 255, 255, 0.3);border-radius:20px;padding:18px;width:200px;flex-direction:column;justify-content:center;align-items:center;}
+    .calculator-screen{font-family: 'Itim', cursive;font-weight:700;width:100%;height:50px;border:none;background-color:rgba(255,255,255,0.1);margin:auto;padding:0;font-size:23px;color:#fff;text-shadow: 0px 2px 2px rgba(0, 0, 0, .5);border-radius:15px;text-align:center;}
+    .calculator-keys{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+    .calculator-keys button{width:44px;height:44px;border:none;border-radius:50%;background-color:rgba(255,182,193,0.6);font-size:16px;color:#fff;transition:background-color 0.3s,transform 0.2s;}
+    .calculator-keys button:hover{background-color:rgba(255,182,193,0.8);}
+    .calculator-keys button:active{background-color:rgba(255,182,193,1);transform:scale(0.9);}
+    .calculator-keys .operator{background-color:rgba(255,105,135,0.8);color:#fff;}
+    .calculator-keys .operator:hover{background-color:rgba(255,105,135,1);}
+    .calculator-keys .equals{background-color:rgba(255,92,128,0.8);color:#fff;}
+    .calculator-keys .equals:hover{background-color:rgba(255,92,128,1);}
+    
+    .calculator-keys {
+    	margin-top:20px;
+        transition: opacity 0.5s ease;
+    }
+    
+    .calculator-keys.hide {
+        opacity: 0;
+        pointer-events: none; /* Optional, agar elemen tidak bisa diakses */
+    }
 </style>
 </head>
 
