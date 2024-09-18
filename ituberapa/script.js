@@ -54,7 +54,7 @@ function kethalo(){new TypeIt("#halo", {strings: ["" + teksWelcome], startDelay:
 
 function tombol(){Tombol.style="opacity:1;transform: scale(1);";}
 document.getElementById("By").onclick = function() {if(fungsi==1){pertanyaan();} if(fungsi==2){menujuWA();}}
-async function menujuWA(){await swals.fire('OK!', 'Kirim jawabannya ke WhatsApp aku, ya!', 'success');window.location = "https://api.whatsapp.com/send?phone=&text=" + pesanwhatsapp;}
+async function menujuWA(){await swals.fire('OK!', 'Kirim jawabannya ke WhatsApp aku, ya!', 'success');window.location = "https://api.whatsapp.com/send?phone=&text=Nih papnya!" + pesanwhatsapp;}
 
 vketik1=kalimat.innerHTML;kalimat.innerHTML = "";kalimatb.innerHTML = "";
 function mulaiketik1(){
