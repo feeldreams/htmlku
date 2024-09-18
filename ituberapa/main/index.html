@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<meta charset='UTF-8' />
+<meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5' name='viewport' />
+<meta content='IE=edge' http-equiv='X-UA-Compatible' />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Antique:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+<script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
+<script src="https://kit.fontawesome.com/4f3ce16e3e.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://htmlku.com/ituberapa/style.css">
+
+<head>
+    <title>S.id/ituberapa - Script HTML buat Kamu</title>
+    <meta name="description" content="Feeldream Coding">
+    
+<!-- 
+  Made with love by feeldream!
+  
+     Blog: https://feeldream.id
+     
+  Thanks to all <3
+-->
+</head>
+
+<body>
+
+    <!-- Ganti Audio di sini -->
+    <audio src="https://feeldreams.github.io/maimuna.mp3" id="linkmp3" class="sembunyi"></audio>
+
+    <div id="bodyblur">
+        <!-- Wallpaper --><img
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgFOHG1W8xm1yNeGu1XzErvfOTXoB1_fhZl1zMYs6Ooe6MzpTWuyh1hb1W5541ItITyoASGiPYKjNdRG08LRiQrOWTECAK5Py5vKfhTK4A8GIVDbm04jMgNRdAQBdUP8iylcxDkeXltoSCWtiux0WN-cvy2ybL9PcOYHd2xL6u2RVcAzuq84okuLNi2pP3M/s160/e6baac8b6b718fd405dc6a8ae1683d8a.webp"
+            id="wallpaper" />
+        <div id="beneranblur"></div>
+    </div>
+
+    <div id='Content'>
+
+        <div id="loveIn">
+            <!-- Tombol LOVE --><a href="#" class="lovein">&#10084;</a>
+        </div>
+        <p id="ket">Sentuh LOVEnya!</p>
+
+        <div class="kumpulanstiker">
+            <!-- Stiker untuk Konten -->
+            <img src="https://feeldreams.github.io/pandapanah.gif" id="fotostiker" />
+            <img src="https://feeldreams.github.io/pusn.gif" id="fotostiker1" />
+            <img src="https://feeldreams.github.io/mikir.gif" id="fotostiker2" />
+            <img src="https://feeldreams.github.io/weee.gif" id="fotostiker3" />
+            <img src="https://feeldreams.github.io/mmm.gif" id="fotostiker4" />
+            <img src="https://feeldreams.github.io/emawh.gif" id="fotostiker5" />
+        </div>
+
+        <p id="halo" class="halo"></p>
+
+        <div>
+            <blockquote id='bq' data-text=''>
+
+                <p id="kalimat"><span style="font-size:15px">Aku Punya Pesan<br>Nih buat Kamu 🫢❤️</span></p>
+                <p id="kalimatb"></p>
+
+                <!-- Pesan -->
+                <p id="pesan1"><b style="font-size:16px">Klik 4 LOVE ini! 😆💗</b></p>
+                <div id="kolombaru">
+                    <li id="lv1">💗</li>
+                    <li id="lv2">💗</li>
+                    <li id="lv3">💗</li>
+                    <li id="lv4">💗</li>
+                </div>
+
+                <p id="pesan2"></p>
+                <p id="pesan3"></p>
+                <p id="pesan4" class="sty2b"><b>Eh.. Aku Mau Nanya Nih 🫣</b></p>
+                <p id="pesan5" class="sty2b"><b><span style='color:yellow'>2 + 5</span> itu Berapa Sih? 🫢</b></p>
+                <p id="pesan6" class="sty2b left"><b><span style='color:#FF6A6A'>Salah!!</span><br>Bukan itu jawabannya 😝</b></p>
+                <p id="pesan7" class="sty2b left"><b><span style='color:yellow'>2 + 5</span>... Kita Selalu Bersama 🫣</b></p>
+                <p id="pesan8" class="sty2b left"><b><i>Hehehe</i> 😆</b><br><br>Btw, memori hp aku masih banyak nih. Butuh pap yang banyak dari kamu hhee 👉👈</p>
+            </blockquote>
+        </div>
+
+        <!-- Tombol Kirim Pesan -->
+        <div id="Tombol"><a id="By">&#128140; Jawab</a></div>
+
+    </div>
+
+    <script>
+        // Variable Pertanyaan Akhir
+        var tanya = 'Ayo jawab 😆';
+        var opstanya = '';
+        var tombolOke = 'Oke';
+
+        async function pertanyaan() {
+            var { value: jawaban } = await swals.fire({
+                title: tanya,
+                //text: '' + opstanya,
+                imageUrl: '' + fotostiker5.src,
+                input: 'text',
+                inputPlaceholder: 'Tulis jawaban di sini...',
+                confirmButtonText: '' + tombolOke
+            });
+
+            if (jawaban) {
+                fungsi = 0;
+                Tombol.style = "opacity:0;transform: scale(0);";
+                setTimeout(aktipesan6, 300);
+                //pesanwhatsapp = "Jawaban kamu: " + jawaban;
+                //menujuWA();
+            } else {
+                await swalst.fire({
+                    title: 'Jawaban tidak boleh kosong!',
+                    timer: 2000,
+                    imageUrl: '' + stikerditolak.src,
+                });
+            }
+        }
+    </script>
+    <script src="https://htmlku.com/ituberapa/script.js"></script>
+</body>
+
+</html>
