@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>Bedanya Tisu... - Script HTML buat Kamu</title>
+  <title>Ikan Apa... - Script HTML buat Kamu</title>
 <meta name="description" content="@feelthisray - Script HTML by Feeldream Repl Co">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
   <link rel="icon" type="image/svg+xml" href="https://feeldreams.github.io/main-icon.png"> 
@@ -175,7 +175,7 @@
 
             <div class="swiper-slide">
                 <div id="stiker1" class="scale0 stiker">
-                    <img src="https://feeldreams.github.io/cilukba.gif" />
+                    <img src="https://feeldreams.github.io/pusn.gif" />
                 </div>
                 <h1 id="teks1" class="scale0 quicksand" style="font-size: 20px;">Alooo Kamuuu 🫢<br><br> >>>>
                 </h1>
@@ -183,22 +183,22 @@
 
             <div class="swiper-slide">
                 <div id="stiker2" class="scale0 stiker">
-                    <img src="https://feeldreams.github.io/pusn.gif" />
+                    <img src="https://feeldreams.github.io/mikir.gif" />
                 </div>
                 <h1 id="teks2" class="scale0 quicksand" style="font-size: 19px;">ikannnn, ikann apaa<br>yangg cantikk? 😋<br><br> >>>></h1>
             </div>
 
             <div class="swiper-slide">
                 <div id="stiker3" class="scale0 stiker" style="margin-top:-15px">
-                    <img id="stikerAkhir1" src="https://feeldreams.github.io/smprt.gif" />
-                    <img id="stikerAkhir2" class="sembunyi" src="https://feeldreams.github.io/cilukba.gif" />
+                    <img id="stikerAkhir1" src="https://feeldreams.github.io/cilukba.gif" />
+                    <img id="stikerAkhir2" class="sembunyi" src="https://feeldreams.github.io/smprt.gif" />
                     <img id="stikerAkhir3" class="sembunyi" src="https://feeldreams.github.io/gumush.gif" />
                 </div>
                 <style>.containerAkhir{display:flex;font-size: 18px;width:100%;height:80px;justify-content:center;text-align:center}</style>
                 <div class="containerAkhir">
                     <h1 id="teks3" class="scale0 quicksand" style="font-size: 17px;font-weight:400">iii kannnn yangggg cantikkkk ituuu<br>cumannnn kamuuuu sayangkuuuu,<br>cintakuuu, maniskuuu, cantikuuu,<br>myy princessss, muahhhhhhhhh~ 🥰💐</b></h1>
                     <h1 id="teksJawaban" class="sembunyi"><span style="font-size:17px;line-height:1.5em">Oh iyaa, kamu itu sama<br>kaya warung uncle muthu,<br><br><b style="font-size: 19px">Tau kenapa? 🫣</b></span></h1>
-                    <h1 id="teksTambahan" class="sembunyi"><span style="font-size:17px;line-height:1.5em">Karna... cantik ada, lucu ada,<br>imut ada, manis ada, baik<br>ada dan semuanya ada~ 😆<br><br><br><span id="teksLove" style="font-size:20px;font-weight:700">I miss youu 1% </span></span></h1>
+                    <h1 id="teksTambahan" class="sembunyi"><span style="font-size:17px;line-height:1.5em">Karna... cantik ada, lucu ada,<br>imut ada, manis ada, baik<br>ada dan semuanya ada~ 😆<br><br><span id="teksLove" style="font-size:18px;font-weight:700">I LOVV UU 1% 💖</span></span></h1>
                 </div>
             </div>
 
@@ -290,18 +290,18 @@
 /* Teks Animasi Akhir */
 function animateteksnim() {
 	//const teksnim = document.getElementById('teksnim');
-    const loveEmojis = ['', '', '', '', ''];
+    const loveEmojis = ['🩵', '💖', '💚', '🧡', '💜'];
     let percent = 1;
     setTimeout(function() {
         const intervalId = setInterval(() => {
             if (percent < 100) {
                 percent++;
                 const randomEmoji = loveEmojis[Math.floor(Math.random() * loveEmojis.length)];
-                teksLove.innerHTML = `I miss youu ${percent}% ${randomEmoji}`;
+                teksLove.innerHTML = `<b>I LOVV UU ${percent}% ${randomEmoji}</b>`;
             } else {
                 clearInterval(intervalId);
                 const randomEmoji = loveEmojis[Math.floor(Math.random() * loveEmojis.length)];
-                teksLove.innerHTML = `I miss youu <span style='color:yellow'>${percent}%</span> ${randomEmoji}`;
+                teksLove.innerHTML = `<b>I LOVV UU <span style='color:yellow'>${percent}%</span> ${randomEmoji}</b>`;
                 teksLove.style="font-size:22px;transition:all .8s ease";
                 //setInterval(berjatuhan, 250);
                  
@@ -309,7 +309,7 @@ function animateteksnim() {
                 
                 //////
                 
-             setTimeout(function(){
+             /*setTimeout(function(){
                teksScale.classList.remove("scale1");
                teksScale.classList.add("scale0");
                stiker3.classList.remove("scale1");
@@ -324,7 +324,7 @@ function animateteksnim() {
                      stiker3.classList.remove("scale0");
                      stiker3.classList.add("scale1");
                },550);
-           },1500);
+           },1500);*/
             }
         }, 20); // Speed 0-100%
     }, 10); // Delay
@@ -368,7 +368,7 @@ initeks3 = teksTambahan.innerHTML;
       strings: ["" + initeks3], startDelay: 10, speed: 27, cursor: true,
       afterComplete: function(){
       	teks3.innerHTML = initeks3;
-          
+          animateteksnim();
           setInterval(berjatuhan, 200);
       },}).go();
 }
