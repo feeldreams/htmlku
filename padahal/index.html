@@ -3,13 +3,13 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>Ikan Apa... - Script HTML buat Kamu</title>
+  <title>Padahal... - Script HTML buat Kamu</title>
   <meta name="description" content="@feelthisray - Script HTML by Feeldream Repl Co">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
 
   <link rel="icon" type="image/svg+xml" href="https://feeldreams.github.io/main-icon.png"> 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="style.css"><script src="https://unpkg.com/scrollreveal"></script>
+  <link rel="stylesheet" href="style.css"><script src="https://unpkg.com/scrollreveal"></script><script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
   <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
 
   <!-- Demo styles -->
@@ -33,7 +33,7 @@
     body {background: #000;font-family: 'Itim', cursive;font-size: 14px;color: #fff;text-shadow: 0px 2px 2px rgba(0, 0, 0, .5);margin: 0;padding: 0;}
     
     #bodyblur{opacity:.5;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.3);transition:all 1s ease;} 
-    #thisblur{backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);}
+    #thisblur{backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);position:absolute;top:0;left:0;right:0;bottom:0;}
     #wallpaper{/*animation: jj 7s infinite;*/width:100%;height:100%;transform: scale(1.3);transition:all 1.3s ease;}
     #wallpaper2, #wallpaper3, #wallpaper4{display:none}
     @keyframes jj{0%  {transform: scale(1);} 50% {transform: scale(1.3);} 100% {transform: scale(1);}}
@@ -101,6 +101,12 @@
     #Tombol a{cursor:pointer;display:inline-flex;align-items:center; margin:0;margin:10px;transition:all .2s ease;padding:10px;outline:0;border:1px solid white;border-radius:12px;line-height:15px;background:rgba(0,0,0,.3);color:white;font-size:13px;font-weight:700;white-space:nowrap;overflow:hidden;box-shadow: rgba(255,255,255, 0.15) 0px 7px 29px 0px;z-index:1}
     #Tombol, #Tombol2, #TombolWA{position:relative;opacity:0;margin-left:auto;margin-right:auto;display:flex;justify-content:center;align-items:center;list-style:none;transition:all 1s ease;}
     #Tombol a, #Tombol2 a, #TombolWA a{cursor:pointer;display:inline-flex;align-items:center; margin:0;margin:10px;transition:all .2s ease;padding:10px;outline:0;border:1px solid white;border-radius:8px;line-height:15px;background:rgba(0,0,0,.5);color:white;font-size:13px;font-weight:700;white-space:nowrap;overflow:hidden;box-shadow: rgba(255,255,255, 0.15) 0px 7px 29px 0px;z-index:1}
+    
+    .swal2-modal > *{color:white}
+    .swal2-title{line-height:1.3em;font-size:18px;text-align:center;padding:15px 30px 0 30px;}
+    .swal2-container.swal2-backdrop-show{background: rgba(0,0,0,.5);}
+    .swal2-timer-progress-bar-container > *{opacity:.7;background:#00B6FF;margin:0 2px}
+    .swal2-modal{box-shadow: rgba(255,255,255, 0.3) 0px 7px 29px 0px;background:rgba(0,0,0,.9);max-width:320px;border-right:2px solid #fff;border-left:2px solid #fff;border-radius:4px;top:-50px;}
 </style>
 </head>
 
@@ -114,12 +120,6 @@
      </div>
    </div>
    
-   <style>
-    #bodyblur{opacity:.5;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.3);transition:all 1s ease;} 
-    #thisblur{backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);position:absolute;top:0;left:0;right:0;bottom:0;}
-    #wallpaper{/*animation: jj 7s infinite;*/width:100%;height:100%;transform: scale(1.3);transition:all 1.3s ease;}
-    #wallpaper2, #wallpaper3, #wallpaper4{display:none}
-   </style>
    <div id="bodyblur">
      <img src="https://feeldreams.github.io/pics/awan/9.jpg" id="wallpaper"/>
      <div id="thisblur"></div>
@@ -149,12 +149,12 @@
                     <img src="https://feeldreams.github.io/hearthappy.gif" />
                 </div>
                 <h1 id="teks3" class="scale0 quicksand" style="font-size: 19px;">Kamu kangen aku ga? 🫢</h1>
-                <!-- <style>#tolakteks{margin:10px auto;font-size: 16px;transform: scale(0);transition: all .5s ease}</style>
-                <p id="tolakteks" class="quicksand">Harus kangen dong! 😝</p> -->
                 <div id="Tombol" style="opacity:0;transform: scale(0)">
-                    <a id="By" onClick="swiper.slideNext();">Kangen</a>
+                    <a id="By" onClick="fungsiTerima()">Kangen</a>
                     <a id="Bn" onClick="btn='Bn';fungsibaru(btn)">Engga</a>
                 </div>
+                <img id="stikerTerima" class="sembunyi" src="https://feeldreams.github.io/gumush.gif"/>
+                <p id="teksTerima" class="sembunyi">Yeeaayy! Maaci udah kangen balik 😋🫶</p>
             </div>
 
             <div class="swiper-slide">
@@ -394,6 +394,19 @@ jumlahKlik = 0;sudah=false;
     }
   }
 
+//////
+
+function fungsiTerima() {
+    Swal.fire({
+        title: '' + teksTerima.innerHTML,
+        imageUrl: '' + stikerTerima.src,
+        imageWidth: 90,
+        imageHeight: 90,
+        imageAlt: 'by Feeldream.id',
+        confirmButtonText: 'OK',
+        allowOutsideClick: false,
+    });
+}
 /////////////////////////
 
 document.addEventListener('keydown', function(event) {
