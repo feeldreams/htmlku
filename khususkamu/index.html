@@ -169,23 +169,16 @@
             </div>
             
             <div class="swiper-slide">
-                <div id="stiker4" class="scale0 stiker">
-                    <img src="https://feeldreams.github.io/peachheart.gif" />
-                </div>
-                <h1 id="teks4" class="scale0 quicksand" style="font-size: 22px;">Untukmuuu 💐<br><br> >>>></h1>
-            </div>
-
-            <div class="swiper-slide">
-                <div id="stiker5" class="scale0 stiker" style="margin-top:50px">
-                    <img id="stikerAkhir1" src="https://feeldreams.github.io/peach22.gif" />
-                    <img id="stikerAkhir2" class="sembunyi" src="https://feeldreams.github.io/peach1.gif" />
+                <div id="stiker4" class="scale0 stiker" style="margin-top:50px">
+                    <img id="stikerAkhir1" src="https://feeldreams.github.io/peachheart.gif" />
+                    <img id="stikerAkhir2" class="sembunyi" src="https://feeldreams.github.io/peach6.gif" />
                     <img id="stikerAkhir3" class="sembunyi" src="https://feeldreams.github.io/cilukba.gif" />
-                    <img id="stikerAkhir4" class="sembunyi" src="https://feeldreams.github.io/emawh.gif" />
+                    <img id="stikerAkhir4" class="sembunyi" src="https://feeldreams.github.io/peach1.gif" />
                 </div>
                 <div id="scroll-container" class="blocktext">
-                    <h1 id="teks5" class="scale0 quicksand" style="font-size: 17px;font-weight:400"><b>Terima kasih</b>&nbsp;atas kehadiranmu,<br>dan kamu yang terbaik.<br><br>Aku harap kamu selalu bahagia,<br>dan aku akan selalu ada untukmu 💜<br><br><b style="padding:5px 7px;border-radius:8px;background:#fff;color:red;text-shadow:none">i lovee youuu 💐</b></h1>
+                    <h1 id="teks4" class="scale0 quicksand" style="font-size: 17px;font-weight:400"><b style="font-size:20px;font-weight:700">Wkwkwk 😆</b><br><br>Jangan salting yaaa 🫣💐</h1>
                     <h1 id="teksJawaban" class="sembunyi"><span style="font-size:17px;line-height:1.5em">Cukup tau ah kamu<br>ga kangen aku 😡🫵<br><br><b>Padahal... 🫠</b></span></h1>
-                    <h1 id="teksTambahan" class="sembunyi"><span id="teksLove">Aku kangen kamu 1% ❤️</span></h1>
+                    <h1 id="teksTambahan" class="sembunyi"><span id="teksLove">I Love Youu 1% ❤️</span></h1>
                 </div>
             </div>
 
@@ -214,7 +207,7 @@ var swiper = new Swiper(".mySwiper", {
           
           /*if(teksSekarang == 3){
               Tombol.style="opacity:1;transform: scale(1);"
-          } else */ if(teksSekarang == 5){
+          } else */ if(teksSekarang == 4){
               setTimeout(katanimasi, 300);              
           }
           
@@ -224,24 +217,33 @@ var swiper = new Swiper(".mySwiper", {
     navigation: {nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev",},
 });
     
-initeks = teks5.innerHTML;
-teks5.innerHTML = "";
+initeks = teks4.innerHTML;
+teks4.innerHTML = "";
 function katanimasi(){
-    teks5.innerHTML = "";
-	new TypeIt("#teks5", {
-    strings: ["" + initeks], startDelay: 10, speed: 33, cursor: true,
+    teks4.innerHTML = "";
+	new TypeIt("#teks4", {
+    strings: ["" + initeks], startDelay: 10, speed: 25, cursor: true,
     afterComplete: function(){
       	//clearInterval(scrollInterval);
-      	teks5.innerHTML = initeks;
+      	teks4.innerHTML = initeks;
       
+          setTimeout(function(){
+            teksScale.classList.remove("scale1");
+            teksScale.classList.add("scale0");
             stikerScale.classList.remove("scale1");
             stikerScale.classList.add("scale0");
                
-            setTimeout(function(){setInterval(falling, 200);stikerAkhir1.src = stikerAkhir2.src;}, 300);
+            setTimeout(function(){stikerAkhir1.src = stikerAkhir2.src;}, 400);
             setTimeout(function(){
+            	setTimeout(katanimasi3, 100);
+                teksScale.classList.remove("scale0");
                 stikerScale.classList.remove("scale0");
+                teksScale.classList.add("scale1");
                 stikerScale.classList.add("scale1");
-            },400);
+            },550);
+            
+            }, 1100);
+            
             
           /*
         setTimeout(function(){
@@ -250,7 +252,7 @@ function katanimasi(){
             teksScale.classList.add("scale0");
             stikerScale.classList.add("scale0");
                
-            setTimeout(function(){stikerAkhir1.src = stikerAkhir2.src;teks5.innerHTML="";}, 450);
+            setTimeout(function(){stikerAkhir1.src = stikerAkhir2.src;teks4.innerHTML="";}, 450);
                
             setTimeout(function(){
                 setTimeout(katanimasi2, 200);
@@ -274,20 +276,21 @@ function animateteksnim() {
             if (percent < 9999) {
                 percent += Math.floor(Math.random() * (100 - 10 + 1)) + 10;
                 const randomEmoji = loveEmojis[Math.floor(Math.random() * loveEmojis.length)];
-                teksLove.innerHTML = `<b>Aku kangen kamu ${percent}% ${randomEmoji}</b>`;
+                teksLove.innerHTML = `<b>I Love Youu ${percent}% ${randomEmoji}</b>`;
             } else {
                 clearInterval(intervalId);
                 percent = 9999;
                 const randomEmoji = loveEmojis[Math.floor(Math.random() * loveEmojis.length)];
-                teksLove.innerHTML = `<b>Aku kangen kamu <span style='color:yellow'>${percent}%</span> ${randomEmoji}</b>`;
+                teksLove.innerHTML = `<b>I Love Youu <span style='color:yellow'>${percent}%</span> ${randomEmoji}</b>`;
                 teksLove.style="font-size:20px;transition:all .8s ease";
 
-                stiker5.classList.remove("scale1");
-                stiker5.classList.add("scale0");
+                setInterval(falling, 200);
+                stiker4.classList.remove("scale1");
+                stiker4.classList.add("scale0");
                 setTimeout(function(){
                     stikerAkhir1.src = stikerAkhir4.src; 
-                    stiker5.classList.remove("scale0");
-                    stiker5.classList.add("scale1");
+                    stiker4.classList.remove("scale0");
+                    stiker4.classList.add("scale1");
                 },400);
             }
         }, 20); // Speed 0-100%
@@ -297,8 +300,8 @@ function animateteksnim() {
 initeks2 = teksJawaban.innerHTML;
 teksJawaban.innerHTML = "";
 function katanimasi2(){
-    teks5.innerHTML = "";
-	new TypeIt("#teks5", {
+    teks4.innerHTML = "";
+	new TypeIt("#teks4", {
     strings: ["<span style='font-size:17px;line-height:1.5em'>Cukup tau ah kamu<br>ga kangen aku 😡🫵</span>", "<span style='font-size:17px;line-height:1.5em'><br><b>Padahal... 🫠</b></span>"],
     startDelay: 10,
     speed: 25,
@@ -313,20 +316,20 @@ function katanimasi2(){
         }
     },
     afterComplete: function(){      
-        teks5.innerHTML = initeks2;
+        teks4.innerHTML = initeks2;
       
       setTimeout(function(){
         teksScale.classList.remove("scale1");
         teksScale.classList.add("scale0");
-        stiker5.classList.remove("scale1");
-        stiker5.classList.add("scale0");
+        stiker4.classList.remove("scale1");
+        stiker4.classList.add("scale0");
             setTimeout(function(){
-                teks5.innerHTML = "";
+                teks4.innerHTML = "";
                 setTimeout(katanimasi3, 100);
                      
                	stikerAkhir1.src = stikerAkhir3.src; 
-                    stiker5.classList.remove("scale0");
-                    stiker5.classList.add("scale1");
+                    stiker4.classList.remove("scale0");
+                    stiker4.classList.add("scale1");
                     teksScale.classList.remove("scale0");
                     teksScale.classList.add("scale1");
                },400);
@@ -334,21 +337,21 @@ function katanimasi2(){
     },}).go();
 }
 
-initeks5 = teksTambahan.innerHTML;
+initeks4 = teksTambahan.innerHTML;
 teksTambahan.innerHTML = "";
 function katanimasi3(){
-    teks5.innerHTML = "";
+    teks4.innerHTML = "";
     let kangenPercentage = 1;
-    new TypeIt("#teks5", {
-        strings: Array.from({length: 10}, (_, i) => `Aku kangen kamu ${i + 1}% ❤️`),
-        startDelay: 1,
-        speed: 0.1,
+    new TypeIt("#teks4", {
+        strings: Array.from({length: 10}, (_, i) => `I Love Youu ${i + 1}% ❤️`),
+        startDelay: 50,
+        speed: 10,
         cursor: false,
         nextStringDelay: 0,
         afterComplete: function(){
-            teks5.innerHTML += `<br><br><span id="teksLove">Aku kangen kamu 11% ❤️</span>`;
+            teks4.innerHTML += `<br><br><span id="teksLove">I Love Youu 11% ❤️</span>`;
             setTimeout(animateteksnim,100);
-            setInterval(falling, 200);
+            
             // setInterval(falling, 200);
             setTimeout(function(){clearInterval(scrollInterval)},500);
         },
@@ -412,7 +415,7 @@ jumlahKlik = 0;sudah=false;
       second_stiker.style.transform = "scale(0)";
       setTimeout(function() {
           second_stiker.style.transform = "scale(.9)";
-          inistiker3.src = inistiker5.src;
+          inistiker3.src = inistiker4.src;
       }, 300);
     }*/
 
