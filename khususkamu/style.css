@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Inter&family=Itim&display=swap');
+	
+	:root {
+	--poppins: 'Poppins', sans-serif;
+	--nunito: 'Nunito Sans', sans-serif;
+	--caveat: 'Caveat', cursive;
+	--quicksand: 'Quicksand', sans-serif;
+	--itim: 'Itim', cursive;
+	--inter: 'Inter', sans-serif;
+	}
+
+    html, body {position: relative;height: 100%;}
+    body {background: #000;font-family: 'Itim', cursive;font-size: 14px;color: #fff;text-shadow: 0px 2px 2px rgba(0, 0, 0, .5);margin: 0;padding: 0;}
+    
+    #bodyblur{opacity:.4;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);transition:all 1s ease;} 
+    #thisblur{backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);position:absolute;top:0;left:0;right:0;bottom:0;}
+    #wallpaper{/*animation: jj 7s infinite;*/width:100%;height:100%;transform: scale(1.3);transition:all 1.3s ease;}
+    #wallpaper2, #wallpaper3, #wallpaper4{display:none}
+    @keyframes jj{0%  {transform: scale(1);} 50% {transform: scale(1.3);} 100% {transform: scale(1);}}
+
+    p{margin-left:50px;margin-right:70px;text-align:left}
+    #ket{margin:20px}
+
+    .swiper {width: 100%;height: 100%;padding:0;margin:0;}
+    .swiper-slide {text-align: center;font-size: 18px;/*background: #fff;*/display: flex;flex-direction: column;justify-content: center;align-items: center;margin-top:-100px;}
+    .swiper-slide img {display: block;width: 100%;height: 100%;object-fit: cover;}
+    .swiper-pagination{margin-bottom:25vh}
+    .swiper-pagination-bullet-active{background-color: #fff !important;opacity:1 !important}
+    .swiper-pagination-bullet{background-color:rgba(255,255,255, 1) !important;}
+    .swiper-button-next, .swiper-button-prev{display:flex;top:unset;bottom:-100px}
+    
+    .hidden{display: none !important;}
+    .stiker{display:flex;justify-content:center;align-items:center;margin-left:auto;margin-right:auto;margin-bottom:20px;transition:all .75s ease}
+    .stiker img{width:90px;height:90px;box-shadow: 0 4px 30px rgba(255,255,255, 0.3);backdrop-filter: blur(5px);-webkit-backdrop-filter: blur(5px);background: rgba(255, 255, 255, .3);border: 1px solid rgba(255, 255, 255, 0.3);border-radius: 50%;padding:10px;}
+    .stiker img.sty2{background:none;filter: drop-shadow(0 4px 8px rgba(255, 255, 255, 0.2));box-shadow: none;backdrop-filter: none;-webkit-backdrop-filter: none;border: none;border-radius: 0;padding:0;width: auto;height:90px;}
+	b.merah{color:red}
+	b.kuning{color:yellow}
+	b.putih{text-shadow:none;padding-left:8px;padding-right:8px;padding-top:2px;padding-bottom:2px;background-color:white;border-radius:12px}
+	span.garismerah{border-bottom:2px solid red}
+	span.gariskuning{border-bottom:2px solid yellow}
+    p{color:white;font-size:15px;line-height:1.5em;}
+    .scale0{opacity:0;transform: scale(0);transition: all .9s ease;}
+    .scale1{opacity:1;transform: scale(1);transition: all .9s ease;}
+    svg{vertical-align: middle;width: 22px;height: 22px;fill: #fff}
+    .heart-icon {z-index:100;width: 30px;height: 30px;position: fixed;animation:  heartMove linear 1;top: -10vh;}
+
+	@keyframes heartMove {
+	  0% {transform: translateY(-10vh);}
+	  100% {transform: translateY(100vh);}
+	}
+	    svg.line{fill: none;stroke: #fff;stroke-width: 2;animation: moving .7s linear infinite alternate;}
+	    .spin{animation: spin 3s linear infinite alternate;}
+	@keyframes spin {
+	  from {
+	    transform: rotate(20deg);
+	  }
+	  to {
+	    transform: rotate(-20deg);
+	  }
+	}
+	@keyframes moving {
+	  from {
+	    transform: translateY(0);
+	  }
+	  to {
+	    transform: translateY(3px);
+	  }
+	}
+    .overlay {position: fixed;top: 0;left: 0;width: 100%;height: 100%;display: flex;justify-content: center;align-items: center;background:#000;z-index:100;}
+    .loading-message {font-size: 13px;text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);color:white;text-align: center;}
+    .blocklove{display: none;flex-direction: column;justify-content: center;align-items: center;}
+    .lovein{background:#fff;color:#FF0900;border-radius:50%;width:40px;height:40px;padding:10px;font-size:30px;display:flex;align-items:center;text-align:center;justify-content:center;transition:all .3s ease;}
+    .lovein:hover{transform: scale(.9);color:#FF0900;}
+    .lovein svg{stroke:#FF0600;width:30px;height:30px}
+    
+    .blocktext{margin-top:10px;position:relative;width:100%;height: 180px; overflow: auto;background-color:none;}
+    
+    .sertifikat {position: relative;width: 330px;height: 236px;text-shadow:none}
+	.sertifikat img {border-radius:30px;width: 100%;height: 100%;}
+	.text-overlay {position: absolute;top: 35px;left: 0;width: 100%;text-align: center;color: #333;font-size: 14px;font-weight: bold;}
+	.text-overlay h1 {font-size: 20px;color:#fff;margin: 0;}
+	.text-overlay .sub-title {font-size: 14px;color:yellow;margin-bottom: 10px;}
+	.content {font-size: 12px;color:#fff;}
+	.real {font-weight: bold;color: #fff;font-size: 12px;}
+	
+    .tombol{background-color: rgba(255,255,255,0);border-radius: 50px;overflow: hidden;display: flex;align-items: center;justify-content: center;-webkit-transition: all .2s ease-out;transition: all .2s ease-out}
+    .tombol svg{margin: auto;fill:#ffd4d4;stroke: #ff0000;width: 60px;height: 60px;animation: spin2 1s linear infinite alternate;}
+    #Tombol{margin-top:20px;position:relative;margin-left:auto;margin-right:auto;display:flex;align-items:center;justify-content:center;list-style:none;transition:all 1s ease;}
+    #Tombol a{cursor:pointer;display:inline-flex;align-items:center; margin:0;margin:10px;transition:all .2s ease;padding:10px;outline:0;border:1px solid white;border-radius:12px;line-height:15px;background:rgba(0,0,0,.3);color:white;font-size:13px;font-weight:700;white-space:nowrap;overflow:hidden;box-shadow: rgba(255,255,255, 0.15) 0px 7px 29px 0px;z-index:1}
+    #Tombol, #Tombol2, #TombolWA{position:relative;opacity:0;margin-left:auto;margin-right:auto;display:flex;justify-content:center;align-items:center;list-style:none;transition:all 1s ease;}
+    #Tombol a, #Tombol2 a, #TombolWA a{cursor:pointer;display:inline-flex;align-items:center; margin:0;margin:10px;transition:all .2s ease;padding:10px;outline:0;border:1px solid white;border-radius:8px;line-height:15px;background:rgba(0,0,0,.5);color:white;font-size:13px;font-weight:700;white-space:nowrap;overflow:hidden;box-shadow: rgba(255,255,255, 0.15) 0px 7px 29px 0px;z-index:1}
+    
+    .swal2-modal > *{color:white}
+    .swal2-title{line-height:1.3em;font-size:18px;text-align:center;padding:15px 30px 0 30px;}
+    .swal2-container.swal2-backdrop-show{background: rgba(0,0,0,.5);}
+    .swal2-timer-progress-bar-container > *{opacity:.7;background:#00B6FF;margin:0 2px}
+    .swal2-modal{box-shadow: rgba(255,255,255, 0.3) 0px 7px 29px 0px;background:rgba(0,0,0,.9);max-width:320px;border-right:2px solid #fff;border-left:2px solid #fff;border-radius:4px;top:-50px;}
