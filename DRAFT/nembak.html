@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>S.id/gamautau - Kamu Sayang Aku Ga? </title>
+  <meta name="description" content="@feelthisray - Script HTML by Feeldream Repl Co">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+
+  <link rel="icon" type="image/svg+xml" href="https://feeldreams.github.io/main-icon.png"> 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="style.css"><script src="https://unpkg.com/scrollreveal"></script><script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+  <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
+
+  <!-- Demo styles -->
+  <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            background: linear-gradient(0.25turn, rgb(0, 38, 77), rgb(0, 38, 70));
+            background: #000;
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            overflow: hidden;
+            color: black;
+        }
+        #container {
+            width: 80%;
+            margin: 20px auto;
+            min-height: 650px;
+            margin-top: 150px;
+            color: black;
+        }
+        @media screen and (max-width: 400px) {
+            #container {
+                width: 100%;
+                margin: 50% auto;
+                min-height: 800px;
+            }
+        }
+        .wrapper {
+            position: fixed;
+        }
+        .box div {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            background-color: transparent;
+            border: 6px solid rgba(255, 182, 193, 0.8);
+            border-radius:50%;
+        }
+        .box div:nth-child(1) {
+            top: 12%;
+            left: 42%;
+            animation: animate 10s linear infinite;
+        }
+        .box div:nth-child(2) {
+            top: 70%;
+            left: 50%;
+            animation: animate 7s linear infinite;
+        }
+        .box div:nth-child(3) {
+            top: 17%;
+            left: 6%;
+            animation: animate 9s linear infinite;
+        }
+        .box div:nth-child(4) {
+            top: 20%;
+            left: 60%;
+            animation: animate 10s linear infinite;
+        }
+        .box div:nth-child(5) {
+            top: 67%;
+            left: 10%;
+            animation: animate 6s linear infinite;
+        }
+        .box div:nth-child(6) {
+            top: 80%;
+            left: 70%;
+            animation: animate 12s linear infinite;
+        }
+        .box div:nth-child(7) {
+            top: 60%;
+            left: 80%;
+            animation: animate 15s linear infinite;
+        }
+        .box div:nth-child(8) {
+            top: 32%;
+            left: 25%;
+            animation: animate 16s linear infinite;
+        }
+        .box div:nth-child(9) {
+            top: 90%;
+            left: 25%;
+            animation: animate 9s linear infinite;
+        }
+        .box div:nth-child(10) {
+            top: 20%;
+            left: 80%;
+            animation: animate 5s linear infinite;
+        }
+        @keyframes animate {
+            0% {
+                transform: scale(0) translateY(0) rotate(0);
+                opacity: .8;
+            }
+            100% {
+                transform: scale(1.3) translateY(-90px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Inter&family=Itim&display=swap');
+	
+	:root {
+	--poppins: 'Poppins', sans-serif;
+	--nunito: 'Nunito Sans', sans-serif;
+	--caveat: 'Caveat', cursive;
+	--quicksand: 'Quicksand', sans-serif;
+	--itim: 'Itim', cursive;
+	--inter: 'Inter', sans-serif;
+	}
+
+    html, body {position: relative;height: 100%;}
+    body {font-family: 'Itim', cursive;font-size: 14px;color: #fff;text-shadow: 0px 2px 2px rgba(0, 0, 0, .5);margin: 0;padding: 0;}
+    
+    #bodyblur{opacity:.25;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);transition:all 1s ease;} 
+    #sthisblur{backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);position:absolute;top:0;left:0;right:0;bottom:0;}
+    #wallpaper{/*animation: jj 7s infinite;*/width:100%;height:100%;transform: scale(1.5);transition:all 1.3s ease;}
+    #wallpaper2, #wallpaper3, #wallpaper4{display:none}
+    @keyframes jj{0%  {transform: scale(1);} 50% {transform: scale(1.3);} 100% {transform: scale(1);}}
+
+    p{margin-left:50px;margin-right:70px;text-align:left}
+    #ket{margin:20px}
+
+    .swiper {width: 100%;height: 100%;padding:0;margin:0;}
+    .swiper-slide {text-align: center;font-size: 18px;/*background: #fff;*/display: flex;flex-direction: column;justify-content: center;align-items: center;margin-top:-100px;}
+    .swiper-slide img {display: block;width: 100%;height: 100%;object-fit: cover;}
+    .swiper-pagination{margin-bottom:25vh}
+    .swiper-pagination-bullet-active{background-color: #fff !important;opacity:1 !important}
+    .swiper-pagination-bullet{background-color:rgba(255,255,255, 1) !important;}
+    .swiper-button-next, .swiper-button-prev{display:flex;top:unset;bottom:-100px}
+    
+    .sembunyi{display: none !important;}
+    .stiker{display:flex;justify-content:center;align-items:center;margin-left:auto;margin-right:auto;margin-bottom:20px;transition:all .75s ease}
+    .stiker img{width:90px;height:90px;box-shadow: 0 4px 30px rgba(255,255,255, 0.3);backdrop-filter: blur(5px);-webkit-backdrop-filter: blur(5px);background: rgba(255, 255, 255, 0.7);border: 1px solid rgba(255, 255, 255, 0.3);border-radius: 50%;padding:10px;}
+    .stiker img.sty2{background:none;filter: drop-shadow(0 4px 8px rgba(255, 255, 255, 0.2));box-shadow: none;backdrop-filter: none;-webkit-backdrop-filter: none;border: none;border-radius: 0;padding:0;width: auto;height:90px;}
+	b.merah{color:red}
+	b.kuning{color:yellow}
+	b.putih{text-shadow:none;padding-left:8px;padding-right:8px;padding-top:2px;padding-bottom:2px;background-color:white;border-radius:12px}
+	span.garismerah{border-bottom:2px solid red}
+	span.gariskuning{border-bottom:2px solid yellow}
+    p{color:white;font-size:15px;line-height:1.5em;}
+    .scale0{opacity:0;transform: scale(0);transition: all .9s ease;}
+    .scale1{opacity:1;transform: scale(1);transition: all .9s ease;}
+    svg{vertical-align: middle;width: 22px;height: 22px;fill: #fff}
+    .heart-icon {z-index:100;width: 30px;height: 30px;position: fixed;animation:  heartMove linear 1;top: -10vh;}
+
+	@keyframes heartMove {
+	  0% {transform: translateY(-10vh);}
+	  100% {transform: translateY(100vh);}
+	}
+	    svg.line{fill: none;stroke: #fff;stroke-width: 2;}
+	    .spin{animation: spin 3s linear infinite alternate;}
+	@keyframes spin {
+	  from {
+	    transform: rotate(20deg);
+	  }
+	  to {
+	    transform: rotate(-20deg);
+	  }
+	}
+	@keyframes moving {
+	  from {
+	    transform: translateY(0);
+	  }
+	  to {
+	    transform: translateY(3px);
+	  }
+	}
+    .overlay {position: fixed;top: 0;left: 0;width: 100%;height: 100%;display: flex;justify-content: center;align-items: center;background:rgba(0,0,0,.5);z-index:100;}
+    .loading-message {font-size: 13px;text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);color:white;text-align: center;}
+    .blocklove{display: none;flex-direction: column;justify-content: center;align-items: center;}
+    
+    .blocktext{margin-top:10px;position:relative;width:100%;height: 160px; overflow: auto;background-color:none;}
+
+    .tombol{background-color: rgba(255,255,255,0);border-radius: 50px;overflow: hidden;display: flex;align-items: center;justify-content: center;-webkit-transition: all .2s ease-out;transition: all .2s ease-out}
+    .tombol svg{margin: auto;fill:#ffd4d4;stroke: #ff0000;width: 60px;height: 60px;animation: spin2 1s linear infinite alternate;}
+    #Tombol{margin-top:20px;position:relative;margin-left:auto;margin-right:auto;display:flex;align-items:center;justify-content:center;list-style:none;transition:all 1s ease;}
+    #Tombol a{display:inline-flex;align-items:center; margin:0;margin:10px;transition:all .2s ease;padding:10px;outline:0;border:1px solid white;border-radius:12px;line-height:15px;background:rgba(0,0,0,.3);color:white;font-size:13px;font-weight:700;white-space:nowrap;overflow:hidden;box-shadow: rgba(255,255,255, 0.15) 0px 7px 29px 0px;z-index:1}
+    #Tombol, #Tombol2, #TombolWA{position:relative;opacity:0;margin-left:auto;margin-right:auto;display:flex;justify-content:center;align-items:center;list-style:none;transition:all 1s ease;}
+    #Tombol a, #Tombol2 a, #TombolWA a{display:inline-flex;align-items:center; margin:0;margin:10px;transition:all .2s ease;padding:10px;outline:0;border:2px solid white;border-radius:12px;line-height:15px;background:rgba(255, 182, 193, .3);color:white;font-size:13px;font-weight:700;white-space:nowrap;overflow:hidden;box-shadow: rgba(255,255,255, 0.15) 0px 7px 29px 0px;z-index:1}
+    
+    .swal2-modal > *{font-size:16px;color:white}
+	.swal2-title{line-height:1.3em;font-size:17px;text-align:center;padding:15px 30px 0 30px;}
+	.swal2-timer-progress-bar-container > *{opacity:.7;background:#00B6FF;margin:0 14px}
+	.swal2-modal{background: rgba(0,0,0, 1);backdrop-filter: blur(0);-webkit-backdrop-filter: blur(0);box-shadow: 0 4px 30px rgba(255,255,255, 0.3);border: 1px solid rgba(255, 255, 255, 1);border-radius: 12px;max-width:325px;top:-60px;}
+	.swal2-image{background: rgba(255, 255, 255, 0.5);box-shadow: 0 4px 30px rgba(255,255,255, 0.3);backdrop-filter: blur(5px);-webkit-backdrop-filter: blur(5px);border: 1px solid rgba(255, 255, 255, 0.3);border-radius: 50%;padding:10px;}
+	.swal2-styled.swal2-confirm, .swal2-styled.swal2-cancel{position: relative;background-color: #4839eb;color: #fff;border-radius:18px;z-index: 1;transition: all 0.2s;}
+	
+	.cover{margin-top:-120px;display:flex;flex-direction:column;justify-content:center;align-items:center}
+    .lovein{font-size:50px;display:flex;align-items:center;justify-content:center;transition:all .3s ease;}
+    .lovein svg{width:80px;height:80px;fill:#fefefe}
+    .awalan{margin-top:20px;width:230px;min-height:25px;padding:12px;font-size:13px;color:white;background:rgba(0,0,0,.5);border:1px solid #fff;border-radius:20px;display:flex;align-items:center;text-align:left}
+    .awalan svg{margin-right:15px;width:25px;height:25px;stroke:white}
+</style>
+</head>
+
+<body>
+  <audio src="https://feeldreams.github.io/audio/foreveryoung.mp3" id="linkmp3" class="sembunyi"></audio>
+	<div class="overlay">
+		<div class="cover">
+	    <p style="font-size:17px;font-weight:700;margin:0">Berani kirim ini ke <span style="color:pink">Crush</span>? </span> </p>
+	   <div id="loveIn" class="awalan">
+	     <svg class='line' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><g transform='translate(2.000000, 2.000000)'><path d='M9.27542857,0.714285714 C14.0030476,0.714285714 17.836381,4.54666667 17.836381,9.2752381 C17.836381,14.0038095 14.0030476,17.8361905 9.27542857,17.8361905 C4.54685714,17.8361905 0.71447619,14.0038095 0.71447619,9.2752381 C0.71447619,4.54666667 4.54685714,0.714285714 9.27542857,0.714285714 Z'></path><path d='M17.8989524,16.487619 C18.678,16.487619 19.3094286,17.12 19.3094286,17.8980952 C19.3094286,18.6780952 18.678,19.3095238 17.8989524,19.3095238 C17.1199048,19.3095238 16.4875238,18.6780952 16.4875238,17.8980952 C16.4875238,17.12 17.1199048,16.487619 17.8989524,16.487619 Z'></path></g></svg>
+	     <label style="font-size:16px">S.id/mauga</label>
+	   </div>
+	</div>
+   </div>
+   
+   <div id="bodyblur">
+     <img src="https://htmlku.com/hitungan/pict.jpg" id="wallpaper"/>
+     <div id="thisblur"></div>
+   </div>
+   
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+                <div id="stiker1" class="scale0 stiker">
+                    <img id="stikerDuaDef" src="https://feeldreams.github.io/hearthappy.gif" />
+                    <img id="stikerDua1" class="sembunyi" src="https://feeldreams.github.io/smprt.gif" />
+                    <img id="stikerDua2" class="sembunyi" src="https://feeldreams.github.io/pusn.gif" />
+                    <img id="stikerDua3" class="sembunyi" src="https://feeldreams.github.io/ngumpet.gif" />
+                </div>
+                <h1 id="teks1" class="scale0 quicksand" style="font-size: 19px;">Aku Suka Sama Kamuuu 🫠</h1>
+                <h1 id="teks2" class="scale0 quicksand" style="font-size: 19px;">Kamu Mau Jadi Pacarku? 🥹</h1>
+                <div id="Tombol" style="opacity:0;transform: scale(0)">
+                    <a id="By" onClick="swiper.slideNext();">Mauu bgtt ❤️‍🔥</a>
+                    <a id="Bn" onClick="btn='Bn';fungsibaru(btn)">GAK</a>
+                </div>
+                <img id="stikerTolak" class="sembunyi" src="https://feeldreams.github.io/cilukba.gif"/>
+                <p id="teksTolak" class="sembunyi">Ciee ngambekan gitu doang </p>
+                
+                <img id="stikerTolak2" class="sembunyi" src="https://feeldreams.github.io/weee.gif"/>
+                <p id="teksTolak2" class="sembunyi">Nanti cepet tua loh </p>
+            </div>
+
+            <div class="swiper-slide">
+                <div id="stiker2" class="scale0 stiker" style="margin-top:50px">
+                    <img id="stikerAkhir1" src="https://feeldreams.github.io/smprt.gif" />
+                    <img id="stikerAkhir2" class="sembunyi" src="https://feeldreams.github.io/cilukba.gif" />
+                    <img id="stikerAkhir3" class="sembunyi" src="https://feeldreams.github.io/pandapanah.gif" />
+                </div>
+                <div id="scroll-container" class="blocktext">
+                    <h1 id="teks2" class="scale0 quicksand" style="font-size: 17px;font-weight:400;line-height:1.3em"><b>Huaaaa...</b> Pokoknyaa gamau tau yaa,<br>Kamu harus sayaangg sama akuu!! <br><br><br><b style="font-size:20px">Soalnya... </b></h1>
+                    <h1 id="teksTerakhir" class="sembunyi">Hati ini udaah <b>all in</b> ke kamuu yaa<br>wahaai kamuu yanggg lucuu, imuttt,<br>gemesinn yangg paling aku <b>sayaangg</b>!!<br><br>jadii,, toloongg kerja samanya yawww<br></h1>
+                    <h1 id="teksTambahan" class="sembunyi"><span id="teksLove">Ilvyouuuu</span></h1>
+                    <script>const loveEmojis = ['','','','','']</script>
+                </div>
+            </div>
+
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+    
+    <div id="container">
+        <div class="wrapper">
+            <div class="box">
+                <!-- Box elements -->
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+document.querySelector('.swiper-pagination').style.display = 'none';
+var teksSekarang = 1;const body = document.querySelector("body"); audio = new Audio('' + linkmp3.src); 
+var swiper = new Swiper(".mySwiper", {
+    pagination: {el: ".swiper-pagination", dynamicBullets: false,},
+    on: {
+    slideChange: function () {
+        teksSekarang++;
+        teksScale = document.querySelector('#teks' + teksSekarang);
+        stikerScale = document.querySelector('#stiker' + teksSekarang);
+        Tombol = document.querySelector('#Tombol');
+
+        setTimeout(function(){
+          teksScale.classList.add("scale1");
+          stikerScale.classList.add("scale1");
+          
+          /*if(teksSekarang == 2){
+              Tombol.style="opacity:1;transform: scale(1);"
+          } else */ if(teksSekarang == 2){
+              setTimeout(katanimasi, 300);              
+          }
+          
+        }, 50);
+    },
+    },
+    navigation: {nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev",},
+});
+    
+initeks = teks2.innerHTML;
+teks2.innerHTML = "";
+function katanimasi(){
+    teks2.innerHTML = "";
+	new TypeIt("#teks2", {
+    strings: [
+        "<b>Huaaaa...</b> Pokoknyaa gamau tau yaa,<br>Kamu harus sayaangg sama akuu!! ", 
+        "<br><br><b style='font-size:20px'>Soalnya... </b>"
+    ],
+    startDelay: 1,
+    speed: 27,
+    cursor: true,
+    breakLines: true,
+    waitUntilVisible: true,
+    afterStep: function(instance) {
+        if (instance.is('completed')) {
+            setTimeout(function() {
+                instance.next();
+            }, 1500);
+        }
+    },
+    afterComplete: function(){      
+      	//clearInterval(scrollInterval);
+      	teks2.innerHTML = initeks;
+            
+        setTimeout(function(){
+            teksScale.classList.remove("scale1");
+            stikerScale.classList.remove("scale1");
+            teksScale.classList.add("scale0");
+            stikerScale.classList.add("scale0");
+               
+            setTimeout(function(){stikerAkhir1.src = stikerAkhir2.src;teks2.innerHTML="";}, 450);
+               
+            setTimeout(function(){
+                setTimeout(katanimasi2, 200);
+                teksScale.classList.remove("scale0");
+                stikerScale.classList.remove("scale0");
+                teksScale.classList.add("scale1");
+                stikerScale.classList.add("scale1");
+            },550);
+        },1400); //2000
+
+    },}).go();
+}
+
+initeksTerakhir = teksTerakhir.innerHTML;
+teksTerakhir.innerHTML = "";
+function katanimasi2(){
+    teks2.innerHTML = "";
+	new TypeIt("#teks2", {
+    strings: ["" + initeksTerakhir], startDelay: 10, speed: 27, cursor: true,
+    afterComplete: function(){
+      	teks2.innerHTML = initeksTerakhir;
+          /*stikerScale.classList.remove("scale1");
+          stikerScale.classList.add("scale0");
+               
+          setTimeout(function(){
+              stikerAkhir1.src = stikerAkhir3.src;
+              stikerScale.classList.remove("scale0");
+              stikerScale.classList.add("scale1");
+          },400);
+          */
+          
+          setTimeout(function(){
+	          //teks2.innerHTML += `<br><br><br><span id="teksLove">${defTeksLove} 1% ${ambilRandomEmoji}</span>`;
+	          //animateteksnim();
+	          //clearInterval(intervalId);
+              setInterval(falling, 200);
+	      }, 10);
+    },}).go();
+}
+
+/* Teks Animasi Akhir */
+const ambilRandomEmoji = loveEmojis[Math.floor(Math.random() * loveEmojis.length)];
+const defTeksLove = teksLove.innerHTML;
+teksLove.innerHTML += " 1% " + ambilRandomEmoji;
+function animateteksnim() {
+	//const teksnim = document.getElementById('teksnim');
+    
+    let percent = 1000;
+    setTimeout(function() {
+        const intervalId = setInterval(() => {
+            if (percent < 999999) {
+                percent += Math.floor(Math.random() * (10000 - 1000 + 1)) + 1000;
+                const randomEmoji = loveEmojis[Math.floor(Math.random() * loveEmojis.length)];
+                teksLove.innerHTML = `<b>${defTeksLove} ${percent}% ${randomEmoji}</b>`;
+            } else {
+                clearInterval(intervalId);
+                setInterval(falling, 200);
+                
+                percent = 999999;
+                const randomEmoji = loveEmojis[Math.floor(Math.random() * loveEmojis.length)];
+                teksLove.innerHTML = `<b>${defTeksLove} <span style='color:pink'>${percent}%</span> ${randomEmoji}</b>`;
+                teksLove.style="font-size:20px;transition:all .8s ease";
+
+                stiker2.classList.remove("scale1");
+                stiker2.classList.add("scale0");
+                setTimeout(function(){
+                    stikerAkhir1.src = stikerAkhir3.src; 
+                    stiker2.classList.remove("scale0");
+                    stiker2.classList.add("scale1");
+                },400);
+            }
+        }, 20); // Speed 0-100%
+    }, 10); // Delay
+}
+
+initeks2 = teksTambahan.innerHTML;
+teksTambahan.innerHTML = "";
+function katanimasi3(){
+    teks2.innerHTML = "";
+    let kangenPercentage = 1;
+    new TypeIt("#teks2", {
+        strings: Array.from({length: 10}, (_, i) => `Ilvyouuuu ${i + 1}% ${ambilRandomEmoji}`),
+        startDelay: 1,
+        speed: 0.2,
+        cursor: false,
+        nextStringDelay: 0,
+        afterComplete: function(){
+            teks2.innerHTML += `<br><br><span id="teksLove">${defTeksLove} 11% ${ambilRandomEmoji}</span>`;
+            setTimeout(animateteksnim,100);
+            
+            // setInterval(falling, 200);
+            setTimeout(function(){clearInterval(scrollInterval)},500);
+        },
+    }).go();
+}
+
+///////////////////////////////////
+
+var sudahKlik = true;
+var fungsiBerfungsi = false;
+let indexPopup = 1;
+
+document.getElementById("loveIn").onclick = async function() {
+    if (sudahKlik) {
+        audio.play();
+        document.querySelector(".overlay").style.display = "none";
+        document.querySelector('.swiper-pagination').style.display = 'block';
+        
+        stiker1.classList.add("scale1");
+		teks1.classList.add("scale1");
+		setTimeout(function(){
+	         teks1.classList.remove("scale1");
+	         stiker1.classList.remove("scale1");
+	         teks1.classList.add("scale0");
+	         stiker1.classList.add("scale0");
+	         setTimeout(function(){}, 300);
+	      }, 2000);
+          
+		wallpaper.style="transform:scale(1)";
+		setTimeout(function(){fungsiBerfungsi = true}, 300);
+		/*
+        const popups = [
+	        { teks: "Alooo Kamuuu ", stiker: stikerTolak.src, waktu: 2200 },
+	        { teks: "Aku Mau Ngomong Sesuatu ", stiker: stikerTolak.src, waktu: 2200 },
+	        { teks: "Tapi Kamu Jangan Kaget yaa ", stiker: stikerTolak.src, waktu: 2200 },
+	        { teks: "Sebenernya...", stiker: stikerTolak.src, waktu: 2200 },
+	    ];
+	
+	    for (const popup of popups) {
+	        await tampilPopup(popup.teks, popup.stiker, popup.waktu);
+	    }
+        */
+    } else {
+        sudahKlik = true; // Tandai tombol sudah diklik
+        document.getElementById('loveIn').innerHTML = '<style>.lovein svg{animation:none;stroke:#ff0000;stroke-width:1.3;fill:none;width:35px;height:35px}</style><label class="lovein"><svg class="line" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g transform="translate(2.550170, 3.550158)"><path d="M0.371729633,8.89614246 C-0.701270367,5.54614246 0.553729633,1.38114246 4.07072963,0.249142462 C5.92072963,-0.347857538 8.20372963,0.150142462 9.50072963,1.93914246 C10.7237296,0.0841424625 13.0727296,-0.343857538 14.9207296,0.249142462 C18.4367296,1.38114246 19.6987296,5.54614246 18.6267296,8.89614246 C16.9567296,14.2061425 11.1297296,16.9721425 9.50072963,16.9721425 C7.87272963,16.9721425 2.09772963,14.2681425 0.371729633,8.89614246 Z"></path><path d="M13.23843,4.013842 C14.44543,4.137842 15.20043,5.094842 15.15543,6.435842"></path></g></svg></label><p id="ket">Sentuh LOVEnya!</p>';
+    }
+}
+//document.getElementById("loveIn").onclick = mulaiScript();
+
+function falling() {const heart = document.createElement("div");heart.innerHTML = "<svg class='line spin' style='opacity:.5;z-index:100;stroke:#FFC2B8' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><g transform='translate(2.550170, 3.550158)'><path d='M0.371729633,8.89614246 C-0.701270367,5.54614246 0.553729633,1.38114246 4.07072963,0.249142462 C5.92072963,-0.347857538 8.20372963,0.150142462 9.50072963,1.93914246 C10.7237296,0.0841424625 13.0727296,-0.343857538 14.9207296,0.249142462 C18.4367296,1.38114246 19.6987296,5.54614246 18.6267296,8.89614246 C16.9567296,14.2061425 11.1297296,16.9721425 9.50072963,16.9721425 C7.87272963,16.9721425 2.09772963,14.2681425 0.371729633,8.89614246 Z'></path><path d='M13.23843,4.013842 C14.44543,4.137842 15.20043,5.094842 15.15543,6.435842'></path></g></svg>";heart.className = "heart-icon";heart.style.left = (Math.random() * 95) + "vw";heart.style.animationDuration = (Math.random() * 3) + 2 + "s";document.body.appendChild(heart);}
+setInterval(function() {var heartArr = document.querySelectorAll(".heart-icon");if (heartArr.length > 100) {heartArr[0].remove();}}, 100);
+
+const scrollContainer = document.getElementById("scroll-container");
+const textContainer = document.getElementById("textsec2");
+
+function autoScroll() {scrollContainer.scrollTop += 10;}
+const scrollInterval = setInterval(autoScroll, 50); 
+
+/////////////////
+
+let jumlahKlik = 0;
+let jumlahSkala = 1;
+let sudah = false;
+const pesanAlert = ["Ihh ko gitu ", "Yakin Gamau Nih? ", "Plissss Mau Dongg "];
+const teksDefault = teks1.innerHTML;
+const stikerArray = Array.from(document.querySelectorAll('img[id^="stikerDua"]'));
+const stikerDefault = stikerDuaDef.src;
+
+function fungsibaru(btn) {
+    var tombol = document.getElementById("" + btn);
+    var tombolParent = tombol.parentNode;
+    
+    // Geser tombol secara acak
+    var tombolPosisiX = Math.floor(Math.random() * 50) + 1;
+    var tombolPosisiY = Math.floor(Math.random() * 75) + 1;
+    var rotasiAcak = Math.floor(Math.random() * 360);
+
+    tombol.style.position = "relative";
+    tombol.style.left = tombolPosisiX + "px";
+    tombol.style.top = tombolPosisiY + "px";
+    tombol.style.transform = "rotate(" + rotasiAcak + "deg)";
+    tombolParent.appendChild(tombol);
+
+    // Menampilkan alert berdasarkan jumlah klik
+    if (jumlahKlik < pesanAlert.length) {
+    	//teks1.innerHTML = pesanAlert[jumlahKlik];
+        //alert(pesanAlert[jumlahKlik]);
+        teksScale.classList.remove("scale1");
+        teksScale.classList.add("scale0");
+        stikerScale.classList.remove("scale1");
+        stikerScale.classList.add("scale0");
+            setTimeout(function(){
+	                if (jumlahKlik === 0) {
+					    stikerDuaDef.src = stikerDefault;
+					    teks1.innerHTML = teksDefault;
+					} else {
+	                	stikerDuaDef.src = stikerArray[jumlahKlik].src; 
+	                    teks1.innerHTML = pesanAlert[jumlahKlik - 1];
+	                }
+                    stikerScale.classList.remove("scale0");
+                    stikerScale.classList.add("scale1");
+                    teksScale.classList.remove("scale0");
+                    teksScale.classList.add("scale1");
+               },270);
+    } else {
+        //alert("Sudah cukup bercandanya ");
+    }
+
+    // Perbesar tombol By
+    var tombolBy = document.getElementById("By");
+    tombolBy.style.transform = `scale(${1 + jumlahSkala * 0.2})`; // Menambah skala setiap klik
+
+    
+    jumlahKlik++;
+    jumlahSkala++;
+
+    if (jumlahKlik == 4) {
+        //fungsiTerima();
+        swiper.slideNext();
+        jumlahKlik = 0;
+        
+        teksScale.classList.remove("scale1");
+        teksScale.classList.add("scale0");
+        stikerScale.classList.remove("scale1");
+        stikerScale.classList.add("scale0");
+            setTimeout(function(){
+					stikerDuaDef.src = stikerDefault;
+					teks1.innerHTML = teksDefault;
+                    stikerScale.classList.remove("scale0");
+                    stikerScale.classList.add("scale1");
+                    teksScale.classList.remove("scale0");
+                    teksScale.classList.add("scale1");
+               },400);
+    }
+}
+
+//////
+
+function fungsiTerima() {
+    Swal.fire({
+        title: '' + teksTolak.innerHTML,
+        imageUrl: '' + stikerTolak.src,
+        imageWidth: 90,
+        imageHeight: 90,
+        imageAlt: 'by Feeldream.id',
+        confirmButtonText: 'OK',
+        showConfirmButton: false,
+        allowOutsideClick: false,
+        timer: 2200,
+        timerProgressBar: true,
+        willClose: () => {
+            console.log("Alert 1 closed automatically");
+        }
+    }).then(() => {
+        // Munculkan alert kedua setelah alert pertama selesai
+        Swal.fire({
+            title: '' + teksTolak2.innerHTML,
+            imageUrl: '' + stikerTolak2.src,
+            imageWidth: 90,
+            imageHeight: 90,
+            imageAlt: 'by Feeldream.id',
+            confirmButtonText: 'OK',
+            showConfirmButton: false,
+            allowOutsideClick: false,
+            timer: 2200,
+            timerProgressBar: true,
+            willClose: () => {
+                console.log("Alert 2 closed automatically");
+            }
+        });
+    });
+}
+/////////////////////////
+
+document.addEventListener('keydown', function(event) {
+    if (event.code === 'Space' || event.code === 'ArrowRight') {
+        swiper.slideNext();
+    }
+});
+
+document.addEventListener('click', function() {
+    if (teksSekarang !== 2) {
+    	if (fungsiBerfungsi === true) {
+           swiper.slideNext();
+        }
+    }
+});
+
+async function tampilPopup(teks, stiker, waktu = 2000){
+	await Swal.fire({
+        title: '' + teks,
+        imageUrl: '' + stiker,
+        imageWidth: 90,
+        imageHeight: 90,
+        imageAlt: 'by Feeldream.id',
+        confirmButtonText: 'OK',
+        showConfirmButton: false,
+        allowOutsideClick: false,
+        timer: waktu,
+        timerProgressBar: true,
+        willClose: () => {
+            
+        }
+    });
+    
+    indexPopup++;
+    
+    if(indexPopup==5){
+	    stiker1.classList.add("scale1");
+		teks1.classList.add("scale1");
+		wallpaper.style="transform:scale(1)";
+		setTimeout(function(){fungsiBerfungsi = true}, 300);
+		//Tombol.style="opacity:1;transform: scale(1);"
+	}
+}
+
+/* Start All */
+var tomlv = document.querySelector(".blocklove");tomlv.style.display = "flex";
+</script>
+</body>
+</html>
