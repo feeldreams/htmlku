@@ -97,17 +97,9 @@
             }
         }
 
-    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
-	@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
-	@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap');
-	@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
 	@import url('https://fonts.googleapis.com/css2?family=Inter&family=Itim&display=swap');
 	
 	:root {
-	--poppins: 'Poppins', sans-serif;
-	--nunito: 'Nunito Sans', sans-serif;
-	--caveat: 'Caveat', cursive;
-	--quicksand: 'Quicksand', sans-serif;
 	--itim: 'Itim', cursive;
 	--inter: 'Inter', sans-serif;
 	}
