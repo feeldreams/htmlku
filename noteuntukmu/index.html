@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Sriracha&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Sriracha&family=Itim&display=swap" rel="stylesheet">
   
   <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
-  <title>Animasi Surat</title>
+  <title>S.id/noteuntukmu - This is for youuuuu 🫶</title>
   <style>
     * {
       margin: 0;
@@ -27,6 +27,7 @@
     }
     
     .pink{color:pink}
+    .garismerah{border-bottom:1.5px solid red}
     
     .overlay {position: fixed;top: 0;left: 0;width: 100%;height: 100%;display: flex;justify-content: center;align-items: center;background:rgba(0,0,0,.3);z-index:9999;}
     .cover{color:white;margin-top:-220px;display:flex;flex-direction:column;justify-content:center;align-items:center}
@@ -128,7 +129,7 @@
       display: block;
       width: 80%;
       min-height: 100px;
-      max-height: 200px;
+      max-height: 300px;
       overflow: auto;
       background-color: rgba(0,0,0,.5);
       backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);
@@ -147,9 +148,10 @@
     }
     
     .titleC{margin-bottom:14px}
+    .messageC{font-family: "Itim", cursive;}
     
     .container p {
-      font-size: 14px;
+      font-size: 16px;
       color: #fff;
       text-align: left;
     }
@@ -217,7 +219,7 @@
   
   <div class="stiker">
     <img id="main-stiker" src="https://feeldreams.github.io/pusn.gif" />
-    <img id="stikerAlt1" src="https://feeldreams.github.io/pusn2.gif" />
+    <img id="stikerAlt1" src="https://feeldreams.github.io/pandapanah.gif" />
   </div>
                 
   <div class="wrapper semihidden" id="wrapper">
@@ -234,7 +236,7 @@
   
   <div class="container" id="container">
     <h3 class="titleC">💌 This is for youuuu 🫶</h3>
-    <p class="messageC">This is the paper content. This is the paper content. This is the paper content. This is the paper content. This is the paper content.<br><br>This is the paper content. This is the paper content. This is the paper content. This is the paper content</p>
+    <p class="messageC"><b>Buat kamuuu..</b> aku mohon kalo ada apa apa cerita sama aku ya? jangan takut buat cerita sama aku, karena setiap masalah kamu itu juga masalahnya aku. jadi ya mau gimanapun keadaan kamu, aku pasti selalu ada buat kamu kok 🫠<br><br>Oh yaa, kalo kamu lagi ada masalah, cerita sama aku ya? kita cari jalan keluarnya sama sama, seenggaknya aku bisa jadi pendengar yang baik buat kamu. aku mau kamu lebih terbuka sama akuu, jangan semuanya kamu simpen sendirian, gabaik kan buat kamu nya juga?<br><br><strong><i>i'm always here for youu</i></strong>, aku bisa jadi tempat kamu pulang, tempat buat kamu ngeluh sama semua hal yang bikin kamu cape. aku bakalan berusaha jadi yang paling baik dari yang terbaik buat kamu, maaf kalo aku beluma bisa jadi yang terbaik buat kamuuu :(<br><br><b class="garismerah">last one,</b> aku juga mau bilang kalo aku sayang banget sama kamu, bahagia selalu sayanggg 💐🫶💖</p>
   </div>
 
   <script>
@@ -278,7 +280,27 @@
         lidOne.style.transform = 'rotateX(90deg)';
         wallpaper.style="transform: scale(1.5)";
         document.querySelector('.envelopemoji').style = "opacity: 0; transform: translate(-50%, -50%) scale(1.5); transition: all 0.5s ease;";
-        setTimeout(function(){lidTwo.style.transform = 'rotateX(180deg)';}, 0);
+        lidTwo.style.transform = 'rotateX(180deg)';
+        
+        setTimeout(function(){
+        	letter.style.transform = 'translateY(-30px)';
+            wallpaper.style="transform: scale(1.8)";
+            
+            setTimeout(function(){
+	        	wrapper.classList.add('opahidden');
+		        title.classList.add('opahidden');
+		        wallpaper.style="transform: scale(1.5)";
+		        setTimeout(function(){
+			        container.classList.remove('hidden');
+			        container.classList.add('opamuncul');
+			        title.classList.add('hidden');
+			        stiker.classList.add('opamuncul');
+			        wallpaper.style="transform: scale(1)";
+			        wrapper.classList.add('hidden');
+			        katanimasi();
+		        }, 500);
+	        }, 800);
+        }, 300);
       } else if (clickCount === 2) {
         letter.style.transform = 'translateY(-30px)';
         wallpaper.style="transform: scale(1.8)";
@@ -371,4 +393,4 @@
     function autoScroll() {container.scrollTop += 10;} const scrollInterval = setInterval(autoScroll, 50); 
   </script>
 </body>
-</html> 
+</html>
