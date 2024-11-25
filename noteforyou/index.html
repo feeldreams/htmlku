@@ -32,7 +32,7 @@
   </div>
 
   <!-- Ganti Audio di sini -->
-  <audio src="https://feeldreams.github.io/audio/djikhlas.mp3" id="linkmp3"></audio>
+  <audio src="shttps://feeldreams.github.io/audio/djikhlas.mp3" id="linkmp3"></audio>
   
   <div class="stiker">
     <img id="main-stiker" src="https://feeldreams.github.io/pusn.gif" />
@@ -46,14 +46,14 @@
     	<div class="envelopemoji">💖</div>
     </div>
     <div class="letter" id="letter">
-      <p><b>Lah kamuu... 🫣</b><br>... ... ... ... ... ...<br>... ... ... ... ... ... ...</p>
+      <p><b>Alooo kamuu... 🫣</b><br>... ... ... ... ... ...<br>... ... ... ... ... ... ...</p>
     </div>
   </div>
   <h3 class="title semihidden">Buka surat ini yaa 🫶</h3>
   
   <div class="container" id="container">
-    <p class="titleC">Laahhh, <b>kamuuu</b> siapa yaaa? 🫣</p>
-    <p class="messageC">Kokkkk cakeeepppp, manissss, lucuuuu, imuutttt, gemesinnn, ngangeninnnn manaaa pakeee bangetttt lagii...<br><br>Eehhh ternyataaaa pacarrrrku tercintaaa hehehee 🫣😋😍💐❤️‍🔥<br><br><b>Btwww,</b> akuu cuma mauu kamuu tauu kaloo akuu tuu sayanggggg bangettttt samaaa kamuuuuu..... Tetep sama aku yaaa...<br><br><b>I LOVE YOUUUUUU ❤️‍🔥❤️‍🔥❤️‍🔥</b></p>
+    <p class="titleC"><b><u>Aloooo kamuuu</u> 🫣</b><br>Kamu Tau Gaa? 😆</p>
+    <p class="messageC"><br><br><b>Btwww,</b> akuu cuma mauu kamuu tauu kaloo akuu tuu sayanggggg bangettttt samaaa kamuuuuu..... Tetep sama aku yaaa...<br><br><b>I LOVE YOUUUUUU ❤️‍🔥❤️‍🔥❤️‍🔥</b></p>
   </div>
 
 <script>
@@ -166,7 +166,7 @@ function createHearts() {
 	    afterComplete: function(){      
 	      	//clearInterval(scrollInterval);
 	      	titleC.innerHTML = vjudul;
-	          setTimeout(() => {katanimasiAlt()}, 300);
+	          setTimeout(() => {katanimasiAlts()}, 300);
 	    },}).go();
 	}
 	
@@ -190,7 +190,13 @@ function createHearts() {
 
     function katanimasiAlts(){
         new TypeIt(".messageC", {
-        strings: ["", ""],
+        strings: [
+						"Micin, micin apaa yangg<br>bikinn saltinggg? 😝", 
+                        "<br><b>Miciinntaiyoouuu 🫣😋😍💐❤️‍🔥</b><br>Aaaakkk~",
+                        "<br><br><b>Btw,</b>",
+                        "Kamu itu kaya Indomie dicampur Le Mineral tauuuu, Soalnyaaa...",
+                        "Kamuu udah jadii selerakuuu, ditambah adaa manis manisnyaa lagii aawwwhhhh 😋😍❤️‍🔥💐"
+					   ],
         startDelay: 1,
         speed: 27,
         cursor: true,
@@ -204,7 +210,7 @@ function createHearts() {
             }
         },
         afterComplete: function(){      
-            document.querySelector(".messageC").innerHTML = "!";
+            //document.querySelector(".messageC").innerHTML = "Micin, micin apaa yangg<br>bikinn saltinggg? 😝" + "<br><b>Miciinntaiyoouuu 🫣😋😍💐❤️‍🔥</b><br>Aaaakkk~" + "<br><br><b>Btw,</b>" + "Kamu itu kaya Indomie dicampur Le Mineral tauuuu, Soalnyaaa..." + "Kamuu udah jadii selerakuuu, ditambah adaa manis manisnyaa lagii aawwwhhhh 😋😍❤️‍🔥💐"
         },}).go();
     }
     
