@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">   
 <head>
@@ -35,8 +36,8 @@
   <audio src="shttps://feeldreams.github.io/audio/djikhlas.mp3" id="linkmp3"></audio>
   
   <div class="stiker">
-    <img id="main-stiker" src="https://feeldreams.github.io/pusn.gif" />
-    <img id="stikerAlt1" src="https://feeldreams.github.io/pandapanah.gif" />
+    <img id="main-stiker" src="https://feeldreams.github.io/pandapanah.gif" />
+    <img id="stikerAlt1" src="https://feeldreams.github.io/emawh.gif" />
   </div>
                 
   <div class="wrapper semihidden" id="wrapper">
@@ -52,7 +53,7 @@
   <h3 class="title semihidden">Buka surat ini yaa 🫶</h3>
   
   <div class="container" id="container">
-    <p class="titleC"><b><u>Aloooo kamuuu</u> 🫣</b><br>Kamu Tau Gaa? 😆</p>
+    <p class="titleC"><b><u>Aloooo kamuuu</u> 🫣</b><br>Kamu Tau Gaa? 🤔</p>
     <p class="messageC"><br><br><b>Btwww,</b> akuu cuma mauu kamuu tauu kaloo akuu tuu sayanggggg bangettttt samaaa kamuuuuu..... Tetep sama aku yaaa...<br><br><b>I LOVE YOUUUUUU ❤️‍🔥❤️‍🔥❤️‍🔥</b></p>
   </div>
 
@@ -191,12 +192,13 @@ function createHearts() {
     function katanimasiAlts(){
         new TypeIt(".messageC", {
         strings: [
-						"Micin, micin apaa yangg<br>bikinn saltinggg? 😝", 
-                        "<br><b>Miciinntaiyoouuu 🫣😋😍💐❤️‍🔥</b><br>Aaaakkk~",
-                        "<br><br><b>Btw,</b>",
-                        "Kamu itu kaya Indomie dicampur Le Mineral tauuuu, Soalnyaaa...",
-                        "Kamuu udah jadii selerakuuu, ditambah adaa manis manisnyaa lagii aawwwhhhh 😋😍❤️‍🔥💐"
-					   ],
+				    "Micin, micin apaa yangg<br>bikinn saltinggg? 😝", 
+                    "<br><i>Jawabannya...</i>",
+                    "<br><b>Miciinntaiyoouuu 🫣😋😍💐❤️‍🔥</b><br>Aaaakkk~",
+                    "<br><br><b>Btw,</b>",
+                    "<b>Kamuuu</b> itu kaya Indomie dicampur Le Mineral tauuuu, Soalnyaaa...",
+                    "<br><b>Kamuuu</b> udah jadii selerakuuu, ditambah adaa manis manisnyaa lagii aawwwhhhh 😋😍❤️‍🔥💐"
+				 ],
         startDelay: 1,
         speed: 27,
         cursor: true,
@@ -210,8 +212,48 @@ function createHearts() {
             }
         },
         afterComplete: function(){      
+            document.querySelector(".ti-cursor").style.display = "none";
             //document.querySelector(".messageC").innerHTML = "Micin, micin apaa yangg<br>bikinn saltinggg? 😝" + "<br><b>Miciinntaiyoouuu 🫣😋😍💐❤️‍🔥</b><br>Aaaakkk~" + "<br><br><b>Btw,</b>" + "Kamu itu kaya Indomie dicampur Le Mineral tauuuu, Soalnyaaa..." + "Kamuu udah jadii selerakuuu, ditambah adaa manis manisnyaa lagii aawwwhhhh 😋😍❤️‍🔥💐"
+            document.querySelector(".messageC").innerHTML += "<br><br><b id='teksLove'>Ilvyoouuuuu</b>";
+            defTeksLove = teksLove.innerHTML;
+            teksLove.innerHTML += " <b>1%</b> " + ambilRandomEmoji;
+            setTimeout(animateteksnim, 100);   
+            setTimeout(function() {
+                clearInterval(scrollInterval);
+            }, 1000)        
         },}).go();
+    }
+
+    const loveEmojis = ['💕', '💖', '💞', '💗', '💓', '💘', '💝'];
+    const ambilRandomEmoji = loveEmojis[Math.floor(Math.random() * loveEmojis.length)];
+    //const defTeksLove = teksLove.innerHTML;
+    function animateteksnim() {        
+        let percent = 10;
+        setTimeout(function() {
+            const intervalId = setInterval(() => {
+                if (percent < 10000) {
+                    percent += Math.floor(Math.random() * (100 - 10 + 1)) + 75;
+                    const randomEmoji = loveEmojis[Math.floor(Math.random() * loveEmojis.length)];
+                    teksLove.innerHTML = `<b>${defTeksLove} ${percent}% ${randomEmoji}</b>`;
+                } else {
+                    clearInterval(intervalId);
+                    
+                    percent = 10000;
+                    const randomEmoji = loveEmojis[Math.floor(Math.random() * loveEmojis.length)];
+                    teksLove.innerHTML = `<b>${defTeksLove} <span style='color:yellow'>${percent}%</span> ${randomEmoji}</b>`;
+                    teksLove.style="font-size:19px;transition:all .8s ease";
+
+                    // clearInterval(scrollInterval);
+                    
+                    setTimeout(() => {
+                        stikerHidden();
+                        setTimeout(() => {
+                            mainStiker.src = stikerAlt1.src;
+                        }, 300);
+                    }, 100);
+                }
+            }, 20); // Speed 0-100%
+        }, 10); // Delay
     }
     
     document.querySelector(".awalan").onclick = async function() {
