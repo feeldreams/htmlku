@@ -14,19 +14,19 @@
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
-	@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
-	@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap');
-	@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
-	@import url('https://fonts.googleapis.com/css2?family=Inter&family=Itim&display=swap');
-	
-	:root {
-	--poppins: 'Poppins', sans-serif;
-	--nunito: 'Nunito Sans', sans-serif;
-	--caveat: 'Caveat', cursive;
-	--quicksand: 'Quicksand', sans-serif;
-	--itim: 'Itim', cursive;
-	--inter: 'Inter', sans-serif;
-	}
+    @import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter&family=Itim&display=swap');
+    
+    :root {
+    --poppins: 'Poppins', sans-serif;
+    --nunito: 'Nunito Sans', sans-serif;
+    --caveat: 'Caveat', cursive;
+    --quicksand: 'Quicksand', sans-serif;
+    --itim: 'Itim', cursive;
+    --inter: 'Inter', sans-serif;
+    }
 
     html, body {position: relative;height: 100%;}
     body {background: #000;font-family: 'Itim', cursive;font-size: 14px;color: #fff;text-shadow: 0px 2px 2px rgba(0, 0, 0, .5);margin: 0;padding: 0;}
@@ -119,7 +119,7 @@
       	<div id="stiker1" class="scale0 stiker">
         <img src="https://feeldreams.github.io/hearthappy.gif"/>
        </div>
-      	<h1 id="teks1" class="scale0 quicksand" style="font-size: 20px;">Aku Mau Nanya<br>ke Kamu Nih 🫣<!--<br><br><span style="font-weight:400;font-size:16px">Jawab yaa ðŸ«¢</span>--><br><br> >>>></h1>
+      	<h1 id="teks1" class="scale0 quicksand" style="font-size: 20px;">Aku Mau Nanya<br>ke Kamu Nih 🫣<br><br> >>>></h1>
       </div>
       
       <div class="swiper-slide">
@@ -130,7 +130,7 @@
       </div>
       
       <div class="swiper-slide">
-      	<div id="stiker3" class="scale0 stiker" style="margin-top:-50px">
+      	<div id="stiker3" class="scale0 stiker" style="margin-top:0">
         <img id="stikerAkhir1" src="https://feeldreams.github.io/pusn2.gif"/>
         <img id="stikerAkhir2" class="sembunyi" src="https://feeldreams.github.io/cilukba.gif"/>
         <img id="stikerAkhir3" class="sembunyi" src="https://feeldreams.github.io/emawh.gif"/>
@@ -164,9 +164,9 @@
         <p id="teksLoveU" class="sembunyi">I Love U 1% 🩷</p>
         <p id="teksRandomEmoji" class="sembunyi">🩷</p>
         
-        <style>.containerAkhir{display:flex;width:60%;height:80px;justify-content:left;text-align:left;margin-top:0}</style>
+        <style>.containerAkhir{display:flex;width:70%;height:230px;overflow: auto;justify-content:left;text-align:left;margin-top:0}</style>
         <div id="contentAkhir" class="containerAkhir sembunyi">
-           <h1 id="teksAkhir" class="sembunyi quicksand" style="font-size: 18px;font-weight:400">Yeaaay!!! 🫣</h1>
+           <h1 id="teksAkhir" class="sembunyi quicksand" style="font-size: 18px;font-weight:400"></h1>
         </div>
       </div>
       
@@ -179,7 +179,7 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
   <script>
-    var teksSekarang = 1;const body = document.querySelector("body"); audio = new Audio('' + linkmp3.src); 
+    var teksSekarang = 1;const body = document.querySelector("body"); audio = new Audio('' + linkmp3.src); const containerAkhir = document.getElementById('contentAkhir');
     var swiper = new Swiper(".mySwiper", {
       pagination: {
         el: ".swiper-pagination",
@@ -188,10 +188,6 @@
       allowTouchMove: true,
       on: {
       slideChange: function () {
-        //var currentIndex = swiper.activeIndex;
-        //var colors = [wallpaper2.src, wallpaper3.src, wallpaper4.src];
-        //wallpaper.src = colors[currentIndex % colors.length];
-
         teksSekarang++;
         teksScale = document.querySelector('#teks' + teksSekarang);
         stikerScale = document.querySelector('#stiker' + teksSekarang);
@@ -226,16 +222,45 @@
 initeksAkhir = teksAkhir.innerHTML;
 teksAkhir.innerHTML = "";
 function animteksakhir(){
-      contentAkhir.classList.remove("sembunyi");
-      teksAkhir.classList.remove("sembunyi");
+    contentAkhir.classList.remove("sembunyi");
+    teksAkhir.classList.remove("sembunyi");
 	  new TypeIt("#teksAkhir", {
-      strings: ["" + initeksAkhir], startDelay: 50, speed: 33, cursor: true,
+      // strings: ["" + initeksAkhir], startDelay: 50, speed: 33, cursor: true,
+      strings: [
+        "<b>Yeaaay!!! 🫣</b>", 
+        "<br>Kamu tau kenapa 5 + 5 = 10? 🤔",
+        "<br>Karena.. Kamu itu <b>10/10</b> ✨",
+        "Ehhh.. <b>20/10</b> deh karena senyum kamu! 🫵🫣",
+        "<b>30/10</b> karena aku suka kamu! 🥰",
+        "<b>40/10</b> karena kamu selalu buat aku bahagia! 😊",
+        "<b>50/10</b> karena kamu baik banget sama aku! 🫠",
+        "<b>60/10</b> karena kamu semangat terus! 🥳",
+        "<b>70/10</b> karena kamu ",
+        "<b>80/10</b> karena kamu selalu ada di hati aku! 😍",
+        "<b>90/10</b>",
+        "<b>100/10</b>",
+        "<b><span style='font-size:22px'>∞</span>/10</b> karena kamu selalu ada buat akuuu! 💕<br><b>Ilvyooouuuu 😍🫣❤️</b>"      
+      ],
+      startDelay: 1,
+      speed: 27,
+      cursor: true,
+      breakLines: true,
+      waitUntilVisible: true,
+      afterStep: function(instance) {
+          if (instance.is('completed')) {
+              setTimeout(function() {
+                  instance.next();
+              }, 1000);
+          }
+      },
       afterComplete: function(){
-      	teksAkhir.innerHTML = initeksAkhir;
-          stiker3.classList.remove("scale1");
+        const cursor = document.querySelector(".ti-cursor");
+        if (cursor) {cursor.style.display = "none";}        
+        stiker3.classList.remove("scale1");
 	      stiker3.classList.add("scale0");
 	      setTimeout(function(){stikerAkhir1.src = stikerAkhir3.src; stiker3.classList.remove("scale0");stiker3.classList.add("scale1");},300);
-          setInterval(berjatuhan, 200);
+        setInterval(berjatuhan, 200);
+        setTimeout(function(){clearInterval(scrollInterval)},500);
       },}).go();
 }
 
@@ -273,6 +298,9 @@ var sudahKlik = true;
 var fungsiBerfungsi = false;
 document.getElementById('loveIn').innerHTML = '<style>.lovein svg{animation:none;stroke:#ff0000;stroke-width:1.3;fill:none;width:35px;height:35px}</style><label class="lovein"><svg class="line" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g transform="translate(2.550170, 3.550158)"><path d="M0.371729633,8.89614246 C-0.701270367,5.54614246 0.553729633,1.38114246 4.07072963,0.249142462 C5.92072963,-0.347857538 8.20372963,0.150142462 9.50072963,1.93914246 C10.7237296,0.0841424625 13.0727296,-0.343857538 14.9207296,0.249142462 C18.4367296,1.38114246 19.6987296,5.54614246 18.6267296,8.89614246 C16.9567296,14.2061425 11.1297296,16.9721425 9.50072963,16.9721425 C7.87272963,16.9721425 2.09772963,14.2681425 0.371729633,8.89614246 Z"></path><path d="M13.23843,4.013842 C14.44543,4.137842 15.20043,5.094842 15.15543,6.435842"></path></g></svg></label><p id="ket">Sentuh LOVEnya!</p>';
 
+function autoScroll() {containerAkhir.scrollTop += 10;}
+const scrollInterval = setInterval(autoScroll, 50); 
+
 document.getElementById("loveIn").onclick = function() {
     if (sudahKlik) {
     audio.play();
@@ -308,13 +336,6 @@ setInterval(function() {
   }
 }, 100);
 
-const scrollContainer = document.getElementById("scroll-container");
-  const textContainer = document.getElementById("textsec2");
-
-function autoScroll() {
-    scrollContainer.scrollTop += 10;
-}
-
 //const scrollInterval = setInterval(autoScroll, 50); 
 
         const screen = document.getElementById('screen');
@@ -349,7 +370,7 @@ buttons.forEach(button => {
 						        keys.style.display = 'none';
 						        screen.value = "";
 			                    stikerScale.style="";
-			                    stiker3.style="margin-top:-100px;margin-bottom:24px";
+			                    stiker3.style="margin-top:0;margin-bottom:24px";
 			                    calculator.style="display:flex;opacity:0;transition:all .3s ease";
 			                    setTimeout(function(){calculator.style="display:none";}, 100);
 			                    setTimeout(animteksakhir, 200);
