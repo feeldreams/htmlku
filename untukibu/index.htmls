@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>feeldream - Selamat hari</title>
+</head>
+<body>
+
+<script>
+    var nilaiRandom = Math.floor(Math.random() * 11);
+    //if (nilaiRandom > 2) {
+        window.location.replace("https://www.feeldream.id/2023/01/script-feeldream.html?#selamathari");
+    //} else {
+    //	window.location.replace("https://htmlku.com/khususkamu/play");
+    //}
+</script>
+
+</body>
+</html>
