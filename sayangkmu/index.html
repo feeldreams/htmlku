@@ -116,8 +116,10 @@
 	.mainMsg{margin-top:120px;display:flex;flex-direction:column;justify-content:center;align-items:center;z-index:9999;}
 	.mainSt{display:flex;justify-content:center;align-items:center;margin-left:auto;margin-right:auto;transform:scale(0);transition:all 0.7s ease;}
 	.mainSt img{width:80px;height:80px;box-shadow:0 4px 30px rgba(255,255,255,0.3);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);background:rgba(255,255,255,.2);border:2px solid rgba(255,255,255,0.3);border-radius:50%;padding:10px;}
-	.mainTxt{width:70%;height:220px;overflow:auto;margin-top:30px;text-align:left;color:white;font-size:18px;font-weight:700;transform:scale(0);transition:all 0.7s ease;}
+	.mainTxt{width:70%;height:220px;overflow:auto;scrollbar-width: none;-ms-overflow-style: none;margin-top:30px;text-align:left;color:white;font-size:18px;font-weight:700;transform:scale(0);transition:all 0.7s ease;}
 	.txtAlt{font-size:17px;font-weight:400;}
+	
+	.mainTxt::-webkit-scrollbar {display: none;}
 	
 	#Tombol {margin-top:24px;position:relative;transform:scale(0);opacity:0;margin-left:auto;margin-right:auto;display:flex;justify-content:center;align-items:center;list-style:none;transition:all .6s ease;}
     #Tombol a {cursor:none;display:inline-flex;justify-content:center;align-items:center;margin:0 8px;min-width:40px;padding:10px;outline:0;border:1px solid white;border-radius:18px;line-height:15px;background:rgba(0,0,0,.5);color:white;font-size:15px;font-weight:700;white-space:nowrap;overflow:hidden;box-shadow: rgba(255,255,255, 0.15) 0px 7px 29px 0px;z-index:1;transition:all .6s ease;}
