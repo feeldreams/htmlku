@@ -411,6 +411,7 @@ document.addEventListener('click', function() {
         }
     }
 });
+window.history.replaceState(null, null, removeTrailingSlash(window.location.href));
 </script>
 </body>
 </html>
