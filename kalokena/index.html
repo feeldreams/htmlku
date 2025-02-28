@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Game For You - Script HTML buat Kamu</title>
+  <meta name="description" content="@feelthisray - Script HTML by Feeldream Repl Co">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+<script>
+    window.location.replace("https://www.feeldream.id/2023/01/script-feeldream.html?m=1#kalokena");
+</script>
+  <link rel="icon" type="image/svg+xml" href="https://feeldreams.github.io/main-icon.png"> 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+  <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
+
+  <!-- Demo styles -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Inter&family=Itim&display=swap');
+	
+	:root {
+	--poppins: 'Poppins', sans-serif;
+	--nunito: 'Nunito Sans', sans-serif;
+	--caveat: 'Caveat', cursive;
+	--quicksand: 'Quicksand', sans-serif;
+	--itim: 'Itim', cursive;
+	--inter: 'Inter', sans-serif;
+	}
+
+    html, body {position: relative;height: 100%;}
+    body {background: #000;font-family: 'Itim', cursive;font-size: 14px;color: #fff;text-shadow: 0px 2px 2px rgba(0, 0, 0, .5);margin: 0;padding: 0;}
+    
+    #bodyblur{opacity:.4;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);transition:all 1s ease;} 
+    #wallpaper{width:100%;height:100%;transform: scale(1.3);transition:all 1.3s ease;}
+    #wallpaper2, #wallpaper3, #wallpaper4{display:none}
+    @keyframes jj{0%  {transform: scale(1);} 50% {transform: scale(1.3);} 100% {transform: scale(1);}}
+
+    p{margin-left:50px;margin-right:70px;text-align:left}
+    #ket{margin:20px}
+
+    .swiper {width: 100%;height: 100%;padding:0;margin:0;}
+    .swiper-slide {text-align: center;font-size: 18px;display: flex;flex-direction: column;justify-content: center;align-items: center;margin-top:-100px;}
+    .swiper-slide img {display: block;width: 100%;height: 100%;object-fit: cover;}
+    .swiper-pagination{margin-bottom:25vh}
+    .swiper-pagination-bullet-active{background-color: #fff !important;opacity:1 !important}
+    .swiper-pagination-bullet{background-color:rgba(255,255,255, 1) !important;}
+    .swiper-button-next, .swiper-button-prev{display:none;}
+    
+    .sembunyi, #teksAkhiran, #teksLoop, #emojiTeksLoop{display: none !important;}
+    .stiker{display:flex;justify-content:center;align-items:center;margin-left:auto;margin-right:auto;margin-bottom:20px;transition:all .75s ease}
+    .stiker img{width:90px;height:90px;box-shadow: 0 4px 30px rgba(255,255,255, 0.3);backdrop-filter: blur(5px);-webkit-backdrop-filter: blur(5px);background: rgba(255, 255, 255, .3);border: 2px solid rgba(255, 255, 255, 1);border-radius: 50%;padding:10px;}
+    .stiker img.sty2{background:none;filter: drop-shadow(0 4px 8px rgba(255, 255, 255, 0.2));box-shadow: none;backdrop-filter: none;-webkit-backdrop-filter: none;border: none;border-radius: 0;padding:0;width: auto;height:90px;}
+	b.merah{color:red}
+	b.kuning{color:yellow}
+	b.putih{text-shadow:none;padding-left:8px;padding-right:8px;padding-top:2px;padding-bottom:2px;background-color:white;border-radius:12px}
+	span.garismerah{border-bottom:2px solid red}
+	span.gariskuning{border-bottom:2px solid yellow}
+    p{color:white;font-size:15px;line-height:1.5em;}
+    .abs{position:absolute !important}
+    .scale0{opacity:0;transform: scale(0);transition: all .9s ease;}
+    .scale1{opacity:1;transform: scale(1);transition: all .9s ease;}
+    svg{vertical-align: middle;width: 22px;height: 22px;fill: #fff}
+    .heart-icon {z-index:100;width: 30px;height: 30px;position: fixed;animation:  heartMove linear 1;top: -10vh;}
+
+	@keyframes heartMove {
+	  0% {transform: translateY(-10vh);}
+	  100% {transform: translateY(100vh);}
+	}
+	    svg.line{fill: none;stroke: #fff;stroke-width: 2;animation: moving .7s linear infinite alternate;}
+	    .spin{animation: spin 3s linear infinite alternate;}
+	@keyframes spin {
+	  from {
+	    transform: rotate(20deg);
+	  }
+	  to {
+	    transform: rotate(-20deg);
+	  }
+	}
+	@keyframes moving {
+	  from {
+	    transform: translateY(0);
+	  }
+	  to {
+	    transform: translateY(3px);
+	  }
+	}
+    .overlay {position: fixed;top: 0;left: 0;width: 100%;height: 100%;display: flex;justify-content: center;align-items: center;background:#000;z-index:100;}
+    .loading-message {font-size: 13px;text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);color:white;text-align: center;}
+    .blocklove{display: none;flex-direction: column;justify-content: center;align-items: center;}
+    .lovein{background:#fff;color:#FF0900;border-radius:50%;width:40px;height:40px;padding:10px;font-size:30px;display:flex;align-items:center;text-align:center;justify-content:center;transition:all .3s ease;}
+    .lovein:hover{transform: scale(.9);color:#FF0900;}
+    .lovein svg{stroke:#FF0600;width:30px;height:30px}
+    
+    .blocktext{margin-top:10px;position:relative;width:100%;height: 270px; overflow: auto;background-color:none;}
+    
+    .sertifikat {position: relative;width: 330px;height: 236px;text-shadow:none}
+	.sertifikat img {border-radius:30px;width: 100%;height: 100%;}
+	.text-overlay {position: absolute;top: 35px;left: 0;width: 100%;text-align: center;color: #333;font-size: 14px;font-weight: bold;}
+	.text-overlay h1 {font-size: 20px;color:#fff;margin: 0;}
+	.text-overlay .sub-title {font-size: 14px;color:yellow;margin-bottom: 10px;}
+	.content {font-size: 12px;color:#fff;}
+	.real {font-weight: bold;color: #fff;font-size: 12px;}
+	
+    .tombol{background-color: rgba(255,255,255,0);border-radius: 50px;overflow: hidden;display: flex;align-items: center;justify-content: center;-webkit-transition: all .2s ease-out;transition: all .2s ease-out}
+    .tombol svg{margin: auto;fill:#ffd4d4;stroke: #ff0000;width: 60px;height: 60px;animation: spin2 1s linear infinite alternate;}
+    #Tombol{margin-top:20px;position:relative;margin-left:auto;margin-right:auto;display:flex;align-items:center;justify-content:center;list-style:none;transition:all 1s ease;}
+    #Tombol a{cursor:pointer;display:inline-flex;align-items:center; margin:0;margin:10px;transition:all .2s ease;padding:10px;outline:0;border:1px solid white;border-radius:12px;line-height:15px;background:rgba(0,0,0,.3);color:white;font-size:13px;font-weight:700;white-space:nowrap;overflow:hidden;box-shadow: rgba(255,255,255, 0.15) 0px 7px 29px 0px;z-index:1}
+    #Tombol, #Tombol2, #TombolWA{position:relative;opacity:0;margin-left:auto;margin-right:auto;display:flex;justify-content:center;align-items:center;list-style:none;transition:all 1s ease;}
+    #Tombol a, #Tombol2 a, #TombolWA a{cursor:pointer;display:inline-flex;align-items:center; margin:0;margin:10px;transition:all .2s ease;padding:10px;outline:0;border:1px solid white;border-radius:8px;line-height:15px;background:rgba(0,0,0,.5);color:white;font-size:13px;font-weight:700;white-space:nowrap;overflow:hidden;box-shadow: rgba(255,255,255, 0.15) 0px 7px 29px 0px;z-index:1}
+    
+    .swal2-modal > *{color:white}
+    .swal2-title{line-height:1.3em;font-size:18px;text-align:center;padding:15px 30px 0 30px;}
+    .swal2-container.swal2-backdrop-show{background: rgba(0,0,0,.5);}
+    .swal2-timer-progress-bar-container > *{opacity:.7;background:#00B6FF;margin:0 2px}
+    .swal2-modal{box-shadow: rgba(255,255,255, 0.3) 0px 7px 29px 0px;background:rgba(0,0,0,.9);max-width:320px;border-right:2px solid #fff;border-left:2px solid #fff;border-radius:4px;top:-50px;}
+    
+    .main-card{margin-top:-10px;display:flex;flex-direction:column;align-items:center;}
+	.game-board{margin-top:10px;display:grid;grid-template-columns:repeat(4,40px);grid-gap:10px;transform:scale(1);transition:transform 1s ease;}
+	.card{font-family:Arial,sans-serif;width:40px;height:40px;background-color:rgba(255,255,255,.5);display:flex;align-items:center;justify-content:center;font-size:0;/*cursor:pointer;*/border-radius:8px;transform:scale(0);position:relative;overflow:hidden;}
+	.card canvas{width:100%;height:100%;position:absolute;top:0;left:0;}
+	.card.flipped{font-size:1.2em;background-color:rgba(255,255,255,.3);color:#2c3e50;transition:all .5s ease}
+	.hideOut {transform: scale(0) !important;opacity: 0;transition: all 0.7s ease !important;}
+	.pesanAfter{display:none;font-size:2em;margin-top:20px;color:#e74c3c;}
+	@keyframes appear{to{transform:scale(1);}}
+	.start-button{padding:10px 20px;font-size:1em;margin-top:20px;cursor:pointer;background-color:#3498db;color:white;border:none;border-radius:5px;}
+</style>
+</head>
+
+<body>
+  <audio src="https://feeldreams.github.io/audio/foreveryoung.mp3" id="linkmp3" class="sembunyi"></audio>
+  
+	<div class="overlay">
+    <div class="loading-message">Hai kamu!<br>Tunggu dulu ya..</div>
+     <div id="loveIn" class="blocklove"></div>
+   </div>
+   
+   <div id="bodyblur">
+     <img src="https://i.ibb.co.com/58WQ1H2/ef70f73ef5d702a89540a1bc15972551.jpg" id="wallpaper"/>
+   </div>
+   
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+                <div id="stiker1" class="scale0 stiker">
+                    <img src="https://feeldreams.github.io/pandapanah.gif" />
+                </div>
+                <h1 id="teks1" class="scale0 quicksand" style="font-size: 22px;">Alooo Kamuuu 🫢<br><br> >>>>
+                </h1>
+            </div>
+
+            <div class="swiper-slide">
+                <div id="stiker2" class="scale0 stiker">
+                    <img src="https://feeldreams.github.io/pandahiya.gif" />
+                </div>
+                <h1 id="teks2" class="scale0 quicksand" style="font-size: 18px;">Aku Ada Sesuatu<br>buat Kamuuuuu 🫣<br><br> >>>></h1>
+            </div>
+
+            <div class="swiper-slide">
+				<div class="main-card">
+					<h1 id="teks3" class="scale0 quicksand" style="font-size: 18px;">Coba Gosok Kartu Ini<br><span style="color:pink">Awas Kena <i>Bom</i> yaa!</span> 😆</h1>
+				  <div class="game-board">
+				    <div class="card" data-emoji="🫶"><canvas></canvas></div>
+				    <div class="card" data-emoji="❤️"><canvas></canvas></div>
+				    <div class="card" data-emoji="🥳"><canvas></canvas></div>
+				    <div class="card" data-emoji="🫣"><canvas></canvas></div>
+				
+				    <div class="card" data-emoji="🤍"><canvas></canvas></div>
+				    <div class="card" data-emoji="😍"><canvas></canvas></div>
+				    <div class="card" data-emoji="🥰"><canvas></canvas></div>
+				    <div class="card" data-emoji="🩷"><canvas></canvas></div>
+				
+				    <div class="card" data-emoji="💖"><canvas></canvas></div>
+				    <div class="card" data-emoji="💕"><canvas></canvas></div>
+				    <div class="card" data-emoji="💓"><canvas></canvas></div>
+				    <div class="card" data-emoji="💗"><canvas></canvas></div>
+				
+				    <div class="card" data-emoji="💝"><canvas></canvas></div>
+				    <div class="card" data-emoji="💞"><canvas></canvas></div>
+				    <div class="card" data-emoji="💘"><canvas></canvas></div>
+				    <div class="card" data-emoji="💣"><canvas></canvas></div>
+				</div>
+				</div>
+				
+				<div id="stiker4" class="abs scale0 stiker" style="margin-top:50px">
+                    <img id="stikerAkhir1" src="https://feeldreams.github.io/weee.gif" />
+                    <img id="stikerAkhir2" class="sembunyi" src="https://feeldreams.github.io/emawh.gif" />
+                    <img id="stikerAkhir100" class="sembunyi" src="https://htmlku.com/0/panda/terlope.gif" />
+                </div>
+                <div id="scroll-container" class="blocktext scale0 abs">
+                    <h1 id="teks4" class="quicksand" style="font-size: 17px;font-weight:400;line-height:1.3em"></h1>
+                    <h1 id="teksLoop">I Love Youu</h1>
+                    <h1 id="emojiTeksLoop">❤️</h1>
+                    <h1 id="teksAkhiran">Makasii udaa mau jadi<br><b>pacar akuu</b> wkwk 😆🫣💐</b></h1>
+                </div>
+            </div>
+            
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+var teksSekarang = 1;
+const body = document.querySelector("body"); 
+audio = new Audio('' + linkmp3.src); 
+var swiper = new Swiper(".mySwiper", {
+    pagination: {el: ".swiper-pagination", dynamicBullets: false,},
+    allowSlidePrev: true, // Awalnya boleh kembali
+    on: {
+    slideChange: function () {
+        teksSekarang++;
+        teksScale = document.querySelector('#teks' + teksSekarang);
+        stikerScale = document.querySelector('#stiker' + teksSekarang);
+        Tombol = document.querySelector('#Tombol');
+
+        setTimeout(function(){
+        	
+		        if(teksSekarang < 3){
+		          teksScale.classList.add("scale1");
+		          stikerScale.classList.add("scale1");
+		        } else {
+                  teksScale.classList.add("scale1");
+                  setTimeout(startGame,100);
+                  swiper.allowSlidePrev = false; // Nonaktifkan kembali ke slide sebelumnya saat slide 3
+                  swiper.allowSlideNext = false;
+                }
+          
+        }, 50);
+    },
+    },
+    navigation: {nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev",},
+});
+    
+initeks = "<b style='font-size: 20px;'>Yaahh kena Boom!! 💥😝</b><br><br>Kalo kamu kena boom, kamu harus<br>jadi <b>pacarkuu</b> yaaa hhee! 😆😍🩷<br><br>──<br><br><b>Gaboleh Nolaak!!</b> 😝🫣💐</b>";
+teks4.innerHTML = "";
+function katanimasi(){
+    teks4.innerHTML = "";
+	new TypeIt("#teks4", {
+    strings: ["" + initeks], startDelay: 100, speed: 30, cursor: true,
+    afterComplete: function(){
+      	teks4.innerHTML = initeks;
+      
+          setTimeout(function(){
+            teksScale.classList.remove("scale1");
+            teksScale.classList.add("scale0");
+            stikerScale.classList.remove("scale1");
+            stikerScale.classList.add("scale0");
+               
+            setTimeout(function(){teksScale.innerHTML="";stikerAkhir1.src = stikerAkhir2.src;}, 350);
+            setTimeout(function(){
+            	setTimeout(katanimasi3, 100);
+                teksScale.classList.remove("scale0");
+                stikerScale.classList.remove("scale0");
+                teksScale.classList.add("scale1");
+                stikerScale.classList.add("scale1");
+            },450);
+            
+            }, 1300);
+            
+    },}).go();
+}
+
+function katanimasi3(){
+    teks4.innerHTML = "";
+    let kangenPercentage = 10; // Memulai dari 10%
+    var vteksLoop = teksLoop.innerHTML;
+    var vemojiTeksLoop = emojiTeksLoop.innerText;
+    
+    new TypeIt("#teks4", {
+        strings: Array.from({length: 10}, (_, i) => `${vteksLoop} ${kangenPercentage + i * 10}% ${vemojiTeksLoop}`),
+        startDelay: 50,
+        speed: 10, 
+        cursor: false,
+        nextStringDelay: 0, 
+        afterComplete: function(){
+            teks4.innerHTML += `<br><br><span id="teksLove"></span>`;
+            //setTimeout(animateteksnim,100);
+            setTimeout(katanimasi4,100);
+            
+            // setInterval(falling, 200);
+        },
+    }).go();
+}
+
+function katanimasi4(){
+	var initeksAkhir = teksAkhiran.innerHTML;
+	new TypeIt("#teksLove", {
+    strings: ["" + initeksAkhir], startDelay: 1, speed: 25, cursor: true,
+    afterComplete: function(){
+      	teksLove.innerHTML = initeksAkhir;
+      
+                setInterval(falling, 200);
+                setTimeout(function(){clearInterval(scrollInterval)},500);
+                stiker4.classList.remove("scale1");
+                stiker4.classList.add("scale0");
+                setTimeout(function(){
+                    stikerAkhir1.src = stikerAkhir100.src; 
+                    stiker4.classList.remove("scale0");
+                    stiker4.classList.add("scale1");
+                },300);
+            
+    },}).go();
+}
+
+var sudahKlik = true;
+var fungsiBerfungsi = false;
+document.getElementById('loveIn').innerHTML = '<style>.lovein svg{animation:none;stroke:#ff0000;stroke-width:1.3;fill:none;width:35px;height:35px}</style><label class="lovein"><svg class="line" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g transform="translate(2.550170, 3.550158)"><path d="M0.371729633,8.89614246 C-0.701270367,5.54614246 0.553729633,1.38114246 4.07072963,0.249142462 C5.92072963,-0.347857538 8.20372963,0.150142462 9.50072963,1.93914246 C10.7237296,0.0841424625 13.0727296,-0.343857538 14.9207296,0.249142462 C18.4367296,1.38114246 19.6987296,5.54614246 18.6267296,8.89614246 C16.9567296,14.2061425 11.1297296,16.9721425 9.50072963,16.9721425 C7.87272963,16.9721425 2.09772963,14.2681425 0.371729633,8.89614246 Z"></path><path d="M13.23843,4.013842 C14.44543,4.137842 15.20043,5.094842 15.15543,6.435842"></path></g></svg></label><p id="ket">Sentuh LOVEnya!</p>';
+
+document.getElementById("loveIn").onclick = function() {
+    if (sudahKlik) {
+        audio.play();
+        document.querySelector(".overlay").style.display = "none";
+        
+        stiker1.classList.add("scale1");
+        teks1.classList.add("scale1");
+        wallpaper.style="transform:scale(1)";
+        
+        setTimeout(function(){fungsiBerfungsi = true}, 300);
+    } else {
+        sudahKlik = true; 
+        document.getElementById('loveIn').innerHTML = '<style>.lovein svg{animation:none;stroke:#ff0000;stroke-width:1.3;fill:none;width:35px;height:35px}</style><label class="lovein"><svg class="line" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g transform="translate(2.550170, 3.550158)"><path d="M0.371729633,8.89614246 C-0.701270367,5.54614246 0.553729633,1.38114246 4.07072963,0.249142462 C5.92072963,-0.347857538 8.20372963,0.150142462 9.50072963,1.93914246 C10.7237296,0.0841424625 13.0727296,-0.343857538 14.9207296,0.249142462 C18.4367296,1.38114246 19.6987296,5.54614246 18.6267296,8.89614246 C16.9567296,14.2061425 11.1297296,16.9721425 9.50072963,16.9721425 C7.87272963,16.9721425 2.09772963,14.2681425 0.371729633,8.89614246 Z"></path><path d="M13.23843,4.013842 C14.44543,4.137842 15.20043,5.094842 15.15543,6.435842"></path></g></svg></label><p id="ket">Sentuh LOVEnya!</p>';
+    }
+}
+
+function falling() {
+    const heart = document.createElement("div");
+    heart.innerHTML = "<svg class='line spin' style='opacity:.5;z-index:100;stroke:#FFC2B8' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><g transform='translate(2.550170, 3.550158)'><path d='M0.371729633,8.89614246 C-0.701270367,5.54614246 0.553729633,1.38114246 4.07072963,0.249142462 C5.92072963,-0.347857538 8.20372963,0.150142462 9.50072963,1.93914246 C10.7237296,0.0841424625 13.0727296,-0.343857538 14.9207296,0.249142462 C18.4367296,1.38114246 19.6987296,5.54614246 18.6267296,8.89614246 C16.9567296,14.2061425 11.1297296,16.9721425 9.50072963,16.9721425 C7.87272963,16.9721425 2.09772963,14.2681425 0.371729633,8.89614246 Z'></path><path d='M13.23843,4.013842 C14.44543,4.137842 15.20043,5.094842 15.15543,6.435842'></path></g></svg>";
+    heart.className = "heart-icon";
+    heart.style.left = (Math.random() * 95) + "vw";
+    heart.style.animationDuration = (Math.random() * 3) + 2 + "s";
+    document.body.appendChild(heart);
+}
+setInterval(function() {
+    var heartArr = document.querySelectorAll(".heart-icon");
+    if (heartArr.length > 100) {
+        heartArr[0].remove();
+    }
+}, 100);
+
+const scrollContainer = document.getElementById("scroll-container");
+function autoScroll() {
+    scrollContainer.scrollTop += 10;
+}
+const scrollInterval = setInterval(autoScroll, 50); 
+
+document.addEventListener('keydown', function(event) {
+    if (event.code === 'Space' || event.code === 'ArrowRight') {
+        if (teksSekarang < 3) { // Hanya boleh maju sampai slide 3
+            swiper.slideNext();
+        }
+    }
+});
+
+document.addEventListener('click', function() {
+    if (teksSekarang < 3) {
+    	if (fungsiBerfungsi === true) {
+           swiper.slideNext();
+        }
+    }
+});
+
+setTimeout(function(){
+    var overlay = document.querySelector(".loading-message");
+    overlay.style.display = "none";
+    var tomlv = document.querySelector(".blocklove");
+    tomlv.style.display = "flex";
+}, 1500);
+</script>
+<script>
+const cards = document.querySelectorAll(".card");
+const gameBoard = document.querySelector(".game-board");
+let lockBoard = false;
+
+function startGame() {
+    cards.forEach(card => {
+        card.style.animation = "appear .9s forwards";
+        setupScratchCard(card);
+    });
+    shuffle();
+}
+
+function setupScratchCard(card) {
+    const canvas = card.querySelector("canvas");
+    const ctx = canvas.getContext("2d");
+    canvas.width = 40;
+    canvas.height = 40;
+
+    // Isi canvas dengan lapisan abu-abu untuk "digosok"
+    ctx.fillStyle = "rgba(255,255,255,.5)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    let isScratching = false;
+    let revealed = false;
+
+    function handleScratch(e) {
+        if (lockBoard || revealed) return;
+
+        const rect = canvas.getBoundingClientRect();
+        const x = (e.type.includes("mouse") ? e.clientX : e.touches[0].clientX) - rect.left;
+        const y = (e.type.includes("mouse") ? e.clientY : e.touches[0].clientY) - rect.top;
+
+        ctx.globalCompositeOperation = "destination-out";
+        ctx.beginPath();
+        ctx.arc(x, y, 10, 0, Math.PI * 2); // Lingkaran kecil untuk efek gosok
+        ctx.fill();
+        ctx.globalCompositeOperation = "source-over";
+
+        // Cek apakah sudah cukup digosok (50% area terbuka)
+        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+        let transparentPixels = 0;
+        for (let i = 3; i < imageData.length; i += 4) {
+            if (imageData[i] === 0) transparentPixels++;
+        }
+        const totalPixels = canvas.width * canvas.height;
+        if (transparentPixels / totalPixels > 0.1 && !revealed) {
+            revealed = true;
+            card.classList.add("flipped");
+            card.textContent = card.dataset.emoji;
+            canvas.style.display = "none"; // Sembunyikan canvas setelah terbuka
+            if (card.dataset.emoji === "💣") {
+                lockBoard = true;
+                endGame();
+            }
+        }
+    }
+
+    canvas.addEventListener("mousedown", () => isScratching = true);
+    canvas.addEventListener("mouseup", () => isScratching = false);
+    canvas.addEventListener("mousemove", (e) => { if (isScratching) handleScratch(e); });
+    canvas.addEventListener("touchstart", () => isScratching = true);
+    canvas.addEventListener("touchend", () => isScratching = false);
+    canvas.addEventListener("touchmove", (e) => { if (isScratching) handleScratch(e); });
+}
+
+function endGame() {
+    setTimeout(() => {
+        document.querySelector(".main-card").style = "transform:scale(0);opacity:0 !important;transition:all .7s ease";
+        stikerScale = document.querySelector('#stiker4');
+        teksScale = document.querySelector('#teks4');
+    
+        setTimeout(() => {
+            document.querySelector(".main-card").style.display = "none";
+            
+            scrollContainer.classList.remove("abs");
+            scrollContainer.classList.remove("scale0");
+            scrollContainer.classList.add("scale1");
+
+            stikerScale.classList.remove("abs");
+            stikerScale.classList.remove("scale0");
+            stikerScale.classList.add("scale1");
+
+            setTimeout(katanimasi, 200);
+        }, 500);
+    }, 1000);
+}
+
+function shuffle() {
+    cards.forEach(card => {
+        let randomPos = Math.floor(Math.random() * 16);
+        card.style.order = randomPos;
+    });
+}
+</script>
+</body>
+</html>
