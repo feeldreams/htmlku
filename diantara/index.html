@@ -162,8 +162,8 @@
                     <span class="secondTxt">Hehehe~ 😆</span>
 			
 		            <div id="Tombol">
-				       <a id="By" class="biru" onClick="fnYes()">Mauu</a>
-				       <a id="Bn" class="merah" onClick="btn='Bn';fungsibaru(btn)">Gamau</a>
+				       <a id="By" class="biru" onClick="fnYes()">Setujuu</a>
+				       <a id="Bn" class="merah" onClick="btn='Bn';fungsibaru(btn)">Gakk</a>
 				       
 				       <span id="penggantiBy" class="sembunyi"> Ayo</span>
 				       <span id="penggantiBn" class="sembunyi">Gamau</span>
@@ -278,8 +278,8 @@ function teksAnimasi(varText, delay){
 				         currentIndex = (currentIndex + 1) % images.length;
 				         secondTxt.style.transform = 'scale(0)';
 				         mainSt.style.transform = 'scale(0)';mainTxt.style.transform = 'scale(0)';
-			             setTimeout(() => {mainTxt.innerHTML = "<b>Mau Gak Nih? 🫣💗</b>";mainSt.querySelector('img').src = images[currentIndex];mainSt.style.transform = 'scale(1)';mainTxt.style.transform = 'scale(1)';Tombol.style="transform:scale(1);opacity:1;"}, 200);
-                    }, 3000);
+			             setTimeout(() => {mainTxt.innerHTML = "<b>Setuju Gak Nih? 🫣💗</b>";mainSt.querySelector('img').src = images[currentIndex];mainSt.style.transform = 'scale(1)';mainTxt.style.transform = 'scale(1)';Tombol.style="transform:scale(1);opacity:1;"}, 200);
+                    }, 2200);
                 }, 300);
             }
             
@@ -318,19 +318,19 @@ document.getElementById("loveIn").onclick = function() {
 	        
             setTimeout(() => {
                 showElements();
-                teksAnimasi(texts[currentIndex], 28);
+                teksAnimasi(texts[currentIndex], 30);
                 //wallpaper.style="transform:scale(1)";
-            }, 2300); // lagi bermain game
+            }, 2500); 
 
             setTimeout(() => {
                 nextSection(28);
                 //wallpaper.style="transform: scale(1.3);";
-            }, 3500); // duduknya di ruang tamu
+            }, 3550); 
 
             setTimeout(() => {
                 nextSection(27);
                 //wallpaper.style="transform: scale(1);";
-            }, 5100); // aku memang suka
+            }, 5200); 
 
 	        setTimeout(function(){fungsiBerfungsi = true}, 300);
 	    }, 200);
