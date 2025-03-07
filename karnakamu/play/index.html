@@ -247,10 +247,12 @@ b.merah{color:red}
         overlay.style.display = 'flex';
         envwrap.style="transform:scale(0);opacity:0;transition:all .6s ease";
     });*/
-    linkmp3.onloadeddata = function() { 
+	    
+    //linkmp3.onloadeddata = function() { 
+    setTimeout(()=>{
 	    document.querySelector('.overlay').style.display = 'flex'; 
 	    envwrap.style="transform:scale(0);opacity:0;transition:all .6s ease";
-    }
+    }, 2000);
     const cover = document.querySelector('.cover');
     const reset = document.querySelector('.reset');
     const title = document.querySelector('.title');
