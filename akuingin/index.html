@@ -336,7 +336,7 @@ document.addEventListener("click", function (e) {
         new TypeIt(".messageC", {
         strings: teksAnimasi,
         startDelay: 1,
-        speed: 20,
+        speed: 18,
         cursor: true,
         breakLines: true,
         waitUntilVisible: true,
@@ -344,7 +344,7 @@ document.addEventListener("click", function (e) {
             if (instance.is('completed')) {
                 setTimeout(function() {
                     instance.next();
-                }, 400);
+                }, 200);
             }
         },
         afterComplete: function(){      
