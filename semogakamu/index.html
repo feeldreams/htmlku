@@ -1,167 +1,403 @@
-<html><meta charset='UTF-8'/><meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5' name='viewport'/><meta content='IE=edge' http-equiv='X-UA-Compatible'/>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet"><script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script><script src="https://test.feeldream.repl.co/tambahan.js"></script> 
-<!--<link href="https://aku.feeldream.repl.co/style.css" rel="stylesheet" type="text/css" /><script src="https://aku.feeldream.repl.co/script.js"></script>-->
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-<title>Script HTML</title>
-<!-- 
-  Made with love by Rayys!
+  <meta charset="utf-8" />
+  <title>Maafin aku yaa 🩷</title>
+  <meta name="description" content="@feelthisray - Script HTML by Feeldream Repl Co">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
 
-     Blog: https://PalingIT.com
-     Instagram: @rayyarrr
-     TikTok: @rayy4r
-     Email: rayyar0703@gmail.com
+  <link rel="icon" type="image/svg+xml" href="https://feeldreams.github.io/main-icon.png"> 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="style.css"><script src="https://unpkg.com/scrollreveal"></script><script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+  <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
 
-  Thanks to all <3
--->
-</head>
-<!-- Edit Wallpaper 
-di background-image URL --><style>
-:root {
---warna-bg: rgba(0, 0, 0, .5); 
---warna-teks: white;
---warna-bingkai: rgba(255, 255, 255, .5);
---bingkai: 20px;
---gaya-font: 'Ubuntu', sans-serif;
-}
-body{background-image: url("https://i.ibb.co/42TZF6t/wpwpwp.jpg");background-repeat: no-repeat;background-size: 110% 110%;animation:none;transition:all .3s ease;}
-@keyframes fanim {0% {background-position: 0% 0%;}25% {background-position: 100% 100%;} 50% {background-position: 0% 100%;} 75% {background-position: 50% 50%;} 100% {background-position: 0% 0%;}}
-body{background-color:#101010;font-family:var(--gaya-font);padding: 25px;-webkit-user-select: none; -ms-user-select: none; user-select: none;} a{text-decoration:none;}
-body::before{content:"\00A9  Script HTML Bucin";color:white;opacity:.3;font-size:2vw;position:fixed;bottom:25px;left:25px;z-index:2}
-#bodyblur{display:block;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);transition:all 1s ease;}
-@keyframes jj{0%  {transform: scale(1.1);} 50% {transform: scale(1.2);} 100% {transform: scale(1.1);}}
-#bodyblur img{animation-name:jj;animation-duration: 5s;animation-iteration-count: infinite;}
+  <!-- Demo styles -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Inter&family=Itim&display=swap');
+	
+	:root {
+	--poppins: 'Poppins', sans-serif;
+	--nunito: 'Nunito Sans', sans-serif;
+	--caveat: 'Caveat', cursive;
+	--quicksand: 'Quicksand', sans-serif;
+	--itim: 'Itim', cursive;
+	--inter: 'Inter', sans-serif;
+	}
 
-@keyframes leaves {0% {transform: scale(1.0);} 100% {transform: scale(.8);}}
-#lope, .lopdeg{animation: leaves 1s ease-in-out infinite alternate;-webkit-animation: leaves 1s ease-in-out infinite alternate;}
-.lovein:hover{transform: scale(1.3);}
+    html, body {position: relative;height: 100%;}
+    body {background: #000;font-family: 'Itim', cursive;font-size: 14px;color: #fff;text-shadow: 0px 2px 2px rgba(0, 0, 0, .5);margin: 0;padding: 0;}
+    
+    #bodyblur{opacity:.5;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);transition:all 1s ease;} 
+    #thisblur{backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);position:absolute;top:0;left:0;right:0;bottom:0;}
+    #wallpaper{/*animation: jj 7s infinite;*/width:100%;height:100%;transform: scale(1.3);transition:all 1.3s ease;}
+    #wallpaper2, #wallpaper3, #wallpaper4{display:none}
+    @keyframes jj{0%  {transform: scale(1);} 50% {transform: scale(1.3);} 100% {transform: scale(1);}}
 
-@keyframes kont{0%  {left:-1px; top:-3px;} 50% {left:1px; top:3px;} 100% {left:-1px; top:-3px;}}
-blockquote{opacity:0;visibility:hidden;transition:all .3s ease;position:relative;margin-top:120px;margin-left:0;margin-right:0;}
-blockquote{width:400px;background:none;color:var(--warna-teks);text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);text-align:center;line-height:1.3em;padding:25px;border: 0px solid var(--warna-bingkai);border-radius:var(--bingkai);}
-p{opacity:0;color:var(--warna-teks);font-size:15px;font-weight:700;line-height:1.4em;margin:0 25px;text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);transform: scale(.1);transition:all .3s ease;}
-#spasi::before{content:"\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0"}
-#kalimat{opacity:1;transform: scale(1);}
-#marq{display:none}
+    p{margin-left:50px;margin-right:70px;text-align:left}
+    #ket{margin:20px}
 
-#katajawab{font-weight:400;margin:0;display:none;}
-@keyframes rto{from {transform:scale(1);} to {transform:scale(1.1);}}
-@keyframes aniopa{0% {transform: scale(1);} 50% {transform: scale(.75);} 100% {transform: scale(1);}}
-#katabawah{transform:scale(.1);font-size:30px;font-weight:400}
-#katatiga{font-size:18px;} #kataempat{font-size:13px;font-weight:400;text-align:right;}
-@keyframes rtf{from {transform: rotate(0deg);} to {transform: rotate(360deg);}} @keyframes rt{from {transform: scale(.9);/* transform: rotate(-5deg); */} to {transform: scale(1);/* transform: rotate(5deg); */}}
-#bq img{display:none;padding:10px;width:130px;height:130px;margin:20px 0 0 0;}
-#bq img:first-child{display:inline-flex}
-#akhiran{display:none;color:#FFC700;font-size:14px;text-align:center;background:rgba(0,0,0,.55);text-shadow: 0px;padding:10px;border-radius:var(--bingkai);line-height:10px;transition:all .2s ease;} #akhiran:hover{transform: scale(.9);opacity:.5;}
+    .swiper {width: 100%;height: 100%;padding:0;margin:0;}
+    .swiper-slide {text-align: center;font-size: 18px;/*background: #fff;*/display: flex;flex-direction: column;justify-content: center;align-items: center;margin-top:-100px;}
+    .textLeft{display:flex;width:100%;height: 180px; overflow: auto;justify-content: left;text-align: left !important;margin-left:70px;}
+    .swiper-slide img {display: block;width: 100%;height: 100%;object-fit: cover;}
+    .swiper-pagination{margin-bottom:25vh}
+    .swiper-pagination-bullet-active{background-color: #fff !important;opacity:1 !important}
+    .swiper-pagination-bullet{background-color:rgba(255,255,255, 1) !important;}
+    .swiper-button-next, .swiper-button-prev{display:flex;top:unset;bottom:-100px}
+    
+    .sembunyi{display: none !important;}
+    .stiker{display:flex;justify-content:center;align-items:center;margin-left:auto;margin-right:auto;margin-bottom:20px;transition:all .75s ease}
+    .stiker img{width:90px;height:90px;box-shadow: 0 4px 30px rgba(255,255,255, 0.3);backdrop-filter: blur(5px);-webkit-backdrop-filter: blur(5px);background: rgba(255, 255, 255, .5);border: 2px solid rgba(255, 255, 255, 1);border-radius: 50%;padding:10px;}
+    .stiker img.sty2{background:none;filter: drop-shadow(0 4px 8px rgba(255, 255, 255, 0.2));box-shadow: none;backdrop-filter: none;-webkit-backdrop-filter: none;border: none;border-radius: 0;padding:0;width: auto;height:90px;}
+	b.merah{color:red}
+	b.kuning{color:yellow}
+	b.putih{text-shadow:none;padding-left:8px;padding-right:8px;padding-top:2px;padding-bottom:2px;background-color:white;border-radius:12px}
+	span.garismerah{border-bottom:2px solid red}
+	span.gariskuning{border-bottom:2px solid yellow}
+    p{color:white;font-size:15px;line-height:1.5em;}
+    .scale0{opacity:0;transform: scale(0);transition: all .9s ease;}
+    .scale1{opacity:1;transform: scale(1);transition: all .9s ease;}
+    svg{vertical-align: middle;width: 22px;height: 22px;fill: #fff}
+    .heart-icon {z-index:100;width: 30px;height: 30px;position: fixed;animation:  heartMove linear 1;top: -10vh;}
 
-#pergeseran{opacity:0;visibility:hidden;transition:all 1s ease;display:flex;flex-wrap:nowrap;align-items:flex-start;justify-content:flex-start;position:relative;max-width:500px;padding:0 20px; overflow-y:hidden;overflow-x:scroll;scroll-behavior:smooth;scroll-snap-type:x mandatory; -ms-overflow-style:none;-webkit-overflow-scrolling:touch}
-#pergeseran p{background:#003A76;color:white;border: 1px dashed #fff;border-radius:8px;padding:8px;display:flex;flex-wrap:nowrap;text-align:center;font-size:16px;font-weight:700;align-items:center;justify-content:center;flex-shrink:0; width:90%; min-height:130px;margin:0 15px 0 0; scroll-snap-align:center} #pergeseran > *:last-child{margin-right:0} #pergeseran:after{content:'';display:block;flex-shrink:0; align-self:stretch;padding-left:20px}
-#pergeseran p b{display:block;} #pergeseran p b img{width:80px;height:80px;margin:20px 0;}
-/*#pergeseran p b span{display:flex;}*/
-#tm{color:#FFB400;transition:all .5s ease;} #tm:hover{transform: scale(.7);}
-#idgeser{position:relative;top:30vh;font-size:17px;color:white}
-
-#contTom{opacity:0;margin:0;display:flex;align-items:left;list-style:none;transform: scale(.1);transition:all 1s ease;}
-.button{cursor:pointer;display:inline-flex;align-items:center; margin:0;margin:12px 0 12px 0;transition:all .3s ease;padding:10px 10px;outline:0;border:1px solid var(--warna-bingkai); border-radius:var(--bingkai);line-height:15px;background:var(--warna-bg);color:var(--warna-teks);font-size:13px;font-weight:700;white-space:nowrap;overflow:hidden;z-index:1} 
-.button:hover{transform: scale(.90);opacity:.98;}
-#buttonv2{position:absolute;font-size:15px;color:white;background:var(--warna-bg);padding:10px;border-radius:8px;line-height:10px;text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);opacity:0}
-
-.lovein{font-size:50px;display:flex;align-items:center;justify-content:center;transition:all .3s ease;}
-.lovein svg{width:80px;height:80px;fill:#fefefe}
-
-.content2{display:block;text-align:center;width:100%;height:180px;margin-top:50px;}
-.content2 > *{display:flex;align-items:center;justify-content:center;margin-top:15px;font-size:17px;color:white}
-.image img{border-radius:10%;transform:scale(.1);transition:all .8s ease;}
-#k2 .image > *{margin-bottom:40px;} #k2{font-weight:700;font-size:17px;color:white;text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);} #final1{transition:all 3s ease;}
-
-#idkirim{font-size:13px;text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);color:white;transition:all .5s ease;}
-#idkirim{opacity:0;visibility:hidden;margin-top:100px} #idkirim:hover{transform:scale(.8);}
-
-.content2{display:none;}
-#Content{animation-name:none;animation-duration: 3s;animation-iteration-count: infinite;position:relative;opacity:0;margin-top:50px;width:100%;height:180px;transition:all 1.8s ease;}
-#Content > *{display:flex;align-items:center;text-align:center;justify-content:center;margin-top:15px;}
-#Content img{display:none;background:rgba(255,255,255, 1);border-radius:10px;padding:10px;width:100px;height:100px;margin:20px 0 0 0;}
-
-.swal2-modal > *{font-size:16px}
-.swal2-title{line-height:1.3em;margin-right:20px;margin-left:20px;font-size:18px;text-align:center;padding:15px 30px 0 30px;}
-.swal2-timer-progress-bar-container > *{opacity:.3;background:#007AFF;margin:0 5px}
-.swal2-modal{background:rgba(255,255,255,1);border: .7px solid #fff;border-radius:var(--bingkai);top:-60px;}
-
-.fa-heart {opacity:.3;color:white;font-size: 30px;position: absolute;animation:  heartMove linear 1;top: -10vh;z-index: 0;}
-@keyframes heartMove {0%{transform: translateY(-10vh) ;} 100%{transform: translateY(100vh) ;}}
-</style>
-<body><div id="bodyblur"></div>
-
-   <div id='Content'>
-   <!-- Foto Atas --><div><img id="fotosatu" src=""/><img id="fotodua" src=""/><img id="fototiga" src=""/><img id="fotoempat" src=""/></div>
-   <div><blockquote id='bq'>
-   <p id="kalimat">...</p>
-   </blockquote></div>
+	@keyframes heartMove {
+	  0% {transform: translateY(-10vh);}
+	  100% {transform: translateY(100vh);}
+	}
+	    svg.line{fill: none;stroke: #fff;stroke-width: 2;}
+	    .spin{animation: spin 3s linear infinite alternate;}
+	@keyframes spin {
+	  from {
+	    transform: rotate(20deg);
+	  }
+	  to {
+	    transform: rotate(-20deg);
+	  }
+	}
+	@keyframes moving {
+	  from {
+	    transform: translateY(0);
+	  }
+	  to {
+	    transform: translateY(3px);
+	  }
+	}
+    .overlay {position: fixed;top: 0;left: 0;width: 100%;height: 100%;display: flex;flex-direction:column;justify-content: center;align-items: center;background:rgba(0,0,0,.6);z-index:100;}
+    .loading-message {font-size: 13px;text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);color:white;text-align: center;}
+    .blocklove{display: none;flex-direction: column;justify-content: center;align-items: center;}
+    
+    .blocktext{margin-top:10px;position:relative;width:100%;height: 180px; overflow: auto;background-color:none;}
+    
+    .sertifikat {position: relative;width: 330px;height: 236px;text-shadow:none}
+	.sertifikat img {border-radius:30px;width: 100%;height: 100%;}
+	.text-overlay {position: absolute;top: 35px;left: 0;width: 100%;text-align: center;color: #333;font-size: 14px;font-weight: bold;}
+	.text-overlay h1 {font-size: 20px;color:#fff;margin: 0;}
+	.text-overlay .sub-title {font-size: 14px;color:yellow;margin-bottom: 10px;}
+	.content {font-size: 12px;color:#fff;}
+	.real {font-weight: bold;color: #fff;font-size: 12px;}
+    
+    .swal2-modal > *{color:white}
+    .swal2-title{line-height:1.3em;font-size:18px;text-align:center;padding:15px 30px 0 30px;}
+    .swal2-container.swal2-backdrop-show{background: rgba(0,0,0,.5);}
+    .swal2-timer-progress-bar-container > *{opacity:.7;background:#00B6FF;margin:0 2px}
+    .swal2-modal{box-shadow: rgba(255,255,255, 0.3) 0px 7px 29px 0px;background:rgba(0,0,0,.9);max-width:320px;border-right:2px solid #fff;border-left:2px solid #fff;border-radius:4px;top:-50px;}
    
-   <!-- Tombol Kirim Pesan --><div id="contTom"><a class='button' onClick="sjawab()"></i>Kirim Pesan</a></div>
+    .cover{margin-top:-120px;display:flex;flex-direction:column;justify-content:center;align-items:center}
+    .lovein{font-size:50px;display:flex;align-items:center;justify-content:center;transition:all .3s ease;}
+    .lovein svg{width:80px;height:80px;fill:#fefefe}
+    .awalan{margin-top:20px;width:220px;min-height:25px;padding:12px;font-size:13px;color:white;background:rgba(0,0,0,.5);border:1px solid #fff;border-radius:50px;display:flex;align-items:center;text-align:left}
+    .awalan svg{margin-right:15px;width:25px;height:25px;stroke:white}
+    
+	.mainMsg{margin-top:140px;display:flex;flex-direction:column;justify-content:center;align-items:center;z-index:9999;}
+	.mainSt{display:flex;justify-content:center;align-items:center;margin-left:auto;margin-right:auto;transform:scale(0);transition:all 0.5s ease;}
+	.mainSt img{width:80px;height:80px;box-shadow:0 4px 30px rgba(255,255,255,0.3);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);background:rgba(255,255,255,0.4);border:3px solid rgba(255,255,255,1);border-radius:50%;padding:10px;}
+	.mainTxt{margin-top:24px;text-align:center;color:white;line-height:1.5em;font-size:18px;font-weight:700;transform:scale(0);transition:all 0.5s ease;}
+	.secondTxt{margin-top:16px;text-align:center;color:white;font-size:16px;font-weight:400;transform:scale(0);transition:all 0.3s ease;}
+	.txtAlt{font-size:17px;font-weight:400;}
+	.caveat{font-family: 'Caveat', cursive;font-weight:700;}
+	
+	#Tombol {margin-top:24px;position:relative;transform:scale(0);opacity:0;margin-left:auto;margin-right:auto;display:flex;justify-content:center;align-items:center;list-style:none;transition:all .6s ease;}
+    #Tombol a {cursor:none;display:inline-flex;justify-content:center;align-items:center;margin:0 8px;min-width:40px;padding:10px;outline:0;border:2px solid white;border-radius:18px;line-height:15px;background:rgba(0,0,0,.5);color:white;font-size:15px;font-weight:700;white-space:nowrap;overflow:hidden;box-shadow: rgba(255,255,255, 0.15) 0px 7px 29px 0px;z-index:1;transition:all .6s ease;}
+    #Tombol a.biru{background:#3D3BF3}
+    #Tombol a.merah{background:#FF2929}
+    
+    #scontainer{width:80%;margin:20px auto;min-height:650px;margin-top:150px;color:#000}@media screen and (max-width:400px){#container{width:100%;margin:50% auto;min-height:800px}}.wrapper{position:fixed}.box div{position:fixed;width:60px;height:60px;background-color:transparent;border:6px solid rgba(255,255,255,.5);border-radius:50%;z-index:0}.box div:nth-child(1){top:12%;left:42%;animation:animate 10s linear infinite}.box div:nth-child(2){top:70%;left:50%;animation:animate 7s linear infinite}.box div:nth-child(3){top:17%;left:6%;animation:animate 9s linear infinite}.box div:nth-child(4){top:20%;left:60%;animation:animate 10s linear infinite}.box div:nth-child(5){top:67%;left:10%;animation:animate 6s linear infinite}.box div:nth-child(6){top:80%;left:70%;animation:animate 12s linear infinite}.box div:nth-child(7){top:60%;left:80%;animation:animate 15s linear infinite}.box div:nth-child(8){top:32%;left:25%;animation:animate 16s linear infinite}.box div:nth-child(9){top:90%;left:25%;animation:animate 9s linear infinite}.box div:nth-child(10){top:20%;left:80%;animation:animate 5s linear infinite}@keyframes animate{0%{transform:scale(0) translateY(0) rotate(0);opacity:.8}100%{transform:scale(1.3) translateY(-90px) rotate(360deg);opacity:0}}
+</style>
+</head>
+
+<body>
+  <audio src="https://htmlku.com/semogakamu/semogakamu.mp3" id="linkmp3" class="sembunyi"></audio>
+	<div class="overlay" style="display: none;">
+		<div class="cover">
+	    <p style="font-size:17px;font-weight:700;margin:0">Bukaa ini yaaaa 😆</p>
+	   <div id="loveIn" class="awalan">
+	     <svg class='line' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><g transform='translate(2.000000, 2.000000)'><path d='M9.27542857,0.714285714 C14.0030476,0.714285714 17.836381,4.54666667 17.836381,9.2752381 C17.836381,14.0038095 14.0030476,17.8361905 9.27542857,17.8361905 C4.54685714,17.8361905 0.71447619,14.0038095 0.71447619,9.2752381 C0.71447619,4.54666667 4.54685714,0.714285714 9.27542857,0.714285714 Z'></path><path d='M17.8989524,16.487619 C18.678,16.487619 19.3094286,17.12 19.3094286,17.8980952 C19.3094286,18.6780952 18.678,19.3095238 17.8989524,19.3095238 C17.1199048,19.3095238 16.4875238,18.6780952 16.4875238,17.8980952 C16.4875238,17.12 17.1199048,16.487619 17.8989524,16.487619 Z'></path></g></svg>
+	     <label style="font-size:16px">S.id/semogakamu</label>
+	   </div>
+	</div>
    </div>
+   <script>
+    linkmp3.onloadeddata = function() { document.querySelector('.overlay').style.display = 'flex'; };
+   </script>
+   
+   <div id="bodyblur">
+     <img src="https://feeldreams.github.io/nightin.jpeg" id="wallpaper"/>
+   </div>
+   
+    <!-- Swiper -->
+    <div class="swiper">
+    	
+            	<div class="mainMsg">
+			        <div class="mainSt">
+			            <img id="st1" src="https://htmlku.com/0/panda/bunga.gif" />
+			            <img id="st2" src="https://htmlku.com/0/panda/kenapa.gif" class="sembunyi" />
+			            <img id="st3" src="https://htmlku.com/0/panda/pukpuk.gif" class="sembunyi" />
+			            <img id="st4" src="https://htmlku.com/0/panda/ngumpet.gif" class="sembunyi" />
+			            <img id="st5" src="https://htmlku.com/0/panda/ngumpet2.gif" class="sembunyi" />
+			        </div>
+			        <span class="mainTxt"></span>
+                    <span class="secondTxt">Ahahaha~ 😆🩷</span>
+			
+		            <div id="Tombol">
+				       <a id="By" class="biru" onClick="fnYes()">Boleeh</a>
+				       <a id="Bn" class="merah" onClick="btn='Bn';fungsibaru(btn)">Gakk</a>
+				       
+				       <span id="penggantiBy" class="sembunyi"> Ayo</span>
+				       <span id="penggantiBn" class="sembunyi">Gamau</span>
+				     </div>
+			    </div>
+			
+			    <script>
+			        const images = [
+			            st1.src,
+			            st2.src,
+			            st3.src,
+			            st4.src,			            
+			            st5.src,	              
+			        ];
+			        const texts = [
+			            "Maafin Aku yaa 🥹",
+			            "Kalo aku nyakitin kamu.. 🙂‍↕️",
+			            "Semoga kamu bahagia ☺️",
+			            "Kalo aku gabakal bahagia,",
+			            "Soalnya gaada <span style='color:pink'>kamuu</span> 🫠🩷",
+			        ];
+			
+			        let currentIndex = 0;
+			        var tombolDipilih = "";
+			        const mainSt = document.querySelector('.mainSt');
+			        const mainTxt = document.querySelector('.mainTxt');
+			        const secondTxt = document.querySelector('.secondTxt');
+			
+			        function showElements() {
+			            mainSt.style.transform = 'scale(1)';
+			            mainTxt.style.transform = 'scale(1)';
+			            setTimeout(() => {fungsiBerfungsi = true}, 1000);
+			        }
+			
+			        function nextSection(delay){
+				            fungsiBerfungsi = false;
+			                mainSt.style.transform = 'scale(0)';
+			                mainTxt.style.transform = 'scale(0)';
+			
+			                setTimeout(() => {
+			                    currentIndex = (currentIndex + 1) % images.length;
+			
+					            if(currentIndex == 50){
+						            mainTxt.innerHTML = "";
+						            mainSt.querySelector('img').src = images[5];
+						            setTimeout(teksAnimasi, 200);
+					            }
+			
+			                    if(currentIndex < 50){
+				                    mainSt.querySelector('img').src = images[currentIndex];
+                                    teksAnimasi(texts[currentIndex], delay);
+                                    //mainTxt.innerHTML = texts[currentIndex];
+                                }
+					
+			                    showElements();
+			                }, 200);
+			          }
+			
+			          function fnYes(){
+				         tombolDipilih = "Biru";
+				         tombol.style = "";
+				         secondTxt.style.transform = 'scale(0)';
+				         currentIndex=2;
+				         nextSection(28);
+				      }
+				
+				      function fnNo(){
+					     tombolDipilih = "Merah";
+				         texts[2] = "Yeaayy! 😆<br><br>Kalo kamu pilih <b style='color:#FF2C00;'>Merah</b> berarti<br>malem ini kita <i>Sleep Call</i> 🫣";
+				         tombol.style = "";
+				         nextSection();
+				         setTimeout(nextSection, 3500);
+				      }
+			    </script>
+    </div>
+    
+	<!-- Box elements animation -->
+    <div>
+        <div class="swrapper">
+            <div class="box">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
 
-<!-- Jangan Edit Bagian Ini --><script>
-  function showDiv() {setTimeout(setel,50);pergantian();setTimeout(kpemb,100);document.getElementById('Content').style = "opacity:1;margin-top:4vh;animation:kont 5s infinite;";document.querySelector("body").style.animation = "none 8s ease infinite";} function kpemb() {bq.style = "opacity:1;visibility:visible;margin-top:5px";}
-  function loadfoto(){fotosatu.style="display:inline-flex";fotosatu.src = gambar1;fotodua.src = gambar2;fototiga.src = gambar3;fotoempat.src = gambar4;}
-  function tombol(){contTom.style="margin-top:50px;opacity:1;transform: scale(1);";ftom=1;} ftom=0; function fakhiran(){document.getElementById("akhiran").style = "display:inline-flex";}
-  const swals = Swal.mixin({allowOutsideClick: false, cancelButtonColor: '#FF0040',}); const swalsy = Swal.mixin({confirmButtonText: 'Iya', allowOutsideClick: false,}); const swalst = Swal.mixin({allowOutsideClick: false, showConfirmButton: false, timer: 1000, timerProgressBar: true, didOpen: () => {Swal.showLoading();const b = Swal.getHtmlContainer().querySelector('b');timerInterval = setInterval(() => {Swal.getTimerLeft()}, 100)},willClose: () => {clearInterval(timerInterval)}}); const style = document.createElement('style'); var today = new Date();var dd = String(today.getDate()).padStart(2, '0');var mm = String(today.getMonth() + 1).padStart(2, '0');var yyyy = today.getFullYear();const monthNames = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];today = dd + ' ' + monthNames[today.getMonth()] + ' ' + yyyy;
-  function play() {var audio = new Audio('');audio.play();} function sjawab(){if(ftom==1){contTom.style="display:none";jawab();}}
-  function otomatis() {befanimkata();setTimeout(animkata,200);} function befanimkata(){kalimat.style="transform:scale(.3);";} function animkata() {kalimat.style="transform:scale(1);";}
-  function finalakhir(){bodyblur.style = "-webkit-backdrop-filter:blur(5px); backdrop-filter:blur(5px);";bq.style="display:none;";fotoatas.style="animation:aniopa .8s";idpertama.style="opacity:1;transform: scale(1);margin-top:30px";setTimeout(aksiakhir,400);idkedua.innerHTML = katakedua;idketiga.innerHTML = kataketiga;}
-  function setel(){audio.play();} function setel2(){bgm.play();} 
-  function showpalingakhir(){idketiga.style = "font-weight:700;opacity:1;font-size:16px;margin-top:20px;animation:rto .6s infinite alternate;";setTimeout(tombol,1000);}
-  var aa=0,katangetik;function ngetik() {if(aa<katangetik.length){kalimat.innerHTML += katangetik.charAt(aa);aa++;setTimeout(ngetik,50);}}
+<script>
+const body = document.querySelector("body"); audio = new Audio('' + linkmp3.src); 
+tombol = document.querySelector('#Tombol');
 
-  function pergantian(){setTimeout(gantikata,2100);setTimeout(gantikata,4200);setTimeout(gantikata,6700);setTimeout(gantikata,9000);setTimeout(gantikata,11400);}
-  function tfkata(){fkata+=1;} function bersihkan(){kalimat.innerHTML = "";}
-  fkata=1;function gantikata(){
-                 if(fkata==1){otomatis();kalimat.innerHTML = katasatu;}
-                 if(fkata==2){otomatis();kalimat.innerHTML = katadua;fotosatu.style="display:none";fotodua.style="display:inline-flex";}
-                 if(fkata==3){otomatis();kalimat.innerHTML = katatiga;fotodua.style="display:none";fototiga.style="display:inline-flex";}
-                 if(fkata==4){otomatis();kalimat.innerHTML = kataempat;} 
-                 if(fkata==5){kalimat.innerHTML = "";setTimeout(ngetik,50);setTimeout(tombol,2000);fototiga.style="display:none";fotoempat.style="display:inline-flex";}
-                 setTimeout(tfkata, 300);
+/*
+        teksScale = document.querySelector('#teks' + teksSekarang);
+        stikerScale = document.querySelector('#stiker' + teksSekarang);
+        Tombol = document.querySelector('#Tombol');
+
+        setTimeout(function(){
+          teksScale.classList.add("scale1");
+          stikerScale.classList.add("scale1");
+        }, 50);
+*/
+
+function teksAnimasi(varText, delay){
+	mainTxt.innerHTML = "";
+	new TypeIt(mainTxt, {
+    strings: [varText],
+    startDelay: 50, speed: delay, cursor: true, waitUntilVisible: true,
+    afterComplete: function(){
+    	    const cursorElement = document.querySelector(".mainTxt .ti-cursor");
+    	    if (cursorElement) {
+                cursorElement.style.display = "none";
+            }
+        },
+    }).go();
+}
+
+///////////////////////////////////
+
+var sudahKlik = true;
+var fungsiBerfungsi = false;
+
+document.getElementById("loveIn").onclick = function() {
+    if (sudahKlik) {
+    	document.querySelector(".cover").style="opacity:0;transition:all .8s ease";
+        document.querySelector(".overlay").style="opacity:0;transition:all .8s ease";
+        wallpaper.style="transform:scale(1)";
+    	setTimeout(function(){
+	        audio.play();
+	        
+	        document.querySelector(".overlay").style.display = "none";
+	        /*
+	        stiker1.classList.add("scale1");
+	        teks1.classList.add("scale1");
+	        */
+	        
+            setTimeout(() => {
+                showElements();
+                teksAnimasi(texts[currentIndex], 30);
+            }, 2050); // Kamu Tau
+
+            setTimeout(() => {
+                nextSection(29);
+            }, 4150); // Ada Beberapa Alasan
+            
+            setTimeout(() => {
+                nextSection(27);
+            }, 6650); 
+            
+            setTimeout(() => {
+                nextSection(35);
+            }, 8950); // Loh..
+            
+            setTimeout(() => {
+                nextSection(29);
+            }, 11350); 
+
+	        setTimeout(function(){fungsiBerfungsi = true}, 300);
+	    }, 200);
+    } else {
+        sudahKlik = true; // Tandai tombol sudah diklik
+        document.getElementById('loveIn').innerHTML = '<style>.lovein svg{animation:none;stroke:#ff0000;stroke-width:1.3;fill:none;width:35px;height:35px}</style><label class="lovein"><svg class="line" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g transform="translate(2.550170, 3.550158)"><path d="M0.371729633,8.89614246 C-0.701270367,5.54614246 0.553729633,1.38114246 4.07072963,0.249142462 C5.92072963,-0.347857538 8.20372963,0.150142462 9.50072963,1.93914246 C10.7237296,0.0841424625 13.0727296,-0.343857538 14.9207296,0.249142462 C18.4367296,1.38114246 19.6987296,5.54614246 18.6267296,8.89614246 C16.9567296,14.2061425 11.1297296,16.9721425 9.50072963,16.9721425 C7.87272963,16.9721425 2.09772963,14.2681425 0.371729633,8.89614246 Z"></path><path d="M13.23843,4.013842 C14.44543,4.137842 15.20043,5.094842 15.15543,6.435842"></path></g></svg></label><p id="ket">Sentuh LOVEnya!</p>';
+    }
+}
+
+function falling() {const heart = document.createElement("div");heart.innerHTML = "<svg class='line spin' style='opacity:.5;z-index:100;stroke:#FFC2B8' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><g transform='translate(2.550170, 3.550158)'><path d='M0.371729633,8.89614246 C-0.701270367,5.54614246 0.553729633,1.38114246 4.07072963,0.249142462 C5.92072963,-0.347857538 8.20372963,0.150142462 9.50072963,1.93914246 C10.7237296,0.0841424625 13.0727296,-0.343857538 14.9207296,0.249142462 C18.4367296,1.38114246 19.6987296,5.54614246 18.6267296,8.89614246 C16.9567296,14.2061425 11.1297296,16.9721425 9.50072963,16.9721425 C7.87272963,16.9721425 2.09772963,14.2681425 0.371729633,8.89614246 Z'></path><path d='M13.23843,4.013842 C14.44543,4.137842 15.20043,5.094842 15.15543,6.435842'></path></g></svg>";heart.className = "heart-icon";heart.style.left = (Math.random() * 95) + "vw";heart.style.animationDuration = (Math.random() * 3) + 2 + "s";document.body.appendChild(heart);}
+setInterval(function() {var heartArr = document.querySelectorAll(".heart-icon");if (heartArr.length > 100) {heartArr[0].remove();}}, 100);
+
+/////////////////
+
+jumlahKlik = 0;sudah=false;
+
+  function fungsibaru(btn) {
+    var tombol = document.getElementById("" + btn);
+    var tombolParent = tombol.parentNode;
+
+    var tombolPosisiX = Math.floor(Math.random() * 50) + 1;
+    var tombolPosisiY = Math.floor(Math.random() * 75) + 1;
+    var rotasiAcak = Math.floor(Math.random() * 360);
+
+    tombol.style.position = "relative";
+    tombol.style.left = tombolPosisiX + "px";
+    tombol.style.top = tombolPosisiY + "px";
+    tombol.style.transform = "rotate(" + rotasiAcak + "deg)";
+    tombolParent.appendChild(tombol);
+
+    jumlahKlik++;
+    //tolakteks.style="transform:scale(1)";
+    /*if(sudah==false){
+      sudah=true;
+      second_stiker.style.transform = "scale(0)";
+      setTimeout(function() {
+          second_stiker.style.transform = "scale(.9)";
+          inistiker3.src = inistiker3.src;
+      }, 300);
+    }*/
+
+    if(jumlahKlik == 3){
+        //swiper.slideNext();
+        secondTxt.innerHTML = "Harus bolee dongggg 😝";
+        secondTxt.style.transform = 'scale(1)';
+        jumlahKlik=0;
+    }
   }
-</script> <!-- Sampai Sini -->
 
-<!-- Ganti Kata², Foto, Lagu di bawah ya
-1) Upload foto ke https://postimages.org
-     buat dapetin linknya
-2) Ganti Lagu Upload ke replit.com
-     atau bisa juga ke mailboxdrive.com -->
+//////
 
-<script type="text/javascript">
-       async function menuju(){await swals.fire('Kirim pesan ke WhatsApp aku, ya!');window.location = "https://api.whatsapp.com/send?phone=&text=" + pesanwhatsapp;}
-       async function jawab(){
-           var { value: jawaban } = await swals.fire({
-               title: 'Isi Pesan Kamu &#128073;&#128072;', 
-               imageUrl: 'https://i.ibb.co/f2KyxVs/turu.gif', imageWidth: 90, imageHeight: 90, input: 'text', allowOutsideClick: false, showCancelButton: false,
-           });
-           if(jawaban && jawaban.length < 19){
-           	window.jawaban = jawaban;
-               pesanwhatsapp = jawaban;
-               menuju();
-           } else {
-               await swals.fire('Ups!', 'Jawaban tidak boleh kosong atau lebih dari 18 karakter, ya!');jawab();
-           }
-       }
+function fungsiTerima() {
+    Swal.fire({
+        title: '' + teksTerima.innerHTML,
+        imageUrl: '' + stikerTerima.src,
+        imageWidth: 90,
+        imageHeight: 90,
+        imageAlt: 'by Feeldream.id',
+        confirmButtonText: 'OK',
+        allowOutsideClick: false,
+    });
+}
 
-      async function pertama(){
-         audio = new Audio('https://audio.jukehost.co.uk/hr8ReSPYS6hINDfIUQSaPVhkarX210RS');
-         
-         gambar1 = "https://i.ibb.co/s9cTyc0/bunga.gif";
-         gambar2 = "https://i.ibb.co/d4fJCXL/ntah.gif";
-         gambar3 = "https://i.ibb.co/F6WJyXQ/masih.gif";
-         gambar4 = "https://i.ibb.co/4Wh4mg7/wortel.gif";
-         
-         katasatu = "Maafin Aku yaa";
-         katadua = "Kalo aku nyakitin kamu..";
-         katatiga = "Semoga kamu bahagia ☺️";
-         kataempat = "Kalo aku gabakal bahagia,";
-         katangetik = "Soalnya gaada kamu 🙂";
-
-         loadfoto();await swalst.fire('Tunggu');await swals.fire('Selamat datang!', 'Sekarang lihat ini ya :)');setTimeout(showDiv,300);
-       } pertama();
+document.addEventListener('click', function() {
+    if (currentIndex !== 1) {
+    	if (fungsiBerfungsi === true) {
+           //nextSection();
+        }
+    }
+});
 </script>
 </body>
-  </html>
+</html>
