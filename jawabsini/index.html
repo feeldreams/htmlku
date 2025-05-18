@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -142,6 +143,7 @@
       	<div id="stiker3" class="scale0 stiker">
         <img id="stikerAkhir1" src="https://htmlku.com/0/panda/pusn3.gif"/>
         <img id="stikerAkhir2" class="sembunyi" src="https://htmlku.com/0/panda/terlope2.gif"/>
+        <img id="stikerAkhir3" class="sembunyi" src="https://htmlku.com/0/panda/muah.gif"/>
        </div>
       	<h1 id="teks3" class="scale0 quicksand" style="font-size: 20px;">Jawab di Sini yaa! 🫣<br><br> >>>></h1>
       
@@ -273,8 +275,7 @@ function animateteksnim() {
                 screen.value = `I Love U ${percent}% ${randomEmoji}`;
             } else {
                 clearInterval(intervalId);
-                //setInterval(berjatuhan, 250);
-                ///
+                
                 const keys = document.querySelector('.calculator-keys');
 			    keys.classList.add('hide');
 			    
@@ -286,20 +287,21 @@ function animateteksnim() {
 			    setTimeout(() => {
 			        keys.style.display = 'none';
                     stikerScale.style="";
-                    calculator.style="display:flex;margin-top:-20px;background-color:unset;box-shadow:unset;border:none;backdrop-filter: blur(0);-webkit-backdrop-filter: blur(0);";
+                    calculator.style="display:flex;margin-top:-20px;background-color:unset;box-shadow:unset;border:none;backdrop-filter: blur(0);-webkit-backdrop-filter: blur(0);transition:all .5s ease";
                     
-                    setTimeout(animteksakhirLoop,400);
+                    setTimeout(animteksakhirLoop,300);
 			    }, 200);
 			
 			    setTimeout(() => {
                         stiker3.classList.remove("scale0");
                         stiker3.classList.add("scale1");
-                        swiperAkhir.style="margin-top:-50px;transition:all .7s ease";
+                        
+                        swiperAkhir.style="margin-top:-50px;transition:all .5s ease";
 			    }, 500);
                 ///
                 stiker3.classList.remove("scale1");
                 stiker3.classList.add("scale0");
-                setTimeout(function(){stikerAkhir1.src = stikerAkhir2.src;},300);
+                setTimeout(function(){stikerAkhir1.src = stikerAkhir2.src;},100);
             }
         }, 40); // Speed 0-100%
     }, 10); // Delay
@@ -329,11 +331,15 @@ function animteksakhirLoop() {
     setTimeout(() => {
         const instance = new TypeIt("#teksAkhir", {
             startDelay: 10,
-            speed: 2,
+            speed: 1,
             cursor: false,
             afterComplete: function() {
                 setInterval(berjatuhan, 200);
                 setTimeout(()=>{clearInterval(scrollInterval)},500);
+                stiker3.classList.remove("scale1");
+                stiker3.classList.add("scale0");
+                setTimeout(function(){stikerAkhir1.src = stikerAkhir3.src;},150);
+                setTimeout(function(){stiker3.classList.remove("scale0");stiker3.classList.add("scale1");},300);
             }
         });
 
@@ -352,11 +358,11 @@ function animteksakhirLoop() {
             if (i === 100) {
                 instance
                     .type(`<span class='line' style='margin-left: ${marginLeft}px; font-weight: bold; font-size: 23px;'>I Love U ${i}% ` + getHeart(i - 1) + `</span>`)
-                    .pause(5);
+                    .pause(2);
             } else {
                 instance
                     .type(`<span class='line' style='margin-left: ${marginLeft}px;'>I Love U ${i}% ` + getHeart(i - 1) + `</span>`)
-                    .pause(5);
+                    .pause(2);
             }
         }
 
@@ -384,13 +390,16 @@ document.getElementById("loveIn").onclick = function() {
     audio.play();
     document.querySelector(".overlay").style.display = "none";
     
+    setTimeout(()=>{
+    
     stiker1.classList.add("scale1");
     teks1.classList.add("scale1");
     wallpaper.style="transform:scale(1)";
     
     screen.value = '';
     
-    setTimeout(()=>{fungsiBerfungsi=true},500);
+    //setTimeout(()=>{fungsiBerfungsi=true},500);
+    }, 1000);
 } else {
     sudahKlik = true; // Tandai bahwa tombol sudah diklik
     document.getElementById('loveIn').innerHTML = '<style>.lovein svg{animation:none;stroke:#ff0000;stroke-width:1.3;fill:none;width:35px;height:35px}</style><label class="lovein"><svg class="line" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g transform="translate(2.550170, 3.550158)"><path d="M0.371729633,8.89614246 C-0.701270367,5.54614246 0.553729633,1.38114246 4.07072963,0.249142462 C5.92072963,-0.347857538 8.20372963,0.150142462 9.50072963,1.93914246 C10.7237296,0.0841424625 13.0727296,-0.343857538 14.9207296,0.249142462 C18.4367296,1.38114246 19.6987296,5.54614246 18.6267296,8.89614246 C16.9567296,14.2061425 11.1297296,16.9721425 9.50072963,16.9721425 C7.87272963,16.9721425 2.09772963,14.2681425 0.371729633,8.89614246 Z"></path><path d="M13.23843,4.013842 C14.44543,4.137842 15.20043,5.094842 15.15543,6.435842"></path></g></svg></label><p id="ket">Sentuh LOVEnya!</p>';
