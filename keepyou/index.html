@@ -108,9 +108,9 @@
     .tombol{background-color: rgba(255,255,255,0);border-radius: 50px;overflow: hidden;display: flex;align-items: center;justify-content: center;-webkit-transition: all .2s ease-out;transition: all .2s ease-out}
     .tombol svg{margin: auto;fill:#ffd4d4;stroke: #ff0000;width: 60px;height: 60px;animation: spin2 1s linear infinite alternate;}
     #Tombol{margin-top:20px;position:relative;margin-left:auto;margin-right:auto;display:flex;align-items:center;justify-content:center;list-style:none;transition:all 1s ease;}
-    #Tombol a{display:inline-flex;align-items:center; margin:0;margin:10px;transition:all .2s ease;padding:10px;outline:0;border:2px solid white;border-radius:30px;line-height:15px;background:rgba(0,0,0,.3);color:white;font-size:13px;font-weight:700;white-space:nowrap;overflow:hidden;box-shadow: rgba(255,255,255, 0.15) 0px 7px 29px 0px;z-index:1}
+    #Tombol a{display:inline-flex;align-items:center; margin:0;margin:10px;transition:all .2s ease;padding:10px;outline:0;border:2px solid white;border-radius:30px;line-height:15px;background:rgba(0,0,0,.3);color:white;font-size:14px;font-weight:700;white-space:nowrap;overflow:hidden;box-shadow: rgba(255,255,255, 0.15) 0px 7px 29px 0px;z-index:1}
     #Tombol, #Tombol2, #TombolWA{position:relative;opacity:0;margin-left:auto;margin-right:auto;display:flex;justify-content:center;align-items:center;list-style:none;transition:all 1s ease;}
-    #Tombol a, #Tombol2 a, #TombolWA a{display:inline-flex;align-items:center; margin:0;margin:10px;transition:all .2s ease;padding:10px;outline:0;border:2px solid white;border-radius:30px;line-height:15px;background:rgba(255, 182, 193, .3);color:white;font-size:13px;font-weight:700;white-space:nowrap;overflow:hidden;box-shadow: rgba(255,255,255, 0.15) 0px 7px 29px 0px;z-index:1}
+    #Tombol a, #Tombol2 a, #TombolWA a{display:inline-flex;align-items:center; margin:0;margin:10px;transition:all .2s ease;padding:10px;outline:0;border:2px solid white;border-radius:30px;line-height:15px;background:rgba(255, 182, 193, .3);color:white;font-size:14px;font-weight:700;white-space:nowrap;overflow:hidden;box-shadow: rgba(255,255,255, 0.15) 0px 7px 29px 0px;z-index:1}
     
     .swal2-modal > *{font-size:16px;color:white}
 	.swal2-title{line-height:1.3em;font-size:17px;text-align:center;padding:15px 30px 0 30px;}
@@ -132,11 +132,18 @@
     .calculator-keys .equals:hover{background-color:rgba(255,92,128,1);}
     .calculator-keys {margin-top:20px;transition: opacity 0.5s ease;}
     .calculator-keys.hide {opacity: 0;pointer-events: none;}
+    
+    .containerAkhir{padding:0;display:flex;width:50%;overflow:auto;height:180px;justify-content:left;text-align:left;margin-top:-14px}
+    #teksAkhir{margin:0;margin-top:-20px}
+    
+    .heart{position:fixed;width:22px;height:22px;opacity:.4;animation:float 7s ease-in-out forwards;left:0;bottom:0;top:0;z-index:999}
+    @keyframes float{0%{transform:translateY(100vh);opacity:.4}10%{opacity:.4}90%{opacity:.4}100%{transform:translateY(-100vh);opacity:0}}
+    .heart svg{width:100%;height:100%;stroke:pink}
 </style>
 </head>
 
 <body>
-  <audio src="shttps://feeldreams.github.io/audio/foreveryoung.mp3" id="linkmp3" class="sembunyi"></audio>
+  <audio src="https://feeldreams.github.io/audio/foreveryoung.mp3" id="linkmp3" class="sembunyi"></audio>
 	<div class="overlay">
     <div class="loading-message">Hai kamu!<br>Tunggu dulu ya..</div>
      <div id="loveIn" class="blocklove">
@@ -146,7 +153,7 @@
    </div>
    
    <div id="bodyblur">
-     <img src="https://htmlku.com/0/wp.jpg" id="wallpaper"/>
+     <img src="https://htmlku.com/0/wp2.jpg" id="wallpaper"/>
      <div id="thisblur"></div>
    </div>
    
@@ -157,7 +164,7 @@
             <div class="swiper-slide">
                 <div id="stiker1" class="scale0 stiker">
                     <img id="stiker1a" src="https://htmlku.com/0/panda/pusn3.gif" />
-                    <img id="stiker1b" src="https://feeldreams.github.io/cilukba.gif" />
+                    <img id="stiker1b" src="https://htmlku.com/0/panda/bunga3.gif" />
                 </div>
                 <h1 id="teks1" class="scale0 quicksand" style="font-size: 20px;">Alooo Kamuuu! 😋<br><br>>>>></h1>
                 <h1 id="teks1b"><span style="font-size: 19px;">Aku Ada Pantun<br>buat Kamuu 🫣<br><br>>>>></span></h1>
@@ -165,36 +172,37 @@
 
             <div class="swiper-slide">
                 <div id="stiker2" class="scale0 stiker">
-                    <img src="https://htmlku.com/0/panda/gemoy.gif" />
+                    <img src="https://htmlku.com/0/panda/pusn2.gif" />
                 </div>
-                <h1 id="teks2" class="scale0 quicksand" style="font-size: 19px;">Ayaanggku Masih Ngambek? 🫣</h1>
+                <h1 id="teks2" class="scale0 quicksand" style="font-size: 18px;line-height:1.4em">Pagi-Pagi Maling Sepatu,<br><span style="font-size: 17px;"><span style="color:pink">Hey Darling</span>, Can I Keep You? 😻🫵</span></h1>
                 <div id="Tombol" style="opacity:0;transform: scale(0)">
-                    <a id="By" onClick="swiper.slideNext();">Udah Ngga 💗</a>
-                    <a id="Bn" onClick="btn='Bn';fungsibaru(btn)">Masih 🤬</a>
+                    <a id="By" onClick="swiper.slideNext();">Yes, Keep Me! 💗</a>
+                    <a id="Bn" onClick="btn='Bn';fungsibaru(btn)">Noo 🤬</a>
                 </div>
-                <img id="stikerTolak" class="sembunyi" src="https://htmlku.com/0/panda/cubit.gif"/>
-                <p id="teksTolak" class="sembunyi">Ciee ngambekan gitu doang 😋😝</p>
+                <img id="stikerTolak" class="sembunyi" src="https://htmlku.com/0/panda/ledekin.gif"/>
+                <p id="teksTolak" class="sembunyi">Gaboleh Nolak yaa 😋😝</p>
                 
-                <img id="stikerTolak2" class="sembunyi" src="https://feeldreams.github.io/weee.gif"/>
+                <img id="stikerTolak2" class="sembunyi" src="https://feeldreams.github.io/"/>
                 <p id="teksTolak2" class="sembunyi">Nanti cepet tua loh 🫣🤣</p>
             </div>
 
             <div class="swiper-slide">
                 <div id="stiker3" class="scale0 stiker" style="margin-top:50px">
-                    <img id="stikerAkhir1" src="https://htmlku.com/0/panda/ciumpipi.gif" />
-                    <img id="stikerAkhir2" class="sembunyi" src="https://htmlku.com/0/panda/panah.gif" />
+                    <img id="stikerAkhir1" src="https://htmlku.com/0/panda/panah.gif" />
+                    <img id="stikerAkhir2" class="sembunyi" src="https://htmlku.com/0/panda/mikir.gif" />
                 </div>
                 <div id="scroll-container" class="blocktext">
-                    <h1 id="teks3" class="scale0 quicksand" style="font-size: 17px;font-weight:400"><b style="font-size: 22px;">Yeaaayy! 🥳</b><br><br>Maaciiiww udah ga ngambek 😋<br><br><b>Sekarang Aku Mau Nanya Nih 😝🩷</b></b></h1>
+                    <h1 id="teks3" class="scale0 quicksand" style="font-size: 17px;font-weight:400"><b style="font-size: 22px;">Yeaaayy! 🥳</b><br><br>Maaciiiww udah mau nerimaa 😋🤏<br><br><b>Sekarang Aku Mau Nanya Nih 😝🩷</b></b></h1>
                     <h1 id="teksTambahan" class="sembunyi"><span id="teksLove">I Love You</span></h1>
                     <script>const loveEmojis = ['💖']</script>
                 </div>
             </div>
             
-            <div class="swiper-slide">
+            <div id="swiperAkhir" class="swiper-slide">
 		       <div id="stiker4" class="scale0 stiker">
-		        <img id="stikerAkhir3" src="https://htmlku.com/0/panda/inicinta.gif"/>
-		        <img id="stikerAkhir4" class="sembunyi" src="https://htmlku.com/0/panda/terlope.gif"/>
+		        <img id="stikerAkhir3" src="https://htmlku.com/0/panda/inicinta2.gif"/>
+		        <img id="stikerAkhir4" class="sembunyi" src="https://htmlku.com/0/panda/terlope2.gif"/>
+		        <img id="stikerAkhir5" class="sembunyi" src="https://htmlku.com/0/panda/muah.gif"/>
 		       </div>
 		      	<h1 id="teks4" class="scale0 quicksand" style="font-size: 20px;">Jawab di Sini yaa! 😆<br><br> >>>></h1>
 		      
@@ -225,9 +233,8 @@
 		        <p id="teksLoveU" class="sembunyi">I Love U 1% 💗</p>
 		        <p id="teksRandomEmoji" class="sembunyi"></p>
 		        
-		        <style>.containerAkhir{display:flex;width:100%;height:80px;justify-content:center;line-height:1.35em;text-align:center;margin-top:0px}</style>
 		        <div id="contentAkhir" class="containerAkhir sembunyi">
-		           <h1 id="teksAkhir" class="sembunyi quicksand" style="font-size: 18px;font-weight:400">Gabolee ngambek lagi yaa 😍😋🩷</h1>
+		           <h1 id="teksAkhir" class="sembunyi quicksand" style="font-size: 18px;font-weight:400"></h1>
 		        </div>
 		      </div>
 
@@ -264,6 +271,7 @@ stikerScale = document.querySelector('#stiker' + teksSekarang);
 Tombol = document.querySelector('#Tombol');
 const body = document.querySelector("body"); audio = new Audio('' + linkmp3.src); 
 var swiper = new Swiper(".mySwiper", {
+	allowTouchMove: false,
     pagination: {el: ".swiper-pagination", dynamicBullets: false,},
     on: {
     slideChange: function () {
@@ -276,7 +284,7 @@ var swiper = new Swiper(".mySwiper", {
           stikerScale.classList.add("scale1");
           
           if(teksSekarang == 2){
-              Tombol.style="opacity:1;transform: scale(1);"
+              setTimeout(katanimasiPantun, 300);
           } else if(teksSekarang == 3){
               setTimeout(katanimasi, 300);              
           } else if(teksSekarang == 4){setTimeout(function(){teksScale.classList.remove("scale1");stikerScale.classList.remove("scale1");teksScale.classList.add("scale0");stikerScale.classList.add("scale0");setTimeout(function(){calculator.style="display:flex";setTimeout(function(){calculator.classList.add("scale1");teksScale.style="display:none";stikerScale.style="display:none"},50);},550);}, 1400);}
@@ -286,6 +294,18 @@ var swiper = new Swiper(".mySwiper", {
     },
     navigation: {nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev",},
 });
+
+initeksPantun = teks2.innerHTML;
+teks2.innerHTML = "";
+function katanimasiPantun(){
+    teks2.innerHTML = "";
+	new TypeIt("#teks2", {
+    strings: ["" + initeksPantun], startDelay: 10, speed: 25, cursor: true,
+    afterComplete: function(){
+      	teks2.innerHTML = initeksPantun;
+          Tombol.style="opacity:1;transform: scale(1);"
+    },}).go();
+}
     
 initeks = teks3.innerHTML;
 teks3.innerHTML = "";
@@ -307,7 +327,7 @@ function katanimasi(){
                
             setTimeout(function(){
                 //setTimeout(katanimasi3, 200);
-                teks3.innerHTML = "<b style='font-size:28px;color:yellow'>1 + 1</b><br><br><b style='font-size:22px'>Berapa yaa? 🫣<br><br> >>>></b>";
+                teks3.innerHTML = "<b style='font-size:26px;color:yellow'>1 + 2</b><br><br><b style='font-size:20px'>Berapa yaa? 🫣<br><br> >>>></b>";
                 teksScale.classList.remove("scale0");
                 stikerScale.classList.remove("scale0");
                 teksScale.classList.add("scale1");
@@ -429,8 +449,8 @@ document.getElementById("loveIn").onclick = function() {
 	        teks1.classList.add("scale1");
 	        wallpaper.style="transform:scale(1)";
 	        
-	        setTimeout(()=>{teksScale.classList.remove("scale1");teksScale.classList.add("scale0");stikerScale.classList.remove("scale1");stikerScale.classList.add("scale0");setTimeout(()=>{teksScale.classList.remove("scale0");teksScale.classList.add("scale1");stikerScale.classList.remove("scale0");stikerScale.classList.add("scale1");teksScale.innerHTML=teks1b.innerHTML;stiker1a.src=stiker1b.src}, 300);setTimeout(function(){fungsiBerfungsi = true}, 550);}, 3000);
-        }, 750);
+	        setTimeout(()=>{teksScale.classList.remove("scale1");teksScale.classList.add("scale0");stikerScale.classList.remove("scale1");stikerScale.classList.add("scale0");setTimeout(()=>{teksScale.classList.remove("scale0");teksScale.classList.add("scale1");stikerScale.classList.remove("scale0");stikerScale.classList.add("scale1");teksScale.innerHTML=teks1b.innerHTML;stiker1a.src=stiker1b.src}, 450);setTimeout(()=>{swiper.slideNext();setTimeout(function(){/*fungsiBerfungsi = true;swiper.allowTouchMove = true;*/}, 550);}, 2600);}, 2000);
+        }, 500);
     } else {
         sudahKlik = true; // Tandai tombol sudah diklik
         document.getElementById('loveIn').innerHTML = '<style>.lovein svg{animation:none;stroke:#ff0000;stroke-width:1.3;fill:none;width:35px;height:35px}</style><label class="lovein"><svg class="line" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g transform="translate(2.550170, 3.550158)"><path d="M0.371729633,8.89614246 C-0.701270367,5.54614246 0.553729633,1.38114246 4.07072963,0.249142462 C5.92072963,-0.347857538 8.20372963,0.150142462 9.50072963,1.93914246 C10.7237296,0.0841424625 13.0727296,-0.343857538 14.9207296,0.249142462 C18.4367296,1.38114246 19.6987296,5.54614246 18.6267296,8.89614246 C16.9567296,14.2061425 11.1297296,16.9721425 9.50072963,16.9721425 C7.87272963,16.9721425 2.09772963,14.2681425 0.371729633,8.89614246 Z"></path><path d="M13.23843,4.013842 C14.44543,4.137842 15.20043,5.094842 15.15543,6.435842"></path></g></svg></label><p id="ket">Sentuh LOVEnya!</p>';
@@ -440,12 +460,6 @@ document.getElementById("loveIn").onclick = function() {
 
 function falling() {const heart = document.createElement("div");heart.innerHTML = "<svg class='line spin' style='opacity:.5;z-index:100;stroke:#FFC2B8' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><g transform='translate(2.550170, 3.550158)'><path d='M0.371729633,8.89614246 C-0.701270367,5.54614246 0.553729633,1.38114246 4.07072963,0.249142462 C5.92072963,-0.347857538 8.20372963,0.150142462 9.50072963,1.93914246 C10.7237296,0.0841424625 13.0727296,-0.343857538 14.9207296,0.249142462 C18.4367296,1.38114246 19.6987296,5.54614246 18.6267296,8.89614246 C16.9567296,14.2061425 11.1297296,16.9721425 9.50072963,16.9721425 C7.87272963,16.9721425 2.09772963,14.2681425 0.371729633,8.89614246 Z'></path><path d='M13.23843,4.013842 C14.44543,4.137842 15.20043,5.094842 15.15543,6.435842'></path></g></svg>";heart.className = "heart-icon";heart.style.left = (Math.random() * 95) + "vw";heart.style.animationDuration = (Math.random() * 3) + 2 + "s";document.body.appendChild(heart);}
 setInterval(function() {var heartArr = document.querySelectorAll(".heart-icon");if (heartArr.length > 100) {heartArr[0].remove();}}, 100);
-
-const scrollContainer = document.getElementById("scroll-container");
-const textContainer = document.getElementById("textsec2");
-
-function autoScroll() {scrollContainer.scrollTop += 10;}
-const scrollInterval = setInterval(autoScroll, 50); 
 
 /////////////////
 
@@ -496,14 +510,14 @@ function fungsiTerima() {
         confirmButtonText: 'OK',
         showConfirmButton: false,
         allowOutsideClick: false,
-        timer: 1700,
+        timer: 1500,
         timerProgressBar: true,
         willClose: () => {
             console.log("Alert 1 closed automatically");
         }
     }).then(() => {
         // Munculkan alert kedua setelah alert pertama selesai
-        Swal.fire({
+        /*Swal.fire({
             title: '' + teksTolak2.innerHTML,
             imageUrl: '' + stikerTolak2.src,
             imageWidth: 90,
@@ -517,7 +531,7 @@ function fungsiTerima() {
             willClose: () => {
                 console.log("Alert 2 closed automatically");
             }
-        });
+        });*/
     });
 }
 /////////////////////////
@@ -586,12 +600,13 @@ function kalkulatornimasi2() {
     let percent = 1;
     setTimeout(function() {
         const intervalId = setInterval(() => {
-            if (percent < 100) {
+            if (percent < 10) {
                 percent++;
                 const randomEmoji = loveEmojis[Math.floor(Math.random() * loveEmojis.length)];
                 screen.value = `I Love U ${percent}% ${randomEmoji}`;
             } else {
                 clearInterval(intervalId);
+                
                 const keys = document.querySelector('.calculator-keys');
 			    keys.classList.add('hide');
 			    
@@ -603,22 +618,100 @@ function kalkulatornimasi2() {
 			    setTimeout(() => {
 			        keys.style.display = 'none';
                     stikerScale.style="";
-                    calculator.style="display:flex;margin-top:0px;background-color:unset;box-shadow:unset;border:none;backdrop-filter: blur(0);-webkit-backdrop-filter: blur(0);";
-                    setTimeout(kalkulatornimasi3, 400);
+                    calculator.style="display:flex;margin-top:-20px;background-color:unset;box-shadow:unset;border:none;backdrop-filter: blur(0);-webkit-backdrop-filter: blur(0);transition:all .5s ease";
+                    
+                    setTimeout(animteksakhirLoop,300);
 			    }, 200);
 			
-			    /*
 			    setTimeout(() => {
-			        stiker4.classList.remove("scale0");
-                    stiker4.classList.add("scale1");
-			    }, 200);*/
-
+                        stiker4.classList.remove("scale0");
+                        stiker4.classList.add("scale1");
+                        
+                        swiperAkhir.style="margin-top:-50px;transition:all .5s ease";
+			    }, 500);
+                ///
                 stiker4.classList.remove("scale1");
                 stiker4.classList.add("scale0");
-                setTimeout(function(){stikerAkhir3.src = stikerAkhir4.src; stiker4.classList.remove("scale0");stiker4.classList.add("scale1");},250);
+                setTimeout(function(){stikerAkhir3.src = stikerAkhir4.src;},100);
             }
         }, 40); // Speed 0-100%
     }, 10); // Delay
+}
+
+const hearts = [
+            '❤️',
+            '🧡',
+            '💛', 
+            '💚',
+            '💙',
+            '💜',
+            '💖' 
+];
+
+function getHeart(index) {
+     return hearts[index % hearts.length];
+}
+        
+function animteksakhirLoop() {
+    const contentAkhir = document.querySelector('#contentAkhir');
+    const teksAkhir = document.querySelector('#teksAkhir');
+
+    contentAkhir.classList.remove("sembunyi");
+    teksAkhir.classList.remove("sembunyi");
+
+    setTimeout(() => {
+        const instance = new TypeIt("#teksAkhir", {
+            startDelay: 10,
+            speed: 1,
+            cursor: false,
+            afterComplete: function() {
+                setInterval(createHeart, 200);
+                setTimeout(()=>{clearInterval(scrollInterval)},500);
+                stiker4.classList.remove("scale1");
+                stiker4.classList.add("scale0");
+                setTimeout(function(){stikerAkhir3.src = stikerAkhir5.src;},150);
+                setTimeout(function(){stiker4.classList.remove("scale0");stiker4.classList.add("scale1");},300);
+            }
+        });
+
+        for (let i = 10; i <= 100; i++) {
+            const cycleIndex = (i - 1) % 20;
+            let marginLeft;
+            if (cycleIndex < 10) {
+                // Naik dari 0px ke 50px
+                marginLeft = cycleIndex * 5; // 0, 5, 10, ..., 50
+            } else {
+                // Turun dari 50px ke 0px
+                marginLeft = (19 - cycleIndex) * 5; // 50, 45, 40, ..., 0
+            }
+            
+            // Jika baris ke-100, tambahkan gaya bold dan font-size: 20px
+            if (i === 100) {
+                instance
+                    .type(`<span class='line' style='margin-left: ${marginLeft}px; font-weight: bold; font-size: 23px;'>I Love U ${i}% ` + getHeart(i - 1) + `</span><br>`)
+                    .pause(1);
+            } else {
+                instance
+                    .type(`<span class='line' style='margin-left: ${marginLeft}px;'>I Love U ${i}% ` + getHeart(i - 1) + `</span><br>`)
+                    .pause(1);
+            }
+        }
+
+        instance.go();
+    }, 50);
+}
+
+const scrollContainer = document.getElementById("contentAkhir");
+function autoScroll() {scrollContainer.scrollTop += 10;} 
+const scrollInterval = setInterval(autoScroll, 50); 
+
+function createHeart() {
+    const heart = document.createElement('div');
+    heart.className = 'heart';
+    heart.innerHTML = `<svg class='line' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><g transform='translate(2.550170, 3.550158)'><path d='M0.371729633,8.89614246 C-0.701270367,5.54614246 0.553729633,1.38114246 4.07072963,0.249142462 C5.92072963,-0.347857538 8.20372963,0.150142462 9.50072963,1.93914246 C10.7237296,0.0841424625 13.0727296,-0.343857538 14.9207296,0.249142462 C18.4367296,1.38114246 19.6987296,5.54614246 18.6267296,8.89614246 C16.9567296,14.2061425 11.1297296,16.9721425 9.50072963,16.9721425 C7.87272963,16.9721425 2.09772963,14.2681425 0.371729633,8.89614246 Z'></path><path d='M13.23843,4.013842 C14.44543,4.137842 15.20043,5.094842 15.15543,6.435842'></path></g></svg>`;
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.addEventListener('animationend', () => heart.remove());
+    document.body.appendChild(heart);
 }
 
 k_initeksAkhir = teksAkhir.innerHTML;
