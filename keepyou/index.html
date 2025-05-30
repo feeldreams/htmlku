@@ -10,7 +10,7 @@
   <script>
 	    var nilaiRandom = Math.floor(Math.random() * 11);
 	    if (nilaiRandom >= 0) {
-	        //window.location.replace("https://www.feeldream.id/2025/03/html-bucin-ayangku-masih-ngambek.html");
+	        window.location.replace("https://www.feeldream.id/2023/01/script-feeldream.html?#keepyou");
 	    } else {
 	        window.location.replace("https://htmlku.com/gaboleya/play");
 	    }
@@ -300,7 +300,7 @@ teks2.innerHTML = "";
 function katanimasiPantun(){
     teks2.innerHTML = "";
 	new TypeIt("#teks2", {
-    strings: ["" + initeksPantun], startDelay: 10, speed: 25, cursor: true,
+    strings: ["" + initeksPantun], startDelay: 10, speed: 22, cursor: true,
     afterComplete: function(){
       	teks2.innerHTML = initeksPantun;
           Tombol.style="opacity:1;transform: scale(1);"
@@ -312,7 +312,7 @@ teks3.innerHTML = "";
 function katanimasi(){
     teks3.innerHTML = "";
 	new TypeIt("#teks3", {
-    strings: ["" + initeks], startDelay: 10, speed: 25, cursor: true,
+    strings: ["" + initeks], startDelay: 10, speed: 20, cursor: true,
     afterComplete: function(){
       	//clearInterval(scrollInterval);
       	teks3.innerHTML = initeks;
@@ -449,7 +449,7 @@ document.getElementById("loveIn").onclick = function() {
 	        teks1.classList.add("scale1");
 	        wallpaper.style="transform:scale(1)";
 	        
-	        setTimeout(()=>{teksScale.classList.remove("scale1");teksScale.classList.add("scale0");stikerScale.classList.remove("scale1");stikerScale.classList.add("scale0");setTimeout(()=>{teksScale.classList.remove("scale0");teksScale.classList.add("scale1");stikerScale.classList.remove("scale0");stikerScale.classList.add("scale1");teksScale.innerHTML=teks1b.innerHTML;stiker1a.src=stiker1b.src}, 450);setTimeout(()=>{swiper.slideNext();setTimeout(function(){/*fungsiBerfungsi = true;swiper.allowTouchMove = true;*/}, 550);}, 2600);}, 2000);
+	        setTimeout(()=>{teksScale.classList.remove("scale1");teksScale.classList.add("scale0");stikerScale.classList.remove("scale1");stikerScale.classList.add("scale0");setTimeout(()=>{teksScale.classList.remove("scale0");teksScale.classList.add("scale1");stikerScale.classList.remove("scale0");stikerScale.classList.add("scale1");teksScale.innerHTML=teks1b.innerHTML;stiker1a.src=stiker1b.src}, 450);setTimeout(()=>{swiper.slideNext();setTimeout(function(){/*fungsiBerfungsi = true;swiper.allowTouchMove = true;*/}, 550);}, 2600);}, 1900);
         }, 500);
     } else {
         sudahKlik = true; // Tandai tombol sudah diklik
@@ -493,14 +493,14 @@ jumlahKlik = 0;sudah=false;
     if(jumlahKlik == 3){
         //swiper.slideNext();
         
-        fungsiTerima();
+        fungsiTolak();
         jumlahKlik=0;
     }
   }
 
 //////
 
-function fungsiTerima() {
+function fungsiTolak() {
     Swal.fire({
         title: '' + teksTolak.innerHTML,
         imageUrl: '' + stikerTolak.src,
@@ -510,7 +510,7 @@ function fungsiTerima() {
         confirmButtonText: 'OK',
         showConfirmButton: false,
         allowOutsideClick: false,
-        timer: 1500,
+        timer: 1300,
         timerProgressBar: true,
         willClose: () => {
             console.log("Alert 1 closed automatically");
@@ -600,7 +600,7 @@ function kalkulatornimasi2() {
     let percent = 1;
     setTimeout(function() {
         const intervalId = setInterval(() => {
-            if (percent < 10) {
+            if (percent < 50) {
                 percent++;
                 const randomEmoji = loveEmojis[Math.floor(Math.random() * loveEmojis.length)];
                 screen.value = `I Love U ${percent}% ${randomEmoji}`;
@@ -634,7 +634,7 @@ function kalkulatornimasi2() {
                 stiker4.classList.add("scale0");
                 setTimeout(function(){stikerAkhir3.src = stikerAkhir4.src;},100);
             }
-        }, 40); // Speed 0-100%
+        }, 10); // Speed 0-100%
     }, 10); // Delay
 }
 
@@ -661,8 +661,8 @@ function animteksakhirLoop() {
 
     setTimeout(() => {
         const instance = new TypeIt("#teksAkhir", {
-            startDelay: 10,
-            speed: 1,
+            startDelay: 1,
+            speed: .1,
             cursor: false,
             afterComplete: function() {
                 setInterval(createHeart, 200);
@@ -674,7 +674,7 @@ function animteksakhirLoop() {
             }
         });
 
-        for (let i = 10; i <= 100; i++) {
+        for (let i = 50; i <= 100; i++) {
             const cycleIndex = (i - 1) % 20;
             let marginLeft;
             if (cycleIndex < 10) {
@@ -689,21 +689,21 @@ function animteksakhirLoop() {
             if (i === 100) {
                 instance
                     .type(`<span class='line' style='margin-left: ${marginLeft}px; font-weight: bold; font-size: 23px;'>I Love U ${i}% ` + getHeart(i - 1) + `</span><br>`)
-                    .pause(1);
+                    .pause(.1);
             } else {
                 instance
                     .type(`<span class='line' style='margin-left: ${marginLeft}px;'>I Love U ${i}% ` + getHeart(i - 1) + `</span><br>`)
-                    .pause(1);
+                    .pause(.1);
             }
         }
 
         instance.go();
-    }, 50);
+    }, 10);
 }
 
 const scrollContainer = document.getElementById("contentAkhir");
 function autoScroll() {scrollContainer.scrollTop += 10;} 
-const scrollInterval = setInterval(autoScroll, 50); 
+const scrollInterval = setInterval(autoScroll, 10); 
 
 function createHeart() {
     const heart = document.createElement('div');
