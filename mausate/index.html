@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>For You 🌹</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Handlee&family=Sriracha&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Handlee&family=Sriracha&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
@@ -20,7 +20,7 @@
 	.letter:after{content:'';position:absolute;top:0;bottom:0;left:0;right:0;background-image:linear-gradient(180deg,rgba(255,255,255,0) 25%,rgba(255,231,236,0.7) 55%,rgba(255,231,236,1) 100%)}
 	.message{position:relative;z-index:2;font-family:'Handlee',cursive;color:#d46a84;text-align:center;line-height:1;padding-top:0}
 	.message p{margin:10px 0;font-size:1.4em;text-shadow:0 2px 3px rgba(0,0,0,0.1)}
-	.envlope-wrapper{height:210px;margin-top:-30px;/*animation:float 3s ease-in-out infinite*/}
+	.envlope-wrapper{height:210px;margin-top:0px;/*animation:float 3s ease-in-out infinite*/}
 	@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 	.open .flap{transform:rotateX(180deg);transition:transform 0.4s ease,z-index 0.6s;z-index:1}
 	.close .flap{transform:rotateX(0deg);transition:transform 0.4s 0.6s ease,z-index 1s;z-index:5}
@@ -45,14 +45,16 @@
 	@keyframes sideSway{0%{margin-left:0}50%{margin-left:50px}100%{margin-left:0}}
 	@keyframes sparkleUp{0%{transform:translateY(0);opacity:1}100%{transform:translateY(-500px) rotate(360deg);opacity:0}}
 	@keyframes sparkleTwinkle{0%,100%{transform:scale(1)}50%{transform:scale(1.5)}}
-	.reset{position:relative;text-align:center;margin-top:20px}
-	.reset button{font-family:'Sriracha',serif;font-weight:600;transition:all 0.3s ease;background-color:var(--color-flap);border:2px solid rgba(255,255,255,0.8);border-radius:20px;color:#fff;text-shadow:0 2px 2px rgba(0,0,0,0.5);padding:6px 14px;margin:10px;font-size:16px;box-shadow:0 5px 20px rgba(0,0,0,0.15)}
-	.reset button:hover{background-color:var(--color-env2);transform:translateY(-3px) scale(1.05);box-shadow:0 7px 25px rgba(0,0,0,0.2)}
+	.reset, .tombol{position:relative;text-align:center;margin-top:20px}
+	.reset button, .tombol button{font-family:'Sriracha',serif;font-weight:600;transition:all 0.3s ease;background-color:var(--color-flap);border:2px solid rgba(255,255,255,0.8);border-radius:20px;color:#fff;text-shadow:0 2px 2px rgba(0,0,0,0.5);padding:6px 14px;margin:10px;font-size:16px;box-shadow:0 5px 20px rgba(0,0,0,0.15)}
+	.reset button:hover, .tombol button:hover{background-color:var(--color-env2);transform:translateY(-3px) scale(1.05);box-shadow:0 7px 25px rgba(0,0,0,0.2)}
+	.tombol{transform:scale(0);opacity:0;transition:all .7s ease}
 	canvas{position:absolute;top:0;left:0;width:100%;height:100%;z-index:-1}
 	.pic{font-size:3rem;margin-bottom:1rem}
-	h1,h2{font-size:1.2rem;margin-bottom:1rem;font-weight:700}
-	#teksCinta{font-size:2.5rem;color:#f472b6;margin-top:1rem;font-weight:700}
-	p{font-size:1rem;margin-bottom:1rem;font-weight:400}
+	h1,h2{font-size:1rem;margin-bottom:1rem;font-weight:700}
+	#teksCinta{font-size:13.5px;color:#fff;font-weight:600}
+	#teksLucu{font-size:13.5px;color:#fff;margin-top:1rem;font-weight:500}
+	p{font-size:13.5px;margin-bottom:1rem;font-weight:500}
 	#statusGame{margin-top:25px}
 	button{background:#f43f5e;color:#fff;border:none;padding:0.5rem 1.5rem;border-radius:999px;font-size:1rem;transition:background 0.3s;font-weight:700}
 	button:hover{background:#e11d48}
@@ -72,7 +74,7 @@
 	@keyframes ngelayang{0%{transform:translateY(100vh);opacity:0.65}10%{opacity:0.65}90%{opacity:0.65}100%{transform:translateY(-100vh);opacity:0}}
 	.hati svg{width:100%;height:100%;fill:none;stroke:pink}
 	
-	.wrapper{position:fixed}.box div{position:fixed;width:60px;height:60px;background-color:transparent;border:6px solid rgba(255,255,255,0.5);border-radius:50%}.box div:nth-child(1){top:12%;left:42%;animation:animate 10s linear infinite}.box div:nth-child(2){top:70%;left:50%;animation:animate 7s linear infinite}.box div:nth-child(3){top:17%;left:6%;animation:animate 9s linear infinite}.box div:nth-child(4){top:20%;left:60%;animation:animate 10s linear infinite}.box div:nth-child(5){top:67%;left:10%;animation:animate 6s linear infinite}.box div:nth-child(6){top:80%;left:70%;animation:animate 12s linear infinite}.box div:nth-child(7){top:60%;left:80%;animation:animate 15s linear infinite}.box div:nth-child(8){top:32%;left:25%;animation:animate 16s linear infinite}.box div:nth-child(9){top:90%;left:25%;animation:animate 9s linear infinite}.box div:nth-child(10){top:20%;left:80%;animation:animate 5s linear infinite}@keyframes animate{0%{transform:scale(0) translateY(0) rotate(0);opacity:.8}100%{transform:scale(1.3) translateY(-90px) rotate(360deg);opacity:0}}
+	.wrapper{position:fixed}.circ div{position:fixed;width:60px;height:60px;background-color:transparent;border:6px solid rgba(255,255,255,0.5);border-radius:50%}.circ div:nth-child(1){top:12%;left:42%;animation:animate 10s linear infinite}.circ div:nth-child(2){top:70%;left:50%;animation:animate 7s linear infinite}.circ div:nth-child(3){top:17%;left:6%;animation:animate 9s linear infinite}.circ div:nth-child(4){top:20%;left:60%;animation:animate 10s linear infinite}.circ div:nth-child(5){top:67%;left:10%;animation:animate 6s linear infinite}.circ div:nth-child(6){top:80%;left:70%;animation:animate 12s linear infinite}.circ div:nth-child(7){top:60%;left:80%;animation:animate 15s linear infinite}.circ div:nth-child(8){top:32%;left:25%;animation:animate 16s linear infinite}.circ div:nth-child(9){top:90%;left:25%;animation:animate 9s linear infinite}.circ div:nth-child(10){top:20%;left:80%;animation:animate 5s linear infinite}@keyframes animate{0%{transform:scale(0) translateY(0) rotate(0);opacity:.8}100%{transform:scale(1.3) translateY(-90px) rotate(360deg);opacity:0}}
 	
 	@media (max-width:600px){.kotak{width:80%;padding:1rem}#envelope{width:120px;height:82.5px;top:100px}.flap,.pocket{border-left-width:60px;border-right-width:60px;border-bottom-width:41.25px;border-top-width:41.25px}.letter{padding:10px}.message p{font-size:1.2em}.papanGame{grid-template-columns:repeat(4,1fr);gap:1rem 0.2rem}.kartu{width:40px;height:40px}.belakangKartu{font-size:1.2rem}}
   </style>
@@ -125,18 +127,21 @@
   <div id="hal3" class="kotak sembunyi">
     <!--<div class="pic">🌹</div>-->
     <div id="stiker3" class="stiker">
-        <img id="stiker3a" src="https://htmlku.com/0/panda/pusn3.gif" />
-        <img id="stiker3b" class="sembunyi" src="https://htmlku.com/0/panda/bunga3.gif" />
+        <img id="stiker3a" src="https://htmlku.com/0/panda/cilukba.gif" />
+        <img id="stiker3b" class="sembunyi" src="https://htmlku.com/0/panda/terlope2.gif" />
     </div>
-    <p id="pesanAkhir"></p>
     <p id="teksCinta"></p>
+    <p id="pesanAkhir"></p>
+    <p id="teksLucu"></p>
     <button style="display:none" onclick="shareWa()">Kirim ke Dia!</button>
   </div>
+  <div class="tombol">
+    <button onclick="balasWa()">Balas</button>
+  </div>
   
-  <div id="scontainer">
-        <div class="swrapper">
-            <div class="box">
-                <!-- Box elements -->
+  <div>
+        <div>
+            <div class="circ">
                 <div></div>
                 <div></div>
                 <div></div>
@@ -160,19 +165,19 @@
     
     // Data Kartu
     const kartu = [
-      { id: 1, icon: '🩷', pesan: 'Setiap momenâ€¦' },
-      { id: 1, icon: '🩷', pesan: 'Setiap momenâ€¦' },
-      { id: 2, icon: '🥰', pesan: 'bersamamu adalahâ€¦' },
-      { id: 2, icon: '🥰', pesan: 'bersamamu adalahâ€¦' },
-      { id: 3, icon: '💖', pesan: 'harta yangâ€¦' },
-      { id: 3, icon: '💖', pesan: 'harta yangâ€¦' },
-      { id: 4, icon: '❤️', pesan: 'tak ternilaiâ€¦' },
-      { id: 4, icon: '❤️', pesan: 'tak ternilaiâ€¦' },
-      { id: 5, icon: '💐', pesan: 'di hatikuâ€¦' },
-      { id: 5, icon: '💐', pesan: 'di hatikuâ€¦' },
-      { id: 6, icon: '💜', pesan: 'selamanya.' },
-      { id: 6, icon: '💜', pesan: 'selamanya.' }
-    ];
+	  { id: 3, icon: '💖', pesan: 'harta yang…' },
+	  { id: 5, icon: '💐', pesan: 'di hatiku…' },
+	  { id: 1, icon: '🩷', pesan: 'Setiap momen…' },
+	  { id: 6, icon: '💜', pesan: 'selamanya.' },
+	  { id: 2, icon: '🥰', pesan: 'bersamamu adalah…' },
+	  { id: 4, icon: '❤️', pesan: 'tak ternilai…' },
+	  { id: 1, icon: '🩷', pesan: 'Setiap momen…' },
+	  { id: 3, icon: '💖', pesan: 'harta yang…' },
+	  { id: 5, icon: '💐', pesan: 'di hatiku…' },
+	  { id: 2, icon: '🥰', pesan: 'bersamamu adalah…' },
+	  { id: 4, icon: '❤️', pesan: 'tak ternilai…' },
+	  { id: 6, icon: '💜', pesan: 'selamanya.' }
+	];
 
     // Animasi Kelopak Bunga
     function mulaiKelopak(canvasId) {
@@ -245,35 +250,35 @@
     }
 
     function mulaiHal2() {
-      kartuDibuka = [];
-      pasanganCocok = 0;
-      gameJalan = true;
-      document.getElementById('kotakPesan').innerHTML = '';
-      document.getElementById('statusGame').innerText = '';
-      document.getElementById('lanjut').classList.add('sembunyi');
-      document.getElementById('ulang').classList.add('sembunyi');
-
-      const papanGame = document.getElementById('papanGame');
-      papanGame.innerHTML = '';
-      acakKartu([...kartu]).forEach((card, index) => {
-        const elemenKartu = document.createElement('div');
-        elemenKartu.className = 'kartu';
-        elemenKartu.dataset.id = card.id;
-        elemenKartu.innerHTML = `
-          <div class="dalemKartu">
-            <div class="depanKartu"></div>
-            <div class="belakangKartu">${card.icon}</div>
-          </div>
-        `;
-        elemenKartu.addEventListener('click', () => balikKartu(elemenKartu, card, index));
-        papanGame.appendChild(elemenKartu);
-      });
-
-      mulaiKelopak('game-canvas');
-      setTimeout(() => {
-        if (pasanganCocok < 6 && gameJalan) selesaiGame(false);
-      }, 60000);
-    }
+	  kartuDibuka = [];
+	  pasanganCocok = 0;
+	  gameJalan = true;
+	  document.getElementById('kotakPesan').innerHTML = '';
+	  document.getElementById('statusGame').innerText = '';
+	  document.getElementById('lanjut').classList.add('sembunyi');
+	  document.getElementById('ulang').classList.add('sembunyi');
+	
+	  const papanGame = document.getElementById('papanGame');
+	  papanGame.innerHTML = '';
+	  kartu.forEach((card, index) => { // Langsung gunakan array kartu tanpa pengacakan
+	    const elemenKartu = document.createElement('div');
+	    elemenKartu.className = 'kartu';
+	    elemenKartu.dataset.id = card.id;
+	    elemenKartu.innerHTML = `
+	      <div class="dalemKartu">
+	        <div class="depanKartu"></div>
+	        <div class="belakangKartu">${card.icon}</div>
+	      </div>
+	    `;
+	    elemenKartu.addEventListener('click', () => balikKartu(elemenKartu, card, index));
+	    papanGame.appendChild(elemenKartu);
+	  });
+	
+	  mulaiKelopak('game-canvas');
+	  setTimeout(() => {
+	    if (pasanganCocok < 6 && gameJalan) selesaiGame(false);
+	  }, 60000);
+	}
 
     function balikKartu(elemenKartu, card, index) {
       if (!gameJalan || kartuDibuka.length >= 2 || elemenKartu.classList.contains('balik')) return;
@@ -290,7 +295,7 @@
           document.getElementById('kotakPesan').appendChild(divPesan);
           */
           kartuDibuka = [];
-          if (pasanganCocok === 1) selesaiGame(true);
+          if (pasanganCocok === 6) selesaiGame(true);
         } else {
           setTimeout(() => {
             kartu1.elemen.classList.remove('balik');
@@ -316,23 +321,46 @@
 
     // Halaman 3: Pesan Akhir
     function mulaiHal3() {
-      stiker3.style="transform:scale(1)";
-      txtPesanAkhir = "Setiap momen bersamamu adalah harta yang tak ternilai di hatiku selamanya.";
-      new TypeIt("#pesanAkhir", {
-        strings: txtPesanAkhir,
-        speed: 30,
+      const stiker3 = document.getElementById('stiker3');
+      const stiker3a = document.getElementById('stiker3a');
+      const stiker3b = document.getElementById('stiker3b');
+      stiker3.style = "transform:scale(1)";
+      
+      const txtDoa = "<i>Taqabbalallahu minna wa minkum,<br>minal 'aidin wal faizin</i> 🕌🌙";
+      const txtPesanAkhir = "<b>Selamat Hari Raya Idul Adha!</b> Semoga pengorbanan dan keikhlasan kita mendekatkan diri kepada Allah serta mempererat tali silaturahmi 🫶";
+      const txtLucu = "Oh ya, di hari raya <b>Idul Adha</b> ini,<br>kamu mau makan sate apa nih? 🫣<br><br>Sate kambing, sate sapi, atau...<br><b>saterusnya sama aku</b>? Hhee 😆🤏";
+
+      new TypeIt("#teksCinta", {
+        strings: txtDoa,
+        speed: 28,
         startDelay: 100,
         afterComplete: function () {
-          document.querySelector("#pesanAkhir .ti-cursor").style.display = "none";
-          new TypeIt("#teksCinta", {
-            strings: "I Love U",
-            speed: 30,
+          document.querySelector("#teksCinta .ti-cursor").style.display = "none";
+          new TypeIt("#pesanAkhir", {
+            strings: txtPesanAkhir,
+            speed: 28,
             waitUntilVisible: true,
-            afterComplete: function () {document.querySelector("#teksCinta .ti-cursor").style.display = "none"; stiker3.style="transform:scale(0)";setTimeout(()=>{stiker3a.src=stiker3b.src;stiker3.style="transform:scale(1)";}, 300);}
+            afterComplete: function () {
+              document.querySelector("#pesanAkhir .ti-cursor").style.display = "none";
+              new TypeIt("#teksLucu", {
+                strings: txtLucu,
+                speed: 28,
+                waitUntilVisible: true,
+                afterComplete: function () {
+                  document.querySelector("#teksLucu .ti-cursor").style.display = "none";
+                  intervalHati = setInterval(hatiJatuh, 200);
+                  document.querySelector(".tombol").style="transform:scale(1);opacity:1;";
+                  stiker3.style = "transform:scale(0)";
+                  setTimeout(() => {
+                    stiker3a.src = stiker3b.src;
+                    stiker3.style = "transform:scale(1)";
+                  }, 300);
+                }
+              }).go();
+            }
           }).go();
         }
       }).go();
-      intervalHati = setInterval(hatiJatuh, 200);
     }
 
     // Navigasi Halaman
@@ -357,10 +385,10 @@
     }
 
     // Share ke WhatsApp
-    function shareWa() {
+    function balasWa() {
       const url = window.location.href;
-      const text = "Kenang momen cinta dengan game ini!(resources://PDF.js/web/viewer.html?file=/0/wp2.jpg) ðŸŒ¹ Cek pesan romantisnya! #MemoryOfUs";
-      window.open(`https://wa.me/?text=${encodeURIComponent(text + ' ' + url)}`, '_blank');
+      const text = "Taqabbalallahu minna wa minkum, minal 'aidin wal faizin!";
+      window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
     }
   </script>
 </body>
