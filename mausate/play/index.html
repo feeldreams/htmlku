@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For You 🌹</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Handlee&family=Sriracha&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script><link rel="stylesheet" href="https://htmlku.com/mausate/style.css">
+</head>
+<body>
+  
+  <!-- Audio -->
+  <audio src="https://feeldreams.github.io/audio/thousand.mp3" id="linkmp3"></audio>
+  
+  <!-- Background / Wallpaper -->
+  <div class="background-overlay" data-src="https://htmlku.com/0/wp2.jpg"></div>
+
+  <!-- Halaman 1: Envelope -->
+  <div id="hal1">
+    <div class="envlope-wrapper">
+      <div id="envelope" class="close">
+        <div class="front flap"></div>
+        <div class="front pocket"></div>
+        <div class="letter">
+          <div class="letter-corner corner-tl"></div>
+          <div class="letter-corner corner-br"></div>
+          <div class="message">
+            <p>Alooo Kamuu! ✨</p>
+          </div>
+        </div>
+        <div class="hearts">
+          <div class="heart a1"></div>
+          <div class="heart a2"></div>
+          <div class="heart a3"></div>
+        </div>
+        <div class="sparkles">
+          <div class="sparkle s1"></div>
+          <div class="sparkle s2"></div>
+          <div class="sparkle s3"></div>
+        </div>
+      </div>
+    </div>
+    <div class="reset">
+      <button onclick="bukaEnvelope()">Buka</button>
+    </div>
+  </div>
+
+  <!-- Halaman 2: Memory Game -->
+  <div id="hal2" class="kotak sembunyi">
+    <canvas id="game-canvas"></canvas>
+    <h2>Memory Game</h2>
+    <p>Cocokkan kartu² ini yaa! 😋</p>
+    <div id="kotakPesan"></div>
+    <div id="papanGame" class="papanGame"></div>
+    <p id="statusGame"></p>
+    <button id="lanjut" onclick="pindahHal(3)" class="sembunyi">Lihat Pesan Cinta!</button>
+    <button id="ulang" onclick="mulaiHal2()" class="tombolCadangan sembunyi">Coba Lagi!</button>
+  </div>
+
+  <!-- Halaman 3: Pesan Akhir -->
+  <div id="hal3" class="kotak sembunyi">
+    <!-- Stiker Gif -->
+    <div id="stiker3" class="stiker">
+        <img id="stiker3a" src="https://htmlku.com/0/panda/cilukba.gif" />
+        <img id="stiker3b" class="sembunyi" src="https://htmlku.com/0/panda/terlope2.gif" />
+    </div>
+    <p id="teksCinta"></p>
+    <p id="pesanAkhir"></p>
+    <p id="teksLucu"></p>
+    <button style="display:none" onclick="shareWa()">Kirim ke Dia!</button>
+  </div>
+  <div class="tombol">
+    <button onclick="balasWa()">Balas</button>
+  </div>
+  
+  <!-- Circle Animation -->
+  <div>
+        <div>
+            <div class="circ">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+
+  <script>
+    // Edit Icon Memory Game di Sini
+    const kartu = [
+	  { id: 3, icon: '💖', pesan: '' },
+	  { id: 5, icon: '💐', pesan: '' },
+	  { id: 1, icon: '🩷', pesan: '' },
+	  { id: 6, icon: '💜', pesan: '' },
+	  { id: 2, icon: '🥰', pesan: '' },
+	  { id: 4, icon: '❤️', pesan: '' },
+	  { id: 1, icon: '🩷', pesan: '' },
+	  { id: 3, icon: '💖', pesan: '' },
+	  { id: 5, icon: '💐', pesan: '' },
+	  { id: 2, icon: '🥰', pesan: '' },
+	  { id: 4, icon: '❤️', pesan: '' },
+	  { id: 6, icon: '💜', pesan: '' }
+	];
+
+    // Edit Kata-kata di Sini
+    const txtDoa = "<i>Taqabbalallahu minna wa minkum,<br>minal 'aidin wal faizin</i> 🕌🌙";
+    const txtPesanAkhir = "<b>Selamat Hari Raya Idul Adha!</b> Semoga pengorbanan dan keikhlasan kita mendekatkan diri kepada Allah serta mempererat tali silaturahmi 🫶";
+    const txtLucu = "Oh ya, di hari raya <b>Idul Adha</b> ini,<br>kamu mau makan sate apa nih? 🫣<br><br>Sate kambing, sate sapi, atau...<br><b>saterusnya sama aku</b>? Hhee 😆🤏";
+  </script>
+  <script src="https://htmlku.com/mausate/script.js"></script>
+</body>
+</html>
