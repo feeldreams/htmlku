@@ -1,0 +1,71 @@
+*{margin:0;padding:0;box-sizing:border-box}
+	:root{--color-flap:#d46a84;--color-env:#f8e1e9;--color-env2:#D4AFB8;--color-heart:#ff6f91;--color-sparkle:#ffd1dc}
+	body {color:#fff;overflow-x:hidden;position:relative;font-family:'Montserrat',sans-serif;/*background: linear-gradient(180deg,#1e3a8a,#3b0764);*/background:rgba(0,0,0,1);z-index: 1;}
+	.background-overlay {position: fixed;top: 0;left: 0;width: 100%;height: 100%;/*background: url('https://htmlku.com/0/wp2.jpg') no-repeat center center fixed;*/background-size: cover;opacity: 0.4;z-index: 0;}
+	.kotak{margin:0 auto;margin-top:150px;transform:scale(0);transition:all .7s ease;background:rgba(255,255,255,0.1);backdrop-filter:blur(10px);border-radius:20px;box-shadow:0 8px 32px rgba(0,0,0,0.3);border:2px solid rgba(255,255,255,0.2);padding:0;text-align:center;max-width:80%;width:400px;min-height:200px;position:relative;z-index:1}
+	#envelope{margin:0 auto;margin-top:150px;position:relative;width:160px;height:110px;border-bottom-left-radius:6px;border-bottom-right-radius:6px;top:160px;background-color:var(--color-flap);box-shadow:0 4px 20px rgba(0,0,0,0.1)}
+	.front{position:absolute;width:0;height:0;z-index:3}
+	.flap{border-left:80px solid transparent;border-right:80px solid transparent;border-bottom:55px solid transparent;border-top:55px solid var(--color-flap);transform-origin:top;pointer-events:none}
+	.pocket{border-left:80px solid var(--color-env);border-right:8px solid var(--color-env);border-bottom:55px solid var(--color-env2);border-top:55px solid transparent;border-bottom-left-radius:6px;border-bottom-right-radius:6px}
+	.letter{position:relative;background-color:#e0d9dd;width:90%;margin:0 auto;height:100%;top:0%;border-radius:6px;box-shadow:0 2px 26px rgba(0,0,0,0.08);padding:15px;box-sizing:border-box}
+	.letter:after{content:'';position:absolute;top:0;bottom:0;left:0;right:0;background-image:linear-gradient(180deg,rgba(255,255,255,0) 25%,rgba(255,231,236,0.7) 55%,rgba(255,231,236,1) 100%)}
+	.message{position:relative;z-index:2;font-family:'Handlee',cursive;color:#d46a84;text-align:center;line-height:1;padding-top:0}
+	.message p{margin:10px 0;font-size:1.4em;text-shadow:0 2px 3px rgba(0,0,0,0.1)}
+	.envlope-wrapper{height:210px;margin-top:0px;/*animation:float 3s ease-in-out infinite*/}
+	@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+	.open .flap{transform:rotateX(180deg);transition:transform 0.4s ease,z-index 0.6s;z-index:1}
+	.close .flap{transform:rotateX(0deg);transition:transform 0.4s 0.6s ease,z-index 1s;z-index:5}
+	.close .letter{transform:translateY(0);transition:transform 0.4s ease,z-index 1s;z-index:1}
+	.open .letter{transform:translateY(-40px) rotate(-2.5deg);transition:transform 0.4s 0.2s ease,z-index 0.6s;z-index:2}
+	.letter-corner{position:absolute;width:10px;height:10px;border:1px solid #ffd1dc;border-radius:2.5px;z-index:3}
+	.corner-tl{top:5px;left:5px;border-right:none;border-bottom:none}
+	.corner-br{bottom:5px;right:5px;border-left:none;border-top:none}
+	.hearts,.sparkles{position:absolute;top:55px;left:0;right:0;z-index:2}
+	.heart,.sparkle{position:absolute;bottom:0;pointer-events:none}
+	.heart:before,.heart:after{content:"";position:absolute;left:12.5px;top:0;width:12.5px;height:25px;background:var(--color-heart);border-radius:12.5px 12.5px 0 0;transform:rotate(-45deg);transform-origin:0 100%}
+	.heart:after{left:0;transform:rotate(45deg);transform-origin:100% 100%}
+	.sparkle{width:4px;height:4px;background:var(--color-sparkle);border-radius:50%;animation:sparkleTwinkle 1s infinite}
+	.close .heart,.close .sparkle{opacity:0;animation:none}
+	.a1{left:20%;transform:scale(0.6);animation:slideUp 4s linear infinite,sideSway 2s ease-in-out infinite alternate}
+	.a2{left:55%;animation:slideUp 5s linear infinite,sideSway 4s ease-in-out infinite alternate}
+	.a3{left:10%;transform:scale(0.8);animation:slideUp 7s linear infinite,sideSway 2s ease-in-out infinite alternate}
+	.s1{left:30%;animation:sparkleUp 3s linear infinite}
+	.s2{left:60%;animation:sparkleUp 4s linear infinite}
+	.s3{left:45%;animation:sparkleUp 5s linear infinite}
+	@keyframes slideUp{0%{top:0}100%{top:-600px}}
+	@keyframes sideSway{0%{margin-left:0}50%{margin-left:50px}100%{margin-left:0}}
+	@keyframes sparkleUp{0%{transform:translateY(0);opacity:1}100%{transform:translateY(-500px) rotate(360deg);opacity:0}}
+	@keyframes sparkleTwinkle{0%,100%{transform:scale(1)}50%{transform:scale(1.5)}}
+	.reset, .tombol{position:relative;text-align:center;margin-top:20px}
+	.reset button, .tombol button{font-family:'Sriracha',serif;font-weight:600;transition:all 0.3s ease;background-color:var(--color-flap);border:2px solid rgba(255,255,255,0.8);border-radius:20px;color:#fff;text-shadow:0 2px 2px rgba(0,0,0,0.5);padding:6px 14px;margin:10px;font-size:16px;box-shadow:0 5px 20px rgba(0,0,0,0.15)}
+	.reset button:hover, .tombol button:hover{background-color:var(--color-env2);transform:translateY(-3px) scale(1.05);box-shadow:0 7px 25px rgba(0,0,0,0.2)}
+	.tombol{transform:scale(0);opacity:0;transition:all .7s ease}
+	canvas{position:absolute;top:0;left:0;width:100%;height:100%;z-index:-1}
+	.pic{font-size:3rem;margin-bottom:1rem}
+	h1,h2{font-size:1rem;margin-bottom:1rem;font-weight:700}
+	#teksCinta{font-size:13.5px;color:#fff;font-weight:600}
+	#teksLucu{font-size:13.5px;color:#fff;margin-top:1rem;font-weight:500}
+	p{font-size:13.5px;margin-bottom:1rem;font-weight:500}
+	#statusGame{margin-top:25px}
+	button{background:#f43f5e;color:#fff;border:none;padding:0.5rem 1.5rem;border-radius:999px;font-size:1rem;transition:background 0.3s;font-weight:700}
+	button:hover{background:#e11d48}
+	.tombolCadangan{background:#6b7280}
+	.tombolCadangan:hover{background:#4b5563}
+	.papanGame{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(3,auto);gap:0.5rem;justify-items:center;width:90%;max-width:600px;margin:auto}
+	.kartu{width:50px;height:50px}
+	.dalemKartu{position:relative;width:100%;height:100%;transition:transform 0.6s;transform-style:preserve-3d}
+	.kartu.balik .dalemKartu{transform:rotateY(180deg)}
+	.depanKartu,.belakangKartu{position:absolute;width:100%;height:100%;backface-visibility:hidden;display:flex;align-items:center;justify-content:center;border-radius:12px}
+	.depanKartu{background:rgba(255,255,255,0.2);backdrop-filter:blur(5px)}
+	.belakangKartu{background:rgba(255,255,255,0.5);transform:rotateY(180deg);font-size:1.5rem}
+	.sembunyi, #linkmp3{display:none}
+	.stiker{display:flex;justify-content:center;align-items:center;margin-left:auto;margin-right:auto;margin-bottom:20px;transform:scale(0);transition:all .7s ease}
+    .stiker img{width:100px;height:100px;box-shadow: 0 4px 30px rgba(255,255,255, 0.3);backdrop-filter: blur(5px);-webkit-backdrop-filter: blur(5px);background: rgba(255, 255, 255, 0.7);border: 3px solid rgba(255, 255, 255, 1);border-radius: 50%;padding:10px;}
+	.hati{position:fixed;width:22px;height:22px;opacity:0.65;animation:ngelayang 7s ease-in-out forwards;left:0;bottom:0;top:0;z-index:0}
+	@keyframes ngelayang{0%{transform:translateY(100vh);opacity:0.65}10%{opacity:0.65}90%{opacity:0.65}100%{transform:translateY(-100vh);opacity:0}}
+	.hati svg{width:100%;height:100%;fill:none;stroke:pink}
+	
+	.wrapper{position:fixed}.circ div{position:fixed;width:60px;height:60px;background-color:transparent;border:6px solid rgba(255,255,255,0.5);border-radius:50%}.circ div:nth-child(1){top:12%;left:42%;animation:animate 10s linear infinite}.circ div:nth-child(2){top:70%;left:50%;animation:animate 7s linear infinite}.circ div:nth-child(3){top:17%;left:6%;animation:animate 9s linear infinite}.circ div:nth-child(4){top:20%;left:60%;animation:animate 10s linear infinite}.circ div:nth-child(5){top:67%;left:10%;animation:animate 6s linear infinite}.circ div:nth-child(6){top:80%;left:70%;animation:animate 12s linear infinite}.circ div:nth-child(7){top:60%;left:80%;animation:animate 15s linear infinite}.circ div:nth-child(8){top:32%;left:25%;animation:animate 16s linear infinite}.circ div:nth-child(9){top:90%;left:25%;animation:animate 9s linear infinite}.circ div:nth-child(10){top:20%;left:80%;animation:animate 5s linear infinite}@keyframes animate{0%{transform:scale(0) translateY(0) rotate(0);opacity:.8}100%{transform:scale(1.3) translateY(-90px) rotate(360deg);opacity:0}}
+	
+	@media (max-width:600px){.kotak{width:80%;padding:1rem}#envelope{width:120px;height:82.5px;top:100px}.flap,.pocket{border-left-width:60px;border-right-width:60px;border-bottom-width:41.25px;border-top-width:41.25px}.letter{padding:10px}.message p{font-size:1.2em}.papanGame{grid-template-columns:repeat(4,1fr);gap:1rem 0.2rem}.kartu{width:40px;height:40px}.belakangKartu{font-size:1.2rem}}
+  
