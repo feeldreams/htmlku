@@ -391,7 +391,7 @@
 	    const color = colors[Math.floor(Math.random() * colors.length)];
 	    const particles = [];
 	
-	    for (let i = 0; i < 25; i++) { // Tetap 30 partikel untuk performa
+	    for (let i = 0; i < 22; i++) { // Tetap 30 partikel untuk performa
 	      const angle = Math.random() * Math.PI * 2;
 	      const speed = Math.random() * 5 + 2; // Kecepatan maksimum naik ke 4 dari 3
 	      particles.push({
@@ -443,7 +443,7 @@
 	      }
 	    });
 	
-	    if (Math.random() < 0.07) createFirework(); // Frekuensi naik dari 0.05 ke 0.07
+	    if (Math.random() < 0.065) createFirework(); // Frekuensi naik dari 0.05 ke 0.07
 	    requestAnimationFrame(drawFireworks);
 	  }
 	
@@ -494,7 +494,7 @@
 		                stiker3a.src = stiker3b.src;
 		                stiker3.style = "transform:scale(1)";
 		              }, 300);
-                  }, 100);
+                  }, 400);
 	              setTimeout(()=>{mulaiKembangApi('fireworks-canvas')}, 50);
 	            }
 	          }).go();
