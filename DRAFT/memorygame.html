@@ -238,34 +238,36 @@
     ];
 
     // Animasi Kelopak Bunga
-    function mulaiKelopak(canvasId) {
-      const canvas = document.getElementById(canvasId);
-      const ctx = canvas.getContext('2d');
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-
-      const kelopak = Array.from({ length: 20 }, () => ({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        radius: Math.random() * 5 + 2,
-        speed: Math.random() * 2 + 1
-      }));
-
-      function gambarKelopak() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        kelopak.forEach(petal => {
-          ctx.beginPath();
-          ctx.arc(petal.x, petal.y, petal.radius, 0, Math.PI * 2);
-          ctx.fillStyle = '#f87171';
-          ctx.fill();
-          petal.y += petal.speed;
-          if (petal.y > canvas.height) petal.y = -petal.radius;
-          petal.x += Math.sin(petal.y / 50) * 2
-        });
-        requestAnimationFrame(gambarKelopak);
-      }
-      gambarKelopak();
-    }
+	let animationFrameId; // Variabel global untuk menyimpan ID requestAnimationFrame
+	function mulaiKelopak(canvasId) {
+	  const canvas = document.getElementById(canvasId);
+	  if (!canvas) return; // Cek apakah canvas ada
+	  const ctx = canvas.getContext('2d');
+	  canvas.width = window.innerWidth;
+	  canvas.height = window.innerHeight;
+	
+	  const kelopak = Array.from({ length: 20 }, () => ({
+	    x: Math.random() * canvas.width,
+	    y: Math.random() * canvas.height,
+	    radius: Math.random() * 5 + 2,
+	    speed: Math.random() * 2 + 1
+	  }));
+	
+	  function gambarKelopak() {
+	    ctx.clearRect(0, 0, canvas.width, canvas.height);
+	    kelopak.forEach(petal => {
+	      ctx.beginPath();
+	      ctx.arc(petal.x, petal.y, petal.radius, 0, Math.PI * 2);
+	      ctx.fillStyle = '#f87171';
+	      ctx.fill();
+	      petal.y += petal.speed;
+	      if (petal.y > canvas.height) petal.y = -petal.radius;
+	      petal.x += Math.sin(petal.y / 50) * 2;
+	    });
+	    animationFrameId = requestAnimationFrame(gambarKelopak); // Simpan ID animasi
+	  }
+	  gambarKelopak();
+	}
 
     // Animasi Hati Jatuh
     let intervalHati;
@@ -314,36 +316,37 @@
       return array;
     }
 
-    function mulaiHal3() {
-      kartuDibuka = [];
-      pasanganCocok = 0;
-      gameJalan = true;
-      document.getElementById('kotakPesan').innerHTML = '';
-      document.getElementById('statusGame').innerText = '';
-      document.getElementById('lanjut').classList.add('sembunyi');
-      document.getElementById('ulang').classList.add('sembunyi');
-
-      const papanGame = document.getElementById('papanGame');
-      papanGame.innerHTML = '';
-      kartu.forEach((card, index) => {
-        const elemenKartu = document.createElement('div');
-        elemenKartu.className = 'kartu';
-        elemenKartu.dataset.id = card.id;
-        elemenKartu.innerHTML = `
-          <div class="dalemKartu">
-            <div class="depanKartu"></div>
-            <div class="belakangKartu">${card.icon}</div>
-          </div>
-        `;
-        elemenKartu.addEventListener('click', () => balikKartu(elemenKartu, card, index));
-        papanGame.appendChild(elemenKartu);
-      });
-
-      mulaiKelopak('game-canvas');
-      setTimeout(() => {
-        if (pasanganCocok < 6 && gameJalan) selesaiGame(false);
-      }, 60000);
-    }
+    // Halaman 3: Memory Game
+	function mulaiHal3() {
+	  kartuDibuka = [];
+	  pasanganCocok = 0;
+	  gameJalan = true;
+	  document.getElementById('kotakPesan').innerHTML = '';
+	  document.getElementById('statusGame').innerText = '';
+	  document.getElementById('lanjut').classList.add('sembunyi');
+	  document.getElementById('ulang').classList.add('sembunyi');
+	
+	  const papanGame = document.getElementById('papanGame');
+	  papanGame.innerHTML = '';
+	  kartu.forEach((card, index) => {
+	    const elemenKartu = document.createElement('div');
+	    elemenKartu.className = 'kartu';
+	    elemenKartu.dataset.id = card.id;
+	    elemenKartu.innerHTML = `
+	      <div class="dalemKartu">
+	        <div class="depanKartu"></div>
+	        <div class="belakangKartu">${card.icon}</div>
+	      </div>
+	    `;
+	    elemenKartu.addEventListener('click', () => balikKartu(elemenKartu, card, index));
+	    papanGame.appendChild(elemenKartu);
+	  });
+	
+	  mulaiKelopak('game-canvas');
+	  /*setTimeout(() => {
+	    if (pasanganCocok < 6 && gameJalan) selesaiGame(false);
+	  }, 60000);*/
+	}
 
     function balikKartu(elemenKartu, card, index) {
       if (!gameJalan || kartuDibuka.length >= 2 || elemenKartu.classList.contains('balik')) return;
@@ -367,15 +370,25 @@
     }
 
     function selesaiGame(sukses) {
-      gameJalan = false;
-      const status = document.getElementById('statusGame');
-      if (sukses) {
-        setTimeout(()=>{pindahHal(4)}, 1000);
-      } else {
-        status.innerText = 'Momen kita terlalu indah untuk dilewatkan, coba lagi ya! 🌌';
-        document.getElementById('ulang').classList.remove('sembunyi');
-      }
-    }
+	  gameJalan = false;
+	  const status = document.getElementById('statusGame');
+	  if (sukses) {
+	    // Hentikan animasi kelopak
+	    if (animationFrameId) {
+	      cancelAnimationFrame(animationFrameId);
+	      animationFrameId = null; // Reset ID
+	    }
+	    // Hapus canvas
+	    const canvas = document.getElementById('game-canvas');
+	    if (canvas) {
+	      canvas.remove();
+	    }
+	    setTimeout(() => { pindahHal(4); }, 800);
+	  } else {
+	    status.innerText = 'Momen kita terlalu indah untuk dilewatkan, coba lagi ya! 🌌';
+	    document.getElementById('ulang').classList.remove('sembunyi');
+	  }
+	}
 
     // Animasi Kembang Api
 	function mulaiKembangApi(canvasId) {
