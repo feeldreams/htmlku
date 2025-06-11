@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>For You 🌹</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Handlee&family=Sriracha&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Itim:wght@400;500;600;700&family=Handlee&family=Sriracha&display=swap" rel="stylesheet">
   <script>
     var nilaiRandom = Math.floor(Math.random() * 11);
     if (nilaiRandom >= 0) {
@@ -17,9 +17,11 @@
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
     :root{--color-flap:#d46a84;--color-env:#f8e1e9;--color-env2:#D4AFB8;--color-heart:#ff6f91;--color-sparkle:#ffd1dc}
-    body {color:#fff;overflow-x:hidden;position:relative;font-family:'Montserrat',sans-serif;background:rgba(0,0,0,1);z-index: 1;}
+    body {color:#fff;overflow-x:hidden;position:relative;font-family:'Itim', cursive;background:rgba(0,0,0,1);z-index: 1;}
     .background-overlay {position: fixed;top: 0;left: 0;width: 100%;height: 100%;background-size: cover;opacity: 0.4;z-index: 0;}
     .kotak{margin:0 auto;margin-top:150px;transform:scale(0);transition:all .7s ease;background:rgba(255,255,255,0.1);backdrop-filter:blur(10px);border-radius:20px;box-shadow:0 8px 32px rgba(0,0,0,0.3);border:2px solid rgba(255,255,255,0.2);padding:20px;text-align:center;max-width:80%;width:400px;min-height:200px;position:relative;z-index:1}
+    #hal1.kotak{transform:scale(1)}
+    #hal2{transform:scale(0);transition:all .7s ease;position:relative;z-index:1}
     #envelope{margin:0 auto;margin-top:150px;position:relative;width:160px;height:110px;border-bottom-left-radius:6px;border-bottom-right-radius:6px;top:160px;background-color:var(--color-flap);box-shadow:0 4px 20px rgba(0,0,0,0.1)}
     .front{position:absolute;width:0;height:0;z-index:3}
     .flap{border-left:80px solid transparent;border-right:80px solid transparent;border-bottom:55px solid transparent;border-top:55px solid var(--color-flap);transform-origin:top;pointer-events:none}
@@ -28,7 +30,7 @@
     .letter:after{content:'';position:absolute;top:0;bottom:0;left:0;right:0;background-image:linear-gradient(180deg,rgba(255,255,255,0) 25%,rgba(255,231,236,0.7) 55%,rgba(255,231,236,1) 100%)}
     .message{position:relative;z-index:2;font-family:'Handlee',cursive;color:#d46a84;text-align:center;line-height:1;padding-top:0}
     .message p{margin:10px 0;font-size:1.4em;text-shadow:0 2px 3px rgba(0,0,0,0.1)}
-    .envlope-wrapper{height:210px;margin-top:0px;}
+    .envlope-wrapper{height:210px;margin-top:-50px;}
     .open .flap{transform:rotateX(180deg);transition:transform 0.4s ease,z-index 0.6s;z-index:1}
     .close .flap{transform:rotateX(0deg);transition:transform 0.4s 0.6s ease,z-index 1s;z-index:5}
     .close .letter{transform:translateY(0);transition:transform 0.4s ease,z-index 1s;z-index:1}
@@ -56,17 +58,18 @@
     .reset button, .tombol button{font-family:'Sriracha',serif;font-weight:600;transition:all 0.3s ease;background-color:var(--color-flap);border:2px solid rgba(255,255,255,0.8);border-radius:20px;color:#fff;text-shadow:0 2px 2px rgba(0,0,0,0.5);padding:6px 14px;margin:10px;font-size:16px;box-shadow:0 5px 20px rgba(0,0,0,0.15)}
     .reset button:hover, .tombol button:hover{background-color:var(--color-env2);transform:translateY(-3px) scale(1.05);box-shadow:0 7px 25px rgba(0,0,0,0.2)}
     .tombol{transform:scale(0);opacity:0;transition:all .7s ease}
-    #hal2 .tombol { transform: scale(1); opacity: 1; }
+    #hal1 .tombol, #hal3 .tombol { transform: scale(1); opacity: 1; }
     canvas{position:absolute;top:0;left:0;width:100%;height:100%;z-index:-1}
     .pic{font-size:3rem;margin-bottom:1rem}
-    h1,h2{font-size:1rem;margin-bottom:1rem;font-weight:700}
-    #teksCinta{font-size:13.5px;color:#fff;font-weight:600}
-    #teksLucu{font-size:13.5px;color:#fff;margin-top:1rem;font-weight:500}
-    p{font-size:13.5px;margin-bottom:1rem;font-weight:500}
+    h1,h2{font-size:18px;margin-bottom:1rem;font-weight:700}
+    .textOverlay{position: relative; margin:auto;width: 100%;min-height:20px;max-height: 220px;overflow-y: auto;-ms-overflow-style:none;scrollbar-width:none}
+    #teksCinta{font-size:16px;color:#fff;font-weight:600}
+    #teksLucu{font-size:16px;color:#fff;margin-top:1rem;font-weight:500}
+    p{font-size:16px;margin-bottom:1rem;font-weight:500}
     #statusGame{margin-top:25px}
     button{background:#f43f5e;color:#fff;border:none;padding:0.5rem 1.5rem;border-radius:999px;font-size:1rem;transition:background 0.3s;font-weight:700}
     button:hover{background:#e11d48}
-    #hal2 .tombol button { font-size: .9em; }
+    #hal1 .tombol button, #hal3 .tombol button { font-size: .9em; }
     .tombolCadangan{background:#6b7280}
     .tombolCadangan:hover{background:#4b5563}
     .papanGame{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(3,auto);gap:0.5rem;justify-items:center;width:90%;max-width:600px;margin:auto}
@@ -115,15 +118,28 @@
       .papanGame{grid-template-columns:repeat(4,1fr);gap:1rem 0.2rem}
       .kartu{width:40px;height:40px}
       .belakangKartu{font-size:1.2rem}
-      .input-range-container label {font-size: 1em;}
+      .input-range-container label {font-size: 18px;}
       .input-range-container input[type="range"] {width: 90%;}
     }
   </style>
 </head>
 <body>
-  <div class="background-overlay" data-src="https://htmlku.com/0/wp2.jpg"></div>
-  <!-- Halaman 1: Envelope -->
-  <div id="hal1">
+  <div class="background-overlay" data-src="https://htmlku.com/0/wp.jpg"></div>
+
+  <!-- Halaman 1: Permulaan -->
+  <div id="hal1" class="kotak">
+    <div id="stiker1" class="stiker">
+      <img id="stiker1a" src="https://htmlku.com/0/panda/pusn3.gif" />
+      <img id="stiker1b" class="sembunyi" src="https://htmlku.com/0/panda/terlope2.gif" />
+    </div>
+    <p style="font-size: 18px;font-weight: 700;">Alooo Kamuuu! 🥳</p>
+    <div class="tombol">
+      <button onclick="pindahHal(2)">Mulai</button>
+    </div>
+  </div>
+
+  <!-- Halaman 2: Envelope -->
+  <div id="hal2" class="sembunyi">
     <div class="envlope-wrapper">
       <div id="envelope" class="close">
         <div class="front flap"></div>
@@ -152,40 +168,46 @@
     </div>
   </div>
 
-  <!-- Halaman 2: Input Tahun Lahir -->
-  <div id="hal2" class="kotak sembunyi">
+  <!-- Halaman 3: Input Tahun Lahir -->
+  <div id="hal3" class="kotak sembunyi">
+    <div id="stiker2" class="stiker">
+      <img id="stiker2a" src="https://htmlku.com/0/panda/pusn2.gif" />
+      <img id="stiker2b" class="sembunyi" src="https://htmlku.com/0/panda/terlope2.gif" />
+    </div>
     <div class="input-range-container">
       <label for="tahunLahir">Tahun Lahir Kamu? 🤔</label>
       <input type="range" id="tahunLahir" min="1990" max="2020" value="2000">
       <output id="tahunLahirOutput">2000</output>
     </div>
     <div class="tombol">
-      <button onclick="pindahHal(3)">Lanjutkan</button>
+      <button onclick="pindahHal(4)">Lanjutkan</button>
     </div>
   </div>
 
-  <!-- Halaman 3: Memory Game -->
-  <div id="hal3" class="kotak sembunyi">
+  <!-- Halaman 4: Memory Game -->
+  <div id="hal4" class="kotak sembunyi">
     <canvas id="game-canvas"></canvas>
     <h2>Memory Game 🎮</h2>
     <p>Cocokkan kartu² ini yaa! 😋</p>
     <div id="kotakPesan"></div>
     <div id="papanGame" class="papanGame"></div>
     <p id="statusGame"></p>
-    <button id="lanjut" onclick="pindahHal(4)" class="sembunyi">Lihat Pesan Cinta!</button>
-    <button id="ulang" onclick="mulaiHal3()" class="tombolCadangan sembunyi">Coba Lagi!</button>
+    <button id="lanjut" onclick="pindahHal(5)" class="sembunyi">Lihat Pesan Cinta!</button>
+    <button id="ulang" onclick="mulaiHal4()" class="tombolCadangan sembunyi">Coba Lagi!</button>
   </div>
 
-  <!-- Halaman 4: Pesan Akhir -->
-  <div id="hal4" class="kotak sembunyi">
+  <!-- Halaman 5: Pesan Akhir -->
+  <div id="hal5" class="kotak sembunyi">
     <canvas id="fireworks-canvas"></canvas>
     <div id="stiker3" class="stiker">
-      <img id="stiker3a" src="https://htmlku.com/0/panda/cilukba.gif" />
+      <img id="stiker3a" src="https://htmlku.com/0/panda/panah.gif" />
       <img id="stiker3b" class="sembunyi" src="https://htmlku.com/0/panda/terlope2.gif" />
     </div>
-    <p id="teksCinta"></p>
-    <p id="pesanAkhir"></p>
-    <p id="teksLucu"></p>
+    <div class="textOverlay">
+      <p id="teksCinta"></p>
+      <p id="pesanAkhir"></p>
+      <p id="teksLucu"></p>
+    </div>
     <button style="display:none" onclick="shareWa()">Kirim ke Dia!</button>
   </div>
   <div class="tombol">
@@ -211,9 +233,13 @@
 
   <script>
     // Permulaan
-    document.querySelector("#hal1").style="transform:scale(0);opacity:0;transition:all .7s ease";
+    const stiker1 = document.getElementById('stiker1');
+	const stiker1a = document.getElementById('stiker1a');
+	const stiker1b = document.getElementById('stiker1b');
+
+    document.querySelector("#hal1").style="transform:scale(0)";
     document.querySelector(".circ").style="display:none";
-    setTimeout(()=>{document.querySelector("#hal1").style="transition:all .7s ease";document.querySelector(".circ").style="";}, 1000);
+    setTimeout(()=>{document.querySelector("#hal1").style="transform:scale(1)";document.querySelector(".circ").style="";stiker1.style = "transform:scale(1)";}, 1000);
 
     // Elemen Background
     const backgroundOverlay = document.querySelector('.background-overlay');
@@ -296,7 +322,7 @@
       setTimeout(() => {
         document.querySelector("#envelope").style="transform:scale(0);opacity:0;transition:all .7s ease";
         setTimeout(() => {
-          pindahHal(2);
+          pindahHal(3);
           envelope.classList.remove('open');
           envelope.classList.add('close');
         }, 700);
@@ -317,7 +343,7 @@
     }
 
     // Halaman 3: Memory Game
-	function mulaiHal3() {
+	function mulaiHal4() {
 	  kartuDibuka = [];
 	  pasanganCocok = 0;
 	  gameJalan = true;
@@ -383,7 +409,7 @@
 	    if (canvas) {
 	      canvas.remove();
 	    }
-	    setTimeout(() => { pindahHal(4); }, 800);
+	    setTimeout(() => { pindahHal(5); }, 800);
 	  } else {
 	    status.innerText = 'Momen kita terlalu indah untuk dilewatkan, coba lagi ya! 🌌';
 	    document.getElementById('ulang').classList.remove('sembunyi');
@@ -465,7 +491,7 @@
 	}
 	
 	// Halaman 4: Pesan Akhir
-	function mulaiHal4() {
+	function mulaiHal5() {
 	  const stiker3 = document.getElementById('stiker3');
 	  const stiker3a = document.getElementById('stiker3a');
 	  const stiker3b = document.getElementById('stiker3b');
@@ -475,7 +501,7 @@
 	  const txtDoa = `Selamat Ulang Tahun ke-<b>${usiaKamu}</b>! 🎉🎂`;
 	  const txtPesanAkhir = "<b>Happy Birthday, yaa! 🥳</b> Ciyee.. Ada yang bertambah usianya nih 😆🤏<br><br>Semoga di usia baru ini, kamu selalu dikelilingi kebahagiaan, kesehatan, dan semoga segala doa serta cita-cita kamu bisa terwujud 🫶";
 	  const txtLucu = "Dan semoga hari ini menjadi awal dari tahun yang penuh keberkahan dan kebahagiaan untukmu yaa 💐<br><br><b><i>Wish you all the best!</i> 🎉🥳</b>";
-	  const speedText = 26;
+	  const speedText = 24;
 	
 	  const canvas = document.getElementById('fireworks-canvas');
 	  canvas.width = window.innerWidth;
@@ -506,6 +532,7 @@
 		              setTimeout(() => {
 		                stiker3a.src = stiker3b.src;
 		                stiker3.style = "transform:scale(1)";
+                        clearInterval(scrollInterval);
 		              }, 300);
                   }, 50);
 	              setTimeout(()=>{mulaiKembangApi('fireworks-canvas')}, 50);
@@ -519,25 +546,36 @@
 
     // Navigasi Halaman
     function pindahHal(hal) {
-	  for (let i = 1; i <= 4; i++) {
-	    if (hal < 4) document.getElementById(`hal${i}`).classList.add('sembunyi');
-	  }
-	  if (hal < 4) document.getElementById(`hal${hal}`).classList.remove('sembunyi');
+	  for (let i = 1; i <= 5; i++) {
+	    if (hal < 5 && i !== 1) document.getElementById(`hal${i}`).classList.add('sembunyi');	  
+      }
+	  if (hal < 5) document.getElementById(`hal${hal}`).classList.remove('sembunyi');
 	
 	  setTimeout(()=>{
-	    if (hal === 2) {
+	    if (hal === 2){
+          document.getElementById(`hal${hal - 1}`).style = "transform:scale(0)";
+	      setTimeout(()=>{
+	        document.getElementById(`hal${hal - 1}`).classList.add('sembunyi');
+	        document.getElementById(`hal${hal}`).classList.remove('sembunyi');
+	        setTimeout(()=>{document.getElementById(`hal${hal}`).style="transform:scale(1);transition:all .7s ease";}, 100);
+	      }, 700);
+        } else if (hal === 3) {
 	      document.getElementById(`hal${hal}`).style="transform:scale(1);transition:all .7s ease";
-	      document.querySelector("#hal2 .tombol").style="transform:scale(1);opacity:1;transition:all .7s ease";
-	    } else if (hal === 3) {
-	      mulaiHal3();
-	      document.getElementById(`hal${hal}`).style="transform:scale(1);transition:all .7s ease";
+	      document.querySelector("#hal3 .tombol").style="transform:scale(1);opacity:1;transition:all .7s ease";
+	      const stiker2 = document.getElementById('stiker2');
+	      const stiker2a = document.getElementById('stiker2a');
+	      const stiker2b = document.getElementById('stiker2b');
+	      stiker2.style="transform:scale(1)";
 	    } else if (hal === 4) {
+	      mulaiHal4();
+	      document.getElementById(`hal${hal}`).style="transform:scale(1);transition:all .7s ease";
+	    } else if (hal === 5) {
 	      document.getElementById(`hal${hal - 1}`).style = "transform:scale(0);transition:all .7s ease";
 	      setTimeout(()=>{
 	        document.getElementById(`hal${hal - 1}`).classList.add('sembunyi');
 	        document.getElementById(`hal${hal}`).classList.remove('sembunyi');
 	        setTimeout(()=>{document.getElementById(`hal${hal}`).style="transform:scale(1);transition:all .7s ease";}, 100);
-	        setTimeout(()=>{mulaiHal4();}, 150);
+	        setTimeout(()=>{mulaiHal5();}, 150);
 	      }, 700);
 	    } else {
 	      document.getElementById(`hal${hal - 1}`).style = "transform:scale(0);transition:all .7s ease";
@@ -549,6 +587,10 @@
 	    }
 	  }, 50);
 	}
+
+    const container = document.querySelector(".textOverlay");
+    function autoScroll() {container.scrollTop += 10;} 
+    const scrollInterval = setInterval(autoScroll, 50); 
 	
     // Share ke WhatsApp
     function balasWa() {
