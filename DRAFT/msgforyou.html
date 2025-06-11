@@ -63,9 +63,9 @@
     .pic{font-size:3rem;margin-bottom:1rem}
     h1,h2{font-size:1rem;margin-bottom:1rem;font-weight:700}
     .textOverlay{position: relative; margin:auto;width: 100%;min-height:20px;max-height: 220px;overflow-y: auto;-ms-overflow-style:none;scrollbar-width:none}
-    #teksCinta{font-size:15px;color:#fff;font-weight:600}
-    #teksLucu{font-size:15px;color:#fff;margin-top:1rem;font-weight:500}
-    p{font-size:15px;margin-bottom:1rem;font-weight:500}
+    #teksCinta{font-size:16px;color:#fff;font-weight:600}
+    #teksLucu{font-size:16px;color:#fff;margin-top:1rem;font-weight:500}
+    p{font-size:16px;margin-bottom:1rem;font-weight:500}
     #statusGame{margin-top:25px}
     button{background:#f43f5e;color:#fff;border:none;padding:0.5rem 1.5rem;border-radius:999px;font-size:1rem;transition:background 0.3s;font-weight:700}
     button:hover{background:#e11d48}
@@ -126,19 +126,19 @@
 <body>
   <div class="background-overlay" data-src="https://htmlku.com/0/wp2.jpg"></div>
 
-  <!-- Halaman 0: Input Tahun Lahir -->
+  <!-- Halaman 1: Permulaan -->
   <div id="hal1" class="kotak">
     <div id="stiker1" class="stiker">
       <img id="stiker1a" src="https://htmlku.com/0/panda/pusn3.gif" />
       <img id="stiker1b" class="sembunyi" src="https://htmlku.com/0/panda/terlope2.gif" />
     </div>
-    <p style="font-size: 16px;font-weight: 700;">Alooo Kamuuu! 🥳</p>
+    <p style="font-size: 18px;font-weight: 700;">Alooo Kamuuu! 🥳</p>
     <div class="tombol">
-      <button onclick="pindahHal(5)">Mulai</button>
+      <button onclick="pindahHal(2)">Mulai</button>
     </div>
   </div>
 
-  <!-- Halaman 1: Envelope -->
+  <!-- Halaman 2: Envelope -->
   <div id="hal2" class="sembunyi">
     <div class="envlope-wrapper">
       <div id="envelope" class="close">
@@ -168,7 +168,7 @@
     </div>
   </div>
 
-  <!-- Halaman 2: Input Tahun Lahir -->
+  <!-- Halaman 3: Input Tahun Lahir -->
   <div id="hal3" class="kotak sembunyi">
     <div class="input-range-container">
       <label for="tahunLahir">Tahun Lahir Kamu? 🤔</label>
@@ -180,7 +180,7 @@
     </div>
   </div>
 
-  <!-- Halaman 3: Memory Game -->
+  <!-- Halaman 4: Memory Game -->
   <div id="hal4" class="kotak sembunyi">
     <canvas id="game-canvas"></canvas>
     <h2>Memory Game 🎮</h2>
@@ -192,7 +192,7 @@
     <button id="ulang" onclick="mulaiHal4()" class="tombolCadangan sembunyi">Coba Lagi!</button>
   </div>
 
-  <!-- Halaman 4: Pesan Akhir -->
+  <!-- Halaman 5: Pesan Akhir -->
   <div id="hal5" class="kotak sembunyi">
     <canvas id="fireworks-canvas"></canvas>
     <div id="stiker3" class="stiker">
