@@ -124,7 +124,7 @@
   </style>
 </head>
 <body>
-  <div class="background-overlay" data-src="https://htmlku.com/0/wp2.jpg"></div>
+  <div class="background-overlay" data-src="https://htmlku.com/0/wp.jpg"></div>
 
   <!-- Halaman 1: Permulaan -->
   <div id="hal1" class="kotak">
@@ -170,6 +170,10 @@
 
   <!-- Halaman 3: Input Tahun Lahir -->
   <div id="hal3" class="kotak sembunyi">
+    <div id="stiker2" class="stiker">
+      <img id="stiker2a" src="https://htmlku.com/0/panda/pusn2.gif" />
+      <img id="stiker2b" class="sembunyi" src="https://htmlku.com/0/panda/terlope2.gif" />
+    </div>
     <div class="input-range-container">
       <label for="tahunLahir">Tahun Lahir Kamu? 🤔</label>
       <input type="range" id="tahunLahir" min="1990" max="2020" value="2000">
@@ -196,7 +200,7 @@
   <div id="hal5" class="kotak sembunyi">
     <canvas id="fireworks-canvas"></canvas>
     <div id="stiker3" class="stiker">
-      <img id="stiker3a" src="https://htmlku.com/0/panda/cilukba.gif" />
+      <img id="stiker3a" src="https://htmlku.com/0/panda/panah.gif" />
       <img id="stiker3b" class="sembunyi" src="https://htmlku.com/0/panda/terlope2.gif" />
     </div>
     <div class="textOverlay">
@@ -497,7 +501,7 @@
 	  const txtDoa = `Selamat Ulang Tahun ke-<b>${usiaKamu}</b>! 🎉🎂`;
 	  const txtPesanAkhir = "<b>Happy Birthday, yaa! 🥳</b> Ciyee.. Ada yang bertambah usianya nih 😆🤏<br><br>Semoga di usia baru ini, kamu selalu dikelilingi kebahagiaan, kesehatan, dan semoga segala doa serta cita-cita kamu bisa terwujud 🫶";
 	  const txtLucu = "Dan semoga hari ini menjadi awal dari tahun yang penuh keberkahan dan kebahagiaan untukmu yaa 💐<br><br><b><i>Wish you all the best!</i> 🎉🥳</b>";
-	  const speedText = 26;
+	  const speedText = 24;
 	
 	  const canvas = document.getElementById('fireworks-canvas');
 	  canvas.width = window.innerWidth;
@@ -558,6 +562,10 @@
         } else if (hal === 3) {
 	      document.getElementById(`hal${hal}`).style="transform:scale(1);transition:all .7s ease";
 	      document.querySelector("#hal3 .tombol").style="transform:scale(1);opacity:1;transition:all .7s ease";
+	      const stiker2 = document.getElementById('stiker2');
+	      const stiker2a = document.getElementById('stiker2a');
+	      const stiker2b = document.getElementById('stiker2b');
+	      stiker2.style="transform:scale(1)";
 	    } else if (hal === 4) {
 	      mulaiHal4();
 	      document.getElementById(`hal${hal}`).style="transform:scale(1);transition:all .7s ease";
