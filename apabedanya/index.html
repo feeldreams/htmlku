@@ -44,14 +44,14 @@
     .swiper {width: 100%;height: 100%;padding:0;margin:0;}
     .swiper-slide {text-align: center;font-size: 18px;/*background: #fff;*/display: flex;flex-direction: column;justify-content: center;align-items: center;margin-top:-100px;}
     .swiper-slide img {display: block;width: 100%;height: 100%;object-fit: cover;}
-    .swiper-pagination{margin-bottom:25vh}
+    .swiper-pagination{margin-bottom:20vh}
     .swiper-pagination-bullet-active{background-color: #fff !important;opacity:1 !important}
     .swiper-pagination-bullet{background-color:rgba(255,255,255, 1) !important;}
     .swiper-button-next, .swiper-button-prev{display:flex;top:unset;bottom:-100px}
     
     .sembunyi{display: none !important;}
     .stiker{display:flex;justify-content:center;align-items:center;margin-left:auto;margin-right:auto;margin-bottom:20px;transition:all .75s ease}
-    .stiker img{width:90px;height:90px;box-shadow: 0 4px 30px rgba(255,255,255, 0.3);backdrop-filter: blur(5px);-webkit-backdrop-filter: blur(5px);background: rgba(255, 255, 255, .3);border: 1px solid rgba(255, 255, 255, 0.3);border-radius: 50%;padding:10px;}
+    .stiker img{width:90px;height:90px;box-shadow: 0 4px 30px rgba(255,255,255, 0.3);/*backdrop-filter: blur(5px);-webkit-backdrop-filter: blur(5px);*/background: rgba(255, 255, 255, .3);border: 2.5px solid rgba(255, 255, 255, 0.8);border-radius: 50%;padding:10px;}
     .stiker img.sty2{background:none;filter: drop-shadow(0 4px 8px rgba(255, 255, 255, 0.2));box-shadow: none;backdrop-filter: none;-webkit-backdrop-filter: none;border: none;border-radius: 0;padding:0;width: auto;height:90px;}
 	b.merah{color:red}
 	b.kuning{color:yellow}
@@ -74,7 +74,7 @@
     .loading-message {font-size: 13px;text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);color:white;text-align: center;}
     .blocklove{display: none;flex-direction: column;justify-content: center;align-items: center;}
     
-    .blocktext{margin-top:10px;position:relative;width:100%;height: 250px; overflow: auto;background-color:none;}
+    .blocktext{margin-top:10px;position:relative;width:100%;height: 320px; overflow: auto;background-color:none;}
     
     .sertifikat {position: relative;width: 330px;height: 236px;text-shadow:none}
 	.sertifikat img {border-radius:30px;width: 100%;height: 100%;}
@@ -102,6 +102,19 @@
     .lovein svg{width:80px;height:80px;fill:#fefefe}
     .awalan{margin-top:20px;width:250px;min-height:25px;padding:12px;font-size:13px;color:white;background:rgba(0,0,0,.5);border:1px solid #fff;border-radius:20px;display:flex;align-items:center;text-align:left}
     .awalan svg{margin-right:15px;width:25px;height:25px;stroke:white}
+    
+    .circ div{position:fixed;width:60px;height:60px;background-color:transparent;border:6px solid rgba(255,255,255,0.5);border-radius:50%;}
+	.circ div:nth-child(1){top:12%;left:42%;animation:animate 10s linear infinite;}
+	.circ div:nth-child(2){top:70%;left:50%;animation:animate 7s linear infinite;}
+	.circ div:nth-child(3){top:17%;left:6%;animation:animate 9s linear infinite;}
+	.circ div:nth-child(4){top:20%;left:60%;animation:animate 10s linear infinite;}
+	.circ div:nth-child(5){top:67%;left:10%;animation:animate 6s linear infinite;}
+	.circ div:nth-child(6){top:80%;left:70%;animation:animate 12s linear infinite;}
+	.circ div:nth-child(7){top:60%;left:80%;animation:animate 15s linear infinite;}
+	.circ div:nth-child(8){top:32%;left:25%;animation:animate 16s linear infinite;}
+	.circ div:nth-child(9){top:90%;left:25%;animation:animate 9s linear infinite;}
+	.circ div:nth-child(10){top:20%;left:80%;animation:animate 5s linear infinite;}
+	@keyframes animate{0%{transform:scale(0) translateY(0) rotate(0);opacity:.8;}100%{transform:scale(1.3) translateY(-90px) rotate(360deg);opacity:0;}}
 </style>
 </head>
 
@@ -118,7 +131,7 @@
    </div>
    
    <div id="bodyblur">
-     <img src="https://feeldreams.github.io/wp11.jpg" id="wallpaper"/>
+     <img src="https://htmlku.com/masihmarah/wp.jpg" id="wallpaper"/>
    </div>
    
     <!-- Swiper -->
@@ -127,7 +140,7 @@
 
             <div class="swiper-slide">
                 <div id="stiker1" class="scale0 stiker">
-                    <img src="https://feeldreams.github.io/peach22.gif" />
+                    <img src="https://htmlku.com/0/panda/pusn3.gif" />
                 </div>
                 <h1 id="teks1" class="scale0 quicksand" style="font-size: 20px;">Kamuu Tau Gaa? 🫣<br><br> >>>>
                 </h1>
@@ -135,18 +148,18 @@
 
             <div class="swiper-slide">
                 <div id="stiker2" class="scale0 stiker">
-                    <img src="https://feeldreams.github.io/peachktw.gif" />
+                    <img src="https://htmlku.com/0/panda/mikir.gif" />
                 </div>
-                <h1 id="teks2" class="scale0 quicksand" style="font-size: 18px;">Apa Bedanya <span style="color:pink">Kamu</span><br>Sama <span style="color:yellow">Kucing</span>? 🫢<br><br> >>>></h1>
+                <h1 id="teks2" class="scale0 quicksand" style="font-size: 18px;">Apa Bedanya <span style="color:yellow">Kucing</span><br>Sama <span style="color:pink">Kamu</span>? 🫢<br><br> >>>></h1>
             </div>
 
             <div class="swiper-slide">
                 <div id="stiker3" class="scale0 stiker" style="margin-top:100px">
-				    <img id="stikerAkhir1" src="https://feeldreams.github.io/peachlove.gif" />
-                    <img id="stikerAkhir2" class="sembunyi" src="https://feeldreams.github.io/peach1.gif" />
+				    <img id="stikerAkhir1" src="https://htmlku.com/0/panda/inicinta2.gif" />
+                    <img id="stikerAkhir2" class="sembunyi" src="https://htmlku.com/0/panda/terlope2.gif" />
 				</div>
                 <div class="blocktext">
-                    <p id="teks3" class="scale0 quicksand" style="font-size: 18px;font-weight:400">Kalo kucing itu lucuu,<br>kalo kamu itu udah lucu, cakep,<br>gemesin, mana kalo senyum <br>manis banget lagi aww 🫣😋🩷<br><br><b><span style="color:pink">Ilv</span>yooouuuuu ❤️‍🔥😝🫵</b></p>
+                    <p id="teks3" class="scale0 quicksand" style="font-size: 18px;font-weight:400">Kalo <span style="color:yellow">kucing</span> itu kan lucuuu,<br>Nah kalo <span style="color:pink">kamu</span> udah lucu, cakep,<br>gemesin, mana kalo senyum <br>manis banget lagi aww 🫣😋🩷<br><br>ᯓᡣ𐭩<br>ikan hiu makan duku<br><span style="color:pink;font-weight:700">I love uu</span> buat kamu<br>yang ada di hatikuu<br><span style="text-shadow:none;padding:3px 5px;background:#fff;border-radius:18px">😍🥳💐🌹🫶🩷</span></p>
                 </div>
             </div>
 
@@ -154,6 +167,24 @@
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
         <div class="swiper-pagination"></div>
+    </div>
+    
+    <!-- Circle Animation -->
+    <div id="circgroup">
+        <div>
+            <div class="circ">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
     </div>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
