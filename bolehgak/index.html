@@ -53,7 +53,7 @@
     html, body {position: relative;height: 100%;}
     body {font-family: 'Itim', cursive;font-size: 14px;color: #fff;text-shadow: 0px 2px 2px rgba(0, 0, 0, .5);margin: 0;padding: 0;}
     
-    #bodyblur{opacity:.25;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);transition:all 1s ease;} 
+    #bodyblur{opacity:.45;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);transition:all 1s ease;} 
     #sthisblur{backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);position:absolute;top:0;left:0;right:0;bottom:0;}
     #wallpaper{width:100%;height:100%;transform: scale(1.3);transition:all 1.3s ease;}
     
@@ -123,17 +123,19 @@
     #Tombol2{margin-top:10px}
     
     .swal2-modal > *{font-size:16px;color:white}
-	.swal2-title{line-height:1.3em;font-size:17px;text-align:center;padding:15px 30px 0 30px;}
-	.swal2-timer-progress-bar-container > *{opacity:.5;background:#00B6FF;margin:0 20px}
-	.swal2-modal{background: rgba(0,0,0, 1);backdrop-filter: blur(0);-webkit-backdrop-filter: blur(0);box-shadow: 0 4px 30px rgba(255,255,255, 0.3);border: 2px solid rgba(255, 255, 255, 1);border-radius: 30px;max-width:325px;top:-60px;}
-	.swal2-image{background: rgba(255, 255, 255, 0.5);box-shadow: 0 4px 30px rgba(255,255,255, 0.3);backdrop-filter: blur(5px);-webkit-backdrop-filter: blur(5px);border: 2px solid rgba(255, 255, 255, 1);border-radius: 50%;padding:10px;}
-	.swal2-styled.swal2-confirm, .swal2-styled.swal2-cancel{position: relative;background-color: #4839eb;color: #fff;border-radius:18px;z-index: 1;transition: all 0.2s;}
-
+	.swal2-title{line-height:1.3em;font-size:18px;text-align:center;padding:15px 30px 0 30px;}
+	.swal2-timer-progress-bar-container > *{opacity:.7;background:#00B6FF;margin:0 2px}
+	.swal2-modal{background: rgba(0,0,0, .4);backdrop-filter: blur(3px);-webkit-backdrop-filter: blur(3px);box-shadow: 0 4px 30px rgba(255,255,255, 0.3);border: 2.5px solid #fff;border-radius:30px;max-width:300px;top:-100px;}
+	.swal2-image{background: rgba(255, 255, 255, 0.7);border: 3px solid rgba(255, 255, 255, 1);border-radius: 50%;box-shadow:0 8px 32px rgba(0,0,0,0.2);border-radius: 50%;padding:10px;}
+	.swal2-styled.swal2-confirm, .swal2-styled.swal2-cancel{font-family:var(--gaya-font);font-weight:700;position: relative;background-color: #EB39C2;color: #fff;border: 2.5px solid #fff;border-radius:30px;padding:8px 12px;z-index: 1;transition: all 0.2s;}
+	.swal2-input,.swal2-textarea,.swal2-select {font-family:var(--gaya-font);border-radius: 30px !important;border: 2.5px solid #fff;width:80%}
+	.swal2-input:focus,.swal2-textarea:focus,.swal2-select:focus {outline: none;box-shadow: none;border: 2.5px solid #fff;}
+	.swal2-confirm:focus, .swal2-cancel:focus {box-shadow: none;outline: none !important;}
 </style>
 </head>
 
 <body>
-  <audio src="shttps://feeldreams.github.io/audio/foreveryoung.mp3" id="linkmp3" class="sembunyi"></audio>
+  <audio src="https://feeldreams.github.io/audio/foreveryoung.mp3" id="linkmp3" class="sembunyi"></audio>
 	<div class="overlay">
     <div class="loading-message">Hai kamu!<br>Tunggu dulu ya..</div>
      <div id="loveIn" class="blocklove">
@@ -143,7 +145,7 @@
    </div>
    
    <div id="bodyblur">
-     <img src="https://htmlku.com/0/wp.jpg" id="wallpaper"/>
+     <img src="https://htmlku.com/hitungan/pict.jpg" id="wallpaper"/>
      <div id="thisblur"></div>
    </div>
    
@@ -156,7 +158,7 @@
                 <div id="stiker1" class="scale0 stiker">
                     <img src="https://htmlku.com/0/panda/pusn3.gif" />
                 </div>
-                <h1 id="teks1" class="scale0 quicksand" style="font-size: 20px;">Alooo Ayaaanggg 🫣<br><br><span style="font-size:16.5px;font-weight:400">Aku Ada Pantun<br>buat Kamuuu 🫢</span><br><br> >>>>
+                <h1 id="teks1" class="scale0 quicksand" style="font-size: 20px;">Alooo Kamuuu! 🫣<br><br><span style="font-size:16.5px;font-weight:400">Aku Ada Pantun buat Kamuuu 🫢</span><br><br> >>>>
                 </h1>
                 </div>
             </div>
@@ -164,11 +166,11 @@
             <div class="swiper-slide">
             	<div class="kotak">
                 <div id="stiker2" class="scale0 stiker">
-                    <img id="stiker2a" src="https://htmlku.com/0/panda/inicinta2.gif" />
+                    <img id="stiker2a" src="https://htmlku.com/0/panda/pusn.gif" />
                     <img id="stiker2b" class="sembunyi" src="https://htmlku.com/0/panda/cubit.gif" />
                 </div>
                 <h1 id="teks2" class="scale0 quicksand" style="font-size: 19px;"><span style="font-size: 19px;">Makan Kebab di Atas Atap,<br>Boleh Ngga <span style="color:pink">Aku Minta Pap</span>? 🫣</span></h1>
-                <h1 id="teks2b" class="sembunyi"><span style="font-size: 18px;">Yakin Gamau Kirim Pap ke Aku? 🙂‍↕️<br><span style="font-size:16.5px;font-weight:400">Memori HP-ku Masih Kosong Lohh 😬</span></span></h1>
+                <h1 id="teks2b" class="sembunyi"><span style="font-size: 18px;">Yakin Gamau Kirim Pap ke Aku? 🙂‍↕️<br><span style="font-size:16.5px;font-weight:400">Memori HP-ku Masih Banyak Lohh 😬</span></span></h1>
                 <div id="Tombol" style="opacity:0;transform: scale(0)">
                     <a id="By" onClick="this.style.transform='scale(0.8)'; this.style.transition='all 0.3s ease'; this.onclick=null; setTimeout(() => swiper.slideNext(), 200);">Boleh 🎉</a>
                     <a id="Bn" onClick="btn='Bn';fungsibaru(btn)">Ngga 🤬</a>
@@ -185,6 +187,7 @@
                 <div id="stiker3" class="scale0 stiker" style="margin-top:50px">
                     <img id="stikerAkhir1" src="https://htmlku.com/0/panda/terlope2.gif" />
                     <img id="stikerAkhir2" class="sembunyi" src="https://htmlku.com/0/panda/muah.gif" />
+                    <img id="stikerAkhir3" class="sembunyi" src="https://htmlku.com/0/panda/panah.gif" />
                 </div>
                 <div id="scroll-container" class="blocktext">
                     <h1 id="teks3" class="scale0 quicksand" style="font-size: 17px;font-weight:400"><span style="font-size: 18px"><b>Yeaayyy!</b> Makasii yaww 🥳🎉</span><br><br>Sekarang, <b>Kamu Tau Ga?</b> 🫣<br><br><b>Panda</b>, Panda Apa yang<br>Suka Bikin Aku Salting? 🫢🤏</h1>
@@ -192,8 +195,28 @@
                     <h1 id="teks3b" class="sembunyi">Pandangin foto kamu tiap hari~ <b>𖹭.ᐟ</b><br>😝😍🥳💖🌹</h1>
                 </div>
                 <div id="Tombol2" style="opacity:0;transform: scale(0)">
-                    <a onClick="this.style.transform='scale(0.8)'; this.style.transition='all 0.3s ease'; this.onclick=null; setTimeout(() => {alert('Yeay!');this.style.transform='scale(1)'; this.style.transition='all 0.3s ease';}, 200);">💌 Balas</a>
+                    <a onClick="this.style.transform='scale(0.8)'; this.style.transition='all 0.3s ease'; setTimeout(() => {tampilModal();this.style.transform='scale(1)'; this.style.transition='all 0.3s ease';}, 200);">💌 Balas</a>
                 </div>
+                <script>
+                	const nomorWaTujuan = 6281234567890; // ganti dengan nomor WhatsApp tujuan
+                
+                	function tampilModal() {
+					    Swal.fire({
+					      title: 'Kirim Pap ke WhatsApp<br>Aku yaa! 🥳🎉',
+					      imageUrl: stikerAkhir3.src,
+					      imageWidth: 90,
+					      imageHeight: 90,
+					      allowOutsideClick: false, 
+					      showCancelButton: false,
+					      confirmButtonText: '💌 Kirim',
+					      cancelButtonText: 'Nanti aja',
+					    }).then((result) => {
+					      if (result.isConfirmed) {
+					        window.location.href = 'https://wa.me/' + nomorWaTujuan;
+					      }
+					    });
+					}
+                </script>
             </div>
 
         </div>
