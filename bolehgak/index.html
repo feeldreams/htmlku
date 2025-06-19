@@ -55,45 +55,40 @@
     
     #bodyblur{opacity:.25;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);transition:all 1s ease;} 
     #sthisblur{backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);position:absolute;top:0;left:0;right:0;bottom:0;}
-    #wallpaper{/*animation: jj 7s infinite;*/width:100%;height:100%;transform: scale(1.3);transition:all 1.3s ease;}
-    #wallpaper2, #wallpaper3, #wallpaper4{display:none}
-    @keyframes jj{0%  {transform: scale(1);} 50% {transform: scale(1.3);} 100% {transform: scale(1);}}
-
+    #wallpaper{width:100%;height:100%;transform: scale(1.3);transition:all 1.3s ease;}
+    
     p{margin-left:50px;margin-right:70px;text-align:left}
     #ket{margin:20px}
 
     .swiper {width: 100%;height: 100%;padding:0;margin:0;}
     .swiper-slide {text-align: center;font-size: 18px;/*background: #fff;*/display: flex;flex-direction: column;justify-content: center;align-items: center;margin-top:-100px;}
     .swiper-slide img {display: block;width: 100%;height: 100%;object-fit: cover;}
-    .swiper-pagination{margin-bottom:25vh}
+    .swiper-pagination{margin-bottom:27vh}
     .swiper-pagination-bullet-active{background-color: #fff !important;opacity:1 !important}
     .swiper-pagination-bullet{background-color:rgba(255,255,255, 1) !important;}
     .swiper-button-next, .swiper-button-prev{display:flex;top:unset;bottom:-100px}
     
-    .kotak{margin:0;margin-top:50px;transition:all .7s ease;padding:20px;text-align:center;max-width:80%;width:400px;min-height:270px;position:relative;z-index:1}
+    .kotak{margin:0;margin-top:-50px;transition:all .7s ease;padding:20px;text-align:center;max-width:80%;width:400px;min-height:270px;position:relative;z-index:1}
     .dkotak{background:rgba(255,255,255,0.1);backdrop-filter:blur(10px);border-radius:20px;box-shadow:0 8px 32px rgba(0,0,0,0.3);border:2px solid rgba(255,255,255,0.2);}
 
     .sembunyi{display: none !important;}
     .stiker{display:flex;justify-content:center;align-items:center;margin-left:auto;margin-right:auto;margin-bottom:20px;transition:all .75s ease}
     .stiker img{width:90px;height:90px;box-shadow: 0 4px 30px rgba(255,255,255, 0.3);background: rgba(255, 255, 255, 0.7);border: 3px solid rgba(255, 255, 255, 1);border-radius: 50%;box-shadow:0 8px 32px rgba(0,0,0,0.2);padding:10px;}
     .stiker img.sty2{background:none;filter: drop-shadow(0 4px 8px rgba(255, 255, 255, 0.2));box-shadow: none;backdrop-filter: none;-webkit-backdrop-filter: none;border: none;border-radius: 0;padding:0;width: auto;height:90px;}
-	b.merah{color:red}
-	b.kuning{color:yellow}
-	b.putih{text-shadow:none;padding-left:8px;padding-right:8px;padding-top:2px;padding-bottom:2px;background-color:white;border-radius:12px}
+	.merah{color:red}
+	.kuning{color:yellow}
+	.putih{text-shadow:none;padding-left:8px;padding-right:8px;padding-top:2px;padding-bottom:2px;background-color:white;border-radius:12px}
 	span.garismerah{border-bottom:2px solid red}
 	span.gariskuning{border-bottom:2px solid yellow}
     p{color:white;font-size:15px;line-height:1.5em;}
     .scale0{opacity:0;transform: scale(0);transition: all .9s ease;}
     .scale1{opacity:1;transform: scale(1);transition: all .9s ease;}
+    
     svg{vertical-align: middle;width: 22px;height: 22px;fill: #fff}
     .heart-icon {z-index:100;width: 30px;height: 30px;position: fixed;animation:  heartMove linear 1;top: -10vh;}
-
-	@keyframes heartMove {
-	  0% {transform: translateY(-10vh);}
-	  100% {transform: translateY(100vh);}
-	}
-	    svg.line{fill: none;stroke: #fff;stroke-width: 2;animation: moving .7s linear infinite alternate;}
-	    .spin{animation: spin 3s linear infinite alternate;}
+	@keyframes heartMove {0% {transform: translateY(-10vh);} 100% {transform: translateY(100vh);}}
+	svg.line{fill: none;stroke: #fff;stroke-width: 2;animation: moving .7s linear infinite alternate;}
+	.spin{animation: spin 3s linear infinite alternate;}
 	@keyframes spin {
 	  from {
 	    transform: rotate(20deg);
@@ -110,6 +105,7 @@
 	    transform: translateY(3px);
 	  }
 	}
+	
     .overlay {position: fixed;top: 0;left: 0;width: 100%;height: 100%;display: flex;justify-content: center;align-items: center;background:#000;z-index:100;}
     .loading-message {font-size: 13px;text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);color:white;text-align: center;}
     .blocklove{display: none;flex-direction: column;justify-content: center;align-items: center;}
@@ -117,14 +113,14 @@
     .lovein:hover{transform: scale(.9);color:#FF0900;}
     .lovein svg{stroke:#FF0600;width:30px;height:30px}
     
-    .blocktext{margin-top:10px;position:relative;width:100%;height: 160px; overflow: auto;background-color:none;}
-
-    .tombol{background-color: rgba(255,255,255,0);border-radius: 50px;overflow: hidden;display: flex;align-items: center;justify-content: center;-webkit-transition: all .2s ease-out;transition: all .2s ease-out}
-    .tombol svg{margin: auto;fill:#ffd4d4;stroke: #ff0000;width: 60px;height: 60px;animation: spin2 1s linear infinite alternate;}
-    #Tombol{margin-top:20px;position:relative;margin-left:auto;margin-right:auto;display:flex;align-items:center;justify-content:center;list-style:none;transition:all .5s ease;}
-    #Tombol a{display:inline-flex;align-items:center; margin:0;margin:10px;transition:all .2s ease;padding:10px;outline:0;border:2px solid white;border-radius:30px;line-height:15px;background:rgba(0,0,0,.3);color:white;font-size:13px;font-weight:700;white-space:nowrap;overflow:hidden;box-shadow: rgba(255,255,255, 0.15) 0px 7px 29px 0px;z-index:1}
-    #Tombol, #Tombol2, #TombolWA{position:relative;opacity:0;margin-left:auto;margin-right:auto;display:flex;justify-content:center;align-items:center;list-style:none;transition:all .5s ease;}
-    #Tombol a, #Tombol2 a, #TombolWA a{display:inline-flex;align-items:center; margin:0;margin:10px;transition:all .2s ease;padding:10px;outline:0;border:2px solid white;border-radius:30px;line-height:15px;background:rgba(255, 182, 193, .3);color:white;font-size:13px;font-weight:700;white-space:nowrap;overflow:hidden;box-shadow: rgba(255,255,255, 0.15) 0px 7px 29px 0px;z-index:1}
+    .blocktext{margin-top:10px;position:relative;width:100%;height: 190px; overflow: auto;background-color:none;}
+    .blocktext > h1{text-align:left;padding-left:40px;padding-right:60px;}
+    
+    #Tombol, #Tombol2{margin-top:20px;position:relative;margin-left:auto;margin-right:auto;display:flex;align-items:center;justify-content:center;list-style:none;transition:all .5s ease;}
+    #Tombol a, #Tombol2 a{display:inline-flex;align-items:center; margin:0;margin:10px;transition:all .2s ease;padding:10px;outline:0;border:2px solid white;border-radius:30px;line-height:15px;background:rgba(0,0,0,.3);color:white;font-size:13px;font-weight:700;white-space:nowrap;overflow:hidden;box-shadow: rgba(255,255,255, 0.15) 0px 7px 29px 0px;z-index:1}
+    #Tombol, #Tombol2{position:relative;opacity:0;margin-left:auto;margin-right:auto;display:flex;justify-content:center;align-items:center;list-style:none;transition:all .5s ease;}
+    #Tombol a, #Tombol2 a{display:inline-flex;align-items:center; margin:0;margin:10px;transition:all .2s ease;padding:10px;outline:0;border:2px solid white;border-radius:30px;line-height:15px;background:rgba(255, 182, 193, .3);color:white;font-size:13px;font-weight:700;white-space:nowrap;overflow:hidden;box-shadow: rgba(255,255,255, 0.15) 0px 7px 29px 0px;z-index:1}
+    #Tombol2{margin-top:10px}
     
     .swal2-modal > *{font-size:16px;color:white}
 	.swal2-title{line-height:1.3em;font-size:17px;text-align:center;padding:15px 30px 0 30px;}
@@ -132,20 +128,7 @@
 	.swal2-modal{background: rgba(0,0,0, 1);backdrop-filter: blur(0);-webkit-backdrop-filter: blur(0);box-shadow: 0 4px 30px rgba(255,255,255, 0.3);border: 2px solid rgba(255, 255, 255, 1);border-radius: 30px;max-width:325px;top:-60px;}
 	.swal2-image{background: rgba(255, 255, 255, 0.5);box-shadow: 0 4px 30px rgba(255,255,255, 0.3);backdrop-filter: blur(5px);-webkit-backdrop-filter: blur(5px);border: 2px solid rgba(255, 255, 255, 1);border-radius: 50%;padding:10px;}
 	.swal2-styled.swal2-confirm, .swal2-styled.swal2-cancel{position: relative;background-color: #4839eb;color: #fff;border-radius:18px;z-index: 1;transition: all 0.2s;}
-	
-	/* Kalkulator */
-    .calculator{display:none;position:relative;margin-top:50px;box-shadow: 0 4px 30px rgba(255,255,255, 0.3);backdrop-filter: blur(5px);-webkit-backdrop-filter: blur(5px);background: rgba(255, 255, 255, 0.1);border: 2.5px solid rgba(255, 255, 255, 0.3);border-radius:20px;padding:18px;width:180px;flex-direction:column;justify-content:center;align-items:center;}
-    .calculator-screen{font-family: 'Itim', cursive;font-weight:700;width:100%;height:50px;border:none;background-color:rgba(255,255,255,0.1);margin:auto;padding:0;font-size:23px;color:#fff;text-shadow: 0px 2px 2px rgba(0, 0, 0, .5);border-radius:15px;text-align:center;}
-    .calculator-keys{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
-    .calculator-keys button{width:38px;height:38px;border:none;border-radius:50%;background-color:rgba(255,182,193,0.6);font-size:16px;color:#fff;transition:background-color 0.3s,transform 0.2s;}
-    .calculator-keys button:hover{background-color:rgba(255,182,193,0.8);}
-    .calculator-keys button:active{background-color:rgba(255,182,193,1);transform:scale(0.9);}
-    .calculator-keys .operator{background-color:rgba(255,105,135,0.8);color:#fff;}
-    .calculator-keys .operator:hover{background-color:rgba(255,105,135,1);}
-    .calculator-keys .equals{background-color:rgba(255,92,128,0.8);color:#fff;}
-    .calculator-keys .equals:hover{background-color:rgba(255,92,128,1);}
-    .calculator-keys {margin-top:20px;transition: opacity 0.5s ease;}
-    .calculator-keys.hide {opacity: 0;pointer-events: none;}
+
 </style>
 </head>
 
@@ -182,7 +165,7 @@
             	<div class="kotak">
                 <div id="stiker2" class="scale0 stiker">
                     <img id="stiker2a" src="https://htmlku.com/0/panda/inicinta2.gif" />
-                    <img id="stiker2b" class="sembunyi" src="https://htmlku.com/0/panda/cilukba.gif" />
+                    <img id="stiker2b" class="sembunyi" src="https://htmlku.com/0/panda/cubit.gif" />
                 </div>
                 <h1 id="teks2" class="scale0 quicksand" style="font-size: 19px;"><span style="font-size: 19px;">Makan Kebab di Atas Atap,<br>Boleh Ngga <span style="color:pink">Aku Minta Pap</span>? 🫣</span></h1>
                 <h1 id="teks2b" class="sembunyi"><span style="font-size: 18px;">Yakin Gamau Kirim Pap ke Aku? 🙂‍↕️<br><span style="font-size:16.5px;font-weight:400">Memori HP-ku Masih Kosong Lohh 😬</span></span></h1>
@@ -200,55 +183,18 @@
 
             <div class="swiper-slide">
                 <div id="stiker3" class="scale0 stiker" style="margin-top:50px">
-                    <img id="stikerAkhir1" src="https://htmlku.com/0/panda/gemoy.gif" />
-                    <img id="stikerAkhir2" class="sembunyi" src="https://htmlku.com/0/panda/mikir.gif" />
+                    <img id="stikerAkhir1" src="https://htmlku.com/0/panda/terlope2.gif" />
+                    <img id="stikerAkhir2" class="sembunyi" src="https://htmlku.com/0/panda/muah.gif" />
                 </div>
                 <div id="scroll-container" class="blocktext">
-                    <h1 id="teks3" class="scale0 quicksand" style="font-size: 17px;font-weight:400"><b>Maafin Aku</b> yaa Sayaanggg 🥹<br><br><b>Plisssss</b> 🙂‍↕️🤏🌹<br><br>Oh yaa, Sekarang Aku<br>Mau Nanya Nih 😋🩷</h1>
-                    <h1 id="teksTambahan" class="sembunyi"><span id="teksLove">I Love You</span></h1>
-                    <script>const loveEmojis = ['💖']</script>
+                    <h1 id="teks3" class="scale0 quicksand" style="font-size: 17px;font-weight:400"><span style="font-size: 18px"><b>Yeaayyy!</b> Makasii yaww 🥳🎉</span><br><br>Sekarang, <b>Kamu Tau Ga?</b> 🫣<br><br><b>Panda</b>, Panda Apa yang<br>Suka Bikin Aku Salting? 🫢🤏</h1>
+                    <h1 id="teks3a" class="sembunyi"><i>Jawabannya...</i> ᯓᡣ𐭩</h1>
+                    <h1 id="teks3b" class="sembunyi">Pandangin foto kamu tiap hari~ <b>𖹭.ᐟ</b><br>😝😍🥳💖🌹</h1>
+                </div>
+                <div id="Tombol2" style="opacity:0;transform: scale(0)">
+                    <a onClick="this.style.transform='scale(0.8)'; this.style.transition='all 0.3s ease'; this.onclick=null; setTimeout(() => {alert('Yeay!');this.style.transform='scale(1)'; this.style.transition='all 0.3s ease';}, 200);">💌 Balas</a>
                 </div>
             </div>
-            
-            <div class="swiper-slide">
-		       <div id="stiker4" class="scale0 stiker">
-		        <img id="stikerAkhir3" src="https://htmlku.com/0/panda/panah.gif"/>
-		        <img id="stikerAkhir4" class="sembunyi" src="https://htmlku.com/0/panda/terlope2.gif"/>
-		       </div>
-		      	<h1 id="teks4" class="scale0 quicksand" style="font-size: 20px;">Jawab Pake Ini yaa! 😆<br><br> >>>></h1>
-		      
-		      <div id="calculator" class="scale0 calculator">
-		        <input type="text" class="calculator-screen" id="screen" disabled>
-		        <div class="calculator-keys">
-		            <button type="button">7</button>
-		            <button type="button">8</button>
-		            <button type="button">9</button>
-		            <button type="button" class="operator">C</button>
-		
-		            <button type="button">4</button>
-		            <button type="button">5</button>
-		            <button type="button">6</button>
-		            <button type="button" class="operator">-</button>
-		
-		            <button type="button">1</button>
-		            <button type="button">2</button>
-		            <button type="button">3</button>
-		            <button type="button" class="operator">+</button>
-		
-		            <button type="button">0</button>
-		            <button type="button" class="operator">%</button>
-		            <button type="button" class="operator">×</button>
-		            <button type="button" class="equals operator">=</button>
-		          </div>
-		        </div>
-		        <p id="teksLoveU" class="sembunyi">I Love U 1% 💗</p>
-		        <p id="teksRandomEmoji" class="sembunyi"></p>
-		        
-		        <style>.containerAkhir{display:flex;width:100%;height:80px;justify-content:center;line-height:1.35em;text-align:center;margin-top:0px}</style>
-		        <div id="contentAkhir" class="containerAkhir sembunyi">
-		           <h1 id="teksAkhir" class="sembunyi quicksand" style="font-size: 18px;font-weight:400">Gabolee marah lagi yaa sayangkuu,<br>cintakuuuu, duniakuuuuu,<br>semestaku & milikkuu 🫣😍😋🩷</h1>
-		        </div>
-		      </div>
 
         </div>
         <div class="swiper-button-next"></div>
@@ -310,79 +256,12 @@ var swiper = new Swiper(".mySwiper", {
     navigation: {nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev",},
 });
     
-initeks = teks3.innerHTML;
-teks3.innerHTML = "";
+initeks = teks3.innerHTML;teks3.innerHTML = "";
+initeksTengah = teks3a.innerHTML; initeksAkhir = teks3b.innerHTML;
 function katanimasi(){
     teks3.innerHTML = "";
 	new TypeIt("#teks3", {
-    strings: ["" + initeks], startDelay: 10, speed: 25, cursor: true,
-    afterComplete: function(){
-      	//clearInterval(scrollInterval);
-      	teks3.innerHTML = initeks;
-          
-        setTimeout(function(){
-            teksScale.classList.remove("scale1");
-            stikerScale.classList.remove("scale1");
-            teksScale.classList.add("scale0");
-            stikerScale.classList.add("scale0");
-               
-            setTimeout(function(){stikerAkhir1.src = stikerAkhir2.src;teks3.innerHTML="";}, 450);
-               
-            setTimeout(function(){
-                //setTimeout(katanimasi3, 200);
-                teks3.innerHTML = "<b style='font-size:26px;color:yellow'>1 + 1</b><br><br><b style='font-size:20px'>Berapa yaa? 🫣<br><br> >>>></b>";
-                teksScale.classList.remove("scale0");
-                stikerScale.classList.remove("scale0");
-                teksScale.classList.add("scale1");
-                stikerScale.classList.add("scale1");
-                setTimeout(()=>{swiper.slideNext()}, 2000);
-            },550);
-        },1300); //2000
-
-    },}).go();
-}
-
-/* Teks Animasi Akhir */
-const ambilRandomEmoji = loveEmojis[Math.floor(Math.random() * loveEmojis.length)];
-const defTeksLove = teksLove.innerHTML;
-teksLove.innerHTML += " 1% " + ambilRandomEmoji;
-function animateteksnim() {
-	//const teksnim = document.getElementById('teksnim');
-    
-    let percent = 10;
-    setTimeout(function() {
-        const intervalId = setInterval(() => {
-            if (percent < 9999) {
-                percent += Math.floor(Math.random() * (100 - 10 + 1)) + 10;
-                const randomEmoji = loveEmojis[Math.floor(Math.random() * loveEmojis.length)];
-                teksLove.innerHTML = `<b>${defTeksLove} ${percent}% ${randomEmoji}</b>`;
-            } else {
-                clearInterval(intervalId);
-                setInterval(falling, 200);
-                
-                percent = 9999;
-                const randomEmoji = loveEmojis[Math.floor(Math.random() * loveEmojis.length)];
-                teksLove.innerHTML = `<b>${defTeksLove} <span style='color:yellow'>${percent}%</span> ${randomEmoji}</b>`;
-                teksLove.style="font-size:20px;transition:all .8s ease";
-
-                stiker3.classList.remove("scale1");
-                stiker3.classList.add("scale0");
-                setTimeout(function(){
-                    stikerAkhir1.src = stikerAkhir3.src; 
-                    stiker3.classList.remove("scale0");
-                    stiker3.classList.add("scale1");
-                },400);
-            }
-        }, 20); // Speed 0-100%
-    }, 10); // Delay
-}
-
-function katanimasi2(){
-    teks3.innerHTML = "";
-	new TypeIt("#teks3", {
-    strings: ["<span style='font-size:17px;line-height:1.5em'>Cukup tau ah kamu<br>ga kangen aku 😡🫵</span>", "<span style='font-size:17px;line-height:1.5em'><br><b>Padahal... 🫠</b></span>"],
-    startDelay: 10,
-    speed: 25,
+    strings: [initeks, "<br>" + initeksTengah, "<br>" + initeksAkhir], startDelay: 10, speed: 25,
     cursor: true,
     breakLines: true,
     waitUntilVisible: true,
@@ -393,47 +272,20 @@ function katanimasi2(){
             }, 1500);
         }
     },
-    afterComplete: function(){      
-        teks3.innerHTML = initeks2;
-      
-      setTimeout(function(){
-        teksScale.classList.remove("scale1");
-        teksScale.classList.add("scale0");
-        stiker3.classList.remove("scale1");
-        stiker3.classList.add("scale0");
-            setTimeout(function(){
-                teks3.innerHTML = "";
-                setTimeout(katanimasi3, 100);
-                     
-               	stikerAkhir1.src = stikerAkhir3.src; 
-                    stiker3.classList.remove("scale0");
-                    stiker3.classList.add("scale1");
-                    teksScale.classList.remove("scale0");
-                    teksScale.classList.add("scale1");
-               },400);
-      },1500); //1800
+    afterComplete: function(){
+      	clearInterval(scrollInterval);
+      	document.querySelector("#teks3 .ti-cursor").style.display = "none";
+          Tombol2.style="opacity:1;transform: scale(1);"
+          
+          stikerScale.classList.remove("scale1");
+          stikerScale.classList.add("scale0");
+          setTimeout(function(){
+          	  stikerAkhir1.src = stikerAkhir2.src;
+                stikerScale.classList.remove("scale0");
+                stikerScale.classList.add("scale1");
+                setInterval(falling, 200);
+            },400);
     },}).go();
-}
-
-initeks3 = teksTambahan.innerHTML;
-teksTambahan.innerHTML = "";
-function katanimasi3(){
-    teks3.innerHTML = "";
-    let kangenPercentage = 1;
-    new TypeIt("#teks3", {
-        strings: Array.from({length: 10}, (_, i) => `I Love You ${i + 1}% ${ambilRandomEmoji}`),
-        startDelay: 1,
-        speed: 0.2,
-        cursor: false,
-        nextStringDelay: 0,
-        afterComplete: function(){
-            teks3.innerHTML += `<br><br><span id="teksLove">${defTeksLove} 11% ${ambilRandomEmoji}</span>`;
-            setTimeout(animateteksnim,100);
-            
-            // setInterval(falling, 200);
-            setTimeout(function(){clearInterval(scrollInterval)},500);
-        },
-    }).go();
 }
 
 ///////////////////////////////////
@@ -452,7 +304,7 @@ document.getElementById("loveIn").onclick = function() {
 	        wallpaper.style="transform:scale(1)";
 	        
 	        setTimeout(function(){fungsiBerfungsi = true}, 300);
-	        setTimeout(()=>{swiper.slideNext();}, 2800);
+	        setTimeout(()=>{swiper.slideNext();}, gantiSlidePertama);
         }, 700);
     } else {
         sudahKlik = true;
@@ -520,42 +372,7 @@ function fungsibaru(btn) {
 
 //////
 
-function fungsiTerima() {
-    Swal.fire({
-        title: '' + teksTolak.innerHTML,
-        imageUrl: '' + stikerTolak.src,
-        imageWidth: 90,
-        imageHeight: 90,
-        imageAlt: 'by Feeldream.id',
-        confirmButtonText: 'OK',
-        showConfirmButton: false,
-        allowOutsideClick: false,
-        timer: 1700,
-        timerProgressBar: true,
-        willClose: () => {
-            console.log("Alert 1 closed automatically");
-        }
-    }).then(() => {
-        // Munculkan alert kedua setelah alert pertama selesai
-        Swal.fire({
-            title: '' + teksTolak2.innerHTML,
-            imageUrl: '' + stikerTolak2.src,
-            imageWidth: 90,
-            imageHeight: 90,
-            imageAlt: 'by Feeldream.id',
-            confirmButtonText: 'OK',
-            showConfirmButton: false,
-            allowOutsideClick: false,
-            timer: 1700,
-            timerProgressBar: true,
-            willClose: () => {
-                console.log("Alert 2 closed automatically");
-            }
-        });
-    });
-}
-/////////////////////////
-
+/*
 document.addEventListener('keydown', function(event) {
     if (event.code === 'Space' || event.code === 'ArrowRight') {
         swiper.slideNext();
@@ -565,110 +382,14 @@ document.addEventListener('keydown', function(event) {
 document.addEventListener('click', function() {
     if (teksSekarang <= 1 && !event.target.closest('#Tombol')) {
     	if (fungsiBerfungsi === true) {
-           //swiper.slideNext();
+           swiper.slideNext();
         }
     }
 });
-
-/////
-
-const screen = document.getElementById('screen');
-        const buttons = document.querySelectorAll('.calculator-keys button');
-        var aktif = true;
-        buttons.forEach(button => {
-            button.addEventListener('click', () => {
-            	if(aktif==true){
-                const value = button.textContent;
-
-                if (value === '=') {
-                	aktif=false;
-                	setTimeout(kalkulatornimasi, 50);
-                    screen.value = '';
-                    screen.style="padding:0;text-align:center";
-                } else if (value === 'C' || value === '( )') {
-                    screen.value = '';
-                } else {
-                    screen.value += value + ' ';
-                }
-
-                button.classList.add('clicked');
-                setTimeout(() => {
-                    button.classList.remove('clicked');
-                }, 150);
-                }
-            });
-        });
-        
-k_initeks = teksLoveU.innerText;
-teksLoveU.innerHTML = "";
-function kalkulatornimasi(){
-	  new TypeIt("#screen", {
-      strings: ["" + k_initeks], startDelay: 10, speed: 30, cursor: true,
-      afterComplete: function(){
-      	//clearInterval(scrollInterval);
-      	screen.value = k_initeks;
-          kalkulatornimasi2();
-      	//setInterval(berjatuhan, 200);
-      },}).go();
-}
-
-/* Teks Animasi Akhir */
-function kalkulatornimasi2() {
-	//const teksnim = document.getElementById('teksnim');
-    const loveEmojis = ['❤️', '💙', '💚', '💛', '💜'];
-    //const loveEmojis = Array.from(document.querySelector('#teksRandomEmoji').textContent).map(emot => `${emot}`);
-    let percent = 1;
-    setTimeout(function() {
-        const intervalId = setInterval(() => {
-            if (percent < 100) {
-                percent++;
-                const randomEmoji = loveEmojis[Math.floor(Math.random() * loveEmojis.length)];
-                screen.value = `I Love U ${percent}% ${randomEmoji}`;
-            } else {
-                clearInterval(intervalId);
-                const keys = document.querySelector('.calculator-keys');
-			    keys.classList.add('hide');
-			    
-			    const screen = document.querySelector('.calculator-screen');
-			    screen.style.backgroundColor = "unset";
-                screen.style.transform = "scale(1.1)";
-                screen.style.transition = "all .5s ease";
-			    
-			    setTimeout(() => {
-			        keys.style.display = 'none';
-                    stikerScale.style="";
-                    calculator.style="display:flex;margin-top:0px;background-color:unset;box-shadow:unset;border:none;backdrop-filter: blur(0);-webkit-backdrop-filter: blur(0);";
-                    setTimeout(kalkulatornimasi3, 400);
-			    }, 200);
-			
-			    /*
-			    setTimeout(() => {
-			        stiker4.classList.remove("scale0");
-                    stiker4.classList.add("scale1");
-			    }, 200);*/
-
-                stiker4.classList.remove("scale1");
-                stiker4.classList.add("scale0");
-                setTimeout(function(){stikerAkhir3.src = stikerAkhir4.src; stiker4.classList.remove("scale0");stiker4.classList.add("scale1");},250);
-            }
-        }, 30); // Speed 0-100%
-    }, 10); // Delay
-}
-
-k_initeksAkhir = teksAkhir.innerHTML;
-teksAkhir.innerHTML = "";
-    function kalkulatornimasi3(){
-      contentAkhir.classList.remove("sembunyi");
-      teksAkhir.classList.remove("sembunyi");
-	  new TypeIt("#teksAkhir", {
-      strings: ["" + k_initeksAkhir], startDelay: 1, speed: 25, cursor: true,
-      afterComplete: function(){
-      	teksAkhir.innerHTML = k_initeksAkhir;
-          setInterval(falling, 300);
-      },}).go();
-}
+*/
 
 /* Start All */
+gantiSlidePertama = 2500;
 var overlay = document.querySelector(".loading-message");overlay.style.display = "none";var tomlv = document.querySelector(".blocklove");tomlv.style.display = "flex";
 </script>
 </body>
