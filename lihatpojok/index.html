@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>S.id/lihatpojok — Script HTML For You 🌹</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Itim:wght@400;500;600;700&family=Handlee&family=Sriracha&display=swap" rel="stylesheet">
+  <script>
+    var nilaiRandom = Math.floor(Math.random() * 11);
+    if (nilaiRandom >= 0) {
+        //window.location.replace("https://www.feeldream.id/2025/06/script-html-lebaran.html");
+    } else {
+        window.location.replace("https://htmlku.com/mausate/play");
+    }
+  </script>
+  <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{--color-flap:#d46a84;--color-env:#f8e1e9;--color-env2:#D4AFB8;--color-heart:#ff6f91;--color-sparkle:#ffd1dc}
+    body {color:#fff;overflow-x:hidden;position:relative;font-family:'Itim', cursive;background:rgba(0,0,0,1);z-index: 1;}
+    .background-overlay {position: fixed;top: 0;left: 0;width: 100%;height: 100%;background-size: cover;opacity: .3;z-index: 0;}
+    .kotak{margin:0 auto;margin-top:150px;transform:scale(0);transition:all .7s ease;background:rgba(255,255,255,0.1);backdrop-filter:blur(10px);border-radius:20px;box-shadow:0 8px 32px rgba(0,0,0,0.3);border:2px solid rgba(255,255,255,0.2);padding:20px;text-align:center;max-width:80%;width:400px;min-height:200px;position:relative;z-index:1}
+    #hal1.kotak{transform:scale(1)}
+    #hal2{transform:scale(0);transition:all .7s ease;position:relative;z-index:1}
+    #envelope{margin:0 auto;margin-top:150px;position:relative;width:160px;height:110px;border-bottom-left-radius:6px;border-bottom-right-radius:6px;top:160px;background-color:var(--color-flap);box-shadow:0 4px 20px rgba(0,0,0,0.1)}
+    .front{position:absolute;width:0;height:0;z-index:3}
+    .flap{border-left:80px solid transparent;border-right:80px solid transparent;border-bottom:55px solid transparent;border-top:55px solid var(--color-flap);transform-origin:top;pointer-events:none}
+    .pocket{border-left:80px solid var(--color-env);border-right:8px solid var(--color-env);border-bottom:55px solid var(--color-env2);border-top:55px solid transparent;border-bottom-left-radius:6px;border-bottom-right-radius:6px}
+    .letter{position:relative;background-color:#e0d9dd;width:90%;margin:0 auto;height:100%;top:0%;border-radius:6px;box-shadow:0 2px 26px rgba(0,0,0,0.08);padding:15px;box-sizing:border-box}
+    .letter:after{content:'';position:absolute;top:0;bottom:0;left:0;right:0;background-image:linear-gradient(180deg,rgba(255,255,255,0) 25%,rgba(255,231,236,0.7) 55%,rgba(255,231,236,1) 100%)}
+    .message{position:relative;z-index:2;font-family:'Handlee',cursive;color:#d46a84;text-align:center;line-height:1;padding-top:0}
+    .message p{margin:10px 0;font-size:1.4em;font-weight:700;text-shadow:0 2px 3px rgba(0,0,0,0.1)}
+    .envlope-wrapper{height:210px;margin-top:-50px;}
+    .open .flap{transform:rotateX(180deg);transition:transform 0.4s ease,z-index 0.6s;z-index:1}
+    .close .flap{transform:rotateX(0deg);transition:transform 0.4s 0.6s ease,z-index 1s;z-index:5}
+    .close .letter{transform:translateY(0);transition:transform 0.4s ease,z-index 1s;z-index:1}
+    .open .letter{transform:translateY(-40px) rotate(-2.5deg);transition:transform 0.4s 0.2s ease,z-index 0.6s;z-index:2}
+    .letter-corner{position:absolute;width:10px;height:10px;border:1px solid #ffd1dc;border-radius:2.5px;z-index:3}
+    .corner-tl{top:5px;left:5px;border-right:none;border-bottom:none}
+    .corner-br{bottom:5px;right:5px;border-left:none;border-top:none}
+    .hearts,.sparkles{position:absolute;top:55px;left:0;right:0;z-index:2}
+    .heart,.sparkle{position:absolute;bottom:0;pointer-events:none}
+    .heart:before,.heart:after{content:"";position:absolute;left:12.5px;top:0;width:12.5px;height:25px;background:var(--color-heart);border-radius:12.5px 12.5px 0 0;transform:rotate(-45deg);transform-origin:0 100%}
+    .heart:after{left:0;transform:rotate(45deg);transform-origin:100% 100%}
+    .sparkle{width:4px;height:4px;background:var(--color-sparkle);border-radius:50%;animation:sparkleTwinkle 1s infinite}
+    .close .heart,.close .sparkle{opacity:0;animation:none}
+    .a1{left:20%;transform:scale(0.6);animation:slideUp 4s linear infinite,sideSway 2s ease-in-out infinite alternate}
+    .a2{left:55%;animation:slideUp 5s linear infinite,sideSway 4s ease-in-out infinite alternate}
+    .a3{left:10%;transform:scale(0.8);animation:slideUp 7s linear infinite,sideSway 2s ease-in-out infinite alternate}
+    .s1{left:30%;animation:sparkleUp 3s linear infinite}
+    .s2{left:60%;animation:sparkleUp 4s linear infinite}
+    .s3{left:45%;animation:sparkleUp 5s linear infinite}
+    @keyframes slideUp{0%{top:0}100%{top:-600px}}
+    @keyframes sideSway{0%{margin-left:0}50%{margin-left:50px}100%{margin-left:0}}
+    @keyframes sparkleUp{0%{transform:translateY(0);opacity:1}100%{transform:translateY(-500px) rotate(360deg);opacity:0}}
+    @keyframes sparkleTwinkle{0%,100%{transform:scale(1)}50%{transform:scale(1.5)}}
+    .reset, .tombol{position:relative;text-align:center;margin-top:20px}
+    .reset button, .tombol button{font-family:'Sriracha',serif;font-weight:600;transition:all 0.3s ease;background-color:var(--color-flap);border:2px solid rgba(255,255,255,0.8);border-radius:20px;color:#fff;text-shadow:0 2px 2px rgba(0,0,0,0.5);padding:6px 14px;margin:10px;font-size:16px;box-shadow:0 5px 20px rgba(0,0,0,0.15)}
+    .reset button:hover, .tombol button:hover, button:hover{background-color:var(--color-env2);transform:translateY(-3px) scale(1.05);box-shadow:0 7px 25px rgba(0,0,0,0.2)}
+    .tombol{transform:scale(0);opacity:0;transition:all .7s ease}
+    #hal1 .tombol, #hal3 .tombol { transform: scale(1); opacity: 1; }
+    canvas{position:absolute;top:0;left:0;width:100%;height:100%;z-index:-1}
+    .pic{font-size:3rem;margin-bottom:1rem}
+    h1,h2{font-size:18px;margin-bottom:1rem;font-weight:700}
+    .textOverlay{position: relative; margin:auto;width: 100%;min-height:20px;max-height: 250px;overflow-y: auto;-ms-overflow-style:none;scrollbar-width:none}
+    #teksCinta{font-size:16px;color:#fff;font-weight:600}
+    #teksLucu{font-size:16px;color:#fff;margin-top:1rem;font-weight:500}
+    p{font-size:16px;margin-bottom:1rem;font-weight:500}
+    #statusGame{margin-top:25px}
+    button{font-family:'Sriracha',serif;font-weight:600;transition:all 0.3s ease;background-color:var(--color-flap);border:2px solid rgba(255,255,255,0.8);border-radius:20px;color:#fff;text-shadow:0 2px 2px rgba(0,0,0,0.5);padding:2px 10px;margin:10px;font-size:14px;box-shadow:0 5px 20px rgba(0,0,0,0.15)}
+    #tombolLanjut{position:absolute;transform:scale(0);opacity:0;transition:all .7s ease}
+    #hal1 .tombol button, #hal3 .tombol button { font-size: .9em; }
+    .tombolCadangan{background:#6b7280}
+    .tombolCadangan:hover{background:#4b5563}
+    .papanGame{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(3,auto);gap:0.5rem;justify-items:center;width:90%;max-width:600px;margin:auto}
+    .kartu{width:50px;height:50px}
+    .dalemKartu{position:relative;width:100%;height:100%;transition:transform 0.6s;transform-style:preserve-3d}
+    .kartu.balik .dalemKartu{transform:rotateY(180deg)}
+    .depanKartu,.belakangKartu{position:absolute;width:100%;height:100%;backface-visibility:hidden;display:flex;align-items:center;justify-content:center;border-radius:12px}
+    .depanKartu{background:rgba(255,255,255,0.2);backdrop-filter:blur(5px)}
+    .belakangKartu{background:rgba(255,255,255,0.5);transform:rotateY(180deg);font-size:1.5rem}
+    .sembunyi{display:none}
+    .stiker{display:flex;justify-content:center;align-items:center;margin-left:auto;margin-right:auto;margin-bottom:20px;transform:scale(0);transition:all .7s ease}
+    .stiker img{width:100px;height:100px;box-shadow:0 4px 30px rgba(255,255,255,0.3);backdrop-filter:blur(5px);background:rgba(255,255,255,0.7);border:3px solid rgba(255,255,255,1);border-radius:50%;padding:10px}
+    .hati{position:fixed;width:22px;height:22px;opacity:0.65;animation:ngelayang 7s ease-in-out forwards;left:0;bottom:0;top:0;z-index:0}
+    @keyframes ngelayang{0%{transform:translateY(100vh);opacity:0.65}10%{opacity:0.65}90%{opacity:0.65}100%{transform:translateY(-100vh);opacity:0}}
+    .hati svg{width:100%;height:100%;fill:none;stroke:pink}
+    .wrapper{position:fixed}
+    .circ div{position:fixed;width:60px;height:60px;background-color:transparent;border:6px solid rgba(255,255,255,0.3);border-radius:50%}
+    .circ div:nth-child(1){top:12%;left:42%;animation:animate 10s linear infinite}
+    .circ div:nth-child(2){top:70%;left:50%;animation:animate 7s linear infinite}
+    .circ div:nth-child(3){top:17%;left:6%;animation:animate 9s linear infinite}
+    .circ div:nth-child(4){top:20%;left:60%;animation:animate 10s linear infinite}
+    .circ div:nth-child(5){top:67%;left:10%;animation:animate 6s linear infinite}
+    .circ div:nth-child(6){top:80%;left:70%;animation:animate 12s linear infinite}
+    .circ div:nth-child(7){top:60%;left:80%;animation:animate 15s linear infinite}
+    .circ div:nth-child(8){top:32%;left:25%;animation:animate 16s linear infinite}
+    .circ div:nth-child(9){top:90%;left:25%;animation:animate 9s linear infinite}
+    .circ div:nth-child(10){top:20%;left:80%;animation:animate 5s linear infinite}
+    @keyframes animate{0%{transform:scale(0) translateY(0) rotate(0);opacity:.8}100%{transform:scale(1.3) translateY(-90px) rotate(360deg);opacity:0}}
+    .input-range-container {text-align: center; padding: 0px 20px}
+    .input-range-container label {font-size: 1.2em; font-weight: 600; margin-top:15px;margin-bottom: 15px; display: block;}
+    .input-range-container input[type="range"] {width: 80%; accent-color: var(--color-heart); margin-bottom: 20px;}
+    .input-range-container output {font-size: 1.2em; font-weight: 700; color: var(--color-heart);}
+    
+    .input-range-container input[type="range"]{width:80%;accent-color:var(--color-heart);margin-bottom:20px;-webkit-appearance:none;appearance:none;height:8px;background:var(--color-heart);border:1.5px solid white;border-radius:5px}
+    .input-range-container input[type="range"]::-webkit-slider-runnable-track{height:8px;border:1px solid white;border-radius:5px;background:rgba(255,255,255,0.2)}
+    .input-range-container input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:16px;height:16px;background:var(--color-heart);border:1.5px solid white;border-radius:50%;cursor:pointer;margin-top:-5px}
+    .input-range-container input[type="range"]::-moz-range-track{height:8px;border:1px solid white;border-radius:5px;background:rgba(255,255,255,0.2)}
+    .input-range-container input[type="range"]::-moz-range-thumb{width:16px;height:16px;background:var(--color-heart);border:1px solid white;border-radius:50%;cursor:pointer}
+
+    @media (max-width:600px){
+      .kotak{width:80%;padding:1rem}
+      #envelope{width:120px;height:82.5px;top:100px}
+      .flap,.pocket{border-left-width:60px;border-right-width:60px;border-bottom-width:41.25px;border-top-width:41.25px}
+      .letter{padding:10px}
+      .message p{font-size:1.2em}
+      .papanGame{grid-template-columns:repeat(4,1fr);gap:1rem 0.2rem}
+      .kartu{width:40px;height:40px}
+      .belakangKartu{font-size:1.2rem}
+      .input-range-container label {font-size: 18px;}
+      .input-range-container input[type="range"] {width: 90%;}
+    }
+    
+    #teksSembunyi1{position:fixed;top:20px;left:30px;font-size:15px;color:white;text-shadow: 0px 2px 2px rgba(0, 0, 0, .5);z-index:999;opacity:0;transition:all .7s ease;}
+    #teksSembunyi2{position:fixed;top:60px;right:30px;font-size:15px;color:white;text-shadow: 0px 2px 2px rgba(0, 0, 0, .5);z-index:999;opacity:0;transition:all .7s ease;}
+    
+  </style>
+</head>
+<body>
+  <div class="background-overlay" data-src="https://feeldreams.github.io/nightin.jpeg"></div>
+
+  <!-- Halaman 1: Permulaan -->
+  <div id="hal1" class="kotak">
+    <div id="stiker1" class="stiker">
+      <img src="https://htmlku.com/0/panda/pusn3.gif" />
+    </div>
+    <p style="font-size: 18px;font-weight: 700;">Alooo Kamuuu! 💐</p>
+    <div class="tombol">
+      <button onclick="pindahHal(2)">Mulai</button>
+    </div>
+  </div>
+
+  <!-- Halaman 2: Envelope -->
+  <div id="hal2" class="sembunyi">
+    <div class="envlope-wrapper">
+      <div id="envelope" class="close">
+        <div class="front flap"></div>
+        <div class="front pocket"></div>
+        <div class="letter">
+          <div class="letter-corner corner-tl"></div>
+          <div class="letter-corner corner-br"></div>
+          <div class="message">
+            <p>Alooo Kamuu! 💐</p>
+          </div>
+        </div>
+        <div class="hearts">
+          <div class="heart a1"></div>
+          <div class="heart a2"></div>
+          <div class="heart a3"></div>
+        </div>
+        <div class="sparkles">
+          <div class="sparkle s1"></div>
+          <div class="sparkle s2"></div>
+          <div class="sparkle s3"></div>
+        </div>
+      </div>
+    </div>
+    <div class="reset">
+      <button onclick="bukaEnvelope()">Buka</button>
+    </div>
+  </div>
+
+  <!-- Halaman 3: Pesan Akhir -->
+  <div id="hal3" class="kotak sembunyi">
+    <canvas id="fireworks-canvas"></canvas>
+    <canvas id="game-canvas"></canvas>
+    <div id="stiker3" class="stiker">
+      <img id="stiker3a" src="https://htmlku.com/0/panda/pusn.gif" />
+      <img id="stiker3b" class="sembunyi" src="https://htmlku.com/0/panda/hiya.gif" />
+      <img id="stiker3c" class="sembunyi" src="https://htmlku.com/0/panda/muah.gif" />
+    </div>
+    <div class="textOverlay">
+      <p id="teksAwalan"></p>
+      <p id="teksCinta"></p>
+      <p id="pesanAkhir"></p>
+      <p id="teksLucu"></p>
+    </div>
+    <button id="tombolLanjut" onclick="nextHal3()">Lanjut</button>
+  </div>
+  <div class="tombol">
+    <button onclick="balasWa()">Balas</button>
+  </div>
+
+  <span id="teksSembunyi1">Eh maksudnya kanan</span>
+  <span id="teksSembunyi2"><b>I love u</b> more sayaangg 🫶</span>
+    
+  <div>
+    <div>
+      <div class="circ">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Permulaan
+    document.querySelector("#hal1").style="transform:scale(0)";
+    document.querySelector(".circ").style="display:none";
+    setTimeout(()=>{document.querySelector("#hal1").style="transform:scale(1)";document.querySelector(".circ").style="";stiker1.style = "transform:scale(1)";}, 1000);
+
+    // Elemen Background
+    const backgroundOverlay = document.querySelector('.background-overlay');
+    const bgImageUrl = backgroundOverlay.getAttribute('data-src');
+    backgroundOverlay.style.background = `url('${bgImageUrl}') no-repeat center center fixed`;
+    backgroundOverlay.style.backgroundSize = 'cover';
+
+    // Animasi Kelopak Bunga
+	let animationFrameId; // Variabel global untuk menyimpan ID requestAnimationFrame
+	function mulaiKelopak(canvasId) {
+	  const canvas = document.getElementById(canvasId);
+	  if (!canvas) return; // Cek apakah canvas ada
+	  const ctx = canvas.getContext('2d');
+	  canvas.width = window.innerWidth;
+	  canvas.height = window.innerHeight;
+	
+	  const kelopak = Array.from({ length: 20 }, () => ({
+	    x: Math.random() * canvas.width,
+	    y: Math.random() * canvas.height,
+	    radius: Math.random() * 5 + 2,
+	    speed: Math.random() * 2 + 1
+	  }));
+	
+	  function gambarKelopak() {
+	    ctx.clearRect(0, 0, canvas.width, canvas.height);
+	    kelopak.forEach(petal => {
+	      ctx.beginPath();
+	      ctx.arc(petal.x, petal.y, petal.radius, 0, Math.PI * 2);
+	      ctx.fillStyle = '#f87171';
+	      ctx.fill();
+	      petal.y += petal.speed;
+	      if (petal.y > canvas.height) petal.y = -petal.radius;
+	      petal.x += Math.sin(petal.y / 50) * 2;
+	    });
+	    animationFrameId = requestAnimationFrame(gambarKelopak); // Simpan ID animasi
+	  }
+	  gambarKelopak();
+	}
+
+    // Animasi Hati Jatuh
+    let intervalHati;
+    function hatiJatuh() {
+      const hati = document.createElement('div');
+      hati.className = 'hati';
+      hati.innerHTML = `<svg class='line' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><g transform='translate(2.550170, 3.550158)'><path d='M0.371729633,8.89614246 C-0.701270367,5.54614246 0.553729633,1.38114246 4.07072963,0.249142462 C5.92072963,-0.347857538 8.20372963,0.150142462 9.50072963,1.93914246 C10.7237296,0.0841424625 13.0727296,-0.343857538 14.9207296,0.249142462 C18.4367296,1.38114246 19.6987296,5.54614246 18.6267296,8.89614246 C16.9567296,14.2061425 11.1297296,16.9721425 9.50072963,16.9721425 C7.87272963,16.9721425 2.09772963,14.2681425 0.371729633,8.89614246 Z'></path><path d='M13.23843,4.013842 C14.44543,4.137842 15.20043,5.094842 15.15543,6.435842'></path></g></svg>`;
+      hati.style.left = Math.random() * 100 + 'vw';
+      hati.addEventListener('animationend', () => hati.remove());
+      document.body.appendChild(hati);
+    }
+
+    // Buka Envelope
+    function bukaEnvelope() {
+      const envelope = document.getElementById('envelope');
+      envelope.classList.remove('close');
+      envelope.classList.add('open');
+      document.querySelector(".reset").style="transform:scale(0);opacity:0;transition:all .7s ease";
+      setTimeout(() => {
+        document.querySelector("#envelope").style="transform:scale(0);opacity:0;transition:all .7s ease";
+        setTimeout(() => {
+          pindahHal(3);
+          envelope.classList.remove('open');
+          envelope.classList.add('close');
+        }, 600);
+      }, 1200);
+    }
+
+    // Animasi Kembang Api
+	function mulaiKembangApi(canvasId) {
+	  const canvas = document.getElementById(canvasId);
+	  const ctx = canvas.getContext('2d');
+	  
+	  const fireworks = [];
+	  const colors = ['#ff6f91', '#ffd1dc', '#ffffff', '#f87171']; // Warna tema romantis
+	
+	  function createFirework() {
+	    const x = Math.random() * canvas.width;
+	    const y = Math.random() * canvas.height * 0.5;
+	    const color = colors[Math.floor(Math.random() * colors.length)];
+	    const particles = [];
+	
+	    for (let i = 0; i < 22; i++) { // Tetap 30 partikel untuk performa
+	      const angle = Math.random() * Math.PI * 2;
+	      const speed = Math.random() * 5 + 2; // Kecepatan maksimum naik ke 4 dari 3
+	      particles.push({
+	        x: x,
+	        y: y,
+	        vx: Math.cos(angle) * speed,
+	        vy: Math.sin(angle) * speed,
+	        radius: Math.random() * 3 + 1,
+	        color: color,
+	        life: 100,
+	        alpha: 1
+	      });
+	    }
+	    fireworks.push({ particles });
+	  }
+	
+	  let lastFrameTime = 0;
+	  const frameInterval = 1000 / 60; // Tetap target 30 FPS
+	
+	  function drawFireworks(timestamp) {
+	    if (timestamp - lastFrameTime < frameInterval) {
+	      requestAnimationFrame(drawFireworks);
+	      return;
+	    }
+	    lastFrameTime = timestamp;
+	
+	    ctx.clearRect(0, 0, canvas.width, canvas.height);
+	    fireworks.forEach((firework, index) => {
+	      firework.particles.forEach((particle) => {
+	        ctx.beginPath();
+	        ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
+	        ctx.fillStyle = `rgba(${parseInt(particle.color.slice(1, 3), 16)}, ${parseInt(particle.color.slice(3, 5), 16)}, ${parseInt(particle.color.slice(5, 7), 16)}, ${particle.alpha})`;
+	        ctx.fill();
+	
+	        particle.x += particle.vx;
+	        particle.y += particle.vy;
+	        particle.vy += 0.05; // Gravitasi naik dari 0.03 ke 0.04
+	        particle.alpha -= 0.01; // Pemudaran naik dari 0.008 ke 0.009
+	        particle.life--;
+	
+	        if (particle.life <= 0) {
+	          particle.alpha = 0;
+	        }
+	      });
+	
+	      firework.particles = firework.particles.filter(p => p.life > 0);
+	      if (firework.particles.length === 0) {
+	        fireworks.splice(index, 1);
+	      }
+	    });
+	
+	    if (Math.random() < 0.065) createFirework(); // Frekuensi naik dari 0.05 ke 0.07
+	    requestAnimationFrame(drawFireworks);
+	  }
+	
+	  //createFirework();
+	  requestAnimationFrame(drawFireworks);
+	}
+	
+	// Halaman 3: Pesan Akhir
+	function mulaiHal3() {
+	  const stiker3 = document.getElementById('stiker3');
+	  const stiker3a = document.getElementById('stiker3a');
+	  const stiker3b = document.getElementById('stiker3b');
+	  stiker3.style = "transform:scale(1)";
+	  const usiaKamu = 30;
+	
+	  const txtAwalan = "<b>Hey kamuuu</b>, iya kamuuu! 🫵<br><br>Coba liat pojok kirii atas<br>layar hp kamu yaaa 🫣";
+	  const speedText = 28;
+	
+	  const txtSembunyiSatu = teksSembunyi1.innerHTML;teksSembunyi1.innerHTML="";
+	  const txtSembunyiDua = teksSembunyi2.innerHTML;teksSembunyi2.innerHTML="";
+	
+	  const canvas = document.getElementById('fireworks-canvas');
+	  canvas.width = window.innerWidth;
+	  canvas.height = window.innerHeight;
+	
+	  mulaiKelopak('game-canvas');
+	
+	  new TypeIt("#teksAwalan", {
+	    strings: txtAwalan, speed: speedText, startDelay: 200,
+	    afterComplete: function () {
+	      document.querySelector("#teksAwalan .ti-cursor").style.display = "none";
+	      setTimeout(()=>{
+		        teksSembunyi1.style="opacity:1";
+		        new TypeIt("#teksSembunyi1", {
+			    strings: txtSembunyiSatu, speed: speedText, startDelay: 100,
+			    afterComplete: function () {
+			      document.querySelector("#teksSembunyi1 .ti-cursor").style.display = "none";
+			      setTimeout(()=>{
+				        teksSembunyi2.style="opacity:1";
+				        new TypeIt("#teksSembunyi2", {
+					    strings: txtSembunyiDua, speed: speedText, startDelay: 100,
+					    afterComplete: function () {
+					      document.querySelector("#teksSembunyi2 .ti-cursor").style.display = "none";
+					      setTimeout(()=>{
+						     tombolLanjut.style="position:relative;transform:scale(1);opacity:1";
+		                  }, 500);
+					    }
+					  }).go();
+                  }, 700);
+			    }
+			  }).go();
+          }, 700);
+	    }
+	  }).go();
+	
+	}
+	
+	function nextHal3(){
+		document.getElementById(`hal3`).style = "transform:scale(0)";
+		teksSembunyi1.style="opacity:0";
+	    teksSembunyi2.style="opacity:0";
+	    stiker3.style = "transform:scale(0)";
+		              
+	      setTimeout(()=>{
+		    tombolLanjut.style="display:none";
+		    teksAwalan.innerHTML=""; teksAwalan.style="display:none";
+		    document.getElementById(`hal3`).style="transform:scale(1)";
+		
+		    stiker3a.src = stiker3b.src;
+		    setTimeout(() => {
+		           stiker3.style = "transform:scale(1)";
+		           lanjutAkhir();
+		    }, 200);
+	        
+	      }, 500);
+	}
+	
+	function lanjutAkhir(){
+		const txtDoa = `Kenapa lebih suka<br>"<span style='color:pink'>i love you</span> moree"? 💐🩷`;
+	    const txtPesanAkhir = "Karena.. i love you more than i said,<br>i love you more than you know,<br>i love you more when your<br>day didn't went so well,<br>i love you more when you cried,<br>i love you more at your lowest,<br>and i love you in every situations ᡣ𐭩<br>😍💐🌹💖❤️";
+	    const speedText = 27;
+	
+		new TypeIt("#teksCinta", {
+	    strings: txtDoa,
+	    speed: speedText,
+	    startDelay: 100,
+	    afterComplete: function () {
+	      document.querySelector("#teksCinta .ti-cursor").style.display = "none";
+	      new TypeIt("#pesanAkhir", {
+	        strings: txtPesanAkhir,
+	        speed: speedText,
+	        startDelay: 700,
+	        waitUntilVisible: true,
+	        afterComplete: function () {
+	              document.querySelector("#pesanAkhir .ti-cursor").style.display = "none";
+	              intervalHati = setInterval(hatiJatuh, 200);
+	              document.querySelector(".tombol").style="transform:scale(1);opacity:1;";
+	              setTimeout(()=>{
+	                  stiker3.style = "transform:scale(0)";
+		              setTimeout(() => {
+		                stiker3a.src = stiker3c.src;
+		                stiker3.style = "transform:scale(1)";
+                        clearInterval(scrollInterval);
+		              }, 300);
+		                // Hentikan animasi kelopak
+					    if (animationFrameId) {
+					      cancelAnimationFrame(animationFrameId);
+					      animationFrameId = null; // Reset ID
+					    }
+					    // Hapus canvas
+					    const canvas = document.getElementById('game-canvas');
+					    if (canvas) {
+					      canvas.remove();
+					    }
+                  }, 50);
+	              setTimeout(()=>{mulaiKembangApi('fireworks-canvas')}, 50);
+	        }
+	      }).go();
+	    }
+	  }).go();
+	}
+
+    // Navigasi Halaman
+    function pindahHal(hal) {
+	  for (let i = 1; i <= 3; i++) {
+	    if (hal < 3 && i !== 1) document.getElementById(`hal${i}`).classList.add('sembunyi');	  
+      }
+	  if (hal < 3) document.getElementById(`hal${hal}`).classList.remove('sembunyi');
+	
+	  setTimeout(()=>{
+	    if (hal === 2){
+          document.getElementById(`hal${hal - 1}`).style = "transform:scale(0)";
+	      setTimeout(()=>{
+	        document.getElementById(`hal${hal - 1}`).classList.add('sembunyi');
+	        document.getElementById(`hal${hal}`).classList.remove('sembunyi');
+	        setTimeout(()=>{document.getElementById(`hal${hal}`).style="transform:scale(1);transition:all .7s ease";}, 100);
+	      }, 700);
+        } else if (hal === 3) {
+	      document.getElementById(`hal${hal - 1}`).style = "transform:scale(0);transition:all .7s ease";
+	      setTimeout(()=>{
+	        document.getElementById(`hal${hal - 1}`).classList.add('sembunyi');
+	        document.getElementById(`hal${hal}`).classList.remove('sembunyi');
+	        setTimeout(()=>{document.getElementById(`hal${hal}`).style="transform:scale(1);transition:all .7s ease";}, 100);
+	        setTimeout(()=>{mulaiHal3();}, 150);
+	      }, 50);
+	    }
+	  }, 50);
+	}
+
+    const container = document.querySelector(".textOverlay");
+    function autoScroll() {container.scrollTop += 10;} 
+    const scrollInterval = setInterval(autoScroll, 50); 
+	
+    // Share ke WhatsApp
+    function balasWa() {
+      const url = window.location.href;
+      const text = "";
+      window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
+    }
+  </script>
+</body>
+</html>
