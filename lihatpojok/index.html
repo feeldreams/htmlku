@@ -124,10 +124,13 @@
     
     #teksSembunyi1{position:fixed;top:20px;left:30px;font-size:15px;color:white;text-shadow: 0px 2px 2px rgba(0, 0, 0, .5);z-index:999;opacity:0;transition:all .7s ease;}
     #teksSembunyi2{position:fixed;top:60px;right:30px;font-size:15px;color:white;text-shadow: 0px 2px 2px rgba(0, 0, 0, .5);z-index:999;opacity:0;transition:all .7s ease;}
+    #linkmp3{display:none}
     
   </style>
 </head>
 <body>
+  <audio src="angelbaby3.mp3" id="linkmp3"></audio>
+  
   <div class="background-overlay" data-src="https://feeldreams.github.io/nightin.jpeg"></div>
 
   <!-- Halaman 1: Permulaan -->
@@ -214,6 +217,7 @@
 
   <script>
     // Permulaan
+    audio = new Audio('' + linkmp3.src); 
     document.querySelector("#hal1").style="transform:scale(0)";
     document.querySelector(".circ").style="display:none";
     setTimeout(()=>{document.querySelector("#hal1").style="transform:scale(1)";document.querySelector(".circ").style="";stiker1.style = "transform:scale(1)";}, 1000);
@@ -269,6 +273,7 @@
 
     // Buka Envelope
     function bukaEnvelope() {
+      audio.play();
       const envelope = document.getElementById('envelope');
       envelope.classList.remove('close');
       envelope.classList.add('open');
