@@ -122,16 +122,16 @@
       .input-range-container input[type="range"] {width: 90%;}
     }
     
-    #teksSembunyi1{position:fixed;top:20px;left:30px;font-size:15px;color:white;text-shadow: 0px 2px 2px rgba(0, 0, 0, .5);z-index:999;opacity:0;transition:all .7s ease;}
-    #teksSembunyi2{position:fixed;top:60px;right:30px;font-size:15px;color:white;text-shadow: 0px 2px 2px rgba(0, 0, 0, .5);z-index:999;opacity:0;transition:all .7s ease;}
+    #teksSembunyi1{position:fixed;top:50px;left:30px;font-size:15px;color:white;text-shadow: 0px 2px 2px rgba(0, 0, 0, .5);z-index:999;opacity:0;transition:all .7s ease;}
+    #teksSembunyi2{position:fixed;top:80px;right:30px;font-size:15px;color:white;text-shadow: 0px 2px 2px rgba(0, 0, 0, .5);z-index:999;opacity:0;transition:all .7s ease;}
     #linkmp3{display:none}
     
   </style>
 </head>
 <body>
-  <audio src="angelbaby3.mp3" id="linkmp3"></audio>
+  <audio src="sangelbaby3.mp3" id="linkmp3"></audio>
   
-  <div class="background-overlay" data-src="https://feeldreams.github.io/nightin.jpeg"></div>
+  <div class="background-overlay" data-src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhsOhJrSDLjYoVvzWl_1aZtqnw-Xgd6yALV-5OK0AxYHhkTB_BttocjSoNya_XxaC-CPPl1C1OrvABOaSHLzWaYs4GKxUe9UWr3dH4xpI09cEOKMYrYCx813XimY0sHH1hdgz41_Z4xWhcdJK2qeIyX8QBvjrf5x-0ZJqeghO3ZyRNomQzSrvScel8GQO7Z/s1600/1000359042.jpg"></div>
 
   <!-- Halaman 1: Permulaan -->
   <div id="hal1" class="kotak">
@@ -180,7 +180,7 @@
     <canvas id="game-canvas"></canvas>
     <div id="stiker3" class="stiker">
       <img id="stiker3a" src="https://htmlku.com/0/panda/pusn.gif" />
-      <img id="stiker3b" class="sembunyi" src="https://htmlku.com/0/panda/hiya.gif" />
+      <img id="stiker3b" class="sembunyi" src="https://htmlku.com/0/panda/panah.gif" />
       <img id="stiker3c" class="sembunyi" src="https://htmlku.com/0/panda/muah.gif" />
     </div>
     <div class="textOverlay">
@@ -371,7 +371,7 @@
 	  const usiaKamu = 30;
 	
 	  const txtAwalan = "<b>Hey kamuuu</b>, iya kamuuu! 🫵<br><br>Coba liat pojok kirii atas<br>layar hp kamu yaaa 🫣";
-	  const speedText = 28;
+	  const speedText = 27;
 	
 	  const txtSembunyiSatu = teksSembunyi1.innerHTML;teksSembunyi1.innerHTML="";
 	  const txtSembunyiDua = teksSembunyi2.innerHTML;teksSembunyi2.innerHTML="";
@@ -421,7 +421,7 @@
 	      setTimeout(()=>{
 		    tombolLanjut.style="display:none";
 		    teksAwalan.innerHTML=""; teksAwalan.style="display:none";
-		    document.getElementById(`hal3`).style="transform:scale(1)";
+		    document.getElementById(`hal3`).style="transform:scale(1);margin-top:130px";
 		
 		    stiker3a.src = stiker3b.src;
 		    setTimeout(() => {
@@ -433,9 +433,9 @@
 	}
 	
 	function lanjutAkhir(){
-		const txtDoa = `Kenapa lebih suka<br><span style='color:pink'>i love you</span> moree? 💐🩷`;
+		const txtDoa = `Kenapa lebih suka<br><span style='color:pink'>i love you</span> moree? 🌹🩷`;
 	    const txtPesanAkhir = "Karena.. i love you more than i said,<br>i love you more than you know,<br>i love you more when your<br>day didn't went so well,<br>i love you more when you cried,<br>i love you more at your lowest,<br>and i love you in every situations ᡣ𐭩<br>😍💐🌹💖❤️";
-	    const speedText = 27;
+	    const speedText = 24;
 	
 		new TypeIt("#teksCinta", {
 	    strings: txtDoa,
