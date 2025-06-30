@@ -1,0 +1,278 @@
+<html><meta charset='UTF-8'/><meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5' name='viewport'/><meta content='IE=edge' http-equiv='X-UA-Compatible'/>
+
+  <script src="https://htmlku.com/bolehya/sweetalert.js"></script>
+  <script src="https://htmlku.com/bolehya/typeit.js"></script>
+  <link href="" rel="stylesheet" type="text/css" />
+
+<head>
+<title>🏠 Htmlku.com/pesanbuatmu - HTML Pesan buat Kamu...</title>
+</head>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Itim&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap');
+
+:root {
+--warna-bg: rgba(0, 0, 0, .75); 
+--warna-teks: white;
+--warna-bingkai: rgba(255, 255, 255, .8);
+--bingkai: 10px;
+--gaya-font: 'Nunito Sans', sans-serif;
+--gaya-font2: 'Itim', cursive;
+}
+@keyframes fanim {0% {background-position: 0% 0%;}25% {background-position: 100% 100%;} 50% {background-position: 0% 100%;} 75% {background-position: 50% 50%;} 100% {background-position: 0% 0%;}}
+body{background-color:#101010;font-family:var(--gaya-font2);padding: 25px;-webkit-user-select: none; -ms-user-select: none; user-select: none;} a{text-decoration:none;}
+body::before{content:"\00A9  Script HTML Bucin";color:white;opacity:0;font-size:2vw;position:fixed;bottom:25px;left:25px;z-index:2}
+@keyframes jj{0%  {transform: scale(1);} 50% {transform: scale(1.3);} 100% {transform: scale(1);}}
+#bodyblur{animation: jj 7s infinite;opacity:.4;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.3);transition:all 1s ease;} 
+#wallpaper{width:100%;height:100%;transform: scale(1);transition:all 1.7s ease;}
+
+@keyframes kont{0%  {left:-1px; top:-3px;} 50% {left:1px; top:3px;} 100% {left:-1px; top:-3px;}}
+.kontenPesan{opacity:0;visibility:hidden;transition:all .3s ease;position:relative;margin-top:120px;margin-left:0;margin-right:0;}
+.kontenPesan{text-align:left;width:100%;min-height: 90px;max-height:280px;overflow: auto;background:rgba(255,255,255,0.1);backdrop-filter:blur(10px);border-radius:20px;box-shadow:0 8px 32px rgba(0,0,0,0.3);border:2px solid rgba(255, 255, 255, 0.8);/*text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);*/line-height:1.3em;padding:20px;}
+p{color:var(--warna-teks);font-size:16px;font-weight:700;line-height:1.4em;margin:0px;/*text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);*/transition:all .3s ease;}
+#kalimat{font-weight:400}
+#kalimatc{text-align:center;font-family:var(--gaya-font2);}
+.garismerah{border-bottom:2px solid red}
+b.merah{color:red}
+b.kuning{color:yellow}
+b.putih{text-shadow:none;padding-left:8px;padding-right:8px;padding-top:2px;padding-bottom:2px;background-color:white;border-radius:12px}
+.garismerah{border-bottom:2px solid red}
+.gariskuning{border-bottom:2px solid yellow}
+
+#katajawab{font-weight:400;margin:0;display:none;}
+@keyframes rto{from {transform:scale(1);} to {transform:scale(1.1);}}
+@keyframes aniopa{0% {transform: scale(1);} 50% {transform: scale(.75);} 100% {transform: scale(1);}}
+#katabawah{transform:scale(.1);font-size:30px;font-weight:400}
+#katatiga{font-size:18px;} #kataempat{font-size:13px;font-weight:400;text-align:right;}
+@keyframes rtf{from {transform: rotate(0deg);} to {transform: rotate(360deg);}} @keyframes rt{from {transform: scale(.9);/* transform: rotate(-5deg); */} to {transform: scale(1);/* transform: rotate(5deg); */}}
+#bq img{display:none;padding:10px;width:130px;height:130px;margin:20px 0 0 0;}
+#bq img:first-child{display:inline-flex}
+#akhiran{display:none;color:#FFC700;font-size:14px;text-align:center;background:rgba(0,0,0,.55);text-shadow: 0px;padding:10px;border-radius:var(--bingkai);line-height:10px;transition:all .2s ease;} #akhiran:hover{transform: scale(.9);opacity:.5;}
+
+#Tombol{opacity:0;margin:0;display:flex;align-items:left;list-style:none;transform: scale(.1);transition:all 1s ease;}
+#Tombol a{cursor:pointer;display:inline-flex;align-items:center; margin:0;margin:12px 0 12px 0;transition:all .2s ease;padding:10px;outline:0;border:1px solid var(--warna-bingkai); border-radius:var(--bingkai);line-height:15px;background:var(--warna-bg);color:var(--warna-teks);font-size:12px;font-weight:400;white-space:nowrap;overflow:hidden;z-index:1} 
+#Tombol a:hover{transform: scale(.90);opacity:.98;}
+#buttonv2{position:absolute;font-size:15px;color:white;background:var(--warna-bg);padding:10px;border-radius:8px;line-height:10px;text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);opacity:0}
+
+.lovein{font-size:50px;display:flex;align-items:center;justify-content:center;transition:all .3s ease;}
+.lovein svg{width:80px;height:80px;fill:#fefefe}
+
+.content2{display:block;text-align:center;width:100%;height:180px;margin-top:50px;}
+.content2 > *{display:flex;align-items:center;justify-content:center;margin-top:15px;font-size:17px;color:white}
+.image img{border-radius:10%;transform:scale(.1);transition:all .8s ease;}
+#k2 .image > *{margin-bottom:40px;} #k2{font-weight:700;font-size:17px;color:white;text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);} #final1{transition:all 3s ease;}
+
+#idkirim{font-size:13px;text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);color:white;transition:all .5s ease;}
+#idkirim{opacity:0;visibility:hidden;margin-top:100px} #idkirim:hover{transform:scale(.8);}
+
+.content2{display:none;}
+#Content{animation-name:none;animation-duration: 3s;animation-iteration-count: infinite;position:relative;opacity:0;margin-top:50px;width:100%;height:180px;transition:all 1s ease;}
+#Content > *{display:flex;align-items:center;text-align:center;justify-content:center;margin-top:15px;}
+#Content img{display:none;box-shadow: 0 4px 30px rgba(255,255,255, 0.3);backdrop-filter:blur(10px);background: rgba(255, 255, 255, .3);border: 2.5px solid rgba(255, 255, 255, 0.8);border-radius: 50%;padding:10px;width:90px;height:90px;margin:20px 0 0 0;transition: all .8s ease;}
+
+#fotolove img{transition:all .5s ease;width:75px;height:75px;padding:0;background:none}
+#suratin img{display:inline-flex;background:rgba(255,255,255, 1);border-radius:10%;padding:10px;width:140px;height:110px;transition:all .3s ease;}
+#suratin img:hover{transform:scale(.9);}
+
+.fa-heart {opacity:.3;color:white;font-size: 30px;position: absolute;animation:  heartMove linear 1;top: -10vh;z-index: 0;}
+@keyframes heartMove {0%{transform: translateY(-10vh) ;} 100%{transform: translateY(100vh) ;}}
+.kumpulanstiker > img{display:none;}
+
+.swal2-modal > *{font-size:16px;color:white}
+.swal2-title{line-height:1.3em;font-size:17px;text-align:center;padding:15px 30px 0 30px;}
+.swal2-timer-progress-bar-container > *{opacity:.7;background:#00B6FF;margin:0 14px}
+.swal2-modal{background: rgba(0,0,0, .6);backdrop-filter: blur(3px);-webkit-backdrop-filter: blur(3px);box-shadow: 0 4px 30px rgba(255,255,255, 0.3);border: 2px solid rgba(255, 255, 255, 1);border-radius: 30px;max-width:325px;top:-60px;}
+.swal2-image{box-shadow: 0 4px 30px rgba(255,255,255, 0.3);/*backdrop-filter: blur(5px);-webkit-backdrop-filter: blur(5px);*/background: rgba(255, 255, 255, .3);border: 2.5px solid rgba(255, 255, 255, 0.8);border-radius: 50%;padding:10px;}
+.swal2-styled.swal2-confirm, .swal2-styled.swal2-cancel{position: relative;background-color: #4839eb;color: #fff;border-radius:18px;z-index: 1;transition: all 0.2s;}
+
+svg{vertical-align: middle;width: 22px;height: 22px;fill: #fff}
+.heart-icon {z-index:100;width: 30px;height: 30px;position: fixed;animation:  heartMove linear 1;top: -10vh;}
+@keyframes heartMove {
+    0% {transform: translateY(-10vh);}
+    100% {transform: translateY(100vh);}
+  }
+      svg.line{fill: none;stroke: #fff;stroke-width: 2;animation: moving .7s linear infinite alternate;}
+      .spin{animation: spin 3s linear infinite alternate;}
+  @keyframes spin {
+    from {
+      transform: rotate(20deg);
+    }
+    to {
+      transform: rotate(-20deg);
+    }
+  }
+.sembunyi{display: none !important;}
+             
+</style>
+<body>
+	
+   <div id="bodyblur">
+     <!-- Wallpaper / Background --><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhsOhJrSDLjYoVvzWl_1aZtqnw-Xgd6yALV-5OK0AxYHhkTB_BttocjSoNya_XxaC-CPPl1C1OrvABOaSHLzWaYs4GKxUe9UWr3dH4xpI09cEOKMYrYCx813XimY0sHH1hdgz41_Z4xWhcdJK2qeIyX8QBvjrf5x-0ZJqeghO3ZyRNomQzSrvScel8GQO7Z/s1600/1000359042.jpg" id="wallpaper"/>
+   </div>
+  
+  <div class="kumpulanstiker">
+         <!-- Stiker untuk Konten -->
+         <img src="https://feeldreams.github.io/pandapanah.gif" id="stiker1"/>
+         <img src="https://feeldreams.github.io/mndkat.gif" id="stiker2"/>
+         <img src="https://feeldreams.github.io/cilukba.gif" id="stiker3"/>
+         <img src="https://feeldreams.github.io/pusn.gif" id="stiker4"/>
+         <img src="https://htmlku.com/0/panda/inicinta2.gif" id="stiker5"/>
+  </div>
+
+   <div id='Content'>
+   	
+     <div id="suratin" onClick="memulai();audio.play();">
+       <!-- Surat --><img src="https://rayyscoding.github.io/envelope.png"/>
+     </div>
+     <p id="ket">Klik Suratnya! 💐</p>
+   
+     <div>
+      <!-- Foto Akhir -->
+      <img src="https://feeldreams.github.io/gumush.gif" id="fotoakhir" />
+      <img src="https://feeldreams.github.io/emawh.gif" id="fotoakhir2" />
+    </div>
+    
+     <div>
+     <div class="kontenPesan" id='bq'>
+       <p id="kalimat"></p>
+       <p id="kalimatc"></p>
+     </div>
+     </div>
+     
+   </div>
+
+<script>
+function showDiv() {Content.style = "opacity:1;margin-top:15vh;";ket.style="margin-top:30px";}
+function memulai(){suratin.style="transition:all .7s ease;transform:scale(0);opacity:0";ket.style="transition:all .7s ease;transform:scale(0);opacity:0";setTimeout(pesan,1000);}
+function kpemb() {suratin.style="display:none";ket.style="display:none";fotoakhir.style="display:inline-flex;transform:scale(1);";Content.style = "opacity:1;margin-top:5vh;transition:all .7s ease";bq.style = "opacity:1;visibility:visible;margin-top:5px";setTimeout(ngetik,150);}
+
+var date = new Date();
+var days = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+var months = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
+var hours = date.getHours();
+var minutes = date.getMinutes();
+
+// Tambahkan awalan nol jika jam atau menit kurang dari 10
+if (hours < 10) {hours = "0" + hours;}
+if (minutes < 10) {minutes = "0" + minutes;}
+
+var day = days[date.getDay()];
+var dateNum = date.getDate();
+var month = months[date.getMonth()];
+var year = date.getFullYear();
+
+console.log(hours + "." + minutes + " WIB - " + day + ", " + dateNum + " " + month + " " + year);
+
+var element = document.querySelector("body");var watermark = document.createElement("div");
+
+// Setel teks watermark dan propertinya
+watermark.textContent = day + ", " + dateNum + " " + month + " " + year;
+watermark.style = "color:white;opacity:0;font-size:10px;position:fixed;bottom:25px;left:25px;z-index:150";
+element.appendChild(watermark);
+
+//////////////////////////////////////////////////
+
+const body = document.querySelector("body");
+function berjatuhan() {
+    const heart = document.createElement("div");
+    heart.innerHTML = "<svg class='line spin' style='opacity:.5;z-index:100' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><g transform='translate(2.550170, 3.550158)'><path d='M0.371729633,8.89614246 C-0.701270367,5.54614246 0.553729633,1.38114246 4.07072963,0.249142462 C5.92072963,-0.347857538 8.20372963,0.150142462 9.50072963,1.93914246 C10.7237296,0.0841424625 13.0727296,-0.343857538 14.9207296,0.249142462 C18.4367296,1.38114246 19.6987296,5.54614246 18.6267296,8.89614246 C16.9567296,14.2061425 11.1297296,16.9721425 9.50072963,16.9721425 C7.87272963,16.9721425 2.09772963,14.2681425 0.371729633,8.89614246 Z'></path><path d='M13.23843,4.013842 C14.44543,4.137842 15.20043,5.094842 15.15543,6.435842'></path></g></svg>";
+    heart.className = "heart-icon";
+    heart.style.left = (Math.random() * 95) + "vw";
+    heart.style.animationDuration = (Math.random() * 3) + 2 + "s";
+    document.body.appendChild(heart);
+}
+
+setInterval(function () {
+    var heartArr = document.querySelectorAll(".heart-icon");
+    if (heartArr.length > 100) {
+      heartArr[0].remove();
+    }
+}, 100);
+
+function autoScroll() {bq.scrollTop += 10;}
+const scrollInterval = setInterval(autoScroll, 50); 
+
+//////////////////////////////////////////////////
+
+function tombol(){Tombol.style="margin-top:15px;opacity:1;transform: scale(1);";ftom=1;} ftom=0; function fakhiran(){document.getElementById("akhiran").style = "display:inline-flex";}
+const swals = Swal.mixin({allowOutsideClick: false, cancelButtonColor: '#FF0040', imageWidth: 90, imageHeight: 100,}); 
+const swalst = Swal.mixin({allowOutsideClick: false, showConfirmButton: false, timer: 2400, timerProgressBar: true, imageWidth: 90, imageHeight: 90,}); const style = document.createElement('style'); var today = new Date();var dd = String(today.getDate()).padStart(2, '0');var mm = String(today.getMonth() + 1).padStart(2, '0');var yyyy = today.getFullYear();const monthNames = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];today = dd + ' ' + monthNames[today.getMonth()] + ' ' + yyyy;
+function setel(){audio.play();} function setel2(){bgm.play();} function sjawab(){if(ftom==1){Tombol.style="display:none";jawab();}}
+
+var aa=0,katangetik;var speedText;
+function ngetik() {
+  new TypeIt("#kalimat", {
+    strings: ["" + katangetik], startDelay: 50, speed: speedText, cursor: true,
+    afterComplete: function(){
+        document.querySelector("#kalimat .ti-cursor").style.display = "none";
+        //kalimatc.style="margin-top:20px;margin-bottom:10px";
+        //setTimeout(ngetik2,300);
+        setInterval(berjatuhan,200);
+        fotoakhir.style.transform="scale(0)";
+        setTimeout(function(){fotoakhir.src = fotoakhir2.src;fotoakhir.style.transform="scale(1)";clearInterval(scrollInterval);},300);
+    },}).go();
+}
+var ai=0,katangetik2;
+function ngetik2() {
+  new TypeIt("#kalimatc", {
+    strings: ["" + katangetik2], startDelay: 50, speed: 35, cursor: true,
+    afterComplete: function(){
+        kalimatc.innerHTML = katangetik2;
+        
+        //setTimeout(kemunculan,1300);
+        setInterval(berjatuhan,200);
+        //setTimeout(tombol,300);
+    },}).go();
+  }
+
+  function otomatis() {kalimatc.style.transform="scale(.3)";setTimeout(function(){kalimatc.style.transform="scale(1)";},250);} 
+  function kemunculan(){otomatis();kalimatc.innerHTML = ktbwh2;setTimeout(kemunculan2,2000);} 
+  function kemunculan2(){otomatis();kalimatc.innerHTML = ktbwh3;setTimeout(kemunculan3,2000);} 
+  function kemunculan3(){otomatis();kalimatc.innerHTML = katangetik2;setTimeout(kemunculan,2000);}
+  
+  async function jawab(){await swals.fire('Kirim pesan ke<br>WhatsApp aku, ya!');window.location = "https://api.whatsapp.com/send?phone=&text=" + pesanwhatsapp;}                        
+</script>
+
+<!-- Ganti Kata², Foto, Lagu di bawah ya
+1) Upload foto ke https://postimages.org
+     buat dapetin linknya
+2) Ganti Lagu Upload ke mailboxdrive.com -->
+
+<script type="text/javascript">
+       async function pertama(){
+         audio = new Audio('https://feeldreams.github.io/audio/melody2.mp3');showDiv();
+       } pertama();
+	
+       
+       async function pesan(){
+       	      const timerPopup = 2200;
+       
+             	await swalst.fire({
+                  title: 'Alooo rumahku, cintakuuu! 😍', 
+                  imageUrl: '' + stiker1.src,
+                  timer: timerPopup,
+                  });   	
+                 await swalst.fire({
+                  title: 'Sehat-sehat terus yaa 🫣',
+                  imageUrl: '' + stiker2.src,
+                  timer: timerPopup,
+                  });
+                 await swalst.fire({
+                  title: 'Jangan pernah berubah 😍',
+                  imageUrl: '' + stiker3.src,
+                  timer: timerPopup,
+                  });
+                 await swalst.fire({
+                  title: 'Dan selalu jadi orang paling<br>baik di hidupkuu 🫂💐',
+                  imageUrl: '' + stiker4.src,
+                  timer: timerPopup,
+                  });
+                  
+                  katangetik = "<b>Sekarang</b>, aku mau bilang sesuatu 🫢<br><br>── .✦<br>Aku mau minta maaf ya kalau sikap aku kadang bikin kamu marah ataupun bikin kamu cape, aku sayang sama kamu tapi maaf kalau aku blm bisa jadi apa yang kamu mau aku menyayangimu dengan caraku, maka dari itu aku butuh kamu, tegur aku kalo aku salah ajarin aku bagaimana caranya agar bisa jadi orang yang kamu cari selama ini 🫠<br><br>Jangan tinggalin aku yaa, aku sayang sama kamu, <b class='putih merah'>i love youuu 🌹💐</b></b>";
+                  speedText = 30;
+                  
+                 setTimeout(kpemb,200);
+            }
+</script>
+</body>
+</html>
