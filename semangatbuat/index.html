@@ -11,7 +11,7 @@
 <script src="https://unpkg.com/scrollreveal"></script>
 
 <head>
-<title>🏡 S.id/semangatbuat — Buat Ayangku 🌹</title>
+<title>🏡 S.id/semangatbuat — Script Buat Ayangku 🌹</title>
 <meta name="description" content="@feelthisray - Script by feeldream.id">
 </head>
 <style>
@@ -62,7 +62,7 @@ h1.med {font-size: 1.4rem}
 .lingkar{font-weight:400;border-bottom:1px solid #FF0900;}
 h1, h2, h3,h4,h5{margin: 0;text-align: center;margin: 1rem 0;z-index:99}
 h3.anm{transition:all .7s ease}
-#textsec2b, #textsec3b{opacity:0}
+#textnimasib, #textsec3b{opacity:0}
 b.lg{font-size: 20px}
 b.merah{color:red}
 b.kuning{color:yellow}
@@ -74,15 +74,13 @@ b.putih{text-shadow:none;padding:2px 8px;background:white;border-radius:14px}
 .textspin{animation: jj 1s infinite alternate;}
 
 p{color:white;font-size:16px;line-height:1.5em;text-align:left}
-p.anm{margin-left:60px;margin-right:60px;}
+p.anm{font-size:16.5px;text-shadow: 0px 2px 2px rgba(0, 0, 0, .5);}
 .scaleIn{transform: scale(0);}
 .text-lg{font-size:19px}
 .text-xl{font-size:20px}
 .text-center{text-align:center}
 .text-left{text-align:left}
-.blocktext{position:relative;width:100%;height: 300px; margin-top:0; overflow: auto;}
-/*@media  (min-width: 768px){.blocktext{margin-left: 30vw;}}*/
-/*.blocktext{margin-left:55px;margin-right:60px;padding:30px;background:rgba(0,0,0,.5);border-radius:20px}*/
+.blocktext{position:relative;padding:12px 22px;margin-top:0;margin-left:33px;margin-right:33px;overflow: auto; background:rgba(255,255,255,0.15);backdrop-filter:blur(10px);border-radius:20px;box-shadow:0 8px 32px rgba(0,0,0,0.3);border:2px solid rgba(255,255,255,0.8);min-height:120px;}
 a {color:white;text-decoration: none;transition: all 0.3s ease-in-out;&:hover, &:focus, &:active {color: #f1e8d9;}}
 #hsatu{transition: all .3s ease}
 #judulakhir{z-index:100;font-size:28px;font-family:var(--caveat);transition:all .5s ease}
@@ -173,10 +171,10 @@ svg.line{fill: none;stroke: #fff;stroke-width: 2;animation: moving .7s linear in
   <section class="first" id="inisection">
        <div class="wp"><img src="https://feeldreams.github.io/pics/awan3.jpg"/></div>
        <div id="first_stiker" class="stiker">
-        <img id="inistiker1" src="https://htmlku.com/0/panda/inicinta2.gif"/>
+        <img id="inistiker1" src="https://htmlku.com/0/panda/cilukba.gif"/>
        </div>
        
-       <h1 id="teks1" class="itim">Buat Ayangkuu 🫣<br><br>>>>></h1>
+       <h1 id="teks1" class="itim">Aloooo Kamuuu! 🫣<br><br>>>>></h1>
 
        <div id="sentuh" class="menu">
         <a class='tombol' onclick="tes()">
@@ -189,12 +187,12 @@ svg.line{fill: none;stroke: #fff;stroke-width: 2;animation: moving .7s linear in
   <section>
       <div class="wp"><img src="https://feeldreams.github.io/pics/awan4.jpg"/></div>
       <div class="stiker" style="margin-top:0;transform:scale(0)" id="teks4">
-        <img src="https://feeldreams.github.io/pusn.gif" id="stikersec2"/>
-        <img src="https://htmlku.com/0/panda/terlope2.gif" id="stikersec2b" class="sembunyi"/>
+        <img src="https://feeldreams.github.io/mndkat.gif" id="stikersec2"/>
+        <img src="https://htmlku.com/0/panda/muah.gif" id="stikersec2b" class="sembunyi"/>
       </div>
       
-      <div id="scroll-container" class="blocktext txt transition scale0">
-        <p id="textsec2" class="anm itim">Heyy ayaanggg, semangat ngejalani<br>hari²nya yaa 🥳💐 Tetaplah menjadi dirimu sendiri yang pernah aku temui, tetaplah menjadi semangatku, jangan pernah menjauh, jangan pernah pergi dan jangan berpindah kelain hati, aku sayang banget sama kamu 😍😋🥰💗<br><br><b class="putih merah">i love you more 🌹🫶</b></p>
+      <div id="scroll-container" class="blocktext transition scale0">
+        <p id="textnimasi" class="anm itim"><b>Semangat</b> ngejalani hari²nya yaa! 🥳<br><br><b>ᯓᡣ𐭩</b><br>Tetaplah menjadi dirimu sendiri yang pernah aku temui, tetaplah menjadi semangatku, jangan pernah menjauh, jangan pernah pergi dan jangan berpindah ke lain hati, aku sayang banget sama kamu 😍😋🥰💗<br><br><b class="putih merah">i love you more 🌹🫶</b></p>
       </div>
   </section>
 
@@ -226,14 +224,14 @@ setInterval(function() {
 tekskalimatakhir = kalimatakhir.innerHTML; kalimatakhir.innerHTML="";
 tekspalingakhir = palingakhir.innerHTML; palingakhir.innerHTML="";
 */
-  initextsec2 = textsec2.innerHTML;textsec2.innerHTML="";
+  initextnimasi = textnimasi.innerHTML;textnimasi.innerHTML="";
   function mulaitextseco(){
   	teks4.style="margin-top:-75px;margin-bottom:15px;transform:scale(.8);transition:all .7s ease";
   	scrollContainer.style="transform: scale(1)";
-  	new TypeIt("#textsec2", {
-      strings: ["" + initextsec2], startDelay: 200, speed: 35, cursor: true,
+  	new TypeIt("#textnimasi", {
+      strings: ["" + initextnimasi], startDelay: 200, speed: 27, cursor: true,
       afterComplete: function(){
-      	textsec2.innerHTML = initextsec2;
+      	textnimasi.innerHTML = initextnimasi;
           setInterval(berjatuhan,200);
           clearInterval(scrollInterval);
           
@@ -407,7 +405,7 @@ document.getElementById("loveIn").onclick = function() {
 } 
 
   const scrollContainer = document.getElementById("scroll-container");
-  const textContainer = document.getElementById("textsec2");
+  const textContainer = document.getElementById("textnimasi");
 
 function autoScroll() {
     scrollContainer.scrollTop += 10;
