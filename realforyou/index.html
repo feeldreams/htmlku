@@ -1,0 +1,375 @@
+<html>
+<meta charset='UTF-8'/>
+<meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5' name='viewport'/>
+<meta content='IE=edge' http-equiv='X-UA-Compatible'/>
+<link href="" rel="stylesheet" type="text/css" />
+<script src=""></script>
+<script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+<script src="https://kit.fontawesome.com/4f3ce16e3e.js" crossorigin="anonymous"></script>
+<head>
+<title>💌 htmlku.com/realforyou — for my Crush.. 🫣🩷</title>
+</head>
+<style>
+:root {
+--warna-bg: rgba(0, 0, 0, .5); 
+--warna-teks: #fff;
+--warna-bingkai: #fff;
+--bingkai: 20px;
+--gaya-font: 'Josefin Sans', sans-serif;
+}
+
+@keyframes fanim {0% {background-position: 0% 0%;}25% {background-position: 100% 100%;} 50% {background-position: 0% 100%;} 75% {background-position: 50% 50%;} 100% {background-position: 0% 0%;}}
+body{background-color:#000;font-family:var(--gaya-font);padding: 20px 25px;-webkit-user-select: none; -ms-user-select: none; user-select: none;} a{text-decoration:none;}
+body::before{content:"\00A9  Rayys | MostIT";color:white;opacity:0;font-size:10px;position:fixed;bottom:25px;right:25px;z-index:2}
+#bodyblur{opacity:.2;/*animation: jj 7s infinite;*/position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.3);z-index:-1;transition:all 1s ease;} 
+#wallpaper {width: 100%;height: 100%;transition: all 2s ease;filter: contrast(120%) brightness(110%); }
+
+#beneranblur{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.3);-webkit-backdrop-filter:blur(3px); backdrop-filter:blur(3px);transition:all 3s ease;}
+
+@keyframes jj{0%  {transform: scale(1.1);} 50% {transform: scale(1.2);} 100% {transform: scale(1.1);}}
+@keyframes rts{from {transform:scale(.1);} to {transform:scale(1);}}
+@keyframes rto{from {transform:scale(1);} to {transform:scale(1.1);}}
+@keyframes aniopa{0% {transform: scale(1);} 50% {transform: scale(.75);} 100% {transform: scale(1);}}
+@keyframes rtf{from {transform: rotate(0deg);} to {transform: rotate(360deg);}} @keyframes rt{from {transform: scale(.9);/* transform: rotate(-5deg); */} to {transform: scale(1);/* transform: rotate(5deg); */}}
+@keyframes kont{0%  {left:-1px; top:-3px;} 50% {left:1px; top:3px;} 100% {left:-1px; top:-3px;}}
+
+blockquote{opacity:0;visibility:hidden;transform: scale(.1);transition:all 1s ease;position:absolute;margin-top:120px;margin-left:0;margin-right:0;}
+blockquote{width:400px;background:var(--warna-bg);backdrop-filter:blur(10px);border-radius:50px;box-shadow:0 8px 32px rgba(0,0,0,0.3);border:2.5px solid var(--warna-bingkai);color:var(--warna-teks);text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);text-align:center;line-height:1.3em;padding:0 15px 0 15px;}
+blockquote img{display:none;box-shadow: rgba(255,255,255, 0.2) 0px 7px 29px 0px;background:rgba(255,255,255,.8);border-radius:50%;border:3px solid var(--warna-bingkai);padding:10px;width:90px;height:90px;margin:20px 0 0 0;}
+#fotoakhir{opacity:.1;margin-bottom:15px;transition:all 1.2s ease;transform: scale(.1);}
+
+p{font-size:18px;font-weight:400;line-height:1.4em;/*text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);*/transition:all .8s ease;}
+#kalimat{margin-left:20px;margin-right:20px;font-size:19px;font-weight:700;transform:scale(.1);}
+#kalimatb{font-weight:400;font-size:18px;}
+#kalimatc{font-size:17px}
+#kalimatd{font-size:22px;font-weight:700;}
+
+#Tombol{position:relative;opacity:0;margin:0;display:flex;align-items:left;list-style:none;transform: scale(.1);transition:all 1s ease;}
+#Tombol a{cursor:none;display:inline-flex;align-items:center; margin:0;margin:12px 0 12px 0;transition:all .2s ease;padding:10px;outline:0;border:2px solid var(--warna-bingkai);border-radius:var(--bingkai);line-height:0;padding:18px 14px;background:var(--warna-bg);color:var(--warna-teks);font-size:15px;font-weight:700;white-space:nowrap;overflow:hidden;box-shadow: rgba(255,255,255, 0.15) 0px 7px 29px 0px;z-index:1} 
+#Tombol a:hover{transform: scale(.90);}
+#buttonv2{position:absolute;font-size:15px;color:white;background:var(--warna-bg);padding:10px;border-radius:8px;line-height:10px;text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);opacity:0}
+#Bn2{position:absolute;opacity:0;width:0}
+
+#Content{animation-name:none;animation-duration: 3s;animation-iteration-count: infinite;position:relative;opacity:0;margin-top:50px;width:100%;height:180px;transition:all .8s ease;}
+#Content > *{display:flex;align-items:center;text-align:center;justify-content:center;margin-top:1px;}
+
+#fotolove img{transition:all .5s ease;width:75px;height:75px;padding:0;background:none}
+#suratin img{display:inline-flex;box-shadow: rgba(255,255,255, 0.5) 0px 7px 29px 0px;background:rgba(255,255,255, 1);border-radius:10%;padding:10px;width:140px;height:110px;transition:all .3s ease;} 
+#ket{text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);color:white}
+#suratin img:hover{transform:scale(.9);}
+
+.swal2-modal > *{font-size:17px;}
+.swal2-title{line-height:1.3em;font-size:17px;text-align:center;padding:15px 50px 0 50px;}
+.swal2-container.swal2-backdrop-show{background: rgba(0,0,0,.5);}
+.swal2-timer-progress-bar-container > *{opacity:.7;background:#00B6FF;margin:0 2px}
+.swal2-modal{box-shadow: rgba(100, 100, 111, 0.5) 0px 7px 29px 0px;max-width:320px;background:rgba(250,250,250,1);border-radius:8px;top:-80px;}
+
+.fa-heart {opacity:.3;color:white;font-size: 27px;position: absolute;animation:  heartMove linear 1;top: -10vh;z-index: 0;}
+@keyframes heartMove {0%{transform: translateY(-10vh) ;} 100%{transform: translateY(100vh) ;}}
+#pesanstiker > *, #pesanAwal, #tgeser, #tklik, #tiya, #linkmp3, #fotoakhir2, #pesanditolak > *, #kalimat2, #kalimatb2, #kalimatc2, #kalimat3, #kalimatb3, #kalimatc3{display:none}
+
+svg.line{fill: none;stroke: #fff;stroke-width: 2;animation: moving .7s linear infinite alternate;}
+.heart-icon {width: 18px;height: 18px;position: fixed;animation:  heartMove linear 1;top: -10vh;}
+@keyframes heartMove {0% {transform: translateY(-10vh);}100% {transform: translateY(100vh);}}
+</style>
+<body>
+	
+   <!-- Change Audio here --><audio id="linkmp3">https://feeldreams.github.io/papapa.mp3</audio>
+   
+   <div id="bodyblur">
+     <!-- Wallpaper --><img src="https://i.postimg.cc/0Nqw1JMr/692a41c31c927f505c9aa8ecc46323aa.jpg" alt="feeldream" id="wallpaper"/>
+   </div>
+
+   <div id='Content'>
+   	
+     <div id="suratin" onClick="memulai();audio.play();">
+       <!-- Envelope Button --><img src="https://rayyscoding.github.io/envelope.png"/>
+     </div>
+     <p id="ket">Click the Envelope!</p>
+
+     <div><blockquote id='bq'>
+       <div>
+         <!-- Stickers for Content -->
+         <img src="https://feeldreams.github.io/cilukba.gif" id="fotoakhir"/>
+         <img src="https://htmlku.com/0/panda/ciumin.gif" id="fotoakhir2"/>
+         <img src="https://feeldreams.github.io/weee.gif" id="fotoakhir3"/>
+         <img src="https://htmlku.com/0/panda/terlope2.gif" id="fotoakhir4"/>
+       </div>
+
+       <!-- Question Content -->
+       <p id="kalimat">Would You Be Mine? 🤭❤️</p>
+       <p id="kalimatb"></p>
+       <p id="kalimatc"></p>
+
+       <!-- Response Content -->
+       <p id="kalimat2">Yaaayy! 😆</p>
+       <p id="kalimatb2">Now You're Mine ᯓᡣ𐭩<br>Hehee 🥳💐</p>
+       <p id="kalimatc2">Uppss.. 🏃 But we'll<br><b>BREAK UP</b> in: <b id="ctimer" style="font-size:24px">5</b></p>
+
+       <!-- Response Content 2 -->
+       <p id="kalimat3">Just Kidding! 😜</p>
+       <p id="kalimatb3">You're truly mine,<br>my forever love 🫣❤️</p>
+       <p id="kalimatc3"><b>I love you more 🫶🌹💐</b></p>
+     </blockquote></div>
+
+     <!-- Multifunction Button -->
+     <div id="Tombol">
+       <a id="By" onClick="multifungsi()">
+         <b id="tmbl">💌 Yes</b>
+       </a>
+       
+       <a id="Bn" onClick="btn='Bn';fungsibaru(btn)">No</a>
+     </div>
+     
+   </div>
+
+<!-- Do Not Edit This Section -->
+<script>
+  ftom=0;jikapr=1;ftganti=0;flag=1;flagg=1;fungsi=0;
+  function showDiv() {
+    pesanwhatsapp = "I really want to be your girlfriend ><";
+    Content.style = "opacity:1;margin-top:15vh;";
+    ket.style="margin-top:30px";
+  }
+  function memulai(){
+    suratin.style="transition:all .8s ease;transform:scale(.1);opacity:0";
+    ket.style="transition:all .8s ease;transform:scale(.1);opacity:0";
+    setTimeout(mulaikonten,1000)
+  }
+  function mulaikonten() {
+    otomatis();
+    suratin.style="display:none";
+    ket.style="display:none";
+    Content.style = "opacity:1;margin-top:4vh";
+    bodyblur.style="opacity:.5;animation:none";
+    wallpaper.style="transform: scale(1.5);opacity:1;";
+    fotoakhir.style="display:inline-flex;";
+    setTimeout(ftmuncul,200);
+    bq.style = "position:relative;opacity:1;visibility:visible;transform: scale(1);border-radius:var(--bingkai);margin-top:0";
+    fungsi=1;
+    setTimeout(tombol,500);
+  }
+  
+  function ftmuncul(){
+    if(ftganti==0){fotoakhir.style="display:inline-flex;opacity:1;transform:scale(1);"}
+    if(ftganti==1){fotoakhir.src = fotoakhir2.src;fotoakhir.style="display:inline-flex;opacity:1;transition:all .7s ease;transform:scale(1);";}
+    if(ftganti==2){fotoakhir.src = fotoakhir3.src;fotoakhir.style="display:inline-flex;opacity:1;transition:all .7s ease;transform:scale(1);";}
+  }
+  function fthilang(){fotoakhir.style="display:inline-flex;opacity:1;transition:all .7s ease;transform:scale(.1)";}
+  function jjfoto(){fotoakhir.style.animation="rto .8s infinite alternate";}
+  
+  function tombol(){
+    Tombol.style="opacity:1;transform: scale(1);";
+    Bn.style="margin:12px 0 12px 12px";
+    ftom=1;
+  }
+  function multifungsi(){
+    if(ftom==1){diterima();}
+    if(ftom==5){menuju();}
+  }
+  async function menuju(){
+    await swals.fire('OK!', 'Send me a message on WhatsApp, okay!', 'success');
+    window.location = "https://api.whatsapp.com/send?phone=&text=" + pesanwhatsapp;
+    Tombol.style="margin-top:15px;opacity:1;transform: scale(1);";
+  }
+  setTimeout(showDiv,100);
+
+  const swalst = Swal.mixin({
+    timer: 2777,
+    allowOutsideClick: false,
+    showConfirmButton: false,
+    timerProgressBar: true,
+    imageHeight: 100,
+  });
+  audio = new Audio('' + linkmp3.innerHTML);
+  const swals = Swal.mixin({
+    allowOutsideClick: false,
+    cancelButtonColor: '#FF0040',
+    imageWidth: 100,
+    imageHeight: 100,
+  });
+  const style = document.createElement('style');
+  var today = new Date();
+  var dd = String(today.getDate()).padStart(2, '0');
+  var mm = String(today.getMonth() + 1).padStart(2, '0');
+  var yyyy = today.getFullYear();
+  const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  today = dd + ' ' + monthNames[today.getMonth()] + ' ' + yyyy;
+  const body = document.querySelector("body");
+  function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "fas fa-heart";
+    heart.style.left = (Math.random() * 90)+"vw";
+    heart.style.animationDuration = (Math.random()*3)+2+"s";
+    body.appendChild(heart);
+  }
+  setInterval(function name(params) {
+    var heartArr = document.querySelectorAll(".fa-heart");
+    if (heartArr.length > 100) {heartArr[0].remove()}
+  },100);
+
+  function otomatis() {
+    befanimkata();
+    setTimeout(animkata,400);
+  } 
+  function befanimkata(){
+    kalimat.style="transform:scale(.3);";
+    kalimatb.style="transform:scale(.3);";
+    kalimatc.style="transform:scale(.3);";
+  } 
+  function animkata() {
+    kalimat.style="transform:scale(1);";
+    kalimatb.style="transform:scale(1);";
+    kalimatc.style="transform:scale(1);";
+  }
+  
+  function otomatis2() {
+    befanimkata2();
+    setTimeout(animkata2,400);
+  } 
+  function befanimkata2(){
+    kalimat.style.opacity="0";
+    kalimatb.style.opacity="0";
+    kalimatc.style.opacity="0";
+  } 
+  function animkata2() {
+    kalimat.innerHTML = kalimat2.innerHTML;
+    kalimatb.innerHTML = kalimatb2.innerHTML;
+    kalimatc.innerHTML="";
+    kalimat.style.opacity="1";
+    kalimatb.style.opacity="1";
+    setTimeout(otomatis2b,2500);
+  }
+  function otomatis2b(){
+    kalimatb.innerHTML = "";
+    kalimatc.innerHTML = kalimatc2.innerHTML;
+    kalimatc.style.opacity="1";
+    setTimeout(mulaict,400);
+  }
+  
+  function otomatis3() {
+    befanimkata3();
+    setTimeout(animkata3,400);
+  } 
+  function befanimkata3(){
+    kalimat.style.opacity="0";
+    kalimatb.style.opacity="0";
+    kalimatc.style.opacity="0";
+  } 
+  function animkata3() {
+    kalimat.innerHTML = kalimat3.innerHTML;
+    kalimatb.innerHTML = kalimatb3.innerHTML;
+    kalimat.style.opacity="1";
+    kalimatb.style.opacity="1";
+    kalimatc.innerHTML="";
+    setTimeout(teksnimasi, 1300);
+  }
+  
+  txtIsiPesan = kalimatc3.innerHTML;
+  function teksnimasi(){
+    kalimatc.style="opacity:1;/*text-align:left;font-size:16.5px*/";
+    new TypeIt("#kalimatc", {
+      strings: txtIsiPesan,
+      speed: 30,
+      startDelay: 250,
+      afterComplete: function () {
+        document.querySelector("#kalimatc .ti-cursor").style.display = "none";
+        intervalHati = setInterval(berjatuhan, 200);
+        fotoakhir.style="display:inline-flex;opacity:1;transition:all .7s ease;transform:scale(0)";
+        setTimeout(() => {
+          fotoakhir.src = fotoakhir4.src;
+          fotoakhir.style="display:inline-flex;opacity:1;transition:all .7s ease;transform:scale(1)";
+        }, 300);
+        //setTimeout(sbakhir,500);
+      }
+    }).go();
+  }
+  function sbakhir(){
+    Bn.style.display="none";
+    setTimeout(stakhir,500);
+  }
+  function stakhir(){
+    tmbl.innerHTML="💌 Send";
+    Tombol.style="margin-top:10px;opacity:1;transform: scale(1)";
+    ftom=5;
+    fungsi=0;
+  }
+  
+  async function diterima(){
+    fthilang();
+    ftganti=1;
+    setTimeout(ftmuncul,400);
+    wallpaper.style="transform: scale(1)";
+    bq.style = "position:relative;opacity:1;visibility:visible;transform: scale(1);transition:all .7s ease;border-radius:var(--bingkai);margin-top:0;";
+    Tombol.style="opacity:0;transition:all .5s ease;transform: scale(.1);";
+    otomatis2();
+  }
+
+  jumlahKlik = 0;
+  sudah=false;
+
+  let jumlahSkala = 1;
+  
+  function fungsibaru(btn) {
+    var tombol = document.getElementById("" + btn);
+    var tombolParent = tombol.parentNode;
+  
+    var tombolPosisiX = Math.floor(Math.random() * 50) + 1;
+    var tombolPosisiY = Math.floor(Math.random() * 75) + 1;
+    var rotasiAcak = Math.floor(Math.random() * 360);
+
+    tombol.style.position = "relative";
+    tombol.style.left = tombolPosisiX + "px";
+    tombol.style.top = tombolPosisiY + "px";
+    tombol.style.transform = "rotate(" + rotasiAcak + "deg)";
+    tombolParent.appendChild(tombol);
+    var tombolBy = document.getElementById("By");
+    tombolBy.style.transform = `scale(${1 + jumlahSkala * 0.2})`;
+
+    jumlahKlik++;
+    jumlahSkala++;
+    
+    if(jumlahKlik == 3){
+      jumlahKlik=0;
+    }
+  }
+
+  function mulaict(){
+    var timeleft = 5;
+    var downloadTimer = setInterval(function(){
+      timeleft--;
+      document.getElementById("ctimer").textContent = timeleft;
+      if(timeleft <= 0)
+        clearInterval(downloadTimer);
+      if(timeleft==0){
+        setInterval(createHeart,200);
+        fthilang();
+        ftganti=2;
+        setTimeout(ftmuncul,400);
+        otomatis3();
+      }
+    },1000);
+  }
+  
+/* START Falling Hearts */
+function berjatuhan() {
+  const heart = document.createElement("div");
+  heart.innerHTML = "<svg class='line spin' style='opacity:.4;' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><g transform='translate(2.550170, 3.550158)'><path d='M0.371729633,8.89614246 C-0.701270367,5.54614246 0.553729633,1.38114246 4.07072963,0.249142462 C5.92072963,-0.347857538 8.20372963,0.150142462 9.50072963,1.93914246 C10.7237296,0.0841424625 13.0727296,-0.343857538 14.9207296,0.249142462 C18.4367296,1.38114246 19.6987296,5.54614246 18.6267296,8.89614246 C16.9567296,14.2061425 11.1297296,16.9721425 9.50072963,16.9721425 C7.87272963,16.9721425 2.09772963,14.2681425 0.371729633,8.89614246 Z'></path><path d='M13.23843,4.013842 C14.44543,4.137842 15.20043,5.094842 15.15543,6.435842'></path></g></svg>";
+  heart.className = "heart-icon";
+  heart.style.left = (Math.random() * 95) + "vw";
+  heart.style.animationDuration = (Math.random() * 3) + 2 + "s";
+  document.body.appendChild(heart);
+}
+setInterval(function() {
+  var heartArr = document.querySelectorAll(".heart-icon");
+  if (heartArr.length > 100) {heartArr[0].remove();}
+}, 100);
+/* END Falling Hearts */
+</script>
+<!-- End Here -->
+</body>
+</html>
