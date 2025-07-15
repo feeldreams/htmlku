@@ -170,7 +170,7 @@
           </div>
         </div>
         <p id="teksLoveU" class="sembunyi">I <b style='color:pink'>Love</b> U 1% ❤️</p>
-        <p id="teksRandomEmoji" class="sembunyi">💙💚💛💜</p>
+        <p id="teksRandomEmoji" class="sembunyi">💗🤍🩷💓</p>
         
         <div id="contentAkhir" class="containerAkhir sembunyi">
            <h1 id="teksAkhir" class="sembunyi quicksand" style="font-size: 18px;font-weight:400"></h1>
@@ -209,6 +209,7 @@
         el: ".swiper-pagination",
         dynamicBullets: false,
       },
+      allowTouchMove: false,
       on: {
       slideChange: function () {
         //var currentIndex = swiper.activeIndex;
@@ -262,7 +263,7 @@ teksAkhir.innerHTML = "";
 /* Teks Animasi Akhir */
 function animateteksnim() {
 	//const teksnim = document.getElementById('teksnim');
-    // const loveEmojis = ['❤️', '💙', '💚', '💛', '💜'];
+    // const loveEmojis = ['🩷', '💙', '💚', '💛', '💜'];
     const loveEmojis = Array.from(document.querySelector('#teksRandomEmoji').textContent).map(emot => `${emot}`);
     let percent = 1;
     setTimeout(function() {
@@ -307,13 +308,11 @@ function animateteksnim() {
 }
 
 const hearts = [
-            '❤️',
-            '🧡',
-            '💛', 
-            '💚',
-            '💙',
-            '💜',
-            '💖' 
+            '🩷',
+            '🤍',
+            '💖',
+            '💗',
+            '💘'
         ];
 
         function getHeart(index) {
@@ -356,7 +355,7 @@ function animteksakhirLoop() {
             // Jika baris ke-100, tambahkan gaya bold dan font-size: 20px
             if (i === 100) {
                 instance
-                    .type(`<span class='line' style='margin-left: ${marginLeft}px; font-weight: bold; font-size: 23px;'>I <b style='color:pink'>Love</b> U ${i}% ` + getHeart(i - 1) + `</span>`)
+                    .type(`<span class='line' style='margin-top:12px;margin-left: ${marginLeft}px; font-weight: bold; font-size: 23px;'>I Love U ${i}% ` + getHeart(i - 1) + `</span>`)
                     .pause(2);
             } else {
                 instance
@@ -396,6 +395,8 @@ document.getElementById("loveIn").onclick = function() {
     wallpaper.style="transform:scale(1)";
     
     screen.value = '';
+    
+    setTimeout(()=>{swiper.slideNext();setTimeout(()=>{swiper.slideNext()}, 2000);}, 2000);
     
     //setTimeout(()=>{fungsiBerfungsi=true},500);
     }, 1000);
