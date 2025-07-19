@@ -1,63 +1,269 @@
-<!DOCTYPE html>
-<html>
-<meta charset='UTF-8'/><meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5' name='viewport'/><meta content='IE=edge' http-equiv='X-UA-Compatible'/>
+<html><meta charset='UTF-8'/><meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5' name='viewport'/><meta content='IE=edge' http-equiv='X-UA-Compatible'/>
   
-  <link rel="stylesheet" href="https://htmlku.com/bilangsesuatu/style.css"><script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap" rel="stylesheet">
   
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+  <script src="https://unpkg.com/typeit@8.6.6/dist/index.umd.js"></script>
+  <script src="https://kit.fontawesome.com/4f3ce16e3e.js" crossorigin="anonymous"></script>
+
 <head>
-<title>S.id/morningkamu - 💐 Script HTML Pesan Untukmu</title>
+<title>HTML Longtext Good Morning 🌺🌤️</title>
+<!-- 
+  Made with love by Rayys!
+     Blog: https://PalingIT.com
+     Instagram: @rayyarrr
+     TikTok: @rayy4r
+     Email: rayyar0703@gmail.com
+  Thanks to all <3
+-->
 </head>
+<!-- Edit Wallpaper 
+di background-image URL --><style>
+:root {
+--warna-bg: rgba(0, 0, 0, .5); 
+--warna-teks: #fff;
+--warna-bingkai: #fff;
+--bingkai: 8px;
+--bingkai-kiri: 2px solid var(--warna-bingkai);
+--bingkai-kanan: 2px solid var(--warna-bingkai);
+--gaya-font: 'Work Sans', sans-serif;
+}
+@keyframes fanim {0% {background-position: 0% 0%;}25% {background-position: 100% 100%;} 50% {background-position: 0% 100%;} 75% {background-position: 50% 50%;} 100% {background-position: 0% 0%;}}
+body{background-color:#000;font-family:var(--gaya-font);padding: 20px 25px;-webkit-user-select: none; -ms-user-select: none; user-select: none;} a{text-decoration:none;}
+#bodyblur{opacity:.2;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.3);transition:all 1s ease;} 
+#wallpaper{width:100%;height:100%;transform: scale(2);transition:all 1.3s ease;}
+#beneranblur{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.3);-webkit-backdrop-filter:blur(3px); backdrop-filter:blur(3px);transition:all 3s ease;}
+
+@keyframes jj{0%  {transform: scale(1.1);} 50% {transform: scale(1.2);} 100% {transform: scale(1.1);}}
+@keyframes rts{from {transform:scale(.1);} to {transform:scale(1);}}
+@keyframes rto{from {transform:scale(1);} to {transform:scale(1.1);}}
+@keyframes aniopa{0% {transform: scale(1);} 50% {transform: scale(.75);} 100% {transform: scale(1);}}
+@keyframes rtf{from {transform: rotate(0deg);} to {transform: rotate(360deg);}} @keyframes rt{from {transform: scale(.9);/* transform: rotate(-5deg); */} to {transform: scale(1);/* transform: rotate(5deg); */}}
+@keyframes kont{0%  {left:-1px; top:-3px;} 50% {left:1px; top:3px;} 100% {left:-1px; top:-3px;}}
+
+blockquote{position:absolute;opacity:0;visibility:hidden;transform: scale(0);transition:all 1s ease;margin-top:120px;margin-left:0;margin-right:0;color:var(--warna-teks);background:rgba(255,255,255,0.1);backdrop-filter:blur(10px);border-radius:20px;box-shadow:0 8px 32px rgba(0,0,0,0.3);border:2px solid rgba(255,255,255,1);text-shadow: 0px 2px 2px rgba(0, 0, 0, .5);}
+blockquote{width:400px;min-height:80px;text-align:center;line-height:1.3em;padding:0 20px 0 20px;}
+blockquote p{font-size:16px;font-weight:400;line-height:1.4em;transition:all .5s ease;}
+
+#kalimat{margin-left:15px;margin-right:15px;font-size:18px;font-weight:700;}
+#kalimatb2, #kalimatc, #kado1, #kado2, #kado3{font-size:16px;}
+#kalimatd{transform:scale(.1);}
+#kado1{line-height:1.4em;text-align:left;position:absolute;opacity:0}
+
+#Tombol{position:relative;opacity:0;margin:0;display:flex;align-items:left;list-style:none;transform: scale(0);transition:all 1s ease;}
+#Tombol a{cursor:none;display:inline-flex;align-items:center; margin:0;margin:12px 0 12px 0;transition:all .2s ease;padding:10px;outline:0;line-height:15px;color:var(--warna-teks);font-size:14px;font-weight:700;white-space:nowrap;overflow:hidden;z-index:1;background:rgba(255,255,255,0.1);backdrop-filter:blur(10px);border-radius:20px;box-shadow:0 8px 32px rgba(0,0,0,0.3);border:2px solid rgba(255,255,255,1);text-shadow: 0px 2px 2px rgba(0, 0, 0, .5);} 
+
+#Content{animation-name:none;animation-duration: 3s;animation-iteration-count: infinite;position:relative;opacity:0;margin-top:50px;width:100%;height:180px;transition:all .7s ease;}
+#Content > *{display:flex;align-items:center;text-align:center;justify-content:center;margin-top:1px;}
+.kumpulanstiker > img{display:none;background:rgba(255,255,255,0.1);backdrop-filter:blur(10px);border-radius:50%;box-shadow:0 8px 32px rgba(0,0,0,0.3);border:2.5px solid rgba(255,255,255,1);padding:10px;width:90px;height:90px;margin:20px 0;}
+#fotoakhir{opacity:.1;transition:all 1.2s ease;transform: scale(.1);}
+
+#fotolove img{transition:all .5s ease;width:75px;height:75px;padding:0;background:none}
+#suratin img{display:inline-flex;box-shadow: rgba(255,255,255, 0.3) 0px 7px 29px 0px;background:rgba(255,255,255, 1);border-radius:10%;padding:10px;width:130px;height:100px;transition:all .3s ease;} 
+#ket{margin-top:15px !important;text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);font-size:17px;color:white}
+#suratin img:hover{transform:scale(.9);}
+
+#kolombaru{position:absolute;opacity:0;display:flex;transform:scale(.1);transition:all 1s ease;align-items:center;text-align:center;justify-content:center;}
+#kolombaru > li{margin: 10px;padding: 10px;list-style-type: none;}
+#kolombaru li img{display:flex;width:40px;height:40px}
+#kolombaru li img:hover{transform: scale(1.15);transition:all .3s ease;}
+
+.swal2-modal > *{font-size:15px;color:white}
+.swal2-title{line-height:1.3em;font-size:18px;text-align:center;padding:15px 30px 0 30px;}
+.swal2-timer-progress-bar-container > *{opacity:.7;background:#00B6FF;margin:0 2px}
+.swal2-modal{background: rgba(0,0,0, .4);backdrop-filter: blur(3px);-webkit-backdrop-filter: blur(3px);box-shadow: 0 4px 30px rgba(255,255,255, 0.3);border: 2.5px solid #fff;border-radius:30px;max-width:310px;top:-60px;}
+.swal2-image{background: rgba(255, 255, 255, 0.5);box-shadow: 0 4px 30px rgba(255,255,255, 0.3);backdrop-filter: blur(5px);-webkit-backdrop-filter: blur(5px);border: 1px solid rgba(255, 255, 255, 0.3);border-radius: 50%;padding:10px;}
+.swal2-styled.swal2-confirm, .swal2-styled.swal2-cancel{font-family:var(--gaya-font);font-weight:700;position: relative;background-color: #EB39C2;color: #fff;border: 2.5px solid #fff;border-radius:30px;padding:8px 12px;z-index: 1;transition: all 0.2s;}
+.swal2-input,.swal2-textarea,.swal2-select {font-family:var(--gaya-font);border-radius: 30px !important;border: 2.5px solid #fff;width:80%}
+.swal2-input:focus,.swal2-textarea:focus,.swal2-select:focus {outline: none;box-shadow: none;border: 2.5px solid #fff;}
+	
+.fa-heart {opacity:.3;color:white;font-size: 27px;position: absolute;animation:  heartMove linear 1;top: -10vh;z-index: 0;}
+@keyframes heartMove {0%{transform: translateY(-10vh) ;} 100%{transform: translateY(100vh) ;}}
+.sembunyi, #kado2, #kado3{display:none !important}
+</style>
 <body>
 	
    <!-- Ganti Audio di sini -->
-   <audio src="https://feeldreams.github.io/audio/melody2.mp3" id="linkmp3" class="sembunyi"></audio>
+   <audio src="shttps://feeldreams.github.io/anotherme.mp3" id="linkmp3" class="sembunyi"></audio>
    
    <div id="bodyblur">
-     <!-- Wallpaper --><img src="https://feeldreams.github.io/pics/awan3.jpg" id="wallpaper"/><div id="beneranblur"></div>
+     <!-- Wallpaper --><img src="https://htmlku.com/0/wp.jpg" id="wallpaper"/>
    </div>
    
    <div id='Content'>
 
-     <div id="loveIn">
-       <!-- Tombol LOVE -->
-       <label class='lovein'><svg class='line' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><g transform='translate(2.550170, 3.550158)'><path d='M0.371729633,8.89614246 C-0.701270367,5.54614246 0.553729633,1.38114246 4.07072963,0.249142462 C5.92072963,-0.347857538 8.20372963,0.150142462 9.50072963,1.93914246 C10.7237296,0.0841424625 13.0727296,-0.343857538 14.9207296,0.249142462 C18.4367296,1.38114246 19.6987296,5.54614246 18.6267296,8.89614246 C16.9567296,14.2061425 11.1297296,16.9721425 9.50072963,16.9721425 C7.87272963,16.9721425 2.09772963,14.2681425 0.371729633,8.89614246 Z'></path><path d='M13.23843,4.013842 C14.44543,4.137842 15.20043,5.094842 15.15543,6.435842'></path></g></svg></label>
+     <div id="suratin" onClick="memulai();">
+       <!-- Tombol Surat --><img src="https://rayyscoding.github.io/envelope.png"/>
      </div>
-     <p id="ket">Sentuh LOVEnya!</p>
-     <p id="kot"><a href="https://bit.ly/htmlfeeldream" target="_blank">Lihat Script Lainnya</a></p>
+     <p id="ket">Klik Suratnya!</p>
 
      <div class="kumpulanstiker">
          <!-- Stiker untuk Konten -->
-         <img src="https://feeldreams.github.io/pandahiya.gif" id="fotostiker"/>
-         <img src="https://feeldreams.github.io/cilukba.gif" id="fotostiker2"/>
-         <img src="https://feeldreams.github.io/emawh.gif" id="fotostiker3"/>
+         <img src="https://feeldreams.github.io/pusn.gif" id="fotoakhir"/>
+         <img src="https://feeldreams.github.io/bunga.gif" id="fotoakhir2"/>
+         <img src="https://feeldreams.github.io/smprt.gif" id="fotoakhir3"/>
+         <img src="https://htmlku.com/0/panda/ciumpipi.gif" id="fotoakhir4"/>
+         <img src="https://htmlku.com/0/panda/muah.gif" id="fotoakhir5"/>
      </div>
-     <p id="halo" class="halo"></p>
-     <p id="akhiranteks" class="halo sty2"></p>
      
-     <div><blockquote id='bq' data-text='&#9829;'>
+     <div><blockquote id='bq'>
 
-       <!-- Konten Isi -->
-       <p id="kalimat">haloo <b class="merahmuda">sayaangg</b>! 💐<br><br>aku ada sedikit<br>pesan buat kamu nii 🫶</p>
-       <p id="kalimat1ngetik"><b>Good morning</b>&nbsp;sayangku, cintaku, pacarkuu sudah bangun yaa, gimana bobonya? nyenyak kan? 😋 Jangan lupa buat mengawali hari dengan senyuman, cuci mukanya abistu langsung mandi okeeii ✨<br><br><b>Semangat</b>&nbsp;yaa ngejalanin harinya dan jangan lupa buat sarapan dulu biar kuat!! 💐<br><br><b>Sekian</b>&nbsp;deh mwhehe~<br><br><b class="merah putih">iloveuu more sayangku 😍🫣💗</b></p>
+       <!-- Konten Pembukaan -->
+       <p id="kalimat">Alooo, </p>
+       <p id="kalimatb">Aku cuma mau bilang nih,</p>
+       <p id="kalimatb2"><b>Good Morning! </b>🌤️ Jangan lupa<br>mandi, sarapan, dan semangat<br>terus buat jalani harinya <b style='font-size:18px'>𖹭.ᐟ</b></p>
+       <p id="kalimatc">Semoga hari-hari kamuu<br>selalu bahagia yaa.. 😍💗</p>
+
+       <!-- Konten Pilihan Kado -->
+       <p id="kalimatd">Oh iya, coba pilih salah satu<br><b>kado</b> di bawah ini yaa! 😆💓</p>
+       <div id="kolombaru">
+         <li><img src="https://feeldreams.github.io/kadoin.png" onClick="rnkado = 1;otomatis();"/></li>
+         <li><img src="https://feeldreams.github.io/kadoin.png" onClick="rnkado = 2;otomatis();"/></li>
+         <li><img src="https://feeldreams.github.io/kadoin.png" onClick="rnkado = 3;otomatis();"/></li>
+       </div>
        
-       <!-- Tombol Lanjut -->
-       <p id="opsL">Klik untuk Lanjut</p>
+       <!-- Konten Isi Kado -->
+       <p id="kado1">Selamat pagi! Maafin aku ya kalau sebelumnya udah bikin kamu marah, Aku Sayang Kamu 😍❤️</p>
+       <p id="kado2">Di jalanan ada lampu 💡<br>Di kerajaan ada ratu 👸<br>Di kuburan ada hantu 👻<br>Tapi di hatiku...<br><b>Cuma ada kamuuu~ 😻🫵</b><br><br><b>ᯓᡣ𐭩</b><br>ikan hiu makan duku,<br><span style="color:pink;font-weight:700">I love uu</span> buat kamuu<br>yang selalu ada di hatikuu 🫶<br>😍🥳💐🌹🌺🩷</p>
+       <p id="kado3">Selamat pagi! Jangan lupa bahagia terus ya.. Aku di sini sangat menyayangimu 😍❤️</p>
        
      </blockquote></div>
+
+     <!-- Tombol Multifungsi -->
+     <div id="Tombol">
+       <a id="By" onClick="multifungsi()">
+         <b id="tmbl">Lanjut</b>
+       </a>
+     </div>
      
-     <!-- Konten Pesan Akhir -->
-     <p id="kalbawah"></p> 
-     <p id="kalbawah2" class="sembunyi"></p> 
-     <p id="kalbawah3" class="sembunyi"></p>
-
-     <!-- Tombol Kirim Pesan -->
-     <div id="Tombol"><a id="By">&#128140; Balas</a></div>
-
      <!-- Pesan yang dikirim ke WhatsApp -->
-     <span id="pesanWA" class="sembunyi"></span>
+     <span id="pesanWA" class="sembunyi">Awww, Good Morning too!</span>
      
    </div>
 
-<script src="https://htmlku.com/bilangsesuatu/script.js"></script>
+<!-- Jangan Edit Bagian Ini --><script>
+  ftom=0;ftganti=0;flag=1;flagg=1;fungsi=0;fungsiAwal=0;pesanwhatsapp = pesanWA.innerHTML;Content.style = "opacity:1;margin-top:16vh;";
+  function memulai(){if(fungsiAwal==0){audio.play();fungsiAwal=1;suratin.style="transition:all .8s ease;transform:scale(10);opacity:0";wallpaper.style="transform: scale(1.3);";ket.style="display:none";setTimeout(mulainama,700)}}
+  
+  async function mulainama() {
+    suratin.style="display:none";ket.style="display:none";
+    var { value: nama } = await swals.fire({
+           title: 'Masukin nama kamu 🫣🩷', input: 'text', confirmButtonText: 'Mulai',
+       });
+       if(nama && nama.length < 11){
+           window.nama = nama;
+           kalimat.innerHTML+= nama + " 🥳";
+           kal1 = kalimat.innerHTML;kalimat.innerHTML="";
+           kal2 = kalimatb.innerHTML;kalimatb.innerHTML="";
+           kal22 = kalimatb2.innerHTML;kalimatb2.innerHTML="";
+           kal3 = kalimatc.innerHTML;kalimatc.innerHTML="";
+           kalimatd.style="position:absolute;opacity:0";
+
+           Content.style = "opacity:1;margin-top:4vh";
+           wallpaper.style="transform: scale(1);";
+           fotoakhir.style="display:inline-flex;";setTimeout(ftmuncul,200);
+           bq.style = "position:relative;opacity:1;visibility:visible;transform: scale(1);margin-top:0";
+           setTimeout(mulaiketik1,300);fungsi=1;
+       } else {
+           await swals.fire('Ups!', 'Nama tidak boleh kosong atau lebih dari 10 karakter, ya!');mulainama();
+    }
+  }
+  
+  function ftmuncul(){
+    if(ftganti==0){fotoakhir.style="display:inline-flex;opacity:1;transform:scale(1)";}
+    if(ftganti==1){fotoakhir.src = fotoakhir2.src;fotoakhir.style="display:inline-flex;opacity:1;transition:all .7s ease;transform:scale(1);";}
+    if(ftganti==2){fotoakhir.src = fotoakhir3.src;fotoakhir.style="display:inline-flex;opacity:1;transition:all .7s ease;transform:scale(1);";}
+    if(ftganti==3){fotoakhir.src = fotoakhir4.src;fotoakhir.style="display:inline-flex;opacity:1;transition:all .7s ease;transform:scale(1);";}
+    if(ftganti==4){fotoakhir.src = fotoakhir5.src;fotoakhir.style="display:inline-flex;opacity:1;transition:all .7s ease;transform:scale(1);";}
+  }
+  function fthilang(){fotoakhir.style="display:inline-flex;opacity:1;transition:all .7s ease;transform:scale(.1)";}
+  function jjfoto(){fotoakhir.style.animation="rto .8s infinite alternate";}
+  
+  function tombol(){ftom=1;Tombol.style="opacity:1;transform: scale(1);";if(fungsi==2){tmbl.innerHTML="💌 Kirim";ftom=2;}}
+  function multifungsi(){if(ftom==1){lanjut();} if(ftom==2){menuju();}}
+  async function menuju(){window.location = "https://api.whatsapp.com/send?phone=&text=" + pesanwhatsapp;}
+
+  const body = document.querySelector("body");const swalst = Swal.mixin({timer: 2777, allowOutsideClick: false, showConfirmButton: false, timerProgressBar: true, imageHeight: 90,}); audio = new Audio('' + linkmp3.innerHTML);const swals = Swal.mixin({allowOutsideClick: false, cancelButtonColor: '#FF0040', imageWidth: 100, imageHeight: 100,}); const style = document.createElement('style'); var today = new Date();var dd = String(today.getDate()).padStart(2, '0');var mm = String(today.getMonth() + 1).padStart(2, '0');var yyyy = today.getFullYear();const monthNames = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];today = dd + ' ' + monthNames[today.getMonth()] + ' ' + yyyy;
+  audio = new Audio('' + linkmp3.src);
+  
+  pilihKado = "";
+  function otomatis() {
+     fthilang();ftganti=3;setTimeout(ftmuncul,300);
+     fungsi=2;//setTimeout(tombol,2200);
+     wallpaper.style="transform: scale(1);";
+     kalimatd.style="display:none";kolombaru.style="display:none";
+     if(rnkado==1){pilihKado = kado1.innerHTML;}
+     if(rnkado==2){pilihKado = kado2.innerHTML;}
+     if(rnkado==3){pilihKado = kado3.innerHTML;}
+     kado1.innerHTML="";kado1.style="position:relative;opacity:0;transform:scale(0);transition:none";setTimeout(animkata,20);
+  } 
+  function animkata() {kado1.style="position:relative;opacity:1;transform:scale(1);transition:none";mulaiketikakhir();}
+  function mulaiketikakhir(){
+  new TypeIt("#kado1", {
+  strings: ["" + pilihKado], startDelay: 1, speed: 30, waitUntilVisible: true,
+  afterComplete: function(){
+    document.querySelector("#kado1 .ti-cursor").style.display = "none";
+    setInterval(createHeart,200);
+    fthilang();ftganti=4;setTimeout(ftmuncul,300);
+  },}).go();
+  }
+  
+  async function lanjut(){
+      fthilang();ftganti=2;fungsi=2;
+      setTimeout(ftmuncul,300);
+      wallpaper.style="transform: scale(1.3);";
+      bq.style = "position:relative;opacity:1;visibility:visible;transform: scale(1);transition:all .7s ease;margin-top:0;";
+      Tombol.style="opacity:0;transition:all .5s ease;transform: scale(0);";
+      kalimat.style="display:none";
+      kalimatb.style="display:none";
+      kalimatb2.style="display:none";
+      kalimatc.style="display:none";
+      kalimatd.style="position:relative;opacity:1;transform:scale(1);";
+      kolombaru.style="position:relative;opacity:1;transform:scale(1);";
+   }
+   
+  function mulaiketik1(){
+  new TypeIt("#kalimat", {
+  strings: ["" + kal1], startDelay: 1, speed: 30, waitUntilVisible: true,
+  afterComplete: function(){
+    document.querySelector("#kalimat .ti-cursor").style.display = "none";
+    setTimeout(mulaiketik2,500);
+  },}).go();
+  }
+  function mulaiketik2(){
+  new TypeIt("#kalimatb", {
+  strings: ["" + kal2], startDelay: 1, speed: 30, waitUntilVisible: true,
+  afterComplete: function(){
+    document.querySelector("#kalimatb .ti-cursor").style.display = "none";
+    setTimeout(mulaiketik22,700);
+  },}).go();
+  }
+  function mulaiketik22(){
+  wallpaper.style="transform: scale(1.3);";
+  fthilang();ftganti=1;setTimeout(ftmuncul,300);
+  kalimatb.style="display:none";
+  new TypeIt("#kalimatb2", {
+  strings: ["" + kal22], startDelay: 1, speed: 30, waitUntilVisible: true,
+  afterComplete: function(){
+    document.querySelector("#kalimatb2 .ti-cursor").style.display = "none";
+    setTimeout(mulaiketik3,700);
+  },}).go();
+  }
+  function mulaiketik3(){
+  wallpaper.style="transform: scale(1);";
+  kalimatb.style="display:none";
+  new TypeIt("#kalimatc", {
+  strings: ["" + kal3], startDelay: 1, speed: 30, waitUntilVisible: true,
+  afterComplete: function(){
+    document.querySelector("#kalimatc .ti-cursor").style.display = "none";
+    setTimeout(tombol,200);
+  },}).go();
+  }
+  
+  function createHeart() {const heart = document.createElement("div"); heart.className = "fas fa-heart"; heart.style.left = (Math.random() * 90)+"vw"; heart.style.animationDuration = (Math.random()*3)+2+"s"; body.appendChild(heart);} setInterval(function name(params) {var heartArr = document.querySelectorAll(".fa-heart"); if (heartArr.length > 100) {heartArr[0].remove()}},100);
+</script>
+<!-- Sampai Sini -->
 </body>
 </html>
