@@ -12,7 +12,7 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script><script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script><script src="https://kit.fontawesome.com/4f3ce16e3e.js" crossorigin="anonymous"></script><link rel="stylesheet" href="">
 
 <head>
-    <title>htmlku.com/mie — Link HTML Bucin 🥳🌹</title>
+    <title>S.id/mieapa — Link HTML Bucin 🥳🌹</title>
     <meta name="description" content="Feeldream Coding">
 
 <!-- 
@@ -168,7 +168,7 @@
 
         <div class="kumpulanstiker">
             <!-- Stiker untuk Konten -->
-            <img src="https://feeldreams.github.io/pandapanah.gif" id="fotostiker" />
+            <img src="https://feeldreams.github.io/hearthappy.gif" id="fotostiker" />
             <img src="https://htmlku.com/0/panda/cubit.gif" id="fotostiker1" />
             <img src="https://htmlku.com/0/panda/mikir.gif" id="fotostiker2" />
             <img src="https://htmlku.com/0/panda/muah.gif" id="fotostiker3" />
@@ -269,6 +269,7 @@
     if(fungsiAwal==0){
       audio.play();fungsiAwal=1;loveIn.style="transition:all .8s ease;transform:scale(0);opacity:0";
       wallpaper.style="transform: scale(1.5);";ket.style="display:none";setTimeout(initengahan,300);
+      bodyblur.style="opacity:.3";
       setTimeout(inipesan,500)}
     } else {
       sudahKlik = true; // Tandai bahwa tombol sudah diklik
@@ -277,7 +278,7 @@
   }
   
   async function inipesan(){
-    var { value: nama } = await swals.fire({
+    /*var { value: nama } = await swals.fire({
            title: 'Masukin Nama Kamu 😋💐', input: 'text', confirmButtonText: 'Mulai',
        });
        if(nama && nama.length < 11){
@@ -287,23 +288,24 @@
          } else {
            await swals.fire('Ups!', 'Nama tidak boleh kosong atau lebih dari 10 karakter, ya!');inipesan();
     }
-    /*
-    nama = "Kamu";
+    */
+    
+    nama = "Kamuu!";
     window.nama = nama;
     welcome();
     mulainama();  
-    */
+    
   }
 
   function initengahan(){
     loveIn.style="display:none";ket.style="display:none";
     Content.style = "opacity:1;margin-top:70px";
-    bodyblur.style="opacity:.7";
+    //bodyblur.style="opacity:.3";
     wallpaper.style="transform: scale(1.5);";
   }
   
   async function mulainama() {
-    bodyblur.style="opacity:.7";
+    //bodyblur.style="opacity:.7";
     wallpaper.style="transform: scale(1);";
     fotostiker.style="display:inline-flex;";setTimeout(ftmuncul,200);
     setTimeout(kethalo,500);
@@ -314,8 +316,8 @@
   function jjfoto(){fotostiker.style.animation="rto .8s infinite alternate";}
   
   function bqmuncul(){bq.style = "position:relative;opacity:1;visibility:visible;transform: scale(1);margin-top:0";aktipesan1();fungsi=1;}
-  function bqhilang(){wallpaper.style="transform: scale(2);";bodyblur.style="opacity:.3";bq.style = "position:relative;transition:all .7s ease;";}
-  function kethalo(){new TypeIt("#halo", {strings: ["" + teksWelcome], startDelay: 50, speed: 30, waitUntilVisible: true, afterComplete: function(){halo.innerHTML = teksWelcome;setTimeout(bqmuncul,200);},}).go();}
+  function bqhilang(){wallpaper.style="transform: scale(2);";bq.style = "position:relative;transition:all .7s ease;";}
+  function kethalo(){new TypeIt("#halo", {strings: ["" + teksWelcome], startDelay: 50, speed: 27, waitUntilVisible: true, afterComplete: function(){halo.innerHTML = teksWelcome;setTimeout(bqmuncul,200);},}).go();}
 
   function tombol(){wallpaper.style="transform: scale(1);";Tombol.style="opacity:1;transform: scale(1);";fungsi=1}
   document.getElementById("By").onclick = function() {if(fungsi==1){pertanyaan();} if(fungsi==2){menujuWA();}}
@@ -354,7 +356,7 @@
   kolombaru.style="";kalimat.innerHTML="";
   //wallpaper.style="transform: scale(1.5);";
   new TypeIt("#kalimat", {
-  strings: ["" + vketik3], startDelay: 1, speed: 30, cursor: true, waitUntilVisible: true, lifelike: true,
+  strings: ["" + vketik3], startDelay: 1, speed: 27, cursor: true, waitUntilVisible: true, lifelike: true,
   afterComplete: function(){
     kalimat.innerHTML=vketik3;
     setTimeout(aktipesan4,800);
@@ -368,7 +370,7 @@
   wallpaper.style="transform: scale(1);";
   fthilang();ftganti=2;setTimeout(ftmuncul,300);
   new TypeIt("#pesan4", {
-  strings: ["" + vketik4], startDelay: 1, speed: 30, cursor: true, waitUntilVisible: true, lifelike: true,
+  strings: ["" + vketik4], startDelay: 1, speed: 27, cursor: true, waitUntilVisible: true, lifelike: true,
   afterComplete: function(){
     pesan4.innerHTML=vketik4;
     //setTimeout(aktipesan5,1200);
@@ -403,10 +405,10 @@
   strings: [
       "<i>Jawabannya..</i><br>Yaitu, <i>Miee</i>.. 🫣🤏", 
       "Miekirin.. <b style='font-size:19px'>Kamuuuu! 🥳🫵</b>",
-      "ᯓ<br><i>Mmmm..</i><br>I.. Iya dehh <b>aku alayyy</b> 🙂‍↕️", 
-      "──<br><b>ALAYfyuu ᯓᡣ𐭩</b> maksudnya 🤪<br>🌹😋🥳😍😆🫳"
+      "ᯓ<br><i>Satu lagi nih..</i><br>Jika di laut ada <b>hiuuu</b>,", 
+      "Maka di hatiku ada..<br>──<br><b style='font-size:19px'>Youuuu! ᯓᡣ𐭩 😋🫶</b>"
   ], 
-  startDelay: 1, speed: 30, cursor: true,
+  startDelay: 1, speed: 27, cursor: true,
   breakLines: true,
   waitUntilVisible: true,
   afterStep: function(instance) {
