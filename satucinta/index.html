@@ -84,7 +84,7 @@
       .stiker{margin-top:-70px;margin-bottom:50px;position:absolute;display:flex;justify-content:center;align-items:center;margin-left:auto;margin-right:auto;transform:scale(0);transition:all .75s ease;z-index:9999;}
       .stiker img{display:none;width:80px;height:80px;box-shadow:0 4px 30px rgba(255,255,255,0.3);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);background:rgba(255,255,255,0.5);border:3px solid white;border-radius:50%;padding:10px;}
       #main-stiker{display:flex}
-      .container{position:relative;display:block;width:100%;min-height:80px;max-height:180px;overflow:auto;opacity:0;transform:scale(1);margin:auto;z-index:9999;}
+      .container{position:relative;display:block;width:100%;min-height:80px;max-height:220px;overflow:auto;opacity:0;transform:scale(1);margin:auto;z-index:9999;}
 	  .container p{font-family:"Itim",cursive;margin-left:30px;margin-top:0;margin-bottom:12px;font-size:18px;line-height:1.2em;color:#fff;text-align:left;}
 	  .titleC{font-size:17px!important;margin-bottom:14px;font-family:"Itim",cursive;}
 	  .message{font-family:"Itim",cursive;}
@@ -95,7 +95,7 @@
 	  .hidden,#linkmp3{display:none;}
 	  .semihidden{transform:scale(0);opacity:0;}
 b.merah{color:red}
-  b.putih{padding:5px;background:white;border-radius:12px}
+  b.putih{padding:5px;background:rgba(255,255,255,.5);border-radius:18px}
 	#scontainer{width:80%;margin:20px auto;min-height:650px;margin-top:150px;color:#000}@media screen and (max-width:400px){#scontainer{width:100%;margin:50% auto;min-height:800px}}.wrapper{position:fixed}.box div{position:fixed;width:60px;height:60px;background-color:transparent;border:6px solid rgba(255,255,255,.6);border-radius:50%;z-index:-10}.box div:nth-child(1){top:12%;left:42%;animation:animate 10s linear infinite}.box div:nth-child(2){top:70%;left:50%;animation:animate 7s linear infinite}.box div:nth-child(3){top:17%;left:6%;animation:animate 9s linear infinite}.box div:nth-child(4){top:20%;left:60%;animation:animate 10s linear infinite}.box div:nth-child(5){top:67%;left:10%;animation:animate 6s linear infinite}.box div:nth-child(6){top:80%;left:70%;animation:animate 12s linear infinite}.box div:nth-child(7){top:60%;left:80%;animation:animate 15s linear infinite}.box div:nth-child(8){top:32%;left:25%;animation:animate 16s linear infinite}.box div:nth-child(9){top:90%;left:25%;animation:animate 9s linear infinite}.box div:nth-child(10){top:20%;left:80%;animation:animate 5s linear infinite}@keyframes animate{0%{transform:scale(0) translateY(0) rotate(0);opacity:.8}100%{transform:scale(1.3) translateY(-90px) rotate(360deg);opacity:0}}
 	
 	/* Tambahkan animasi klik */
@@ -154,11 +154,11 @@ b.merah{color:red}
   </div>
   
 	<div id="bodyblur">
-	   <img src="https://feeldreams.github.io/nightin.jpeg" id="wallpaper"/>
+	   <img src="https://htmlku.com/0/new3.jpg" id="wallpaper"/>
 	   <div id="thisblur"></div>
 	</div>
 	
-	<audio src="https://htmlku.com/satucinta/satucinta.mp3" id="linkmp3"></audio>
+	<audio src="satucinta.m4a" id="linkmp3"></audio>
 	
     <div id="envwrap" class="envlope-wrapper">
         <div id="envelope" class="close">
@@ -191,7 +191,8 @@ b.merah{color:red}
     
   <div class="stiker">
     <img id="main-stiker" src="https://htmlku.com/0/panda/cilukba.gif" />
-    <img id="stikerAlt1" src="https://htmlku.com/0/panda/gemoy.gif" />
+    <img id="stikerAlt1" src="https://htmlku.com/0/panda/ciumpipi.gif" />
+    <img id="stikerAlt2" src="https://htmlku.com/0/panda/muah.gif" />
   </div>
   
   <div class="container" id="container">
@@ -274,7 +275,7 @@ b.merah{color:red}
         //btnReset.addEventListener('click', close);
 
         function open() {
-        	audio.play();
+        	
             envelope.classList.remove("close");
             envelope.classList.add("open");
             reset.style="transform:scale(0);opacity:0;transition:all .6s ease";
@@ -289,19 +290,21 @@ b.merah{color:red}
 			        //wallpaper.style="transform: scale(1)";
 			        envwrap.classList.add('hidden');
 			        //katanimasi();
-			        setTimeout(()=>{txtnimasi("Satu tambah satu dikurang satu,", "#message_1", 55)}, 3100);
-			        setTimeout(()=>{txtnimasi("Itulah cintakuu~ 🩷", "#message_2", 65)}, 6700);
-			        setTimeout(()=>{txtnimasi("Dua dikurang satu,", "#message_3", 60)}, 10200);
-			        setTimeout(()=>{txtnimasi("Cintaku untukmu~ 🩷", "#message_4", 60)}, 13800);
-			        setTimeout(()=>{txtnimasi("Bila ada cinta datang padaku,", "#message_5", 50)}, 17700);
-			        setTimeout(()=>{txtnimasi("Janganlah cemburu 🫶", "#message_6", 50)}, 21100);
-			        setTimeout(()=>{txtnimasi("Karna ku takkan selingkuh,", "#message_7", 50)}, 25000);
-			        setTimeout(()=>{txtnimasi("Ku kan setia padamu 💗", "#message_8", 50)}, 28500);
+			        audio.play();
+			
+			        setTimeout(()=>{txtnimasi("Satu tambah satu dikurang satu,", "#message_1", 65)}, 3100);
+			        setTimeout(()=>{txtnimasi("<b style='font-size:19px'>Itulah cintakuu~</b> 😋🩷", "#message_2", 70)}, 6700);
+			        setTimeout(()=>{txtnimasi("Dua dikurang satu,", "#message_3", 70)}, 10200);
+			        setTimeout(()=>{txtnimasi("<b style='font-size:19px'>Cintaku untukmu~</b> 🌺💘", "#message_4", 70)}, 13800);
+			        setTimeout(()=>{txtnimasi("Bila ada cinta datang padaku,", "#message_5", 65)}, 17700);
+			        setTimeout(()=>{txtnimasi("Janganlah cemburu 🫶", "#message_6", 60)}, 21100);
+			        setTimeout(()=>{txtnimasi("Karna,<br>Ku takkan selingkuh,", "#message_7", 60)}, 25000);
+			        setTimeout(()=>{txtnimasi("<b style='font-size:19px'>Ku kan setia padamu</b> 🫵💗", "#message_8", 60)}, 28500);
 
-              setTimeout(()=>{txtnimasi("Satu cinta hanya untuk kamu saja 😍", "#message_9", 50, true)}, 33500);
-              setTimeout(()=>{txtnimasi("Satu cinta takkan terbagi dua~", "#message_10", 50, true)}, 37000);
-              setTimeout(()=>{txtnimasi("Karna cinta, ku bukan cinta biasa 😍", "#message_11", 50, true)}, 40800);
-			        setTimeout(()=>{txtnimasi("Karna cinta, aku bisa gila~ 🫶<br><br><b class='merah putih'>😍🥰🫣💗</b>", "#message_12", 55, false, true)}, 44400);
+                   setTimeout(()=>{txtnimasi("<br><i>Satu cinta,</i><br>Hanya untuk kamu saja 🫰", "#message_9", 60, true)}, 33500);
+                   setTimeout(()=>{txtnimasi("<i>Satu cinta,</i><br>Takkan terbagi dua~ 🫠", "#message_10", 60)}, 37000);
+                    setTimeout(()=>{txtnimasi("<i>Karna cinta,</i><br>Ku bukan cinta biasa 🌺", "#message_11", 60)}, 40800);
+			        setTimeout(()=>{txtnimasi("<i>Karna cinta,</i><br>Aku bisa <i>gilaa</i>~ 🫶<br><br><b class='merah putih'>💐😍🥰🫣💗</b>", "#message_12", 75, false, true)}, 44400);
 		        }, 700);
 	        }, 1300);
         }
@@ -341,6 +344,10 @@ b.merah{color:red}
 		            setInterval(berjatuhan,300);
 	                clearInterval(scrollInterval);
 	            }, 1);
+	            stikerHidden();
+	            setTimeout(() => {
+	                mainStiker.src = stikerAlt2.src;
+	            }, 300);
             }     
         },}).go();
     }
