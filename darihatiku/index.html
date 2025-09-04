@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+  <title>For You — HTML Bucin feeldream.id ❤️</title>
+  <meta name="description" content="Klik hati untuk melihat kata-kata dariku <3" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>❤️</text></svg>">
+  <style>
+:root {--bg: #0a0a0f; --fg: #ffffff; --pink: #ffd6e7; --heart: #ff2b4f; --shadow: rgba(255, 43, 79, 0.6); --textGlow: 0 0 .6rem rgba(255, 214, 231, .9); --maxWidth: 1200px; --messageBoxBg: rgba(139, 69, 119, 0.6); --color-env: #FFB7C5; --color-env2: #ff9aad; --color-flap: #ff8da1; --color-bg: #ed7fca; --color-heart: #ff85a2; --color-sparkle: #fff;}
+* {box-sizing: border-box; -webkit-tap-highlight-color: transparent;}
+html, body {height: 100%;}
+body {margin: 0; font-family: "Sour Gummy", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; color: var(--fg); background: black; overflow: hidden; user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none;}
+#bodyblur {opacity: 0.3; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,.5); transition: all 1s ease;}
+#wallpaper {width: 100%; height: 100%; transform: scale(1.5); transition: all 1.3s ease; object-fit: cover;}
+#sthisblur {backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px); position: absolute; top: 0; left: 0; right: 0; bottom: 0;}
+.scene {position: relative; inset: 0; width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden; isolation: isolate;}
+.box div {position: fixed; width: 60px; height: 60px; background-color: transparent; border: 6px solid rgba(255,255,255,.6); border-radius: 50%; z-index: -10;}
+.box div:nth-child(1) {top: 12%; left: 42%; animation: animate 10s linear infinite;}
+.box div:nth-child(2) {top: 70%; left: 50%; animation: animate 7s linear infinite;}
+.box div:nth-child(3) {top: 17%; left: 6%; animation: animate 9s linear infinite;}
+.box div:nth-child(4) {top: 20%; left: 60%; animation: animate 10s linear infinite;}
+.box div:nth-child(5) {top: 67%; left: 10%; animation: animate 6s linear infinite;}
+.box div:nth-child(6) {top: 80%; left: 70%; animation: animate 12s linear infinite;}
+.box div:nth-child(7) {top: 60%; left: 80%; animation: animate 15s linear infinite;}
+.box div:nth-child(8) {top: 32%; left: 25%; animation: animate 16s linear infinite;}
+.box div:nth-child(9) {top: 90%; left: 25%; animation: animate 9s linear infinite;}
+.box div:nth-child(10) {top: 20%; left: 80%; animation: animate 5s linear infinite;}
+@keyframes animate {0% {transform: scale(0) translateY(0) rotate(0); opacity: .8;} 100% {transform: scale(1.3) translateY(-90px) rotate(360deg); opacity: 0;}
+}
+.heart-container {margin-top: 50px; position: relative; display: flex; align-items: center; justify-content: center; transform: translateY(-40px);}
+@media (min-height: 800px) {.heart-container {transform: translateY(0);}}
+.heart-btn {display: grid; place-items: center; width: clamp(224px, 32vmin, 416px); height: clamp(224px, 32vmin, 416px); border: none; background: transparent; cursor: pointer; filter: drop-shadow(0 0 40px rgba(255, 43, 79, 0)); transition: transform .1s ease; z-index: 2;}
+.heart-btn:active {transform: scale(.95);}
+.heart {width: 85%; height: 85%; display: block; transform-origin: center center; will-change: transform;}
+.heart svg {width: 100%; height: 100%; display: block; overflow: visible;}
+.heart svg .core {fill: var(--heart); filter: drop-shadow(0 0 20px var(--shadow)) drop-shadow(0 0 40px rgba(255, 43, 79, 0)); animation: gentleBeat 2.5s ease-in-out infinite; transform-origin: 50% 50%;}
+.heart svg .shine {fill: rgba(255,255,255,.35); mix-blend-mode: screen;}
+@keyframes gentleBeat {0%, 100% {transform: scale(1);} 50% {transform: scale(1.05);}}
+.heart-btn.clicked .heart svg .core {animation: strongBeat 0.7s cubic-bezier(0.17, 0.67, 0.83, 0.67), gentleBeat 2.5s ease-in-out infinite 0.7s;}
+@keyframes strongBeat {0% {transform: scale(1);} 15% {transform: scale(1.8);} 30% {transform: scale(0.6);} 45% {transform: scale(1.6);} 60% {transform: scale(0.7);} 75% {transform: scale(1.3);} 90% {transform: scale(0.9);} 100% {transform: scale(1);}}
+.phrase {position: absolute; display: inline-block; padding: .5em .8em; background: var(--messageBoxBg); border-radius: 30px; border: 1px solid rgba(255,214,231,.3); font-weight: 700; text-shadow: 0 2px 4px rgba(0,0,0,.6), var(--textGlow); pointer-events: none; font-size: clamp(13px, 2.2vw, 24px); color: var(--pink); opacity: 0; z-index: 10; box-shadow: 0 8px 32px rgba(255, 43, 79, .2); transform: translate(-50%, -50%); max-width: 170px; white-space: normal; text-align: center; will-change: transform, opacity;}
+.phrase.shooting {animation: shootAndFall var(--duration, 6s) cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;}
+@keyframes shootAndFall {0% {opacity: 0; transform: translate(-50%, -50%) scale(.5) rotate(var(--rotation, 0deg));} 10% {opacity: 1; transform: translate(calc(-50% + var(--shoot-x)), calc(-50% + var(--shoot-y))) scale(1.1) rotate(var(--rotation, 0deg));} 15% {transform: translate(calc(-50% + var(--shoot-x)), calc(-50% + var(--shoot-y))) scale(1) rotate(var(--rotation, 0deg));} 90% {opacity: 1; transform: translate(calc(-50% + var(--final-x)), calc(-50% + var(--final-y))) scale(.85) rotate(var(--final-rotation, 0deg));} 100% {opacity: 0; transform: translate(calc(-50% + var(--final-x)), calc(-50% + var(--final-y))) scale(.7) rotate(var(--final-rotation, 0deg));}}
+.particle {position: absolute; width: 4px; height: 4px; background: var(--heart); border-radius: 50%; pointer-events: none; z-index: 1; opacity: 0; will-change: transform, opacity;}
+.particle.burst {animation: particleBurst 1s ease-out forwards;}
+@keyframes particleBurst {0% {opacity: 1; transform: scale(1.2);} 100% {opacity: 0; transform: scale(0) translate(var(--particle-x, 0px), var(--particle-y, 0px));}}
+.music-player {position: fixed; top: 20px; left: 50%; transform: translateX(-50%); background: var(--messageBoxBg); padding: 10px 18px; border-radius: 20px; border: 1px solid rgba(255,214,231,.3); box-shadow: 0 8px 32px rgba(255, 43, 79, .2); display: flex; align-items: center; gap: 12px; z-index: 100; backdrop-filter: blur(10px); min-width: 260px; opacity: 0; transform: translateX(-50%) translateY(-100%); transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);}
+.music-player.active {opacity: 1; transform: translateX(-50%) translateY(0);}
+.play-pause-btn {background: rgba(255, 43, 79, 0.8); border: none; border-radius: 50%; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; cursor: pointer; color: white; font-size: 16px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(255, 43, 79, 0.3);}
+.play-pause-btn:hover {background: rgba(255, 43, 79, 1); transform: scale(1.05);}
+.play-pause-btn svg {width: 16px; height: 16px; fill: currentColor;}
+.progress-container {flex: 1; display: flex; flex-direction: column; gap: 6px;}
+.song-info {font-size: 13px; color: var(--pink); text-shadow: 0 1px 2px rgba(0,0,0,0.5); font-weight: 500;}
+.progress-bar {width: 100%; height: 3px; background: rgba(255,255,255,0.2); border-radius: 2px; overflow: hidden; cursor: pointer;}
+.progress-fill {height: 100%; background: linear-gradient(90deg, #ff2b4f, #ff5f7a); border-radius: 2px; width: 0%; transition: width 0.1s ease;}
+.time-display {display: flex; justify-content: space-between; font-size: 11px; color: rgba(255, 214, 231, 0.8); font-weight: 400;}
+.stiker {margin-top: -250px; position: absolute; display: flex; justify-content: center; align-items: center; margin-left: auto; margin-right: auto; transform: scale(0); transition: all .75s ease; z-index: 9999;}
+.stiker img {display: none; width: 80px; height: 80px; box-shadow: 0 4px 30px rgba(255,255,255,0.3); backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px); background: rgba(255,255,255,0.5); border: 3px solid white; border-radius: 50%; padding: 7px;}
+.stiker.active {transform: scale(1);}
+#main-stiker {display: flex;}
+  </style>
+</head>
+<body>
+  <div class="scene" id="scene">
+    <div id="bodyblur">
+      <img src="https://htmlku.com/0/new3.jpg" id="wallpaper"/>
+      <div id="sthisblur"></div>
+    </div>
+
+    <div class="swrapper">
+      <div class="box">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+
+    <div class="heart-container">
+      <div class="stiker">
+        <img id="main-stiker" src="https://htmlku.com/0/panda/cilukba.gif" />
+        <img id="stikerAlt1" src="https://htmlku.com/0/panda/gemoy.gif" />
+        <img id="stikerAlt2" src="https://htmlku.com/0/panda/ciumin.gif" />
+      </div>
+      <button class="heart-btn" id="heartBtn">
+        <span class="heart">
+          <svg viewBox="0 0 200 180" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="g" cx="50%" cy="40%" r="70%">
+                <stop offset="0%" stop-color="#ff5f7a" />
+                <stop offset="40%" stop-color="#ff2b4f" />
+                <stop offset="100%" stop-color="#c91534" />
+              </radialGradient>
+            </defs>
+            <path class="core" d="M100,162.2C17.7,99.5,6,77.5,6,52.3C6,27.1,27.1,6,52.3,6c15.4,0,30.8,7.7,40,20.6l7.7,9.6l7.7-9.6 c9.2-12.9,24.6-20.6,40-20.6c25.2,0,46.3,21.1,46.3,46.3c0,25.2-11.7,47.2-94,109.9L100,162.2L100,162.2z" fill="url(#g)"/>
+            <path class="shine" d="M73 47c-12 0-23 6-29 16-2 3-1 7 2 9 3 2 7 1 9-2 4-7 12-11 20-11 4 0 7-3 7-7s-3-5-9-5Z"/>
+          </svg>
+        </span>
+      </button>
+    </div>
+
+    <div class="music-player" id="musicPlayer">
+      <button class="play-pause-btn" id="playPauseBtn">
+        <svg id="playIcon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 5v14l11-7z"/>
+        </svg>
+        <svg id="pauseIcon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+          <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+        </svg>
+      </button>
+      <div class="progress-container">
+        <div class="song-info">Kud persembahkan lagu ini untukmu ❤️</div>
+        <div class="progress-bar" id="progressBar">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <div class="time-display">
+          <span id="currentTime">0:00</span>
+          <span id="totalTime">0:00</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <audio id="audioPlayer">
+    <source src="https://feeldreams.github.io/audio/thousand.mp3" type="audio/mpeg">
+    Maaf, audio tidak dapat dimuat.
+  </audio>
+
+  <script>
+	  const PHRASES = [
+	    "Alooo Sayangkuu! ✨ 💖",
+	    "Aku Cuma Mau Bilang 🤭💖",
+	    "Aku Sayang Banget Sama Kamu 😍💖",
+	    "Senyumanmu Selalu Warnai Hatikuu 💐💖",
+	    "Aku Bersyukur Bisa Milikin Kamuu 💘💖",
+	    "I'm so grateful to have met you babe 💫💖",
+	    "Semangat Terus yaa Sayaangg 🔥💖",
+	    "Kalo ada apa² cerita ke aku yaaw 🫰💖",
+	    "Aku Sayang Kamu More and Moree 😋💖",
+	    "Tetap Sama Akuu Terus yaa 🫣💖",
+	    "I LOVE YOU MOREEE DARLING 🌺🩷💐"
+	  ];
+	
+	  const scene = document.getElementById('scene');
+	  const heartBtn = document.getElementById('heartBtn');
+	  const musicPlayer = document.getElementById('musicPlayer');
+	  const audioPlayer = document.getElementById('audioPlayer');
+	  const playPauseBtn = document.getElementById('playPauseBtn');
+	  const progressBar = document.getElementById('progressBar');
+	  const progressFill = document.getElementById('progressFill');
+	  const currentTimeEl = document.getElementById('currentTime');
+	  const totalTimeEl = document.getElementById('totalTime');
+	  const wallpaper = document.getElementById('wallpaper');
+	  const stiker = document.querySelector('.stiker');
+	  const stikerImages = ['main-stiker', 'stikerAlt1', 'stikerAlt2'];
+	  
+	  const playIcon = document.getElementById('playIcon');
+	  const pauseIcon = document.getElementById('pauseIcon');
+	  
+	  let isProcessing = false;
+	  let firstClick = true;
+	  let isPlaying = false;
+	  let phraseIndex = 0; // Variabel untuk melacak indeks frase saat ini
+	
+	  function triggerRelease(e) {
+	    if (e.type === 'keydown' && e.key !== 'Enter' && e.key !== ' ') {
+	      return;
+	    }
+	    e.preventDefault();
+	    
+	    if (isProcessing) return;
+	    isProcessing = true;
+	
+	    if (firstClick) {
+	      activateMusic();
+	      wallpaper.style.transform = "scale(1)";
+	      //stiker.classList.add('active');
+	      firstClick = false;
+	    }
+	
+	    releasePhrase();
+	    //changeStiker();
+	
+	    setTimeout(() => {
+	      isProcessing = false;
+	    }, 300);
+	  }
+	
+	  stiker.classList.add('active');
+	
+	  function activateMusic() {
+	    //musicPlayer.classList.add('active');
+	    audioPlayer.play()
+	      .then(() => {
+	        isPlaying = true;
+	        showPauseIcon();
+	      })
+	      .catch(e => {
+	        console.log('Error memutar audio:', e);
+	      });
+	  }
+	
+	  function showPlayIcon() {
+	    playIcon.style.display = 'block';
+	    pauseIcon.style.display = 'none';
+	  }
+	
+	  function showPauseIcon() {
+	    playIcon.style.display = 'none';
+	    pauseIcon.style.display = 'block';
+	  }
+	
+	  function togglePlayPause() {
+	    if (isPlaying) {
+	      audioPlayer.pause();
+	      showPlayIcon();
+	      isPlaying = false;
+	    } else {
+	      audioPlayer.play()
+	        .then(() => {
+	          showPauseIcon();
+	          isPlaying = true;
+	        })
+	        .catch(e => {
+	          console.log('Error memutar audio:', e);
+	        });
+	    }
+	  }
+	
+	  function updateProgress() {
+	    if (audioPlayer.duration) {
+	      const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+	      progressFill.style.width = progress + '%';
+	      
+	      currentTimeEl.textContent = formatTime(audioPlayer.currentTime);
+	      totalTimeEl.textContent = formatTime(audioPlayer.duration);
+	    }
+	  }
+	
+	  function formatTime(seconds) {
+	    const mins = Math.floor(seconds / 60);
+	    const secs = Math.floor(seconds % 60);
+	    return mins + ':' + (secs < 10 ? '0' : '') + secs;
+	  }
+	
+	  function seekAudio(e) {
+	    const rect = progressBar.getBoundingClientRect();
+	    const clickX = e.clientX - rect.left;
+	    const newTime = (clickX / rect.width) * audioPlayer.duration;
+	    audioPlayer.currentTime = newTime;
+	  }
+	
+	  function changeStiker() {
+	    const currentStiker = stikerImages[Math.floor(Math.random() * stikerImages.length)];
+	    stikerImages.forEach(id => {
+	      document.getElementById(id).style.display = id === currentStiker ? 'flex' : 'none';
+	    });
+	  }
+	
+	  function releasePhrase() {
+	    heartBtn.classList.add('clicked');
+	    setTimeout(() => heartBtn.classList.remove('clicked'), 700);
+	
+	    createParticlesBurst();
+	    createPhrase();
+	  }
+	
+	  function createPhrase() {
+	    const phraseText = PHRASES[phraseIndex]; // Gunakan indeks berurutan
+	    phraseIndex = (phraseIndex + 1) % PHRASES.length; // Lanjut ke frase berikutnya, kembali ke 0 jika sudah akhir
+	    const el = document.createElement('div');
+	    el.className = 'phrase shooting';
+	    el.textContent = phraseText;
+	
+	    const heartRect = heartBtn.getBoundingClientRect();
+	    const sceneRect = scene.getBoundingClientRect();
+	    
+	    const startX = heartRect.left + heartRect.width / 2 - sceneRect.left;
+	    const startY = heartRect.top + heartRect.height / 2 - sceneRect.top;
+	
+	    el.style.left = startX + 'px';
+	    el.style.top = startY + 'px';
+	
+	    // Tambahkan elemen ke DOM untuk mendapatkan ukuran aktual
+	    scene.appendChild(el);
+	    el.style.opacity = '0'; // Sembunyikan sementara untuk hitung ukuran
+	    el.style.visibility = 'hidden'; // Hindari flicker
+	
+	    // Tunggu satu frame untuk memastikan ukuran dihitung
+	    requestAnimationFrame(() => {
+	      const cardRect = el.getBoundingClientRect();
+	      const cardWidth = cardRect.width;
+	      const cardHeight = cardRect.height;
+	
+	      const angle = Math.random() * 120 - 150;
+	      const shootForce = rand(150, 230);
+	      const shootX = Math.cos(angle * Math.PI / 180) * shootForce;
+	      const shootY = Math.sin(angle * Math.PI / 180) * shootForce;
+	
+	      const fallDistance = rand(250, 450);
+	      const horizontalDrift = rand(-120, 120);
+	      let finalX = shootX + horizontalDrift;
+	      let finalY = shootY + fallDistance;
+	
+	      // Batasan untuk menjaga kartu tetap di dalam layar
+	      const margin = 30; // Margin aman dari tepi layar
+	      const minX = cardWidth / 200 + margin; // Minimum X agar kartu tidak keluar kiri
+	      const maxX = sceneRect.width - cardWidth / 200 - margin; // Maksimum X agar tidak keluar kanan
+	      const minY = 80 + margin; // Minimum Y untuk menghindari pemutar musik
+	      const maxY = sceneRect.height - cardHeight / 200 - margin; // Maksimum Y agar tidak keluar bawah
+	
+	      finalX = Math.max(minX, Math.min(maxX, startX + finalX)) - startX;
+	      finalY = Math.max(minY, Math.min(maxY, startY + finalY)) - startY;
+	
+	      const initialRotation = rand(-20, 20);
+	      const finalRotation = initialRotation + rand(-40, 40);
+	      const duration = rand(4.5, 6.5);
+	
+	      el.style.setProperty('--shoot-x', shootX + 'px');
+	      el.style.setProperty('--shoot-y', shootY + 'px');
+	      el.style.setProperty('--final-x', finalX + 'px');
+	      el.style.setProperty('--final-y', finalY + 'px');
+	      el.style.setProperty('--rotation', initialRotation + 'deg');
+	      el.style.setProperty('--final-rotation', finalRotation + 'deg');
+	      el.style.setProperty('--duration', duration + 's');
+	
+	      // Tampilkan elemen setelah posisi diatur
+	      el.style.opacity = '';
+	      el.style.visibility = '';
+	      
+	      el.addEventListener('animationend', () => el.remove(), { once: true });
+	    });
+	  }
+	
+	  function createParticlesBurst() {
+	    const heartRect = heartBtn.getBoundingClientRect();
+	    const sceneRect = scene.getBoundingClientRect();
+	    const centerX = heartRect.left + heartRect.width / 2 - sceneRect.left;
+	    const centerY = heartRect.top + heartRect.height / 2 - sceneRect.top;
+	
+	    const particleCount = rand(10, 15);
+	    for (let i = 0; i < particleCount; i++) {
+	      const particle = document.createElement('div');
+	      particle.className = 'particle burst';
+	      
+	      particle.style.left = centerX + 'px';
+	      particle.style.top = centerY + 'px';
+	      
+	      const angle = Math.random() * 360;
+	      const distance = rand(50, 90);
+	      const x = Math.cos(angle * Math.PI / 180) * distance;
+	      const y = Math.sin(angle * Math.PI / 180) * distance;
+	      
+	      particle.style.setProperty('--particle-x', x + 'px');
+	      particle.style.setProperty('--particle-y', y + 'px');
+	      
+	      scene.appendChild(particle);
+	      particle.addEventListener('animationend', () => particle.remove(), { once: true });
+	    }
+	  }
+	
+	  function rand(min, max) { 
+	    return Math.random() * (max - min) + min; 
+	  }
+	
+	  heartBtn.addEventListener('click', triggerRelease);
+	  heartBtn.addEventListener('keydown', triggerRelease);
+	  playPauseBtn.addEventListener('click', togglePlayPause);
+	  progressBar.addEventListener('click', seekAudio);
+	  audioPlayer.addEventListener('timeupdate', updateProgress);
+	  audioPlayer.addEventListener('loadedmetadata', updateProgress);
+	</script>
+</body>
+</html>
