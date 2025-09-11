@@ -206,6 +206,6 @@ audio = new Audio('' + linkmp3.src);
     // Share ke WhatsApp
     function balasWa() {
       const url = window.location.href;
-      const text = "Taqabbalallahu minna wa minkum, minal 'aidin wal faizin!";
+      const text = "Aku udah liat scriptnya, ...";
       window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
     }
