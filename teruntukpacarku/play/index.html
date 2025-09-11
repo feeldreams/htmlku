@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>— 💌 𝙎.𝙞𝙙/𝙩𝙚𝙧𝙪𝙣𝙩𝙪𝙠𝙥𝙖𝙘𝙖𝙧𝙠𝙪</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Handlee&family=Sriracha&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script><link rel="stylesheet" href="https://htmlku.com/teruntukpacarku/style.css">
+</head>
+<body>
+  
+  <!-- Audio -->
+  <audio src="shttps://feeldreams.github.io/audio/thousand.mp3" id="linkmp3"></audio>
+  
+  <!-- Background / Wallpaper -->
+  <div class="background-overlay" data-src="https://htmlku.com/0/wp.jpg"></div>
+
+  <!-- Halaman 1: Envelope -->
+  <div id="hal1">
+    <div class="envlope-wrapper">
+      <div id="envelope" class="close">
+        <div class="front flap"></div>
+        <div class="front pocket"></div>
+        <div class="letter">
+          <div class="letter-corner corner-tl"></div>
+          <div class="letter-corner corner-br"></div>
+          <div class="message">
+            <p>Alooo Kamuu! 🌺</p>
+          </div>
+        </div>
+        <div class="hearts">
+          <div class="heart a1"></div>
+          <div class="heart a2"></div>
+          <div class="heart a3"></div>
+        </div>
+        <div class="sparkles">
+          <div class="sparkle s1"></div>
+          <div class="sparkle s2"></div>
+          <div class="sparkle s3"></div>
+        </div>
+      </div>
+    </div>
+    <div class="reset">
+      <button onclick="bukaEnvelope()">Buka</button>
+    </div>
+  </div>
+
+  <!-- Halaman 2: Memory Game -->
+  <div id="hal2" class="kotak sembunyi">
+    <canvas id="game-canvas"></canvas>
+    <h2>Memory Game</h2>
+    <p>Cocokkan kartu² ini yaa! 😆🫵</p>
+    <div id="kotakPesan"></div>
+    <div id="papanGame" class="papanGame"></div>
+    <p id="statusGame"></p>
+  </div>
+
+  <!-- Halaman 3: Pesan Utama -->
+  <div id="hal3" class="kotak sembunyi">
+    <!-- Stiker Gif -->
+    <div id="stiker3" class="stiker">
+        <img id="stiker3a" src="https://htmlku.com/0/panda/putihelus.gif" />
+        <img id="stiker3b" class="sembunyi" src="https://htmlku.com/0/panda/cilukba.gif" />
+    </div>
+    <p id="teksCinta"></p>
+    <p id="pesanAkhir"></p>
+    <p id="teksLucu"></p>
+  </div>
+  <div class="tombol">
+    <button onclick="balasWa()">Balas</button>
+  </div>
+  
+  <!-- Circle Animation -->
+  <div id="circgroup">
+        <div>
+            <div class="circ">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+
+  <script>
+    // Edit Icon Memory Game di Sini
+    const kartu = [
+	  { id: 3, icon: '💖', pesan: '' },
+	  { id: 5, icon: '💐', pesan: '' },
+	  { id: 1, icon: '🩷', pesan: '' },
+	  { id: 6, icon: '💘', pesan: '' },
+	  { id: 2, icon: '💓', pesan: '' },
+	  { id: 4, icon: '❤️', pesan: '' },
+	  { id: 1, icon: '🩷', pesan: '' },
+	  { id: 3, icon: '💖', pesan: '' },
+	  { id: 5, icon: '💐', pesan: '' },
+	  { id: 2, icon: '💓', pesan: '' },
+	  { id: 4, icon: '❤️', pesan: '' },
+	  { id: 6, icon: '💘', pesan: '' }
+	];
+
+    // Edit Kata-kata di Sini
+    const txtHeader = "<b style='font-size:15px'>Yeaayyy!! 🎉</b> Kamu berhasil<br>nyelesain <b>Memory Game</b> ini! 🫣😍";  
+    const txtPesanUtama = "Sekarang, untuk pacarku<br>yang aku sayangi 💌<br>—<br>'Kamu itu cantikku 💘'<br>'Kamu itu sayangku 😍'<br>'Kamu itu cintaku 💓'<br>'Kamu itu bidadariku 🌺'<br>'Kamu itu semestaku 💐'<br>'Kamu itu duniaku 🩷'<br>'Kamu itu ratuku 💞'<br>'Pokoknya kamu itu special buatku 🥰'";  
+    const txtTambahan = "<b style='font-size:15px'>I <span style='color:pink'>love</span> uuuu moreee 🫰💕</b>";
+  </script>
+  <script src="https://htmlku.com/teruntukpacarku/script.js"></script>
+</body>
+</html>
