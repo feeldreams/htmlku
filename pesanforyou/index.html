@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<meta charset='UTF-8'/><meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5' name='viewport'/><meta content='IE=edge' http-equiv='X-UA-Compatible'/>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+  <script src="https://kit.fontawesome.com/4f3ce16e3e.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script><link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="" rel="stylesheet" type="text/css" />
+  
+<head>
+<title>Sehat² yaa cantik 💌 — Script HTML buat Kamu</title>
+<meta name="description" content="HTML Feeldream Repl Co">
+<!-- 
+  Made with love by Rayys!
+  
+     Blog: feeldream.id
+     Instagram: @rayyarrr
+     TikTok: @feelthisray
+     Email: rayyar73@gmail.com
+     
+  Thanks to all <3
+-->
+</head>
+<style>
+:root {
+--warna-bg: rgba(0, 0, 0, .3); 
+--tombol-teks: #fff;
+--tombol-bingkai: #fff;
+--bingkai: 18px;
+--bingkai-kiri: 1.3px solid var(--tombol-bingkai);
+--bingkai-kanan: 1.3px solid var(--tombol-bingkai);
+--gaya-font: 'Nunito Sans', sans-serif;
+}
+body{font-family:var(--gaya-font);background:#000;padding: 20px 25px;-webkit-user-select: none; -ms-user-select: none; user-select: none;} a{text-decoration:none;}
+body::before{content:"\00A9  Rayys | feeldream.id";color:white;opacity:.5;font-size:10px;position:fixed;bottom:25px;right:25px;z-index:2}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.slider {
+  display:none;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+  touch-action: pan-y;
+}
+
+.slide {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity .8s ease-in-out;
+}
+
+.slide {
+  background-image: url();
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+  transition:all 1s ease;
+}
+
+.slide::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Nilai alpha 0.5 membuat lapisan transparan 50% */
+  z-index: 1;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.akhir h1{margin-top:50px}
+
+/*.red {
+  background-color: red;
+}
+
+.green {
+  background-color: green;
+}
+
+.pink {
+  background-color: pink;
+}*/
+
+.content {
+  position: absolute;
+  width:100%;
+  top:220px;
+  margin-left:auto;
+  margin-right:auto;
+  text-align: center;z-index: 2;
+}
+
+.inilove:hover{transition:all .3s ease;opacity:.5}
+
+.content button{font-family:var(--gaya-font);margin-top:30px;font-size:11px;color:white;background:rgba(0,0,0,.4);border:none;border-radius:4px;padding:5px 8px;transition:all .4s ease}
+
+h1 {
+  font-size: 13px;
+  font-weight:700;
+  font-family:var(--gaya-font);
+  margin: 0;
+  color: white;
+  text-shadow: 2px 2px #000;
+  text-transform: none;
+  letter-spacing: 0.1em;
+  transition:all .4s ease
+}
+
+p{margin-top:-23px;margin-left:90px;margin-right:90px;font-size: 14px;font-family:var(--gaya-font);color: white;text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);}
+
+.dots {
+  position: absolute;
+  bottom: 35%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  z-index: 2;
+}
+
+.dot {
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  margin: 0 5px;
+  background-color: #aaa;
+  cursor: pointer;
+  opacity:.4;
+}
+
+.dot.active {
+  background-color: #fff;
+  opacity:1;
+}
+
+.fa-heart {opacity:.2;color:white;font-size: 20px;position: absolute;animation:  heartMove linear 1;top: -10vh;z-index: 3;}
+@keyframes heartMove {0%{transform: translateY(-10vh) ;} 100%{transform: translateY(100vh) ;}}
+
+#Content{animation-name:none;animation-duration: 3s;animation-iteration-count: infinite;position:relative;margin-top:130px;width:100%;height:180px;transition:all .7s ease;}
+#Content > *{display:flex;align-items:center;text-align:center;justify-content:center;margin-top:1px;}
+
+#ftAwal > img{width:130px;height:130px;margin-bottom:50px;}
+.lovein{background:#fff;border-radius:50%;width:40px;height:40px;padding:10px;font-size:30px;display:flex;align-items:center;text-align:center;justify-content:center;transition:all .3s ease;}
+.lovein:hover{transform: scale(.9);}
+#ket{margin-top:20px;font-size:12px}
+
+.swal2-modal > *{font-size:16px;font-weight:700;color:white}
+.swal2-title{line-height:1.3em;font-size:17px;text-align:center;padding:15px 30px 0 30px;}
+.swal2-timer-progress-bar-container > *{opacity:.7;background:#00B6FF;margin:0 2px}
+.swal2-modal{background: rgba(0,0,0, 0.7);box-shadow: 0 4px 30px rgba(255,255,255, 0.3);backdrop-filter: blur(2px);-webkit-backdrop-filter: blur(2px);border: 1px solid rgba(255, 255, 255, 0.3);border-radius: 8px;max-width:330px;top:-60px;}
+.swal2-image{background: rgba(255, 255, 255, 0.5);box-shadow: 0 4px 30px rgba(255,255,255, 0.3);backdrop-filter: blur(5px);-webkit-backdrop-filter: blur(5px);border: 1px solid rgba(255, 255, 255, 0.3);border-radius: 8px;padding:10px;}
+.swal2-styled.swal2-confirm, .swal2-styled.swal2-cancel{position: relative;background-color: #4839eb;color: #fff;border-radius:18px;z-index: 1;transition: all 0.2s;}
+.fa-heart {opacity:.5;color:white;font-size: 20px;position: absolute;animation:  heartMove linear 1;top: -10vh;z-index: 0;}
+@keyframes heartMove {0%{transform: translateY(-10vh) ;} 100%{transform: translateY(100vh) ;}}
+</style>
+<body>
+	
+   <!-- Ganti Audio di sini -->
+   <audio src="https://feeldreams.github.io/audio/thousand.mp3" id="linkmp3" style="display:none"></audio>
+   
+   <div id='Content'>
+   	<div id="ftAwal">
+       <!-- Stiker Pembuka -->
+       <img src="https://feeldreams.github.io/pandaputih.gif" id="ftoAwal"/>
+     </div>
+
+     <div id="loveIn">
+       <!-- Tombol LOVE --><label class='lovein'>&#10084;</label>
+     </div>
+     <p id="ket">Sentuh LOVEnya!</p>
+   </div>
+   
+   <div id="inislider" class="slider">
+  <div class="slide" style="background-image: url(https://i.ibb.co/SKKcdC1/a228bd66dcd213a2e257789b54bb0968.jpg);">
+    <div class="content">
+      <h1>haii kamuuu<br>aku ada pesan nih,</h1>
+    </div>
+  </div>
+  <div class="slide" style="background-image: url(https://feeldreams.github.io/akuharap/3.jpg);">
+    <div class="content">
+      <h1>buat kamu,<br>semangat terus yaa!</h1>
+    </div>
+  </div>
+  <div class="slide" style="background-image: url(https://feeldreams.github.io/akuharap/4.jpg);">
+    <div class="content">
+      <h1>semangat ngejalanin<br>hari-harinya..</h1>
+    </div>
+  </div>
+  <div class="slide" style="background-image: url(https://feeldreams.github.io/akuharap/1.jpg);">
+    <div class="content">
+      <h1>meskipun akan ada<br>hari² yang berat,<br>tapi aku percaya kamu<br>pasti bisa melewatinya</i></h1>
+    </div>
+  </div>
+  <div id="iniakhir" class="slide" style="background-image: url(https://i.ibb.co/xf2MVY4/ttt.jpg);">
+    <div class="content">
+      <h1 id="textin">oh yaa satu lagi,<br>coba klik love ini <label class="inilove" onclick="klikini();">❤️</label></h1>
+    </div>
+  </div>
+  <div id="dots" class="dots"></div>
+</div>
+
+<script>
+const body = document.querySelector("body"); function berjatuhan() {const heart = document.createElement("div"); heart.className = "fas fa-heart"; heart.style.left = (Math.random() * 90)+"vw"; heart.style.animationDuration = (Math.random()*3)+2+"s"; body.appendChild(heart);} setInterval(function name(params) {var heartArr = document.querySelectorAll(".fa-heart"); if (heartArr.length > 100) {heartArr[0].remove()}},100);
+const swals = Swal.mixin({/*timer: 2500, */allowOutsideClick: false, showConfirmButton: true, timerProgressBar: true, imageHeight: 90,}); audio = new Audio('' + linkmp3.src);
+const slides = document.querySelectorAll('.slide');
+const dotsContainer = document.querySelector('.dots');
+let currentSlide = 0;
+
+kliklove=0;document.getElementById("loveIn").onclick = function() {
+    inislider.style.display="block";
+    Content.style.display="none";
+    kliklove=1;
+    createDots();
+    showSlide(currentSlide);
+	audio.play();
+}
+
+if(currentSlide!==100){
+function showSlide(n) {
+  slides[currentSlide].classList.remove('active');
+  currentSlide = (n + slides.length) % slides.length;
+  slides[currentSlide].classList.add('active');
+
+  const dots = dotsContainer.querySelectorAll('.dot');
+  dots[currentSlide].classList.add('active');
+  for (let i = 0; i < dots.length; i++) {
+    if (i !== currentSlide) {
+      dots[i].classList.remove('active');
+    }
+  }
+}
+
+function createDots() {
+  for (let i = 0; i < slides.length; i++) {
+    const dot = document.createElement('div');
+    dot.classList.add('dot');
+    dot.addEventListener('click', function() {
+      showSlide(i);
+    });
+    dotsContainer.appendChild(dot);
+  }
+}
+
+let startX = null;
+let startY = null;
+
+document.addEventListener('touchstart', function(e) {
+  startX = e.touches[0].clientX;});
+
+document.addEventListener('touchmove', function(e) {
+if (!startX) {
+return;
+}
+
+const moveX = e.touches[0].clientX;
+const diffX = startX - moveX;
+
+if (Math.abs(diffX) > 20) {
+if (diffX > 0) {
+showSlide(currentSlide + 1);
+} else {
+showSlide(currentSlide - 1);
+}
+startX = null;
+startY = null;
+}
+
+e.preventDefault();
+});
+
+}
+
+/*setInterval(function() {
+showSlide(currentSlide + 1);
+}, 1000);*/
+
+const popjudul = "Dan yang paling penting,";
+const poptext = "Jangan sampe sakit :(<br/><i>okaayy?</i>😍❤️";
+const popstiker1 = "https://feeldreams.github.io/ngumpet.gif";
+const popstiker2 = "https://feeldreams.github.io/pusn.gif";
+const popstiker3 = "https://feeldreams.github.io/ciumin.gif";
+async function klikini(){
+	textin.innerHTML="";
+	await swals.fire({title: '', html: 'Kalo capek,<br>jangan lupa istirahat ya', imageUrl: '' + popstiker1});
+	await swals.fire({title: '', html: 'Jangan lupa buat<br>jaga kesehatan juga<3', imageUrl: '' + popstiker2});
+	await swals.fire({title: '' + popjudul, html: '' + poptext, imageUrl: '' + popstiker3});
+    
+    new TypeIt("#textin", {
+      strings: ["Sehat sehat ya cantik,<br><br>aku sayang banget<br>sama kamu<333<br><br><i>i love youuuu</i><br><br>❤️❤️❤️❤️❤️"], startDelay: 100, speed: 50, cursor: true, deleteSpeed: 20, breakLines: false, waitUntilVisible: true, lifelike: true,
+      afterComplete: function(){
+      	setInterval(berjatuhan,150);
+  	    //textin.innerHTML = "" + pesanAkhir2;
+    },}).go();
+}
+</script>
+<script src=""></script>
+<!-- Sampai Sini -->
+</body>
+</html>
