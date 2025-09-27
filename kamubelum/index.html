@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
   <meta charset="utf-8" />
@@ -24,7 +24,6 @@
     #bodyblur{opacity:.5;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);transition:all 1s ease;} 
     #thisblur{backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);position:absolute;top:0;left:0;right:0;bottom:0;}
     #wallpaper{/*animation: jj 7s infinite;*/width:100%;height:100%;transform: scale(1.3);transition:all 1.3s ease;}
-    #wallpaper2, #wallpaper3, #wallpaper4{display:none}
     @keyframes jj{0%  {transform: scale(1);} 50% {transform: scale(1.3);} 100% {transform: scale(1);}}
 
     p{margin-left:20px;margin-right:70px;text-align:left}
@@ -112,7 +111,7 @@
   <audio src="shttps://feeldreams.github.io/audio/kasihtinggal.mp3" id="linkmp3" class="sembunyi"></audio>
 	<div class="overlay">
 		<div class="cover">
-	    <p style="font-size:17px;font-weight:700;margin:0"></p>
+	    <p style="font-size:17px;font-weight:700;margin:0">🫵🥳😆😜😝🤪🏃</p>
 	   <div id="searchBar" class="awalan">
 	     <svg style='fill: none;stroke: #fff;stroke-width: 2' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><g transform='translate(2.000000, 2.000000)'><path d='M9.27542857,0.714285714 C14.0030476,0.714285714 17.836381,4.54666667 17.836381,9.2752381 C17.836381,14.0038095 14.0030476,17.8361905 9.27542857,17.8361905 C4.54685714,17.8361905 0.71447619,14.0038095 0.71447619,9.2752381 C0.71447619,4.54666667 4.54685714,0.714285714 9.27542857,0.714285714 Z'></path><path d='M17.8989524,16.487619 C18.678,16.487619 19.3094286,17.12 19.3094286,17.8980952 C19.3094286,18.6780952 18.678,19.3095238 17.8989524,19.3095238 C17.1199048,19.3095238 16.4875238,18.6780952 16.4875238,17.8980952 C16.4875238,17.12 17.1199048,16.487619 17.8989524,16.487619 Z'></path></g></svg>
 	     <label style="font-size:16px">Klik ini untuk mulai 🫣</label>
@@ -217,7 +216,6 @@
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
-//document.querySelector('.swiper-pagination').style.display = 'none';
 var teksSekarang = 1;const body = document.querySelector("body"); audio = new Audio('' + linkmp3.src); 
 var swiper = new Swiper(".mySwiper", {
     pagination: {el: ".swiper-pagination", dynamicBullets: true,},
@@ -245,8 +243,7 @@ var swiper = new Swiper(".mySwiper", {
     navigation: {nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev",},
 });
     
-initeks = teks7.innerHTML;
-//teks7.innerHTML = "";
+initeks = teks7.innerHTML; //teks7.innerHTML = "";
 function katanimasi(){
     teks7.innerHTML = "";
     
@@ -339,8 +336,7 @@ function lanjutAkhir() {
 
 ///////////////////////////////////
 
-var sudahKlik = true;
-var fungsiBerfungsi = false;
+var sudahKlik = true; var fungsiBerfungsi = false;
 
 document.getElementById("searchBar").onclick = function() {
     if (sudahKlik) {
@@ -349,14 +345,13 @@ document.getElementById("searchBar").onclick = function() {
         setTimeout(()=>{
 	        setTimeout(function(){
 		        //document.querySelector('.swiper-pagination').style.display = 'block';
-		        
 		        stiker1.classList.add("scale1");
 		        teks1.classList.add("scale1");
 		        wallpaper.style="transform:scale(1)";
 	        }, 50);
 	        
 	        setTimeout(function(){fungsiBerfungsi = true}, 500);
-        }, 700);
+        }, 300);
     } 
 }
 
@@ -373,7 +368,7 @@ let jumlahKlik = 0;
 let jumlahSkala = 1;
 let sudah = false;
 
-  function fungsibaru(btn) {
+function fungsibaru(btn) {
     var tombol = document.getElementById("" + btn);
     var tombolParent = tombol.parentNode;
     
@@ -387,80 +382,46 @@ let sudah = false;
     tombol.style.top = tombolPosisiY + "px";
     tombol.style.transform = "rotate(" + rotasiAcak + "deg)";
     tombolParent.appendChild(tombol);
-/*
-    // Menampilkan alert berdasarkan jumlah klik
-    if (jumlahKlik < pesanAlert.length) {
-    	//teks1.innerHTML = pesanAlert[jumlahKlik];
-        //alert(pesanAlert[jumlahKlik]);
-        teksScale.classList.remove("scale1");
-        teksScale.classList.add("scale0");
-        stikerScale.classList.remove("scale1");
-        stikerScale.classList.add("scale0");
-            setTimeout(function(){
-	                if (jumlahKlik === 0) {
-					    stikerAwal.src = stikerDefault;
-					    teks1.innerHTML = teksDefault;
-					} else {
-	                	stikerAwal.src = stikerArray[jumlahKlik].src; 
-	                    teks1.innerHTML = pesanAlert[jumlahKlik - 1];
-	                }
-                    stikerScale.classList.remove("scale0");
-                    stikerScale.classList.add("scale1");
-                    teksScale.classList.remove("scale0");
-                    teksScale.classList.add("scale1");
-               },270);
-    } else {
-        //alert("Sudah cukup bercandanya ");
-    }
-*/
 
     // Perbesar tombol By
     var tombolBy = document.getElementById("By");
-    tombolBy.style.transform = `scale(${1 + jumlahSkala * 0.2})`; // Menambah skala setiap klik
+    tombolBy.style.transform = `scale(${1 + jumlahSkala * 0.25})`; // Menambah skala setiap klik
 
-    
-    jumlahKlik++;
-    jumlahSkala++;
+    jumlahKlik++; jumlahSkala++;
 
     if (jumlahKlik == 3) {
-        //fungsiTerima();
-        //swiper.slideNext();
         teksOps.style="opacity:1";
         jumlahKlik = 0;
         
-        //teksScale.classList.remove("scale1");
-        //teksScale.classList.add("scale0");
-        stikerScale.classList.remove("scale1");
-        stikerScale.classList.add("scale0");
-        setTimeout(function(){
-				stikerAkhir1.src = stikerAkhir2.src;
-				//teks1.innerHTML = teksDefault;
-                stikerScale.classList.remove("scale0");
-                stikerScale.classList.add("scale1");
-                //teksScale.classList.remove("scale0");
-                //teksScale.classList.add("scale1");
-          },400);
+        if(sudah==false){
+	        //teksScale.classList.remove("scale1");
+	        //teksScale.classList.add("scale0");
+	        stikerScale.classList.remove("scale1");
+	        stikerScale.classList.add("scale0");
+	        setTimeout(function(){
+					stikerAkhir1.src = stikerAkhir2.src;
+					//teks1.innerHTML = teksDefault;
+	                stikerScale.classList.remove("scale0");
+	                stikerScale.classList.add("scale1");
+	                //teksScale.classList.remove("scale0");
+	                //teksScale.classList.add("scale1");
+	                sudah=true;
+	         },400);
+         }
     }
 }
 
 //////
 
 document.addEventListener('keydown', function(event) {
-    if (event.code === 'Space' || event.code === 'ArrowRight') {
-        swiper.slideNext();
-    }
+    if (event.code === 'Space' || event.code === 'ArrowRight') {swiper.slideNext();}
 });
 
 document.addEventListener('click', function() {
-    if (teksSekarang !== 6){
-    	if (fungsiBerfungsi === true) {
-           swiper.slideNext();
-        }
+    if (teksSekarang !== 6 && fungsiBerfungsi === true){
+    	swiper.slideNext();
     }
 });
-
-/* Start All */
-setTimeout(function(){var overlay = document.querySelector(".loading-message");}, 0);
 </script>
 </body>
 </html>
