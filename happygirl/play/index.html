@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="@feelthisray - Script HTML by Feeldream Repl Co">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <title>💌 S.id/happygirl — Girlfriend Day! 🌺</title>
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Sriracha&family=Itim&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
+	<script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script><link rel="stylesheet" href="https://htmlku.com/">
+</head>
+<style>
+      :root {
+            --color-env: #FFB7C5;
+            --color-env2: #ff9aad;
+            --color-flap: #ff8da1;
+            --color-bg: #ed7fca;
+            --color-heart: #ff85a2;
+            --color-sparkle: #fff;
+            --wax-red: #c04040;
+        }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+        
+        body {background: black;font-family:"Sriracha",serif;overflow:hidden}
+        
+        #bodyblur{opacity:.4;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);transition:all 1s ease;}
+        #sthisblur{backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);position:absolute;top:0;left:0;right:0;bottom:0;}
+        #wallpaper{animation: jj 8s infinite;width:100%;height:100%;transform:scale(1.3);transition:all 1.3s ease;}
+        @keyframes jj{0%  {transform: scale(1);} 50% {transform: scale(1.3);} 100% {transform: scale(1);}}
+        
+	   .overlay{position:fixed;top:0;left:0;width:100%;height:100%;display:flex;justify-content:center;align-items:center;background:rgba(0,0,0,1);z-index:9999;}
+	   .cover{color:white;margin-top:-180px;display:flex;flex-direction:column;justify-content:center;align-items:center}
+	   .cover p{font-size:17px;font-weight:700;}
+	   .lovein{font-size:50px;display:flex;align-items:center;justify-content:center;transition:all .3s ease;}
+	   .lovein svg{width:80px;height:80px;fill:#fefefe}
+	   .awalan{margin-top:20px;width:250px;min-height:25px;padding:12px;font-size:13px;color:white;background:rgba(0,0,0,.5);border:1px solid #fff;border-radius:20px;display:flex;align-items:center;text-align:left}
+	   .awalan svg{margin-right:15px;width:25px;height:25px;stroke:white}
+	  
+	    #frontEnv{position: absolute;font-size:20px;margin-left:-12px;margin-top:-17px}
+        #envelope{position:relative;width:160px;height:110px;border-bottom-left-radius:6px;border-bottom-right-radius:6px;margin:0 auto;top:160px;background-color:var(--color-flap);box-shadow:0 4px 20px rgba(0,0,0,.1)} 
+		.front{position:absolute;width:0;height:0;z-index:3} 
+		.flap{border-left:80px solid transparent;border-right:80px solid transparent;border-bottom:55px solid transparent;border-top:55px solid var(--color-flap);transform-origin:top;pointer-events:none} 
+		.pocket{border-left:80px solid var(--color-env);border-right:80px solid var(--color-env);border-bottom:55px solid var(--color-env2);border-top:55px solid transparent;border-bottom-left-radius:6px;border-bottom-right-radius:6px} 
+		.letter{position:relative;background-color:#e0d9dd;width:90%;margin:0 auto;height:95%;top:5%;border-radius:6px;box-shadow:0 2px 26px rgba(0,0,0,.08);padding:15px;box-sizing:border-box} 
+		.letter:after{content:'';position:absolute;top:0;bottom:0;left:0;right:0;background-image:linear-gradient(180deg,rgba(255,255,255,0) 25%,rgba(255,231,236,.7) 55%,rgba(255,231,236,1) 100%)} 
+		.message{position:relative;z-index:2;font-family:'Handlee',cursive;color:#d46a84;text-align:center;line-height:1;padding-top:0} 
+		.message p{margin:10px 0;font-size:1.3em;text-shadow:0 2px 3px rgba(0,0,0,.1)} 
+		@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}} 
+		.envlope-wrapper{height:210px;margin-top:50px;animation:float 3s ease-in-out infinite} 
+		.open .flap{transform:rotateX(180deg);transition:transform .4s ease,z-index .6s;z-index:1} 
+		.close .flap{transform:rotateX(0deg);transition:transform .4s .6s ease,z-index 1s;z-index:5} 
+		.close .letter{transform:translateY(0);transition:transform .4s ease,z-index 1s;z-index:1} 
+		.open .letter{transform:translateY(-55px) rotate(-2deg);transition:transform .4s .2s ease,z-index .6s;z-index:2} 
+		.letter-corner{position:absolute;width:10px;height:10px;border:1px solid #ffd1dc;border-radius:2.5px;z-index:3} 
+		.corner-tl{top:5px;left:5px;border-right:none;border-bottom:none} 
+		.corner-br{bottom:5px;right:5px;border-left:none;border-top:none} 
+		.hearts,.sparkles{position:absolute;top:55px;left:0;right:0;z-index:2} 
+		.heart,.sparkle{position:absolute;bottom:0;pointer-events:none}
+
+        .heart:before, .heart:after {content: "";position: absolute;left: 12.5px;top: 0;width: 12.5px;height: 25px;background: var(--color-heart);border-radius: 12.5px 12.5px 0 0; transform: rotate(-45deg);transform-origin: 0 100%;}
+        .heart:after {left: 0;transform: rotate(45deg);transform-origin: 100% 100%;}
+        .sparkle {width: 4px;height: 4px;background: var(--color-sparkle);border-radius: 50%;animation: sparkleTwinkle 1s infinite; }
+        .close .heart, .close .sparkle {opacity: 0;animation: none; }
+        .a1 { left: 20%; transform: scale(0.6); animation: slideUp 4s linear infinite, sideSway 2s ease-in-out infinite alternate; }
+        .a2 { left: 55%; animation: slideUp 5s linear infinite, sideSway 4s ease-in-out infinite alternate; }
+        .a3 { left: 10%; transform: scale(0.8); animation: slideUp 7s linear infinite, sideSway 2s ease-in-out infinite alternate; }
+
+        .s1 { left: 30%; animation: sparkleUp 3s linear infinite; }
+        .s2 { left: 60%; animation: sparkleUp 4s linear infinite; }
+        .s3 { left: 45%; animation: sparkleUp 5s linear infinite; }
+
+        @keyframes slideUp {0% { top: 0; }100% { top: -600px; }}
+        @keyframes sideSway {0% { margin-left: 0; }50% { margin-left: 50px; }100% { margin-left: 0; }}
+        @keyframes sparkleUp {0% { transform: translateY(0); opacity: 1; } 100% { transform: translateY(-500px) rotate(360deg); opacity: 0; }}
+        @keyframes sparkleTwinkle {0%, 100% { transform: scale(1); } 50% { transform: scale(1.5); }}
+
+        .reset {position:relative;text-align: center;margin-top: 100px;}
+        .reset button {font-family:"Sriracha",serif;font-weight: 600;transition: all 0.3s ease;background-color: var(--color-env2);border: 2px solid var(--color-env2);border:2px solid rgba(255,255,255,.8);border-radius: 20px;color: white;text-shadow:0px 2px 2px rgba(0,0,0,.5);padding: 6px 14px;margin: 10px;font-size: 16px;box-shadow: 0 5px 20px rgba(0,0,0,0.15);}
+        .reset button:hover {background-color: var(--color-env);transform: translateY(-3px) scale(1.05);box-shadow: 0 7px 25px rgba(0,0,0,0.2);}
+        
+        /* */
+      .stiker{margin-top:-70px;margin-bottom:30px;position:absolute;display:flex;justify-content:center;align-items:center;margin-left:auto;margin-right:auto;transform:scale(0);transition:all .75s ease;z-index:9999;}
+      .stiker img{display:none;width:80px;height:80px;box-shadow:0 4px 30px rgba(255,255,255,0.3);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);background:rgba(255,255,255,0.7);border:3px solid rgba(255,255,255,1);border-radius:50%;padding:10px;}
+      #main-stiker{display:flex}
+      .container{position:relative;display:block;width:75%;min-height:100px;max-height:270px;overflow:auto;background:rgba(255,255,255,0.1);backdrop-filter:blur(10px);border-radius:20px;box-shadow:0 8px 32px rgba(0,0,0,0.3);border:2px solid rgba(255,255,255,1);text-shadow: 0px 2px 2px rgba(0, 0, 0, .5);opacity:0;transform:scale(0);margin:auto;padding:5px 20px;z-index:9999;}
+	  .container h3{font-size:16px;font-weight:bold;color:#fff;text-align:left;}
+	  .container p{font-size:16px;color:#fff;text-align:left;}
+	  .conMsg{}
+	  .titleC{font-size:17px!important;margin-bottom:14px;font-family:"Itim",cursive;}
+	  .messageC{font-size:17px;font-family:"Itim",cursive;}
+	  .fontAlt{font-family:'Satisfy',cursive;font-size:21px;font-weight:700}
+	  .textBg{background:#fff;border-radius:12px;padding:4px 6px;text-shadow:none;color:red}
+	  .opamuncul{position:relative;opacity:1;transform:scale(1);transition:all 0.7s ease;}
+	  .opahidden{opacity:0;transform:scale(0);transition:all 0.7s ease;}
+	  .hidden,#linkmp3{display:none;}
+	  .semihidden{transform:scale(0);opacity:0;}
+
+	#scontainer{width:80%;margin:20px auto;min-height:650px;margin-top:150px;color:#000}@media screen and (max-width:400px){#scontainer{width:100%;margin:50% auto;min-height:800px}}.wrapper{position:fixed}.box div{position:fixed;width:60px;height:60px;background-color:transparent;border:6px solid rgba(255,255,255,.75);border-radius:50%;z-index:-10}.box div:nth-child(1){top:12%;left:42%;animation:animate 10s linear infinite}.box div:nth-child(2){top:70%;left:50%;animation:animate 7s linear infinite}.box div:nth-child(3){top:17%;left:6%;animation:animate 9s linear infinite}.box div:nth-child(4){top:20%;left:60%;animation:animate 10s linear infinite}.box div:nth-child(5){top:67%;left:10%;animation:animate 6s linear infinite}.box div:nth-child(6){top:80%;left:70%;animation:animate 12s linear infinite}.box div:nth-child(7){top:60%;left:80%;animation:animate 15s linear infinite}.box div:nth-child(8){top:32%;left:25%;animation:animate 16s linear infinite}.box div:nth-child(9){top:90%;left:25%;animation:animate 9s linear infinite}.box div:nth-child(10){top:20%;left:80%;animation:animate 5s linear infinite}@keyframes animate{0%{transform:scale(0) translateY(0) rotate(0);opacity:.8}100%{transform:scale(1.3) translateY(-90px) rotate(360deg);opacity:0}}
+	
+	.click-effect {position: fixed;width: 8px;height: 8px;border-radius: 50%;background: rgba(255, 255, 255, 0.5); pointer-events: none; transform: translate(-50%, -50%) scale(1); animation: click-animation 0.3s ease-out forwards;}
+	@keyframes click-animation {0% {transform: translate(-50%, -50%) scale(1);opacity: 1;} 100% {transform: translate(-50%, -50%) scale(2);opacity: 0;}}
+</style>
+<body>
+	<div class="overlay">
+		<div class="cover">
+	    <p>Sentuh untuk Mulai</p>
+	   <div class="awalan">
+	     <svg class='line' fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><g transform='translate(2.000000, 2.000000)'><path d='M9.27542857,0.714285714 C14.0030476,0.714285714 17.836381,4.54666667 17.836381,9.2752381 C17.836381,14.0038095 14.0030476,17.8361905 9.27542857,17.8361905 C4.54685714,17.8361905 0.71447619,14.0038095 0.71447619,9.2752381 C0.71447619,4.54666667 4.54685714,0.714285714 9.27542857,0.714285714 Z'></path><path d='M17.8989524,16.487619 C18.678,16.487619 19.3094286,17.12 19.3094286,17.8980952 C19.3094286,18.6780952 18.678,19.3095238 17.8989524,19.3095238 C17.1199048,19.3095238 16.4875238,18.6780952 16.4875238,17.8980952 C16.4875238,17.12 17.1199048,16.487619 17.8989524,16.487619 Z'></path></g></svg>
+	     <label style="font-size:16px">Pesan Untukmu 🫶</label>
+	   </div>
+	</div>
+  </div>
+  
+	<div id="bodyblur">
+	   <img src="https://feeldreams.github.io/nightin.jpeg" id="wallpaper"/>
+	   <div id="thisblur"></div>
+	</div>
+	
+	<audio src="https://feeldreams.github.io/audio/thousand.mp3" id="linkmp3"></audio>
+	
+    <div id="envwrap" class="envlope-wrapper">
+        <div id="envelope" class="close">
+            <div class="wax-seal"></div>
+            <div class="front flap"><span id="frontEnv">🩷</span></div>
+            <div class="front pocket"></div>
+            <div class="letter">
+                <div class="letter-corner corner-tl"></div>
+                <div class="letter-corner corner-br"></div>
+                <div class="message">
+                    <p>Alooo Kamu!<br><span style='font-size:23px'>ᯓᡣ𐭩</span></p>
+                    <p>......</p>
+                </div>
+            </div>
+            <div class="hearts">
+                <div class="heart a1"></div>
+                <div class="heart a2"></div>
+                <div class="heart a3"></div>
+            </div>
+            <div class="sparkles">
+                <div class="sparkle s1"></div>
+                <div class="sparkle s2"></div>
+                <div class="sparkle s3"></div>
+            </div>
+        </div>
+    </div>
+    <div class="reset">
+        <button id="open">Buka Surat</button>
+    </div>
+    
+  <div class="stiker">
+    <img id="main-stiker" src="https://htmlku.com/0/panda/hearthappy.gif" /> <!-- https://htmlku.com/0/panda/inicinta2.gif -->
+    <img id="stikerAlt1" src="https://htmlku.com/0/panda/ciumpipi.gif" />
+  </div>
+  
+  <div class="container" id="container">
+    <div class="conMsg">
+    <p class="titleC"><b>Aloooo pacarkuuuuuu 🌺🥳💐</b></p>
+    <script>
+    teksAnimasi = [
+                    "<b>ᯓᡣ𐭩</b><br><b>Happy girlfriend day</b> untuk perempuan terhebat tercinta tersayangg terbaik termaniskuuu 🤍💗🌷👫💋",
+                    "<br>Jangan buru-buru ngira kalau aku ga sempat ngirimin ini yaa 🫣🫵",
+                    "<br>Sayang banyak² deh pokoknya ✨",
+                    "<br>Terima kasih udah jadi pasangan yang baik buat aku yaa sayang 🥰",
+                    "<br>Terima kasih udah selalu sabar ngadepin aku, udah jadi yang terbaik selama ini, udah sayang sama aku, udah mau bertahan sampe sejauh ini 🫠",
+                    "<br>Tetap sama akuu terus dan selalu jadi <b>perempuan</b> yang aku kenal yaa 😍💘",
+                    "<br>Satu lagii, jaga hubungan kita baik-baik yaa sayanggg 🫶",
+				    "<br><b><i>I love youuu, always. </b>🌺🩷<br><br>And..<br><b>Happy National Girlfriend Day</b> 🫂💐",
+    ];
+	</script>
+    <p class="messageC"></p>
+    </div>
+  </div>
+  
+  <!-- Box elements animation -->
+    <div id="scontainer">
+        <div class="swrapper">
+            <div class="box">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+
+<script>
+document.addEventListener("click", function (e) {
+  const circle = document.createElement("div");
+  circle.classList.add("click-effect");
+  circle.style.left = `${e.pageX}px`;
+  circle.style.top = `${e.pageY}px`;
+
+  document.body.appendChild(circle);
+
+  circle.addEventListener("animationend", () => {
+    circle.remove();
+  });
+});
+
+    const overlay = document.querySelector('.overlay');
+    const cover = document.querySelector('.cover');
+    const reset = document.querySelector('.reset');
+    const title = document.querySelector('.title');
+    const container = document.getElementById('container');
+    const titleC = document.querySelector('.titleC');
+    const messageC = document.querySelector('.messageC');
+    const stiker = document.querySelector('.stiker');
+    const mainStiker = document.querySelector('#main-stiker');
+    envwrap.style="transform:scale(0);opacity:0;transition:all .6s ease";
+    audio = new Audio('' + linkmp3.src);
+    let spdTextAwal = 23;
+    let spdTextUtama = 23;
+    
+        const envelope = document.getElementById('envelope');
+        const btnOpen = document.getElementById('open');
+        //const btnReset = document.getElementById('reset');
+        reset.style="transform:scale(0);opacity:0;transition:all .6s ease";
+        
+        envelope.addEventListener('click', open);
+        btnOpen.addEventListener('click', open);
+        //btnReset.addEventListener('click', close);
+
+        function open() {
+            envelope.classList.remove("close");
+            envelope.classList.add("open");
+            reset.style="transform:scale(0);opacity:0;transition:all .6s ease";
+            frontEnv.style="transform:scale(0);opacity:0;transition:all .6s ease";
+            
+            setTimeout(function(){
+	        	envwrap.classList.add('opahidden');
+		        wallpaper.style="transform: scale(1.3";
+		        setTimeout(function(){
+			        container.classList.remove('hidden');
+			        container.classList.add('opamuncul');
+			        stiker.classList.add('opamuncul');
+			        wallpaper.style="transform: scale(1)";
+			        envwrap.classList.add('hidden');
+			        frontEnv.style="display:none";
+			        katanimasi();
+		        }, 700);
+	        }, 1400);
+        }
+
+    document.querySelector(".awalan").onclick = async function() {
+        audio.play();
+
+    	overlay.style="opacity:0;transition:all .6s ease";
+        cover.style="transform:scale(0);opacity:0;transition:all .6s ease";
+        setTimeout(function(){
+        	overlay.style.display="none";
+            envwrap.style="transition:all .6s ease";
+            reset.style="transition:all .6s ease";
+            wallpaper.style="transform: scale(1)";
+        }, 700);
+    }
+    
+    vjudul = document.querySelector('.titleC').innerHTML;
+    titleC.innerHTML = "";
+    vmessage = document.querySelector('.messageC').innerHTML;
+    messageC.innerHTML = "";
+    function katanimasi(){
+		new TypeIt(".titleC", {
+	    strings: [vjudul],
+	    startDelay: 250,
+	    speed: spdTextAwal,
+	    cursor: true,
+	    afterComplete: function(){      
+	      	//clearInterval(scrollInterval);
+	      	titleC.innerHTML = vjudul;
+	          setTimeout(() => {katanimasiAlts()}, 300);
+	    },}).go();
+	}
+	
+	function katanimasiAlt(){
+		new TypeIt(".messageC", {
+	    strings: [vmessage],
+	    startDelay: 1,
+	    speed: 30,
+	    cursor: true,
+	    afterComplete: function(){      
+	      	clearInterval(scrollInterval);
+	      	messageC.innerHTML = vmessage;
+	          setTimeout(() => {
+			    stikerHidden();
+			    setTimeout(() => {
+				    mainStiker.src = stikerAlt1.src;
+			    }, 300);
+			  }, 100);
+	    },}).go();
+	}
+
+    function katanimasiAlts(){
+        new TypeIt(".messageC", {
+        strings: teksAnimasi,
+        startDelay: 1,
+        speed: spdTextUtama,
+        cursor: true,
+        breakLines: true,
+        waitUntilVisible: true,
+        afterStep: function(instance) {
+            if (instance.is('completed')) {
+                setTimeout(function() {
+                    instance.next();
+                }, 400);
+            }
+        },
+        afterComplete: function(){      
+            document.querySelector(".ti-cursor").style.display = "none";
+            setTimeout(function() {
+                clearInterval(scrollInterval);
+            }, 1000);
+            setTimeout(() => {
+                stikerHidden();
+                setTimeout(() => {
+                   mainStiker.src = stikerAlt1.src;
+                   //setInterval(berjatuhan,300);
+                 }, 300);
+             }, 100);
+             
+        },}).go();
+    }
+    
+    function stikerHidden(){
+    	stiker.style="transform:scale(0);opacity:0;";
+        setTimeout(function(){stiker.style="transform:scale(1.1);opacity:1;";}, 300);
+    }
+    
+    function autoScroll() {container.scrollTop += 10;} 
+    const scrollInterval = setInterval(autoScroll, 50); 
+</script>
+
+</body>
+</html>
