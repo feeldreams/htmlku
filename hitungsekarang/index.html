@@ -75,8 +75,10 @@ body{background-color:#000;font-family:var(--gaya-font);padding: 20px 25px;-webk
 #loveCalculator img{background:rgba(0,0,0, .1);box-shadow: 0 4px 30px rgba(0,0,0, 0.2);backdrop-filter: blur(5px);-webkit-backdrop-filter: blur(5px);border: 2px solid white;border-radius: 50%;padding:10px;width:80px;height:80px;margin-bottom:0px;transition:all .7s ease}
 #loveCalculator h1{color:white;font-family: var(--gaya-font2);font-size:25px;font-weight:700;margin-bottom:0;transition:all .7s ease}
 #loveCalculator p{color:white;font-size:17px;font-weight:400;margin-bottom:20px;transition:all .7s ease}
-#loveCalculator .input-container{position:relative;display:flex;align-items:center;width:200px;margin:5px 0}
-#loveCalculator input{padding:8px 8px 8px 30px;border-radius:30px;border:2px solid #fff;background:rgba(0,0,0,0.3);color:#fff;text-align:center;font-family:var(--gaya-font),'Segoe UI Emoji','Noto Color Emoji',sans-serif;font-size:16px;width:100%;box-sizing:border-box}
+#loveCalculator .input-container{position:relative;display:flex;align-items:center;width:170px;margin:5px 0}
+#loveCalculator .input-row { display: flex; flex-direction: row; justify-content: center;align-items: center;gap: 10px;}
+#loveCalculator .input-row .input-container {width: 150px;}
+#loveCalculator input{padding:8px 8px 8px 30px;border-radius:30px;border:2px solid #fff;background:rgba(0,0,0,0.2);color:#fff;text-align:center;font-family:var(--gaya-font),'Segoe UI Emoji','Noto Color Emoji',sans-serif;font-size:17px;width:100%;box-sizing:border-box}
 #loveCalculator input::placeholder{color:#fff;opacity:1}
 #loveCalculator .emoji{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:14px;font-family:'Segoe UI Emoji','Noto Color Emoji',sans-serif;pointer-events:none}
 #loveCalculator button {margin-top:20px;padding: 6px 18px; border-radius: 30px; border: 2px solid #fff; background: #EB39C2; color: #fff; font-family: var(--gaya-font); font-weight:700; font-size:17px; cursor: none; transition: all 0.3s ease; /*animation: pulse 1s infinite alternate;*/}
@@ -88,7 +90,7 @@ body{background-color:#000;font-family:var(--gaya-font);padding: 20px 25px;-webk
 @keyframes beat {from {transform: scale(.95);} to {transform: scale(1.1);}}
 #heartAnimation svg .core {animation: colorShift 2s infinite alternate;}
 @keyframes colorShift {from {fill: #FF0089;} to {fill: #FF69B4;}}
-.vheart{position:fixed;width:22px;height:22px;opacity:.8;animation:float 7s ease-in-out forwards;left:0;bottom:0;top:0;z-index:999}
+.vheart{position:fixed;width:22px;height:22px;opacity:.8;animation:float 7s ease-in-out forwards;left:0;bottom:0;top:0;z-index:-1}
 @keyframes float {0%{transform:translateY(100vh);opacity:.65}10%{opacity:.65}90%{opacity:.65}100%{transform:translateY(-100vh);opacity:0}}
 .vheart svg{width:100%;height:100%;fill:none;stroke:white}
 .circ div{position:fixed;width:60px;height:60px;background-color:transparent;border:6px solid rgba(255,255,255,0.15);border-radius:50%;z-index:-999}
@@ -104,9 +106,9 @@ body{background-color:#000;font-family:var(--gaya-font);padding: 20px 25px;-webk
 .circ div:nth-child(10){top:20%;left:80%;animation:animate 5s linear infinite}
 @keyframes animate {0%{transform:scale(0) translateY(0) rotate(0);opacity:.8}100%{transform:scale(1.3) translateY(-90px) rotate(360deg);opacity:0}}
 
-#loveFill {width: 120px;height: 120px;display: none;margin-top: 10px;position: relative;}
+#loveFill {width: 110px;height: 110px;display: none;margin-top: 10px;position: relative;}
 #loveFill svg {width: 100%;height: 100%;}
-#loveFill .heart-path {fill: rgba(0,0,0,.2); stroke: white;stroke-width: 1.5;stroke-linecap: round; stroke-dasharray: 300; stroke-dashoffset: 300;animation: none;}
+#loveFill .heart-path {fill: rgba(0,0,0,.15); stroke: white;stroke-width: 1.5;stroke-linecap: round; stroke-dasharray: 300; stroke-dashoffset: 300;animation: none;}
 #loveFill .percentage {position: absolute;top: 50%;left: 50%;font-family: var(--gaya-font); font-size: 5px !important; opacity: 0; transition: opacity 0.5s ease; pointer-events: none;}
 @keyframes fillHeart { from {stroke-dashoffset: 300;} to {stroke-dashoffset: 0;}}
 </style>
@@ -116,7 +118,7 @@ body{background-color:#000;font-family:var(--gaya-font);padding: 20px 25px;-webk
    
    <div id="bodyblur">
      <!-- Wallpaper / Background -->
-     <img src="https://feeldreams.github.io/wp3.jpeg" id="wallpaper"/>
+     <img src="https://feeldreams.github.io/wp9.jpg" id="wallpaper"/>
    </div>
    
    <div id='Content'>
@@ -131,8 +133,8 @@ body{background-color:#000;font-family:var(--gaya-font);padding: 20px 25px;-webk
 
      <div><div id='pergeseran'>
        <!-- Pesan Slide -->
-       <p><b><img src="https://htmlku.com/0/panda/pusn3.gif"/><br>
-         <span><b>Alooo Kamuuu! 🫣</b><br><br>&gt;&gt;&gt;&gt;</span>
+       <p><b><img src="https://htmlku.com/0/panda/bunga.gif"/><br>
+         <span><b>Alooo Kamuuu! 😆</b><br><br>&gt;&gt;&gt;&gt;</span>
        </b></p>
        <p><b></b></p>
      </div></div>
@@ -147,15 +149,17 @@ body{background-color:#000;font-family:var(--gaya-font);padding: 20px 25px;-webk
 		    <text fill="pink" x="12" y="12" class="percentage" text-anchor="middle" dy="0.15em"></text>
 		  </svg>
 		</div>
-       <h1 id="textlove">Love Calculator 💕</h1>
-       <p id="subtextlove">Yuk Hitung Kecocokan Kita! 😋</p>
-       <div class="input-container">
-		 <span class="emoji">♀️</span>
-		 <input type="text" id="name1" placeholder="Nama / Inisial 1 🩷">
-	   </div>
-       <div class="input-container">
-		 <span class="emoji">♂️</span>
-		 <input type="text" id="name2" placeholder="Nama / Inisial 2 💙">
+       <h1 id="textlove">Love Tester 💕</h1>
+       <p id="subtextlove">Yuk Hitung Kecocokan Pasangan! 😋</p>
+       <div class="input-row">
+		  <div class="input-container">
+		    <span class="emoji">♀️</span>
+		    <input type="text" id="name1" placeholder="Nama 1 🩷">
+		  </div>
+		  <div class="input-container">
+		    <span class="emoji">♂️</span>
+		    <input type="text" id="name2" placeholder="Nama 2 💙">
+		  </div>
 	   </div>
        <button id="calculateBtn">Mulai 🫶🏻</button>
      </div>
@@ -256,8 +260,8 @@ document.getElementById('calculateBtn').addEventListener('click', function() {
       let hash = 0;
       for (let i = 0; i < name1.length; i++) hash += name1.charCodeAt(i);
       for (let i = 0; i < name2.length; i++) hash += name2.charCodeAt(i);
-      //const percentage = Math.floor((hash % 101));
-      const percentage = 100;
+      const percentage = Math.floor((hash % 101));
+      //const percentage = 96;
 
       // Animasi counter dan love fill
       const resultEl = document.getElementById('textlove');
@@ -305,13 +309,13 @@ function showRomanticText(percentage) {
   romanticText.style.display = "block";
   let text = '';
   if (percentage > 95) {
-  	text = "<b style='font-size:20px;line-height:1.5em'>Yeaayy! 🎉</b><br>100% couple goals abis ini mah 😻<br>Limitless loveee ᯓᡣ𐭩🌹🥳🩷";
+  	text = "<b style='font-size:22px;line-height:1.5em'>Yeaaayyy! 🎉</b><br>Tinggal selangkah lagi jadi pasangan paling cocok & couple goalsss<br>ini mahh ᯓᡣ𐭩😻🥳🩷";
   } else if (percentage > 80) {
     const romanticOptions = [
       'Kita beneran soulmate! Cintaku padamu seluas galaksi! 💖✨',
       'Wah, jodoh nih! Aku sih udah jatuh cinta dari pandangan pertama! 😍💞',
       'Hati ini cuma bilang satu hal: kamu adalah takdirku! 🥰💫'
-    ];
+    ]; 
     text = romanticOptions[Math.floor(Math.random() * romanticOptions.length)];
   } else if (percentage > 50) {
     const mediumOptions = [
