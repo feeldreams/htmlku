@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+<meta charset='UTF-8'/>
+<meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5' name='viewport'/>
+<meta content='IE=edge' http-equiv='X-UA-Compatible'/>
+  
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+<script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
+<link rel="stylesheet" href="">
+
+<head>
+<title>💌 S.id/hitungsekarang (Buka di browser)</title>
+<meta name="description" content="HTML Feeldream Repl Co">
+<!-- 
+  Made with love by Rayys!
+  
+     Blog: feeldream.id
+     Instagram: @rayyarrr
+     TikTok: @feelthisray
+     
+  Thanks to all <3
+-->
+</head>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+
+:root {
+--warna-bg: rgba(0, 0, 0, .3); 
+--tombol-teks: #fff;
+--tombol-bingkai: #fff;
+--bingkai: 18px;
+--bingkai-kiri: 1.3px solid var(--tombol-bingkai);
+--bingkai-kanan: 1.3px solid var(--tombol-bingkai);
+--gaya-font: 'Itim', cursive;
+--gaya-font2: 'Caveat', cursive;
+--heart: #FF0089; 
+--shadow: rgba(255, 43, 79, 0.2);
+}
+@keyframes fanim {0% {background-position: 0% 0%;}25% {background-position: 100% 100%;} 50% {background-position: 0% 100%;} 75% {background-position: 50% 50%;} 100% {background-position: 0% 0%;}}
+body{background-color:#000;font-family:var(--gaya-font);padding: 20px 25px;-webkit-user-select: none; -ms-user-select: none; user-select: none;overflow:hidden} a{text-decoration:none;} ::-webkit-scrollbar{display:none;width:0}
+#bodyblur{opacity:.2;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.3);transition:all 1s ease;}
+#wallpaper{animation: jj 7s infinite alternate;width:100%;height:100%;transform: scale(1);transition:all 1.7s ease;}
+@keyframes jj{0%  {transform: scale(1);} 50% {transform: scale(1.2);} 100% {transform: scale(1);}}
+#Content{animation-name:none;animation-duration: 3s;animation-iteration-count: infinite;position:relative;opacity:0;margin-top:50px;width:100%;height:180px;transition:all .7s ease;}
+#Content > *{display:flex;align-items:center;text-align:center;justify-content:center;margin-top:1px;}
+#pergeseran{margin-top:10px;position:absolute;opacity:0;transform:scale(0);transition:all 1s ease;display:flex;flex-wrap:nowrap;align-items:flex-start;justify-content:flex-start;max-width:500px;padding:0 20px; overflow-y:hidden;overflow-x:hidden;scroll-behavior:smooth;scroll-snap-type:x mandatory; -ms-overflow-style:none;-webkit-overflow-scrolling:touch}
+#pergeseran p{padding:10px;padding-top:24px;display:flex;flex-wrap:nowrap;text-align:center;line-height:1.4em;align-items:center;justify-content:center;flex-shrink:0; width:90%;margin:0 15px 0 0; scroll-snap-align:center}
+#pergeseran p, #psn{color:#fff;min-height:150px;}
+#pergeseran > *:last-child{margin-right:0} #pergeseran:after{content:'';display:block;flex-shrink:0; align-self:stretch;padding-left:20px}
+#pergeseran p b{display:block;}
+#pergeseran p b span{font-size:20px;font-weight:500}
+#pergeseran p b span.ft{font-family:var(--gaya-font2);font-weight:700;font-size:20px}
+#pergeseran p b img{background:rgba(0,0,0, .1);box-shadow: 0 4px 30px rgba(0,0,0, 0.2);backdrop-filter: blur(5px);-webkit-backdrop-filter: blur(5px);border: 2px solid white;border-radius: 50%;padding:10px;width:80px;height:80px;margin-bottom:40px;}
+#keterangan{position:relative;bottom:-100px;color:#fff;font-size:15px;opacity:0;transition:all .7s ease;}
+#ket{color:white;font-size:20px;font-weight:700;opacity:1}
+.awalan{margin-top:14px;width:270px;min-height:25px;padding:12px;font-family:'Inter', cursive;font-size:12px;color:white;background: rgba(0,0,0, 0.2);backdrop-filter:blur(10px);border-radius:30px;box-shadow: 0 8px 32px rgba(212, 175, 184, 0.2);border:2px solid rgba(255,255,255, 0.5);display:flex;align-items:center;text-align:left}
+.awalan svg{margin-right:15px;width:25px;height:25px;stroke:white}
+.dots{position:relative;bottom:-150px;left:50%;transform:translateX(-50%);display:flex;justify-content:center;align-items:center;width:100%;z-index:2;opacity:0;transition:all .8s ease;}
+.dot{height:8px;width:8px;border-radius:50%;margin:0 5px;background-color:#aaa;cursor:pointer;opacity:.7;}
+.dot.active{background-color:white;opacity:1;}
+.swal2-modal > *{font-size:16px;color:#fff}
+.swal2-title{line-height:1.3em;font-size:20px;text-align:center;padding:15px 30px 0 30px;}
+.swal2-timer-progress-bar-container > *{opacity:.7;background:#00B6FF;margin:0 2px}
+.swal2-modal{background: rgba(0,0,0, .4);backdrop-filter: blur(3px);-webkit-backdrop-filter: blur(3px);box-shadow: 0 4px 30px rgba(255,255,255, 0.3);border: 2.5px solid #fff;border-radius:30px;max-width:310px;top:-60px;}
+.swal2-image{background: rgba(255, 255, 255, 0.5);box-shadow: 0 4px 30px rgba(255,255,255, 0.3);backdrop-filter: blur(5px);-webkit-backdrop-filter: blur(5px);border: 1px solid rgba(255, 255, 255, 0.3);border-radius: 50%;padding:10px;}
+.swal2-styled.swal2-confirm, .swal2-styled.swal2-cancel{position: relative;background-color: #EB39C2;color: #fff;border: 2.5px solid #fff;border-radius:30px;z-index: 1;transition: all 0.2s;}
+.swal2-input,.swal2-textarea,.swal2-select {border-radius: 30px !important;border: 2.5px solid #fff;width:80%}
+.swal2-input:focus,.swal2-textarea:focus,.swal2-select:focus {outline: none;box-shadow: none;border: 2.5px solid #fff;}
+.sembunyi{display:none !important}
+
+/* Love Calculator Styles */
+#loveCalculator {display: none; flex-direction: column; align-items: center; justify-content: center; padding: 20px; background: rgba(248, 225, 233, 0.1); backdrop-filter: blur(10px); border-radius: 30px; box-shadow: 0 8px 32px rgba(212, 175, 184, 0.4); border: 2px solid rgba(255,255,255, 1); max-width: 300px; margin: 0 auto; margin-top:0; margin-bottom:-130px; animation: fadeIn 1s ease-in-out;}
+@keyframes fadeIn {from {opacity: 0; transform: scale(0.5);} to {opacity: 1; transform: scale(1);}}
+#loveCalculator img{background:rgba(0,0,0, .1);box-shadow: 0 4px 30px rgba(0,0,0, 0.2);backdrop-filter: blur(5px);-webkit-backdrop-filter: blur(5px);border: 2px solid white;border-radius: 50%;padding:10px;width:80px;height:80px;margin-bottom:0px;transition:all .7s ease}
+#loveCalculator h1{color:white;font-family: var(--gaya-font2);font-size:25px;font-weight:700;margin-bottom:0;transition:all .7s ease}
+#loveCalculator p{color:white;font-size:17px;font-weight:400;margin-bottom:20px;transition:all .7s ease}
+#loveCalculator .input-container{position:relative;display:flex;align-items:center;width:200px;margin:5px 0}
+#loveCalculator input{padding:8px 8px 8px 30px;border-radius:30px;border:2px solid #fff;background:rgba(0,0,0,0.3);color:#fff;text-align:center;font-family:var(--gaya-font),'Segoe UI Emoji','Noto Color Emoji',sans-serif;font-size:16px;width:100%;box-sizing:border-box}
+#loveCalculator input::placeholder{color:#fff;opacity:1}
+#loveCalculator .emoji{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:14px;font-family:'Segoe UI Emoji','Noto Color Emoji',sans-serif;pointer-events:none}
+#loveCalculator button {margin-top:20px;padding: 6px 18px; border-radius: 30px; border: 2px solid #fff; background: #EB39C2; color: #fff; font-family: var(--gaya-font); font-weight:700; font-size:17px; cursor: none; transition: all 0.3s ease; /*animation: pulse 1s infinite alternate;*/}
+#loveCalculator button:hover {transform: scale(1.1);}
+@keyframes pulse {from {transform: scale(1);} to {transform: scale(1.05);}}
+#result {margin-top: 20px; font-size: 30px; font-weight:700; font-family: var(--gaya-font2); color: #fff; text-align: center; display: none;}
+#romanticText {margin-top: 10px; font-size: 16px; color: #fff; text-align: center; opacity: 0; transition: opacity 1s ease;}
+#heartAnimation {width: 100px; height: 100px; margin-top: 10px; display: none; animation: beat 1s infinite alternate;}
+@keyframes beat {from {transform: scale(.95);} to {transform: scale(1.1);}}
+#heartAnimation svg .core {animation: colorShift 2s infinite alternate;}
+@keyframes colorShift {from {fill: #FF0089;} to {fill: #FF69B4;}}
+.vheart{position:fixed;width:22px;height:22px;opacity:.8;animation:float 7s ease-in-out forwards;left:0;bottom:0;top:0;z-index:999}
+@keyframes float {0%{transform:translateY(100vh);opacity:.65}10%{opacity:.65}90%{opacity:.65}100%{transform:translateY(-100vh);opacity:0}}
+.vheart svg{width:100%;height:100%;fill:none;stroke:white}
+.circ div{position:fixed;width:60px;height:60px;background-color:transparent;border:6px solid rgba(255,255,255,0.15);border-radius:50%;z-index:-999}
+.circ div:nth-child(1){top:12%;left:42%;animation:animate 10s linear infinite}
+.circ div:nth-child(2){top:70%;left:50%;animation:animate 7s linear infinite}
+.circ div:nth-child(3){top:17%;left:6%;animation:animate 9s linear infinite}
+.circ div:nth-child(4){top:20%;left:60%;animation:animate 10s linear infinite}
+.circ div:nth-child(5){top:67%;left:10%;animation:animate 6s linear infinite}
+.circ div:nth-child(6){top:80%;left:70%;animation:animate 12s linear infinite}
+.circ div:nth-child(7){top:60%;left:80%;animation:animate 15s linear infinite}
+.circ div:nth-child(8){top:32%;left:25%;animation:animate 16s linear infinite}
+.circ div:nth-child(9){top:90%;left:25%;animation:animate 9s linear infinite}
+.circ div:nth-child(10){top:20%;left:80%;animation:animate 5s linear infinite}
+@keyframes animate {0%{transform:scale(0) translateY(0) rotate(0);opacity:.8}100%{transform:scale(1.3) translateY(-90px) rotate(360deg);opacity:0}}
+
+#loveFill {width: 120px;height: 120px;display: none;margin-top: 10px;position: relative;}
+#loveFill svg {width: 100%;height: 100%;}
+#loveFill .heart-path {fill: rgba(0,0,0,.2); stroke: white;stroke-width: 1.5;stroke-linecap: round; stroke-dasharray: 300; stroke-dashoffset: 300;animation: none;}
+#loveFill .percentage {position: absolute;top: 50%;left: 50%;font-family: var(--gaya-font); font-size: 5px !important; opacity: 0; transition: opacity 0.5s ease; pointer-events: none;}
+@keyframes fillHeart { from {stroke-dashoffset: 300;} to {stroke-dashoffset: 0;}}
+</style>
+<body>
+   <!-- Ganti Audio di sini -->
+   <audio src="https://feeldreams.github.io/audio/foreveryoung.mp3" id="linkmp3" class="sembunyi"></audio>
+   
+   <div id="bodyblur">
+     <!-- Wallpaper / Background -->
+     <img src="https://feeldreams.github.io/wp3.jpeg" id="wallpaper"/>
+   </div>
+   
+   <div id='Content'>
+     <p id="ket">Coba buka ini yaaa 🫣🩷</p>
+     <div id="loveIn">
+       <!-- Tombol LOVE -->
+       <div class="awalan">
+         <svg class='line' fill='none' xmlns='https://www.w3.org/2000/svg' viewBox='0 0 24 24'><g transform='translate(2.000000, 2.000000)'><path d='M9.27542857,0.714285714 C14.0030476,0.714285714 17.836381,4.54666667 17.836381,9.2752381 C17.836381,14.0038095 14.0030476,17.8361905 9.27542857,17.8361905 C4.54685714,17.8361905 0.71447619,14.0038095 0.71447619,9.2752381 C0.71447619,4.54666667 4.54685714,0.714285714 9.27542857,0.714285714 Z'></path><path d='M17.8989524,16.487619 C18.678,16.487619 19.3094286,17.12 19.3094286,17.8980952 C19.3094286,18.6780952 18.678,19.3095238 17.8989524,19.3095238 C17.1199048,19.3095238 16.4875238,18.6780952 16.4875238,17.8980952 C16.4875238,17.12 17.1199048,16.487619 17.8989524,16.487619 Z'></path></g></svg>
+         <label style="font-family: var(--gaya-font);font-size:16px">S.id/hitungsekarang</label>
+       </div>
+     </div>
+
+     <div><div id='pergeseran'>
+       <!-- Pesan Slide -->
+       <p><b><img src="https://htmlku.com/0/panda/pusn3.gif"/><br>
+         <span><b>Alooo Kamuuu! 🫣</b><br><br>&gt;&gt;&gt;&gt;</span>
+       </b></p>
+       <p><b></b></p>
+     </div></div>
+     
+     <!-- Love Calculator Game -->
+     <div id="loveCalculator">
+       <img id="stikerAkhir" src="https://htmlku.com/0/panda/panah.gif"/>
+       <img id="stikerAkhir2" src="https://htmlku.com/0/panda/terlope2.gif" class="sembunyi"/>
+       <div id="loveFill">
+		  <svg viewBox="0 0 24 24">
+		    <path class="heart-path" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+		    <text fill="pink" x="12" y="12" class="percentage" text-anchor="middle" dy="0.15em"></text>
+		  </svg>
+		</div>
+       <h1 id="textlove">Love Calculator 💕</h1>
+       <p id="subtextlove">Yuk Hitung Kecocokan Kita! 😋</p>
+       <div class="input-container">
+		 <span class="emoji">♀️</span>
+		 <input type="text" id="name1" placeholder="Nama / Inisial 1 🩷">
+	   </div>
+       <div class="input-container">
+		 <span class="emoji">♂️</span>
+		 <input type="text" id="name2" placeholder="Nama / Inisial 2 💙">
+	   </div>
+       <button id="calculateBtn">Mulai 🫶🏻</button>
+     </div>
+     
+     <div class="dots" id="dots-container"></div>
+     <p id="keterangan">Klik untuk Geser! 👉</p>
+   </div>
+
+   <div>
+     <div class="circ">
+       <!-- Box elements -->
+       <div></div><div></div><div></div><div></div><div></div>
+       <div></div><div></div><div></div><div></div><div></div>
+     </div>
+   </div>
+    
+<script>
+const body = document.querySelector("body"); 
+const swals = Swal.mixin({timer: 99999, allowOutsideClick: false, showConfirmButton: true, timerProgressBar: false, imageHeight: 90,}); 
+audio = new Audio(document.getElementById('linkmp3').src); 
+Content.style = "opacity:1;margin-top:28vh"; 
+
+const box = document.getElementById('pergeseran');
+const totalSlide = box.children.length;
+console.log('Skrip dibuat oleh feeldream.id 😋');
+console.log('Total Slide: ', totalSlide);
+totalPesan = totalSlide;
+
+var sudahklik = true;
+var fungsiAwal = 0;
+document.getElementById("loveIn").onclick = async function() {
+  if(sudahklik && fungsiAwal==0){
+    loveIn.style="transition:all .5s ease;opacity:0";
+    ket.style="transition:all .5s ease;opacity:0";
+    fungsiAwal=1;
+    setTimeout(initengahan,300);
+  } else {
+    sudahklik = true;
+  }
+}
+
+async function initengahan(){
+  loveIn.style="display:none";
+  ket.style="display:none";
+  Content.style = "opacity:1;margin-top:9vh";
+  bodyblur.style = "opacity:.35";
+  setTimeout(pgmuncul,200);
+}
+
+function pgmuncul(){
+  pergeseran.style="position:relative;opacity:1;transform:scale(1);";
+  keterangan.style="opacity:1";
+  document.getElementById('dots-container').style="opacity:1";
+  setTimeout(munculkembali,500);
+}
+
+aktigeser=0;
+thisgeser=1;
+document.addEventListener('click', function() {
+  if(aktigeser==1){
+    if(thisgeser==totalPesan){}
+    document.getElementById('pergeseran').scrollLeft += 300;
+    hsementara();
+    keterangan.style="";
+    setTimeout(showLoveCalculator,300);
+    if(thisgeser>totalPesan){/*document.getElementById('dots-container').style="display:none";*/} else {moveToNextDot()}
+  }
+});
+
+function hsementara(){
+  thisgeser+=1;
+  aktigeser=0;
+  setTimeout(munculkembali,500);
+}
+
+function munculkembali(){
+  if(thisgeser<=totalPesan){
+    aktigeser=1;
+  }
+}
+
+function showLoveCalculator() {
+  document.getElementById('loveCalculator').style.display = 'flex';
+  document.getElementById('pergeseran').style.display = 'none';
+  //document.getElementById('dots-container').style.display = 'none';
+  document.getElementById('keterangan').style.display = 'none';
+}
+
+// Love Calculator Logic
+document.getElementById('calculateBtn').addEventListener('click', function() {
+  calculateBtn.style = "transform: scale(0);opacity:0";
+  setTimeout(() => {
+    subtextlove.style.display = "none";
+    calculateBtn.style.display = "none";
+    const name1 = document.getElementById('name1').value.toLowerCase();
+    const name2 = document.getElementById('name2').value.toLowerCase();
+    if (name1 && name2) {
+      let hash = 0;
+      for (let i = 0; i < name1.length; i++) hash += name1.charCodeAt(i);
+      for (let i = 0; i < name2.length; i++) hash += name2.charCodeAt(i);
+      //const percentage = Math.floor((hash % 101));
+      const percentage = 100;
+
+      // Animasi counter dan love fill
+      const resultEl = document.getElementById('textlove');
+      const subtextlove = document.getElementById('subtextlove');
+      const loveFill = document.getElementById('loveFill');
+      const heartPath = document.querySelector('#loveFill .heart-path');
+      const percentageText = document.querySelector('#loveFill .percentage');
+      resultEl.style.display = 'none';
+      resultEl.style.fontSize = '40px';
+      loveFill.style.display = 'block';
+      let count = 0;
+      const totalLength = heartPath.getTotalLength(); // Panjang total path
+      heartPath.style.strokeDasharray = totalLength;
+      heartPath.style.strokeDashoffset = totalLength;
+
+      const interval = setInterval(() => {
+        count++;
+        resultEl.innerHTML = `${count}%`;
+        const progress = totalLength - (totalLength * count / 100); // Mengisi dari bawah ke atas
+        heartPath.style.strokeDashoffset = progress;
+        percentageText.textContent = `${count}%`;
+        percentageText.style.opacity = 1;
+        if (count >= percentage) {
+          clearInterval(interval);
+          resultEl.innerHTML = `${percentage}%`;
+          if (percentage >= 100) resultEl.innerHTML = `${percentage}% <span style='font-size:30px'>🎉</span>`;
+          percentageText.textContent = `${percentage}%`;
+          showRomanticText(percentage);
+          loveFill.style.animation = 'beat 1s infinite alternate';
+          setInterval(berjatuhan, 200);
+          stikerAkhir.style = "opacity:0;transform:scale(0)";
+          setTimeout(() => { stikerAkhir.src = stikerAkhir2.src; stikerAkhir.style = "animation: beat 1s infinite alternate;"; }, 300);
+        }
+      }, 20);
+    } else {
+      swals.fire('Ups!', 'Masukkan kedua nama ya! 🫣');
+      calculateBtn.style = "";
+    }
+  }, 150);
+});
+
+function showRomanticText(percentage) {
+  const romanticText = document.getElementById('subtextlove');
+  romanticText.innerHTML = "";
+  romanticText.style.display = "block";
+  let text = '';
+  if (percentage > 95) {
+  	text = "<b style='font-size:20px;line-height:1.5em'>Yeaayy! 🎉</b><br>100% couple goals abis ini mah 😻<br>Limitless loveee ᯓᡣ𐭩🌹🥳🩷";
+  } else if (percentage > 80) {
+    const romanticOptions = [
+      'Kita beneran soulmate! Cintaku padamu seluas galaksi! 💖✨',
+      'Wah, jodoh nih! Aku sih udah jatuh cinta dari pandangan pertama! 😍💞',
+      'Hati ini cuma bilang satu hal: kamu adalah takdirku! 🥰💫'
+    ];
+    text = romanticOptions[Math.floor(Math.random() * romanticOptions.length)];
+  } else if (percentage > 50) {
+    const mediumOptions = [
+      'Kita klik banget nih! Yuk, bikin cerita cinta kita mulai! 😘❤️',
+      'Cocok sih, tapi aku yakin kita bisa bikin ini 100%! Jadian yuk? 😉💕',
+      'Hati ini bilang kita punya chemistry! Ayo, pacaran biar makin seru! 🥳💖',
+      'Lumayan cocok, nih! Satu kencan lagi, pasti skornya naik! 😜💘'
+    ];
+    text = mediumOptions[Math.floor(Math.random() * mediumOptions.length)];
+  } else {
+    const lowOptions = [
+      'Eits, skor rendah? Tenang, cinta sejati butuh perjuangan epic! 💪😂',
+      'Kita kayak puzzle yang belum pas, tapi aku siap nyanyi buat kamu! 😅🎶',
+      'Cinta kita kayak Wi-Fi, sinyal lemah tapi tetep nyambung! 😜💕',
+      'Skor kecil? Gak apa, aku siap kejar hatimu sampai 100%! 🏃‍♂️❤️'
+    ];
+    text = lowOptions[Math.floor(Math.random() * lowOptions.length)];
+  }
+  romanticText.innerHTML = text;
+  romanticText.style.opacity = 1;
+}
+
+const pergeseran = document.getElementById('pergeseran');
+const dotsContainer = document.getElementById('dots-container');
+const paragraphs = pergeseran.getElementsByTagName('p');
+const numberOfDots = paragraphs.length;
+
+for (let i = 0; i < numberOfDots; i++) {
+  const dot = document.createElement('div');
+  dot.className = 'dot';
+  if (i === 0) {
+    dot.classList.add('active');
+  }
+  dotsContainer.appendChild(dot);
+}
+
+function moveToNextDot() {
+  const activeDot = document.querySelector('.dot.active');
+  let nextDot = activeDot.nextElementSibling;
+  if (!nextDot) {
+    nextDot = dotsContainer.firstElementChild;
+  }
+  activeDot.classList.remove('active');
+  nextDot.classList.add('active');
+}
+
+function berjatuhan() {
+  const heart = document.createElement('div');
+  heart.className = 'vheart';
+  heart.innerHTML = `<svg class='line' xmlns='https://www.w3.org/2000/svg' viewBox='0 0 24 24'><g transform='translate(2.550170, 3.550158)'><path d='M0.371729633,8.89614246 C-0.701270367,5.54614246 0.553729633,1.38114246 4.07072963,0.249142462 C5.92072963,-0.347857538 8.20372963,0.150142462 9.50072963,1.93914246 C10.7237296,0.0841424625 13.0727296,-0.343857538 14.9207296,0.249142462 C18.4367296,1.38114246 19.6987296,5.54614246 18.6267296,8.89614246 C16.9567296,14.2061425 11.1297296,16.9721425 9.50072963,16.9721425 C7.87272963,16.9721425 2.09772963,14.2681425 0.371729633,8.89614246 Z'></path><path d='M13.23843,4.013842 C14.44543,4.137842 15.20043,5.094842 15.15543,6.435842'></path></g></svg>`;
+  heart.style.left = Math.random() * 100 + 'vw';
+  heart.addEventListener('animationend', () => heart.remove());
+  document.body.appendChild(heart);
+}
+</script>
+</body>
+</html>
