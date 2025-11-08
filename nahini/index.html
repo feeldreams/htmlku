@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>— 𝗦.𝗶𝗱/𝗻𝗮𝗵𝗶𝗻𝗶 ✨</title>
+  <meta name="description" content="@feelthisray - Script HTML by Feeldream Repl Co">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+<script>
+window.history.pushState(null, "", window.location.href);
+window.addEventListener("popstate", function () {
+    window.location.href = "https://htmlku.my.id";
+});
+</script>
+  <link rel="icon" type="image/svg+xml" href="https://feeldreams.github.io/main-icon.png"> 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="style.css"><script src="https://unpkg.com/scrollreveal"></script><script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script><script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+	
+	:root {
+	   --itim: 'Itim', cursive;
+	}
+
+    html, body {position: relative;height: 100%;}
+    body {background: #000;font-family: 'Itim', cursive;font-size: 14px;color: #fff;text-shadow: 0px 2px 2px rgba(0, 0, 0, .5);margin: 0;padding: 0;}
+    
+    #bodyblur{opacity:.4;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);transition:all 1s ease;} 
+    #thisblur{backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);position:absolute;top:0;left:0;right:0;bottom:0;}
+    #wallpaper{/*animation: jj 7s infinite;*/width:100%;height:100%;transform: scale(1.3);transition:all 1.3s ease;}
+    @keyframes jj{0%  {transform: scale(1);} 50% {transform: scale(1.3);} 100% {transform: scale(1);}}
+
+    p{margin-left:20px;margin-right:70px;text-align:left}
+    #ket{margin:20px}
+
+    .swiper {width: 100%;height: 100%;padding:0;margin:0;}
+    .swiper-slide {text-align: center;font-size: 18px;/*background: #fff;*/display: flex;flex-direction: column;justify-content: center;align-items: center;margin-top:-100px;}
+    .swiper-slide img {display: block;width: 100%;height: 100%;object-fit: cover;}
+    .swiper-pagination{margin-bottom:20vh}
+    .swiper-pagination-bullet-active{background-color: #fff !important;opacity:1 !important}
+    .swiper-pagination-bullet{background-color:rgba(255,255,255, 1) !important;}
+    .swiper-button-next, .swiper-button-prev{display:flex;top:unset;bottom:-100px}
+    
+    .sembunyi{display: none !important;}
+    .stiker{display:flex;justify-content:center;align-items:center;margin-left:auto;margin-right:auto;margin-bottom:20px;transition:all .75s ease}
+    .stiker img{width:90px;height:90px;box-shadow: 0 4px 30px rgba(255,255,255, 0.3);/*backdrop-filter: blur(5px);-webkit-backdrop-filter: blur(5px);*/background: rgba(255, 255, 255, .3);border: 2.5px solid rgba(255, 255, 255, 0.8);border-radius: 50%;padding:10px;}
+    .stiker img.sty2{background:none;filter: drop-shadow(0 4px 8px rgba(255, 255, 255, 0.2));box-shadow: none;backdrop-filter: none;-webkit-backdrop-filter: none;border: none;border-radius: 0;padding:0;width: auto;height:90px;}
+	b.merah{color:red}
+	b.kuning{color:yellow}
+	b.putih{text-shadow:none;padding-left:8px;padding-right:8px;padding-top:2px;padding-bottom:2px;background-color:white;border-radius:12px}
+	span.garismerah{border-bottom:2px solid red}
+	span.gariskuning{border-bottom:2px solid yellow}
+    p{color:white;font-size:17.5px;line-height:1.5em;}
+    .scale0{opacity:0;transform: scale(0);transition: all .9s ease;}
+    .scale1{opacity:1;transform: scale(1);transition: all .9s ease;}
+    svg{vertical-align: middle;width: 22px;height: 22px;fill: #fff}
+    .heart-icon {z-index:100;width: 30px;height: 30px;position: fixed;animation:  heartMove linear 1;top: -10vh;}
+
+	@keyframes heartMove {0% {transform: translateY(-10vh);}100% {transform: translateY(100vh);}}
+	svg.line{fill: none;stroke: #fff;stroke-width: 2;}
+	.spin{animation: spin 3s linear infinite alternate;}
+
+	@keyframes spin {from {transform: rotate(20deg);}to {transform: rotate(-20deg);}}
+	@keyframes moving {from {transform: translateY(0);}to {transform: translateY(3px);}}
+    .overlay {position: fixed;top: 0;left: 0;width: 100%;height: 100%;display: flex;flex-direction:column;justify-content: center;align-items: center;background:rgba(0,0,0,.6);z-index:100;}
+    .loading-message {font-size: 13px;text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);color:white;text-align: center;}
+    .blocklove{display: none;flex-direction: column;justify-content: center;align-items: center;}
+    
+    .blocktext{margin-top:10px;position:relative;width:90%;height: 260px; overflow: auto;background-color:none;}
+    #teksOps{opacity:0;font-size:15px;font-weight:400;transition:all .7s ease}
+    
+    .sertifikat {position: relative;width: 330px;height: 236px;text-shadow:none}
+	.sertifikat img {border-radius:30px;width: 100%;height: 100%;}
+	.text-overlay {position: absolute;top: 35px;left: 0;width: 100%;text-align: center;color: #333;font-size: 14px;font-weight: bold;}
+	.text-overlay h1 {font-size: 20px;color:#fff;margin: 0;}
+	.text-overlay .sub-title {font-size: 14px;color:yellow;margin-bottom: 10px;}
+	.content {font-size: 12px;color:#fff;}
+	.real {font-weight: bold;color: #fff;font-size: 12px;}
+	
+    .tombol{background-color: rgba(255,255,255,0);border-radius: 50px;overflow: hidden;display: flex;align-items: center;justify-content: center;-webkit-transition: all .2s ease-out;transition: all .2s ease-out}
+    .tombol svg{margin: auto;fill:#ffd4d4;stroke: #ff0000;width: 60px;height: 60px;animation: spin2 1s linear infinite alternate;}
+    #Tombol{margin-top:20px;position:relative;margin-left:auto;margin-right:auto;display:flex;align-items:center;justify-content:center;list-style:none;transition:all 1s ease;}
+    #Tombol a{display:inline-flex;align-items:center; margin:0;margin:10px;transition:all .2s ease;padding:10px;outline:0;border:1px solid white;border-radius:12px;line-height:15px;background:rgba(0,0,0,.3);color:white;font-size:13px;font-weight:700;white-space:nowrap;overflow:hidden;box-shadow: rgba(255,255,255, 0.15) 0px 7px 29px 0px;z-index:1;cursor:none}
+    #Tombol, #Tombol2, #TombolWA{position:relative;opacity:0;margin-left:auto;margin-right:auto;display:flex;justify-content:center;align-items:center;list-style:none;transition:all 1s ease;}
+    #Tombol a, #Tombol2 a, #TombolWA a{display:inline-flex;align-items:center; margin:0;margin:10px;transition:all .2s ease;padding:10px;outline:0;border:2px solid white;border-radius:30px;line-height:15px;background:rgba(255, 182, 193, .3);color:white;font-size:13px;font-weight:700;white-space:nowrap;overflow:hidden;box-shadow: rgba(255,255,255, 0.15) 0px 7px 29px 0px;z-index:1}
+    
+    .swal2-modal > *{color:white}
+    .swal2-title{line-height:1.3em;font-size:18px;text-align:center;padding:15px 30px 0 30px;}
+    .swal2-container.swal2-backdrop-show{background: rgba(0,0,0,.5);}
+    .swal2-timer-progress-bar-container > *{opacity:.7;background:#00B6FF;margin:0 2px}
+    .swal2-modal{box-shadow: rgba(255,255,255, 0.3) 0px 7px 29px 0px;background:rgba(0,0,0,.9);max-width:320px;border-right:2px solid #fff;border-left:2px solid #fff;border-radius:4px;top:-50px;}
+   
+    .cover{margin-top:-120px;display:flex;flex-direction:column;justify-content:center;align-items:center}
+    .searchBar{font-size:50px;display:flex;align-items:center;justify-content:center;transition:all .3s ease;}
+    .searchBar svg{width:80px;height:80px;fill:#fefefe}
+    .awalan{margin-top:20px;width:220px;min-height:25px;padding:12px;font-size:13px;color:white;border:2px solid #fff;border-radius:30px;display:flex;align-items:center;text-align:left}
+    .awalan svg{margin-right:15px;width:25px;height:25px;stroke:white}
+    
+    .circ div{position:fixed;width:60px;height:60px;background-color:transparent;border:6px solid rgba(255,255,255,0.2);border-radius:50%;}
+	.circ div:nth-child(1){top:12%;left:42%;animation:animate 10s linear infinite;}
+	.circ div:nth-child(2){top:70%;left:50%;animation:animate 7s linear infinite;}
+	.circ div:nth-child(3){top:17%;left:6%;animation:animate 9s linear infinite;}
+	.circ div:nth-child(4){top:20%;left:60%;animation:animate 10s linear infinite;}
+	.circ div:nth-child(5){top:67%;left:10%;animation:animate 6s linear infinite;}
+	.circ div:nth-child(6){top:80%;left:70%;animation:animate 12s linear infinite;}
+	.circ div:nth-child(7){top:60%;left:80%;animation:animate 15s linear infinite;}
+	.circ div:nth-child(8){top:32%;left:25%;animation:animate 16s linear infinite;}
+	.circ div:nth-child(9){top:90%;left:25%;animation:animate 9s linear infinite;}
+	.circ div:nth-child(10){top:20%;left:80%;animation:animate 5s linear infinite;}
+	@keyframes animate{0%{transform:scale(0) translateY(0) rotate(0);opacity:.8;}100%{transform:scale(1.3) translateY(-90px) rotate(360deg);opacity:0;}}
+</style>
+</head>
+
+<body>
+  <audio src="shttps://feeldreams.github.io/audio/kasihtinggal.mp3" id="linkmp3" class="sembunyi"></audio>
+	<div class="overlay">
+		<div class="cover">
+	    <p style="font-size:17px;font-weight:700;margin:0;margin-left:-70px">Kirim ke wanita yang<br>paling lo sayangg... 💕</p>
+	   <div id="searchBar" class="awalan">
+	     <svg style='fill: none;stroke: #fff;stroke-width: 2' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><g transform='translate(2.000000, 2.000000)'><path d='M9.27542857,0.714285714 C14.0030476,0.714285714 17.836381,4.54666667 17.836381,9.2752381 C17.836381,14.0038095 14.0030476,17.8361905 9.27542857,17.8361905 C4.54685714,17.8361905 0.71447619,14.0038095 0.71447619,9.2752381 C0.71447619,4.54666667 4.54685714,0.714285714 9.27542857,0.714285714 Z'></path><path d='M17.8989524,16.487619 C18.678,16.487619 19.3094286,17.12 19.3094286,17.8980952 C19.3094286,18.6780952 18.678,19.3095238 17.8989524,19.3095238 C17.1199048,19.3095238 16.4875238,18.6780952 16.4875238,17.8980952 C16.4875238,17.12 17.1199048,16.487619 17.8989524,16.487619 Z'></path></g></svg>
+	     <label style="font-size:16px">S.id/formanisku</label>
+	   </div>
+	</div>
+   </div>
+   
+   <div id="bodyblur">
+     <img src="https://feeldreams.github.io/wp11.jpg" id="wallpaper"/>
+   </div>
+   
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+                <div id="stiker1" class="scale0 stiker">
+                    <img src="https://htmlku.com/0/panda/bunga.gif" />
+                </div>
+                <h1 id="teks1" class="scale0 quicksand" style="font-size: 20px;">Alooo Kamuuu! 🫣<br><br><span style='font-size:18px;font-weight:400'>Aku punya sesuatu nii 🤏</span><br><br>>>>>
+                </h1>
+            </div>
+
+            <div class="swiper-slide">
+                <div id="stiker2" class="scale0 stiker" style="margin-top:100px">
+				    <img id="stikerAkhir2" src="https://htmlku.com/0/panda/cilukba.gif" />
+                    <img id="stikerAkhir3" class="sembunyi" src="https://feeldreams.github.io/emawh.gif" />
+				</div>
+                <div class="blocktext">
+                    <p id="teks2"><span style='font-size:18px;font-weight:400'>Nahh, ini <b>diaaa ᯓᡣ𐭩 🫵</b><br><i>Cantik banget, kan?</i></span><br>—<br>Tuh pasti senyum² sendiri, kan? Hihihii 𖹭.ᐟ<br><br><b>Kamu Tau Nggaa? 🫣</b><br>─•<br>Aku bangga banget memiliki<br>wanita sepertimu dan kamu<br>adalah keberuntungan yang<br>sangat aku syukuri, sehat sehat<br>terus yaa sayangku cintaku<br>maniskuuuu, <b>lopppyouuuu</b><br>cantiknyaa akuu 💘💞💗💕</p>
+                    <p id="teksAkhir"></p>
+                </div>
+            </div>
+
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+    
+    <!-- Circle Animation -->
+    <div id="circgroup">
+        <div>
+            <div class="circ">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+var teksSekarang = 1;const body = document.querySelector("body"); audio = new Audio('' + linkmp3.src); 
+var swiper = new Swiper(".mySwiper", {
+    pagination: {el: ".swiper-pagination", dynamicBullets: true,},
+    allowTouchMove: false,
+    on: {
+    slideChange: function () {
+        teksSekarang++;
+        teksScale = document.querySelector('#teks' + teksSekarang);
+        stikerScale = document.querySelector('#stiker' + teksSekarang);
+        Tombol = document.querySelector('#Tombol');
+
+        setTimeout(function(){
+          teksScale.classList.add("scale1");
+          stikerScale.classList.add("scale1");
+          
+          if(teksSekarang == 2){setTimeout(katanimasi, 300);}
+          
+          //if(teksSekarang == 6){Tombol.style="opacity:1;transform:scale(1)"}
+          	
+          /*if(teksSekarang == 7){
+            teks7.style="font-size: 17px;font-weight:400;transition:all 0s ease";
+            setTimeout(lanjutAkhir, 300);              
+          }*/
+          
+        }, 50);
+    },
+    },
+    navigation: {nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev",},
+});
+    
+initeks = teks2.innerHTML; teks2.innerHTML = "";
+function katanimasi(){
+    teks2.innerHTML = "";
+    
+	new TypeIt("#teks2", {
+    strings: ["" + initeks], startDelay: 10, speed: 29, cursor: true,
+    afterComplete: function(){
+        document.querySelector("#teks2 .ti-cursor").style.display = "none";
+        setInterval(falling, 200);
+        setTimeout(function(){clearInterval(scrollInterval)},500);
+
+        stikerScale.classList.remove("scale1");
+        stikerScale.classList.add("scale0");
+
+        setTimeout(function(){
+            stikerAkhir2.src = stikerAkhir3.src;
+            setTimeout(function(){stikerScale.classList.remove("scale0");stikerScale.classList.add("scale1");}, 200);
+        },100);
+    },}).go();
+}
+
+const emojis = [
+            '🤪',
+            '😝',
+            '😜', 
+            '😆',
+];
+
+function getEmoji(index) {return emojis[index % emojis.length];}
+            
+function lanjutAkhir() {
+	    const target = document.querySelector("#teks7");
+	    target.innerHTML = ""; // kosongkan isi sebelumnya
+	    document.querySelector("#teksAkhir").innerHTML = ""; 
+	
+	    const instance = new TypeIt("#teks7", {
+	        startDelay: 50,
+	        speed: 20,
+	        cursor: false,
+	        afterComplete: function () {
+	            // Setelah baris-baris selesai, jalankan teks akhir
+	            new TypeIt("#teksAkhir", {
+	                speed: 29,
+	                cursor: false,
+	                startDelay: 10,
+	                afterComplete: function () {
+	                    // ====== AfterComplete ======
+	                    intervalHati = setInterval(falling, 200);
+	                    document.querySelector("#teksAkhir .ti-cursor").style.display = "none";
+	                    
+	                    setTimeout(()=>{
+	                        stikerScale.classList.remove("scale1"); stikerScale.classList.add("scale0");
+	                        setTimeout(() => {
+	                            stikerAkhir3.src = stikerAkhir4.src;
+                                setTimeout(function(){stikerScale.classList.remove("scale0");stikerScale.classList.add("scale1");}, 200);
+                                
+	                            clearInterval(scrollInterval);
+	                        }, 100);
+	                    }, 50);
+	                }
+	            })
+	            .type(`<span style="display:block;font-weight:normal;font-size:17px;">Jangan lupa <b>mandi</b> yaa<br>makhluk bumi 🫵😬😝😋🏃</span>`)
+	            .go();
+	        }
+	    });
+	
+	    // Loop baris zigzag
+		for (let i = 1; i <= 11; i++) {
+		    const cycleIndex = (i - 1) % 10;   // 0–9
+		    const maxShift = 40;               // maksimal geser kanan
+		    const stepSize = maxShift / 5;     // langkah zigzag
+		    const offset = 0;                // mulai dari -10px
+		
+		    let marginLeft;
+		    if (cycleIndex < 5) {
+		        // Naik dari -10 → 30
+		        marginLeft = offset + cycleIndex * stepSize;
+		    } else {
+		        // Turun dari 30 → -10
+		        marginLeft = offset + (10 - cycleIndex) * stepSize;
+		    }
+		
+		    instance.type(
+		        `<span style="display:block; margin-left:${marginLeft}px;font-weight:normal;font-size:17px;">Kamuuu Bauuu 🫵` + getEmoji(i - 1) + `</span>`
+		    );
+		}
+	
+	    instance.go();
+}
+
+///////////////////////////////////
+
+var sudahKlik = true; var fungsiBerfungsi = false;
+
+document.getElementById("searchBar").onclick = function() {
+    if (sudahKlik) {
+        audio.play();
+        document.querySelector(".overlay").style.display = "none";
+        setTimeout(()=>{
+	        setTimeout(function(){
+		        //document.querySelector('.swiper-pagination').style.display = 'block';
+		        stiker1.classList.add("scale1");
+		        teks1.classList.add("scale1");
+		        wallpaper.style="transform:scale(1)";
+		        setTimeout(()=>{swiper.slideNext();}, 1800);
+	        }, 50);
+	        
+	        setTimeout(function(){fungsiBerfungsi = true}, 500);
+        }, 50);
+    } 
+}
+
+function falling() {const heart = document.createElement("div");heart.innerHTML = "<svg class='line spin' style='opacity:.5;z-index:100;stroke:#FFC2B8' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><g transform='translate(2.550170, 3.550158)'><path d='M0.371729633,8.89614246 C-0.701270367,5.54614246 0.553729633,1.38114246 4.07072963,0.249142462 C5.92072963,-0.347857538 8.20372963,0.150142462 9.50072963,1.93914246 C10.7237296,0.0841424625 13.0727296,-0.343857538 14.9207296,0.249142462 C18.4367296,1.38114246 19.6987296,5.54614246 18.6267296,8.89614246 C16.9567296,14.2061425 11.1297296,16.9721425 9.50072963,16.9721425 C7.87272963,16.9721425 2.09772963,14.2681425 0.371729633,8.89614246 Z'></path><path d='M13.23843,4.013842 C14.44543,4.137842 15.20043,5.094842 15.15543,6.435842'></path></g></svg>";heart.className = "heart-icon";heart.style.left = (Math.random() * 95) + "vw";heart.style.animationDuration = (Math.random() * 3) + 2 + "s";document.body.appendChild(heart);}
+setInterval(function() {var heartArr = document.querySelectorAll(".heart-icon");if (heartArr.length > 100) {heartArr[0].remove();}}, 100);
+
+const scrollContainer = document.querySelector(".blocktext");
+function autoScroll() {scrollContainer.scrollTop += 10;}
+const scrollInterval = setInterval(autoScroll, 50); 
+
+/////////////////
+
+let jumlahKlik = 0;
+let jumlahSkala = 1;
+let sudah = false;
+
+function fungsibaru(btn) {
+    var tombol = document.getElementById("" + btn);
+    var tombolParent = tombol.parentNode;
+    
+    // Geser tombol secara acak
+    var tombolPosisiX = Math.floor(Math.random() * 50) + 1;
+    var tombolPosisiY = Math.floor(Math.random() * 75) + 1;
+    var rotasiAcak = Math.floor(Math.random() * 360);
+
+    tombol.style.position = "relative";
+    tombol.style.left = tombolPosisiX + "px";
+    tombol.style.top = tombolPosisiY + "px";
+    tombol.style.transform = "rotate(" + rotasiAcak + "deg)";
+    tombolParent.appendChild(tombol);
+
+    // Perbesar tombol By
+    var tombolBy = document.getElementById("By");
+    tombolBy.style.transform = `scale(${1 + jumlahSkala * 0.25})`; // Menambah skala setiap klik
+
+    jumlahKlik++; jumlahSkala++;
+
+    if (jumlahKlik == 3) {
+        teksOps.style="opacity:1";
+        jumlahKlik = 0;
+        
+        if(sudah==false){
+	        //teksScale.classList.remove("scale1");
+	        //teksScale.classList.add("scale0");
+	        stikerScale.classList.remove("scale1");
+	        stikerScale.classList.add("scale0");
+	        setTimeout(function(){
+					stikerAkhir1.src = stikerAkhir2.src;
+					//teks1.innerHTML = teksDefault;
+	                stikerScale.classList.remove("scale0");
+	                stikerScale.classList.add("scale1");
+	                //teksScale.classList.remove("scale0");
+	                //teksScale.classList.add("scale1");
+	                sudah=true;
+	         },400);
+         }
+    }
+}
+
+//////
+
+document.addEventListener('keydown', function(event) {
+    if (event.code === 'Space' || event.code === 'ArrowRight') {swiper.slideNext();}
+});
+
+document.addEventListener('click', function() {
+    if (teksSekarang !== 6 && fungsiBerfungsi === true){
+    	//swiper.slideNext();
+    }
+});
+</script>
+</body>
+</html>
