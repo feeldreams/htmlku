@@ -69,7 +69,7 @@
     
     p{margin-left:60px;margin-right:60px;text-align:left}
     input[type="text"] {background: rgba(0, 0, 0, .5);border:2px solid #fff;border-radius: 12px;color:white;padding: 8px;width:170px}
-    textarea {display:block;width:200px;height:80px;margin-bottom:0;background: rgba(0, 0, 0, .3);border:2px solid #fff;border-radius: 12px;color:white;padding: 8px;}
+    textarea {font-size:18px;display:block;width:200px;height:100px;margin-bottom:0;background: rgba(0, 0, 0, .3);border:2px solid #fff;border-radius: 12px;color:white;padding: 8px;}
 
     input[type=range] {
 	  -webkit-appearance: none;
@@ -195,7 +195,7 @@
 canvas{position:absolute;top:0;left:0;width:100%;height:100%;z-index:-1}
 </style>
 <body>
-  <audio src="shttps://feeldreams.github.io/audio/kamuitu.mp3" id="linkmp3" class="sembunyi"></audio>
+  <audio src="https://feeldreams.github.io/audio/kamuitu.mp3" id="linkmp3" class="sembunyi"></audio>
 	<div class="overlay">
     <div class="loading-message">Hai kamu!<br>Tunggu dulu ya..</div>
      <div id="loveIn" class="blocklove">
@@ -229,8 +229,8 @@ canvas{position:absolute;top:0;left:0;width:100%;height:100%;z-index:-1}
     <!-- Slide 3 -->
     <div class="swiper-slide">
         <div id="stiker3" class="scale0 stiker"><img src="https://feeldreams.github.io/smprt.gif"/></div>
-        <h1 id="teks3" class="scale0 itim" style="font-size: 19px;">4 Larangan 🚫<br><br>
-        <textarea id="iteks3" name="iteks3" rows="4" cols="50">1. 
+        <h1 id="teks3" class="scale0 itim" style="font-size: 19px;">4 Larangan? 🚫<br><br>
+        <textarea id="iteks3" name="iteks3" rows="6" cols="50">1. 
 2. 
 3. 
 4. </textarea>
@@ -243,8 +243,8 @@ canvas{position:absolute;top:0;left:0;width:100%;height:100%;z-index:-1}
     <!-- Slide 4 -->
     <div class="swiper-slide">
         <div id="stiker4" class="scale0 stiker"><img src="https://htmlku.com/0/panda/sinisini.gif"/></div>
-        <h1 id="teks4" class="scale0 itim" style="font-size: 19px;">2 Permintaan 😋<br><br>
-        <textarea id="iteks4" name="iteks4" rows="4" cols="50">1. 
+        <h1 id="teks4" class="scale0 itim" style="font-size: 19px;">2 Permintaan? 😋<br><br>
+        <textarea id="iteks4" name="iteks4" rows="6" cols="50">1. 
 2. </textarea>
         <div id="Tombol4" class="scale0 tombolLanjut">
             <a onClick="swiper.slideNext()">Lanjut 👉🏻</a>
@@ -256,7 +256,7 @@ canvas{position:absolute;top:0;left:0;width:100%;height:100%;z-index:-1}
     <div class="swiper-slide">
         <div id="stiker5" class="scale0 stiker"><img src="https://htmlku.com/0/panda/ciumpipi.gif"/></div>
         <h1 id="teks5" class="scale0 itim" style="font-size: 19px;">3 Pesan Buat Aku? 🫣<br><br>
-        <textarea id="iteks5" name="iteks5" rows="4" cols="50">1. 
+        <textarea id="iteks5" name="iteks5" rows="6" cols="50">1. 
 2. 
 3. </textarea>
         <div id="Tombol5" class="scale0 tombolLanjut">
@@ -312,8 +312,7 @@ canvas{position:absolute;top:0;left:0;width:100%;height:100%;z-index:-1}
           if(tombolScale){tombolScale.classList.add("scale1");}
           
           if(teksSekarang == 6){
-            //pesanwhatsapp = "1%29%20" + teks2.innerText +"%0A%20%20%20%20%20%2AJawab%3A%2A%20" + iteks2.value + "%0A2%29%20" + teks3.innerText +"%0A%20%20%20%20%20%2AJawab%3A%2A%20" + iteks3.value + "%0A3%29%20" + teks4.innerText +"%0A%20%20%20%20%20%2AJawab%3A%2A%20" + iteks4.value + "%0A4%29%20" + teks6.innerText +"%0A%20%20%20%20%20%2AJawab%3A%2A%20" + iteks6.value + "%0A5%29%20" + teks6.innerText +"%0A%20%20%20%20%20%2AJawab%3A%2A%20" + iteks6.value + "%0A6%29%20" + teks7.innerText +"%0A%20%20%20%20%20%2AJawab%3A%2A%20" + iteks7.value + "%0A7%29%20" + teks2.innerText +"%0A%20%20%20%20%20%2AJawab%3A%2A%20" + iteks2.value + "%0A8%29%20" + teks3.innerText +"%0A%20%20%20%20%20%2AJawab%3A%2A%20" + iteks3.value + "";
-            pesanwhatsapp="" + iteks3.value;
+            pesanwhatsapp="%2ALarangan%3A%2A%0A" + iteks3.value + "%0A%0A%2APermintaan%3A%2A%0A" + iteks4.value + "%0A%0A%2APesan%20buat%20Kamu%3A%2A%0A" + iteks5.value + "";
             katanimasi()
           }
         }, 50);
