@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>S.id/teruntukguru</title>
+  <meta name="description" content="HTML Pesan Untuk Guru Tercinta!">
+    <meta name="keywords" content="html, pesan, kata kata, guru">
+    <meta name="author" content="Feeldream">
+    <meta name="robots" content="index, follow">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Feeldream - HTML Pesan Untuk Guru Tercinta">
+    <meta property="og:description" content="Script HTML Feeldream">
+    <meta property="og:image" content="https://feeldreams.github.io/main-icon.png">
+    <meta property="og:url" content="https://htmlku.my.id/">
+    <meta property="og:site_name" content="Feeldream">
+    <meta property="og:type" content="website">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Handlee&family=Sriracha&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script><link rel="stylesheet" href="https://htmlku.com/teruntukguru/prod/style.css">
+</head>
+<body>
+  
+  <!-- Audio -->
+  <audio src="https://feeldreams.github.io/audio/thousand.mp3" id="linkmp3"></audio>
+  
+  <!-- Background / Wallpaper -->
+  <div class="background-overlay" data-src="https://htmlku.com/teruntukguru/wp.jpg"></div>
+
+  <!-- Halaman 1: Envelope -->
+  <div id="hal1">
+    <div class="envlope-wrapper">
+      <div id="envelope" class="close">
+        <div class="front flap"></div>
+        <div class="front pocket"></div>
+        <div class="letter">
+          <div class="letter-corner corner-tl"></div>
+          <div class="letter-corner corner-br"></div>
+          <div class="message">
+            <p>Teruntuk Guruku! 💫</p>
+          </div>
+        </div>
+        <div class="hearts">
+          <div class="heart a1"></div>
+          <div class="heart a2"></div>
+          <div class="heart a3"></div>
+        </div>
+        <div class="sparkles">
+          <div class="sparkle s1"></div>
+          <div class="sparkle s2"></div>
+          <div class="sparkle s3"></div>
+        </div>
+      </div>
+    </div>
+    <div class="reset">
+      <button onclick="bukaEnvelope()">Buka</button>
+    </div>
+  </div>
+
+  <!-- Halaman 2: Nonaktif -->
+  <div id="hal2" class="kotak sembunyi">
+    <canvas id="game-canvas"></canvas>
+    <h2></h2>
+    <p></p>
+    <div id="kotakPesan"></div>
+    <div id="papanGame" class="papanGame"></div>
+    <p id="statusGame"></p>
+    <button id="lanjut" onclick="pindahHal(3)" class="sembunyi"></button>
+    <button id="ulang" onclick="mulaiHal2()" class="tombolCadangan sembunyi"></button>
+  </div>
+
+  <!-- Halaman 3: Pesan Akhir -->
+  <div id="hal3" class="kotak sembunyi">
+    <!-- Stiker Gif -->
+    <div id="stiker3" class="stiker">
+        <img id="stiker3a" src="https://htmlku.com/0/peach/peachlove.webp" />
+        <img id="stiker3b" class="sembunyi" src="https://htmlku.com/0/peach/peachtebar2.jpg" />
+    </div>
+    <div id="containerPesan">
+	    <p id="teksCinta"></p>
+	    <p id="pesanAkhir"></p>
+	    <p id="teksLucu"></p>
+    </div>
+    <button style="display:none" onclick="shareWa()"></button>
+  </div>
+  <div class="tombol">
+    <button onclick="balasWa()">Balas</button>
+  </div>
+  
+  <!-- Circle Animation -->
+  <div>
+        <div>
+            <div class="circ">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+
+  <script>
+    // Edit Kata-kata di Sini
+    const txtDoa = "<b>Selamat Hari Guru 🕊️</b>";
+    const txtPesanAkhir = "Di hari Guru ini, aku ingin bilang terima kasih karena telah memberiku ilmu yang begitu berharga, kasih sayang yang tak pernah habis, dan semangat yang selalu kamu tanamkan meski kadang aku terlalu keras kepala untuk mendengar.<br><br>Terima kasih sudah sabar membimbingku, meski aku sering jatuh di tempat yang sama berkali-kali. Kamu tak pernah lelah jadi pelita di ujung jalan gelapku 💫<br><br>Semoga ilmu dan kebaikan yang diberikan padaku suatu saat jadi cahaya yang sama untuk orang-orang di sekitarku 🫶";
+    const txtLucu = "Terima kasih, Guruku...<br>— dari murid yang (masih) terus belajar jadi lebih baik 🙏🏻🥹🌈";
+  </script>
+  <script src="https://htmlku.com/teruntukguru/prod/script.js"></script>
+</body>
+</html>
