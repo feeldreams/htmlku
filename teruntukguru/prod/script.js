@@ -1,3 +1,19 @@
+// Edit Icon Memory Game di Sini
+    const kartu = [
+	  { id: 3, icon: '🫶🏻', pesan: '' },
+	  { id: 5, icon: '💗', pesan: '' },
+	  { id: 1, icon: '🩷', pesan: '' },
+	  { id: 6, icon: '😍', pesan: '' },
+	  { id: 2, icon: '💞', pesan: '' },
+	  { id: 4, icon: '💌', pesan: '' },
+	  { id: 1, icon: '🩷', pesan: '' },
+	  { id: 3, icon: '🫶🏻', pesan: '' },
+	  { id: 5, icon: '💗', pesan: '' },
+	  { id: 2, icon: '💞', pesan: '' },
+	  { id: 4, icon: '💌', pesan: '' },
+	  { id: 6, icon: '😍', pesan: '' }
+	];
+
 audio = new Audio('' + linkmp3.src);
 
     // Elemen Background
