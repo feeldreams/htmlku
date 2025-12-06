@@ -72,7 +72,7 @@ function kataakhir(){
       },}).go();
 }
 function muncultombol2(){fungtom2=1;TombolWA.style="opacity:1;transform:scale(1)";}
-function pesanWA(){if(fungtom2==1){window.location = "https://api.whatsapp.com/send?phone=&text=" + pesanwhatsapp;}}
+function pesanWA(){if(fungtom2==1){window.location = "https://api.whatsapp.com/send?phone=" + nomorWa.innerHTML + "&text=" + pesanwhatsapp;}}
 pesanwhatsapp = pesanWa.innerHTML;
 
 let tinggi = iniakhir.offsetHeight;
