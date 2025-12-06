@@ -5,7 +5,8 @@ function katateksnimasi(){
   	new TypeIt("#teksnimasi", {
       strings: ["" + initeksnimasi], startDelay: 50, speed: 35, cursor: true,
       afterComplete: function(){
-      	teksnimasi.innerHTML = initeksnimasi;
+      	//teksnimasi.innerHTML = initeksnimasi;
+		document.querySelector("#teksnimasi .ti-cursor").style.display = "none";
           setTimeout(smn,200);
       },}).go();
 }
@@ -40,7 +41,8 @@ function katajudul(){
   	new TypeIt("#judulakhir", {
       strings: ["" + teksjudulakhir], startDelay: 10, speed: 50, cursor: true,
       afterComplete: function(){
-      	judulakhir.innerHTML = teksjudulakhir;
+      	//judulakhir.innerHTML = teksjudulakhir;
+		  document.querySelector("#judulakhir .ti-cursor").style.display = "none";
           setTimeout(katakata,300);
       },}).go();
 }
@@ -48,7 +50,8 @@ function katakata(){
 	  new TypeIt("#kalimatakhir", {
       strings: ["" + tekskalimatakhir], startDelay: 50, speed: 48, cursor: true,
       afterComplete: function(){
-      	kalimatakhir.innerHTML = tekskalimatakhir;
+      	//kalimatakhir.innerHTML = tekskalimatakhir;
+		  document.querySelector("#kalimatakhir .ti-cursor").style.display = "none";
           judulakhir.style="opacity:0;transform:scale(0);";
           setTimeout(teksmuncul,350);
           setInterval(falling,200);
@@ -109,7 +112,7 @@ function inimulai(){
               wpakhir.style="opacity:.3;transition:all .7s ease";
               setTimeout(() => {
                 const cincin = document.createElement('img');
-                cincin.src = 'https://htmlku.com/DRAFT/255/cincin.png';
+                cincin.src = nimasicincin.src;
                 cincin.className = 'romance-img';
                 document.body.appendChild(cincin);
                 // Optional: Hilangkan cincin setelah 4 detik untuk transisi ke scroll berikutnya
