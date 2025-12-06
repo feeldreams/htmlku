@@ -1,14 +1,9 @@
-function hapus(){counter.style.display="none"}
-function keatas(){window.scrollTo(0, 0);}
- 
-//////////////////////////////////////////////////
-
-const body = document.querySelector("body"); audio = new Audio('' + linkmp3.src); function berjatuhan() {const heart = document.createElement("div"); heart.className = "fas fa-heart"; heart.style.left = (Math.random() * 90)+"vw"; heart.style.animationDuration = (Math.random()*3)+2+"s"; body.appendChild(heart);} setInterval(function name(params) {var heartArr = document.querySelectorAll(".fa-heart"); if (heartArr.length > 100) {heartArr[0].remove()}},100);
+const body = document.querySelector("body"); audio = new Audio('' + linkmp3.src); function falling() {const heart = document.createElement("div");heart.innerHTML = "<svg class='line spin' style='opacity:.5;z-index:100;stroke:#FFC2B8' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><g transform='translate(2.550170, 3.550158)'><path d='M0.371729633,8.89614246 C-0.701270367,5.54614246 0.553729633,1.38114246 4.07072963,0.249142462 C5.92072963,-0.347857538 8.20372963,0.150142462 9.50072963,1.93914246 C10.7237296,0.0841424625 13.0727296,-0.343857538 14.9207296,0.249142462 C18.4367296,1.38114246 19.6987296,5.54614246 18.6267296,8.89614246 C16.9567296,14.2061425 11.1297296,16.9721425 9.50072963,16.9721425 C7.87272963,16.9721425 2.09772963,14.2681425 0.371729633,8.89614246 Z'></path><path d='M13.23843,4.013842 C14.44543,4.137842 15.20043,5.094842 15.15543,6.435842'></path></g></svg>";heart.className = "heart-icon";heart.style.left = (Math.random() * 95) + "vw";heart.style.animationDuration = (Math.random() * 3) + 2 + "s";document.body.appendChild(heart);} setInterval(function() {var heartArr = document.querySelectorAll(".heart-icon");if (heartArr.length > 100) {heartArr[0].remove();}}, 100);
 
 initeksnimasi = teksnimasi.innerHTML;teksnimasi.innerHTML="";
 function katateksnimasi(){
   	new TypeIt("#teksnimasi", {
-      strings: ["" + initeksnimasi], startDelay: 50, speed: 30, cursor: true,
+      strings: ["" + initeksnimasi], startDelay: 50, speed: 35, cursor: true,
       afterComplete: function(){
       	teksnimasi.innerHTML = initeksnimasi;
           setTimeout(smn,200);
@@ -30,30 +25,23 @@ function tes(){
 }
   function smn(){fungsi=0;initom.style="";}
   initom.style="opacity:0;bottom:0;transition:none";
-
-  /*fetch('counter.php')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById("counter").innerHTML = data;
-  });
-  setTimeout(hapus,8000);*/
   
   function muncultombol(){fungtom=1;Tombol.style="opacity:1;transform:scale(1)";}
   
 function aksiakhir() {
   if(fungsiklik==0){
-    //wpakhir.style="opacity:.75;transition:all 1s ease;";
     fungsiklik=1;
+    stikerakhir.style="opacity:1;transform:scale(1)";
     setTimeout(katajudul,100)
   }
 }
 
 function katajudul(){
   	new TypeIt("#judulakhir", {
-      strings: ["" + teksjudulakhir], startDelay: 50, speed: 50, cursor: true,
+      strings: ["" + teksjudulakhir], startDelay: 10, speed: 50, cursor: true,
       afterComplete: function(){
       	judulakhir.innerHTML = teksjudulakhir;
-          setTimeout(katakata,400);
+          setTimeout(katakata,300);
       },}).go();
 }
 function katakata(){
@@ -63,14 +51,13 @@ function katakata(){
       	kalimatakhir.innerHTML = tekskalimatakhir;
           judulakhir.style="opacity:0;transform:scale(0);";
           setTimeout(teksmuncul,350);
-          setInterval(berjatuhan,200);
+          setInterval(falling,200);
           setTimeout(kataakhir,1000);
       },}).go();
 }
 function teksmuncul(){
 	judulakhir.innerHTML="I Love You";
 	judulakhir.style="font-family:var(--gaya-font3);font-size:27px";
-	//setTimeout(jjteksnim,300);
 	stikerakhir.style="opacity:0;transform:scale(0)";
 	setTimeout(gantifotoakhir,400);
 }
@@ -92,11 +79,9 @@ let tinggi = iniakhir.offsetHeight;
 console.log(tinggi);
 
 fungsiAud=0;function playaud(){if(fungsiAud==0){fungsiAud=1;audio.play();}}
-
-//window.addEventListener("load", (event) => {
-    //window.scrollTo(0, 0);
+var iniakhirya = 0;
 function inimulai(){
-    setTimeout(keatas,500);
+    window.scrollTo(0, 0);
     
     var overlay = document.querySelector(".overlay");
     overlay.style.display = "none";
@@ -114,48 +99,30 @@ function inimulai(){
     document.addEventListener('scroll', function(e) {
         let documentHeight = document.body.scrollHeight;
         let currentScroll = window.scrollY + window.innerHeight;
-        // When the user is [modifier]px from the bottom, fire the event.
         let modifier = 200; 
         if(currentScroll + modifier > documentHeight) {
             console.log('Sudah sampai bawah!');
             initom.style="opacity:0;bottom:0";
-            setTimeout(aksiakhir,10);
-        } else {
-            //initom.style="";
+            if(iniakhirya==0){
+              iniakhirya=1;
+              stikerakhir.style="opacity:0;transform:scale(0)";
+              wpakhir.style="opacity:.3;transition:all .7s ease";
+              setTimeout(() => {
+                const cincin = document.createElement('img');
+                cincin.src = 'https://htmlku.com/DRAFT/255/cincin.png';
+                cincin.className = 'romance-img';
+                document.body.appendChild(cincin);
+                // Optional: Hilangkan cincin setelah 4 detik untuk transisi ke scroll berikutnya
+                setTimeout(() => {
+                  if (cincin) {
+                    cincin.style.opacity = '0';
+                    setTimeout(() => { if (cincin) cincin.remove();wpakhir.style="opacity:1;transition:all .7s ease";setTimeout(aksiakhir,10); }, 1000);
+                  }
+                }, 1500);
+              }, 100);
+            }
         }
     })
 }
-  setTimeout(inimulai,3000)
 
-function popunder() {
-  if (!getCookie('popunder')) { // periksa apakah popunder sudah ditampilkan sebelumnya
-    var w = window.open('https://bit.ly/htmlfeeldream', '_blank');
-    w.focus();
-    setCookie('popunder', 'true', 1/30); // atur cookie untuk menandai bahwa popunder sudah ditampilkan selama 2 menit
-  }
-}
-
-function setCookie(name, value, days) {
-  var expires = "";
-  if (days) {
-    var date = new Date();
-    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-    expires = "; expires=" + date.toUTCString();
-  }
-  document.cookie = name + "=" + (value || "") + expires + "; path=/";
-}
-
-function getCookie(name) {
-  var nameEQ = name + "=";
-  var ca = document.cookie.split(';');
-  for (var i = 0; i < ca.length; i++) {
-    var c = ca[i];
-    while (c.charAt(0) == ' ') c = c.substring(1, c.length);
-    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
-  }
-  return null;
-}
-
-//document.addEventListener('click', popunder);
-
-//window.location.replace("https://bit.ly/htmlfeeldream")
+setTimeout(inimulai,1500)
