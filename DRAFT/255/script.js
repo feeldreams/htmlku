@@ -132,4 +132,9 @@ function inimulai(){
     })
 }
 
-setTimeout(inimulai,1500)
+//setTimeout(inimulai,1500)
+document.addEventListener("click", function handleTap() {
+  inimulai();
+  playaud();
+  document.removeEventListener("click", handleTap); // stop setelah 1x
+});
