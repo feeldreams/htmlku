@@ -7,7 +7,24 @@ function katateksnimasi(){
       afterComplete: function(){
       	//teksnimasi.innerHTML = initeksnimasi;
 		document.querySelector("#teksnimasi .ti-cursor").style.display = "none";
-          setTimeout(smn,200);
+        
+        //stikerakhir.style="opacity:0;transform:scale(0)";
+              wpakhir.style="opacity:.3;transition:all .7s ease";
+              teksnimasi.style="opacity:.3;transition:all .7s ease";
+              setTimeout(() => {
+                const cincin = document.createElement('img');
+                cincin.src = nimasicincin.src;
+                cincin.className = 'romance-img';
+                document.body.appendChild(cincin);
+                // Optional: Hilangkan cincin setelah 4 detik untuk transisi ke scroll berikutnya
+                setTimeout(() => {
+                  if (cincin) {
+                    cincin.style.opacity = '0';
+                    setTimeout(() => { if (cincin) cincin.remove();wpakhir.style="opacity:1;transition:all .7s ease";teksnimasi.style="opacity:1;transition:all .7s ease";setTimeout(smn,200); }, 1000);
+                  }
+                }, 1500);
+                
+              }, 100);
       },}).go();
 }
 
@@ -108,21 +125,8 @@ function inimulai(){
             initom.style="opacity:0;bottom:0";
             if(iniakhirya==0){
               iniakhirya=1;
-              stikerakhir.style="opacity:0;transform:scale(0)";
-              wpakhir.style="opacity:.3;transition:all .7s ease";
-              setTimeout(() => {
-                const cincin = document.createElement('img');
-                cincin.src = nimasicincin.src;
-                cincin.className = 'romance-img';
-                document.body.appendChild(cincin);
-                // Optional: Hilangkan cincin setelah 4 detik untuk transisi ke scroll berikutnya
-                setTimeout(() => {
-                  if (cincin) {
-                    cincin.style.opacity = '0';
-                    setTimeout(() => { if (cincin) cincin.remove();wpakhir.style="opacity:1;transition:all .7s ease";setTimeout(aksiakhir,10); }, 1000);
-                  }
-                }, 1500);
-              }, 100);
+              
+              setTimeout(aksiakhir,10);
             }
         }
     })
