@@ -11,9 +11,9 @@
     *{margin:0;padding:0;box-sizing:border-box}
 	:root{--color-flap:#d46a84;--color-env:#f8e1e9;--color-env2:#D4AFB8;--color-heart:#ff6f91;--color-sparkle:#ffd1dc}
 	body {color:#fff;overflow-x:hidden;position:relative;font-family:'Montserrat',sans-serif;/*background: linear-gradient(180deg,#1e3a8a,#3b0764);*/background:rgba(0,0,0,1);z-index: 1;}
-	.background-overlay {animation: jj 8s infinite alternate;position: fixed;top: 0;left: 0;width: 100%;height: 100%;/*background: url('https://htmlku.com/0/wp2.jpg') no-repeat center center fixed;*/background-size: cover;opacity: 0.6;z-index: 0;}
+	.background-overlay {animation: jj 8s infinite alternate;position: fixed;top: 0;left: 0;width: 100%;height: 100%;/*background: url('https://htmlku.com/0/wp2.jpg') no-repeat center center fixed;*/background-size: cover;opacity: 0.4;z-index: 0;}
 	@keyframes jj{0%  {transform: scale(1);} 50% {transform: scale(1.2);} 100% {transform: scale(1);}}
-	.kotak{margin:0 auto;margin-top:130px;transform:scale(0);transition:all .7s ease;background:rgba(255,255,255,0.1);backdrop-filter:blur(5px);border-radius:33px;box-shadow:0 8px 32px rgba(0,0,0,0.3);border:2.3px solid rgba(255,255,255,0.8);padding:0;text-align:center;max-width:100%;width:400px;min-height:200px;position:relative;z-index:1}
+	.kotak{margin:0 auto;margin-top:130px;transform:scale(0);transition:all .7s ease;background:rgba(255,255,255,0.2);backdrop-filter:blur(8px);border-radius:33px;box-shadow:0 8px 32px rgba(0,0,0,0.3);border:2.3px solid rgba(255,255,255,0.8);padding:0;text-align:center;max-width:100%;width:400px;min-height:200px;position:relative;z-index:1}
 	#envelope{margin:0 auto;margin-top:150px;position:relative;width:160px;height:110px;border-bottom-left-radius:6px;border-bottom-right-radius:6px;top:160px;background-color:var(--color-flap);box-shadow:0 4px 20px rgba(0,0,0,0.1)}
 	.front{position:absolute;width:0;height:0;z-index:3}
 	.flap{border-left:80px solid transparent;border-right:80px solid transparent;border-bottom:55px solid transparent;border-top:55px solid var(--color-flap);transform-origin:top;pointer-events:none}
@@ -85,10 +85,10 @@
 <body>
   
   <!-- Audio -->
-  <audio src="shttps://feeldreams.github.io/audio/thousand.mp3" id="linkmp3"></audio>
+  <audio src="https://feeldreams.github.io/audio/thousand.mp3" id="linkmp3"></audio>
   
   <!-- Background / Wallpaper -->
-  <div class="background-overlay" data-src="wp.jpg"></div>
+  <div class="background-overlay" data-src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgYRVSJATXxKN0K8vaIWilS25O93QBWtyrjKHQgrWGmFJztWL37mtgb9FNtXtmM0dGP5n6hO41ImBiTYJpyIApHq9zdZMTT51l-W3eRQSkAoJDb0H7g04ecPy9K0UUCF7y1Q21Hto-TR6ySsPnQRRflxfU_NkELsHHCU3lXLJTDtgCwF4ZJrGDR7PMbGVZc/s1600/40419.jpg"></div>
 
   <!-- Halaman 1: Envelope -->
   <div id="hal1">
@@ -137,7 +137,7 @@
     <!-- Stiker Gif -->
     <div id="stiker3" class="stiker">
         <img id="stiker3a" src="https://htmlku.com/0/peach/peachlove.webp" />
-        <img id="stiker3b" class="sembunyi" src="https://htmlku.com/0/peach/peachtebar2.jpg" />
+        <img id="stiker3b" class="sembunyi" src="https://feeldreams.github.io/peach6.gif" />
     </div>
     <div id="containerPesan">
 	    <p id="teksCinta"></p>
@@ -349,19 +349,19 @@
 
       new TypeIt("#teksCinta", {
         strings: txtDoa,
-        speed: 22,
+        speed: 21,
         startDelay: 300,
         afterComplete: function () {
           document.querySelector("#teksCinta .ti-cursor").style.display = "none";
           new TypeIt("#pesanAkhir", {
             strings: txtPesanAkhir,
-            speed: 22,
+            speed: 21,
             waitUntilVisible: true,
             afterComplete: function () {
               document.querySelector("#pesanAkhir .ti-cursor").style.display = "none";
               new TypeIt("#teksLucu", {
                 strings: txtLucu,
-                speed: 22,
+                speed: 21,
                 waitUntilVisible: true,
                 afterComplete: function () {
                   document.querySelector("#teksLucu .ti-cursor").style.display = "none";
@@ -405,7 +405,7 @@
     // Share ke WhatsApp
     function balasWa() {
       const url = window.location.href;
-      const text = "Taqabbalallahu minna wa minkum, minal 'aidin wal faizin!";
+      const text = "Aku udah bacaaa 🫢";
       window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
     }
     
