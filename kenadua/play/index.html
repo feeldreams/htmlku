@@ -234,7 +234,7 @@ async function fungsiWA() {
   const message = "🙄🙄🙄";
   
   const encodedMessage = encodeURIComponent(message);
-  const waLink = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+  const waLink = `https://wa.me/text=${encodedMessage}`;
   window.open(waLink, "_blank");
 }
 
