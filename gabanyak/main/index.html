@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>💕 S.id/gabanyak</title>
+  <meta name="description" content="HTML Pesan Untuk Cinta Tahun Baru!">
+    <meta name="keywords" content="html, pesan, kata kata, tahun baru">
+    <meta name="author" content="Feeldream">
+    <meta name="robots" content="index, follow">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Feeldream - HTML Pesan Tahun Baru Romantis">
+    <meta property="og:description" content="Script HTML Feeldream">
+    <meta property="og:image" content="https://feeldreams.github.io/main-icon.png">
+    <meta property="og:url" content="https://htmlku.my.id/">
+    <meta property="og:site_name" content="Feeldream">
+    <meta property="og:type" content="website">
+
+  <script>
+    var nilaiRandom = Math.floor(Math.random() * 11);
+    if (nilaiRandom >= 0) {
+        //window.location.replace("https://www.feeldream.id/2023/01/script-feeldream.html?#gabanyak");
+    } else {
+        //window.location.replace("https://htmlku.com/gabanyak/play");
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Handlee&family=Sriracha&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script><link rel="stylesheet" href="">
+</head>
+<style>
+    *{margin:0;padding:0;box-sizing:border-box}
+	:root{
+		--color-flap:#e91e63;     /* Pink lebih dalam & romantis */
+		--color-env:#fce4ec;     /* Lembut pink muda */
+		--color-env2:#f8bbd0;    /* Sedikit lebih gelap untuk pocket */
+		--color-heart:#ff1744;   /* Merah hati yang menyala */
+		--color-sparkle:#ff80ab; /* Sparkle pink cerah */
+		--color-glow:#ff4081;    /* Glow romantis */
+	}
+	body {color:#fff;overflow-x:hidden;position:relative;font-family:'Montserrat',sans-serif;background:#000;z-index:1;}
+	.background-overlay {animation: jj 12s infinite alternate;position:fixed;top:0;left:0;width:100%;height:100%;background:radial-gradient(circle at center,rgba(233,30,99,0.3),rgba(136,14,79,0.8));opacity:0.5;z-index:0;}
+	@keyframes jj{0%{transform:scale(1);}50%{transform:scale(1.15);}100%{transform:scale(1);}}
+	.kotak{margin:0 auto;margin-top:130px;transform:scale(0);transition:all .7s ease;background:rgba(255,255,255,.15);backdrop-filter:blur(10px);border-radius:8px 33px 8px 33px;box-shadow:0 8px 32px rgba(0,0,0,0.5);border:2.5px solid rgba(255,255,255,0.8);padding:0;text-align:center;max-width:100%;width:420px;min-height:200px;position:relative;z-index:1}
+	#envelope{margin:0 auto;margin-top:150px;position:relative;width:200px;height:140px;border-bottom-left-radius:12px;border-bottom-right-radius:12px;top:140px;background:var(--color-flap);box-shadow:0 8px 30px rgba(233,30,99,0.4);animation:float 4s ease-in-out infinite;}
+	.front{position:absolute;width:0;height:0;z-index:3}
+	.flap{border-left:100px solid transparent;border-right:100px solid transparent;border-bottom:70px solid transparent;border-top:70px solid var(--color-flap);transform-origin:top;pointer-events:none;}
+	.pocket{border-left:100px solid var(--color-env);border-right:100px solid var(--color-env);border-bottom:70px solid var(--color-env2);border-top:70px solid transparent;border-bottom-left-radius:12px;border-bottom-right-radius:12px;box-shadow:inset 0 10px 20px rgba(233,30,99,0.15);}
+	.letter{position:relative;background:#fffaf0;width:88%;margin:0 auto;height:100%;top:0%;border-radius:10px;box-shadow:0 4px 30px rgba(233,30,99,0.3);padding:20px;box-sizing:border-box;overflow:hidden;}
+	.letter:after{content:'';position:absolute;top:0;bottom:0;left:0;right:0;background:linear-gradient(180deg,rgba(255,255,255,0) 20%,rgba(255,182,193,0.6) 60%,rgba(255,240,245,1) 100%);}
+	.message{position:relative;z-index:2;font-family:'Handlee',cursive;color:#c2185b;text-align:center;line-height:1.6;padding-top:0;font-size:1.3em;text-shadow:0 2px 4px rgba(194,24,91,0.2);}
+	.message p{margin:0 0;}
+	.envlope-wrapper{height:240px;margin-top:0px;margin-bottom:0;position:relative;z-index:50}
+	@keyframes float{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-15px) rotate(1deg)}}
+	.open .flap{transform:rotateX(180deg);transition:transform 0.6s cubic-bezier(0.68,-0.55,0.265,1.55),z-index 0.6s;z-index:1;}
+	.close .flap{transform:rotateX(0deg);transition:transform 0.6s 0.4s ease,z-index 1s;z-index:5;}
+	.close .letter{transform:translateY(0);transition:transform 0.4s ease,z-index 1s;z-index:1;}
+	.open .letter{transform:translateY(-55px) rotate(-3deg) scale(1.05);transition:transform 0.6s 0.3s cubic-bezier(0.68,-0.55,0.265,1.55),z-index 0.6s;z-index:2;box-shadow:0 15px 40px rgba(233,30,99,0.5);}
+	.letter-corner{position:absolute;width:12px;height:12px;border:2px solid #ff80ab;border-radius:3px;z-index:3;animation:pulse 2s infinite;}
+	.corner-tl{top:8px;left:8px;border-right:none;border-bottom:none}
+	.corner-br{bottom:8px;right:8px;border-left:none;border-top:none}
+	@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+	.hearts,.sparkles{position:absolute;top:70px;left:0;right:0;z-index:4}
+	.heart,.sparkle{position:absolute;bottom:0;pointer-events:none;animation:floatUp 5s linear infinite}
+	.heart:before,.heart:after{content:"";position:absolute;left:15px;top:0;width:15px;height:28px;background:var(--color-heart);border-radius:15px 15px 0 0;transform:rotate(-45deg);transform-origin:0 100%;box-shadow:0 0 15px var(--color-glow);}
+	.heart:after{left:0;transform:rotate(45deg);transform-origin:100% 100%}
+	.sparkle{width:6px;height:6px;background:var(--color-sparkle);border-radius:50%;box-shadow:0 0 10px var(--color-glow);animation:sparkleTwinkle 1.5s infinite}
+	.close .heart,.close .sparkle{opacity:0;animation:none}
+	.a1{left:15%;transform:scale(0.7);animation:slideUp 5s linear infinite,sideSway 3s ease-in-out infinite alternate}
+	.a2{left:50%;animation:slideUp 6s linear infinite,sideSway 4s ease-in-out infinite alternate}
+	.a3{left:80%;transform:scale(0.9);animation:slideUp 7s linear infinite,sideSway 2.5s ease-in-out infinite alternate}
+	.s1{left:25%;animation:sparkleUp 4s linear infinite}
+	.s2{left:65%;animation:sparkleUp 5s linear infinite}
+	.s3{left:45%;animation:sparkleUp 6s linear infinite}
+	@keyframes slideUp{0%{top:0;opacity:1}100%{top:-700px;opacity:0}}
+	@keyframes sideSway{0%{margin-left:-20px}100%{margin-left:20px}}
+	@keyframes sparkleUp{0%{transform:translateY(0) rotate(0deg);opacity:1}100%{transform:translateY(-600px) rotate(720deg);opacity:0}}
+	@keyframes sparkleTwinkle{0%,100%{transform:scale(1) rotate(0deg)}50%{transform:scale(2) rotate(180deg)}}
+	.reset, .tombol{position:relative;text-align:center;margin-top:14px;z-index:50}
+    .reset{margin-top:0}
+	.reset button, .tombol button{font-family:'Sriracha',serif;font-weight:700;transition:all 0.4s ease;background:var(--color-flap);border:2px solid rgba(255,255,255,0.9);border-radius:30px;color:#fff;text-shadow:0 3px 5px rgba(0,0,0,0.4);padding:6px 12px;margin:10px;font-size:14.3px;box-shadow:0 8px 25px rgba(233,30,99,0.4);}
+	.reset button:hover, .tombol button:hover{background:#ad1457;transform:translateY(-5px) scale(1.1);box-shadow:0 15px 35px rgba(233,30,99,0.6);}
+	.tombol{transform:scale(0);opacity:0;transition:all .7s ease}
+	canvas{position:absolute;top:0;left:0;width:100%;height:100%;z-index:-1}
+	.pic{font-size:3rem;margin-bottom:1rem}
+	h1,h2{font-size:1rem;margin-bottom:1rem;font-weight:700}
+	#containerPesan{padding:0;display:block;width:100%;overflow:auto;min-height:100px;max-height:220px;justify-content:left;text-align:left;scrollbar-width: none;-ms-overflow-style: none;}
+	#teksCinta{font-size:13px;color:#fff;font-weight:500}
+	#teksLucu{font-size:13px;color:#fff;margin-top:1rem;font-weight:500}
+	#teksCinta, #teksLucu, #pesanAkhir{font-size:14px;text-align:left;text-shadow:0 2px 3px rgba(0,0,0,0.2)}
+	p{font-size:13px;margin-bottom:1rem;font-weight:500}
+	#statusGame{margin-top:25px}
+	button{background:#f43f5e;color:#fff;border:none;padding:0.5rem 1.5rem;border-radius:999px;font-size:1rem;transition:background 0.3s;font-weight:700}
+	button:hover{background:#e11d48}
+	.tombolCadangan{background:#6b7280}
+	.tombolCadangan:hover{background:#4b5563}
+	.papanGame{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(3,auto);gap:0.5rem;justify-items:center;width:90%;max-width:600px;margin:auto}
+	.kartu{width:50px;height:50px}
+	.dalemKartu{position:relative;width:100%;height:100%;transition:transform 0.6s;transform-style:preserve-3d}
+	.kartu.balik .dalemKartu{transform:rotateY(180deg)}
+	.depanKartu,.belakangKartu{position:absolute;width:100%;height:100%;border:1.3px solid rgba(255,255,255,0.8);backface-visibility:hidden;display:flex;align-items:center;justify-content:center;border-radius:18px}
+	.depanKartu{background:rgba(255,255,255,0.2);}
+	.belakangKartu{background:rgba(255,255,255,0.5);transform:rotateY(180deg);font-size:1.5rem}
+	.sembunyi, #linkmp3{display:none}
+	.stiker{display:flex;justify-content:center;align-items:center;margin-left:auto;margin-right:auto;margin-bottom:20px;transform:scale(0);transition:all .7s ease}
+    .stiker img{width:100px;height:100px;box-shadow: 0 4px 30px rgba(255,105,180, 0.5);backdrop-filter: blur(5px);-webkit-backdrop-filter: blur(5px);background: rgba(255, 255, 255, 0.7);border: 3px solid rgba(255,255,255, 1);border-radius: 50%;padding:10px;}
+	.hati{position:fixed;width:26px;height:26px;opacity:0.7;animation:ngelayang 5s ease-in-out forwards;z-index:0}
+	@keyframes ngelayang{0%{transform:translateY(15vh);opacity:0}20%{opacity:0.7}80%{opacity:0.7}100%{transform:translateY(-100vh);opacity:0}}
+	.hati svg{width:100%;height:100%;fill:#ff1744;stroke:none;filter:drop-shadow(0 0 8px #ff4081);}
+	
+	.wrapper{position:fixed}.circ div{position:fixed;width:70px;height:70px;background:transparent;border:7px solid rgba(255,255,255,0.5);border-radius:50%;box-shadow:0 0 20px rgba(255,20,147,0.5);}.circ div:nth-child(1){top:10%;left:40%;animation:animate 12s linear infinite}.circ div:nth-child(2){top:70%;left:50%;animation:animate 9s linear infinite}.circ div:nth-child(3){top:15%;left:8%;animation:animate 11s linear infinite}.circ div:nth-child(4){top:25%;left:65%;animation:animate 13s linear infinite}.circ div:nth-child(5){top:65%;left:12%;animation:animate 8s linear infinite}.circ div:nth-child(6){top:85%;left:75%;animation:animate 14s linear infinite}.circ div:nth-child(7){top:55%;left:82%;animation:animate 16s linear infinite}.circ div:nth-child(8){top:30%;left:20%;animation:animate 15s linear infinite}.circ div:nth-child(9){top:92%;left:28%;animation:animate 10s linear infinite}.circ div:nth-child(10){top:18%;left:85%;animation:animate 7s linear infinite}@keyframes animate{0%{transform:scale(0) translateY(0) rotate(0);opacity:0.8}100%{transform:scale(1.4) translateY(-100px) rotate(360deg);opacity:0}}
+
+	/* Emoji Hati di Tengah Amplop */
+	.envelope-heart{
+		position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:2rem;z-index:5;
+		opacity:0.9;pointer-events:none;animation:pulseHeart 2s ease-in-out infinite;
+	}
+	@keyframes pulseHeart{
+		0%,100%{transform:translate(-50%,-50%) scale(1);}
+		50%{transform:translate(-50%,-50%) scale(1.2);}
+	}
+
+	/* Animasi Teks Happy New Year di Tengah Layar */
+	#finalGreeting{position:fixed;top:40%;left:50%;transform:translate(-50%,-40%) scale(0);opacity:0;font-family:'Sriracha',serif;font-size:3.5rem;font-weight:700;color:#fff;text-shadow:0 0 30px #ff4081,0 0 60px #ff1744;text-align:center;z-index:10;pointer-events:none;white-space:nowrap;}
+	#finalGreeting.show{animation:greetingAppear 1.5s ease forwards;}
+	@keyframes greetingAppear{0%{transform:translate(-50%,-40%) scale(0);opacity:0;}50%{transform:translate(-50%,-40%) scale(1.3);opacity:1;}100%{transform:translate(-50%,-40%) scale(1);opacity:1;}}
+	#finalGreeting.hide{animation:greetingDisappear 1.5s ease forwards;}
+	@keyframes greetingDisappear{0%{transform:translate(-50%,-40%) scale(1);opacity:1;}50%{transform:translate(-50%,-40%) scale(1.3);opacity:.8;}100%{transform:translate(-50%,-40%) scale(0);opacity:0;}}
+	#finalGreeting span{display:inline-block;opacity:0;transform:translateY(50px);animation:letterFloat 1.5s ease forwards;}
+	@keyframes letterFloat{to{opacity:1;transform:translateY(0);}}
+		
+	@media (max-width:600px){
+		.kotak{width:85%;padding:1rem}
+		#envelope{width:150px;height:105px;top:100px}
+		.flap,.pocket{border-left-width:75px;border-right-width:75px;border-bottom-width:52.5px;border-top-width:52.5px}
+		.letter{padding:12px}
+		.message p{font-size:1em}
+		.papanGame{gap:1rem 0.2rem}
+		.kartu{width:40px;height:40px}
+		.belakangKartu{font-size:1.2rem}
+		#finalGreeting{font-size:1.5rem;}
+		.envelope-heart{font-size:2rem;}
+	}
+</style>
+<body>
+  
+  <!-- Audio -->
+  <audio src="https://feeldreams.github.io/audio/kuakan.mp3" id="linkmp3"></audio>
+  
+  <!-- Background / Wallpaper -->
+  <div id="wallpaper" class="background-overlay" data-src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhgSarRYKvuFifh4eOGx9HqHtzuZDS88uX0_CTid4m_3yO4XxipPT0O6g_keBAArlNlXkQotU_VkChnuDF1DGiw9fQkNh-tuC7Tmtg7xSEyD0Jb6WM-cgS2X8K5MTphv-SEZfszgH8l2qw8ORfCaPKY8pQjDoSTFSFSRnxIduBFDFFDwhGCFb7JokMav6x8/s1600/50995.jpg"></div>
+
+  <!-- Animasi Teks Happy New Year -->
+  <div id="finalGreeting">
+    Happy New Year 2026! <3
+  </div>
+
+  <!-- Halaman 1: Envelope -->
+  <div id="hal1">
+    <div class="envlope-wrapper">
+      <div id="envelope" class="close">
+        <div class="front flap"></div>
+        <div class="front pocket"></div>
+        <!-- Emoji Hati di Tengah Amplop -->
+        <div class="envelope-heart">❤️</div>
+        <div class="letter">
+          <div class="letter-corner corner-tl"></div>
+          <div class="letter-corner corner-br"></div>
+          <div class="message">
+            <p>Teruntuk Kamuu 🫶</p>
+          </div>
+        </div>
+        <div class="hearts">
+          <div class="heart a1"></div>
+          <div class="heart a2"></div>
+          <div class="heart a3"></div>
+        </div>
+        <div class="sparkles">
+          <div class="sparkle s1"></div>
+          <div class="sparkle s2"></div>
+          <div class="sparkle s3"></div>
+        </div>
+      </div>
+    </div>
+    <div class="reset">
+      <button onclick="bukaEnvelope()">Buka Surat</button>
+    </div>
+  </div>
+
+  <!-- Halaman 2: Memory Game -->
+  <div id="hal2" class="kotak sembunyi">
+    <canvas id="game-canvas"></canvas>
+    <h2>💭 Memory Game</h2>
+    <p>Cocokkan Pasangan Emoji² Ini! 😆</p>
+    <div id="kotakPesan"></div>
+    <div id="papanGame" class="papanGame"></div>
+    <p id="statusGame"></p>
+    <button id="lanjut" onclick="pindahHal(3)" class="sembunyi">Lihat Pesan Cinta!</button>
+    <button id="ulang" onclick="mulaiHal2()" class="tombolCadangan sembunyi">Coba Lagi!</button>
+  </div>
+
+  <!-- Halaman 3: Pesan Akhir -->
+  <div id="hal3" class="kotak sembunyi">
+    <!-- Stiker Gif -->
+    <div id="stiker3" class="stiker">
+        <img id="stiker3a" src="https://htmlku.com/0/panda/ciumin.gif" />
+        <img id="stiker3b" class="sembunyi" src="https://htmlku.com/0/panda/muah.gif" />
+    </div>
+    <div id="containerPesan">
+	    <p id="teksCinta"></p>
+	    <p id="pesanAkhir"></p>
+	    <p id="teksLucu"></p>
+    </div>
+    <button style="display:none" onclick="shareWa()">Kirim ke Dia!</button>
+  </div>
+  <div class="tombol">
+    <button onclick="balasWa()">Balas</button>
+  </div>
+  
+  <!-- Circle Animation -->
+  <div>
+        <div>
+            <div class="circ">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+
+  <script>
+    // Edit Icon Memory Game di Sini
+    const kartu = [
+	  { id: 3, icon: '🫶🏻', pesan: '' },
+	  { id: 5, icon: '💗', pesan: '' },
+	  { id: 1, icon: '🩷', pesan: '' },
+	  { id: 6, icon: '😍', pesan: '' },
+	  { id: 2, icon: '💞', pesan: '' },
+	  { id: 4, icon: '💌', pesan: '' },
+	  { id: 1, icon: '🩷', pesan: '' },
+	  { id: 3, icon: '🫶🏻', pesan: '' },
+	  { id: 5, icon: '💗', pesan: '' },
+	  { id: 2, icon: '💞', pesan: '' },
+	  { id: 4, icon: '💌', pesan: '' },
+	  { id: 6, icon: '😍', pesan: '' }
+	];
+
+    // Edit Kata-kata di Sini
+    const txtDoa = "<b>Happy New Year 2026 ᯓᡣ𐭩🎆💖</b>";
+    const txtPesanAkhir = "Ngga banyak kata yang bisa aku ungkapin buat kamu... cuma mau bilang makasih ya, Sayang, udah nemenin aku sepanjang 2025, dari momen biasa menjadi luar biasa karena ada kamu 🫠<br><br>Di tahun 2026 nanti, aku cuma pengen satu hal sederhana: semoga kita tetep bersama 💑 bukan cuma sekarang, tapi juga di hari-hari setelahnya 🫶<br><br>Semoga tiap lelah bisa kita peluk bareng, tiap sedih bisa kita ceritain tanpa takut dihakimi, dan tiap bahagia selalu pengen dibagi ke orang yang sama, yaitu kamu 💗<br><br>Oh yaa, aku mau kamu tau kalo aku bangga banget punya kamu sebagai pacarku! 🎇💘<br><br>Maaf aku belum bisa jadi yang terbaik buat kamu, tapi aku janji di 2026 bakal terus belajar jadi yang lebih baik 💕";
+    const txtLucu = "<b>I love you more than yesterday, but less than tomorrow... 🌹</b><br>— dariku yang always loving uu 🌺";
+  </script>
+  <script>
+  	audio = new Audio('' + linkmp3.src);
+
+    // Elemen Background
+    const backgroundOverlay = document.querySelector('.background-overlay');
+    const bgImageUrl = backgroundOverlay.getAttribute('data-src');
+    backgroundOverlay.style.background = `url('${bgImageUrl}') no-repeat center center fixed`;
+    backgroundOverlay.style.backgroundSize = 'cover';
+
+    // Animasi Kelopak Bunga
+    function mulaiKelopak(canvasId) {
+      const canvas = document.getElementById(canvasId);
+      const ctx = canvas.getContext('2d');
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      const kelopak = Array.from({ length: 20 }, () => ({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        radius: Math.random() * 5 + 2,
+        speed: Math.random() * 2 + 1
+      }));
+
+      function gambarKelopak() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        kelopak.forEach(petal => {
+          ctx.beginPath();
+          ctx.arc(petal.x, petal.y, petal.radius, 0, Math.PI * 2);
+          ctx.fillStyle = '#f87171';
+          ctx.fill();
+          petal.y += petal.speed;
+          if (petal.y > canvas.height) petal.y = -petal.radius;
+          petal.x += Math.sin(petal.y / 50) * 2
+        });
+        requestAnimationFrame(gambarKelopak);
+      }
+      gambarKelopak();
+    }
+
+    // Animasi Hati Jatuh
+    let intervalHati;
+    function hatiJatuh() {
+      const hati = document.createElement('div');
+      hati.className = 'hati';
+      hati.innerHTML = `<svg class='line' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><g transform='translate(2.550170, 3.550158)'><path d='M0.371729633,8.89614246 C-0.701270367,5.54614246 0.553729633,1.38114246 4.07072963,0.249142462 C5.92072963,-0.347857538 8.20372963,0.150142462 9.50072963,1.93914246 C10.7237296,0.0841424625 13.0727296,-0.343857538 14.9207296,0.249142462 C18.4367296,1.38114246 19.6987296,5.54614246 18.6267296,8.89614246 C16.9567296,14.2061425 11.1297296,16.9721425 9.50072963,16.9721425 C7.87272963,16.9721425 2.09772963,14.2681425 0.371729633,8.89614246 Z'></path><path d='M13.23843,4.013842 C14.44543,4.137842 15.20043,5.094842 15.15543,6.435842'></path></g></svg>`;
+      hati.style.left = Math.random() * 100 + 'vw';
+      hati.addEventListener('animationend', () => hati.remove());
+      document.body.appendChild(hati);
+    }
+
+    // Buka Envelope
+    function bukaEnvelope() {
+      audio.play();
+      const envelope = document.getElementById('envelope');
+      envelope.classList.remove('close');
+      envelope.classList.add('open');
+      document.querySelector(".reset").style="transform:scale(0);opacity:0;transition:all .7s ease";
+      setTimeout(() => {
+        document.querySelector("#envelope").style="transform:scale(0);opacity:0;transition:all .7s ease";
+        setTimeout(() => {
+          /*
+          const greeting = document.getElementById('finalGreeting');
+          greeting.classList.add('show');
+          
+          const text = greeting.textContent;
+          greeting.innerHTML = '';
+          text.split('').forEach((char, i) => {
+            const span = document.createElement('span');
+            span.textContent = char === ' ' ? '\u00A0' : char;
+            span.style.animationDelay = `${i * 0.05}s`;
+            greeting.appendChild(span);
+          });
+
+          // Setelah 3 detik, jalankan animasi menghilang
+          setTimeout(() => {
+            greeting.classList.remove('show');
+            greeting.classList.add('hide');
+            setTimeout(() => {
+              pindahHal(3);
+            }, 1000); // Durasi animasi disappear
+          }, 2000);
+          */
+          setTimeout(() => {
+              pindahHal(3);
+          }, 300);
+          envelope.classList.remove('open');
+          envelope.classList.add('close');
+        }, 200);
+      }, 1500);
+    }
+
+    // Halaman 2: Memory Game
+    let kartuDibuka = [];
+    let pasanganCocok = 0;
+    let gameJalan = false;
+
+    function acakKartu(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    }
+
+    function mulaiHal2() {
+	  kartuDibuka = [];
+	  pasanganCocok = 0;
+	  gameJalan = true;
+	  document.getElementById('kotakPesan').innerHTML = '';
+	  document.getElementById('statusGame').innerText = '';
+	  document.getElementById('lanjut').classList.add('sembunyi');
+	  document.getElementById('ulang').classList.add('sembunyi');
+	
+	  const papanGame = document.getElementById('papanGame');
+	  papanGame.innerHTML = '';
+	  kartu.forEach((card, index) => { 
+	    const elemenKartu = document.createElement('div');
+	    elemenKartu.className = 'kartu';
+	    elemenKartu.dataset.id = card.id;
+	    elemenKartu.innerHTML = `
+	      <div class="dalemKartu">
+	        <div class="depanKartu"></div>
+	        <div class="belakangKartu">${card.icon}</div>
+	      </div>
+	    `;
+	    elemenKartu.addEventListener('click', () => balikKartu(elemenKartu, card, index));
+	    papanGame.appendChild(elemenKartu);
+	  });
+	}
+
+    function balikKartu(elemenKartu, card, index) {
+      if (!gameJalan || kartuDibuka.length >= 2 || elemenKartu.classList.contains('balik')) return;
+      elemenKartu.classList.add('balik');
+      kartuDibuka.push({ elemen: elemenKartu, card, index });
+
+      if (kartuDibuka.length === 2) {
+        const [kartu1, kartu2] = kartuDibuka;
+        if (kartu1.card.id === kartu2.card.id) {
+          pasanganCocok++;
+          kartuDibuka = [];
+          if (pasanganCocok === 6) selesaiGame(true);
+        } else {
+          setTimeout(() => {
+            kartu1.elemen.classList.remove('balik');
+            kartu2.elemen.classList.remove('balik');
+            kartuDibuka = [];
+          }, 700);
+        }
+      }
+    }
+
+    function selesaiGame(sukses) {
+      gameJalan = false;
+      const status = document.getElementById('statusGame');
+      if (sukses) {
+        setTimeout(()=>{pindahHal(3)}, 1000);
+      } else {
+        status.innerText = 'Momen kita terlalu indah untuk dilewatkan, coba lagi ya! 🌌';
+        document.getElementById('ulang').classList.remove('sembunyi');
+      }
+    }
+
+    // Halaman 3: Pesan Akhir
+    function mulaiHal3() {
+      const stiker3 = document.getElementById('stiker3');
+      const stiker3a = document.getElementById('stiker3a');
+      const stiker3b = document.getElementById('stiker3b');
+      stiker3.style = "transform:scale(1)";
+
+      new TypeIt("#teksCinta", {
+        strings: txtDoa,
+        speed: 18,
+        startDelay: 300,
+        afterComplete: function () {
+          document.querySelector("#teksCinta .ti-cursor").style.display = "none";
+          new TypeIt("#pesanAkhir", {
+            strings: txtPesanAkhir,
+            speed: 18,
+            waitUntilVisible: true,
+            afterComplete: function () {
+              document.querySelector("#pesanAkhir .ti-cursor").style.display = "none";
+              new TypeIt("#teksLucu", {
+                strings: txtLucu,
+                speed: 18, 
+                waitUntilVisible: true,
+                afterComplete: function () {
+                  document.querySelector("#teksLucu .ti-cursor").style.display = "none";
+                  clearInterval(scrollInterval);
+                  
+                  stiker3.style = "transform:scale(0)";
+                  setTimeout(() => {
+                    stiker3a.src = stiker3b.src;
+                    stiker3.style = "transform:scale(1)";
+                    intervalHati = setInterval(hatiJatuh, 150);
+                  }, 300);
+                  
+                  setTimeout(()=>{hal3.style.opacity="0";},300);
+                  
+                  setTimeout(()=>{
+                      // Munculkan animasi teks Happy New Year
+			          const greeting = document.getElementById('finalGreeting');
+			          greeting.classList.remove('hide');
+			          greeting.classList.add('show');
+			          
+			          //wallpaper.style="opacity:0;transition:all .7s ease";
+			          
+			          const text = greeting.textContent;
+			          greeting.innerHTML = '';
+			          text.split('').forEach((char, i) => {
+			            const span = document.createElement('span');
+			            span.textContent = char === ' ' ? '\u00A0' : char;
+			            span.style.animationDelay = `${i * 0.05}s`;
+			            greeting.appendChild(span);
+			          });
+			
+			          // Setelah 3 detik, jalankan animasi menghilang
+			          setTimeout(() => {
+			            greeting.classList.remove('show');
+			            greeting.classList.add('hide');
+			            setTimeout(() => {
+			              document.querySelector(".tombol").style="transform:scale(1);opacity:1;";
+			              hal3.style.opacity="1";
+			              //wallpaper.style="opacity:1;transition:all .7s ease";
+			            }, 1000); // Durasi animasi disappear
+			          }, 3000);
+                  }, 600);
+                  
+                }
+              }).go();
+            }
+          }).go();
+        }
+      }).go();
+    }
+    
+    const scrollContainer = document.getElementById("containerPesan");
+    function autoScroll() {scrollContainer.scrollTop += 10;} 
+    const scrollInterval = setInterval(autoScroll, 50); 
+
+    // Navigasi Halaman
+    function pindahHal(hal) {
+      for (let i = 1; i <= 3; i++) {
+        if (hal <= 3) document.getElementById(`hal${i}`).classList.add('sembunyi');
+      }
+      if (hal <= 3) document.getElementById(`hal${hal}`).classList.remove('sembunyi');
+      
+      setTimeout(()=>{
+         if (hal === 2) {mulaiHal2();document.getElementById(`hal${hal}`).style="transform:scale(1);transition:all .7s ease";}
+         if (hal !== 2){
+         document.getElementById(`hal${hal - 1}`).style = "transform:scale(0);transition:all .7s ease";
+         setTimeout(()=>{
+         	document.getElementById(`hal${hal - 1}`).classList.add('sembunyi');
+             document.getElementById(`hal${hal}`).classList.remove('sembunyi');
+	         setTimeout(()=>{document.getElementById(`hal${hal}`).style="width:90%;padding:.9rem;margin-top:110px;transform:scale(1);transition:all .7s ease";}, 100);
+	         setTimeout(()=>{if (hal === 3) mulaiHal3();}, 150);
+	     }, 50);
+	     }
+      }, 50);
+    }
+
+    // Share ke WhatsApp
+    function balasWa() {
+      const url = window.location.href;
+      const text = "Terima kasih, Sayang! Aku juga love you forever 💕";
+      window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
+    }
+  </script>
+</body>
+</html>
