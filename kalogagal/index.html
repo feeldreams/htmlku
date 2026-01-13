@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>S.id/kalogagal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+  <meta name="description" content="Script HTML Gosok Kartu 💌">
+  <meta property="og:title" content="HTML Spesial Untukmu ✨">
+  <meta property="og:description" content="Dibuka yaaa 🫣">
+  <meta property="og:image" content="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhMDugl2siKVTnQUhkzqZXmNhnUl_IXm-tsnodgHf4C3dPn6v4gz06nVm1ASqpRXO65Dg3PkYB9bKsThBPUxygLD9Euem9SSTr0LRIGK9x5uaLvK4WIPn6VlSx0qSrPGhTknGVHeVMpioiBcXiqrk-dF3d4SYS8QIkWkDlMgRrdF4vw_iw-EOgTYcwo6xhs/s300/1000314955.jpg">
+  <meta property="og:image:alt" content="html bucin">
+  <meta property="og:url" content="htmlku.com/jangankena">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" type="image/svg+xml" href="https://feeldreams.github.io/main-icon.png"> 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="icon" type="image/svg+xml" href="https://feeldreams.github.io/main-icon.png"> 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+  <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Inter&family=Itim&family=Sriracha&display=swap');
+	
+	:root {
+	--poppins: 'Poppins', sans-serif;
+	--nunito: 'Nunito Sans', sans-serif;
+	--caveat: 'Caveat', cursive;
+	--quicksand: 'Quicksand', sans-serif;
+	--itim: 'Itim', cursive;
+	--inter: 'Inter', sans-serif;
+	}
+
+    html, body {position: relative;height: 100%;}
+    body {background: #000;font-family: 'Itim', cursive;font-size: 14px;color: #fff;text-shadow: 0px 2px 2px rgba(0, 0, 0, .5);margin: 0;padding: 0;}
+    
+    #bodyblur{opacity:.4;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);transition:all 1s ease;} 
+    #wallpaper{animation: jj 7s infinite alternate;width:100%;height:100%;transform: scale(1.3);transition:all 1.3s ease;}
+    #wallpaper2, #wallpaper3, #wallpaper4{display:none}
+    @keyframes jj{0%  {transform: scale(1);} 50% {transform: scale(1.3);} 100% {transform: scale(1);}}
+
+    p{margin-left:50px;margin-right:70px;text-align:left}
+    #ket{margin:20px}
+
+    .swiper {width: 100%;height: 100%;padding:0;margin:0;}
+    .swiper-slide {text-align: center;font-size: 18px;display: flex;flex-direction: column;justify-content: center;align-items: center;margin-top:-100px;}
+    .swiper-slide img {display: block;width: 100%;height: 100%;object-fit: cover;}
+    .swiper-pagination{margin-bottom:20vh}
+    .swiper-pagination-bullet-active{background-color: #fff !important;opacity:1 !important}
+    .swiper-pagination-bullet{background-color:rgba(255,255,255, 1) !important;}
+    .swiper-button-next, .swiper-button-prev{display:none;}
+    
+    .sembunyi, #teksAkhiran, #teksLoop, #emojiTeksLoop{display: none !important;}
+    .stiker{display:flex;justify-content:center;align-items:center;margin-left:auto;margin-right:auto;margin-bottom:20px;transition:all .75s ease}
+    .stiker img{width:90px;height:90px;box-shadow: 0 4px 30px rgba(255,255,255, 0.3);backdrop-filter: blur(5px);-webkit-backdrop-filter: blur(5px);background: rgba(255, 255, 255, .3);border: 2px solid rgba(255, 255, 255, 1);border-radius: 50%;padding:10px;}
+    .stiker img.sty2{background:none;filter: drop-shadow(0 4px 8px rgba(255, 255, 255, 0.2));box-shadow: none;backdrop-filter: none;-webkit-backdrop-filter: none;border: none;border-radius: 0;padding:0;width: auto;height:90px;}
+	b.merah{color:red}
+	b.kuning{color:yellow}
+	b.putih{text-shadow:none;padding-left:8px;padding-right:8px;padding-top:2px;padding-bottom:2px;background-color:white;border-radius:12px}
+	span.garismerah{border-bottom:2px solid red}
+	span.gariskuning{border-bottom:2px solid yellow}
+    p{color:white;font-size:15px;line-height:1.5em;}
+    .abs{position:absolute !important}
+    .scale0{opacity:0;transform: scale(0);transition: all .9s ease;}
+    .scale1{opacity:1;transform: scale(1);transition: all .9s ease;}
+    svg{vertical-align: middle;width: 22px;height: 22px;fill: #fff}
+    .heart-icon {z-index:100;width: 30px;height: 30px;position: fixed;animation:  heartMove linear 1;top: -10vh;}
+
+	@keyframes heartMove {
+	  0% {transform: translateY(-10vh);}
+	  100% {transform: translateY(100vh);}
+	}
+	    svg.line{fill: none;stroke: #fff;stroke-width: 2;animation: moving .7s linear infinite alternate;}
+	    .spin{animation: spin 3s linear infinite alternate;}
+	@keyframes spin {
+	  from {
+	    transform: rotate(20deg);
+	  }
+	  to {
+	    transform: rotate(-20deg);
+	  }
+	}
+	@keyframes moving {
+	  from {
+	    transform: translateY(0);
+	  }
+	  to {
+	    transform: translateY(3px);
+	  }
+	}
+    .overlay {position: fixed;top: 0;left: 0;width: 100%;height: 100%;display: flex;justify-content: center;align-items: center;background:rgba(0,0,0,.3);z-index:100;}
+    .loading-message {font-size: 13px;text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);color:white;text-align: center;}
+    .blocklove{display: none;flex-direction: column;justify-content: center;align-items: center;}
+    .lovein{background:#fff;color:#FF0900;border-radius:50%;width:40px;height:40px;padding:10px;font-size:30px;display:flex;align-items:center;text-align:center;justify-content:center;transition:all .3s ease;}
+    .lovein:hover{transform: scale(.9);color:#FF0900;}
+    .lovein svg{stroke:#FF0600;width:30px;height:30px}
+    
+    .blocktext{text-align:left;margin-top:10px;position:relative;width:80%;height: 270px; overflow: auto;background-color:none;}
+    
+    .sertifikat {position: relative;width: 330px;height: 236px;text-shadow:none}
+	.sertifikat img {border-radius:30px;width: 100%;height: 100%;}
+	.text-overlay {position: absolute;top: 35px;left: 0;width: 100%;text-align: center;color: #333;font-size: 14px;font-weight: bold;}
+	.text-overlay h1 {font-size: 20px;color:#fff;margin: 0;}
+	.text-overlay .sub-title {font-size: 14px;color:yellow;margin-bottom: 10px;}
+	.content {font-size: 12px;color:#fff;}
+	.real {font-weight: bold;color: #fff;font-size: 12px;}
+	
+    .tombol{background-color: rgba(255,255,255,0);border-radius: 50px;overflow: hidden;display: flex;align-items: center;justify-content: center;-webkit-transition: all .2s ease-out;transition: all .2s ease-out}
+    .tombol svg{margin: auto;fill:#ffd4d4;stroke: #ff0000;width: 60px;height: 60px;animation: spin2 1s linear infinite alternate;}
+    #Tombol{margin-top:20px;position:relative;margin-left:auto;margin-right:auto;display:flex;align-items:center;justify-content:center;list-style:none;transition:all 1s ease;}
+    #Tombol a{cursor:pointer;display:inline-flex;align-items:center; margin:0;margin:10px;transition:all .2s ease;padding:10px;outline:0;border:1px solid white;border-radius:12px;line-height:15px;background:rgba(0,0,0,.3);color:white;font-size:13px;font-weight:700;white-space:nowrap;overflow:hidden;box-shadow: rgba(255,255,255, 0.15) 0px 7px 29px 0px;z-index:1}
+    #Tombol, #Tombol2, #TombolWA{margin-top:0;position:relative;transform:scale(0);opacity:0;margin-left:auto;margin-right:auto;display:flex;justify-content:center;align-items:center;list-style:none;transition:all .75s ease;}
+    #Tombol a, #Tombol2 a, #TombolWA a{cursor:none;display:inline-flex;align-items:center; margin:0;margin:10px;transition:all .2s ease;padding:10px;outline:0;border:2px solid white;border-radius:30px;line-height:15px;background:rgba(0,0,0,.2);box-shadow: rgba(255,255,255, 0.3) 0px 7px 29px 0px;backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);color:white;font-size:15px;font-weight:700;white-space:nowrap;overflow:hidden;z-index:1}
+    #Tombol a:hover{transform:scale(.85)}
+    
+    .swal2-modal > *{font-family:var(--gaya-font);font-size:19px;color:white}
+    .swal2-title{line-height:1.3em;font-size:22px;text-align:center;padding:15px 0px 0 0px;}
+    .swal2-container.swal2-backdrop-show{background: rgba(0,0,0,.75);}
+    .swal2-timer-progress-bar-container > *{opacity:.7;background:#00B6FF;margin:0 2px}
+    .swal2-modal{background:rgba(0,0,0,.5);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);border: 2px solid white;border-radius:30px;top:-50px;max-width:330px}
+    .swal2-styled.swal2-confirm, .swal2-styled.swal2-cancel{position: relative;font-family:var(--gaya-font);padding:5px 16px 8px 16px;background-color: #3956EB;color: #fff;border: 2px solid white;border-radius:30px;z-index: 1;transition: all 0.2s;}
+    .swal2-styled:focus,.swal2-styled:active {outline: none !important;box-shadow: none !important;}
+
+    .main-card{margin-top:50px;display:flex;flex-direction:column;align-items:center;}
+	.game-board{margin-top:10px;display:grid;grid-template-columns:repeat(4,44px);grid-gap:10px;transform:scale(1);transition:transform 1s ease;}
+	.card{font-family:Arial,sans-serif;width:44px;height:44px;background-color:rgba(255,255,255,.5);display:flex;align-items:center;justify-content:center;font-size:0;/*cursor:pointer;*/border:1.5px solid white;border-radius:25%;transform:scale(0);position:relative;overflow:hidden;}
+	.card canvas{width:100%;height:100%;position:absolute;top:0;left:0;}
+	.card.flipped{font-size:1.2em;background-color:rgba(255,255,255,.3);color:#2c3e50;transition:all .5s ease}
+	.hideOut {transform: scale(0) !important;opacity: 0;transition: all 0.7s ease !important;}
+	.pesanAfter{display:none;font-size:2em;margin-top:20px;color:#e74c3c;}
+	@keyframes appear{to{transform:scale(1);}}
+	.start-button{padding:10px 20px;font-size:1em;margin-top:20px;cursor:pointer;background-color:#3498db;color:white;border:none;border-radius:5px;}
+	
+	canvas{position:absolute;top:0;left:0;width:100%;height:100%;z-index:-1}
+	
+	@keyframes boom {
+	    0%   { transform: scale(0.5); opacity: 1; }
+	    70%  { transform: scale(1.8); opacity: 1; }
+	    100% { transform: scale(2.2); opacity: 0; }
+	}
+	
+	@keyframes shake {
+	    0%, 100% { transform: translateX(0); }
+	    10%, 30%, 50%, 70%, 90% { transform: translateX(-8px); }
+	    20%, 40%, 60%, 80% { transform: translateX(8px); }
+	}
+	
+	.shake {
+	    animation: shake 0.6s ease-in-out;
+	}
+	
+	/* Animasi Teks Happy Birthday di Tengah Layar */
+	#finalGreeting{position:fixed;top:43%;left:50%;transform:translate(-50%,-40%) scale(0);opacity:0;font-family:'Sriracha',serif;font-size:3.5rem;font-weight:700;color:#fff;text-shadow:0 0 30px rgba(0,0,0,.5);text-align:center;z-index:10;pointer-events:none;white-space:nowrap;}
+	#finalGreeting.show{animation:greetingAppear 1.5s ease forwards;}
+	@keyframes greetingAppear{0%{transform:translate(-50%,-40%) scale(0);opacity:0;}50%{transform:translate(-50%,-40%) scale(1.3);opacity:1;}100%{transform:translate(-50%,-40%) scale(1);opacity:1;}}
+	#finalGreeting.hide{animation:greetingDisappear 1.5s ease forwards;}
+	@keyframes greetingDisappear{0%{transform:translate(-50%,-40%) scale(1);opacity:1;}50%{transform:translate(-50%,-40%) scale(1.3);opacity:.8;}100%{transform:translate(-50%,-40%) scale(0);opacity:0;}}
+	#finalGreeting span{display:inline-block;opacity:0;transform:translateY(50px);animation:letterFloat 1.5s ease forwards;}
+	@keyframes letterFloat{to{opacity:1;transform:translateY(0);}}
+		
+  /* Gambar di atas teks finalGreeting */
+	#finalGreetingImage{position:fixed;top:23%;left:50%;transform:translateX(-50%);width:100px;height:130px;object-fit:contain;border: 2px solid white;border-radius:50%;box-shadow:0 0 30px rgba(0,0,0,0.3);padding:10px;background:rgba(255,255,255,.8);opacity:0;z-index:999;pointer-events:none;}
+	#finalGreetingImage.show{animation:greetingAppear 1.5s ease forwards;}
+	#finalGreetingImage.hide{animation:greetingDisappear 1.5s ease forwards;}
+	
+	@media (max-width:600px){
+		#finalGreeting{font-size:1.55rem;}
+        #finalGreetingImage{padding:8px;width:90px;height:90px;top:27%;}
+	}
+</style>
+</head>
+
+<body>
+  <audio src="https://feeldreams.github.io/audio/foreveryoung.mp3" id="linkmp3" class="sembunyi"></audio>
+  
+	<div class="overlay">
+    <div class="loading-message">Hai kamu!<br>Tunggu dulu ya..</div>
+     <div id="loveIn" class="blocklove"></div>
+   </div>
+   
+   <div id="bodyblur">
+     <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhEyGU329bQf09bixwfw3oTA3RtBzkIukZNeJdEvG5h2OCssSm3fExffVXuR2r_BpFraVMhq5ObEciB2d7rauH8-QjYd9lVOfZWC2Z6MPukdB-4JEMIMIEzXo_o35RpJPzyF_i7SdDoLddZfbyAjAC2QfUcih8mgaR8ESBboUtSqwtho-aHTzwRGl7ttohG/s1600/73252.jpg" id="wallpaper"/>
+   </div>
+   
+   <!-- Gambar di atas finalGreeting -->
+  <img id="finalGreetingImage" src="https://htmlku.com/0/panda/panah.gif" alt="Happy Birthday">
+
+  <!-- Animasi Teks Happy Birthday -->
+  <div id="finalGreeting">Alooo Kamuuu.ᐟ <3</div>
+   
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+                <div id="stiker1" class="scale0 stiker" style="margin-top:50px">
+                    <img src="https://htmlku.com/0/panda/panah.gif" />
+                </div>
+                <h1 id="teks1" class="scale0 quicksand" style="font-size: 22px;">Alooo Kamuuu 🫣<br><br><span style="font-size:18px;font-weight:400">Aku Ada Sesuatu<br>buat Kamuuuuu 💭</span><br><br> >>>
+                </h1>
+            </div>
+
+            <div class="swiper-slide">
+				<div class="main-card">
+					<h1 id="teks2" class="scale0 quicksand" style="font-size: 19px;">Coba Gosok Kartu² Ini 💌<br><span>Hindari <i style="color:pink">2 Bom</i>nya yaa!</span> 🤣</h1>
+				  <div class="game-board">
+				    <div class="card" data-emoji="❤️"><canvas></canvas></div>
+				    <div class="card" data-emoji="💕"><canvas></canvas></div>
+				    <div class="card" data-emoji="🌹"><canvas></canvas></div>
+				    <div class="card" data-emoji="💣"><canvas></canvas></div>
+				
+				    <div class="card" data-emoji="💗"><canvas></canvas></div>
+				    <div class="card" data-emoji="😍"><canvas></canvas></div>
+				    <div class="card" data-emoji="🩷"><canvas></canvas></div>
+				    <div class="card" data-emoji="🌺"><canvas></canvas></div>
+				
+				    <div class="card" data-emoji="💖"><canvas></canvas></div>
+				    <div class="card" data-emoji="💣"><canvas></canvas></div>
+				    <div class="card" data-emoji="💝"><canvas></canvas></div>
+				    <div class="card" data-emoji="💗"><canvas></canvas></div>
+				
+				    <div class="card" data-emoji="💓"><canvas></canvas></div>
+				    <div class="card" data-emoji="💘"><canvas></canvas></div>
+				    <div class="card" data-emoji="❤️‍🔥"><canvas></canvas></div>
+				    <div class="card" data-emoji="💞"><canvas></canvas></div>
+				</div>
+				</div>
+				
+				<div id="stiker3" class="abs scale0 stiker" style="margin-top:150px">
+                    <img id="stikerAkhir1" src="https://htmlku.com/0/panda/ledekin.gif" />
+                    <img id="stikerAkhir2" class="sembunyi" src="https://feeldreams.github.io/smprt.gif" />
+                    <img id="stikerAkhir100" class="sembunyi" src="https://htmlku.com/0/peach/" />
+                </div>
+                <div id="scroll-container" class="blocktext scale0 abs">
+                    <h1 id="teks3" class="quicksand" style="font-size: 18px;font-weight:400;line-height:1.3em"></h1>
+                </div>
+                <div id="Tombol"><a id="By" onClick="fungsiWA()">💌 Balas</a></div>
+                
+                <canvas id="game-canvas"></canvas>
+            </div>
+            
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+async function fungsiWA() {
+  await swals.fire("OK!", "Kirim pesan ke<br><span style='border-bottom: 2px solid green'>WhatsApp</span> aku, ya!", "success");
+  const phoneNumber = "6281234567890"; // ganti dengan nomor tujuan
+  const message = "Aku Call nih? Wkwk";
+  
+  const encodedMessage = encodeURIComponent(message);
+  const waLink = `https://wa.me/\( {phoneNumber}?text= \){encodedMessage}`;
+  window.open(waLink, "_blank");
+}
+
+var teksSekarang = 1;
+const body = document.querySelector("body"); 
+audio = new Audio('' + linkmp3.src); 
+var swiper = new Swiper(".mySwiper", {
+    pagination: {el: ".swiper-pagination", dynamicBullets: false,},
+    allowSlidePrev: true,
+    allowTouchMove: false,
+    on: {
+    slideChange: function () {
+        teksSekarang++;
+        teksScale = document.querySelector('#teks' + teksSekarang);
+        stikerScale = document.querySelector('#stiker' + teksSekarang);
+        Tombol = document.querySelector('#Tombol');
+
+        setTimeout(function(){
+        	
+		        if(teksSekarang < 2){
+		          teksScale.classList.add("scale1");
+		          stikerScale.classList.add("scale1");
+		        } else {
+                  teksScale.classList.add("scale1");
+                  setTimeout(startGame,100);
+                  swiper.allowSlidePrev = false; // Nonaktifkan kembali ke slide sebelumnya saat slide 3
+                  swiper.allowSlideNext = false;
+                }
+          
+        }, 50);
+    },
+    },
+    navigation: {nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev",},
+});
+    
+const swals = Swal.mixin({allowOutsideClick: false, cancelButtonColor: '#FF0040', imageHeight: 90, imageWidth: 90, confirmButtonText: '<b>Kirim</b>'});
+initeks = "<b style='font-size: 20px;'>Yaahh kena <span style='border-bottom: 2px solid red'>2 Boom</span>!! 💥😫</b><br><br>Karena kamu gagal ngehindarin<br>2 Bom, abis ini kamu wajib<br><b>📞 Call</b> aku yaa! 🤣🫶<br><br><b>Kenapa harus call? 🤔</b><br>—<br>Karena dengerin suara kamu itu <i>is another level of happiness</i> buat aku hehe... 😋💭<br><br>── ᯓᡣ𐭩<br><b>Awas jangan sampe lupa yaa! 😜</b>";
+teks3.innerHTML = "";
+function katanimasi(){
+    teks3.innerHTML = "";
+	new TypeIt("#teks3", {
+    strings: ["" + initeks], startDelay: 100, speed: 30, cursor: true,
+    afterComplete: function(){
+      	teks3.innerHTML = initeks;
+      
+          setTimeout(function(){
+            stikerScale.classList.remove("scale1");
+            stikerScale.classList.add("scale0");
+               
+            setTimeout(function(){stikerAkhir1.src = stikerAkhir2.src;}, 275);
+            setTimeout(function(){
+                //setInterval(falling, 200);
+                mulaiKelopak('game-canvas');
+                Tombol.style="transform:scale(1);opacity:1";
+                setTimeout(function(){clearInterval(scrollInterval)},500);
+                stikerScale.classList.remove("scale0");
+                stikerScale.classList.add("scale1");
+            },350);
+            
+            }, 100);
+            
+    },}).go();
+}
+
+// Animasi Kelopak Bunga
+	let animationFrameId; // Variabel global untuk menyimpan ID requestAnimationFrame
+	function mulaiKelopak(canvasId) {
+	  const canvas = document.getElementById(canvasId);
+	  if (!canvas) return; // Cek apakah canvas ada
+	  const ctx = canvas.getContext('2d');
+	  canvas.width = window.innerWidth;
+	  canvas.height = window.innerHeight;
+	
+	  const kelopak = Array.from({ length: 20 }, () => ({
+	    x: Math.random() * canvas.width,
+	    y: Math.random() * canvas.height,
+	    radius: Math.random() * 5 + 2,
+	    speed: Math.random() * 0.5 + 1
+	  }));
+	
+	  function gambarKelopak() {
+	    ctx.clearRect(0, 0, canvas.width, canvas.height);
+	    kelopak.forEach(petal => {
+	      ctx.beginPath();
+	      ctx.arc(petal.x, petal.y, petal.radius, 0, Math.PI * 2);
+	      ctx.fillStyle = 'rgba(255,255,255, 0.2)';
+	      ctx.fill();
+	      petal.y += petal.speed;
+	      if (petal.y > canvas.height) petal.y = -petal.radius;
+	      petal.x += Math.sin(petal.y / 50) * 2;
+	    });
+	    animationFrameId = requestAnimationFrame(gambarKelopak); // Simpan ID animasi
+	  }
+	  gambarKelopak();
+}
+
+var sudahKlik = true;
+var fungsiBerfungsi = false;
+document.getElementById('loveIn').innerHTML = '<style>.lovein svg{animation:none;stroke:#ff0000;stroke-width:1.3;fill:none;width:35px;height:35px}</style><label class="lovein"><svg class="line" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g transform="translate(2.550170, 3.550158)"><path d="M0.371729633,8.89614246 C-0.701270367,5.54614246 0.553729633,1.38114246 4.07072963,0.249142462 C5.92072963,-0.347857538 8.20372963,0.150142462 9.50072963,1.93914246 C10.7237296,0.0841424625 13.0727296,-0.343857538 14.9207296,0.249142462 C18.4367296,1.38114246 19.6987296,5.54614246 18.6267296,8.89614246 C16.9567296,14.2061425 11.1297296,16.9721425 9.50072963,16.9721425 C7.87272963,16.9721425 2.09772963,14.2681425 0.371729633,8.89614246 Z"></path><path d="M13.23843,4.013842 C14.44543,4.137842 15.20043,5.094842 15.15543,6.435842"></path></g></svg></label><p id="ket">Sentuh LOVEnya!</p>';
+
+document.getElementById("loveIn").onclick = function() {
+    if (sudahKlik) {
+        audio.play();
+        document.querySelector(".overlay").style.display = "none";
+        setTimeout(()=>{
+          // Munculkan animasi teks Happy Birthday
+          const greeting = document.getElementById('finalGreeting');
+          greeting.classList.add('show');
+          const greetingImage = document.getElementById('finalGreetingImage');
+          greetingImage.classList.add('show');
+          
+          const text = greeting.textContent;
+          greeting.innerHTML = '';
+          text.split('').forEach((char, i) => {
+            const span = document.createElement('span');
+            span.textContent = char === ' ' ? '\u00A0' : char;
+            span.style.animationDelay = `${i * 0.05}s`;
+            greeting.appendChild(span);
+          });
+
+          // Setelah 3 detik, jalankan animasi menghilang (kebalikan dari appear)
+          setTimeout(() => {
+            greeting.classList.remove('show');
+            greeting.classList.add('hide');
+            greetingImage.classList.remove('show');
+            greetingImage.classList.add('hide');
+            
+            setTimeout(() => {
+                stiker1.classList.add("scale1");
+		        teks1.classList.add("scale1");
+		        wallpaper.style="transform:scale(1)";
+		        
+		        //setTimeout(function(){fungsiBerfungsi = true}, 300);
+		        setTimeout(() => {swiper.slideNext();}, 0);
+            }, 1000); // Durasi animasi disappear
+          }, 2200);
+        }, 500);
+    } else {
+        sudahKlik = true; 
+        document.getElementById('loveIn').innerHTML = '<style>.lovein svg{animation:none;stroke:#ff0000;stroke-width:1.3;fill:none;width:35px;height:35px}</style><label class="lovein"><svg class="line" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g transform="translate(2.550170, 3.550158)"><path d="M0.371729633,8.89614246 C-0.701270367,5.54614246 0.553729633,1.38114246 4.07072963,0.249142462 C5.92072963,-0.347857538 8.20372963,0.150142462 9.50072963,1.93914246 C10.7237296,0.0841424625 13.0727296,-0.343857538 14.9207296,0.249142462 C18.4367296,1.38114246 19.6987296,5.54614246 18.6267296,8.89614246 C16.9567296,14.2061425 11.1297296,16.9721425 9.50072963,16.9721425 C7.87272963,16.9721425 2.09772963,14.2681425 0.371729633,8.89614246 Z"></path><path d="M13.23843,4.013842 C14.44543,4.137842 15.20043,5.094842 15.15543,6.435842"></path></g></svg></label><p id="ket">Sentuh LOVEnya!</p>';
+    }
+}
+
+function falling() {
+    const heart = document.createElement("div");
+    heart.innerHTML = "<svg class='line spin' style='opacity:.5;z-index:100;stroke:#FFC2B8' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><g transform='translate(2.550170, 3.550158)'><path d='M0.371729633,8.89614246 C-0.701270367,5.54614246 0.553729633,1.38114246 4.07072963,0.249142462 C5.92072963,-0.347857538 8.20372963,0.150142462 9.50072963,1.93914246 C10.7237296,0.0841424625 13.0727296,-0.343857538 14.9207296,0.249142462 C18.4367296,1.38114246 19.6987296,5.54614246 18.6267296,8.89614246 C16.9567296,14.2061425 11.1297296,16.9721425 9.50072963,16.9721425 C7.87272963,16.9721425 2.09772963,14.2681425 0.371729633,8.89614246 Z'></path><path d='M13.23843,4.013842 C14.44543,4.137842 15.20043,5.094842 15.15543,6.435842'></path></g></svg>";
+    heart.className = "heart-icon";
+    heart.style.left = (Math.random() * 95) + "vw";
+    heart.style.animationDuration = (Math.random() * 3) + 2 + "s";
+    document.body.appendChild(heart);
+}
+setInterval(function() {
+    var heartArr = document.querySelectorAll(".heart-icon");
+    if (heartArr.length > 100) {
+        heartArr[0].remove();
+    }
+}, 100);
+
+const scrollContainer = document.getElementById("scroll-container");
+function autoScroll() {
+    scrollContainer.scrollTop += 10;
+}
+const scrollInterval = setInterval(autoScroll, 50); 
+
+document.addEventListener('keydown', function(event) {
+    if (event.code === 'Space' || event.code === 'ArrowRight') {
+        if (teksSekarang < 3) { // Hanya boleh maju sampai slide 3
+            swiper.slideNext();
+        }
+    }
+});
+
+document.addEventListener('click', function() {
+    if (teksSekarang < 3) {
+    	if (fungsiBerfungsi === true) {
+           swiper.slideNext();
+        }
+    }
+});
+
+setTimeout(function(){
+    var overlay = document.querySelector(".loading-message");
+    overlay.style.display = "none";
+    var tomlv = document.querySelector(".blocklove");
+    tomlv.style.display = "flex";
+}, 1500);
+
+const cards = document.querySelectorAll(".card");
+const gameBoard = document.querySelector(".game-board");
+let lockBoard = false;
+
+function startGame() {
+    cards.forEach(card => {
+        card.style.animation = "appear .9s forwards";
+        setupScratchCard(card);
+    });
+    //shuffle();
+}
+
+// Tambahkan variabel global di atas (di dalam <script>)
+let bombCount = 0;           // <<< SUDAH ADA DARI SEBELUMNYA
+const bombCards = [];        // <<< TAMBAH BARIS INI (untuk simpan kartu bom)
+function setupScratchCard(card) {
+    const canvas = card.querySelector("canvas");
+    const ctx = canvas.getContext("2d");
+    canvas.width = 40;
+    canvas.height = 40;
+
+    // Isi canvas dengan lapisan abu-abu untuk "digosok"
+    ctx.fillStyle = "rgba(255,255,255,.5)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    let isScratching = false;
+    let revealed = false;
+
+    function handleScratch(e) {
+        if (lockBoard || revealed) return;
+
+        const rect = canvas.getBoundingClientRect();
+        const x = (e.type.includes("mouse") ? e.clientX : e.touches[0].clientX) - rect.left;
+        const y = (e.type.includes("mouse") ? e.clientY : e.touches[0].clientY) - rect.top;
+
+        ctx.globalCompositeOperation = "destination-out";
+        ctx.beginPath();
+        ctx.arc(x, y, 10, 0, Math.PI * 2); // Lingkaran kecil untuk efek gosok
+        ctx.fill();
+        ctx.globalCompositeOperation = "source-over";
+
+        // Cek apakah sudah cukup digosok (50% area terbuka)
+        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+        let transparentPixels = 0;
+        for (let i = 3; i < imageData.length; i += 4) {
+            if (imageData[i] === 0) transparentPixels++;
+        }
+        const totalPixels = canvas.width * canvas.height;
+        if (transparentPixels / totalPixels > 0.05 && !revealed) {
+            revealed = true;
+            card.classList.add("flipped");
+            card.textContent = card.dataset.emoji;
+            canvas.style.display = "none"; // Sembunyikan canvas setelah terbuka
+            /*if (card.dataset.emoji === "💣") {
+                lockBoard = true;
+                endGame();
+            }*/
+            if (card.dataset.emoji === "💣") {
+			    bombCount++;
+			
+			    // Efek khusus HANYA untuk kartu bom yang BARU dibuka (bukan semua bom sebelumnya)
+			    card.style.transition = "all 0.4s ease";
+			    card.style.transform = "scale(1.4)";
+			    card.style.background = "#F34C4C";
+			    card.innerHTML += `<div style="position:absolute;inset:0;display:flex;color:white;align-items:center;justify-content:center;font-size:8px;pointer-events:none;animation:boom 0.7s ease-out forwards;z-index:10;">BOOM!</div>`;
+			    card.classList.add("shake");
+			
+			    // Simpan info bahwa kartu ini sudah diberi efek (biar tidak double)
+			    card.dataset.bombEffect = "true";
+			
+			    if (bombCount >= 2) {
+			        lockBoard = true;
+			        setTimeout(() => {
+			            endGame();
+			        }, 500); // jeda setelah bom kedua
+			    }
+			}
+        }
+    }
+
+    canvas.addEventListener("mousedown", () => isScratching = true);
+    canvas.addEventListener("mouseup", () => isScratching = false);
+    canvas.addEventListener("mousemove", (e) => { if (isScratching) handleScratch(e); });
+    canvas.addEventListener("touchstart", () => isScratching = true);
+    canvas.addEventListener("touchend", () => isScratching = false);
+    canvas.addEventListener("touchmove", (e) => { if (isScratching) handleScratch(e); });
+}
+
+function endGame() {
+    setTimeout(() => {
+        document.querySelector(".main-card").style = "transform:scale(0);opacity:0 !important;transition:all .5s ease";
+        stikerScale = document.querySelector('#stiker3');
+        teksScale = document.querySelector('#teks3');
+    
+        setTimeout(() => {
+        	const elements = document.querySelectorAll('.swiper-pagination');
+			elements.forEach(el => {
+			  el.style.display = 'none';
+			});
+  
+            document.querySelector(".main-card").style.display = "none";
+            
+            scrollContainer.classList.remove("abs");
+            scrollContainer.classList.remove("scale0");
+            scrollContainer.classList.add("scale1");
+
+            stikerScale.classList.remove("abs");
+            stikerScale.classList.remove("scale0");
+            stikerScale.classList.add("scale1");
+
+            setTimeout(katanimasi, 100);
+        }, 350);
+    }, 800);
+}
+
+function shuffle() {
+    cards.forEach(card => {
+        let randomPos = Math.floor(Math.random() * 16);
+        card.style.order = randomPos;
+    });
+}
+</script>
+</body>
+</html>
