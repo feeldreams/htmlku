@@ -86,7 +86,9 @@ audio = new Audio('' + linkmp3.src);
 	
 	  const papanGame = document.getElementById('papanGame');
 	  papanGame.innerHTML = '';
-	  kartu.forEach((card, index) => {
+  	  const kartuAcak = acakKartu([...kartu]);
+
+  	  kartuAcak.forEach((card, index) => {
 	    const elemenKartu = document.createElement('div');
 	    elemenKartu.className = 'kartu';
 	    elemenKartu.dataset.id = card.id;
