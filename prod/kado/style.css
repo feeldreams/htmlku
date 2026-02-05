@@ -1,0 +1,123 @@
+*{margin:0;padding:0;box-sizing:border-box}
+	:root{--color-flap:#d46a84;--color-env:#f8e1e9;--color-env2:#D4AFB8;--color-heart:#ff6f91;--color-sparkle:#ffd1dc}
+	body {color:#fff;overflow-x:hidden;position:relative;font-family:'Montserrat',sans-serif;/*background: linear-gradient(180deg,#1e3a8a,#3b0764);*/background:rgba(0,0,0,1);z-index: 1;}
+	.background-overlay {animation: jj 8s infinite alternate;position: fixed;top: 0;left: 0;width: 100%;height: 100%;/*background: url('https://htmlku.com/0/wp2.jpg') no-repeat center center fixed;*/background-size: cover;opacity: 0.6;z-index: 0;}
+	@keyframes jj{0%  {transform: scale(1);} 50% {transform: scale(1.2);} 100% {transform: scale(1);}}
+	.kotak{margin:0 auto;margin-top:130px;transform:scale(0);transition:all .7s ease;background:rgba(255,255,255,0.2);backdrop-filter:blur(8px);border-radius:18px 33px 18px 33px;box-shadow:0 8px 32px rgba(0,0,0,0.3);border:2.5px solid white;padding:0;text-align:center;max-width:100%;width:400px;min-height:200px;position:relative;z-index:1}
+  .decor{position:absolute;width:12px;height:12px;border:3.3px solid #ff80ab;border-radius:3px;z-index:3}
+	.decor-tl{top:10px;left:10px;border-right:none;border-bottom:none}
+	.decor-br{bottom:10px;right:10px;border-left:none;border-top:none}
+
+	#envelope{margin:0 auto;margin-top:150px;position:relative;width:160px;height:110px;border-bottom-left-radius:6px;border-bottom-right-radius:6px;top:160px;background-color:var(--color-flap);box-shadow:0 4px 20px rgba(0,0,0,0.1)}
+	.front{position:absolute;width:0;height:0;z-index:3}
+	.flap{border-left:80px solid transparent;border-right:80px solid transparent;border-bottom:55px solid transparent;border-top:55px solid var(--color-flap);transform-origin:top;pointer-events:none}
+	.pocket{border-left:80px solid var(--color-env);border-right:8px solid var(--color-env);border-bottom:55px solid var(--color-env2);border-top:55px solid transparent;border-bottom-left-radius:6px;border-bottom-right-radius:6px}
+	.letter{position:relative;background-color:#e0d9dd;width:90%;margin:0 auto;height:100%;top:0%;border-radius:6px;box-shadow:0 2px 26px rgba(0,0,0,0.08);padding:15px;box-sizing:border-box}
+	.letter:after{content:'';position:absolute;top:0;bottom:0;left:0;right:0;background-image:linear-gradient(180deg,rgba(255,255,255,0) 25%,rgba(255,231,236,0.7) 55%,rgba(255,231,236,1) 100%)}
+	.message{position:relative;z-index:2;font-family:'Handlee',cursive;color:#d46a84;text-align:center;line-height:1;padding-top:0}
+	.message p{margin:10px 0;font-size:1.4em;text-shadow:0 2px 3px rgba(0,0,0,0.1)}
+	.envlope-wrapper{height:210px;margin-top:0px;/*animation:float 3s ease-in-out infinite*/}
+	@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+	.open .flap{transform:rotateX(180deg);transition:transform 0.4s ease,z-index 0.6s;z-index:1}
+	.close .flap{transform:rotateX(0deg);transition:transform 0.4s 0.6s ease,z-index 1s;z-index:5}
+	.close .letter{transform:translateY(0);transition:transform 0.4s ease,z-index 1s;z-index:1}
+	.open .letter{transform:translateY(-40px) rotate(-2.5deg);transition:transform 0.4s 0.2s ease,z-index 0.6s;z-index:2}
+	.letter-corner{position:absolute;width:10px;height:10px;border:1px solid #ffd1dc;border-radius:2.5px;z-index:3}
+	.corner-tl{top:5px;left:5px;border-right:none;border-bottom:none}
+	.corner-br{bottom:5px;right:5px;border-left:none;border-top:none}
+	.hearts,.sparkles{position:absolute;top:55px;left:0;right:0;z-index:2}
+	.heart,.sparkle{position:absolute;bottom:0;pointer-events:none}
+	.heart:before,.heart:after{content:"";position:absolute;left:12.5px;top:0;width:12.5px;height:25px;background:var(--color-heart);border-radius:12.5px 12.5px 0 0;transform:rotate(-45deg);transform-origin:0 100%}
+	.heart:after{left:0;transform:rotate(45deg);transform-origin:100% 100%}
+	.sparkle{width:4px;height:4px;background:var(--color-sparkle);border-radius:50%;animation:sparkleTwinkle 1s infinite}
+	.close .heart,.close .sparkle{opacity:0;animation:none}
+	.a1{left:20%;transform:scale(0.6);animation:slideUp 4s linear infinite,sideSway 2s ease-in-out infinite alternate}
+	.a2{left:55%;animation:slideUp 5s linear infinite,sideSway 4s ease-in-out infinite alternate}
+	.a3{left:10%;transform:scale(0.8);animation:slideUp 7s linear infinite,sideSway 2s ease-in-out infinite alternate}
+	.s1{left:30%;animation:sparkleUp 3s linear infinite}
+	.s2{left:60%;animation:sparkleUp 4s linear infinite}
+	.s3{left:45%;animation:sparkleUp 5s linear infinite}
+	@keyframes slideUp{0%{top:0}100%{top:-600px}}
+	@keyframes sideSway{0%{margin-left:0}50%{margin-left:50px}100%{margin-left:0}}
+	@keyframes sparkleUp{0%{transform:translateY(0);opacity:1}100%{transform:translateY(-500px) rotate(360deg);opacity:0}}
+	@keyframes sparkleTwinkle{0%,100%{transform:scale(1)}50%{transform:scale(1.5)}}
+	.reset, .tombol{position:relative;text-align:center;margin-top:20px}
+	.reset button, .tombol button{font-family:'Sriracha',serif;font-weight:600;transition:all 0.3s ease;background-color:var(--color-flap);border:3px solid white;border-radius:18px 33px 18px 33px;color:#fff;text-shadow:0 2px 2px rgba(0,0,0,0.5);padding:6px 14px;margin:10px;font-size:16px;box-shadow:0 5px 20px rgba(0,0,0,0.15)}
+	.reset button:hover, .tombol button:hover{background-color:var(--color-env2);transform:translateY(-3px) scale(1.05);box-shadow:0 7px 25px rgba(0,0,0,0.2)}
+	.tombol{transform:scale(0);opacity:0;transition:all .7s ease;z-index:99}
+	canvas{position:absolute;top:0;left:0;width:100%;height:100%;z-index:-1}
+	.pic{font-size:3rem;margin-bottom:1rem}
+	h1,h2{font-size:1rem;margin-bottom:1rem;font-weight:700}
+	#containerPesan{padding:0;display:block;width:100%;overflow:auto;min-height:100px;max-height:250px;justify-content:left;text-align:left;}
+	#teksCinta{font-size:13.5px;color:#fff;font-weight:500}
+	#teksLucu{font-size:13.5px;color:#fff;margin-top:1rem;font-weight:500}
+	#teksCinta, #teksLucu, #pesanAkhir{font-size:14.3px;text-align:left;text-shadow:0 2px 3px rgba(0,0,0,0.5)}
+	p{font-size:13.5px;margin-bottom:1rem;font-weight:500}
+	button{font-family:'Montserrat',sans-serif;background:#f43f5e;color:#fff;border:2px solid white;padding:0.3rem 1.2rem;border-radius:999px;font-size:1rem;transition:background 0.3s;font-weight:700}
+	button:hover{background:#e11d48;opacity:.8}
+	.tombolCadangan{background:#6b7280}
+	.tombolCadangan:hover{background:#4b5563}
+	.papanGame{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(3,auto);gap:0.5rem;justify-items:center;width:90%;max-width:600px;margin:auto;margin-top:30px}
+	.kartu{width:50px;height:50px}
+	.dalemKartu{position:relative;width:100%;height:100%;transition:transform 0.6s;transform-style:preserve-3d}
+	.kartu.balik .dalemKartu{transform:rotateY(180deg)}
+	.depanKartu,.belakangKartu{position:absolute;width:100%;height:100%;border:2px solid white;backface-visibility:hidden;display:flex;align-items:center;justify-content:center;border-radius:18px}
+	.depanKartu{background:rgba(255,255,255,0.2);}
+	.belakangKartu{background:rgba(255,255,255,0.5);transform:rotateY(180deg);font-size:1.5rem}
+	.sembunyi, #linkmp3{display:none}
+	.stiker{display:flex;justify-content:center;align-items:center;gap:20px;margin-left:auto;margin-right:auto;margin-bottom:20px;transform:scale(0);transition:all .7s ease}
+  .stiker img{width:100px;height:100px;box-shadow: 0 4px 30px rgba(255,255,255, 0.3);backdrop-filter: blur(5px);-webkit-backdrop-filter: blur(5px);background: rgba(255, 255, 255, 0.7);border: 3px solid rgba(255, 255, 255, 1);border-radius: 50%;padding:6px;}
+	.hati{position:fixed;width:26px;height:26px;opacity:0.7;animation:ngelayang 5s ease-in-out forwards;z-index:0}
+	@keyframes ngelayang{0%{transform:translateY(15vh);opacity:0}20%{opacity:0.7}80%{opacity:0.7}100%{transform:translateY(-100vh);opacity:0}}
+	.hati svg{width:100%;height:100%;fill:#ff1744;stroke:none;filter:drop-shadow(0 0 8px #ff4081);}
+	
+	.wrapper{position:fixed}.circ div{position:fixed;width:60px;height:60px;background-color:transparent;border:6px solid rgba(255,255,255,0.35);border-radius:50%}.circ div:nth-child(1){top:12%;left:42%;animation:animate 10s linear infinite}.circ div:nth-child(2){top:70%;left:50%;animation:animate 7s linear infinite}.circ div:nth-child(3){top:17%;left:6%;animation:animate 9s linear infinite}.circ div:nth-child(4){top:20%;left:60%;animation:animate 10s linear infinite}.circ div:nth-child(5){top:67%;left:10%;animation:animate 6s linear infinite}.circ div:nth-child(6){top:80%;left:70%;animation:animate 12s linear infinite}.circ div:nth-child(7){top:60%;left:80%;animation:animate 15s linear infinite}.circ div:nth-child(8){top:32%;left:25%;animation:animate 16s linear infinite}.circ div:nth-child(9){top:90%;left:25%;animation:animate 9s linear infinite}.circ div:nth-child(10){top:20%;left:80%;animation:animate 5s linear infinite}@keyframes animate{0%{transform:scale(0) translateY(0) rotate(0);opacity:.8}100%{transform:scale(1.3) translateY(-90px) rotate(360deg);opacity:0}}
+	
+	@media (max-width:600px){.kotak{width:85%;padding:1rem}#envelope{width:120px;height:82.5px;top:100px}.flap,.pocket{border-left-width:60px;border-right-width:60px;border-bottom-width:41.25px;border-top-width:41.25px}.letter{padding:10px}.message p{font-size:1.2em}.papanGame{grid-template-columns:repeat(4,1fr);gap:1rem 0.2rem}}
+
+  /* Style untuk Lilin CSS 
+  .lilin-container { display: flex; justify-content: center; margin: 20px 0; }
+  .lilin { position: relative; width: 20px; height: 50px; background: linear-gradient(to bottom, #f0e68c, #ffd700); border-radius: 5px; box-shadow: 0 0 10px rgba(255, 255, 0, 0.3); }
+  .api { position: absolute; top: -30px; left: 0%; transform: translateX(-0%); width: 20px; height: 30px; background: radial-gradient(circle, #ff4500 20%, #ffd700 60%, transparent); border-radius: 50% 50% 0 0; animation: flicker 0.5s infinite alternate; opacity: 1; }
+  @keyframes flicker { 0% { transform: scale(1); } 100% { transform: scale(1.1); } }
+  .api.mati { animation: mati 1s forwards; }
+  @keyframes mati { 0% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.2); } 100% { opacity: 0; transform: scale(0); } }
+  */
+  /* Kue CSS murni - pink & putih + coklat bulat di setiap lapisan (semi-minified) */
+.kue-container{position:relative;width:180px;height:150px;margin:20px auto}
+.kue{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:160px}
+.lapisan{width:100%;border-radius:50% 50% 10% 10%;position:relative;overflow:hidden}
+.lapisan-bawah{height:50px;background:linear-gradient(to bottom,#ff99cc,#ff6699);border:3px solid #fff;box-shadow:0 8px 15px rgba(0,0,0,.2);margin-top:-18px;}
+.lapisan-tengah{height:40px;background:linear-gradient(to bottom,#ffb3d9,#ff80bf);border:3px solid #fff;border-top:none;margin-top:-14px;z-index:2}
+.lapisan-atas{height:35px;background:linear-gradient(to bottom,#ffccdd,#ff99cc);border:3px solid #fff;border-top:none;margin-top:0px;z-index:3;border-radius:60% 60% 10% 10%}
+.krim{position:absolute;width:30px;height:30px;background:#fff;border-radius:50%;top:-15px;box-shadow:inset 0 -5px 10px rgba(0,0,0,.1)}
+.krim:nth-child(1){left:20%}
+.krim:nth-child(2){left:50%;transform:translateX(-50%)}
+.krim:nth-child(3){right:20%}
+
+/* Coklat bulat (chocolate chips) di setiap lapisan */
+.coklat{position:absolute;width:8px;height:8px;background:#3c2f2f;border-radius:50%;box-shadow:0 2px 4px rgba(0,0,0,.3);transform:rotate(45deg)}
+/* Bawah */
+.lapisan-bawah .coklat:nth-child(1){bottom:8px;left:11%}
+.lapisan-bawah .coklat:nth-child(2){bottom:12px;left:32%}
+.lapisan-bawah .coklat:nth-child(3){bottom:10px;left:54%}
+.lapisan-bawah .coklat:nth-child(4){bottom:15px;left:73%}
+.lapisan-bawah .coklat:nth-child(5){bottom:9px;left:85%}
+/* Tengah */
+.lapisan-tengah .coklat:nth-child(1){bottom:10px;left:15%}
+.lapisan-tengah .coklat:nth-child(2){bottom:14px;left:35%}
+.lapisan-tengah .coklat:nth-child(3){bottom:11px;left:58%}
+.lapisan-tengah .coklat:nth-child(4){bottom:13px;left:80%}
+/* Atas */
+.lapisan-atas .coklat:nth-child(1){bottom:8px;left:25%}
+.lapisan-atas .coklat:nth-child(2){bottom:12px;left:45%}
+.lapisan-atas .coklat:nth-child(3){bottom:10px;left:65%}
+.lapisan-atas .coklat:nth-child(4){bottom:14px;left:85%}
+
+/* Lilin & container (tetap) */
+.kue-container .lilin-container{position:absolute;top:20px;left:50%;transform:translateX(-50%);z-index:0}
+.lilin{position:relative;width:20px;height:40px;background:linear-gradient(to bottom,#f0e68c,#ffd700);border-radius:5px;box-shadow:0 0 10px rgba(255,255,0,.3);margin-bottom:10px}
+.api{position:absolute;top:-30px;left:0;transform:translateX(0);width:20px;height:30px;background:radial-gradient(circle,#ff4500 20%,#ffd700 60%,transparent);border-radius:50% 50% 0 0;animation:flicker .5s infinite alternate;opacity:1}
+@keyframes flicker{0%{transform:scale(1)}100%{transform:scale(1.1)}}
+.api.mati{animation:mati 1s forwards}
+@keyframes mati{0%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.2)}100%{opacity:0;transform:scale(0)}}
