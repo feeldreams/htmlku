@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spesial Gift Buat Kamu 💞</title>
+  <meta name="description" content="TikTok @feelthisray - Script HTML by feeldream.id">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+  <meta name="description" content="Script HTML Untukmu">
+  <meta property="og:title" content="Ini Untukmu ✨">
+  <meta property="og:description" content="Spesial Gift Buat Kamu ✨">
+  <meta property="og:image" content="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhMDugl2siKVTnQUhkzqZXmNhnUl_IXm-tsnodgHf4C3dPn6v4gz06nVm1ASqpRXO65Dg3PkYB9bKsThBPUxygLD9Euem9SSTr0LRIGK9x5uaLvK4WIPn6VlSx0qSrPGhTknGVHeVMpioiBcXiqrk-dF3d4SYS8QIkWkDlMgRrdF4vw_iw-EOgTYcwo6xhs/s300/1000314955.jpg">
+  <meta property="og:image:alt" content="hbd">
+  <meta property="og:url" content="kado.feeldream.id">
+  <meta property="og:type" content="website">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Handlee&family=Sriracha&display=swap" rel="stylesheet"><script src="https://htmlku.com/prod/typeit.js"></script><link rel="stylesheet" href="https://htmlku.com/prod/kado/style.css">
+</head>
+<body>
+  
+  <!-- Audio -->
+  <audio src="https://feeldreams.github.io/audio/angelbaby.mp3" id="linkmp3"></audio>
+  
+  <!-- Background / Wallpaper -->
+  <div class="background-overlay" data-src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiDxPxdEWBDAyw0TWLqZ5z5Gzak103RGpxKBgW_m0kJ4-_ce2BflVdXqTHzbwGfcCzoC_jMrM3WSDbE9Rgj44d4NZC2oyykxuIfDblLQjdlCnU_qAvLw9qUH38FdpmDOYuOTtWFdIo8DUdS4xldaTxA17Ut_RjOSTb28jJMYDqN2yItm-v1OUomSHyeiyEz/s1600/89250.jpg"></div>
+
+  <!-- Halaman 1: Envelope -->
+  <div id="hal1">
+    <div class="envlope-wrapper">
+      <div id="envelope" class="close">
+        <div class="front flap"></div>
+        <div class="front pocket"></div>
+        <div class="letter">
+          <div class="letter-corner corner-tl"></div>
+          <div class="letter-corner corner-br"></div>
+          <div class="message">
+            <p>Alooo Kamuu! ✨</p>
+          </div>
+        </div>
+        <div class="hearts">
+          <div class="heart a1"></div>
+          <div class="heart a2"></div>
+          <div class="heart a3"></div>
+        </div>
+        <div class="sparkles">
+          <div class="sparkle s1"></div>
+          <div class="sparkle s2"></div>
+          <div class="sparkle s3"></div>
+        </div>
+      </div>
+    </div>
+    <div class="reset">
+      <button style="border-radius: 20px;padding:4px 12px;margin-top:-25px" onclick="bukaEnvelope()">Buka</button>
+    </div>
+  </div>
+
+  <!-- Halaman 2: Memory Game -->
+  <div id="hal2" class="kotak sembunyi">
+    <div class="decor decor-tl"></div>
+    <div class="decor decor-br"></div>
+    <canvas id="game-canvas"></canvas>
+    <h2 style="font-size:18.5px">A Little Game for You 🎁</h2>
+    <p style="font-size:14.5px">Balik 2 Kartu yang Sama! 🫣</p>
+    <div id="kotakPesan"></div>
+    <div id="papanGame" class="papanGame"></div>
+    <p id="statusGame"></p>
+    <button id="lanjut" onclick="pindahHal(3)" class="sembunyi">Lihat Pesan Cinta!</button>
+    <button id="ulang" onclick="mulaiHal2()" class="tombolCadangan sembunyi">Coba Lagi!</button>
+  </div>
+
+  <!-- Halaman 3: Make a Wish -->
+  <div id="hal3" class="kotak sembunyi">
+    <div class="decor decor-tl"></div>
+    <div class="decor decor-br"></div>
+    <h2 style="font-size:18.5px">Make a Wish 🎉</h2>
+    <img src="https://htmlku.com/0/panda/kue.gif" style="width: 0; /*width: 150px; */height: auto; margin: 10px auto; display: block;" />
+    <!-- Kue + Lilin CSS -->
+    <div class="kue-container">
+    <div class="lilin-container">
+        <div class="lilin">
+        <div class="api" id="apiLilin"></div>
+        </div>
+    </div>
+
+    <div class="kue">
+        <div class="lapisan lapisan-atas">
+        <div class="krim"></div>
+        <div class="krim"></div>
+        <div class="krim"></div>
+        </div>
+        <div class="lapisan lapisan-tengah">
+        <div class="coklat"></div>
+        <div class="coklat"></div>
+        <div class="coklat"></div>
+        <div class="coklat"></div>
+        </div>
+        <div class="lapisan lapisan-bawah">
+        <div class="coklat"></div>
+        <div class="coklat"></div>
+        <div class="coklat"></div>
+        <div class="coklat"></div>
+        <div class="coklat"></div>
+        </div>
+    </div>
+    </div>
+
+    <p style="font-size:14.5px">Tutup matamu, buat permintaan,<br>lalu tiup lilinnya yaw! 🫣</p>
+    <button onclick="tiupLilin()">Tiup Lilin 🌬️</button>
+  </div>
+
+  <!-- Halaman 4: Pesan Akhir (Lama Hal3) -->
+  <div id="hal4" class="kotak sembunyi">
+    <div class="decor decor-tl"></div>
+    <div class="decor decor-br"></div>
+    <!-- Stiker Gif -->
+    <div id="stiker4" class="stiker">
+        <img id="stiker4a" src="https://htmlku.com/0/panda/kue.gif" />
+        <img id="stiker4b" class="sembunyi" src="https://htmlku.com/0/panda/semprot.gif" />
+        <img id="stiker4c" class="sembunyi" src="https://htmlku.com/0/panda/terlope.gif" />
+    </div>
+    <div id="containerPesan">
+	    <p id="teksCinta"></p>
+	    <p id="pesanAkhir"></p>
+	    <p id="teksLucu"></p>
+    </div>
+    <button style="display:none" onclick="shareWa()">Kirim ke Dia!</button>
+  </div>
+  <div class="tombol">
+    <button style="padding:4px 12px;" onclick="balasWa()">💌 Balas</button>
+  </div>
+  
+  <!-- Circle Animation --><div><div><div class="circ"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div></div>
+
+  <script>
+    // Edit Icon Memory Game di Sini
+    const kartu = [
+	  { id: 3, icon: '🌺', pesan: '' },
+	  { id: 5, icon: '🎁', pesan: '' },
+	  { id: 1, icon: '🎉', pesan: '' },
+	  { id: 6, icon: '💘', pesan: '' },
+	  { id: 2, icon: '🥳', pesan: '' },
+	  { id: 4, icon: '💝', pesan: '' },
+	  { id: 1, icon: '🎉', pesan: '' },
+	  { id: 3, icon: '🌺', pesan: '' },
+	  { id: 5, icon: '🎁', pesan: '' },
+	  { id: 2, icon: '🥳', pesan: '' },
+	  { id: 4, icon: '💝', pesan: '' },
+	  { id: 6, icon: '💘', pesan: '' }
+	];
+
+    // Edit Kata-kata di Sini
+    const txtDoa = "<b style='font-size:20px'>Happy Birthday yaw! 🥳</b>";
+    const txtPesanAkhir = "Kita make a wish di hari ulang tahunmu ini yaa 🫣 Semoga kamu selalu diberi kesehatan, hati yang tenang, dan langkah yang dimudahkan dalam setiap rencana baikmu serta kebahagiaan selalu menyertaimu 🫶<br><br>Semoga di usia yang baru ini, kamu makin kuat, makin sabar, dan makin percaya sama diri sendiri. Apa pun yang kamu impikan, pelan-pelan semoga satu per satu bisa terwujud dengan cara terbaik 💕<br><br>Semangat terus buat kejar semua keinginan kamuu, jangan pernah takut gagal yaa, aku selalu dukung kamu dan support kamu di sini. Oh ya, jangan lupa untuk selalu bersyukur yaa 💫";
+    const txtLucu = "Terakhir,<br><b>Happy Level Up Day 🎉</b>And ...<br><b style='font-size:18px'>Have a Fabulous Birthday 🥳</b>";
+
+    const textWhatsapp = "Aku udah bacaaa 🫢 Maaciiwwwww yaaaa!";
+  </script>
+  <script src="https://htmlku.com/prod/kado/script.js"></script>
+</body>
+</html>
