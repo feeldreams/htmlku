@@ -10,7 +10,7 @@
     <script src="https://unpkg.com/typeit@8.8.7/dist/index.umd.js"></script>
     <style>
         body { margin:0;padding:0;height:100vh;display:flex;justify-content:center;align-items:center;background-image:url('https://files.catbox.moe/259x4r.jpg');background-size:cover;background-position:center;background-repeat:no-repeat;font-family:'Nunito',sans-serif;overflow-x:hidden;overflow-y:auto; }
-        .card { border:4px dashed #ffb703;background:rgba(255,255,255,0.65);padding:20px;border-radius:30px;text-align:center;box-shadow:0 10px 25px rgba(0,0,0,0.1);max-width:350px;width:90%;margin-left:20px;margin-right:20px;margin-top:-50px;position:relative;animation:popIn 0.8s cubic-bezier(0.68,-0.55,0.265,1.55); }
+        .card { border:4px dashed #ffb703;background:rgba(255,255,255,0.65);padding:20px;border-radius:30px;text-align:center;box-shadow:0 10px 25px rgba(0,0,0,0.1);max-width:350px;width:90%;margin-left:20px;margin-right:20px;margin-top:-50px;position:relative;z-index:100;animation:popIn 0.8s cubic-bezier(0.68,-0.55,0.265,1.55); }
         .img-container { border:3px solid #ffb703;width:150px;height:150px;margin:0 auto 20px;border-radius:20px;overflow:hidden;background-color:#fff;box-shadow:0 5px 15px rgba(0,0,0,0.05); }
         .img-container img { width:100%;height:100%;object-fit:cover; }
         .title { font-family:'Fredoka One',cursive;color:#fb8500;margin:10px 0;font-size:28px;text-shadow:1px 1px 0px #fff; }
@@ -19,6 +19,7 @@
         button { background-color:#ffb703;color:white;border:none;padding:12px 25px;border-radius:50px;font-family:'Fredoka One',cursive;font-size:16px;cursor:pointer;transition:transform 0.2s,background-color 0.2s,box-shadow 0.2s;box-shadow:0 4px 0px #fb8500; }
         button:hover { transform:translateY(-2px);background-color:#ffcd58;box-shadow:0 6px 0px #fb8500; }
         button:active { transform:translateY(2px);box-shadow:0 2px 0px #fb8500; }
+        #startOverBtn{transform: scale(0);opacity:0;transition:all 0.7s ease;}
         .hidden { display:none; }
         .btn-group { display:flex;gap:15px;justify-content:center;margin-top:20px; }
         .btn-secondary { background-color:#ff6b6b;box-shadow:0 4px 0px #ee5253;margin-left:10px; }
@@ -66,8 +67,9 @@
     </div>
 
     <div class="card hidden" id="messageCard">
-        <div class="img-container">
-            <img src="https://files.catbox.moe/sp0luo.jpg" alt="Happy Birthday">
+        <div class="img-container" id="imgAkhir" style="border-radius:50%;width:120px;height:120px">
+            <img src="https://files.catbox.moe/sp0luo.jpg" id="sourceImgAkhirSatu" alt="Happy Birthday">
+            <img src="https://files.catbox.moe/sp0luo.jpg" id="sourceImgAkhirDua" style="display:none;" alt="Happy Birthday">
         </div>
         
         <div class="message-box" id="messageContent">
@@ -75,7 +77,7 @@
             <!-- Semua <p> di bawah ini akan di-type secara berurutan -->
         </div>
         
-        <!-- <button id="startOverBtn">Start Over ♥</button> -->
+        <button id="startOverBtn">Balas (^○^)</button>
     </div>
 
     <!-- Music Control Button -->
@@ -96,7 +98,7 @@
         const openBtn = document.getElementById('openBtn');
         const noBtn = document.getElementById('noBtn');
         const retryBtn = document.getElementById('retryBtn');
-        //const startOverBtn = document.getElementById('startOverBtn');
+        const startOverBtn = document.getElementById('startOverBtn');
         const mainCard = document.getElementById('mainCard');
         const envelopeCard = document.getElementById('envelopeCard');
         const retryCard = document.getElementById('retryCard');
@@ -179,6 +181,13 @@
                 afterComplete: function(instance) {
                     instance.destroy();
                     clearInterval(scrollInterval);
+                    startOverBtn.style="transform: scale(1);opacity:1";
+
+                    imgAkhir.style="transform: scale(0);transition: all 0.5s ease;";
+                    setTimeout(() => {
+                        sourceImgAkhirSatu.src = sourceImgAkhirDua.src;
+                        imgAkhir.style="transform: scale(1);transition: all 0.5s ease;";
+                    }, 350);
                 }
             })
             .type("🎉 Aloo sayanggg hhii 💕<br><br>")
