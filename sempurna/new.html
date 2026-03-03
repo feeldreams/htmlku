@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>alasan.feeldream.id</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/typeit@8.8.7/dist/index.umd.js"></script>
+    <style>
+        body { margin:0;padding:0;height:100vh;display:flex;justify-content:center;align-items:center;background-image:url('wp/4.jpg');background-size:cover;background-position:center;background-repeat:no-repeat;font-family:'Nunito',sans-serif;overflow:hidden;position:relative; }
+        .card { border:4px dashed #ffb703;background:rgba(0,0,0,.78);padding:22px;border-radius:32px;text-align:center;box-shadow:0 12px 30px rgba(0,0,0,0.25);max-width:380px;width:92%;position:relative;z-index:10;animation:popIn 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);backdrop-filter:blur(4px); }
+        .img-container { border:3px solid #ffb703;width:140px;height:140px;margin:0 auto 22px;border-radius:24px;overflow:hidden;background:#fff;box-shadow:0 6px 18px rgba(0,0,0,0.1);transition:transform 0.4s; }
+        .img-container:hover { transform:scale(1.08); }
+        .img-container img { width:100%;height:100%;object-fit:cover; }
+        .title { font-family:'Fredoka One',cursive;color:#fb8500;margin:12px 0;font-size:25px;text-shadow:2px 2px 4px rgba(0,0,0,0.4);animation:pulse 2s infinite; }
+        .kaomoji { font-size:20px;color:#fff;margin:6px 0;font-weight:bold; }
+        .instruction { font-size:17px;color:#fff;margin:28px 0;line-height:1.4; }
+        button { background:#ffb703;color:#fff;border:none;padding:8px 16px;/*padding:14px 30px;*/border-radius:999px;font-family:'Fredoka One',cursive;font-size:17px;cursor:pointer;transition:all 0.25s;box-shadow:0 5px 0 #fb8500;position:relative;overflow:hidden; }
+        button::before { content:"";position:absolute;top:0;left:-100%;width:50%;height:100%;background:linear-gradient(90deg,transparent,#fff5,#fff2,transparent);transition:0.6s; }
+        button:hover::before { left:100%; }
+        button:hover { transform:translateY(-3px);background:#ffcd58;box-shadow:0 8px 0 #fb8500; }
+        button:active { transform:translateY(3px);box-shadow:0 2px 0 #fb8500; }
+        #replyBtn { transform:scale(0);opacity:0;transition:all 0.8s cubic-bezier(0.34,1.56,0.64,1); }
+        .hidden { display:none!important; }
+        .btn-group { display:flex;gap:18px;justify-content:center;margin-top:24px; }
+        .btn-secondary { background:#ff6b6b;box-shadow:0 5px 0 #ee5253; }
+        .btn-secondary:hover { background:#ff8787;box-shadow:0 8px 0 #ee5253; }
+        .message-box { border:2px solid #ffb703;border-radius:18px;padding:18px;margin:22px 0;text-align:left;font-size:16px;color:#fff;height:200px;overflow-y:auto;scroll-behavior:smooth;background:rgba(255,255,255,0.08);backdrop-filter:blur(2px); }
+        .message-box::-webkit-scrollbar { display:none; }
+        .message-box .kaomoji { text-align:center;display:block;margin:12px 0;color:#fb8500;font-size:24px;animation:float 3s infinite; }
+        .music-control { display:none;position:fixed;top:16px;right:16px;background:rgba(255,255,255,0.85);border:2px solid #ffb703;border-radius:50%;width:54px;height:54px;justify-content:center;align-items:center;cursor:pointer;z-index:999;box-shadow:0 5px 14px rgba(0,0,0,0.15);transition:all 0.3s; }
+        .music-control:hover { transform:scale(1.15);background:#fff; }
+        .music-icon { width:26px;height:26px;fill:#fb8500; }
+        .heart-particle { position:absolute;pointer-events:none;font-size:28px;color:#fb8500;opacity:0;animation:heartFloat 4s forwards;transform:translate(-50%,-50%);z-index:5; }
+        @keyframes heartFloat { 0% { opacity:0;transform:translate(-50%,-50%) scale(0.2) rotate(0deg); } 20% { opacity:1; } 100% { opacity:0;transform:translate(-50%,-120vh) scale(1.2) rotate(360deg); } }
+        @keyframes popIn { 0% { transform:scale(0.3) rotate(-15deg);opacity:0; } 70% { transform:scale(1.12);opacity:1; } 100% { transform:scale(1); } }
+        @keyframes pulse { 0%,100% { transform:scale(1); } 50% { transform:scale(1.06); } }
+        @keyframes float { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-10px); } }
+        #gameCard { padding:15px 10px; }
+        #gameArea { width:100%;height:260px;background:rgba(255,183,3,0.12);border:3px dashed #ffb703;border-radius:20px;position:relative;overflow:hidden;margin:20px 0;cursor:pointer; }
+        #timer { font-size:22px;color:#fb8500;margin:10px 0;font-weight:bold; }
+        #score { font-size:18px;color:#fff; }
+        .confetti { position:absolute;pointer-events:none;width:12px;height:12px;border-radius:50%;animation:confettiFall 3s linear forwards; }
+        @keyframes confettiFall { to { transform:translateY(120vh) rotate(720deg);opacity:0; } }
+    </style>
+</head>
+<body>
+
+    <div class="card" id="mainCard">
+        <div class="img-container">
+            <img src="https://htmlku.com/0/panda/hearthappy.gif" alt="Cute Photo">
+        </div>
+        <h1 class="title">Hiii Sayanggg 💕</h1>
+        <p class="kaomoji">( ˶ˆᗜˆ˵ )</p>
+        <p class="instruction">Click the next button!! (⊃｡•́‿•̀｡)⊃♥</p>
+        <button id="nextBtn">Next!! ^w^</button>
+    </div>
+
+    <div class="card hidden" id="envelopeCard">
+        <div class="img-container">
+            <img src="https://media1.tenor.com/m/nmc3ubvvxPkAAAAC/nailong-yellow-dino.gif" alt="Envelope">
+        </div>
+        <h1 class="title">Do you want to open it?</h1>
+        <div class="btn-group">
+            <button id="openBtn">Open it</button>
+            <button id="noBtn" class="btn-secondary">No ty</button>
+        </div>
+    </div>
+
+    <div class="card hidden" id="retryCard">
+        <div class="img-container">
+            <img src="https://media1.tenor.com/m/zuHWKHqDHK0AAAAd/nailong-yellow-dragon.gif" alt="Sad Face">
+        </div>
+        <h1 class="title" style="font-size: 24px;">Nooo.. Let's try again, Please..? >_&lt;</h1>
+        <button id="retryBtn" style="margin-top:20px">Again..?</button>
+    </div>
+
+    <div class="card hidden" id="gameCard">
+        <h1 class="title" style="font-size:26px;">Catch My Hearts! ♡</h1>
+        <p class="instruction" style="margin:10px 0;">Klik minimal <b>12 hati</b> dalam 30 detik biar suratnya kebuka~ cepet yaaa~</p>
+        <div id="timer">30</div>
+        <div id="score">Hati: 0</div>
+        <div id="gameArea"></div>
+        <button id="startGameBtn" style="margin-top:16px">Mulai Main!</button>
+    </div>
+
+    <div class="card hidden" id="messageCard" style="padding:20px 10px">
+        <div class="img-container" id="imgAkhir" style="border-radius:50%;width:130px;height:130px">
+            <img src="https://htmlku.com/0/panda/fotbar.gif" id="sourceImgAkhirSatu" alt="Foto">
+            <img src="https://htmlku.com/0/panda/muah.gif" id="sourceImgAkhirDua" style="display:none;" alt="Muah">
+        </div>
+        
+        <div class="message-box" id="messageContent">
+            <span class="kaomoji">(♡ >ω< ♡)</span>
+        </div>
+        
+        <button id="replyBtn">Balas~ ♡</button>
+    </div>
+
+    <!-- Music Control -->
+    <div class="music-control" id="musicBtn">
+        <svg class="music-icon" viewBox="0 0 24 24">
+            <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+        </svg>
+    </div>
+
+    <audio id="bgMusic" loop>
+        <source src="https://files.catbox.moe/vg4o2l.m4a" type="audio/mpeg">
+    </audio>
+
+    <script>
+        const nextBtn = document.getElementById('nextBtn');
+        const openBtn = document.getElementById('openBtn');
+        const noBtn = document.getElementById('noBtn');
+        const retryBtn = document.getElementById('retryBtn');
+        const replyBtn = document.getElementById('replyBtn');
+        const startGameBtn = document.getElementById('startGameBtn');
+        const mainCard = document.getElementById('mainCard');
+        const envelopeCard = document.getElementById('envelopeCard');
+        const retryCard = document.getElementById('retryCard');
+        const gameCard = document.getElementById('gameCard');
+        const messageCard = document.getElementById('messageCard');
+        const bgMusic = document.getElementById('bgMusic');
+        const musicBtn = document.getElementById('musicBtn');
+        const gameArea = document.getElementById('gameArea');
+        let isMusicPlaying = false;
+        let score = 0;
+        let timer = 30;
+        let gameInterval, heartInterval, timerInterval;
+
+        // Music handling
+        window.addEventListener('load', () => {
+            bgMusic.volume = 0.4;
+            bgMusic.play().catch(() => {
+                console.log("Autoplay dicegah");
+            });
+        });
+
+        document.addEventListener('click', () => {
+            if (!isMusicPlaying) {
+                bgMusic.play().then(() => {
+                    isMusicPlaying = true;
+                    updateMusicIcon();
+                });
+            }
+        }, { once: true });
+
+        musicBtn.addEventListener('click', e => {
+            e.stopPropagation();
+            if (isMusicPlaying) {
+                bgMusic.pause();
+                isMusicPlaying = false;
+            } else {
+                bgMusic.play();
+                isMusicPlaying = true;
+            }
+            updateMusicIcon();
+        });
+
+        function updateMusicIcon() {
+            const path = musicBtn.querySelector('path');
+            if (isMusicPlaying) {
+                path.setAttribute('d', "M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z");
+            } else {
+                path.setAttribute('d', "M4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73 4.27 3zM12 4L9.91 6.09 12 8.18V4z");
+            }
+        }
+
+        // Floating hearts background effect
+        function createFloatingHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart-particle';
+            heart.innerHTML = '♡';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.top = '100vh';
+            heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 6000);
+        }
+        setInterval(createFloatingHeart, 800);
+
+        // Simple confetti
+        function confettiBurst(x, y) {
+            for (let i = 0; i < 18; i++) {
+                const c = document.createElement('div');
+                c.className = 'confetti';
+                c.style.left = x + 'px';
+                c.style.top = y + 'px';
+                c.style.background = ['#ffb703','#fb8500','#ff6b6b','#fff'][Math.floor(Math.random()*4)];
+                c.style.transform = `rotate(${Math.random()*360}deg)`;
+                c.style.animationDuration = (Math.random()*2 + 2) + 's';
+                document.body.appendChild(c);
+                setTimeout(() => c.remove(), 4000);
+            }
+        }
+
+        nextBtn.addEventListener('click', () => {
+            mainCard.style.display = 'none';
+            envelopeCard.classList.remove('hidden');
+        });
+
+        openBtn.addEventListener('click', () => {
+            envelopeCard.style.display = 'none';
+            gameCard.classList.remove('hidden');
+        });
+
+        noBtn.addEventListener('click', () => {
+            envelopeCard.style.display = 'none';
+            retryCard.classList.remove('hidden');
+        });
+
+        retryBtn.addEventListener('click', () => {
+            retryCard.classList.add('hidden');
+            envelopeCard.style.display = 'block';
+        });
+
+        // Mini Game: Catch Hearts
+        startGameBtn.addEventListener('click', () => {
+            startGameBtn.style.display = 'none';
+            score = 0;
+            timer = 30;
+            document.getElementById('score').textContent = 'Hati: 0';
+            document.getElementById('timer').textContent = '30';
+
+            heartInterval = setInterval(() => {
+                const heart = document.createElement('div');
+                heart.innerHTML = '💖';
+                heart.style.position = 'absolute';
+                heart.style.fontSize = '40px';
+                heart.style.cursor = 'pointer';
+                heart.style.left = Math.random() * (gameArea.offsetWidth - 60) + 'px';
+                heart.style.top = Math.random() * (gameArea.offsetHeight - 60) + 'px';
+                heart.style.transition = 'all 0.3s';
+                gameArea.appendChild(heart);
+
+                heart.addEventListener('click', () => {
+                    score++;
+                    document.getElementById('score').textContent = 'Hati: ' + score;
+                    confettiBurst(heart.getBoundingClientRect().left + 30, heart.getBoundingClientRect().top + 30);
+                    heart.remove();
+                    if (score >= 12) {
+                        clearInterval(heartInterval);
+                        clearInterval(timerInterval);
+                        gameCard.style.display = 'none';
+                        messageCard.classList.remove('hidden');
+                        startMessage();
+                    }
+                });
+
+                setTimeout(() => { if (heart.parentNode) heart.remove(); }, 1800);
+            }, 700);
+
+            timerInterval = setInterval(() => {
+                timer--;
+                document.getElementById('timer').textContent = timer;
+                if (timer <= 0) {
+                    clearInterval(heartInterval);
+                    clearInterval(timerInterval);
+                    alert("Waktu habis! Coba lagi ya sayang~ (minimal 12 hati)");
+                    score = 0;
+                    startGameBtn.style.display = 'block';
+                    document.getElementById('score').textContent = 'Hati: 0';
+                    document.getElementById('timer').textContent = '30';
+                }
+            }, 1000);
+        });
+
+        function startMessage() {
+            let scrollInterval = setInterval(() => {
+                messageContent.scrollTop = messageContent.scrollHeight;
+            }, 30);
+
+            new TypeIt("#messageContent", {
+                speed: 22,
+                waitUntilVisible: true,
+                cursorChar: '♡',
+                afterComplete: (instance) => {
+                    instance.destroy();
+                    clearInterval(scrollInterval);
+                    replyBtn.style.transform = "scale(1)";
+                    replyBtn.style.opacity = "1";
+
+                    imgAkhir.style.transform = "scale(0)";
+                    setTimeout(() => {
+                        sourceImgAkhirSatu.src = sourceImgAkhirDua.src;
+                        imgAkhir.style.transform = "scale(1)";
+                    }, 400);
+                }
+            })
+            .type("<b>🎀 Hai cintakuuu~ 💞</b><br><br>")
+            .pause(300)
+            .type("Tau gak kenapa aku masih bertahan sama kamu?<br><br>")
+            .pause(400)
+            .type("Karena kamu itu spesial banget buat aku... ✨<br><br>")
+            .pause(300)
+            .type("Walaupun kadang marah-marah, ego tinggi, aku tetep gak mau nyerah buat jagain kamu~ 🌸<br><br>")
+            .pause(400)
+            .type("Kamu satu-satunya di hatiku, dan aku bakal perjuangin kamu apapun yang terjadi 💪❤️<br><br>")
+            .pause(300)
+            .type("Janji ya... jangan pernah ragu aku sayang kamu~<br><br>")
+            .pause(400)
+            .type("Aku sayang kamu dalam segala kondisi, mau sejutek apapun kamu tetap nomor satu buat aku 🫶<br><br>")
+            .pause(300)
+            .type("<b>i love you sayangku, duniaku, manisku, semuanya~ 😘🤍</b><br>")
+            .go();
+        }
+
+        replyBtn.addEventListener('click', () => {
+            alert("Aku tunggu balasanmu ya sayangg~ 💌");
+        });
+    </script>
+</body>
+</html>
