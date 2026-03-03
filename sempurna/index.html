@@ -1,45 +1,49 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Message Box for You</title>
+    <title>alasan.feeldream.id</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/typeit@8.8.7/dist/index.umd.js"></script>
     <style>
-        body { margin:0;padding:0;height:100vh;display:flex;justify-content:center;align-items:center;background-image:url('https://files.catbox.moe/259x4r.jpg');background-size:cover;background-position:center;background-repeat:no-repeat;font-family:'Nunito',sans-serif;overflow-x:hidden;overflow-y:auto; }
-        .card { border:4px dashed #ffb703;background:rgba(255,255,255,0.65);padding:20px;border-radius:30px;text-align:center;box-shadow:0 10px 25px rgba(0,0,0,0.1);max-width:350px;width:90%;margin-left:20px;margin-right:20px;margin-top:-50px;position:relative;z-index:100;animation:popIn 0.8s cubic-bezier(0.68,-0.55,0.265,1.55); }
-        .img-container { border:3px solid #ffb703;width:150px;height:150px;margin:0 auto 20px;border-radius:20px;overflow:hidden;background-color:#fff;box-shadow:0 5px 15px rgba(0,0,0,0.05); }
+        body { margin:0;padding:0;height:100vh;display:flex;justify-content:center;align-items:center;background-image:url('wp/4.jpg');background-size:cover;background-position:center;background-repeat:no-repeat;font-family:'Nunito',sans-serif;overflow-x:hidden;overflow-y:auto; }
+        .card { border:4px dashed #ffb703;background:rgba(0,0,0,.75);padding:20px;border-radius:30px;text-align:center;box-shadow:0 10px 25px rgba(0,0,0,0.1);max-width:350px;width:90%;margin-left:20px;margin-right:20px;margin-top:-50px;position:relative;z-index:100;animation:popIn 0.5s cubic-bezier(0.68,-0.55,0.265,1.55); }
+        .img-container { border:3px solid #ffb703;width:130px;height:130px;margin:0 auto 20px;border-radius:20px;overflow:hidden;background-color:#fff;box-shadow:0 5px 15px rgba(0,0,0,0.05); }
         .img-container img { width:100%;height:100%;object-fit:cover; }
-        .title { font-family:'Fredoka One',cursive;color:#fb8500;margin:10px 0;font-size:28px;text-shadow:1px 1px 0px #fff; }
-        .kaomoji { font-size:18px;color:#555;margin:5px 0;font-weight:bold; }
-        .instruction { font-size:16px;color:#555;margin:25px 0; }
-        button { background-color:#ffb703;color:white;border:none;padding:12px 25px;border-radius:50px;font-family:'Fredoka One',cursive;font-size:16px;cursor:pointer;transition:transform 0.2s,background-color 0.2s,box-shadow 0.2s;box-shadow:0 4px 0px #fb8500; }
-        button:hover { transform:translateY(-2px);background-color:#ffcd58;box-shadow:0 6px 0px #fb8500; }
-        button:active { transform:translateY(2px);box-shadow:0 2px 0px #fb8500; }
-        #startOverBtn{transform: scale(0);opacity:0;transition:all 0.7s ease;}
+        .title { font-family:'Fredoka One',cursive;color:#fb8500;margin:10px 0;font-size:28px;text-shadow:1px 1px 0px rgba(255,255,255,.3); }
+        .kaomoji { font-size:18px;color:#fff;margin:5px 0;font-weight:bold; }
+        .instruction { font-size:16px;color:#fff;margin:25px 0; }
+        /* button { background-color:#ffb703;color:white;border:none;padding:12px 25px;border-radius:50px;font-family:'Fredoka One',cursive;font-size:16px;cursor:pointer;transition:transform 0.2s,background-color 0.2s,box-shadow 0.2s;box-shadow:0 4px 0px #fb8500; } */
+        /* button:hover { transform:translateY(-2px);background-color:#ffcd58;box-shadow:0 6px 0px #fb8500; } */
+        /* button:active { transform:translateY(2px);box-shadow:0 2px 0px #fb8500; } */
+        button { background:#ffb703;color:#fff;border:none;padding:14px 30px;border-radius:999px;font-family:'Fredoka One',cursive;font-size:17px;cursor:pointer;transition:all 0.25s;box-shadow:0 5px 0 #fb8500;position:relative;overflow:hidden; }
+        button::before { content:"";position:absolute;top:0;left:-100%;width:50%;height:100%;background:linear-gradient(90deg,transparent,#fff5,#fff2,transparent);transition:0.6s; }
+        button:hover::before { left:100%; }
+        button:hover { transform:translateY(-3px);background:#ffcd58;box-shadow:0 8px 0 #fb8500; }
+        button:active { transform:translateY(3px);box-shadow:0 2px 0 #fb8500; }
+        #replyBtn{transform: scale(0);opacity:0;transition:all 0.7s ease;}
         .hidden { display:none; }
         .btn-group { display:flex;gap:15px;justify-content:center;margin-top:20px; }
         .btn-secondary { background-color:#ff6b6b;box-shadow:0 4px 0px #ee5253;margin-left:10px; }
         .btn-secondary:hover { background-color:#ff8787;box-shadow:0 6px 0px #ee5253; }
         .btn-secondary:active { transform:translateY(2px);box-shadow:0 2px 0px #ee5253; }
-        .message-box { border:2px solid #ffb703;border-radius:15px;padding:15px;margin:20px 0;text-align:left;font-size:16px;color:#555;background-color:#fffdf5;height:180px;overflow-y:auto;scroll-behavior:smooth;-ms-overflow-style:none;scrollbar-width:none; }
+        .message-box { border:2px solid #ffb703;border-radius:15px;padding:15px;margin:20px 0;text-align:left;font-size:16px;color:#fff;/*background-color:#fffdf5;*/height:180px;overflow-y:auto;scroll-behavior:smooth;-ms-overflow-style:none;scrollbar-width:none; }
         .message-box::-webkit-scrollbar { display:none; }
         .message-box .kaomoji { text-align:center;display:block;margin-bottom:10px;color:#fb8500; }
         .music-control { position:fixed;display:none;top:20px;right:20px;background-color:rgba(255,255,255,0.8);border:2px solid #ffb703;border-radius:50%;width:50px;height:50px;justify-content:center;align-items:center;cursor:pointer;z-index:1000;box-shadow:0 4px 10px rgba(0,0,0,0.1);transition:all 0.3s ease; }
         .music-control:hover { transform:scale(1.1);background-color:#fff; }
         .music-icon { width:24px;height:24px;fill:#fb8500; }
         @keyframes popIn { 0% { transform:scale(0);opacity:0; } 80% { transform:scale(1.1);opacity:1; } 100% { transform:scale(1); } }
-        .confetti { position:absolute;width:10px;height:10px;background-color:#f00;animation:fall linear forwards; }
-        @keyframes fall { to { transform:translateY(100vh) rotate(720deg); } }
     </style>
 </head>
 <body>
-    <div class="card" id="mainCard">
+    <div class="card hidden" id="mainCard">
         <div class="img-container">
-            <img src="https://files.catbox.moe/a59hky.jpg" alt="Cute Photo">
+            <img src="https://htmlku.com/0/panda/hearthappy.gif" alt="Cute Photo">
         </div>
         <h1 class="title">Hiii Sayanggg</h1>
         <p class="kaomoji">( ｡ • ᴗ • ｡ )</p>
@@ -66,18 +70,17 @@
         <button id="retryBtn" style="margin-top:20px">Again..?</button>
     </div>
 
-    <div class="card hidden" id="messageCard">
+    <div class="card hidden" id="messageCard" style="padding:20px 8px">
         <div class="img-container" id="imgAkhir" style="border-radius:50%;width:120px;height:120px">
-            <img src="https://files.catbox.moe/sp0luo.jpg" id="sourceImgAkhirSatu" alt="Happy Birthday">
-            <img src="https://files.catbox.moe/sp0luo.jpg" id="sourceImgAkhirDua" style="display:none;" alt="Happy Birthday">
+            <img src="https://htmlku.com/0/panda/fotbar.gif" id="sourceImgAkhirSatu" alt="Happy Birthday">
+            <img src="https://htmlku.com/0/panda/muah.gif" id="sourceImgAkhirDua" style="display:none;" alt="Happy Birthday">
         </div>
         
         <div class="message-box" id="messageContent">
             <span class="kaomoji">(^○^)</span>
-            <!-- Semua <p> di bawah ini akan di-type secara berurutan -->
         </div>
         
-        <button id="startOverBtn">Balas (^○^)</button>
+        <button id="replyBtn">Balas (^○^)</button>
     </div>
 
     <!-- Music Control Button -->
@@ -98,7 +101,7 @@
         const openBtn = document.getElementById('openBtn');
         const noBtn = document.getElementById('noBtn');
         const retryBtn = document.getElementById('retryBtn');
-        const startOverBtn = document.getElementById('startOverBtn');
+        const replyBtn = document.getElementById('replyBtn');
         const mainCard = document.getElementById('mainCard');
         const envelopeCard = document.getElementById('envelopeCard');
         const retryCard = document.getElementById('retryCard');
@@ -106,6 +109,18 @@
         const bgMusic = document.getElementById('bgMusic');
         const musicBtn = document.getElementById('musicBtn');
         let isMusicPlaying = false;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const mainCard = document.getElementById('mainCard');
+                mainCard.classList.remove('hidden');
+                mainCard.style.opacity = '0';
+                mainCard.style.transition = 'opacity 1.2s ease';
+                setTimeout(() => {
+                    mainCard.style.opacity = '1';
+                }, 50);
+            }, 2000);
+        });
 
         // Try to play music immediately
         window.addEventListener('load', () => {
@@ -160,53 +175,44 @@
             envelopeCard.classList.remove('hidden');
         });
 
-        // openBtn.addEventListener('click', () => {
-        //     envelopeCard.style.display = 'none';
-        //     messageCard.classList.remove('hidden');
-
-        //     // createConfetti();
-        // });
-
         openBtn.addEventListener('click', () => {
             envelopeCard.style.display = 'none';
             messageCard.classList.remove('hidden');
 
-            let scrollInterval = setInterval(scrollToBottom, 100);
+            let scrollInterval = setInterval(scrollToBottom, 20);
 
             new TypeIt("#messageContent", {
-                speed: 25,
+                speed: 20,
                 waitUntilVisible: true,
                 cursorChar: '_',
                 cursor: true,
                 afterComplete: function(instance) {
                     instance.destroy();
                     clearInterval(scrollInterval);
-                    startOverBtn.style="transform: scale(1);opacity:1";
+                    replyBtn.style="transform: scale(1);opacity:1";
 
-                    imgAkhir.style="transform: scale(0);transition: all 0.5s ease;";
+                    imgAkhir.style="border-radius:50%;width:120px;height:120px;transform: scale(0);transition: all 0.5s ease;";
                     setTimeout(() => {
                         sourceImgAkhirSatu.src = sourceImgAkhirDua.src;
-                        imgAkhir.style="transform: scale(1);transition: all 0.5s ease;";
+                        imgAkhir.style="border-radius:50%;width:120px;height:120px;transform: scale(1);transition: all 0.5s ease;";
                     }, 350);
                 }
             })
-            .type("🎉 Aloo sayanggg hhii 💕<br><br>")
-            .pause(30)
-            .type("you know? alasan akuu pertahanin kamuu?<br><br>")
-            .pause(30)
-            .type("karena kamuu ituu beda dari yang lain, dan kamuu itu sempurna hhee✨<br><br>")
-            .pause(30)
-            .type("meskipun kamuu sering membuat kesalahan yang sama dan ego kamuu sangat tinggi, bukan bearti akuu nyerah untuk perjuangin kamuu🌻<br><br>")
-            .pause(30)
-            .type("🤗 karena kamuu tujuan akuu and kamuu salah satunya di hati akuu, kamuu akan selalu akuu perjuangkan meskipun tantangan nya berat hhee💝<br><br>")
-            .pause(30)
-            .type("jangan pernah mikir kalo akuu itu ninggalin kamu yaaa? akuu janji kok akuu bakalan pertahanin kamuu sampe kamuu berubah hihii, akuu lebih baik begini sayanggg,daripada akuu kehilangan kamuu hhee<br><br>")
-            .pause(30)
-            .type("ohh yaaa jangan bilang kalo akuu ini gaa sayang sama kamuu, dalam kondisi apapun, dan mauu bagaimana pun kamuu, akuu bakalan  tetep sayangg samaa kamu hhhee, semoga kamuu bisa bertahan sama akuuu dan sabar yaaa? temenin proses akuu yaaa sayanggg hhee i lovee youu Araa🤗🤍<br>")
-            .pause(30)
+            .type("<b>🎉 Aloo sayanggg hhii 💕</b><br><br>")
+            .pause(15)
+            .type("<i>You know?</i> Alasan akuu pertahanin kamuu? 🥹<br><br>")
+            .pause(15)
+            .type("Karena.. Kamuu ituu beda dari yang lain, kamuu itu sempurna menurut akuu ✨<br><br>")
+            .pause(15)
+            .type("Meskipun kamuu sering marah² dan ego kamuu sangat tinggi, tapi bukan berarti akuu nyerah buat perjuangin kamuu 🌻<br><br>")
+            .pause(15)
+            .type("Kamuu itu tujuan akuu dan kamu satu-satunya di hati akuu, kamuu akan selalu akuu perjuangkan meskipun tantangannya berat 💝<br><br>")
+            .pause(15)
+            .type("Jangan pernah mikir kalo akuu bakal ninggalin kamu yaaa? Akuu janji bakalan pertahanin kamuu dalam keadaan apapun 🫶<br><br>")
+            .pause(15)
+            .type("Ohh yaaa jangan bilang kalo akuu ini gaa sayang sama kamuu yaa, dalam kondisi apapun, dan mauu bagaimana pun kamuu, akuu bakalan tetep sayangg samaa kamu hhee, semoga kamuu bisa bertahan sama akuuu dan sabar yaaa? 👀<br><br><b>i lovee youu sayaangku cintakuu duniakuu manisnya akuu</b> 😍🤍<br>")
+            .pause(15)
             .go();
-
-            // createConfetti();
         });
 
         function scrollToBottom() {
@@ -225,29 +231,6 @@
             retryCard.classList.add('hidden');
             envelopeCard.style.display = 'block';
         });
-
-        // startOverBtn.addEventListener('click', () => {
-        //     location.reload();
-        // });
-
-        function createConfetti() {
-            const colors = ['#ffadad', '#ffd6a5', '#fdffb6', '#caffbf', '#9bf6ff', '#a0c4ff', '#bdb2ff', '#ffc6ff'];
-            
-            for (let i = 0; i < 50; i++) {
-                const confetti = document.createElement('div');
-                confetti.classList.add('confetti');
-                confetti.style.left = Math.random() * 100 + 'vw';
-                confetti.style.top = -10 + 'px';
-                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
-                
-                document.body.appendChild(confetti);
-                
-                setTimeout(() => {
-                    confetti.remove();
-                }, 5000);
-            }
-        }
     </script>
 </body>
 </html>
