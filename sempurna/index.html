@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Box for You</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/typeit@8.8.7/dist/index.umd.js"></script>
+    <style>
+        body { margin:0;padding:0;height:100vh;display:flex;justify-content:center;align-items:center;background-image:url('https://files.catbox.moe/259x4r.jpg');background-size:cover;background-position:center;background-repeat:no-repeat;font-family:'Nunito',sans-serif;overflow-x:hidden;overflow-y:auto; }
+        .card { border:4px dashed #ffb703;background:rgba(255,255,255,0.65);padding:20px;border-radius:30px;text-align:center;box-shadow:0 10px 25px rgba(0,0,0,0.1);max-width:350px;width:90%;margin-left:20px;margin-right:20px;margin-top:-50px;position:relative;animation:popIn 0.8s cubic-bezier(0.68,-0.55,0.265,1.55); }
+        .img-container { border:3px solid #ffb703;width:150px;height:150px;margin:0 auto 20px;border-radius:20px;overflow:hidden;background-color:#fff;box-shadow:0 5px 15px rgba(0,0,0,0.05); }
+        .img-container img { width:100%;height:100%;object-fit:cover; }
+        .title { font-family:'Fredoka One',cursive;color:#fb8500;margin:10px 0;font-size:28px;text-shadow:1px 1px 0px #fff; }
+        .kaomoji { font-size:18px;color:#555;margin:5px 0;font-weight:bold; }
+        .instruction { font-size:16px;color:#555;margin:25px 0; }
+        button { background-color:#ffb703;color:white;border:none;padding:12px 25px;border-radius:50px;font-family:'Fredoka One',cursive;font-size:16px;cursor:pointer;transition:transform 0.2s,background-color 0.2s,box-shadow 0.2s;box-shadow:0 4px 0px #fb8500; }
+        button:hover { transform:translateY(-2px);background-color:#ffcd58;box-shadow:0 6px 0px #fb8500; }
+        button:active { transform:translateY(2px);box-shadow:0 2px 0px #fb8500; }
+        .hidden { display:none; }
+        .btn-group { display:flex;gap:15px;justify-content:center;margin-top:20px; }
+        .btn-secondary { background-color:#ff6b6b;box-shadow:0 4px 0px #ee5253;margin-left:10px; }
+        .btn-secondary:hover { background-color:#ff8787;box-shadow:0 6px 0px #ee5253; }
+        .btn-secondary:active { transform:translateY(2px);box-shadow:0 2px 0px #ee5253; }
+        .message-box { border:2px solid #ffb703;border-radius:15px;padding:15px;margin:20px 0;text-align:left;font-size:16px;color:#555;background-color:#fffdf5;height:180px;overflow-y:auto;scroll-behavior:smooth;-ms-overflow-style:none;scrollbar-width:none; }
+        .message-box::-webkit-scrollbar { display:none; }
+        .message-box .kaomoji { text-align:center;display:block;margin-bottom:10px;color:#fb8500; }
+        .music-control { position:fixed;display:none;top:20px;right:20px;background-color:rgba(255,255,255,0.8);border:2px solid #ffb703;border-radius:50%;width:50px;height:50px;justify-content:center;align-items:center;cursor:pointer;z-index:1000;box-shadow:0 4px 10px rgba(0,0,0,0.1);transition:all 0.3s ease; }
+        .music-control:hover { transform:scale(1.1);background-color:#fff; }
+        .music-icon { width:24px;height:24px;fill:#fb8500; }
+        @keyframes popIn { 0% { transform:scale(0);opacity:0; } 80% { transform:scale(1.1);opacity:1; } 100% { transform:scale(1); } }
+        .confetti { position:absolute;width:10px;height:10px;background-color:#f00;animation:fall linear forwards; }
+        @keyframes fall { to { transform:translateY(100vh) rotate(720deg); } }
+    </style>
+</head>
+<body>
+    <div class="card" id="mainCard">
+        <div class="img-container">
+            <img src="https://files.catbox.moe/a59hky.jpg" alt="Cute Photo">
+        </div>
+        <h1 class="title">Hiii Sayanggg</h1>
+        <p class="kaomoji">( ｡ • ᴗ • ｡ )</p>
+        <p class="instruction">Click the next button!! (⊃｡•́‿•̀｡)⊃♥</p>
+        <button id="nextBtn">Next!! ^w^</button>
+    </div>
+
+    <div class="card hidden" id="envelopeCard">
+        <div class="img-container">
+            <img src="https://media1.tenor.com/m/nmc3ubvvxPkAAAAC/nailong-yellow-dino.gif" alt="Envelope">
+        </div>
+        <h1 class="title">Do you want to open it?</h1>
+        <div class="btn-group">
+            <button id="openBtn">Open it</button>
+            <button id="noBtn" class="btn-secondary">No ty</button>
+        </div>
+    </div>
+
+    <div class="card hidden" id="retryCard">
+        <div class="img-container">
+            <img src="https://media1.tenor.com/m/zuHWKHqDHK0AAAAd/nailong-yellow-dragon.gif" alt="Sad Face">
+        </div>
+        <h1 class="title" style="font-size: 24px;">Nooo.. Let's try again, Please..? >_&lt;</h1>
+        <button id="retryBtn" style="margin-top:20px">Again..?</button>
+    </div>
+
+    <div class="card hidden" id="messageCard">
+        <div class="img-container">
+            <img src="https://files.catbox.moe/sp0luo.jpg" alt="Happy Birthday">
+        </div>
+        
+        <div class="message-box" id="messageContent">
+            <span class="kaomoji">(^○^)</span>
+            <!-- Semua <p> di bawah ini akan di-type secara berurutan -->
+        </div>
+        
+        <!-- <button id="startOverBtn">Start Over ♥</button> -->
+    </div>
+
+    <!-- Music Control Button -->
+    <div class="music-control" id="musicBtn">
+        <svg class="music-icon" viewBox="0 0 24 24">
+            <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+        </svg>
+    </div>
+
+    <!-- Audio Element -->
+    <audio id="bgMusic" loop>
+        <source src="https://files.catbox.moe/vg4o2l.m4a" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        const nextBtn = document.getElementById('nextBtn');
+        const openBtn = document.getElementById('openBtn');
+        const noBtn = document.getElementById('noBtn');
+        const retryBtn = document.getElementById('retryBtn');
+        //const startOverBtn = document.getElementById('startOverBtn');
+        const mainCard = document.getElementById('mainCard');
+        const envelopeCard = document.getElementById('envelopeCard');
+        const retryCard = document.getElementById('retryCard');
+        const messageCard = document.getElementById('messageCard');
+        const bgMusic = document.getElementById('bgMusic');
+        const musicBtn = document.getElementById('musicBtn');
+        let isMusicPlaying = false;
+
+        // Try to play music immediately
+        window.addEventListener('load', () => {
+            bgMusic.play().then(() => {
+                isMusicPlaying = true;
+                updateMusicIcon();
+            }).catch(error => {
+                console.log("Autoplay prevented. Waiting for interaction.");
+                isMusicPlaying = false;
+                updateMusicIcon();
+            });
+        });
+
+        // Ensure music plays on any first click (browser policy often requires this)
+        document.addEventListener('click', function() {
+            if (!isMusicPlaying) {
+                bgMusic.play().then(() => {
+                    isMusicPlaying = true;
+                    updateMusicIcon();
+                });
+            }
+        }, { once: true });
+
+        musicBtn.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent triggering the document click listener
+            if (isMusicPlaying) {
+                bgMusic.pause();
+                isMusicPlaying = false;
+            } else {
+                bgMusic.play();
+                isMusicPlaying = true;
+            }
+            updateMusicIcon();
+        });
+
+        function updateMusicIcon() {
+            const iconPath = isMusicPlaying 
+                ? "M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z" // Music Note
+                : "M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73 4.27 3zM12 4L9.91 6.09 12 8.18V4z"; // Mute/Off
+
+            const svg = musicBtn.querySelector('svg path');
+            if(isMusicPlaying) {
+                 svg.setAttribute('d', "M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z");
+                 musicBtn.style.opacity = "1";
+            } else {
+                 svg.setAttribute('d', "M4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73 4.27 3zM12 4L9.91 6.09 12 8.18V4z"); 
+            }
+        }
+
+        nextBtn.addEventListener('click', () => {
+            mainCard.style.display = 'none';
+            envelopeCard.classList.remove('hidden');
+        });
+
+        // openBtn.addEventListener('click', () => {
+        //     envelopeCard.style.display = 'none';
+        //     messageCard.classList.remove('hidden');
+
+        //     // createConfetti();
+        // });
+
+        openBtn.addEventListener('click', () => {
+            envelopeCard.style.display = 'none';
+            messageCard.classList.remove('hidden');
+
+            let scrollInterval = setInterval(scrollToBottom, 100);
+
+            new TypeIt("#messageContent", {
+                speed: 25,
+                waitUntilVisible: true,
+                cursorChar: '_',
+                cursor: true,
+                afterComplete: function(instance) {
+                    instance.destroy();
+                    clearInterval(scrollInterval);
+                }
+            })
+            .type("🎉 Aloo sayanggg hhii 💕<br><br>")
+            .pause(30)
+            .type("you know? alasan akuu pertahanin kamuu?<br><br>")
+            .pause(30)
+            .type("karena kamuu ituu beda dari yang lain, dan kamuu itu sempurna hhee✨<br><br>")
+            .pause(30)
+            .type("meskipun kamuu sering membuat kesalahan yang sama dan ego kamuu sangat tinggi, bukan bearti akuu nyerah untuk perjuangin kamuu🌻<br><br>")
+            .pause(30)
+            .type("🤗 karena kamuu tujuan akuu and kamuu salah satunya di hati akuu, kamuu akan selalu akuu perjuangkan meskipun tantangan nya berat hhee💝<br><br>")
+            .pause(30)
+            .type("jangan pernah mikir kalo akuu itu ninggalin kamu yaaa? akuu janji kok akuu bakalan pertahanin kamuu sampe kamuu berubah hihii, akuu lebih baik begini sayanggg,daripada akuu kehilangan kamuu hhee<br><br>")
+            .pause(30)
+            .type("ohh yaaa jangan bilang kalo akuu ini gaa sayang sama kamuu, dalam kondisi apapun, dan mauu bagaimana pun kamuu, akuu bakalan  tetep sayangg samaa kamu hhhee, semoga kamuu bisa bertahan sama akuuu dan sabar yaaa? temenin proses akuu yaaa sayanggg hhee i lovee youu Araa🤗🤍<br>")
+            .pause(30)
+            .go();
+
+            // createConfetti();
+        });
+
+        function scrollToBottom() {
+            const messageBox = document.getElementById('messageContent');
+            if (messageBox) {
+                messageBox.scrollTop = messageBox.scrollHeight;
+            }
+        }
+
+        noBtn.addEventListener('click', () => {
+            envelopeCard.style.display = 'none';
+            retryCard.classList.remove('hidden');
+        });
+
+        retryBtn.addEventListener('click', () => {
+            retryCard.classList.add('hidden');
+            envelopeCard.style.display = 'block';
+        });
+
+        // startOverBtn.addEventListener('click', () => {
+        //     location.reload();
+        // });
+
+        function createConfetti() {
+            const colors = ['#ffadad', '#ffd6a5', '#fdffb6', '#caffbf', '#9bf6ff', '#a0c4ff', '#bdb2ff', '#ffc6ff'];
+            
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.top = -10 + 'px';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                
+                document.body.appendChild(confetti);
+                
+                setTimeout(() => {
+                    confetti.remove();
+                }, 5000);
+            }
+        }
+    </script>
+</body>
+</html>
