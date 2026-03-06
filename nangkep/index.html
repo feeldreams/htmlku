@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>— S.id/nangkep</title>
+  <title>🔗 S.id/nangkep</title>
   <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
 </head>
 <style>
@@ -11,7 +11,7 @@
   *{margin:0;padding:0;box-sizing:border-box}
 	:root{--color-flap:#d46a84;--color-env:#f8e1e9;--color-env2:#D4AFB8;--color-heart:#ff6f91;--color-sparkle:#ffd1dc}
 	body {color:#fff;overflow-x:hidden;position:relative;font-family:'Montserrat',sans-serif;/*background: linear-gradient(180deg,#1e3a8a,#3b0764);*/background:rgba(0,0,0,1);z-index: 1;}
-	.background-overlay {animation: jj 8s infinite alternate;position: fixed;top: 0;left: 0;width: 100%;height: 100%;/*background: url('https://htmlku.com/0/wp2.jpg') no-repeat center center fixed;*/background-size: cover;opacity: 0.3;z-index: 0;}
+	.background-overlay {animation: jj 8s infinite alternate;position: fixed;top: 0;left: 0;width: 100%;height: 100%;/*background: url('https://htmlku.com/0/wp2.jpg') no-repeat center center fixed;*/background-size: cover;opacity: 0.55;z-index: 0;}
 	@keyframes jj{0%  {transform: scale(1);} 50% {transform: scale(1.2);} 100% {transform: scale(1);}}
 	.kotak{margin:0 auto;margin-top:130px;transform:scale(0);transition:all .7s ease;background:rgba(0,0,0,.33);backdrop-filter:blur(8px);border-radius:18px 33px 18px 33px;box-shadow:0 8px 32px rgba(0,0,0,0.3);border:2.5px solid white;padding:0;text-align:center;max-width:100%;width:300px;min-height:200px;position:relative;z-index:1}
   .decor{position:absolute;width:12px;height:12px;border:3.3px solid #ff80ab;border-radius:3px;z-index:3}
@@ -115,7 +115,7 @@
   }
 
   /* Tambahan untuk Catch My Hearts */
-  #gameArea{width:100%;height:220px;background:rgba(255,255,255,0.08);border:2px dotted #ff80ab;border-radius:16px;position:relative;overflow:hidden;margin:20px auto;padding:100px}
+  #gameArea{width:100%;height:220px;background:rgba(255,255,255,0.08);border:2px solid #ff80ab;border-radius:16px;position:relative;overflow:hidden;margin:20px auto;padding:100px}
   #statusGame{font-size:14px;color:#ffd1dc;margin:8px 0}
   #score{font-size:16px;color:#fff;font-weight:600}
   .heart-catch{position:absolute;font-size:42px;user-select:none;pointer-events:auto;cursor:none;transition:transform 0.2s}
@@ -129,7 +129,7 @@
   <audio src="https://feeldreams.github.io/audio/angelbaby.mp3" id="linkmp3"></audio>
   
   <!-- Background / Wallpaper -->
-  <div class="background-overlay" data-src="wp/10.jpg"></div>
+  <div class="background-overlay" data-src="https://htmlku.com/0/wp.jpg"></div>
 
   <!-- Halaman 1: Envelope -->
   <div id="hal1">
@@ -166,9 +166,9 @@
     <div class="decor decor-tl"></div>
     <div class="decor decor-br"></div>
     <canvas id="game-canvas"></canvas>
-    <h2 style="font-size:18.5px">Mini Game for You 🫵</h2>
-    <p style="font-size:14px">Tangkap <b>30 hati</b> sebelum waktu abis! 🤣</p>
-    <div id="statusGame">⏳: 10 detik | Skor: 0</div>
+    <h2 style="font-size:18.5px">Mini Game buat Kamu 🫵</h2>
+    <p style="font-size:14px">Tangkap <b>50 hati</b> sebelum waktu abis! 🤣</p>
+    <div id="statusGame">⏳: 10 detik | 💖: 0</div>
     <div id="gameArea"></div>
     <button id="tomMulai" onclick="mulaiCatchGame()" style="margin-top:0;padding:6px 16px">Mulai Main! 😋</button>
   </div>
@@ -179,7 +179,7 @@
     <div class="decor decor-br"></div>
     <!-- Stiker Gif -->
     <div id="stiker3" class="stiker">
-        <img id="stiker3a" src="https://htmlku.com/0/panda/cilukba.gif" />
+        <img id="stiker3a" src="https://htmlku.com/0/panda/ledekin.gif" />
         <img id="stiker3b" class="sembunyi" src="https://htmlku.com/0/panda/muah.gif" />
         <img id="stiker3c" class="sembunyi" src="https://htmlku.com/0/panda/terlope.gif" />
     </div>
@@ -191,7 +191,7 @@
     <button style="display:none" onclick="shareWa()">Kirim ke Dia!</button>
   </div>
   <div class="tombol">
-    <button style="border-radius:30px;padding:4px 12px;" onclick="balasWa()">Balas 💌</button>
+    <button style="border-radius:30px;padding:4px 12px;" onclick="balasWa()">Kirim Pap 💌</button>
   </div>
   
   <!-- Circle Animation -->
@@ -215,9 +215,9 @@
 	];
 
     // Edit Kata-kata Akhir di Sini
-    const txtDoa = "<b style='font-size:16px'>Yaahh Waktunya Abis! 😝💭 — 𖹭.ᐟ</b>";
-    const txtPesanAkhir = "Karena kamu gagal nangkep <b>30 hati</b>,<br>Maka kamu <b>wajib jadi pacar aku</b> sekarang juga yaa 🤪</b>";
-    const txtLucu = "── ᯓᡣ𐭩<br><i>Hehehe</i>&nbsp;🏃<br>Ga boleh nolak ini mah 😣<br><br><b>Lopyuuu ayangg barukuu 𖹭.ᐟ😋🫵</b>";
+    const txtDoa = "<b style='font-size:16px'>Yaahh Waktunya Abis! 😝🤭 — 𖹭.ᐟ</b>";
+    const txtPesanAkhir = "Karena kamu gagal nangkep <b>50 hati</b>,<br>Maka kamu wajib <b>kirim pap</b> ke aku sebanyak <b>3 foto</b> 🤪</b>";
+    const txtLucu = "── ᯓᡣ𐭩<br><i>Hehehe</i>&nbsp;🏃<br><br>Kirim ke <b>WhatsApp</b> aku<br>sekarang juga yaa! 🫵<br><br><b>Ditunggu 𖹭.ᐟ😋</b>";
   </script>
   <script>
   	audio = new Audio('' + linkmp3.src);
@@ -297,14 +297,14 @@
         gameRunning = true;
         catchScore = 0;
         catchTimeLeft = 10;
-        document.getElementById('statusGame').textContent = `⏳: ${catchTimeLeft} detik | Skor: ${catchScore}`;
+        document.getElementById('statusGame').textContent = `⏳: ${catchTimeLeft} detik | 💖: ${catchScore}`;
         document.getElementById('gameArea').innerHTML = '';
         document.getElementById('tomMulai').style = "opacity:0;transform:scale(0);pointer-events:none;transition:all .5s ease";
 
         // Timer
         catchTimerId = setInterval(() => {
             catchTimeLeft--;
-            document.getElementById('statusGame').textContent = `⏳: ${catchTimeLeft} detik | Skor: ${catchScore}`;
+            document.getElementById('statusGame').textContent = `⏳: ${catchTimeLeft} detik | 💖: ${catchScore}`;
             if (catchTimeLeft <= 0) {
                 clearInterval(catchTimerId);
                     clearInterval(heartSpawner);
@@ -402,17 +402,17 @@
             // Gunakan posisi terakhir (fallback)
             const heart = document.createElement('div');
             heart.className = 'heart-catch';
-            heart.innerHTML = '❤️';
+            heart.innerHTML = '💖';
             heart.style.left = (pos.left - effectiveHeartSize / 2) + 'px';
             heart.style.top  = (pos.top  - effectiveHeartSize / 2) + 'px';
 
             heart.onclick = () => {
                 catchScore++;
-                document.getElementById('statusGame').textContent = `⏳: ${catchTimeLeft} detik | Skor: ${catchScore}`;
+                document.getElementById('statusGame').textContent = `⏳: ${catchTimeLeft} detik | 💖: ${catchScore}`;
                 
                 const particle = document.createElement('div');
                 particle.className = 'particle';
-                particle.innerHTML = '🤍';
+                particle.innerHTML = '✨';
                 particle.style.left = heart.style.left;
                 particle.style.top = heart.style.top;
                 area.appendChild(particle);
@@ -420,7 +420,7 @@
 
                 heart.remove();
 
-                if (catchScore == 30) {
+                if (catchScore == 50) {
                     clearInterval(catchTimerId);
                     clearInterval(heartSpawner);
                     gameRunning = false;
@@ -584,11 +584,11 @@
          if (hal === 2) {document.getElementById(`hal${hal}`).style="width:90%;margin-top:100px;transform:scale(1);transition:all .7s ease";}
          if (hal !== 2){
          document.getElementById(`hal${hal - 1}`).style = "transform:scale(0);transition:all .6s ease";
-         if (hal == 3){setTimeout(()=>{document.getElementById(`hal${hal}`).style="width:90%;padding:.9rem;margin-top:100px;transform:scale(1);transition:all .7s ease";}, 100);}
+         if (hal == 3){setTimeout(()=>{document.getElementById(`hal${hal}`).style="width:90%;padding:.9rem;margin-top:90px;transform:scale(1);transition:all .7s ease";}, 100);}
          setTimeout(()=>{
          	document.getElementById(`hal${hal - 1}`).classList.add('sembunyi');
              document.getElementById(`hal${hal}`).classList.remove('sembunyi');
-	         setTimeout(()=>{document.getElementById(`hal${hal}`).style="width:90%;padding:.9rem;margin-top:100px;transform:scale(1);transition:all .7s ease";}, 100);
+	         setTimeout(()=>{document.getElementById(`hal${hal}`).style="width:90%;padding:.9rem;margin-top:90px;transform:scale(1);transition:all .7s ease";}, 100);
 	         setTimeout(()=>{if (hal === 3) mulaiHal3();}, 0);
 	     }, 100);
 	     }
