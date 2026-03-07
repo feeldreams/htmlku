@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> S.id/berhentisayang</title>
+  <title>S.id/berhentisayang</title>
   <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
 </head>
 <style>
@@ -157,7 +157,7 @@
     <div id="gameArea">
       <div id="bigHeart" onclick="klikHati()">❤️</div>
     </div>
-    <!-- <button id="tomMulai" onclick="mulaiKlikGame()" style="margin-top:10px;padding:8px 20px">Mulai Klik! </button> -->
+    <!-- <button id="tomMulai" onclick="mulaiKlikGame()" style="margin-top:10px;padding:8px 20px">Mulai Klik!</button> -->
   </div>
 
   <!-- Hal 3: Pesan Akhir -->
@@ -178,7 +178,7 @@
   </div>
 
   <div class="tombol">
-    <button style="border-radius:30px;padding:4px 12px;" onclick="balasWa()">Balas </button>
+    <button style="border-radius:30px;padding:4px 12px;" onclick="balasWa()">Balas</button>
   </div>
 
   <div><div><div id="buletan" class="circ"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div></div>
@@ -186,8 +186,8 @@
 <script>
 // Edit pesan akhir di sini (sama seperti sebelumnya)
 const txtDoa = "<b style='font-size:16px'>Yeyyy 100x klik! 😝💭 — 𖹭.ᐟ</b>";
-const txtPesanAkhir = "Kamu udah klik hati <b>100 kali</b> buat aku,<br>berarti sekarang <b>kamu resmi jadi milikku ya</b> 🤤";
-const txtLucu = " <br><i>Hehe ga bisa kabur lagi~</i><br><br><b>Lopyuuu sayangku selamanya 🤭💖</b>";
+const txtPesanAkhir = "Kamu udah klik hati <b>100 kali</b> buat aku, berarti sekarang <b>kamu resmi jadi milikku ya</b> 🤤";
+const txtLucu = "── ᯓᡣ𐭩<br><i>Hehe ga bisa kabur lagi~</i><br><br><b>Lopyuuu sayangku selamanya 🤭💖</b>";
 
 audio = new Audio('' + linkmp3.src);
 
@@ -223,7 +223,7 @@ function bukaEnvelope() {
 }
 setTimeout(() => bukaEnvelope(), 0);
 
-//  Game Klik Hati Baru 
+// Game Klik Hati Baru
 let klikCount = 0;
 let gameStarted = true;
 
@@ -242,7 +242,7 @@ function klikHati() {
     klikCount++;
     document.getElementById('score').textContent = klikCount;
 
-    //  Animasi jedag-jedug setiap klik 
+    // Animasi jedag-jedug setiap klik
     const heartEl = document.getElementById('bigHeart');
     heartEl.classList.add('jedag');
 
@@ -274,7 +274,7 @@ function klikHati() {
     setTimeout(() => flyHeart.remove(), 1200);
 
     // Cek menang (tetap sama)
-    if (klikCount >= 1) {
+    if (klikCount >= 5) {
         gameStarted = false;
         heartEl.style.pointerEvents = 'none';
         setTimeout(() => {
