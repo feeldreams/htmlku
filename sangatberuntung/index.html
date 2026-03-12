@@ -13,7 +13,7 @@
 	body {color:#fff;overflow-x:hidden;position:relative;font-family:'Montserrat',sans-serif;background:rgba(0,0,0,1);z-index: 1;}
 	.background-overlay {animation: jj 8s infinite alternate;position: fixed;top: 0;left: 0;width: 100%;height: 100%;background-size: cover;opacity: 0.45;z-index: 0;}
 	@keyframes jj{0%  {transform: scale(1);} 50% {transform: scale(1.2);} 100% {transform: scale(1);}}
-	.kotak{margin:0 auto;margin-top:130px;transform:scale(0);transition:all .7s ease;background:rgba(0,0,0,.33);backdrop-filter:blur(8px);border-radius:18px 33px 18px 33px;box-shadow:0 8px 32px rgba(0,0,0,0.3);border:2.5px solid white;padding:0;text-align:center;max-width:100%;width:300px;min-height:200px;position:relative;z-index:1}
+	.kotak{margin:0 auto;margin-top:130px;transform:scale(0);transition:all .7s ease;background:rgba(0,0,0,.45);backdrop-filter:blur(8px);border-radius:18px 33px 18px 33px;box-shadow:0 8px 32px rgba(0,0,0,0.3);border:2.5px solid white;padding:0;text-align:center;max-width:100%;width:300px;min-height:200px;position:relative;z-index:1}
     .decor{position:absolute;width:12px;height:12px;border:3.3px solid #ff80ab;border-radius:3px;z-index:3}
 	.decor-tl{top:10px;left:10px;border-right:none;border-bottom:none}
 	.decor-br{bottom:10px;right:10px;border-left:none;border-top:none}
@@ -151,9 +151,9 @@
     <div class="decor decor-tl"></div>
     <div class="decor decor-br"></div>
     <canvas id="game-canvas"></canvas>
-    <h2 style="font-size:18.5px">Challenge for You~ 🫵</h2>
-    <p style="font-size:15px;line-height:1.35em">Coba klik emoji di bawah ini<br>sebanyak <b>30 kali</b> yaa! 🫣</p>
-    <div id="statusGame">🩷 <span id="score">0</span> / 30</div>
+    <h2 style="font-size:18.5px">Challenge buat Kamuu 😆</h2>
+    <p style="font-size:15px;line-height:1.35em">Coba klik emoji di bawah ini<br>sebanyak <b>25 kali</b> yaa! 🫣</p>
+    <div id="statusGame">🩷 <span id="score">0</span> / 25</div>
     <div id="gameArea">
       <div id="bigHeart" onclick="klikHati()">🩷</div>
     </div>
@@ -165,8 +165,8 @@
     <div class="decor decor-tl"></div>
     <div class="decor decor-br"></div>
     <div id="stiker3" class="stiker">
-        <img id="stiker3a" src="https://htmlku.com/0/panda/ledekin.gif" />
-        <img id="stiker3b" class="sembunyi" src="https://feeldreams.github.io/smprt.gif" />
+        <img id="stiker3a" src="https://htmlku.com/0/panda/fotbar.gif" />
+        <img id="stiker3b" class="sembunyi" src="https://htmlku.com/0/panda/ciumin.gif" />
         <img id="stiker3c" class="sembunyi" src="https://htmlku.com/0/panda/" />
     </div>
     <div id="containerPesan">
@@ -186,8 +186,8 @@
 <script>
 // Edit pesan akhir di sini (sama seperti sebelumnya)
 const txtDoa = "<b style='font-size:17.5px'>Yeaayyyy! 🥳💭 — 𖹭.ᐟ</b>";
-const txtPesanAkhir = "Sekarang, Kamu Tau Ga? 🫢<br><br>Di Antara 1 Bumi 🌏<br>7 Lautan 🌊<br>7 Benua 🗺️<br>195 Negara 🗾<br>Dan... 7 Triliun Jumlah Manusia ♂️♀️";
-const txtLucu = "── ᯓᡣ𐭩<br><b style='font-size:17.5px'>Kamuuuu 🫵🩷</b><br>Merupakan salah satu ciptaan Tuhan paling indah yang sangat beruntung aku temui 👀<br><br><i>Hehehe~</i><br><b>Ilvyouuu always, sehat selalu<br>manusia favoritkuu 🫶💖</b>";
+const txtPesanAkhir = "Sekarang, <b>Kamu Tau Ga? 🫢</b><br><br>Di Antara 1 Bumi 🌏<br>7 Lautan 🌊<br>7 Benua 🗺️<br>195 Negara 🗾<br>Dan... 7 Triliun Jumlah Manusia ♂️♀️";
+const txtLucu = "── ᯓᡣ𐭩<br><b style='font-size:17.5px'>Kamuuuu 🫵🩷</b><br>Merupakan salah satu ciptaan Tuhan paling indah yang sangat beruntung aku temui di dunia ini 👀<br><br><i>Hehehe~</i> 🏃<br><b>Ilvyouuu always, sehat selalu<br>manusia favoritkuu 🫶💖</b>";
 
 audio = new Audio('' + linkmp3.src);
 
@@ -221,7 +221,7 @@ function bukaEnvelope() {
     }, 700);
   }, 1200);
 }
-setTimeout(() => bukaEnvelope(), 0);
+//setTimeout(() => bukaEnvelope(), 0);
 
 // Game Klik Hati Baru
 let klikCount = 0;
@@ -274,7 +274,7 @@ function klikHati() {
     setTimeout(() => flyHeart.remove(), 1500);
 
     // Cek menang (tetap sama)
-    if (klikCount >= 3) {
+    if (klikCount >= 25) {
         gameStarted = false;
         heartEl.style.pointerEvents = 'none';
         setTimeout(() => {
@@ -318,21 +318,21 @@ function mulaiHal3() {
 
   new TypeIt("#teksCinta", {
     strings: txtDoa,
-    speed: 24,
+    speed: 20,
     cursorChar: '_',
     startDelay: 300,
     afterComplete: function () {
       document.querySelector("#teksCinta .ti-cursor").style.display = "none";
       new TypeIt("#pesanAkhir", {
         strings: txtPesanAkhir,
-        speed: 24,
+        speed: 25,
         cursorChar: '_',
         waitUntilVisible: true,
         afterComplete: function () {
           document.querySelector("#pesanAkhir .ti-cursor").style.display = "none";
           new TypeIt("#teksLucu", {
             strings: txtLucu,
-            speed: 24,
+            speed: 25,
             cursorChar: '_',
             waitUntilVisible: true,
             afterComplete: function () {
@@ -358,7 +358,7 @@ function mulaiHal3() {
 
 function balasWa() {
   const url = window.location.href;
-  const text = "eummm ilvyouu too 👀🩷";
+  const text = "Emmm Ilvyouu Too 👀🩷";
   window.open(`https://wa.me/?text=${text}`, '_blank');
 }
 
