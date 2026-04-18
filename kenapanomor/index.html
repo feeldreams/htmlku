@@ -186,7 +186,7 @@
         <!-- Pesan Ditolak -->
         <div id="pesanditolak">
             <img id="stikerditolak" src="https://feeldreams.github.io/weee.gif" />
-            <p id="kataditolak">Yaudah kalo ga kangen mh 😜</p>
+            <p id="kataditolak">Yaudah kalo gamau mh 😜</p>
         </div>
 
     </div>
@@ -215,18 +215,18 @@
         }
 
         //Variable Pertanyaan Akhir
-        var tanya = 'Kangen Aku Ga? 😶❤️';
+        var tanya = 'Mau Kan Kirim PAP? 😶❤️';
         var opstanya = 'Ayo jawab 😆';
-        var tompositif = 'Kangen';
+        var tompositif = 'Mauu';
         var tomnegatif = 'Engga';
 
         async function pertanyaan() {
             var { isConfirmed: prtanya } = await swals.fire({ title: nama + ' ' + tanya, text: '' + opstanya, imageUrl: '' + fotostiker2.src, showCancelButton: true, confirmButtonText: '' + tompositif, cancelButtonText: '' + tomnegatif, });
             if (prtanya) {
-                pesanwhatsapp = "Iyaa " + nama + " kangen kamu juga kok! ><";
+                pesanwhatsapp = "Nih " + nama + " kirim papnya! ><";
                 menujuWA();
             } else {
-                pesanwhatsapp = nama + " engga kangen kamu wleee! :p";
+                pesanwhatsapp = nama + " engga mau kirim pap wleee! :p";
                 await swalst.fire({ title: '' + kataditolak.innerHTML, timer: 2000, imageUrl: '' + stikerditolak.src, });
                 menujuWA();
             }
