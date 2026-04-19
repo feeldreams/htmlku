@@ -262,7 +262,7 @@
 	];
 
     // Edit Kata-kata di Sini
-    const txtDoa = "Kamis, 22 Januari 2026 🗓️<br>—<br><b class='varela' style='font-size:15px'>Happy World Girls’ Day — Cantiknya Akuuu 🫣🌺</b>";
+    const txtDoa = "<b class='varela' style='font-size:15px'>Happy World Girls’ Day — Cantiknya Akuuu 🫣🌺</b>";
     const txtPesanAkhir = "Di hari yang katanya tentang perempuan sedunia ini, aku cuma mau bilang satu hal: Buatku, kamu adalah wanita tercantik setelah ibuku. Dunia boleh punya banyak definisi tentang perempuan cantik, tetapi versiku selalu berhenti di kamu 🤍🫵<br><br>Aku bangga kalo aku punya wanita seistimewa kamu di sisiku. Bangga dengan senyummu, langkahmu, dan segala keindahanmu yang bikin aku merasa bahagia. Kalo hari ini kamu dirayakan sebagai perempuan, izinkan aku merayakanmu sebagai perempuan kebanggaanku 🌹🫶";
     const txtLucu = "── ᯓᡣ𐭩<br>You are my happiness and my favorite person in this world. Today and every day,<br>I choose you — always. <b>I love uuu</b> 🫶❤️";
   </script>
@@ -438,19 +438,19 @@
 
       new TypeIt("#teksCinta", {
         strings: txtDoa,
-        speed: 20,
+        speed: 25,
         startDelay: 300,
         afterComplete: function () {
           document.querySelector("#teksCinta .ti-cursor").style.display = "none";
           new TypeIt("#pesanAkhir", {
             strings: txtPesanAkhir,
-            speed: 20,
+            speed: 25,
             waitUntilVisible: true,
             afterComplete: function () {
               document.querySelector("#pesanAkhir .ti-cursor").style.display = "none";
               new TypeIt("#teksLucu", {
                 strings: txtLucu,
-                speed: 20,
+                speed: 25,
                 waitUntilVisible: true,
                 afterComplete: function () {
                   document.querySelector("#teksLucu .ti-cursor").style.display = "none";
