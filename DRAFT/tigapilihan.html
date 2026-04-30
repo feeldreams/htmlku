@@ -1,270 +1,417 @@
 <!DOCTYPE html>
-<html>
-<meta charset='UTF-8'/><meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5' name='viewport'/><meta content='IE=edge' http-equiv='X-UA-Compatible'/>
-<link href="https://fonts.googleapis.com/css2?family=Itim:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css"><script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
+<html lang="en">
+
 <head>
-<title>💌 — 𝙎.𝙞𝙙/𝙩𝙞𝙜𝙖𝙥𝙞𝙡𝙞𝙝𝙖𝙣</title>
+  <meta charset="utf-8" />
+  <title>✅ S.id/dihidupmu</title>
+  <meta name="description" content="@feelthisray - Script HTML by feeldream.id">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+  <link rel="icon" type="image/svg+xml" href="https://feeldreams.github.io/main-icon.png">
+  <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Sriracha:wght@400;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
-:root {
---bingkai: 8px;
---bingkai-kiri: 2px solid white;
---bingkai-kanan: 2px solid white;
---gaya-font: 'Itim', cursive;
---gaya-font2: 'Dancing Script', sans-serif;
---gaya-font-sec: 'Sriracha', sans-serif;
-}
-body{padding: 20px 18px;background-color:#000;font-family:var(--gaya-font);-webkit-user-select: none; -ms-user-select: none; user-select: none;} a{text-decoration:none;}
-#bodyblur{opacity:.3;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.3);transition:all 1s ease;} 
-#wallpaper{animation: jedag 8s infinite;width:100%;height:100%;transform: scale(1);transition:all 1.3s ease;}
-@keyframes jedag{0%  {transform: scale(1);} 50% {transform: scale(1.25);} 100% {transform: scale(1);}}
+    html,body {position: relative;height: 100%;}
+    body {background: #000;font-family:'Noto Sans',sans-serif;font-size: 14px;color: #fff;text-shadow: 0px 2px 2px rgba(0, 0, 0, .5);margin: 0;padding: 0;}
+    #backgroundbody{opacity:.44;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.3);transition:all 1s ease;} 
+    #wallpaper{animation: jj 8s infinite alternate;width:100%;height:100%;transform: scale(1);transition:all 1.3s ease;}
+    @keyframes jj{0%  {transform: scale(1);} 50% {transform: scale(1.2);} 100% {transform: scale(1);}}
 
-blockquote{position:absolute;opacity:0;visibility:hidden;transform: scale(.1);transition:all 1s ease;margin-top:120px;margin-left:0;margin-right:0;color:white;}
-blockquote{min-height:50px;width:400px;padding:10px 15px 0px 15px;margin:0 0px;background:rgba(0,0,0,0.45);backdrop-filter:blur(8px);border-radius:20px;border:2px solid white;line-height:1.3em;overflow-y: auto;-ms-overflow-style:none;scrollbar-width:none}
-blockquote p{font-size:18px;font-weight:500;line-height:1.2em;transition:all .5s ease;}
-blockquote p i{font-style:normal;font-size:16px;font-weight:400;}
-blockquote p b.merah{color:red}
-blockquote p b.merahmuda{color:pink}
-blockquote p b.kuning{color:yellow}
-blockquote p b.putih{padding-left:3px;padding-right:3px;background:white;}
-blockquote p b.garismerah{font-weight:500;border-bottom:2px solid red}
-blockquote p b.gariskuning{font-weight:500;border-bottom:2px solid yellow}
-blockquote p:not(#opsL, #kalimat){display:none;}
-blockquote p:not(#kalimat6ngetik){text-align:center;}
-blockquote > #opsL{margin-right:0px;text-align:right !important;font-size:7px;font-weight:400;line-height:0;margin-top:0px;color:white;opacity:0;transition:all .2s ease;}
-.textOverlay{position: relative; margin:auto;width: 100%;min-height:20px;max-height: 250px;overflow-y: auto;-ms-overflow-style:none;scrollbar-width:none}
-
-.progress-bar-container {width: 100%background-color: rgba(255,255,255,.5);border-radius: 5px;margin: 0;margin-bottom:10px}
-.progress-bar {height: 3px;border-radius: 8px;width: 100%;transition: all .2s ease;background: linear-gradient(to right, #fff 0%, #fff 100%);}
+    .swiper {width: 100%;height: 100%;}
+    .swiper-slide {text-align: center;font-size: 18px;display: flex;flex-direction: column;justify-content: center;align-items: center;margin-top:-80px;}
     
-#Tombol{position:relative;opacity:0;margin:0;display:flex;align-items:left;list-style:none;transform: scale(0);transition:all 1s ease;}
-#Tombol a{cursor:pointer;display:inline-flex;align-items:center; margin:0;margin:12px 0 12px 0;transition:all .2s ease;padding:10px;outline:0;line-height:15px;color:white;font-size:14px;font-weight:700;white-space:nowrap;overflow:hidden;z-index:1;background:rgba(255,255,255,0.1);backdrop-filter:blur(10px);border-radius:20px;border:2px solid white;} 
+    p{margin-left:60px;margin-right:60px;text-align:left}
+    input[type="text"] {background: rgba(0, 0, 0, .5);border:2px solid #fff;border-radius: 12px;color:white;padding: 8px;width:170px}
 
-#Content{animation-name:none;animation-duration: 3s;animation-iteration-count: infinite;position:relative;opacity:0;margin-top:50px;width:100%;height:180px;transition:all .7s ease;}
-#Content > *{display:flex;align-items:center;justify-content:center;margin-top:1px;}
-.kumpulanstiker > img{display:none;padding:10px;width:92px;height:92px;margin:8px 0;}
-#fotostiker{background:rgba(255,255,255,0.1);backdrop-filter:blur(10px);border-radius:20px;border:2px solid white;border-radius: 50%;opacity:0;transition:all 1.2s ease;transform: scale(0);}
-
-.awalan{margin-top:20px;width:220px;min-height:25px;padding:12px;font-size:17px;color:white;background:rgba(0,0,0,.5);border:2px solid #fff;border-radius:30px;display:flex;align-items:center;text-align:left}
-.awalan svg{margin-right:15px;width:25px;height:25px;stroke:white;fill:none}
-#ket{text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);font-size:18px;font-weight:700;color:white;margin-top:20px !important;font-size:16px;font-weight:700;font-family:var(--gaya-font-sec);opacity:1;transition:all 1s ease;transform: scale(1) !important;}
+    input[type=range] {-webkit-appearance: none;appearance: none;width: 100%;background: rgba(0, 0, 0, .5);border: 2px solid #fff;border-radius: 12px;height: 10px;outline: none}
+	
+	input[type=range]::-webkit-slider-runnable-track {background: linear-gradient(to right, #FFB6C1 0%, #FFB6C1 var(--progress, 50%), rgba(0,0,0,.5) var(--progress, 50%), rgba(0,0,0,.5) 100%);border-radius: 12px;height: 10px;}
+    input[type=range]::-moz-range-track {background: linear-gradient(to right, #FFB6C1 0%, #FFB6C1 var(--progress, 50%), rgba(0,0,0,.5) var(--progress, 50%), rgba(0,0,0,.5) 100%);border-radius: 12px;height: 10px;border: none;}
+	
+	input[type=range]::-webkit-slider-thumb {-webkit-appearance: none;appearance: none;width: 18px;height: 18px;background: #fff;border-radius: 50%;cursor: pointer;box-shadow: 0 2px 6px rgba(0,0,0,.5);margin-top: -4px;}
+	input[type=range]::-moz-range-thumb {width: 18px;height: 18px;background: #fff;border-radius: 50%;cursor: pointer;border: none;box-shadow: 0 2px 6px rgba(0,0,0,.5)}
+    .swiper-slide img {display: block;width: 100%;height: 100%;object-fit: cover;}
     
-.circ div{position:fixed;width:60px;height:60px;background-color:transparent;border:6px solid rgba(255,255,255,0.3);border-radius:50%;z-index:-100}
-.circ div:nth-child(1){top:12%;left:42%;animation:animate 10s linear infinite}
-.circ div:nth-child(2){top:70%;left:50%;animation:animate 7s linear infinite}
-.circ div:nth-child(3){top:17%;left:6%;animation:animate 9s linear infinite}
-.circ div:nth-child(4){top:20%;left:60%;animation:animate 10s linear infinite}
-.circ div:nth-child(5){top:67%;left:10%;animation:animate 6s linear infinite}
-.circ div:nth-child(6){top:80%;left:70%;animation:animate 12s linear infinite}
-.circ div:nth-child(7){top:60%;left:80%;animation:animate 15s linear infinite}
-.circ div:nth-child(8){top:32%;left:25%;animation:animate 16s linear infinite}
-.circ div:nth-child(9){top:90%;left:25%;animation:animate 9s linear infinite}
-.circ div:nth-child(10){top:20%;left:80%;animation:animate 5s linear infinite}
-@keyframes animate{0%{transform:scale(0) translateY(0) rotate(0);opacity:.8}100%{transform:scale(1.3) translateY(-90px) rotate(360deg);opacity:0}}
+    .swiper-pagination{margin-bottom:20vh}
+    .swiper-pagination-bullet-active{background-color: #fff !important;opacity:1 !important}
+    .swiper-pagination-bullet{background-color:rgba(158, 158, 158, 1) !important;}
+    .swiper-button-next, .swiper-button-prev{opacity:0;cursor:none}
+    .swiper-button-next:hover, .swiper-button-prev:hover{opacity:0}
+    .swiper-button-prev{display:none}
+    .swiper-pagination{margin-bottom:14vh}
+    .swiper-pagination-bullet-active{background-color: #fff !important;opacity:1 !important}
+    .swiper-pagination-bullet{background-color:rgba(255,255,255, 1) !important;}
+    .swiper-button-next, .swiper-button-prev{display:none;}
+    
+    .sembunyi{display: none !important;}
+    .stiker{display:flex;justify-content:center;align-items:center;width:88px;height:88px;margin-left:auto;margin-right:auto;box-shadow: 0 4px 30px rgba(255,255,255, 0.3);backdrop-filter: blur(5px);-webkit-backdrop-filter: blur(5px);background: rgba(255, 255, 255, 0.7);border: 2.5px solid rgba(255, 255, 255, 1);border-radius: 50%;padding:10px;margin-bottom:20px;transition:all .75s ease}
+    .stiker img{width:85px;height:85px;border-radius:50%}
+    b.merah{color:red}
+    b.kuning{color:yellow}
+    b.putih{text-shadow:none;padding-left:8px;padding-right:8px;padding-top:2px;padding-bottom:2px;background-color:white;border-radius:12px}
+    .garismerah{border-bottom:2px solid red}
+    .gariskuning{border-bottom:2px solid yellow}
+    p{color:white;font-size:15px;line-height:1.5em;}
+    .scale0{opacity:0;transform: scale(0);transition: all 1s ease;}
+    .scale1{opacity:1;transform: scale(1);transition: all 1s ease;}
+    svg{vertical-align: middle;width: 22px;height: 22px;fill: #fff}
+    .heart-icon {z-index:100;width: 30px;height: 30px;position: fixed;animation:  heartMove linear 1;top: -10vh;}
 
-svg{vertical-align: middle;width: 22px;height: 22px;fill: #fff}
-.sembunyi, #teksAkhiran{display:none !important}
+    @keyframes heartMove {0% {transform: translateY(-10vh);}100% {transform: translateY(100vh);}}
+    svg.line{fill: none;stroke: #fff;stroke-width: 2;animation: moving .7s linear infinite alternate;}
+    .spin{animation: spin 3s linear infinite alternate;}
+    @keyframes spin {from {transform: rotate(20deg);}to {transform: rotate(-20deg);}}
+    @keyframes moving {from {transform: translateY(0);}to {transform: translateY(3px);}}
+
+    .overlay {position: fixed;top: 0;left: 0;width: 100%;height: 100%;display: flex;justify-content: center;align-items: center;background:none;z-index:100;}
+    .loading-message {font-size: 13px;text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);color:white;text-align: center;}
+    .blocklove{display: none;flex-direction: column;justify-content: center;align-items: center;}
+    .lovein{background:#fff;color:#FF0900;border-radius:50%;width:40px;height:40px;padding:10px;font-size:30px;display:flex;align-items:center;text-align:center;justify-content:center;transition:all .3s ease;}
+    .lovein:hover{transform: scale(.9);color:#FF0900;}
+    .lovein svg{stroke:#FF0600;width:30px;height:30px}
+        
+    .blocktext{position:relative;width:100%;height: 370px; overflow: auto;}
+    #Tombol, .tombolLanjut{margin-top:10px;position:relative;opacity:0;margin-left:auto;margin-right:auto;display:flex;align-items:center;justify-content:center;list-style:none;transition:all 1s ease;}
+    #Tombol a, .tombolLanjut a{cursor:none;display:inline-flex;align-items:center; margin:0;margin:10px;transition:all .2s ease;padding:10px;outline:0;border:2px solid #ffffff;border-radius:30px;line-height:15px;background:rgba(0,0,0,.3);color:white;font-size:15px;font-weight:700;white-space:nowrap;overflow:hidden;box-shadow: rgba(255,255,255, 0.15) 0px 7px 29px 0px;z-index:1}
+    .tombolLanjut{opacity:1; margin-top:0;}
+    .tombolLanjut a{padding:6px 10px;font-size:13px;}
+
+    canvas{position:absolute;top:0;left:0;width:100%;height:100%;z-index:-1}
+
+    .music-btn{position:fixed;bottom:8px;right:8px;width:32px;height:32px;border-radius:50%;border:2px solid white;background:#ff7aa2;cursor:none;display:none;align-items:center;justify-content:center;box-shadow:0 4px 10px rgba(0,0,0,.25);z-index:9999}
+    .music-btn svg{width:18px;height:18px;fill:#fff;display:none}
+    .music-btn.play #iconPlay{display:block}
+    .music-btn.pause #iconPause{display:block}
+
+    /* Pilihan Ganda */
+    .pilihan-wrap{display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:10px;opacity:0;transform:scale(0);transition:all 1s ease;}
+    .pilihan-wrap.scale1{opacity:1;transform:scale(1);}
+    .pilihan-btn{cursor:pointer;display:inline-flex;align-items:center;justify-content:center;padding:10px 24px;outline:0;border:2px solid #ffffff;border-radius:30px;line-height:15px;background:rgba(0,0,0,.3);color:white;font-size:15px;font-weight:700;white-space:nowrap;box-shadow:rgba(255,255,255,0.15) 0px 7px 29px 0px;min-width:160px;transition:all .3s ease;}
+    .pilihan-btn:active{transform:scale(0.95);}
+    .pilihan-btn.benar{background:rgba(0,180,0,.55);border-color:#00ff88;transform:scale(1.05);}
+    .pilihan-btn.salah{background:rgba(180,0,0,.55);border-color:#ff4444;}
+
+    /* SweetAlert custom */
+    .swal-salah-img{width:90px;height:90px;padding:8px;border-radius:50%;object-fit:cover;margin-bottom:8px;border:2px solid #fff;box-shadow:0 0 16px rgba(255,68,68,.5);}
+    .swal2-timer-progress-bar{background: linear-gradient(to right,#ff4444,#ff9900) !important;}
+    .swal2-popup{background:rgba(0,0,0,.75);border:3px solid white;border-radius:20px !important;padding:24px 20px 16px !important;}
+    .swal2-title{font-size:20px !important;color:#ff3b3b !important;font-weight:800 !important;padding:0}
+    .swal2-html-container{font-size:16px !important;color:#fff !important;}
+
+    body.swal2-shown,html.swal2-shown {overflow: auto !important;padding-right: 0 !important;}
+    .swal2-container {position: fixed !important;}
 </style>
 <body>
-	
-   <!-- Ganti Audio di sini -->
-   <audio src="https://feeldreams.github.io/audio/melody2.mp3" id="linkmp3" class="sembunyi"></audio>
-   
-   <div id="bodyblur">
-     <!-- Wallpaper --><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgP76JCF9j871Kt2XUErKR4u-rjRwZLBvKM1pIAL1-4jUewBnEOSY3t5JaZGDiOBraYNe2VAORgp8hIDU5eW1A7Wr01gm_HEr6ZsFOiCv536ojZz1KzQmo8-9fQDS1clpEEElSix-3AyDmqzJwWFhY0568NmIaqNexLcHM8q3UC1uq7JoPY5a_lDUMnCs6Z/s1600/1000403544.jpg" id="wallpaper"/><div id="beneranblur"></div>
+
+	<div class="overlay">
+    <div class="loading-message">Hai kamu!<br>Tunggu dulu ya..</div>
+     <div id="loveIn" class="blocklove">
+        <a href="https://hbd.feeldream.id" target="_blank" class="lovein"><svg class='line' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><g transform='translate(2.550170, 3.550158)'><path d='M0.371729633,8.89614246 C-0.701270367,5.54614246 0.553729633,1.38114246 4.07072963,0.249142462 C5.92072963,-0.347857538 8.20372963,0.150142462 9.50072963,1.93914246 C10.7237296,0.0841424625 13.0727296,-0.343857538 14.9207296,0.249142462 C18.4367296,1.38114246 19.6987296,5.54614246 18.6267296,8.89614246 C16.9567296,14.2061425 11.1297296,16.9721425 9.50072963,16.9721425 C7.87272963,16.9721425 2.09772963,14.2681425 0.371729633,8.89614246 Z'></path><path d='M13.23843,4.013842 C14.44543,4.137842 15.20043,5.094842 15.15543,6.435842'></path></g></svg></a>
+        <p id="ket">Sentuh LOVEnya!</p>
+     </div>
    </div>
    
-   <div id='Content'>
+  <!-- Music -->
+  <audio id="linkmp3" src="shttps://feeldreams.github.io/audio/wedont.mp3" loop></audio>
 
-     <p id="ket">Kirim video ini ke Ayaangg 🫣💕</p>
-   <div><div id="loveIn" class="awalan">
-     <svg class='line' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><g transform='translate(2.000000, 2.000000)'><path d='M9.27542857,0.714285714 C14.0030476,0.714285714 17.836381,4.54666667 17.836381,9.2752381 C17.836381,14.0038095 14.0030476,17.8361905 9.27542857,17.8361905 C4.54685714,17.8361905 0.71447619,14.0038095 0.71447619,9.2752381 C0.71447619,4.54666667 4.54685714,0.714285714 9.27542857,0.714285714 Z'></path><path d='M17.8989524,16.487619 C18.678,16.487619 19.3094286,17.12 19.3094286,17.8980952 C19.3094286,18.6780952 18.678,19.3095238 17.8989524,19.3095238 C17.1199048,19.3095238 16.4875238,18.6780952 16.4875238,17.8980952 C16.4875238,17.12 17.1199048,16.487619 17.8989524,16.487619 Z'></path></g></svg>
-     <label>S.id/tigapilihan</label>
-   </div></div>
-     
-     <div class="kumpulanstiker">
-         <!-- Stiker untuk Konten -->
-         <img src="https://feeldreams.github.io/pandapanah.gif" id="fotostiker"/>
-         <img src="https://htmlku.com/0/panda/pusn.gif" id="fotostiker2"/>
-         <img src="https://feeldreams.github.io/gumush.gif" id="fotostiker3"/>
-         <img src="https://feeldreams.github.io/cilukba.gif" id="fotostiker4"/>
-         <img src="https://htmlku.com/0/panda/cubit.gif" id="fotostiker5"/>
-         <img src="https://htmlku.com/0/panda/ciumin.gif" id="fotostiker6"/>
-         <img src="https://htmlku.com/0/panda/muah.gif" id="fotostiker7"/>
-     </div>
-     
-     <div><blockquote id='bq' data-text='&#9829;'>
-     <div class="textOverlay">
+  <button id="musicBtn" class="music-btn" aria-label="Play/Pause">
+    <svg id="iconPlay" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"></polygon></svg>
+    <svg id="iconPause" viewBox="0 0 24 24"><rect x="6" y="5" width="4" height="14"></rect><rect x="14" y="5" width="4" height="14"></rect></svg>
+  </button>
 
-       <p id="kalimat"><span style='font-size:19px'><b>Alooo kamuuu! 😍</b></span><br><br>Orang paling istimewa di<br>seluruh alam semesta… 🌸✨</p>
-       <p id="kalimat1ngetik">Aku tiba-tiba pengen nulis ini karena hatiku lagi penuh banget sama kamu 💖</p>
-       <p id="kalimat2ngetik">Aku cuma mau bilang kalau kamu ngga pernah sekalipun gagal jadi milikku 😍</p>
-       <p id="kalimat3ngetik">Dari caramu senyum, caramu sabar dengerin aku, sampai hal-hal kecil yang kamu lakuin, semuanya selalu berhasil bikin aku jatuh cinta lagi dan lagi setiap harinya 💕</p>
-       <p id="kalimat4ngetik">Makasih ya, udah mau jadi rumah paling nyaman buat aku pulang 🏡💖</p>
-	   
-     </div>
+  <!-- Background -->
+  <div id="backgroundbody"><img src="wp/9.jpg" id="wallpaper"/></div>
 
-       <div class="progress-bar-container">
-         <div id="progress-bar" class="progress-bar"></div>
-       </div>
-       
-     </blockquote></div>
-
-     <!-- Teks Terakhir -->
-     <p id="teksAkhiran"><b>Terakhir,</b><br><br>Maafin aku ya kalau aku belum bisa jadi pasangan yang sempurna, tapi aku janji bakal terus berusaha jadi versi terbaik demi kamu, demi kita. Kamu itu pelangi setelah hujan buat aku, yang selalu datang di saat dunia lagi berisik dan bikin aku cape 😢<br><br>Tolong jangan pernah ngerasa kurang ya, karena di mataku kamu itu lebih dari cukup—bahkan lebih dari yang pernah aku bayangkan 🤍<br><br><i><b>I love you</b> more than words could<br>ever say. 💌💕</i></p>
-
-     <!-- Tombol Kirim Pesan -->
-     <div id="Tombol"><a id="By">&#128140; Balas</a></div>
-
-     <!-- Pesan yang dikirim ke WhatsApp -->
-     <span id="pesanWA" class="sembunyi">Ilvyouu too 🫶💘💕</span>
-     
-   </div>
+  <!-- Stiker Ledekin -->
+  <img src="https://htmlku.com/0/panda/ledekin.gif" alt="" id="stikerSalah" style="display: none;">
    
-   <div>
-    <div>
-      <div class="circ">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
+  <!-- Swiper -->
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+    	
+    <!-- Slide 1 -->
+    <div class="swiper-slide">
+        <div id="stiker1" class="scale0 stiker"><img src="https://htmlku.com/0/panda/cubit.gif"/></div>
+        <h1 id="teks1" class="scale0 itim" style="font-size: 20px;">Alooo Kamuuu! 🫣<br><br><span style="font-size:16.5px;font-weight:400;">Aku mau nanya nih 🤣</span><br><br>>>></h1>
     </div>
+    <!-- Slide 1 -->
+
+    <!-- Slide 2 -->
+    <div class="swiper-slide">
+        <div id="stiker2" class="scale0 stiker">
+          <img id="stikerImg2" src="https://feeldreams.github.io/pusn.gif" data-salah="https://feeldreams.github.io/emawh.gif"/>
+        </div>
+        <h1 id="teks2" class="scale0 itim" style="font-size:17px">
+          Tebak Ini Hewan Apa? 🤔
+        </h1>
+        <div id="pilihan2" class="pilihan-wrap">
+          <button class="pilihan-btn" onclick="jawabPilihan(2, 'Anjing', true, 'Anjing')">🐕 Anjing</button>
+          <button class="pilihan-btn" onclick="jawabPilihan(2, 'Kucing', false, 'Anjing')">🐱 Kucing</button>
+        </div>
+    </div>
+    <!-- Slide 2 -->
+
+    <!-- Slide 3 -->
+    <div class="swiper-slide">
+        <div id="stiker3" class="scale0 stiker">
+          <img id="stikerImg3" src="https://feeldreams.github.io/mndkat.gif" data-salah="https://feeldreams.github.io/emawh.gif"/>
+        </div>
+        <h1 id="teks3" class="scale0 itim" style="font-size:17px;">
+          Kalo Ini Hewan Apa? 👀
+        </h1>
+        <div id="pilihan3" class="pilihan-wrap">
+          <button class="pilihan-btn" onclick="jawabPilihan(3, 'Babi', true, 'Babi')">🐷 Babi</button>
+          <button class="pilihan-btn" onclick="jawabPilihan(3, 'Marmut', false, 'Babi')">🐹 Marmut</button>
+        </div>
+    </div>
+    <!-- Slide 3 -->
+    	
+    <!-- Slide 4 -->
+    <div class="swiper-slide">
+        <div id="stiker4" class="scale0 stiker">
+          <img id="stikerImg4" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhUyC_Jx-S-vPJdvCOCADecfyl9Z5jIxGBvNJjiSKtdTN2timkJdbkZlVnrIbe7JVQFZZ9NLyg6VedxWbhc-ObKFcNKEye4S_oo6KHTIyU9AvGGaGFMWdcwHUxMVqXZXGEjM1vBqMsIvuhtlHGuig_UE5n9vQCO9YFizjsjUZw5p2lvVM1qph1n18eel6oG/s1600/41375.gif" data-salah="https://feeldreams.github.io/emawh.gif"/>
+        </div>
+        <h1 id="teks4" class="scale0 itim" style="font-size:17px;">Satu Lagi Deh, Apa Hayoo? 😝</h1>
+        <div id="pilihan4" class="pilihan-wrap">
+          <button class="pilihan-btn" onclick="jawabPilihan(4, 'Angsa', false, 'Kucing')">🦢 Angsa</button>
+          <button class="pilihan-btn" onclick="jawabPilihan(4, 'Kucing', true, 'Kucing')">🐱 Kucing</button>
+        </div>
+    </div>
+    <!-- Slide 4 -->
+      	
+    <!-- Slide Terakhir -->
+    <div class="swiper-slide">
+    <div id="stiker5" class="scale0 stiker" style="margin-top:160px"><img id="stiker12a" src="https://feeldreams.github.io/weee.gif"/><img id="stiker12b" class="sembunyi" src="https://feeldreams.github.io/emawh.gif"/></div>
+    <div id="scroll-container" class="blocktext" style="margin-top:20px">
+        <p id="teks5" class="itim" style="font-size:16px;text-align:left;margin:0 55px 0 40px"></p>
+        <!-- Tombol Kirim Pesan -->
+        <div id="Tombol">
+            <a id="By" onClick="fungsimau()">💌 Kirim PAP</a>
+        </div>
+    </div>
+    <canvas id="game-canvas"></canvas>
+    </div>
+    <!-- Slide Terakhir -->
+      
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
   </div>
 
-<script>
-  var totalTime = 500;kecepatan = 2;kecepatan2=5;ftganti=0;fungsi=0;fungsiAwal=0;pesanwhatsapp = pesanWA.innerHTML;deffotostiker=fotostiker.src;Content.style = "opacity:1;margin-top:30vh;";wallpaper.style="opacity:1";
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+  	var teksSekarang = 1;
+    var ftom = 0;
+    var pesanwhatsapp = "";
+    const body = document.querySelector("body");
 
-  audio = new Audio('' + linkmp3.src);
+    // Simpan jawaban
+    var jawabanUser = {2: null, 3: null, 4: null};
+    var jawabanBenarMap = {2: false, 3: false, 4: false};
 
-  document.getElementById("loveIn").onclick = function() {if(fungsiAwal==0){audio.play();fungsiAwal=1;loveIn.style="transition:all .7s ease;opacity:0";ket.style="opacity:0";setTimeout(mulaiKonten,500)}}
+    const audio = document.getElementById("linkmp3"), btn = document.getElementById("musicBtn");
+    btn.classList.add("pause");
+    btn.onclick = () => {
+      audio.paused ? (audio.play(), btn.className = "music-btn pause") : (audio.pause(), btn.className = "music-btn play");
+    };
 
-  async function mulaiKonten() {
-    loveIn.style="display:none";ket.style="display:none";
-    Content.style = "opacity:1;margin-top:7vh";
-    bodyblur.style="opacity:.6";
-    fotostiker.style="display:inline-flex;";
-    setTimeout(ftmuncul,300);setTimeout(bqmuncul,500);
-  }
-  
-  function ftmuncul(){
-    if(ftganti==0){fotostiker.src = deffotostiker;}
-    if(ftganti==1){fotostiker.src = fotostiker2.src;}
-    if(ftganti==2){fotostiker.src = fotostiker3.src;}
-    if(ftganti==3){fotostiker.src = fotostiker4.src;}
-    if(ftganti==4){fotostiker.src = fotostiker5.src;}
-    if(ftganti==5){fotostiker.src = fotostiker6.src;}
-    if(ftganti==6){fotostiker.src = fotostiker7.src;}
-    fotostiker.style="display:inline-flex;opacity:1;transition:all .7s ease;transform:scale(1);";
-  }
-  function fthilang(){fotostiker.style="display:inline-flex;opacity:1;transition:all .7s ease;transform:scale(.1)";}
-  
-  function bqmuncul(){bq.style = "position:relative;opacity:1;visibility:visible;transform: scale(1);margin-top:15px";setTimeout(mulaiketik1,200);fungsi=1;}
-  function nimasikal() {
-    kalimat.style="opacity:0;transform:scale(.3);";
-    setTimeout(()=>{
-        if (opsLcheck !== jumlahP) {
-            setTimeout(()=>{opsLclick=1},700);kalimat.style="opacity:1;transform:scale(1);";
-        } else {
-            kalimat.style="opacity:1;transform:scale(1.2);";
+    var swiper = new Swiper(".mySwiper", {
+      pagination: {el: ".swiper-pagination", dynamicBullets: true},
+      allowTouchMove: false,
+      on: {
+        slideChange: function () {
+          teksSekarang++;
+          var teksScale   = document.querySelector('#teks'   + teksSekarang);
+          var stikerScale = document.querySelector('#stiker' + teksSekarang);
+
+          setTimeout(function () {
+            if (teksScale)   teksScale.classList.add("scale1");
+            if (stikerScale) stikerScale.classList.add("scale1");
+
+            if (teksSekarang == 2) document.getElementById('pilihan2').classList.add("scale1");
+            if (teksSekarang == 3) document.getElementById('pilihan3').classList.add("scale1");
+            if (teksSekarang == 4) document.getElementById('pilihan4').classList.add("scale1");
+
+            if (teksSekarang == 5) {
+              var salahCount = 0;
+              for (var k in jawabanBenarMap) { if (!jawabanBenarMap[k]) salahCount++; }
+
+              var varteks5 = salahCount === 0
+                ? '<b><span style="font-size:19px">Yeaayy!! 🫶</span></b><br><br>Makasii yaa udah mau jawab<br>semua pertanyaanku hhee 🫣<br><br><span style="font-size:22px">𖹭.ᐟ</span><br>Kirim hasil jawabannya<br>ke WhatsApp&nbsp;aku yaa 💕'
+                : '<b span style="font-size:19px">Yahhh! 😝</b><br><br>Karena kamu salah <b>' + salahCount + ' jawaban</b>, maka kamu wajib <b>kirim pap sebanyak ' + salahCount + ' foto</b> yaa 🤣🫵📸<br><br>Awas ga boleh kurang! 🏃🤪';
+
+              pesanwhatsapp =
+                "1.%20Jawaban%20slide%202:%0A" + encodeURIComponent(jawabanUser[2] || "-") +
+                "%0A%0A2.%20Jawaban%20slide%203:%0A" + encodeURIComponent(jawabanUser[3] || "-") +
+                "%0A%0A3.%20Jawaban%20slide%204:%0A" + encodeURIComponent(jawabanUser[4] || "-");
+
+              katanimasi(varteks5);
+            }
+          }, 50);
         }
-    },200);
-  } 
-  
-  const progressBar = document.getElementById('progress-bar');
-  let currentTime = 0;
-  function updateProgressBar() {
-    currentTime += 100;
-    const progress = ((totalTime - currentTime) / totalTime) * 100;
-    progressBar.style.width = progress + '%';
+      },
+      navigation: {nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev"}
+    });
 
-    if (currentTime >= totalTime) {
-        clearInterval(setInterval(updateProgressBar, 100));
-        setTimeout(myCheck,100); 
+    function jawabPilihan(slideNum, jawaban, benar, jawabanBenarTeks) {
+      jawabanUser[slideNum]     = jawaban;
+      jawabanBenarMap[slideNum] = benar;
+
+      var stikerImg  = document.getElementById('stikerImg' + slideNum);
+      var urlSalah   = stikerImg.getAttribute('data-salah');
+
+      var btns = document.querySelectorAll('#pilihan' + slideNum + ' .pilihan-btn');
+      btns.forEach(function (b) { b.disabled = true; });
+
+      if (!benar) {
+        Swal.fire({
+          title: '❌ SALAH!',
+          html:
+            '<img class="swal-salah-img" src="' + stikerSalah.src + '" />' +
+            '<br><b>Jawabannya adalah ' + jawabanBenarTeks + '!</b>',
+          timer: 1800,
+          timerProgressBar: true,
+          showConfirmButton: false,
+          allowOutsideClick: false,
+          allowEscapeKey: false,
+          scrollbarPadding: false,
+          heightAuto: false,
+          backdrop: 'rgba(0,0,0,0.6)',
+          customClass: {
+            popup: 'swal2-popup',
+            title: 'swal2-title',
+            htmlContainer: 'swal2-html-container',
+            timerProgressBar: 'swal2-timer-progress-bar'
+          }
+        }).then(function () {
+            var stikerEl = document.getElementById('stiker' + slideNum);
+            stikerEl.style.opacity   = '0';
+            stikerEl.style.transform = 'scale(0)';
+            setTimeout(function () {
+                stikerImg.src            = urlSalah;
+                stikerEl.style.opacity   = '1';
+                stikerEl.style.transform = 'scale(1)';
+            }, 300);
+
+            setTimeout(function () {
+                btns.forEach(function (b) {
+                    var label = b.textContent.trim();
+                    if (label.indexOf(jawaban) !== -1)          b.classList.add('salah');
+                    if (label.indexOf(jawabanBenarTeks) !== -1) b.classList.add('benar');
+                });
+
+                setTimeout(function () {
+                    swiper.slideNext();
+                }, 2000);
+            }, 200);
+        });
+
+      } else {
+        btns.forEach(function (b) {
+          if (b.textContent.trim().indexOf(jawaban) !== -1) b.classList.add('benar');
+        });
+        setTimeout(function () { swiper.slideNext(); }, 800);
+      }
     }
-  }
-  
-  function prbhn(){if (opsLcheck == jumlahP - 1) {kecepatan=kecepatan2}}
-  
-  function tombol(){Tombol.style="opacity:1;transform: scale(1);";fungsi=1}
-  document.getElementById("By").onclick = function() {if(fungsi==1){window.location = "https://api.whatsapp.com/send?phone=&text=" + pesanwhatsapp;}}
 
-  vketik1=kalimat.innerHTML;kalimat.innerHTML = "";
-  function mulaiketik1(){
-    kalimat.innerHTML = "";
-    if(opsLcheck>=5){
-        scrollInterval = setInterval(autoScroll, 50);
+    function katanimasi(varteks) {
+      document.getElementById('teks5').innerHTML = "";
+      new TypeIt("#teks5", {
+        strings: ["" + varteks], startDelay: 250, speed: 22, cursor: true,
+        afterComplete: function () {
+          clearInterval(scrollInterval);
+          document.getElementById('teks5').innerHTML = varteks;
+          Tombol.style = "margin-top:30px;opacity:1;transform: scale(1);";
+          ftom = 1;
+          mulaiKelopak('game-canvas');
+        }
+      }).go();
     }
 
-    new TypeIt("#kalimat", {
-    strings: [vketik1], startDelay: 50, speed: kecepatan, waitUntilVisible: true,
-    afterComplete: function(){
-        kalimat.innerHTML = vketik1;
-        if (opsLcheck <= jumlahP) {setInterval(updateProgressBar, 100);opsLclick=1;}
-
-        if(opsLcheck == 5){
-        setTimeout(()=>{
-            document.querySelector(".progress-bar-container").style="display:none";
-            kalimat.style = "line-height:1.3em;text-align:left;font-size:17px";
-            vketik1 = teksAkhiran.innerHTML;
-            prbhn(); 
-            mulaiketik1();
-            opsLcheck+=1;ftganti += 1;fthilang();setTimeout(ftmuncul, 300);
-        }, 2000);
-        }
-        // Akhir
-        if (opsLcheck == 6){
-            ftganti += 1;fthilang();setTimeout(ftmuncul, 300);tombol();clearInterval(scrollInterval);
-        }
-    },}).go();
-  }
-  
-  let scrollInterval;
-  const container = document.querySelector(".textOverlay");
-  function autoScroll() {container.scrollTop += 10;}  
-        
-  const jumlahP = document.querySelectorAll("#bq p").length;
-  var kalimatElements = document.querySelectorAll('[id^="kalimat"]');
-  var kalimatList = {};kalimatElements.forEach(function(element, index) {if (element.id !== "kalimat") {kalimatList[index] = element.innerHTML;}});
-
-  opsLclick=0;opsLcheck=1;ftganti=0;
-  function myCheck() {
-    if(opsLclick==1){
-    if (opsLcheck !== jumlahP) {
-        
-        if(document.getElementById("kalimat" + opsLcheck + "ngetik")){
-            vketik1 = kalimatList[opsLcheck];
-            prbhn();mulaiketik1();
-        } else {
-            teksganti = kalimatList[opsLcheck];
-            nimasikal();
-            kalimat.innerHTML = teksganti;
-        }
-        
-        ftganti += 1;fthilang();setTimeout(ftmuncul, 300);
-        opsLcheck+=1;
-        
-        if (opsLcheck !== jumlahP) {
-        setTimeout(function(){
-            currentTime = 0;
-            const progress = ((totalTime - currentTime) / totalTime) * 100;
-            progressBar.style.width = progress + '%';  
-        }, 400);
-        }
+    // Animasi Kelopak Bunga
+    let animationFrameId;
+    function mulaiKelopak(canvasId) {
+      const canvas = document.getElementById(canvasId);
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      canvas.width  = window.innerWidth;
+      canvas.height = window.innerHeight;
+      const kelopak = Array.from({length: 20}, () => ({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        radius: Math.random() * 5 + 2,
+        speed: Math.random() * 0.5 + 1
+      }));
+      function gambarKelopak() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        kelopak.forEach(petal => {
+          ctx.beginPath();
+          ctx.arc(petal.x, petal.y, petal.radius, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(255,255,255,0.2)';
+          ctx.fill();
+          petal.y += petal.speed;
+          if (petal.y > canvas.height) petal.y = -petal.radius;
+          petal.x += Math.sin(petal.y / 50) * 2;
+        });
+        animationFrameId = requestAnimationFrame(gambarKelopak);
+      }
+      gambarKelopak();
     }
-    opsLclick=0;
+
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+      document.querySelector(".loading-message").style.display = "none";
+      document.querySelector(".blocklove").style.display = "flex";
+    }, 200);
+
+    function berjatuhan() {
+      const heart = document.createElement("div");
+      heart.innerHTML = "<svg class='line spin' style='opacity:.5;z-index:100' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><g transform='translate(2.550170, 3.550158)'><path d='M0.371729633,8.89614246 C-0.701270367,5.54614246 0.553729633,1.38114246 4.07072963,0.249142462 C5.92072963,-0.347857538 8.20372963,0.150142462 9.50072963,1.93914246 C10.7237296,0.0841424625 13.0727296,-0.343857538 14.9207296,0.249142462 C18.4367296,1.38114246 19.6987296,5.54614246 18.6267296,8.89614246 C16.9567296,14.2061425 11.1297296,16.9721425 9.50072963,16.9721425 C7.87272963,16.9721425 2.09772963,14.2681425 0.371729633,8.89614246 Z'></path><path d='M13.23843,4.013842 C14.44543,4.137842 15.20043,5.094842 15.15543,6.435842'></path></g></svg>";
+      heart.className = "heart-icon";
+      heart.style.left = (Math.random() * 95) + "vw";
+      heart.style.animationDuration = (Math.random() * 3) + 2 + "s";
+      document.body.appendChild(heart);
     }
-  }
-</script>
+    setInterval(function () {
+      var heartArr = document.querySelectorAll(".heart-icon");
+      if (heartArr.length > 100) heartArr[0].remove();
+    }, 100);
+
+    const scrollContainer = document.getElementById("scroll-container");
+    function autoScroll() { scrollContainer.scrollTop += 10; }
+    const scrollInterval = setInterval(autoScroll, 50);
+
+    async function jawab() { window.location = "https://api.whatsapp.com/send?phone=&text=" + pesanwhatsapp; }
+    function tombol() { Tombol.style = "margin-top:0;opacity:1;transform: scale(1);"; ftom = 1; }
+    ftom = 0; jumlahKlik = 0;
+    function fungsimau() { jawab(); }
+
+    var swiperBerfungsi = false;
+    var sudahKlik = true;
+
+    document.getElementById('loveIn').innerHTML = '<style>.lovein svg{animation:none;stroke:#ff0000;stroke-width:1.3;fill:none;width:35px;height:35px}</style><label class="lovein"><svg class="line" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g transform="translate(2.550170, 3.550158)"><path d="M0.371729633,8.89614246 C-0.701270367,5.54614246 0.553729633,1.38114246 4.07072963,0.249142462 C5.92072963,-0.347857538 8.20372963,0.150142462 9.50072963,1.93914246 C10.7237296,0.0841424625 13.0727296,-0.343857538 14.9207296,0.249142462 C18.4367296,1.38114246 19.6987296,5.54614246 18.6267296,8.89614246 C16.9567296,14.2061425 11.1297296,16.9721425 9.50072963,16.9721425 C7.87272963,16.9721425 2.09772963,14.2681425 0.371729633,8.89614246 Z"></path><path d="M13.23843,4.013842 C14.44543,4.137842 15.20043,5.094842 15.15543,6.435842"></path></g></svg></label><p id="ket">Sentuh LOVEnya!</p>';
+
+    document.getElementById("loveIn").onclick = async function () {
+      if (sudahKlik) {
+        audio.play();
+        musicBtn.style.display = "flex";
+        document.querySelector(".overlay").style.display = "none";
+        setTimeout(() => {
+          stiker1.classList.add("scale1");
+          teks1.classList.add("scale1");
+          setTimeout(function () { swiperBerfungsi = true; }, 500);
+          setTimeout(() => { swiper.slideNext(); }, 2100);
+        }, 500);
+      } else {
+        sudahKlik = true;
+      }
+    };
+  </script>
 </body>
 </html>
