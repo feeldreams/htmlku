@@ -320,7 +320,17 @@
         btns.forEach(function (b) {
           if (b.textContent.trim().indexOf(jawaban) !== -1) b.classList.add('benar');
         });
-        setTimeout(function () { swiper.slideNext(); }, 800);
+		var stikerEl = document.getElementById('stiker' + slideNum);
+            stikerEl.style.opacity   = '0';
+            stikerEl.style.transform = 'scale(0)';
+            setTimeout(function () {
+                stikerImg.src            = urlSalah;
+        }, 150);
+        setTimeout(function () {
+            stikerEl.style.opacity   = '1';
+            stikerEl.style.transform = 'scale(1)';
+        }, 300);
+        setTimeout(function () { swiper.slideNext(); }, 3200);
       }
     }
 
