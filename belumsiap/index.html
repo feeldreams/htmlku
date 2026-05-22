@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>s.id/belumsiap</title>
+  <title>💭 S.id/belumsiap</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Handlee&family=Sriracha&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script><link rel="stylesheet" href="">
 </head>
@@ -189,7 +189,7 @@
     <div class="decor decor-tl"></div>
     <div class="decor decor-br"></div>
     <canvas id="game-canvas"></canvas>
-    <h2 id="pesanKado" style="font-size:17.5px">Aku Punya Pesan Buat Kamu ✨</h2>
+    <h2 id="pesanKado" style="font-size:16px">Aku Punya Pesan Buat Kamu ✨</h2>
     <!-- Kado + Animasi -->
     <div class="kado-container" id="kadoContainer" onclick="bukaKado()">
     <div class="kado-box">
@@ -199,12 +199,12 @@
     </div>
     <div class="kado-item" id="kadoItem">
         <h3>Thankyou So Much!</h3>
-        <p>🎉</p>
+        <p>🫶💭</p>
     </div>
     </div>
 
     <p style="font-size:14.5px">Coba buka pesan ini yaa 🤍<br>Aku punya sesuatu buat kamu 🥺</p>
-    <button onclick="bukaKado()">Buka Pesan! 🎁</button>
+    <button onclick="bukaKado()">Buka Pesan! 💭</button>
   </div>
 
   <!-- Halaman 4: Pesan Akhir (Lama Hal3) -->
@@ -250,23 +250,23 @@
     // Edit Icon Memory Game di Sini
     const kartu = [
 	  { id: 3, icon: '🎁', pesan: '' },
-	  { id: 5, icon: '🥳', pesan: '' },
-	  { id: 6, icon: '😻', pesan: '' },
-	  { id: 1, icon: '🎉', pesan: '' },
+	  { id: 5, icon: '🫠', pesan: '' },
+	  { id: 6, icon: '🌷', pesan: '' },
+	  { id: 1, icon: '💭', pesan: '' },
 	  { id: 2, icon: '😶‍🌫️', pesan: '' },
 	  { id: 4, icon: '❤️', pesan: '' },
-	  { id: 6, icon: '😻', pesan: '' },
+	  { id: 6, icon: '🌷', pesan: '' },
 	  { id: 3, icon: '🎁', pesan: '' },
-	  { id: 5, icon: '🥳', pesan: '' },
+	  { id: 5, icon: '🫠', pesan: '' },
 	  { id: 2, icon: '😶‍🌫️', pesan: '' },
 	  { id: 4, icon: '❤️', pesan: '' },
-	  { id: 1, icon: '🎉', pesan: '' }
+	  { id: 1, icon: '💭', pesan: '' }
 	];
 
     // Edit Kata-kata di Sini
     const txtPertama = "<b style='font-size:16px'>Haii, bentar lagi kita udah pisah yaa 🥹🌷</b><br><br>Aku masih ga nyangka kalau sebentar lagi aku udah ga bisa lihat kamu di sekolah, ga bisa denger ketawa kamu, dan ga bisa lihat tingkah lucu kamu tiap hari lagii 😶‍🌫️ Hari yang sebenarnya ga pernah aku tunggu akhirnya datang juga seiring berjalannya waktu ⏳";
     const txtKedua = "<b style='font-size:13.5px'>Jujur aku belum siap buat semua ini 💔</b><br><br>Mungkin setelah lulus nanti kita bakal jarang ketemu dan sibuk dengan kehidupan masing-masing. Tapi semoga di mana pun kamu berada nanti, kamu selalu dalam keadaan baik, bahagia, dan dikelilingi hal-hal indah 🌤️💖";
-    const txtKetiga = "<b>Selamat menjalani kehidupan yang sebenarnya yaa 🌻🎓</b><br><br>Semangat terus buat belajar, meraih cita-cita, dan ngejar semua impian kamu. Walaupun nanti kita udah jarang ketemu, aku tetap sayang sama kamu dan tetap nyimpen semua kenangan kita baik-baik 🥺<br><br>── ᯓᡣ𐭩<br><b style='font-size:20px'>I Lvv U 💞</b><br><i>Forever in my memories.</i>";
+    const txtKetiga = "<b>Selamat menjalani kehidupan yang sebenarnya yaa 🌻🎓</b><br><br>Semangat terus buat belajar, meraih cita-cita, dan ngejar semua impian kamu. Walaupun nanti kita udah jarang ketemu, aku tetap sayang sama kamu dan tetap nyimpen semua kenangan kita baik-baik 🫠<br><br>── ᯓᡣ𐭩<br><br><b style='font-size:24px'>I Lvv U 💞</b><br><i>Forever in my memories.</i>";
   </script>
   <script>
   	audio = new Audio('' + linkmp3.src);
@@ -319,7 +319,7 @@
 
     // Buka Envelope
     function bukaEnvelope() {
-      //audio.play();
+      audio.play();
       const envelope = document.getElementById('envelope');
       envelope.classList.remove('close');
       envelope.classList.add('open');
