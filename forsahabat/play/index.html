@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>S.id/forsahabat</title>
+  <title>S.id/forsahabat — Selamat Hari Persahabatan 😻💭</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Handlee&family=Sriracha&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script><link rel="stylesheet" href="">
 </head>
@@ -262,7 +262,8 @@
 	];
 
     // Edit Kata-kata di Sini    
-    const txtPertama = "Sabtu, 30 Mei 2026 🗓️<br><b style='font-size:17px'>Selamat Hari Persahabatan! 🥳</b>";    
+    const tanggalHariIni = new Date().toLocaleDateString('id-ID', {weekday: 'long',day: 'numeric',month: 'long'});
+    const txtPertama = `${tanggalHariIni} 2026 🗓️<br><b style='font-size:17px'>Selamat Hari Persahabatan! 🥳</b>`;       
     const txtKedua = "Hari ini aku cuma mau bilang betapa bersyukurnya aku punya kamu sebagai sahabat terbaikku. Kamu selalu jadi tempat aku cerita, ketawa, bahkan jadi alasan aku buat semangat lagi saat hari-hari terasa berat 🫂🫠";
     const txtKetiga = "Makasih ya udah selalu ada dan nemenin aku sampai sejauh ini. Semoga persahabatan kita tetap langgeng, penuh cerita seru, dan selalu saling support apa pun keadaannya 🫶💭<br><br>Terakhir, jangan pernah ragu sama diri kamu sendiri yaa, karena kamu itu luar biasa dan aku bangga bisa kenal sama kamu 🥳💖<br><br>── ᯓᡣ𐭩<br><b style='font-size:18px'>Happy National<br>Best Friend Day! 🫶</b>";
   </script>
@@ -424,19 +425,19 @@
 
       new TypeIt("#teksCinta", {
         strings: txtPertama,
-        speed: 18,
+        speed: 25,
         startDelay: 300,
         afterComplete: function () {
           document.querySelector("#teksCinta .ti-cursor").style.display = "none";
           new TypeIt("#pesanAkhir", {
             strings: txtKedua,
-            speed: 18,
+            speed: 22,
             waitUntilVisible: true,
             afterComplete: function () {
               document.querySelector("#pesanAkhir .ti-cursor").style.display = "none";
               new TypeIt("#teksLucu", {
                 strings: txtKetiga,
-                speed: 18,
+                speed: 25,
                 waitUntilVisible: true,
                 afterComplete: function () {
                   document.querySelector("#teksLucu .ti-cursor").style.display = "none";
