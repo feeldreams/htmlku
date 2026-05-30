@@ -401,30 +401,26 @@ const texts = [
 
         var sudahKlik = true;
         var fungsiBerfungsi = false;
-
-        document.getElementById("loveIn").onclick = function () {
-    if (sudahKlik) return;
-
-    sudahKlik = true;
-    document.getElementById("loveIn").onclick = null;
-
-    document.querySelector(".cover").style = "opacity:0;transition:all .8s ease";
-    document.querySelector(".overlay").style = "opacity:0;transition:all .8s ease";
-
-    setTimeout(function () {
-        audio.play();
-
-        document.querySelector(".overlay").style.display = "none";
-        wallpaper.style = "transform:scale(1)";
-        document.querySelector(".mainMsg").style = "transform:scale(1)";
-
-        setTimeout(() => { showElements() }, 300);
-        setTimeout(() => { teksAnimasi(texts[currentIndex]) }, 300);
-
-        setTimeout(function () { fungsiBerfungsi = true }, 300);
-    }, 500);
-};
-
+        document.getElementById("loveIn").onclick = function () {            
+    document.querySelector(".cover").style = "opacity:0;transition:all .8s ease";      
+    document.querySelector(".overlay").style = "opacity:0;transition:all .8s ease";      
+    setTimeout(function () {      
+        audio.play();      
+      
+        document.querySelector(".overlay").style.display = "none";      
+        wallpaper.style = "transform:scale(1)";      
+        document.querySelector(".mainMsg").style = "transform:scale(1)";      
+      
+        setTimeout(() => { showElements() }, 300);      
+        setTimeout(() => { teksAnimasi(texts[currentIndex]) }, 300);      
+      
+        setTimeout(function () { fungsiBerfungsi = true }, 300);      
+    }, 500);      
+    
+    // Hanya bisa diklik satu kali
+    this.onclick = null;
+		}
+        
         let intervalHati;
     function hatiJatuh() {
       const hati = document.createElement('div');
