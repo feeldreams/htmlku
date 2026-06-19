@@ -118,7 +118,7 @@
    </div>
    
   <!-- Music -->
-  <audio id="linkmp3" src="shttps://feeldreams.github.io/audio/wedont.mp3" loop></audio>
+  <audio id="linkmp3" src="https://feeldreams.github.io/audio/wedont.mp3" loop></audio>
 
   <button id="musicBtn" class="music-btn" aria-label="Play/Pause">
     <svg id="iconPlay" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"></polygon></svg>
@@ -146,14 +146,17 @@
     <div class="swiper-slide">
         <div id="stiker2" class="scale0 stiker new" style="margin-top:60px">
           <img id="stikerImg2" src="wp/bebek0.png" data-salah="https://htmlku.my.id/assets/tebak/1b.jpg"/>
+          <img id="stikerbsatu" src="bebek3.webp" style="display:none"/>
+          <img id="stikerbdua" src="bebek2.webp" style="display:none"/>
+          <img id="stikerbtiga" src="bebek1.webp" style="display:none"/>
         </div>
         <h1 id="teks2" class="scale0 itim" style="font-size:17px;line-height:30px">
           Tebak Ini Hewan Apa? 😆<br><span style="font-size:15px;font-weight:400">(Kalo bener kita jadian 🤣)</span>
         </h1>
         <div id="pilihan2" class="pilihan-wrap">
-          <button class="pilihan-btn" onclick="jawabPilihan(2, 'Katak', true, 'Katak', 'wp/bebek3.png')">🐸 Katak</button>
-          <button class="pilihan-btn" onclick="jawabPilihan(2, 'Ayam', true, 'Ayam', 'wp/bebek2.png')">🐔 Ayam</button>
-          <button class="pilihan-btn" onclick="jawabPilihan(2, 'Bebek', true, 'Bebek', 'wp/bebek1.png')">🦆 Bebek</button>
+          <button class="pilihan-btn" onclick="jawabPilihan(2, 'Katak', true, 'Katak', 'satu')">🐸 Katak</button>
+          <button class="pilihan-btn" onclick="jawabPilihan(2, 'Ayam', true, 'Ayam', 'dua')">🐔 Ayam</button>
+          <button class="pilihan-btn" onclick="jawabPilihan(2, 'Bebek', true, 'Bebek', 'tiga')">🦆 Bebek</button>
         </div>
     </div>
     <!-- Slide 2 -->
@@ -233,7 +236,10 @@
 
       var stikerImg  = document.getElementById('stikerImg' + slideNum);
       var urlSalah   = stikerImg.getAttribute('data-salah');
-
+      var stikerBsatu = document.querySelector('#stikerbsatu');
+      var stikerBdua = document.querySelector('#stikerbdua');
+      var stikerBtiga = document.querySelector('#stikerbtiga');
+      
       var btns = document.querySelectorAll('#pilihan' + slideNum + ' .pilihan-btn');
       btns.forEach(function (b) { b.disabled = true; });
       //  ' + jawabanBenarTeks + '!
@@ -290,7 +296,9 @@
             stikerEl.style.opacity   = '0';
             stikerEl.style.transform = 'scale(0)';
             setTimeout(function () {
-                stikerImg.src            = stikerPilihan;
+                if(stikerPilihan=='satu'){stikerImg.src = stikerBsatu.src}
+                if(stikerPilihan=='dua'){stikerImg.src = stikerBdua.src}
+                if(stikerPilihan=='tiga'){stikerImg.src = stikerBtiga.src}
             }, 150);
             setTimeout(function () {
                 stikerEl.style.opacity   = '1';
