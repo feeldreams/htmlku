@@ -1,0 +1,338 @@
+
+<!DOCTYPE html>
+<html>
+<meta charset='UTF-8'/>
+<meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5' name='viewport'/>
+<meta content='IE=edge' http-equiv='X-UA-Compatible'/>
+
+<link rel="icon" type="image/svg+xml" href="https://feeldreams.github.io/main-icon.png"> 
+<link rel="apple-touch-icon" href="https://feeldreams.github.io/main-icon.png">
+<script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
+<script src="https://unpkg.com/scrollreveal"></script>
+
+<head>
+<title>S.id/selainaku</title>
+<meta name="description" content="by feeldream.id - Script HTML Bucin htmlku.my.id">
+</head>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&family=Itim:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Chewy&display=swap');
+
+:root {
+    --poppins: 'Poppins', sans-serif;
+    --nunito: 'Nunito Sans', sans-serif;
+    --itim: 'Itim', cursive;
+}
+
+.poppins{font-family: var(--poppins) !important;}
+.nunito{font-family: var(--nunito) !important;}
+.itim{font-family: var(--itim) !important;z-index:10}
+
+body {overflow:hidden;background:#000;font-family:var(--poppins); margin: 0;}
+
+section {position:relative;padding: 0 14px;height: 100vh;display: flex; flex-direction: column;align-items:left;text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);border-top:1px solid #fff}
+section {background:#000;background-image: var(--bg);background-attachment: fixed;background-position: center;background-repeat: no-repeat;background-size: cover;}
+section.first{border-top:0 solid #fff}
+section.first > img{opacity:0}
+section:nth-child(even) {color:white}
+section:nth-child(odd) {color:white}
+section > :first-child {margin-top:150px}
+
+.stiker{display:flex;justify-content:center;align-items:center;gap:10px;margin-left:auto;margin-right:auto;margin-bottom:20px;transform:scale(0);transition:all .7s ease;z-index:100}
+.stiker img{width:87px;height:87px;box-shadow: 0 4px 30px rgba(255,255,255, 0.3);backdrop-filter: blur(5px);-webkit-backdrop-filter: blur(5px);background: rgba(255, 255, 255, 0.7);border:2.5px solid #fff;border-radius: 50%;padding:6px;}
+section .wp img{position:absolute;top:0;left:0;width:100%;height:100%;padding:0;background:none;border:none}
+section .wp::after{content:"";position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.4);}
+#first_stiker{margin-top:-30px}
+
+p{font-family:var(--nunito);}
+h1 {font-size: 1.45rem;line-height:1.4em} h3 {font-size: 1.1rem;}
+h1, h2, h3,h4,h5{margin: 0;text-align: center;margin: 1rem 0;z-index:99}
+h3.anm{transition:all .7s ease}
+.pink{color:pink}
+.putih{text-shadow:none;padding:3px;background:white;color:red;border-radius:50%}
+
+p{color:white;font-size:17px;line-height:1.5em;text-align:center}
+p.anm{margin-top:5px;font-size:18px;text-align:center;margin-left:18px;margin-right:25px;}
+.scaleIn{transform: scale(0);}
+.text-lg{font-size:19px}
+.text-bold{font-weight:700}
+.text-xl{font-size:20px}
+.text-center{text-align:center}
+.text-left{text-align:left !important}
+#teksLoading{margin-top:10px !important;margin-bottom:10px !important;font-size:19px;transition:font-size .6s ease;}
+
+.blocktext{position:relative;width:100%;min-height: 100px;max-height:290px;margin-top:0; overflow: auto; display:flex;justify-content:left;text-align:left;background:rgb(63 55 83 / 40%);backdrop-filter:blur(5px);border-radius:18px 33px 18px 33px;backdrop-filter:blur(8px);box-shadow:none;border:2.5px solid rgba(255,255,255,.75);padding:0;transform:scale(0);transition:all .75s ease;z-index:10}
+#containerPesan{margin-top:20px;margin-bottom:0;padding:0;display:block;width:100%;overflow:auto;min-height:120px;justify-content:left;text-align:left;}
+
+.blocktext::before{content:"";position:absolute;inset:0;border-radius:30px;padding:2.5px;background:linear-gradient(45deg, #ff889c 0%, transparent 30%, transparent 70%, #ff889c 100%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;}
+.decor{position:absolute;width:12px;height:12px;border:3.3px solid #ff80ab;border-radius:3px;z-index:3}
+.decor-tl{top:10px;left:10px;border-right:none;border-bottom:none}
+.decor-br{bottom:10px;right:10px;border-left:none;border-top:none}
+	
+a {color:white;text-decoration: none;transition: all 0.3s ease-in-out;&:hover, &:focus, &:active {color: #f1e8d9;}}
+
+svg{vertical-align: middle;width: 22px;height: 22px;fill: #fff}
+.menu{display:flex;flex-direction:column;justify-content:center;align-items:center;transition: all 1s ease}
+.tombol{background-color: rgba(255,255,255,0);border-radius: 50px;overflow: hidden;display: flex;align-items: center;justify-content: center;-webkit-transition: all .2s ease-out;transition: all .2s ease-out;z-index:10}
+.tombol svg{width: 70px;height: 70px;margin: auto;fill:#ffd4d4;stroke: #ff0000;animation: spin2 1s linear infinite alternate;}
+svg.line{fill: none;stroke: #fff;stroke-width: 2;animation: moving .7s linear infinite alternate;}
+.menu span{z-index:1;font-size:12px;margin-top:12px;color:white;text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);}
+.menu{margin-top:25px;transform: scale(0);opacity: 1;}
+
+.overlay {position: fixed;top: 0;left: 0;width: 100%;height: 100%;display: flex;justify-content: center;align-items: center;background:rgba(0,0,0,0);z-index:100;}
+.loading-message {font-size: 13px;text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);color:white;text-align: center;}
+
+.swal2-modal > *{color:white}
+.swal2-title{line-height:1.3em;font-size:18px;text-align:center;padding:15px 30px 0 30px;}
+.swal2-container.swal2-backdrop-show{background: rgba(0,0,0,.5);}
+.swal2-timer-progress-bar-container > *{opacity:.7;background:#00B6FF;margin:0 2px}
+.swal2-modal{box-shadow: rgba(255,255,255, 0.3) 0px 7px 29px 0px;background:rgba(0,0,0,.9);max-width:320px;border-right:2px solid #fff;border-left:2px solid #fff;border-radius:4px;top:-50px;}
+
+.transition{transition:all .75s ease}
+.scale0{transform: scale(0);}
+
+.sembunyi > *, .sembunyi{display:none !important}
+
+.blocklove{display: none;flex-direction: column;justify-content: center;align-items: center;}
+.lovein{background:#fff;color:#FF0900;border-radius:50%;width:40px;height:40px;padding:10px;font-size:30px;display:flex;align-items:center;text-align:center;justify-content:center;transition:all .3s ease;}
+.lovein:hover{transform: scale(.9);color:#FF0900;}
+
+@keyframes spin2 {from {transform: rotate(5deg);} to {transform: rotate(-5deg);}}
+@keyframes moving {from {transform: translateY(0);} to {transform: translateY(3px);}}
+
+.hati {position: fixed;top: 0;left: 0;width: 26px;height: 26px;opacity: 0.7;z-index: 0;pointer-events: none;animation: ngelayang 5s ease-in-out forwards;}
+.hati svg {display: block;width: 100%;height: 100%;fill: #ff1744;stroke: none;}
+@keyframes ngelayang {0% {transform: translateY(0vh);opacity: 0;}20% {opacity: 0.5}80% {opacity: 0.5;}100% {transform: translateY(100vh);opacity: 0;}}
+
+.wrapper{position:fixed}.box div{position:fixed;width:60px;height:60px;background-color:transparent;border:6px solid rgba(255,255,255,.3);border-radius:50%;z-index:0}.box div:nth-child(1){top:12%;left:42%;animation:animate 10s linear infinite}.box div:nth-child(2){top:70%;left:50%;animation:animate 7s linear infinite}.box div:nth-child(3){top:17%;left:6%;animation:animate 9s linear infinite}.box div:nth-child(4){top:20%;left:60%;animation:animate 10s linear infinite}.box div:nth-child(5){top:67%;left:10%;animation:animate 6s linear infinite}.box div:nth-child(6){top:80%;left:70%;animation:animate 12s linear infinite}.box div:nth-child(7){top:60%;left:80%;animation:animate 15s linear infinite}.box div:nth-child(8){top:32%;left:25%;animation:animate 16s linear infinite}.box div:nth-child(9){top:90%;left:25%;animation:animate 9s linear infinite}.box div:nth-child(10){top:20%;left:80%;animation:animate 5s linear infinite}@keyframes animate{0%{transform:scale(0) translateY(0) rotate(0);opacity:.8}100%{transform:scale(1.3) translateY(-90px) rotate(360deg);opacity:0}}
+</style>
+<body>
+	
+   <div class="overlay">
+    <div class="loading-message">Hai kamu!<br>Tunggu dulu ya..</div>
+     <div id="loveIn" class="blocklove">
+        <style>.lovein svg{animation:none;stroke:#ff0000;stroke-width:1.3;fill:none;width:35px;height:35px}</style>
+        <a href="https://www.feeldream.id/2023/01/script-feeldream.html?m=1#punyasesuatu" target="_blank" class="lovein"><svg class='line' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><g transform='translate(2.550170, 3.550158)'><path d='M0.371729633,8.89614246 C-0.701270367,5.54614246 0.553729633,1.38114246 4.07072963,0.249142462 C5.92072963,-0.347857538 8.20372963,0.150142462 9.50072963,1.93914246 C10.7237296,0.0841424625 13.0727296,-0.343857538 14.9207296,0.249142462 C18.4367296,1.38114246 19.6987296,5.54614246 18.6267296,8.89614246 C16.9567296,14.2061425 11.1297296,16.9721425 9.50072963,16.9721425 C7.87272963,16.9721425 2.09772963,14.2681425 0.371729633,8.89614246 Z'></path><path d='M13.23843,4.013842 C14.44543,4.137842 15.20043,5.094842 15.15543,6.435842'></path></g></svg></a>
+        <p id="ket">Sentuh LOVEnya!</p>
+     </div>
+   </div>
+
+  <audio src="https://feeldreams.github.io/audio/angelbabydj.mp3" id="linkmp3" class="sembunyi"></audio>
+   
+  <section class="first" id="inisection">
+       <div class="wp"><img src="https://htmlku.com/0/1.webp" style="opacity:.55"/></div>
+       <div id="first_stiker" class="stiker">
+        <img id="inistiker1" src="https://htmlku.com/0/panda/cilukba.gif"/>
+        <img id="inistiker2" class="sembunyi" src="https://htmlku.com/0/panda/pusn.gif"/>
+       </div>
+       
+       <h1 id="teks1" class="scaleUp itim">Alooo Kamuuu! 🫶</h1>
+       <h1 id="teks2" class="sembunyi">Kamu Cantik Seperti Senja,<br>Kamu Juga Manis Seperti Mangga,<br>Tapi..      Kok Gaada yang Punya? 🤭</h1>
+       <p id="teks3" class="scaleIn transition">Aku Ada Pesan buat Kamuu!<br><br><span class="text-xl">👉👈</span></p>
+       
+       <div id="sentuh" class="menu">
+        <a class='tombol' onclick="klikEmotHeart()">
+          <svg id="svgheart" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><g transform='translate(2.550170, 3.550158)'><path d='M0.371729633,8.89614246 C-0.701270367,5.54614246 0.553729633,1.38114246 4.07072963,0.249142462 C5.92072963,-0.347857538 8.20372963,0.150142462 9.50072963,1.93914246 C10.7237296,0.0841424625 13.0727296,-0.343857538 14.9207296,0.249142462 C18.4367296,1.38114246 19.6987296,5.54614246 18.6267296,8.89614246 C16.9567296,14.2061425 11.1297296,16.9721425 9.50072963,16.9721425 C7.87272963,16.9721425 2.09772963,14.2681425 0.371729633,8.89614246 Z'></path><path d='M13.23843,4.013842 C14.44543,4.137842 15.20043,5.094842 15.15543,6.435842'></path></g></svg>
+        </a>
+        <svg class='line' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><g transform='translate(5.000000, 8.500000)'><path d='M14,0 C14,0 9.856,7 7,7 C4.145,7 0,0 0,0' ></path></g></svg>
+       </div>
+  </section>
+  
+  <section>
+      <div class="wp"><img src="https://htmlku.com/0/2.webp" style="opacity:.75"/></div>
+      <div class="stiker" style="margin-top:-30px;transform:scale(0)" id="second_stiker">
+        <img id="inistiker3" src="https://htmlku.com/0/panda/ledekin.gif"/>
+        <img id="inistiker4" class="sembunyi" src="https://htmlku.com/0/panda/muah.gif"/>
+        <img id="inistiker5" class="sembunyi" src="https://htmlku.com/0/panda/terlope.gif"/>
+      </div>
+      
+      <div class="blocktext">
+        <div class="decor decor-tl"></div>
+        <div class="decor decor-br"></div>
+        <div id="containerPesan">
+            <p id="textUtama" class="anm itim text-lg text-left"></p>
+            <p id="teksLoading" class="anm itim text-lg text-left text-bold"></p>
+            <p id="textTambahan" class="anm itim text-lg text-left"></p>
+        </div>
+      </div>
+  </section>
+  
+  <!-- Box elements animation -->
+    <div>
+        <div class="swrapper">
+            <div class="box">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+
+<script>
+var ketikanPertama = "<b>Mending Sini Jadi Punyaku Aja 🤣😍🫶</b>";
+var ketikanKedua = "<i>Hehehe</i>~ 🏃‍♂️";
+var ketikanKetiga ="Makasih karena selama ini kamu udah sabar menghadapi aku, dan kalau kamu masih marah atau kecewa, aku akan mengerti 🥹🌷 Aku cuma ngga mau kehilangan kamu, karena kamu sangat berharga buat aku dan aku sayang banget sama kamu 🫂<br><br>Sekali lagi,<br><b>Maafin aku yaa, sayang... 🫠🤍</b>&nbsp;<i>I’m truly sorry, and I’ll do my best to be better for you.</i>&nbsp;<b>I love you ❤️</b>";
+
+pesanwhatsapp = "";
+const body = document.querySelector("body"); 
+const inisection = document.getElementById("inisection");
+audio = new Audio('' + linkmp3.src); 
+var kecepatanNgetik = 22;
+
+// Animasi Hati Jatuh
+let intervalHati;function hatiJatuh() {const hati = document.createElement('div');hati.className = 'hati';hati.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21s-7-4.35-9.5-8.5C.5 8.5 2.5 4 6.5 4c2.1 0 3.5 1.2 4.5 2.5C12 5.2 13.4 4 15.5 4c4 0 6 4.5 4 8.5C19 16.65 12 21 12 21z"/></svg>`;hati.style.left = Math.random() * 100 + 'vw';hati.style.top = '0';document.body.appendChild(hati);hati.addEventListener('animationend', () => {hati.remove();});}
+   
+fungsi=0;fungsiklik=0;skrg=1;iniaja=0;
+function klikEmotHeart(){
+  sentuh.style="margin-top:100px;transform:scale(3)";
+  setTimeout(function() {
+        if(fungsi==0){
+           window.scrollBy({top: inisection.offsetHeight,behavior: 'smooth'});
+           setTimeout(animasiTeks,500);setTimeout(function() {second_stiker.style="margin-top:-50px;transform:scale(1);transition:all .7s ease";}, 700);
+           fungsi=1;
+        }
+  }, 100);
+}
+
+tinggi = inisection.offsetHeight;
+function tentukantinggi(){tinggi = inisection.offsetHeight;}
+setInterval(tentukantinggi,200);
+
+fungsiAud=0;function playaud(){if(fungsiAud==0){fungsiAud=1;audio.play();}}
+function keatas(){window.scrollTo(0, 0);}
+
+setTimeout(() => {
+    window.scrollTo(0, 0);
+    setTimeout(keatas,500);
+    document.querySelector(".loading-message").style.display = "none";
+    document.querySelector(".blocklove").style.display = "flex";
+}, 100);
+
+first_stiker.style="transform: scale(0)";
+sentuh.style="transform: scale(0)";
+function showSentuh(){sentuh.style="transform: scale(1);";}
+vgantiTeks1 = 0;
+function gantiTeks1(){
+    if(vgantiTeks1 == 0){gantiFoto1();teks1.style="transform: scale(.3);transition:all .75s ease";teks3.style="transform: scale(0);";vgantiTeks1++;setTimeout(gantiTeks1,300);}
+    else {vgantiTeks1 = teks2.innerHTML;teks1.innerHTML = "";teks3.style="display:none";teks1.style="font-size: 1.15rem;transform: scale(1);transition:all .75s ease";gantiTeks1nimasi();}
+}
+function gantiFoto1(){
+    first_stiker.style="transform: scale(0);";
+    setTimeout(function() {
+        first_stiker.style.transform = "scale(1)";
+        inistiker1.src = inistiker2.src;
+    }, 300);
+}
+function gantiTeks1nimasi(){
+  	new TypeIt("#teks1", {
+      strings: ["" + vgantiTeks1], startDelay: 10, speed: kecepatanNgetik, cursor: true,
+      afterComplete: function(){
+          teks1.innerHTML = vgantiTeks1;
+          showSentuh();
+      },}).go();
+   }
+
+var sudahKlik = false;
+document.getElementById("loveIn").onclick = function() {
+    if (sudahKlik) {
+    playaud();window.scrollTo(0, 0);
+    document.querySelector(".overlay").style.display = "none";
+    first_stiker.style="transform: scale(1)";
+    setTimeout(function() {teks3.style.transform = "scale(1)";}, 300);
+    setTimeout(gantiTeks1, 2300);
+
+    ScrollReveal({ reset: true });
+    ScrollReveal().reveal(".scaleUp", {delay: 100, duration: 1200, scale: .5, move: 0});
+    
+    document.addEventListener('scroll', function(e) {
+        let documentHeight = document.body.scrollHeight;
+        let currentScroll = window.scrollY + window.innerHeight;
+        let modifier = 200; 
+        if(currentScroll + modifier > documentHeight) {console.log('Sudah sampai bawah!');}
+    })
+} else {
+    
+}
+}
+sudahKlik = true;
+document.getElementById('loveIn').innerHTML = '<style>.lovein svg{animation:none;stroke:#ff0000;stroke-width:1.3;fill:none;width:35px;height:35px}</style><label class="lovein"><svg class="line" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g transform="translate(2.550170, 3.550158)"><path d="M0.371729633,8.89614246 C-0.701270367,5.54614246 0.553729633,1.38114246 4.07072963,0.249142462 C5.92072963,-0.347857538 8.20372963,0.150142462 9.50072963,1.93914246 C10.7237296,0.0841424625 13.0727296,-0.343857538 14.9207296,0.249142462 C18.4367296,1.38114246 19.6987296,5.54614246 18.6267296,8.89614246 C16.9567296,14.2061425 11.1297296,16.9721425 9.50072963,16.9721425 C7.87272963,16.9721425 2.09772963,14.2681425 0.371729633,8.89614246 Z"></path><path d="M13.23843,4.013842 C14.44543,4.137842 15.20043,5.094842 15.15543,6.435842"></path></g></svg></label><p id="ket">Sentuh LOVEnya!</p>';
+
+const scrollContainer = document.getElementById("containerPesan");
+function autoScroll() {scrollContainer.scrollTop += 10;}
+const scrollInterval = setInterval(autoScroll, 50); 
+
+// FUNCTION KETIK
+function animasiTeks(){
+    document.querySelector(".blocktext").style="transform:scale(1);margin-top:0;";
+    new TypeIt("#textUtama", {
+    strings: [ketikanPertama + '<br>' + ketikanKedua], startDelay: 300, speed: kecepatanNgetik, cursor: true,
+    afterComplete: function(){
+        const textCursor = document.querySelector("#textUtama .ti-cursor");
+        if (textCursor) textCursor.style.display = "none";
+
+        new TypeIt("#teksLoading", {
+        strings: "I Lovee uu 1% 💗",
+        speed: 23,
+        startDelay: 200,
+        afterComplete: function () {
+          const loadingCursor = document.querySelector("#teksLoading .ti-cursor");
+          if (loadingCursor) loadingCursor.style.display = "none";
+          const emojiCinta = ["💗", "💖", "💓", "💕", "💞", "❤️", "🧡", "💘", "💝", "😍", "🥰"];
+          let persen = 1;
+          let emojiTerakhir = "💗";
+          const intervalPersen = setInterval(() => {
+            persen++;
+            if (persen % 5 === 0) {
+                let emojiSekarang;
+                do {
+                    emojiSekarang = emojiCinta[Math.floor(Math.random() * emojiCinta.length)];
+                } while (emojiSekarang === emojiTerakhir);
+                emojiTerakhir = emojiSekarang;
+            }
+            document.getElementById('teksLoading').innerText = `I Lovee uu ${persen}% ${emojiTerakhir}`;
+            if (persen % 10 === 0) {
+                document.getElementById('teksLoading').style.fontSize = `${19 + persen / 10}px`;
+            }
+            if (persen >= 100) {
+                clearInterval(intervalPersen);
+
+                setTimeout(()=>{
+                    new TypeIt("#textTambahan", {
+                        strings: "Gamau tau pokoknya kamu punya aku, ga ada yang boleh milikin kamu selain aku. Mwhehehe 🥹💗",
+                        speed: 35,
+                        startDelay: 300,
+                        cursor: true,
+                        afterComplete: function () {
+                            const tambahanCursor = document.querySelector("#textTambahan .ti-cursor");
+                            if (tambahanCursor) tambahanCursor.style.display = "none";
+                            
+                            second_stiker.style = "margin-top:-50px;transform:scale(0)";
+                            setTimeout(() => {
+                                inistiker3.src = inistiker4.src;
+                            }, 220);
+                            setTimeout(() => {
+                                inistiker3.style = "display:block;";
+                                // inistiker5.style = "display:block !important;transform:scaleX(1)";
+                                second_stiker.style = "margin-top:-50px;transform:scale(1)";
+                            }, 300);
+                            intervalHati = setInterval(hatiJatuh, 200);
+                            setTimeout(()=>{clearInterval(scrollInterval);},800);
+                        }
+                    }).go();
+                },200);
+            }
+          }, 35);
+        }
+      }).go();
+    }}).go();
+}
+</script>
+</body>
+</html>
